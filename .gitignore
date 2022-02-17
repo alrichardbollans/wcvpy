@@ -157,9 +157,6 @@ docs/
 # translation temp files
 po/*~
 
-/poison_vars/outputs/list_of_poisonous_plants.csv
-/climate_vars/inputs/*
 # Large files (added with "find * -size +100M | cat >> .gitignore")
 taxa_lists/outputs/wcvp_all_taxa.csv
 taxa_lists/inputs/wcvp_v7_dec_2021.txt
-automatchnames/matching data/manual_match.csv

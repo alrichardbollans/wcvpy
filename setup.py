@@ -11,5 +11,5 @@ setup(
     author='Adam Richard-Bollans',
     author_email='adamrb@protonmail.com',
     description='A package for automating name matching of scientific names',
-    long_description=open('README.md').read()
+    long_description=open('readme.md').read()
 )

@@ -162,4 +162,4 @@ po/*~
 # Large files (added with "find * -size +100M | cat >> .gitignore")
 taxa_lists/outputs/wcvp_all_taxa.csv
 taxa_lists/inputs/wcvp_v7_dec_2021.txt
-name_matching_cleaning/matching data/manual_match.csv
+automatchnames/matching data/manual_match.csv

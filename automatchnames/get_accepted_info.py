@@ -254,6 +254,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
 
     # First get manual matches
+    # TODO: Add manual matching file in user directory
     manual_match_df = pd.read_csv(_resolution_csv)
     manual_match_df = manual_match_df[manual_match_df['submitted'].isin(df[name_col].values.tolist())]
     man_matches_with_accepted_info = get_accepted_info_from_ids_in_column(manual_match_df, 'resolution_id')

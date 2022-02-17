@@ -16,10 +16,8 @@ def _get_dict_from_wcvp_record(record: pd.DataFrame, taxa_list: pd.DataFrame) ->
     Accepted_Name = record['accepted_name'].values[0]
     Accepted_ID = record['accepted_kew_id'].values[0]
     if taxonomic_status == 'Accepted':
-
         accepted_taxon = record
     else:
-
         accepted_taxon = taxa_list[(taxa_list['taxon_name'] == Accepted_Name) & (taxa_list['kew_id'] == Accepted_ID)]
         if len(accepted_taxon.index) == 0:
             return {'Accepted_Name': np.nan, 'Accepted_ID': np.nan, 'Accepted_Rank': np.nan,

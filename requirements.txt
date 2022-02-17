@@ -1,0 +1,5 @@
+pandas==1.4.1
+numpy~=1.22.1
+requests~=2.27.1
+tqdm~=4.62.3
+typing~=3.7.4.3

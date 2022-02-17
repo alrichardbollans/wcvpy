@@ -4,7 +4,7 @@ import json
 import pandas as pd
 import requests
 
-from name_matching_cleaning import get_epithets_for_names_in_df
+from automatchnames import get_epithets_for_names_in_df
 
 _KEW_RECONCILE_SERVICE_URL = 'http://data1.kew.org/reconciliation/reconcile/IpniName'
 

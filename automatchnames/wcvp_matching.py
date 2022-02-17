@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-from name_matching_cleaning import clean_urn_ids
+from automatchnames import clean_urn_ids
 from taxa_lists import get_all_taxa
 
 

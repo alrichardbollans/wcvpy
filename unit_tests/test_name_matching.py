@@ -5,10 +5,10 @@ import numpy as np
 import pandas as pd
 from pkg_resources import resource_filename
 
-from name_matching_cleaning import id_lookup_wcvp, get_accepted_info_from_ids_in_column, \
+from automatchnames import id_lookup_wcvp, get_accepted_info_from_ids_in_column, \
     get_accepted_info_from_names_in_column, COL_NAMES
 
-from name_matching_cleaning.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
+from automatchnames.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
     _find_best_matches_from_multiples, _autoresolve_missing_matches
 from taxa_lists.get_taxa_from_wcvp import get_all_taxa
 

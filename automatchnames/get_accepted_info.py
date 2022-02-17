@@ -8,10 +8,10 @@ from typing import List
 from pkg_resources import resource_filename
 from tqdm import tqdm
 
-from name_matching_cleaning import get_wcvp_info_for_names_in_column, \
+from automatchnames import get_wcvp_info_for_names_in_column, \
     get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, remove_whitespace_at_beginning_and_end, \
     temp_outputs_dir, get_reconciliations
-from name_matching_cleaning.resolving_names import _get_resolutions_with_single_rank
+from automatchnames.resolving_names import _get_resolutions_with_single_rank
 
 from taxa_lists import get_all_taxa
 

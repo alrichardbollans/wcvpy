@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from name_matching_cleaning import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
+from automatchnames import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
 
 
 class MyTestCase(unittest.TestCase):

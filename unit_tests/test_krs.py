@@ -4,7 +4,7 @@ from io import StringIO
 import numpy as np
 import pandas as pd
 
-from name_matching_cleaning import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name, \
+from automatchnames import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name, \
     get_reconciliations
 
 

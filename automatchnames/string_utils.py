@@ -1,6 +1,13 @@
 import re
 
 import numpy as np
+COL_NAMES = {'acc_name': 'Accepted_Name',
+             'acc_species': 'Accepted_Species',
+             'acc_species_id': 'Accepted_Species_ID',
+             'acc_id': 'Accepted_ID',
+             'acc_rank': 'Accepted_Rank',
+             'single_source': 'Source',
+             'sources': 'Sources'}
 
 
 def get_genus_from_full_name(full_name_beginning_with_genus: str) -> str:

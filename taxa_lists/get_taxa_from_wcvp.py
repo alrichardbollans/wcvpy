@@ -20,10 +20,18 @@ def capitalize_first_letter_of_rank(g: str):
         return g
 
 
+def fix_columns(taxa_df: pd.DataFrame):
+    # If taxanomic_status is accepted, make accepted_name and accepted_kew_id to taxon_name and kew_id
+    taxa_df[taxa_df['taxonomic_status'] == 'Accepted']['accepted_name'] = \
+        taxa_df[taxa_df['taxonomic_status'] == 'Accepted']['taxon_name']
+
+    taxa_df[taxa_df['taxonomic_status'] == 'Accepted']['accepted_kew_id'] = \
+        taxa_df[taxa_df['taxonomic_status'] == 'Accepted']['kew_id']
+
+
 def get_all_taxa(families_of_interest=None,
                  accepted=False, version=None, output_csv=None) -> pd.DataFrame:
     # TODO: Create/fill in various columns on loading, will make parsing later easier
-
 
     if output_csv is not None:
         if not os.path.isdir(os.path.dirname(output_csv)):
@@ -52,6 +60,8 @@ def get_all_taxa(families_of_interest=None,
     wcvp_data['rank'] = wcvp_data['rank'].apply(capitalize_first_letter_of_rank)
     # Remove unplaced taxa
     wcvp_data = wcvp_data[wcvp_data['taxonomic_status'] != 'Unplaced']
+
+    fix_columns(wcvp_data)
 
     if output_csv is not None:
         wcvp_data.to_csv(output_csv)

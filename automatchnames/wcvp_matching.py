@@ -13,13 +13,12 @@ def _get_dict_from_wcvp_record(record: pd.DataFrame, taxa_list: pd.DataFrame) ->
     :return:
     """
     taxonomic_status = record['taxonomic_status'].values[0]
+    Accepted_Name = record['accepted_name'].values[0]
+    Accepted_ID = record['accepted_kew_id'].values[0]
     if taxonomic_status == 'Accepted':
-        Accepted_Name = record['taxon_name'].values[0]
-        Accepted_ID = record['kew_id'].values[0]
+
         accepted_taxon = record
     else:
-        Accepted_Name = record['accepted_name'].values[0]
-        Accepted_ID = record['accepted_kew_id'].values[0]
 
         accepted_taxon = taxa_list[(taxa_list['taxon_name'] == Accepted_Name) & (taxa_list['kew_id'] == Accepted_ID)]
         if len(accepted_taxon.index) == 0:

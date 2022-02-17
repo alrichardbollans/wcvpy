@@ -16,7 +16,7 @@ from automatchnames.resolving_names import _get_resolutions_with_single_rank
 from taxa_lists import get_all_taxa
 
 matching_data_path = resource_filename(__name__, 'matching data')
-_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
+_template_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str):
@@ -227,7 +227,8 @@ def get_accepted_info_from_ids_in_column(df: pd.DataFrame, id_col_name: str,
 
 
 def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
-                                           families_of_interest: List[str] = None) -> pd.DataFrame:
+                                           families_of_interest: List[str] = None,
+                                           manual_resolution_csv: str = None) -> pd.DataFrame:
     """
     First tries to match names in df to wcvp directly to obtain accepted info and then
     matches names in df using knms and gets corresponding accepted info from wcvp
@@ -254,13 +255,17 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
 
     # First get manual matches
-    # TODO: Add manual matching file in user directory
-    manual_match_df = pd.read_csv(_resolution_csv)
-    manual_match_df = manual_match_df[manual_match_df['submitted'].isin(df[name_col].values.tolist())]
-    man_matches_with_accepted_info = get_accepted_info_from_ids_in_column(manual_match_df, 'resolution_id')
-    man_matches_with_accepted_info = man_matches_with_accepted_info.dropna(subset=['Accepted_Name'])
-    manual_matches = pd.merge(df, man_matches_with_accepted_info, left_on=name_col, right_on='submitted', sort=False)
-    unmatched_manual_df = df[~df[name_col].isin(manual_matches[name_col].values)]
+    if manual_resolution_csv is not None:
+        manual_match_df = pd.read_csv(manual_resolution_csv)
+        manual_match_df = manual_match_df[manual_match_df['submitted'].isin(df[name_col].values.tolist())]
+        man_matches_with_accepted_info = get_accepted_info_from_ids_in_column(manual_match_df, 'resolution_id')
+        man_matches_with_accepted_info = man_matches_with_accepted_info.dropna(subset=['Accepted_Name'])
+        manual_matches = pd.merge(df, man_matches_with_accepted_info, left_on=name_col, right_on='submitted',
+                                  sort=False)
+        unmatched_manual_df = df[~df[name_col].isin(manual_matches[name_col].values)]
+    else:
+        manual_matches = pd.DataFrame()
+        unmatched_manual_df = df
 
     # Then get matches from Kew Reconciliation Service
     # TODO: maybe include this step at the end

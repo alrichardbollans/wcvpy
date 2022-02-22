@@ -7,7 +7,8 @@ program will be much quicker if you specify which families to include
 e.g. `families_of_interest=['Rubiaceae','Apocynaceae']`.
 
 In the first step, to avoid the program spending time trying to find names we know to be problematic we do some manual
-matching. Manual resolutions are included by editing the given `manual_match.csv` file.
+matching. Manual resolutions are optional and included given specifying a csv file, in the same format as
+the `manual_match_template.csv` file.
 
 Once manual matches have been found, we try to match names directly to taxa in WCVP. This finds taxa in WCVP which match
 our submitted names exactly. In cases where multiple taxa are returned for a given submission, taxa labelled as '

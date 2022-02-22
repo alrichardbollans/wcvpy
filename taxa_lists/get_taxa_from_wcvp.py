@@ -2,6 +2,7 @@ import os
 import zipfile
 import io
 
+import numpy as np
 import pandas as pd
 import requests
 from pkg_resources import resource_filename
@@ -20,11 +21,20 @@ def capitalize_first_letter_of_rank(g: str):
         return g
 
 
+def fix_columns(taxa_df: pd.DataFrame) -> pd.DataFrame:
+    out_copy = taxa_df.copy(deep=True)
+    # If taxanomic_status is accepted, make accepted_name and accepted_kew_id to taxon_name and kew_id
+
+    out_copy['accepted_kew_id'] = np.where(out_copy['taxonomic_status'] == 'Accepted', taxa_df['kew_id'],
+                                           taxa_df['accepted_kew_id'])
+    out_copy['accepted_name'] = np.where(out_copy['taxonomic_status'] == 'Accepted', taxa_df['taxon_name'],
+                                         taxa_df['accepted_name'])
+
+    return out_copy
+
+
 def get_all_taxa(families_of_interest=None,
                  accepted=False, version=None, output_csv=None) -> pd.DataFrame:
-    # TODO: Create/fill in various columns on loading, will make parsing later easier
-
-
     if output_csv is not None:
         if not os.path.isdir(os.path.dirname(output_csv)):
             os.mkdir(os.path.dirname(output_csv))
@@ -52,6 +62,8 @@ def get_all_taxa(families_of_interest=None,
     wcvp_data['rank'] = wcvp_data['rank'].apply(capitalize_first_letter_of_rank)
     # Remove unplaced taxa
     wcvp_data = wcvp_data[wcvp_data['taxonomic_status'] != 'Unplaced']
+
+    wcvp_data = fix_columns(wcvp_data)
 
     if output_csv is not None:
         wcvp_data.to_csv(output_csv)

@@ -310,7 +310,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     out_df = in_df.copy()
     for k in COL_NAMES:
         if k not in ['single_source', 'sources']:
-            out_df[COL_NAMES[k]] = out_df[name_col]
+            out_df[COL_NAMES[k]] = out_df[name_col].copy(deep=True)
             out_df[COL_NAMES[k]] = out_df[COL_NAMES[k]].apply(get_acc_info_from_matches, col=COL_NAMES[k])
 
     return out_df

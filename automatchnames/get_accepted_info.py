@@ -19,7 +19,7 @@ matching_data_path = resource_filename(__name__, 'matching data')
 _template_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
 
 
-def _temp_output(df: pd.DataFrame, tag: str, warning: str):
+def _temp_output(df: pd.DataFrame, tag: str, warning: str=None):
     df_str = df.to_string()
     str_to_hash = str(df_str).encode()
     temp_basename_csv = str(hashlib.md5(str_to_hash).hexdigest()) + ".csv"
@@ -28,7 +28,8 @@ def _temp_output(df: pd.DataFrame, tag: str, warning: str):
     except FileExistsError as error:
         pass
     outfile = os.path.join(temp_outputs_dir, tag + temp_basename_csv)
-    print(f'{warning}. Check tempfile: {outfile}.')
+    if warning is not None:
+        print(f'{warning}. Check tempfile: {outfile}.')
     df.to_csv(outfile)
 
 
@@ -204,7 +205,7 @@ def get_accepted_info_from_ids_in_column(df: pd.DataFrame, id_col_name: str,
     :param id_col_name:
     :return:
     """
-
+    # TODO: ALso add family
     all_taxa = get_all_taxa(families_of_interest=families_of_interest)
     dict_of_values = {'Accepted_Name': [], 'Accepted_ID': [], 'Accepted_Rank': [],
                       'Accepted_Species': [], 'Accepted_Species_ID': []}
@@ -237,7 +238,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     :param all_taxa:
     :return:
     """
-
+    # TODO: ALso add family
     df = in_df.copy()
     df = df.drop_duplicates(subset=[name_col])
 
@@ -301,6 +302,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     cols_to_drop = [c for c in final_resolved_df.columns.tolist() if
                     (c not in df.columns.tolist() and c not in list(COL_NAMES.values()))]
     final_resolved_df.drop(columns=cols_to_drop, inplace=True)
+    _temp_output(final_resolved_df, 'final_resolutions', '')
 
     def get_acc_info_from_matches(submitted_name: str, col: str):
         return final_resolved_df[final_resolved_df[name_col] == submitted_name][col].values[0]

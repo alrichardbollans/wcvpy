@@ -10,7 +10,7 @@ from tqdm import tqdm
 
 from automatchnames import get_wcvp_info_for_names_in_column, \
     get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, remove_whitespace_at_beginning_and_end, \
-    temp_outputs_dir, get_reconciliations
+    temp_outputs_dir, get_reconciliations, tidy_names_in_column
 from automatchnames.resolving_names import _get_resolutions_with_single_rank
 
 from taxa_lists import get_all_taxa
@@ -19,7 +19,7 @@ matching_data_path = resource_filename(__name__, 'matching data')
 _template_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
 
 
-def _temp_output(df: pd.DataFrame, tag: str, warning: str=None):
+def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):
     df_str = df.to_string()
     str_to_hash = str(df_str).encode()
     temp_basename_csv = str(hashlib.md5(str_to_hash).hexdigest()) + ".csv"
@@ -30,28 +30,9 @@ def _temp_output(df: pd.DataFrame, tag: str, warning: str=None):
     outfile = os.path.join(temp_outputs_dir, tag + temp_basename_csv)
     if warning is not None:
         print(f'{warning}. Check tempfile: {outfile}.')
+    else:
+        print(f'Temp file for this run: {outfile}')
     df.to_csv(outfile)
-
-
-def _capitalize_first_letter_of_taxon(g: str, check_string_is_uppercase=False):
-    try:
-        if check_string_is_uppercase:
-            if not g.isupper():
-                return g
-
-        append_to_beginning = ''
-        if g.startswith('× '):
-            append_to_beginning = '× '
-            g = g[2:]
-        l = g.lower()
-
-        if len([x for x in g if x == " "]) > 1:
-            # KNMS does not return matches where authors are incorrectly capitalised
-            return g
-
-        return append_to_beginning + l.capitalize()
-    except AttributeError:
-        return g
 
 
 def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_col: str,
@@ -239,62 +220,62 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     :return:
     """
     # TODO: ALso add family
-    df = in_df.copy()
-    df = df.drop_duplicates(subset=[name_col])
-
-    na_rows = df[df[name_col].isna()]
-    if len(na_rows.index) > 0:
-        print(f'Warning: Rows in {name_col} with nan values. {na_rows}')
-        df.dropna(subset=[name_col], inplace=True)
+    df = in_df.copy(deep=True)
 
     # Standardise input names
     # Non standard captialisation causes issues
     # If input names are all caps then we change to capitalise the first letter
     # TODO: fix capitalisation by parsing. Then add epithet columns
     # TODO: Adding suggested epithets and ranks will help with later parsing
-    df[name_col] = df[name_col].apply(_capitalize_first_letter_of_taxon, check_string_is_uppercase=True)
-    df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
+    df.rename(columns={name_col: 'tidied_name'}, inplace=True)
+    tidy_names_in_column(df, 'tidied_name')
+
+    df = df.drop_duplicates(subset=['tidied_name'])
+
+    na_rows = df[df['tidied_name'].isna()]
+    if len(na_rows.index) > 0:
+        df.dropna(subset=['tidied_name'], inplace=True)
 
     # First get manual matches
     if manual_resolution_csv is not None:
         manual_match_df = pd.read_csv(manual_resolution_csv)
-        manual_match_df = manual_match_df[manual_match_df['submitted'].isin(df[name_col].values.tolist())]
+        manual_match_df = manual_match_df[manual_match_df['submitted'].isin(df['tidied_name'].values.tolist())]
         man_matches_with_accepted_info = get_accepted_info_from_ids_in_column(manual_match_df, 'resolution_id')
         man_matches_with_accepted_info = man_matches_with_accepted_info.dropna(subset=['Accepted_Name'])
-        manual_matches = pd.merge(df, man_matches_with_accepted_info, left_on=name_col, right_on='submitted',
+        manual_matches = pd.merge(df, man_matches_with_accepted_info, left_on='tidied_name', right_on='submitted',
                                   sort=False)
-        unmatched_manual_df = df[~df[name_col].isin(manual_matches[name_col].values)]
+        unmatched_manual_df = df[~df['tidied_name'].isin(manual_matches['tidied_name'].values)]
     else:
         manual_matches = pd.DataFrame()
         unmatched_manual_df = df
 
     # Then get matches from Kew Reconciliation Service
     # TODO: maybe include this step at the end
-    # reconciled_df = get_reconciliations(unmatched_manual_df, name_col)
+    # reconciled_df = get_reconciliations(unmatched_manual_df, 'tidied_name')
     # reconciled_df_with_acc_info = get_accepted_info_from_ids_in_column(reconciled_df, 'reco_id')
     # reco_resolved_df = pd.concat([reconciled_df_with_acc_info, manual_matches], axis=0)
-    # unmatched_name_df = df[~df[name_col].isin(reco_resolved_df[name_col].values)]
+    # unmatched_name_df = df[~df['tidied_name'].isin(reco_resolved_df['tidied_name'].values)]
 
     # Then match with exact matches in wcvp
     all_taxa = get_all_taxa(families_of_interest=families_of_interest)
-    wcvp_exact_name_match_df = get_wcvp_info_for_names_in_column(unmatched_manual_df, name_col, all_taxa=all_taxa)
+    wcvp_exact_name_match_df = get_wcvp_info_for_names_in_column(unmatched_manual_df, 'tidied_name', all_taxa=all_taxa)
     wcvp_resolved_df = pd.concat([wcvp_exact_name_match_df, manual_matches], axis=0)
-    unmatched_name_df = df[~df[name_col].isin(wcvp_resolved_df[name_col].values)]
+    unmatched_name_df = df[~df['tidied_name'].isin(wcvp_resolved_df['tidied_name'].values)]
 
     # If exact matches aren't found in wcvp, use knms
-    matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(unmatched_name_df, name_col,
+    matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(unmatched_name_df, 'tidied_name',
                                                                                  families_of_interest=families_of_interest)
     knms_resolved_df = pd.concat([wcvp_resolved_df, matches_with_knms], axis=0)
-    unmatched_df = df[~df[name_col].isin(knms_resolved_df[name_col].values)]
+    unmatched_df = df[~df['tidied_name'].isin(knms_resolved_df['tidied_name'].values)]
 
     # Get autoresolved matches
-    unmatched_resolutions = _autoresolve_missing_matches(unmatched_df, name_col,
+    unmatched_resolutions = _autoresolve_missing_matches(unmatched_df, 'tidied_name',
                                                          families_of_interest=families_of_interest)
 
     final_resolved_df = pd.concat([unmatched_resolutions, knms_resolved_df], axis=0)
 
     # Provide temp outputs
-    unmatched_final_df = df[~df[name_col].isin(final_resolved_df[name_col].values)]
+    unmatched_final_df = df[~df['tidied_name'].isin(final_resolved_df['tidied_name'].values)]
     if len(unmatched_final_df.index) > 0:
         _temp_output(unmatched_final_df, 'unmatched_samples',
                      'WARNING: some submissions have not been resolved and must be manually resolved. Consider fixing names in your original data.')
@@ -302,18 +283,18 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     cols_to_drop = [c for c in final_resolved_df.columns.tolist() if
                     (c not in df.columns.tolist() and c not in list(COL_NAMES.values()))]
     final_resolved_df.drop(columns=cols_to_drop, inplace=True)
-    _temp_output(final_resolved_df, 'final_resolutions', '')
+    _temp_output(final_resolved_df, 'final_resolutions')
 
     def get_acc_info_from_matches(submitted_name: str, col: str):
-        return final_resolved_df[final_resolved_df[name_col] == submitted_name][col].values[0]
+        return final_resolved_df[final_resolved_df['tidied_name'] == submitted_name][col].values[0]
 
-    out_df = in_df.copy()
+    in_df['tidied_name'] = in_df[name_col].copy(deep=True)
+    tidy_names_in_column(in_df, 'tidied_name')
     for k in COL_NAMES:
         if k not in ['single_source', 'sources']:
-            out_df[COL_NAMES[k]] = out_df[name_col].copy(deep=True)
-            out_df[COL_NAMES[k]] = out_df[COL_NAMES[k]].apply(get_acc_info_from_matches, col=COL_NAMES[k])
+            in_df[COL_NAMES[k]] = in_df['tidied_name'].apply(get_acc_info_from_matches, col=COL_NAMES[k])
 
-    return out_df
+    return in_df
 
 
 if __name__ == '__main__':

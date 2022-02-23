@@ -31,7 +31,7 @@ class MyTestCase(unittest.TestCase):
     def test_clean_urn_ids(self):
         self.assertIsNone(clean_urn_ids(None))
         self.assertTrue(np.isnan(clean_urn_ids(np.nan)))
-        correct_dict = {'urn:lsid:ipni.org:names:1': '1', 'urn:lsid:ipni.org:names:': '',
+        correct_dict = {'urn:lsid:ipni.org:names:1': '1', 'urn:lsid:ipni.org:names:': '', '3-1':'3-1',
                         ' urn:lsid:ipni.org:names:2': '2', ' http://ipni.org/urn:lsid:ipni.org:names:2171-1': '2171-1'}
 
         for k in correct_dict:

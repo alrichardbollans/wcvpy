@@ -1,6 +1,8 @@
 import re
 
 import numpy as np
+import pandas as pd
+
 COL_NAMES = {'acc_name': 'Accepted_Name',
              'acc_species': 'Accepted_Species',
              'acc_species_id': 'Accepted_Species_ID',
@@ -40,22 +42,45 @@ def get_species_from_full_name(full_name_beginning_with_genus: str) -> str:
 
 
 def remove_whitespace_at_beginning_and_end(value):
-    # try:
 
     v = value.rstrip()
     out = v.lstrip()
     return out
 
+def _capitalize_first_letter_of_taxon(g: str, check_string_is_uppercase=False):
+    try:
+        if check_string_is_uppercase:
+            if not g.isupper():
+                return g
+
+        append_to_beginning = ''
+        if g.startswith('× '):
+            append_to_beginning = '× '
+            g = g[2:]
+        l = g.lower()
+
+        if len([x for x in g if x == " "]) > 1:
+            # KNMS does not return matches where authors are incorrectly capitalised
+            return g
+
+        return append_to_beginning + l.capitalize()
+    except AttributeError:
+        return g
+
+def tidy_names_in_column(df:pd.DataFrame,col:str):
+    df[col] = df[col].apply(_capitalize_first_letter_of_taxon, check_string_is_uppercase=True)
+    df[col] = df[col].apply(remove_whitespace_at_beginning_and_end)
 
 def clean_urn_ids(given_value: str) -> str:
     '''
     Strips urn:lsid:ipni.org:names: from id
     '''
+
     try:
         if re.search('urn:lsid:ipni.org:names:', given_value):
             pos = re.search('urn:lsid:ipni.org:names:', given_value).end()
             return given_value[pos:]
         else:
-            return np.nan
+            return given_value
     except TypeError:
         return given_value

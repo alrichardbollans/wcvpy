@@ -294,6 +294,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         if k not in ['single_source', 'sources']:
             in_df[COL_NAMES[k]] = in_df['tidied_name'].apply(get_acc_info_from_matches, col=COL_NAMES[k])
 
+    in_df.drop(columns=['tidied_name'], inplace=True)
+
     return in_df
 
 

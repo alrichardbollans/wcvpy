@@ -80,13 +80,10 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
         # This to avoid matching mispelt species to genera
         # This is a problem for hybrid genera but these need resolving differently anyway.
         if len(match_df.index) > 0:
-            # TODO: only drop row if there's mutliple matches
-            # unique_matches = match_df[name_col].unique().tolist()
-            # match_df = match_df[
-            #     ~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" ")) | match_df[
-            #         name_col].isin(unique_matches)]
+            unique_matches = match_df[name_col].unique().tolist()
             match_df = match_df[
-                ~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" "))]
+                ~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" ")) | match_df[
+                    name_col].isin(unique_matches)]
 
         # Remove duplicate matches with worse priority
         status_priority = ["Accepted", "Synonym", "Homotypic_Synonym"]

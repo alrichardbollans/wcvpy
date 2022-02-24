@@ -38,16 +38,19 @@ def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):
 def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_col: str,
                                  families_of_interest: List[str] = None) -> pd.DataFrame:
     """
-    Manually resolve matches.
+
     :param unmatched_submissions_df:
     :return:
     """
+    # TODO: optimize
     if len(unmatched_submissions_df.index) > 0:
         _temp_output(unmatched_submissions_df, 'unmatched_to_autoresolve',
-                     "Resolving submitted names which weren't initially matched using KNMS. This may take some time... This can be sped up by specifying families of interest (if you haven't already done so) or checking the temp file for misspelled submissions.")
+                     "Resolving submitted names which weren't initially matched using KNMS.")
+        print(
+            "This may take some time... This can be sped up by specifying families of interest (if you haven't already done so) or checking the temp file for misspelled submissions.")
 
         # For each submission, check if any accepted name is contained in the name, then take the lowest rank of match
-        all_taxa = get_all_taxa(families_of_interest=families_of_interest, accepted=True)
+        all_taxa = get_all_taxa(families_of_interest=families_of_interest)
 
         # Get more precise list of taxa which possibly matches submissions
         accepted_name_containment = all_taxa[
@@ -72,26 +75,41 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
                         dict_for_matches[k].append(dict_for_record[k])
 
         match_df = pd.DataFrame(dict_for_matches)
-
-        # Order the dataframe by rank
-        rank_priority = ["Subspecies", "Variety", "Species", "Genus"]
-        for r in match_df["Accepted_Rank"].unique():
-            if r not in rank_priority:
-                raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
-        match_df['Accepted_Rank'] = pd.Categorical(match_df['Accepted_Rank'], rank_priority)
-        match_df.sort_values('Accepted_Rank', inplace=True)
-
+        match_df.dropna(subset=['Accepted_Name'], inplace=True)
         # Remove genera matches where submitted name has more than one word.
         # This to avoid matching mispelt species to genera
         # This is a problem for hybrid genera but these need resolving differently anyway.
         if len(match_df.index) > 0:
-            match_df = match_df[~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" "))]
+            unique_matches = match_df[name_col].unique().tolist()
+            match_df = match_df[
+                ~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" ")) | match_df[
+                    name_col].isin(unique_matches)]
+
+        # Remove duplicate matches with worse priority
+        status_priority = ["Accepted", "Synonym", "Homotypic_Synonym"]
+        for r in match_df["taxonomic_status_of_submitted_name"].unique():
+            if r not in status_priority:
+                raise ValueError(f'Status priority list does not contain {r} and needs updating.')
+        match_df['taxonomic_status_of_submitted_name'] = pd.Categorical(match_df['taxonomic_status_of_submitted_name'],
+                                                                        status_priority)
+        match_df.sort_values('taxonomic_status_of_submitted_name', inplace=True)
+        # Drop duplicated submissions of the same rank with worse taxonomic status
+        match_df.drop_duplicates(subset=[name_col, 'Accepted_Rank'], inplace=True, keep='first')
+
+        # Remove duplicate matches with worse specificity
+        rank_priority = ["Subspecies", "Variety", "Species", "Genus"]
+        for r in match_df["Accepted_Rank"].unique():
+            if r not in rank_priority:
+                print(r)
+                raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
+        match_df['Accepted_Rank'] = pd.Categorical(match_df['Accepted_Rank'], rank_priority)
+        match_df.sort_values('Accepted_Rank', inplace=True)
 
         # Get the most precise match by dropping duplicate submissions
-        most_precise_match = match_df.drop_duplicates(subset=[name_col], keep='first')
+        match_df.drop_duplicates(subset=[name_col], keep='first', inplace=True)
 
         # Merge with original data
-        matches = pd.merge(unmatched_submissions_df, most_precise_match, on=name_col, sort=False)
+        matches = pd.merge(unmatched_submissions_df, match_df, on=name_col, sort=False)
         matches = matches.dropna(subset=['Accepted_Name'])
         return matches
     else:

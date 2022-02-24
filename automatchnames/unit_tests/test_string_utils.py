@@ -38,6 +38,12 @@ class MyTestCase(unittest.TestCase):
             print(k)
             self.assertEqual(correct_dict[k], clean_urn_ids(k))
 
+        self.assertEqual(clean_urn_ids('urn:lsid:ipni.org:names:30479151-2'), '30479151-2')
+        self.assertIs(clean_urn_ids(':lsid:ipni.org:names:30479151-2'), ':lsid:ipni.org:names:30479151-2')
+        self.assertIs(clean_urn_ids('a'), 'a')
+        self.assertIs(clean_urn_ids(''), '')
+        self.assertIsInstance(clean_urn_ids('urn:lsid:ipni.org:names:30479151-2'), str)
+        self.assertIsInstance(clean_urn_ids(np.NAN), type(np.NAN))
 
 if __name__ == '__main__':
     unittest.main()

@@ -43,10 +43,12 @@ def get_species_from_full_name(full_name_beginning_with_genus: str) -> str:
 
 
 def remove_whitespace_at_beginning_and_end(value):
-
-    v = value.rstrip()
-    out = v.lstrip()
-    return out
+    try:
+        v = value.rstrip()
+        out = v.lstrip()
+        return out
+    except AttributeError:
+        return value
 
 def _capitalize_first_letter_of_taxon(g: str, check_string_is_uppercase=False):
     try:

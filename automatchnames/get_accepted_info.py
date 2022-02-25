@@ -19,7 +19,6 @@ matching_data_path = resource_filename(__name__, 'matching data')
 _template_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
 
 
-
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):
     df_str = df.to_string()
     str_to_hash = str(df_str).encode()
@@ -105,7 +104,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
         match_df.drop_duplicates(subset=[name_col, 'Accepted_Rank'], inplace=True, keep='first')
 
         # Remove duplicate matches with worse specificity
-        rank_priority = ["Subspecies", "Variety", "Species", "Genus"]
+        rank_priority = ["Subspecies", "Variety", "Species", "Genus", "Form"]
         for r in match_df["Accepted_Rank"].unique():
             if r not in rank_priority:
                 print(r)

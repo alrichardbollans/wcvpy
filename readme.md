@@ -65,7 +65,8 @@ dataframe without out any accepted information.
 
 ## Notes on WCVP
 
-* Some records in WCVP are not given accepted information e.g. 'Psychotria guadalupensis subsp. grosourdieana'
+* Some records in WCVP are not given accepted information e.g. 'Psychotria guadalupensis subsp. grosourdieana' or '
+  Urtica angustifolia'
 * Some records have ranks differing from their accepted taxa e.g. the Variety 'Diodia teres var. hirsutior' is a synonym
   of the Species 'Hexasepalum teres'
 

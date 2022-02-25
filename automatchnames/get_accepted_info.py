@@ -69,7 +69,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
                     acc_id = \
                         accepted_name_containment.loc[accepted_name_containment['taxon_name'] == taxa, 'kew_id'].iloc[
                             0]
-                    dict_for_record = id_lookup_wcvp(accepted_name_containment, acc_id)
+                    dict_for_record = id_lookup_wcvp(all_taxa, acc_id)
 
                     for k in dict_for_record:
                         dict_for_matches[k].append(dict_for_record[k])

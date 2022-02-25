@@ -20,6 +20,8 @@ def _get_dict_from_wcvp_record(record: pd.DataFrame, taxa_list: pd.DataFrame) ->
     else:
         accepted_taxon = taxa_list[(taxa_list['taxon_name'] == Accepted_Name) & (taxa_list['kew_id'] == Accepted_ID)]
         if len(accepted_taxon.index) == 0:
+            print('Warning: id given for a synonym whose corresponding accepted taxon is not given in given taxa list')
+            print('Consider using larger set of taxa')
             return {'Accepted_Name': np.nan, 'Accepted_ID': np.nan, 'Accepted_Rank': np.nan,
                     'Accepted_Species': np.nan, 'Accepted_Species_ID': np.nan,
                     'taxonomic_status_of_submitted_name': taxonomic_status}

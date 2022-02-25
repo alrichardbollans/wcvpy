@@ -200,6 +200,8 @@ class MyTestCase(unittest.TestCase):
 
     def test_synonyms(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'synonym_list.csv', 'syn', 'Know_acc_name')
+    def test_known_errors(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'examples_to_fix.csv', 'name', 'acc_name')
 
     def test_hard_genera(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'hard_genera_list.csv', 'genera', 'acc_name',

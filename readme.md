@@ -30,16 +30,20 @@ returned KNMS matches are all of the same rank. In doing this we hope to avoid s
 more generic taxa (though I think this is unlikely anyway).
 
 Once we have tried to resolve submitted names through KNMS in the above, we may still have some names left over. In
-these cases we first try to do some automated resolution. In this step we search through WCVP for accepted taxa where
-the taxon name is contained in the submitted name. This is similar to the previous step but is much slower due as many
-more names must be checked (specifying families of interest really helps here). For each submitted name, we then have a
-list (possibly empty) of accepted taxa where the taxon name is contained in the submitted name. As before, generic names
-may be contained in more specific names and so we must account for this somehow. This is achieved for a given submitted
-name by resolving it to the most precise matched taxa i.e. "Subspecies" > "Variety" > "Species"> "Genus". Moreover, say
-a species has been submitted where the species part of the name has been misspelled e.g. "Neonauclea observifolia"; in
-these cases the genus will be the only match to the same and this resolution would be incorrect. We therefore don't
-match submissions to genera where the submitted name contains a space. Note that this is conservative and will cause
-some good matches to not be matched, in particular hybrid genera or genera given with authors.
+these cases we first try to do some automated resolution. In this step we search through WCVP for taxa where the taxon
+name is contained in the submitted name. This is similar to the previous step but is much slower due as many more names
+must be checked (specifying families of interest really helps here). For each submitted name, we then have a list (
+possibly empty) of taxa where the taxon name is contained in the submitted name. We want to prioritise accepted taxa
+over synonyms etc.. so a given submitted name is resolved to the best taxonomic status i.e. "Accepted" > "
+Synonym" > ...
+
+As before, generic names may be contained in more specific names and so we must account for this somehow. This is
+achieved for a given submitted name by resolving it to the most precise matched taxa i.e. "Subspecies" > "Variety" > "
+Species"> "Genus". Moreover, say a species has been submitted where the species part of the name has been misspelled
+e.g. "Neonauclea observifolia"; in these cases the genus will be the only match to the name and this resolution would be
+incorrect. Furthermore, genera names can be shared across family names. Therefore, when families have not been specified
+don't match submissions to genera where the submitted name contains a space. Note that this is conservative and will
+cause some good matches to not be matched, in particular genera given with authors.
 
 Finally, the resolutions are recompiled and an updated dataframe is returned. Submitted names which haven't been matched
 at any point are output to a csv file for you to check. Note that unmatched submissions are included in the output

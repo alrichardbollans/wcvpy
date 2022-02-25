@@ -202,14 +202,15 @@ class MyTestCase(unittest.TestCase):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'synonym_list.csv', 'syn', 'Know_acc_name')
 
     def test_hard_genera(self):
-        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'hard_genera_list.csv', 'genera', 'acc_name')
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'hard_genera_list.csv', 'genera', 'acc_name',
+                                fams=['Rubiaceae',
+                                      'Apocynaceae'])
 
     def test_simple_species(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'species_list.csv', 'Labelled', 'Labelled')
 
     def test_hard_cases_all_info(self):
-        self.all_info_test('hard_cases.csv','name')
-
+        self.all_info_test('hard_cases.csv', 'name')
 
     def test_capitals(self):
         self.all_info_test('test_capitals_db.csv', 'name')

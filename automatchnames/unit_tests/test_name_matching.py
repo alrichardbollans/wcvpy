@@ -19,6 +19,33 @@ unittest_outputs = resource_filename(__name__, 'test_outputs')
 
 class MyTestCase(unittest.TestCase):
 
+    @staticmethod
+    def method_test_on_csv(method_function, input_csv_name, name_col: str, known_acc_name_col: str, fams=None):
+        test_list = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
+        if fams is not None:
+            s = method_function(test_list, name_col, families_of_interest=fams)
+        else:
+            s = method_function(test_list, name_col)
+        s.to_csv(os.path.join(unittest_outputs, input_csv_name))
+        pd.testing.assert_series_equal(s['Accepted_Name'], test_list[known_acc_name_col], check_names=False)
+        pd.testing.assert_series_equal(s[known_acc_name_col], s['Accepted_Name'], check_names=False)
+
+    @staticmethod
+    def all_info_test(input_csv_name: str, name_col):
+        '''
+        Test all info is correct where input csv has appropriate column names
+        :param input_csv_name:
+        :param name_col:
+        :return:
+        '''
+        test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
+        response = get_accepted_info_from_names_in_column(test_df, name_col)
+        response.to_csv(os.path.join(unittest_outputs, input_csv_name))
+
+        for k in COL_NAMES:
+            if k not in ['single_source', 'sources']:
+                pd.testing.assert_series_equal(test_df[k], response[COL_NAMES[k]], check_names=False)
+
     def test_id_lookup_wcvp(self):
         cap_dict = id_lookup_wcvp(wcvp_taxa, '44583-2')
         self.assertEqual(cap_dict['Accepted_Name'], 'Capirona macrophylla')
@@ -156,112 +183,50 @@ class MyTestCase(unittest.TestCase):
                 multiple_match_records['submitted'] == 'Asclepias curassavica', 'Accepted_Name'].iloc[0],
             'Asclepias curassavica')
 
-    def test_matching_hybrids(self):
-        hyrbid_list = pd.read_csv(os.path.join(unittest_inputs, 'hybrid_list.csv'))
-        x = get_accepted_info_from_names_in_column(hyrbid_list, 'name')
-        x.to_csv(os.path.join(unittest_outputs, 'test_output7.csv'))
-        pd.testing.assert_series_equal(x['Accepted_Name'], x['Know_acc_name'])
+    def test_get_knms_names_and_accepted_info_from_names_in_column(self):
+        self.method_test_on_csv(_get_knms_matches_and_accepted_info_from_names_in_column, 'genera_list.csv',
+                                'Unlabelled', 'Unlabelled')
 
-    def test_get_matched_names_and_accepted_info_from_names_in_column(self):
+        self.method_test_on_csv(_get_knms_matches_and_accepted_info_from_names_in_column, 'species_list.csv',
+                                'Labelled', 'Labelled')
 
-        genera_list = pd.read_csv(os.path.join(unittest_inputs, 'genera_list.csv'))
-        x = _get_knms_matches_and_accepted_info_from_names_in_column(genera_list, 'Unlabelled')
-        x.to_csv(os.path.join(unittest_outputs, 'test_output1.csv'))
-        pd.testing.assert_series_equal(x['Unlabelled'], x['Accepted_Name'], check_names=False)
-        pd.testing.assert_series_equal(genera_list['Unlabelled'],
-                                       x['Accepted_Name'], check_names=False)
+    def test_hybrids(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'hybrid_list.csv', 'name', 'Know_acc_name')
 
-        synonym_list = pd.read_csv(os.path.join(unittest_inputs, 'synonym_list.csv'))
-        x = _get_knms_matches_and_accepted_info_from_names_in_column(synonym_list, 'syn')
-        x.to_csv(os.path.join(unittest_outputs, 'test_output3.csv'))
-        self.assertEqual(len(x['Accepted_Name'].values.tolist()), len(synonym_list['syn'].values.tolist()))
-        pd.testing.assert_series_equal(x['Accepted_Name'], x['Know_acc_name'], check_names=False)
+    def test_simple_genera(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'genera_list.csv', 'Unlabelled', 'Unlabelled',
+                                fams=['Rubiaceae',
+                                      'Apocynaceae'])
 
-        #
-        species_list = pd.read_csv(os.path.join(unittest_inputs, 'species_list.csv'))
-        print(species_list[species_list.duplicated(subset=['Labelled'])])
-        x = _get_knms_matches_and_accepted_info_from_names_in_column(species_list, 'Labelled')
-        x.to_csv(os.path.join(unittest_outputs, 'test_output2.csv'))
-        pd.testing.assert_series_equal(x['Labelled'], x['Accepted_Name'], check_names=False)
-        pd.testing.assert_series_equal(species_list['Labelled'],
-                                       x['Accepted_Name'], check_names=False)
+    def test_synonyms(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'synonym_list.csv', 'syn', 'Know_acc_name')
 
-    def test_get_accepted_name_from_names_in_column(self):
-        genera_list = pd.read_csv(os.path.join(unittest_inputs, 'genera_list.csv'))
-        x = get_accepted_info_from_names_in_column(genera_list, 'Unlabelled', families_of_interest=['Rubiaceae',
-                                                                                                    'Apocynaceae'])
-        x.to_csv(os.path.join(unittest_outputs, 'test_output5.csv'))
-        pd.testing.assert_series_equal(x['Unlabelled'], x['Accepted_Name'], check_names=False)
-        pd.testing.assert_series_equal(genera_list['Unlabelled'],
-                                       x['Accepted_Name'], check_names=False)
+    def test_hard_genera(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'hard_genera_list.csv', 'genera', 'acc_name')
 
-        synonym_list = pd.read_csv(os.path.join(unittest_inputs, 'synonym_list.csv'))
-        s = get_accepted_info_from_names_in_column(synonym_list, 'syn')
-        s.to_csv(os.path.join(unittest_outputs, 'test_output4.csv'))
-        self.assertTrue(len(s['Accepted_Name'].values.tolist()) == len(synonym_list['syn'].values.tolist()))
-        pd.testing.assert_series_equal(s['Accepted_Name'], s['Know_acc_name'], check_names=False)
+    def test_simple_species(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'species_list.csv', 'Labelled', 'Labelled')
 
-        #
-        species_list = pd.read_csv(os.path.join(unittest_inputs, 'species_list.csv'))
-        z = get_accepted_info_from_names_in_column(species_list, 'Labelled')
-        z.to_csv(os.path.join(unittest_outputs, 'test_output6.csv'))
-        pd.testing.assert_series_equal(z['Labelled'], z['Accepted_Name'], check_names=False)
-        pd.testing.assert_series_equal(species_list['Labelled'],
-                                       z['Accepted_Name'], check_names=False)
+    def test_hard_cases_all_info(self):
+        self.all_info_test('hard_cases.csv','name')
 
-        necessary_cols = ['Accepted_Rank', 'Accepted_ID', 'Accepted_Name', 'Accepted_Species', 'Accepted_Species_ID']
-        for c in necessary_cols:
-            self.assertTrue(c in x.columns)
-            self.assertTrue(c in s.columns)
-            self.assertTrue(c in z.columns)
-
-    def test_get_accepted_info_from_names_in_column(self):
-        test_df = pd.read_csv(os.path.join(unittest_inputs, 'test_plant_db.csv'))
-        response = get_accepted_info_from_names_in_column(test_df, 'name')
-
-        for k in COL_NAMES:
-            if k not in ['single_source', 'sources']:
-
-                pd.testing.assert_series_equal(test_df[k], response[COL_NAMES[k]], check_names=False)
 
     def test_capitals(self):
-        test_df = pd.read_csv(os.path.join(unittest_inputs, 'test_capitals_db.csv'))
-        response = get_accepted_info_from_names_in_column(test_df, 'name')
-
-        for k in COL_NAMES:
-            if k not in ['single_source', 'sources']:
-                print(test_df[k])
-                print(response[COL_NAMES[k]])
-                pd.testing.assert_series_equal(test_df[k], response[COL_NAMES[k]], check_names=False)
+        self.all_info_test('test_capitals_db.csv', 'name')
 
     def test_varieties(self):
-        test_df = pd.read_csv(os.path.join(unittest_inputs, 'test_variety_db.csv'))
-        response = get_accepted_info_from_names_in_column(test_df, 'name')
-
-        for k in COL_NAMES:
-            if k not in ['single_source', 'sources']:
-                print(test_df[k])
-                print(response[COL_NAMES[k]])
-                pd.testing.assert_series_equal(test_df[k], response[COL_NAMES[k]], check_names=False)
+        self.all_info_test('test_variety_db.csv', 'name')
 
     def test_our_data(self):
-        test_df = pd.read_csv(os.path.join(unittest_inputs, 'our_data_test.csv'))
-        response = get_accepted_info_from_names_in_column(test_df, 'Name')
+        self.all_info_test('our_data_test.csv', 'Name')
 
-        for k in COL_NAMES:
-            if k not in ['single_source', 'sources']:
-                pd.testing.assert_series_equal(test_df[k], response[COL_NAMES[k]], check_names=False)
+    def test_subspecies(self):
+        self.all_info_test('subspecies.csv', 'name')
 
     def test_unmatched_resolutions(self):
-        unmatched_df = pd.read_csv(os.path.join(unittest_inputs, 'unmatched.csv'))
-        resolved_unmatched = get_accepted_info_from_names_in_column(unmatched_df, 'submitted',
-                                                          families_of_interest=['Rubiaceae',
-                                                                                'Apocynaceae'])
-        resolved_unmatched.to_csv(os.path.join(unittest_outputs, 'test_output8.csv'))
-        pd.testing.assert_series_equal(unmatched_df['acc_name'],
-                                       resolved_unmatched['Accepted_Name'], check_names=False)
-        pd.testing.assert_series_equal(resolved_unmatched['acc_name'],
-                                       resolved_unmatched['Accepted_Name'], check_names=False)
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'unmatched.csv', 'submitted', 'acc_name',
+                                fams=['Rubiaceae',
+                                      'Apocynaceae'])
 
 
 if __name__ == '__main__':

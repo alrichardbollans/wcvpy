@@ -11,14 +11,15 @@ COL_NAMES = {'acc_name': 'Accepted_Name',
              'single_source': 'Source',
              'sources': 'Sources'}
 
+hybrid_character = "×"
 
 def get_genus_from_full_name(full_name_beginning_with_genus: str) -> str:
     try:
         genus_plus = remove_whitespace_at_beginning_and_end(full_name_beginning_with_genus)
         y = genus_plus[:1]
-        if genus_plus[:2] == '× ':
+        if genus_plus[:2] == hybrid_character+' ':
             g = genus_plus[2:].partition(' ')[0]
-            return '× ' + g
+            return hybrid_character+' ' + g
         else:
             return genus_plus.partition(' ')[0]
 
@@ -54,8 +55,8 @@ def _capitalize_first_letter_of_taxon(g: str, check_string_is_uppercase=False):
                 return g
 
         append_to_beginning = ''
-        if g.startswith('× '):
-            append_to_beginning = '× '
+        if g.startswith(hybrid_character+' '):
+            append_to_beginning = hybrid_character+' '
             g = g[2:]
         l = g.lower()
 

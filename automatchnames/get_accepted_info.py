@@ -10,13 +10,14 @@ from tqdm import tqdm
 
 from automatchnames import get_wcvp_info_for_names_in_column, \
     get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, remove_whitespace_at_beginning_and_end, \
-    temp_outputs_dir, get_reconciliations, tidy_names_in_column
+    temp_outputs_dir, get_reconciliations, tidy_names_in_column, hybrid_character
 from automatchnames.resolving_names import _get_resolutions_with_single_rank
 
 from taxa_lists import get_all_taxa
 
 matching_data_path = resource_filename(__name__, 'matching data')
 _template_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
+
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):
@@ -43,6 +44,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
     :return:
     """
     # TODO: optimize
+    # TODO:
     if len(unmatched_submissions_df.index) > 0:
         _temp_output(unmatched_submissions_df, 'unmatched_to_autoresolve',
                      "Resolving submitted names which weren't initially matched using KNMS.")
@@ -82,8 +84,8 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
         if len(match_df.index) > 0:
             unique_matches = match_df[name_col].unique().tolist()
             match_df = match_df[
-                ~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" ")) | match_df[
-                    name_col].isin(unique_matches)]
+                (~((match_df['Accepted_Rank'] == 'Genus') & match_df[name_col].str.contains(" "))) | match_df[
+                    name_col].str.contains(hybrid_character)]
 
         # Remove duplicate matches with worse priority
         status_priority = ["Accepted", "Synonym", "Homotypic_Synonym"]

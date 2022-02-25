@@ -11,6 +11,7 @@ from pkg_resources import resource_filename
 
 inputs_path = resource_filename(__name__, 'inputs')
 temp_outputs_dir = 'name matching temp outputs'
+knms_outputs_dir = os.path.join(temp_outputs_dir, 'knms matches')
 
 
 def get_knms_name_matches(names: List[str]):
@@ -34,7 +35,12 @@ def get_knms_name_matches(names: List[str]):
     except FileExistsError as error:
         pass
 
-    temp_output_knms_csv = os.path.join(temp_outputs_dir, temp_csv)
+    try:
+        os.mkdir(knms_outputs_dir)
+    except FileExistsError as error:
+        pass
+
+    temp_output_knms_csv = os.path.join(knms_outputs_dir, temp_csv)
     if os.path.isfile(temp_output_knms_csv):
         # Pandas will read TRUE/true as bools and therefore as True rather than true
         records = pd.read_csv(temp_output_knms_csv, dtype={'match_state': str}, index_col=0)
@@ -61,3 +67,8 @@ def get_knms_name_matches(names: List[str]):
         records.to_csv(temp_output_knms_csv)
 
     return records
+
+
+def clear_stored_knms_matches():
+    for f in os.listdir(knms_outputs_dir):
+        os.remove(os.path.join(knms_outputs_dir, f))

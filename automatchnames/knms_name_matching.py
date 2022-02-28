@@ -49,22 +49,31 @@ def get_knms_name_matches(names: List[str]):
         res = requests.post(knms_url, json=unique_name_list)
         headings = ['submitted', 'match_state', 'ipni_id', 'matched_name']
 
-        content = json.loads(res.content.decode('utf-8'))
-        try:
-            if all(len(content["records"][x]) == 2 for x in range(len(content["records"]))):
-                shortened_headings = ['submitted', 'match_state']
-                records = pd.DataFrame(content["records"], columns=shortened_headings)
-                records['ipni_id'] = np.nan
-                records['matched_name'] = np.nan
-            else:
-                records = pd.DataFrame(content["records"], columns=headings)
-        except ValueError:
-            raise requests.ConnectionError('records not retrievd due to server error')
-        records.replace('', np.nan, inplace=True)
-        records['submitted'].ffill(inplace=True)
-        records['match_state'].ffill(inplace=True)
+        if res.status_code == 500:
+            print('Internal Server error from KNMS.')
+            print('Possibly from non-latin scripts in names')
+            print(unique_name_list)
+            records = pd.DataFrame()
+        elif res.status_code == 429:
+            raise ConnectionRefusedError('KNMS Rate limiting')
 
-        records.to_csv(temp_output_knms_csv)
+        else:
+            content = json.loads(res.content.decode('utf-8'))
+            try:
+                if all(len(content["records"][x]) == 2 for x in range(len(content["records"]))):
+                    shortened_headings = ['submitted', 'match_state']
+                    records = pd.DataFrame(content["records"], columns=shortened_headings)
+                    records['ipni_id'] = np.nan
+                    records['matched_name'] = np.nan
+                else:
+                    records = pd.DataFrame(content["records"], columns=headings)
+            except ValueError:
+                raise requests.ConnectionError('records not retrievd due to server error')
+            records.replace('', np.nan, inplace=True)
+            records['submitted'].ffill(inplace=True)
+            records['match_state'].ffill(inplace=True)
+
+            records.to_csv(temp_output_knms_csv)
 
     return records
 

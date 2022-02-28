@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import unicodedata as ud
 
 import numpy as np
 import pandas as pd
@@ -13,6 +14,23 @@ inputs_path = resource_filename(__name__, 'inputs')
 temp_outputs_dir = 'name matching temp outputs'
 knms_outputs_dir = os.path.join(temp_outputs_dir, 'knms matches')
 
+latin_letters = {}
+
+
+def is_latin(uchr):
+    # https://stackoverflow.com/a/3308844/8633026
+    try:
+        return latin_letters[uchr]
+    except KeyError:
+        return latin_letters.setdefault(uchr, 'LATIN' in ud.name(uchr))
+
+
+def only_roman_chars(unistr):
+    # https://stackoverflow.com/a/3308844/8633026
+    return all(is_latin(uchr)
+               for uchr in unistr
+               if uchr.isalpha())
+
 
 def get_knms_name_matches(names: List[str]):
     """
@@ -24,7 +42,7 @@ def get_knms_name_matches(names: List[str]):
     names = list(names)
     unique_name_list = []
     for x in names:
-        if x not in unique_name_list:
+        if x not in unique_name_list and only_roman_chars(x):
             unique_name_list.append(x)
 
     str_to_hash = str(unique_name_list).encode()
@@ -49,22 +67,31 @@ def get_knms_name_matches(names: List[str]):
         res = requests.post(knms_url, json=unique_name_list)
         headings = ['submitted', 'match_state', 'ipni_id', 'matched_name']
 
-        content = json.loads(res.content.decode('utf-8'))
-        try:
-            if all(len(content["records"][x]) == 2 for x in range(len(content["records"]))):
-                shortened_headings = ['submitted', 'match_state']
-                records = pd.DataFrame(content["records"], columns=shortened_headings)
-                records['ipni_id'] = np.nan
-                records['matched_name'] = np.nan
-            else:
-                records = pd.DataFrame(content["records"], columns=headings)
-        except ValueError:
-            raise requests.ConnectionError('records not retrievd due to server error')
-        records.replace('', np.nan, inplace=True)
-        records['submitted'].ffill(inplace=True)
-        records['match_state'].ffill(inplace=True)
+        if res.status_code == 500:
+            print('Possibly from non-latin scripts in names')
+            print(unique_name_list)
+            records = pd.DataFrame()
+            raise ValueError('Internal Server error from KNMS.')
+        elif res.status_code == 429:
+            raise ConnectionRefusedError('KNMS Rate limiting')
 
-        records.to_csv(temp_output_knms_csv)
+        else:
+            content = json.loads(res.content.decode('utf-8'))
+            try:
+                if all(len(content["records"][x]) == 2 for x in range(len(content["records"]))):
+                    shortened_headings = ['submitted', 'match_state']
+                    records = pd.DataFrame(content["records"], columns=shortened_headings)
+                    records['ipni_id'] = np.nan
+                    records['matched_name'] = np.nan
+                else:
+                    records = pd.DataFrame(content["records"], columns=headings)
+            except ValueError:
+                raise requests.ConnectionError('records not retrievd due to server error')
+            records.replace('', np.nan, inplace=True)
+            records['submitted'].ffill(inplace=True)
+            records['match_state'].ffill(inplace=True)
+
+            records.to_csv(temp_output_knms_csv)
 
     return records
 

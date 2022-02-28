@@ -18,6 +18,7 @@ latin_letters = {}
 
 
 def is_latin(uchr):
+    # https://stackoverflow.com/a/3308844/8633026
     try:
         return latin_letters[uchr]
     except KeyError:
@@ -25,6 +26,7 @@ def is_latin(uchr):
 
 
 def only_roman_chars(unistr):
+    # https://stackoverflow.com/a/3308844/8633026
     return all(is_latin(uchr)
                for uchr in unistr
                if uchr.isalpha())
@@ -66,10 +68,10 @@ def get_knms_name_matches(names: List[str]):
         headings = ['submitted', 'match_state', 'ipni_id', 'matched_name']
 
         if res.status_code == 500:
-            print('Internal Server error from KNMS.')
             print('Possibly from non-latin scripts in names')
             print(unique_name_list)
             records = pd.DataFrame()
+            raise ValueError('Internal Server error from KNMS.')
         elif res.status_code == 429:
             raise ConnectionRefusedError('KNMS Rate limiting')
 

@@ -1,6 +1,7 @@
 import hashlib
 import json
 import os
+import unicodedata as ud
 
 import numpy as np
 import pandas as pd
@@ -13,6 +14,21 @@ inputs_path = resource_filename(__name__, 'inputs')
 temp_outputs_dir = 'name matching temp outputs'
 knms_outputs_dir = os.path.join(temp_outputs_dir, 'knms matches')
 
+latin_letters = {}
+
+
+def is_latin(uchr):
+    try:
+        return latin_letters[uchr]
+    except KeyError:
+        return latin_letters.setdefault(uchr, 'LATIN' in ud.name(uchr))
+
+
+def only_roman_chars(unistr):
+    return all(is_latin(uchr)
+               for uchr in unistr
+               if uchr.isalpha())
+
 
 def get_knms_name_matches(names: List[str]):
     """
@@ -24,7 +40,7 @@ def get_knms_name_matches(names: List[str]):
     names = list(names)
     unique_name_list = []
     for x in names:
-        if x not in unique_name_list:
+        if x not in unique_name_list and only_roman_chars(x):
             unique_name_list.append(x)
 
     str_to_hash = str(unique_name_list).encode()

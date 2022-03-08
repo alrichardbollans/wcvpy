@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 import requests
 from pkg_resources import resource_filename
+from typing import List
 
 _inputs_path = resource_filename(__name__, 'inputs')
 _outputs_path = resource_filename(__name__, 'outputs')
@@ -33,8 +34,8 @@ def fix_columns(taxa_df: pd.DataFrame) -> pd.DataFrame:
     return out_copy
 
 
-def get_all_taxa(families_of_interest=None,
-                 accepted=False, version=None, output_csv=None) -> pd.DataFrame:
+def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None,
+                 accepted: bool = False, version: str = None, output_csv: str = None) -> pd.DataFrame:
     if output_csv is not None:
         if not os.path.isdir(os.path.dirname(output_csv)):
             os.mkdir(os.path.dirname(output_csv))
@@ -60,6 +61,10 @@ def get_all_taxa(families_of_interest=None,
         wcvp_data = wcvp_data[wcvp_data['taxonomic_status'] == 'Accepted']
 
     wcvp_data['rank'] = wcvp_data['rank'].apply(capitalize_first_letter_of_rank)
+
+    if ranks is not None:
+        wcvp_data = wcvp_data[wcvp_data['rank'].isin(ranks)]
+
     # Remove unplaced taxa
     wcvp_data = wcvp_data[wcvp_data['taxonomic_status'] != 'Unplaced']
 
@@ -75,6 +80,8 @@ def main():
     # get_accepted_taxa(output_csv=os.path.join(outputs_path, 'wcvp_accepted_taxa.csv'))
     get_all_taxa(families_of_interest=['Apocynaceae', 'Rubiaceae'], accepted=True,
                  output_csv=os.path.join(_outputs_path, 'wcvp_accepted_taxa_apocynaceae_rubiaceae.csv'))
+    get_all_taxa(families_of_interest=['Apocynaceae', 'Rubiaceae'], accepted=True, ranks=['Species'],
+                 output_csv=os.path.join(_outputs_path, 'wcvp_accepted_species_apocynaceae_rubiaceae.csv'))
 
 
 if __name__ == '__main__':

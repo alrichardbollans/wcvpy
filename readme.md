@@ -1,5 +1,10 @@
 # Standardising Names In Datasets
 
+## Installation
+
+Run:
+`pip install git+https://github.com/alrichardbollans/automatchnames.git#egg=automatchnames`
+
 ## Steps
 
 Run `get_accepted_info_from_names_in_column` with Pandas dataframe containing names to standardise in `name_col`. The

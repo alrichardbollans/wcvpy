@@ -94,7 +94,7 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, name_col: str, all_taxa:
 
     match_df = pd.DataFrame(dict_for_matches)
     # Some items in WCVP have no accepted info, remove these
-    match_df.dropna(subset='Accepted_Name',inplace=True)
+    match_df.dropna(subset=['Accepted_Name'],inplace=True)
     # Remove duplicates in match_df based on priority
     status_priority = ["Accepted", "Synonym", "Homotypic_Synonym"]
     for r in match_df["taxonomic_status_of_submitted_name"].unique():

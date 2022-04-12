@@ -94,6 +94,15 @@ dataframe without out any accepted information.
 * Provide more info in output e.g. genus/parent
 * Compare to reconciliation service/include as initial step
 
+### Known Issues
+
+The following (hard cases) fail in `test_name_matching.py` in `unit_tests`:
+* From `test_capitals_db.csv` the following resolve to 'Rothmannia':
+  * 'ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV'
+  * 'ROTHMANIA ENGLERIANA (K. Schum) Keav'
+  * 'ROTHMANNIA ENGLERIANA (K. SCHUM.) KEAV'
+* From `hybrid_list.csv` 'Sarcorhiza' resolves to NaN
+
 ## Sources
 
 WCVP (2022). World Checklist of Vascular Plants, version 2.0. Facilitated by the Royal Botanic Gardens, Kew. Published

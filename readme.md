@@ -1,5 +1,10 @@
 # Standardising Names In Datasets
 
+## Installation
+
+Run:
+`pip install git+https://github.com/alrichardbollans/automatchnames.git#egg=automatchnames`
+
 ## Steps
 
 Run `get_accepted_info_from_names_in_column` with Pandas dataframe containing names to standardise in `name_col`. The
@@ -88,6 +93,15 @@ dataframe without out any accepted information.
 * Resolution of capitalised names
 * Provide more info in output e.g. genus/parent
 * Compare to reconciliation service/include as initial step
+
+### Known Issues
+
+The following (hard cases) fail in `test_name_matching.py` in `unit_tests`:
+* From `test_capitals_db.csv` the following resolve to 'Rothmannia':
+  * 'ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV'
+  * 'ROTHMANIA ENGLERIANA (K. Schum) Keav'
+  * 'ROTHMANNIA ENGLERIANA (K. SCHUM.) KEAV'
+* From `hybrid_list.csv` 'Sarcorhiza' resolves to NaN
 
 ## Sources
 

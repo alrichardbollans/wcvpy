@@ -3,6 +3,9 @@ import os
 
 import numpy as np
 import pandas as pd
+# Add progress bar to apply method
+from tqdm import tqdm
+tqdm.pandas()
 from typing import List
 
 from pkg_resources import resource_filename
@@ -55,7 +58,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
 
         # Get more precise list of taxa which possibly matches submissions
         accepted_name_containment = all_taxa[
-            all_taxa.apply(lambda x: any(x['taxon_name'] in y for y in unmatched_submissions_df[name_col].values),
+            all_taxa.progress_apply(lambda x: any(x['taxon_name'] in y for y in unmatched_submissions_df[name_col].values),
                            axis=1)]
 
         # Create a dataframe of submissions with possible matches

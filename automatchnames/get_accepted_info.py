@@ -136,7 +136,7 @@ def _get_knms_matches_and_accepted_info_from_names_in_column(df: pd.DataFrame, n
     :param name_col:
     :return:
     """
-    if len(df.index > 0):
+    if len(df.index) > 0:
         match_records = get_knms_name_matches(df[name_col].values)
 
         single_matches = match_records[match_records['match_state'] == 'true'].copy()

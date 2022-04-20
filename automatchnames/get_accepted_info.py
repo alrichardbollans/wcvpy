@@ -253,7 +253,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     :return:
     """
 
-    if len(in_df.index > 0):
+    if len(in_df.index) > 0:
         # TODO: ALso add family
         df = in_df.copy(deep=True)
 

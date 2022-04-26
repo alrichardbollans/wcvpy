@@ -77,7 +77,8 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
 
 def main():
-    # get_accepted_taxa(output_csv=os.path.join(outputs_path, 'wcvp_accepted_taxa.csv'))
+    get_all_taxa(families_of_interest=['Apocynaceae', 'Rubiaceae'], accepted=False,
+                 output_csv=os.path.join(_outputs_path, 'wcvp_taxa_apocynaceae_rubiaceae.csv'))
     get_all_taxa(families_of_interest=['Apocynaceae', 'Rubiaceae'], accepted=True,
                  output_csv=os.path.join(_outputs_path, 'wcvp_accepted_taxa_apocynaceae_rubiaceae.csv'))
     get_all_taxa(families_of_interest=['Apocynaceae', 'Rubiaceae'], accepted=True, ranks=['Species'],

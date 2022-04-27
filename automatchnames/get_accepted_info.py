@@ -326,7 +326,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
 
         in_df['tidied_name'] = in_df[name_col].copy(deep=True)
         tidy_names_in_column(in_df, 'tidied_name')
-        for k in COL_NAMES:
+        for i in tqdm(range(len(COL_NAMES)), desc="Recompiling dataframe…", ascii=False, ncols=72):
+            k = list(COL_NAMES.keys())[i]
             if k not in ['single_source', 'sources']:
                 in_df[COL_NAMES[k]] = in_df['tidied_name'].apply(get_acc_info_from_matches, col=COL_NAMES[k])
 

@@ -36,7 +36,7 @@ more generic taxa (though I think this is unlikely anyway).
 
 Once we have tried to resolve submitted names through KNMS in the above, we may still have some names left over. In
 these cases we first try to do some automated resolution. In this step we search through WCVP for taxa where the taxon
-name is contained in the submitted name. This is similar to the previous step but is much slower due as many more names
+name is contained in the submitted name. This is similar to the previous step but is much slower as many more names
 must be checked (specifying families of interest really helps here). For each submitted name, we then have a list (
 possibly empty) of taxa where the taxon name is contained in the submitted name. We want to prioritise accepted taxa
 over synonyms etc.. so a given submitted name is resolved to the best taxonomic status i.e. "Accepted" > "
@@ -53,6 +53,8 @@ cause some good matches to not be matched, in particular genera given with autho
 Finally, the resolutions are recompiled and an updated dataframe is returned. Submitted names which haven't been matched
 at any point are output to a csv file for you to check. Note that unmatched submissions are included in the output
 dataframe without out any accepted information.
+
+![pipe](pipe.svg)
 
 ## Notes on KNMS
 

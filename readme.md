@@ -54,6 +54,8 @@ Finally, the resolutions are recompiled and an updated dataframe is returned. Su
 at any point are output to a csv file for you to check. Note that unmatched submissions are included in the output
 dataframe without out any accepted information.
 
+A rough diagram is given below.
+
 ![pipe](pipe.svg)
 
 ## Notes on KNMS

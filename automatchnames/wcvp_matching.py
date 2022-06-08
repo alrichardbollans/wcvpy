@@ -20,7 +20,8 @@ def _get_dict_from_wcvp_record(record: pd.DataFrame, taxa_list: pd.DataFrame) ->
     else:
         accepted_taxon = taxa_list[(taxa_list['taxon_name'] == Accepted_Name) & (taxa_list['kew_id'] == Accepted_ID)]
         if len(accepted_taxon.index) == 0:
-            print('Warning: id given for a synonym whose corresponding accepted taxon is not given in given taxa list')
+            print(
+                f'Warning: id {Accepted_ID} given for a synonym whose corresponding accepted taxon is not given in given taxa list')
             print('Consider using larger set of taxa')
             return {'Accepted_Name': np.nan, 'Accepted_ID': np.nan, 'Accepted_Rank': np.nan,
                     'Accepted_Species': np.nan, 'Accepted_Species_ID': np.nan,
@@ -94,7 +95,7 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, name_col: str, all_taxa:
 
     match_df = pd.DataFrame(dict_for_matches)
     # Some items in WCVP have no accepted info, remove these
-    match_df.dropna(subset=['Accepted_Name'],inplace=True)
+    match_df.dropna(subset=['Accepted_Name'], inplace=True)
     # Remove duplicates in match_df based on priority
     status_priority = ["Accepted", "Synonym", "Homotypic_Synonym"]
     for r in match_df["taxonomic_status_of_submitted_name"].unique():

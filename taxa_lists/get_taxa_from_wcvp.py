@@ -41,7 +41,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
             os.mkdir(os.path.dirname(output_csv))
 
     if version is None:
-        version = 'wcvp_v7_dec_2021'
+        version = 'wcvp_v9_jun_2022'
 
     input_file = os.path.join(_inputs_path, version + '.txt')
 

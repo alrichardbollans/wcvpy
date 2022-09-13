@@ -74,8 +74,9 @@ A rough diagram is given below.
 
 ## Notes on WCVP
 
-* Currently using v7 of WCVP
-* Some records in WCVP are not given accepted information e.g. 'Psychotria guadalupensis subsp. grosourdieana' or '
+* Currently using v9 of WCVP
+* Some records in WCVP are not given accepted information e.g. 'Psychotria guadalupensis subsp. grosourdieana', '
+  Asperula nitida' or '
   Urtica angustifolia'
 * Some records have ranks differing from their accepted taxa e.g. the Variety 'Diodia teres var. hirsutior' is a synonym
   of the Species 'Hexasepalum teres'
@@ -102,6 +103,7 @@ A rough diagram is given below.
 ### Known Issues
 
 The following (hard cases) fail in `test_name_matching.py` in `unit_tests`:
+
 * From `test_capitals_db.csv` the following resolve to 'Rothmannia':
     * 'ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV'
     * 'ROTHMANIA ENGLERIANA (K. Schum) Keav'

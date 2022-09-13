@@ -411,7 +411,6 @@
 20,Arachnothryx secunda (Standl.) Borhidi,Arachnothryx secunda,Arachnothryx secunda,17383-2,17383-2,Species
 21,Arcytophyllum lavarum K. Schum. ex Standl.,Arcytophyllum lavarum,Arcytophyllum lavarum,743605-1,743605-1,Species
 22,Argostemma yappii King,Argostemma yappii,Argostemma yappii,743844-1,743844-1,Species
-23,Asperula nitida subsp. subcapitellata Ehrend.,Asperula nitida subsp. subcapitellata,Asperula nitida,744095-1,890146-1,Subspecies
 24,Bathysa australis (A. St.-Hil.) K. Schum.,Bathysa australis,Bathysa australis,744363-1,744363-1,Species
 25,Bertiera guianensis Aubl.,Bertiera guianensis,Bertiera guianensis,744444-1,744444-1,Species
 26,Bertiera bracteosa (Donn. Sm.) B. Ståhl & L. Andersson,Bertiera bracteosa,Bertiera bracteosa,1014064-1,1014064-1,Species
@@ -436,7 +435,7 @@
 45,Cephalanthus natalensis Oliv.,Cephalanthus natalensis,Cephalanthus natalensis,746216-1,746216-1,Species
 46,Cephalanthus salicifolius Humb. & Bonpl.,Cephalanthus salicifolius,Cephalanthus salicifolius,746233-1,746233-1,Species
 47,Cephalanthus occidentalis L.,Cephalanthus occidentalis,Cephalanthus occidentalis,319140-2,319140-2,Species
-48,Cephalanthus tetrandra (Roxb.) Ridsdale & Bakh. f.,Cephalanthus tetrandra,Cephalanthus tetrandra,746238-1,746238-1,Species
+48,Cephalanthus tetrandra (Roxb.) Ridsdale & Bakh. f.,Cephalanthus tetrandrus,Cephalanthus tetrandrus,746238-1,746238-1,Species
 49,Chassalia blumeana Govaerts,Chassalia blumeana,Chassalia blumeana,77089810-1,77089810-1,Species
 50,Chassalia curviflora (Wall.) Thwaites,Chassalia curviflora,Chassalia curviflora,746289-1,746289-1,Species
 51,Chassalia kolly (Schumach.) Hepper,Chassalia kolly,Chassalia kolly,746368-1,746368-1,Species
@@ -596,7 +595,7 @@
 205,Mitragyna tubulosa (Arn.) Kuntze,Mitragyna tubulosa,Mitragyna tubulosa,756305-1,756305-1,Species
 206,Mitragyna rubrostipulata (K. Schum.) Havil.,Mitragyna rubrostipulata,Mitragyna rubrostipulata,756302-1,756302-1,Species
 207,Mitragyna hirsuta Havil.,Mitragyna hirsuta,Mitragyna hirsuta,756294-1,756294-1,Species
-208,Mitragyna ledermannii (K. Krause) Ridsdale,Mitragyna ledermannii,Mitragyna ledermannii,756298-1,756298-1,Species
+208,Mitragyna ledermannii (K. Krause) Ridsdale,Mitragyna stipulosa,Mitragyna stipulosa,756304-1,756304-1,Species
 209,Morinda chrysorhiza (Thonn.) DC.,Morinda chrysorhiza,Morinda chrysorhiza,756356-1,756356-1,Species
 210,Morinda lucida Benth.,Morinda lucida,Morinda lucida,756419-1,756419-1,Species
 211,Morinda morindoides (Baker) Milne-Redh.,Morinda morindoides,Morinda morindoides,756428-1,756428-1,Species
@@ -648,7 +647,7 @@
 257,Oldenlandia lancifolia (Schumach.) DC.,Oldenlandia lancifolia,Oldenlandia lancifolia,757942-1,757942-1,Species
 258,Oldenlandia affinis (Roem. & Schult.) DC.,Oldenlandia affinis,Oldenlandia affinis,757678-1,757678-1,Species
 259,Ophiorrhiza bracteata Korth.,Ophiorrhiza bracteata,Ophiorrhiza bracteata,758383-1,758383-1,Species
-260,Ophiorrhiza communis Ridl.,Ophiorrhiza communis,Ophiorrhiza communis,758401-1,758401-1,Species
+260,Ophiorrhiza communis Ridl.,Ophiorrhiza discolor,Ophiorrhiza discolor,758420-1,758420-1,Species
 261,Ophiorrhiza discolor R. Br. ex G. Don.,Ophiorrhiza discolor,Ophiorrhiza discolor,758420-1,758420-1,Species
 262,Ophiorrhiza filistipula Miq.,Ophiorrhiza filistipula,Ophiorrhiza filistipula,758438-1,758438-1,Species
 263,Ophiorrhiza japonica Blume,Ophiorrhiza japonica,Ophiorrhiza japonica,758479-1,758479-1,Species
@@ -656,7 +655,7 @@
 265,Ophiorrhiza kuroiwae Makino,Ophiorrhiza kuroiwae,Ophiorrhiza kuroiwae,50884217-1,50884217-1,Species
 266,Ophiorrhiza marginata Blume,Ophiorrhiza marginata,Ophiorrhiza marginata,758518-1,758518-1,Species
 267,Ophiorrhiza pumila Champ. ex Benth.,Ophiorrhiza pumila,Ophiorrhiza pumila,758576-1,758576-1,Species
-268,Ophiorrhiza remotiflora Ridl.,Ophiorrhiza remotiflora,Ophiorrhiza remotiflora,758581-1,758581-1,Species
+268,Ophiorrhiza remotiflora Ridl.,Ophiorrhiza rosea,Ophiorrhiza rosea,758591-1,758591-1,Species
 269,Ophiorrhiza rosacea Ridl.,Ophiorrhiza rosacea,Ophiorrhiza rosacea,758590-1,758590-1,Species
 270,Ophiorrhiza teysmannii Miq.,Ophiorrhiza teysmannii,Ophiorrhiza teysmannii,758642-1,758642-1,Species
 271,Ophiorrhiza tomentosa Jack ex Roxb.,Ophiorrhiza tomentosa,Ophiorrhiza tomentosa,758646-1,758646-1,Species
@@ -796,7 +795,7 @@
 405,Simira williamsii (Standl.) Steyerm.,Simira williamsii,Simira williamsii,236598-2,236598-2,Species
 406,Simira maxonii (Standl.) Steyerm.,Simira maxonii,Simira maxonii,236581-2,236581-2,Species
 407,Simira panamensis (Dwyer) C. M. Taylor,Simira panamensis,Simira panamensis,77116177-1,77116177-1,Species
-408,Sinoadina racemosa (Siebold & Zucc.) Ridsdale,Sinoadina racemosa,Sinoadina racemosa,766466-1,766466-1,Species
+408,Sinoadina racemosa (Siebold & Zucc.) Ridsdale,Adina racemosa,Adina racemosa,742931-1,742931-1,Species
 409,Solenandra mexicana (A. Gray) Borhidi,Solenandra mexicana,Solenandra mexicana,20010093-1,20010093-1,Species
 410,Solenandra sanctae-luciae (Kentish) Paudyal & Delprete,Solenandra sanctae-luciae,Solenandra sanctae-luciae,77187956-1,77187956-1,Species
 411,Sommera donnell-smithii Standl.,Sommera donnell-smithii,Sommera donnell-smithii,240642-2,240642-2,Species
@@ -828,7 +827,7 @@
 437,Uncaria guianensis (Aubl.) J. F. Gmel.,Uncaria guianensis,Uncaria guianensis,768250-1,768250-1,Species
 438,Uncaria hirsuta Havil.,Uncaria hirsuta,Uncaria hirsuta,768253-1,768253-1,Species
 439,Uncaria lanosa var. glabrata (Blume) Ridsdale,Uncaria lanosa var. glabrata,Uncaria lanosa,768270-1,890709-1,Variety
-440,Uncaria longiflora var. longiflora,Uncaria longiflora var. longiflora,Uncaria longiflora,768273-1,77171967-1,Variety
+440,Uncaria longiflora var. longiflora,Uncaria longiflora,Uncaria longiflora,768273-1,768273-1,Species
 441,Uncaria macrophylla Wall.,Uncaria macrophylla,Uncaria macrophylla,768275-1,768275-1,Species
 442,Uncaria sinensis (Oliv.) Havil.,Uncaria sinensis,Uncaria sinensis,768314-1,768314-1,Species
 443,Uncaria tomentosa (Willd. ex Schult.) DC.,Uncaria tomentosa,Uncaria tomentosa,768322-1,768322-1,Species

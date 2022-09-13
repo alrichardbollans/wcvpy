@@ -18,6 +18,21 @@ unittest_outputs = resource_filename(__name__, 'test_outputs')
 
 
 class MyTestCase(unittest.TestCase):
+    @staticmethod
+    def compare_series(s1: pd.Series, s2: pd.Series, **kwargs):
+        try:
+            pd.testing.assert_series_equal(s1, s2, **kwargs)
+        except AssertionError as e:
+            print(e)
+            print('Problem taxa:')
+            for taxa in s1.values:
+                if taxa not in s2.values:
+                    print(taxa)
+            for taxa in s2.values:
+                if taxa not in s1.values:
+                    print(taxa)
+            raise AssertionError
+
 
     @staticmethod
     def method_test_on_csv(method_function, input_csv_name, name_col: str, known_acc_name_col: str, fams=None):
@@ -27,8 +42,8 @@ class MyTestCase(unittest.TestCase):
         else:
             s = method_function(test_list, name_col)
         s.to_csv(os.path.join(unittest_outputs, input_csv_name))
-        pd.testing.assert_series_equal(s['Accepted_Name'], test_list[known_acc_name_col], check_names=False)
-        pd.testing.assert_series_equal(s[known_acc_name_col], s['Accepted_Name'], check_names=False)
+        MyTestCase.compare_series(s['Accepted_Name'], test_list[known_acc_name_col], check_names=False)
+        MyTestCase.compare_series(s[known_acc_name_col], s['Accepted_Name'], check_names=False)
 
     @staticmethod
     def all_info_test(input_csv_name: str, name_col):
@@ -43,8 +58,8 @@ class MyTestCase(unittest.TestCase):
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
 
         for k in COL_NAMES:
-            if k not in ['single_source', 'sources']:
-                pd.testing.assert_series_equal(test_df[k], response[COL_NAMES[k]], check_names=False)
+
+            MyTestCase.compare_series(test_df[k], response[COL_NAMES[k]], check_names=False)
 
     def test_id_lookup_wcvp(self):
         cap_dict = id_lookup_wcvp(wcvp_taxa, '44583-2')
@@ -200,8 +215,13 @@ class MyTestCase(unittest.TestCase):
 
     def test_synonyms(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'synonym_list.csv', 'syn', 'Know_acc_name')
+
     def test_known_errors(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'examples_to_fix.csv', 'name', 'acc_name')
+
+    def test_known_unresolved(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'unaccepted_examples.csv', 'name', 'acc_name')
+
 
     def test_hard_genera(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'hard_genera_list.csv', 'genera', 'acc_name',
@@ -210,6 +230,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_simple_species(self):
         self.method_test_on_csv(get_accepted_info_from_names_in_column, 'species_list.csv', 'Labelled', 'Labelled')
+
+    def test_misspellings(self):
+        self.method_test_on_csv(get_accepted_info_from_names_in_column, 'misspellings.csv', 'name', 'acc_name')
+
 
     def test_hard_cases_all_info(self):
         self.all_info_test('hard_cases.csv', 'name')

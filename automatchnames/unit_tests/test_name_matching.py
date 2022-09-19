@@ -1,6 +1,6 @@
 import os
 import unittest
-
+import time
 import numpy as np
 import pandas as pd
 from pkg_resources import resource_filename
@@ -10,7 +10,7 @@ from automatchnames import id_lookup_wcvp, get_accepted_info_from_ids_in_column,
 
 from automatchnames.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
     _find_best_matches_from_multiples, _autoresolve_missing_matches
-from taxa_lists.get_taxa_from_wcvp import get_all_taxa
+from taxa_lists import get_all_taxa
 
 wcvp_taxa = get_all_taxa()
 unittest_inputs = resource_filename(__name__, 'test_inputs')
@@ -36,6 +36,7 @@ class MyTestCase(unittest.TestCase):
 
     @staticmethod
     def method_test_on_csv(method_function, input_csv_name, name_col: str, known_acc_name_col: str, fams=None):
+        start = time.time()
         test_list = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
         if fams is not None:
             s = method_function(test_list, name_col, families_of_interest=fams)
@@ -44,6 +45,8 @@ class MyTestCase(unittest.TestCase):
         s.to_csv(os.path.join(unittest_outputs, input_csv_name))
         MyTestCase.compare_series(s['Accepted_Name'], test_list[known_acc_name_col], check_names=False)
         MyTestCase.compare_series(s[known_acc_name_col], s['Accepted_Name'], check_names=False)
+        end = time.time()
+        print(f'Time elapsed for method test: {end - start}s')
 
     @staticmethod
     def all_info_test(input_csv_name: str, name_col):
@@ -53,6 +56,8 @@ class MyTestCase(unittest.TestCase):
         :param name_col:
         :return:
         '''
+        start = time.time()
+
         test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
         response = get_accepted_info_from_names_in_column(test_df, name_col)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
@@ -61,6 +66,8 @@ class MyTestCase(unittest.TestCase):
 
             MyTestCase.compare_series(test_df[k], response[COL_NAMES[k]], check_names=False)
 
+        end = time.time()
+        print(f'Time elapsed for all info test: {end - start}s')
     def test_id_lookup_wcvp(self):
         cap_dict = id_lookup_wcvp(wcvp_taxa, '44583-2')
         self.assertEqual(cap_dict['Accepted_Name'], 'Capirona macrophylla')
@@ -144,14 +151,17 @@ class MyTestCase(unittest.TestCase):
         standardised = pd.read_csv(os.path.join(unittest_inputs, 'powo_medicinal_cleaned.csv'), index_col=False)
 
         unstandardised.rename(columns={'Unnamed: 0': 'X'}, inplace=True)
-
+        start = time.time()
         x = get_accepted_info_from_ids_in_column(unstandardised, 'fqId')
-
+        end = time.time()
+        print(f'Time elapsed for test: {end - start}s')
         print(standardised.columns)
         print(x.columns)
         pd.testing.assert_frame_equal(standardised, x)
-
+        start = time.time()
         garbage = get_accepted_info_from_ids_in_column(unstandardised, 'powo_Snippet')
+        end = time.time()
+        print(f'Time elapsed for test: {end - start}s')
         unstandardised['Accepted_Name'] = np.nan
         unstandardised['Accepted_ID'] = np.nan
         unstandardised['Accepted_Rank'] = np.nan
@@ -257,4 +267,5 @@ class MyTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
+
     unittest.main()

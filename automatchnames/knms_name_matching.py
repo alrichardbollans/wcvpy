@@ -40,10 +40,7 @@ def get_knms_name_matches(names: List[str]):
     """
     # Save previous searches using a hash of names to avoid repeating searches
     names = list(names)
-    unique_name_list = []
-    for x in names:
-        if x not in unique_name_list and only_roman_chars(x):
-            unique_name_list.append(x)
+    unique_name_list = list(np.unique(names))
 
     str_to_hash = str(unique_name_list).encode()
     temp_csv = "knmns_matches_" + str(hashlib.md5(str_to_hash).hexdigest()) + ".csv"

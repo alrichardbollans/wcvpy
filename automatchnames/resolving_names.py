@@ -23,6 +23,6 @@ def _get_resolutions_with_single_rank(submission_df_with_accepted_info: pd.DataF
     submissions_with_single_rank_with_acc_name = submissions_with_single_rank[
         ~submissions_with_single_rank['Accepted_Name'].isna()]
     accepted_names_in_submitted_names = submissions_with_single_rank_with_acc_name[
-        submissions_with_single_rank_with_acc_name.apply(lambda x: x['Accepted_Name'] in x['submitted'], axis=1)]
+        submissions_with_single_rank_with_acc_name.swifter.apply(lambda x: x['Accepted_Name'] in x['submitted'], axis=1)]
 
     return accepted_names_in_submitted_names

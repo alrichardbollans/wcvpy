@@ -69,8 +69,8 @@ def _capitalize_first_letter_of_taxon(g: str, check_string_is_uppercase=False):
         return g
 
 def tidy_names_in_column(df:pd.DataFrame,col:str):
-    df[col] = df[col].apply(_capitalize_first_letter_of_taxon, check_string_is_uppercase=True)
-    df[col] = df[col].apply(remove_whitespace_at_beginning_and_end)
+    df[col] = df[col].swifter.apply(_capitalize_first_letter_of_taxon, check_string_is_uppercase=True)
+    df[col] = df[col].swifter.apply(remove_whitespace_at_beginning_and_end)
 
 def clean_urn_ids(given_value: str) -> str:
     '''

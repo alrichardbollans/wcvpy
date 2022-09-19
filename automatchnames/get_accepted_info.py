@@ -1,7 +1,6 @@
 import hashlib
 import os
 
-import numpy as np
 import pandas as pd
 # Add progress bar to apply method
 from tqdm import tqdm
@@ -47,7 +46,6 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
     :return:
     """
     # TODO: optimize
-    # TODO:
     if len(unmatched_submissions_df.index) > 0:
         _temp_output(unmatched_submissions_df, 'unmatched_to_autoresolve',
                      "Resolving submitted names which weren't initially matched using KNMS.")
@@ -112,7 +110,6 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
         rank_priority = ["Subspecies", "Variety", "Species", "Genus", "Form"]
         for r in match_df["Accepted_Rank"].unique():
             if r not in rank_priority:
-                print(r)
                 raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
         match_df['Accepted_Rank'] = pd.Categorical(match_df['Accepted_Rank'], rank_priority)
         match_df.sort_values('Accepted_Rank', inplace=True)
@@ -169,7 +166,7 @@ def _find_best_matches_from_multiples(multiple_match_records: pd.DataFrame, fami
     :return:
     """
     # First find accepted info for the multiple matches
-    multiple_match_records['ipni_id'] = multiple_match_records['ipni_id'].apply(clean_urn_ids)
+    multiple_match_records['ipni_id'] = multiple_match_records['ipni_id'].swifter.apply(clean_urn_ids)
     multiple_matches_with_accepted_ids = get_accepted_info_from_ids_in_column(multiple_match_records,
                                                                               'ipni_id',
                                                                               families_of_interest=families_of_interest)
@@ -329,7 +326,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         for i in tqdm(range(len(COL_NAMES)), desc="Recompiling dataframe…", ascii=False, ncols=72):
             k = list(COL_NAMES.keys())[i]
 
-            in_df[COL_NAMES[k]] = in_df['tidied_name'].apply(get_acc_info_from_matches, col=COL_NAMES[k])
+            in_df[COL_NAMES[k]] = in_df['tidied_name'].swifter.apply(get_acc_info_from_matches, col=COL_NAMES[k])
 
         in_df.drop(columns=['tidied_name'], inplace=True)
 

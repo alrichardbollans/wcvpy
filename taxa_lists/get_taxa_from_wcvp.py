@@ -34,7 +34,8 @@ def fix_columns(taxa_df: pd.DataFrame) -> pd.DataFrame:
     return out_copy
 
 
-def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None,
+def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None, genera: List[str] = None,
+                 species: List[str] = None,
                  accepted: bool = False, version: str = None, output_csv: str = None) -> pd.DataFrame:
     if output_csv is not None:
         if not os.path.isdir(os.path.dirname(output_csv)):
@@ -56,6 +57,12 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     wcvp_data = pd.read_csv(input_file, sep='|')
     if families_of_interest is not None:
         wcvp_data = wcvp_data.loc[wcvp_data['family'].isin(families_of_interest)]
+
+    if genera is not None:
+        wcvp_data = wcvp_data.loc[wcvp_data['genus'].isin(genera)]
+
+    if species is not None:
+        wcvp_data = wcvp_data.loc[wcvp_data['species'].isin(species)]
 
     if accepted:
         wcvp_data = wcvp_data[wcvp_data['taxonomic_status'] == 'Accepted']

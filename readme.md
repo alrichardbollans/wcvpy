@@ -108,7 +108,7 @@ The following (hard cases) fail in `test_name_matching.py` in `unit_tests`:
     * 'ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV'
     * 'ROTHMANIA ENGLERIANA (K. Schum) Keav'
     * 'ROTHMANNIA ENGLERIANA (K. SCHUM.) KEAV'
-* From `hybrid_list.csv` 'Sarcorhiza' resolves to NaN
+* From `hybrid_list.csv` 'Sarcorhiza' resolves to NaN (it is an artificial hybrid)
 
 ## Sources
 

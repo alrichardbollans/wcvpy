@@ -12,8 +12,7 @@ from pkg_resources import resource_filename
 from tqdm import tqdm
 
 from automatchnames import get_wcvp_info_for_names_in_column, \
-    get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, remove_whitespace_at_beginning_and_end, \
-    temp_outputs_dir, get_reconciliations, tidy_names_in_column, hybrid_character
+    get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, temp_outputs_dir, tidy_names_in_column, hybrid_character
 from automatchnames.resolving_names import _get_resolutions_with_single_rank
 
 from taxa_lists import get_all_taxa
@@ -57,7 +56,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
 
         # Get more precise list of taxa which possibly matches submissions
         accepted_name_containment = all_taxa[
-            all_taxa.progress_apply(
+            all_taxa.swifter.apply(
                 lambda x: any(x['taxon_name'] in y for y in unmatched_submissions_df[name_col].values),
                 axis=1)]
 

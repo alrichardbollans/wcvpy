@@ -68,7 +68,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     if accepted:
         wcvp_data = wcvp_data[wcvp_data['taxonomic_status'] == 'Accepted']
 
-    wcvp_data['rank'] = wcvp_data['rank'].swifter.apply(capitalize_first_letter_of_rank)
+    wcvp_data['rank'] = wcvp_data['rank'].swifter.progress_bar(False).apply(capitalize_first_letter_of_rank)
 
     if ranks is not None:
         wcvp_data = wcvp_data[wcvp_data['rank'].isin(ranks)]

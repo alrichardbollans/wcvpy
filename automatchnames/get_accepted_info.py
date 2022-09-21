@@ -2,17 +2,16 @@ import hashlib
 import os
 
 import pandas as pd
-# Add progress bar to apply method
-from tqdm import tqdm
+import swifter
 
-tqdm.pandas()
 from typing import List
 
 from pkg_resources import resource_filename
 from tqdm import tqdm
 
 from automatchnames import get_wcvp_info_for_names_in_column, \
-    get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, temp_outputs_dir, tidy_names_in_column, hybrid_character
+    get_knms_name_matches, id_lookup_wcvp, clean_urn_ids, COL_NAMES, temp_outputs_dir, tidy_names_in_column, \
+    hybrid_character
 from automatchnames.resolving_names import _get_resolutions_with_single_rank
 
 from taxa_lists import get_all_taxa
@@ -56,7 +55,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
 
         # Get more precise list of taxa which possibly matches submissions
         accepted_name_containment = all_taxa[
-            all_taxa.swifter.apply(
+            all_taxa.swifter.allow_dask_on_strings(enable=True).apply(
                 lambda x: any(x['taxon_name'] in y for y in unmatched_submissions_df[name_col].values),
                 axis=1)]
 
@@ -165,7 +164,8 @@ def _find_best_matches_from_multiples(multiple_match_records: pd.DataFrame, fami
     :return:
     """
     # First find accepted info for the multiple matches
-    multiple_match_records['ipni_id'] = multiple_match_records['ipni_id'].swifter.apply(clean_urn_ids)
+    multiple_match_records['ipni_id'] = multiple_match_records['ipni_id'].swifter.progress_bar(False).apply(
+        clean_urn_ids)
     multiple_matches_with_accepted_ids = get_accepted_info_from_ids_in_column(multiple_match_records,
                                                                               'ipni_id',
                                                                               families_of_interest=families_of_interest)
@@ -325,7 +325,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         for i in tqdm(range(len(COL_NAMES)), desc="Recompiling dataframe…", ascii=False, ncols=72):
             k = list(COL_NAMES.keys())[i]
 
-            in_df[COL_NAMES[k]] = in_df['tidied_name'].swifter.apply(get_acc_info_from_matches, col=COL_NAMES[k])
+            in_df[COL_NAMES[k]] = in_df['tidied_name'].swifter.progress_bar(False).apply(get_acc_info_from_matches,
+                                                                                         col=COL_NAMES[k])
 
         in_df.drop(columns=['tidied_name'], inplace=True)
 

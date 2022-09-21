@@ -63,7 +63,8 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
         dict_for_matches = {name_col: [], 'Accepted_Name': [], 'Accepted_ID': [], 'Accepted_Rank': [],
                             'Accepted_Species': [], 'Accepted_Species_ID': [], 'taxonomic_status_of_submitted_name': []}
 
-        for i in tqdm(range(len(unmatched_submissions_df[name_col].values)), desc="Searching…", ascii=False, ncols=72):
+        for i in tqdm(range(len(unmatched_submissions_df[name_col].values)), desc="Searching automated matches",
+                      ascii=False, ncols=72):
             s = unmatched_submissions_df[name_col].values[i]
             for taxa in accepted_name_containment['taxon_name']:
                 if taxa in s:
@@ -116,7 +117,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, name_co
         match_df.drop_duplicates(subset=[name_col], keep='first', inplace=True)
 
         # Merge with original data
-        matches = pd.merge(unmatched_submissions_df, match_df, on=name_col, sort=False)
+        matches = pd.merge(unmatched_submissions_df[[name_col]], match_df, on=name_col, sort=False)
         matches = matches.dropna(subset=['Accepted_Name'])
         return matches
     else:
@@ -325,8 +326,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         for i in tqdm(range(len(COL_NAMES)), desc="Recompiling dataframe…", ascii=False, ncols=72):
             k = list(COL_NAMES.keys())[i]
 
-            in_df[COL_NAMES[k]] = in_df['tidied_name'].swifter.progress_bar(False).apply(get_acc_info_from_matches,
-                                                                                         col=COL_NAMES[k])
+            in_df[COL_NAMES[k]] = in_df['tidied_name'].apply(get_acc_info_from_matches,
+                                                             col=COL_NAMES[k])
 
         in_df.drop(columns=['tidied_name'], inplace=True)
 

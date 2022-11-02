@@ -9,7 +9,6 @@ setup(
     url='https://github.com/alrichardbollans/automatchnames',
     license='GNU v.3',
     author='Adam Richard-Bollans',
-    author_email='adamrb@protonmail.com',
     description='A package for automating name matching of scientific names',
     long_description=open('readme.md',encoding="utf8").read()
 )

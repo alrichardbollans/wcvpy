@@ -17,7 +17,6 @@ from automatchnames.resolving_names import _get_resolutions_with_single_rank
 from taxa_lists import get_all_taxa
 
 matching_data_path = resource_filename(__name__, 'matching data')
-_template_resolution_csv = os.path.join(matching_data_path, 'manual_match.csv')
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):

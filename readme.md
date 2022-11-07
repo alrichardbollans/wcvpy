@@ -5,14 +5,31 @@
 Run:
 `pip install git+https://github.com/alrichardbollans/automatchnames.git#egg=automatchnames`
 
+## Usage
+
+```python
+import pandas as pd
+from automatchnames import get_accepted_info_from_names_in_column
+
+data_csv = 'path_to_data.csv'
+
+your_data_df = pd.read_csv(data_csv)  # Data to use
+name_col = 'taxa'  # Name of column in data with names to check
+# Names of families in your data 
+# This is optional, but the program is much faster if specified
+families_in_occurrences = ['Apocynaceae', 'Rubiaceae']
+# Manual resolutions are optional and included by specifying a csv file, in the same format as
+# the `manual_match_template.csv` file.
+manual_resolution_csv = 'manual_match_template.csv'
+data_with_accepted_information = get_accepted_info_from_names_in_column(your_data_df, name_col,
+                                                                        families_of_interest=families_in_occurrences,
+                                                                        manual_resolution_csv=manual_resolution_csv)
+```
+
 ## Steps
 
-Run `get_accepted_info_from_names_in_column` with Pandas dataframe containing names to standardise in `name_col`. The
-program will be much quicker if you specify which families to include
-e.g. `families_of_interest=['Rubiaceae','Apocynaceae']`.
-
 In the first step, to avoid the program spending time trying to find names we know to be problematic we do some manual
-matching. Manual resolutions are optional and included given specifying a csv file, in the same format as
+matching. Manual resolutions are optional and included by specifying a csv file, in the same format as
 the `manual_match_template.csv` file.
 
 Once manual matches have been found, we try to match names directly to taxa in WCVP. This finds taxa in WCVP which match
@@ -36,8 +53,8 @@ more generic taxa (though I think this is unlikely anyway).
 
 Once we have tried to resolve submitted names through KNMS in the above, we may still have some names left over. In
 these cases we first try to do some automated resolution. In this step we search through WCVP for taxa where the taxon
-name is contained in the submitted name. This is similar to the previous step but is much slower as many more names
-must be checked (specifying families of interest really helps here). For each submitted name, we then have a list (
+name is contained in the submitted name. This is similar to the previous step but is much slower as many more names must
+be checked (specifying families of interest really helps here). For each submitted name, we then have a list (
 possibly empty) of taxa where the taxon name is contained in the submitted name. We want to prioritise accepted taxa
 over synonyms etc.. so a given submitted name is resolved to the best taxonomic status i.e. "Accepted" > "
 Synonym" > ...

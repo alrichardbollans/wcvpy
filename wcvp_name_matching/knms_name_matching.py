@@ -67,7 +67,6 @@ def get_knms_name_matches(names: List[str]):
         if res.status_code == 500:
             print('Possibly from non-latin scripts in names')
             print(unique_name_list)
-            records = pd.DataFrame()
             raise ValueError('Internal Server error from KNMS.')
         elif res.status_code == 429:
             raise ConnectionRefusedError('KNMS Rate limiting')
@@ -83,12 +82,16 @@ def get_knms_name_matches(names: List[str]):
                 else:
                     records = pd.DataFrame(content["records"], columns=headings)
             except ValueError:
-                raise requests.ConnectionError('records not retrievd due to server error')
+                raise requests.ConnectionError('records not retrieved due to server error')
             records.replace('', np.nan, inplace=True)
             records['submitted'].ffill(inplace=True)
             records['match_state'].ffill(inplace=True)
 
-            records.to_csv(temp_output_knms_csv)
+            if (records['match_state'] == 'false').all():
+                print('All KNMS records return false. Not saving these records')
+            else:
+
+                records.to_csv(temp_output_knms_csv)
 
     return records
 

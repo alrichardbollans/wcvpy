@@ -45,7 +45,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
     input_file = os.path.join(_inputs_path, version + '.txt')
 
-    wcvp_link = 'http://sftp.kew.org/pub/data-repositories/WCVP/' + version + '.zip'
+    wcvp_link = 'http://sftp.kew.org/pub/data-repositories/WCVP/Archive/wcvp_webapp_oct_2019_to_jun_2022/' + version + '.zip'
 
     # Download if doesn't exist
     if not os.path.exists(input_file):

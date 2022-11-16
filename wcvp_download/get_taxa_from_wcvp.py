@@ -11,7 +11,6 @@ from dateutil.parser import parse as parsedate
 from pkg_resources import resource_filename
 
 _inputs_path = resource_filename(__name__, 'inputs')
-_outputs_path = resource_filename(__name__, 'outputs')
 
 wcvp_columns = {'family': 'family',
                 'rank': 'taxon_rank',
@@ -22,6 +21,10 @@ wcvp_columns = {'family': 'family',
                 'parent_name': 'parent_name',
                 'parent_ipni_id': 'parent_ipni_id'
                 }
+
+wcvp_accepted_columns = {'family': 'accepted_family'
+
+                         }
 
 
 def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame) -> pd.DataFrame:
@@ -81,8 +84,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                  accepted: bool = False, statuses_to_drop=None, output_csv: str = None,
                  force_use_existing: bool = False) -> pd.DataFrame:
     start = time.time()
-    if statuses_to_drop is None:
-        statuses_to_drop = ['Illegitimate', 'Invalid', 'Misapplied', 'Unplaced']
+
     if output_csv is not None:
         new_output_dir = os.path.dirname(output_csv)
         if not os.path.isdir(new_output_dir) and new_output_dir != '':
@@ -122,10 +124,11 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     all_wcvp_data['plant_name_id'] = all_wcvp_data['plant_name_id'].astype(float)
     all_accepted = all_wcvp_data[all_wcvp_data[wcvp_columns['status']] == 'Accepted']
 
-    # Remove taxa with poor status
-    wcvp_data = all_wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
-    if families_of_interest is not None:
-        wcvp_data = wcvp_data.loc[wcvp_data[wcvp_columns['family']].isin(families_of_interest)]
+    wcvp_data = all_wcvp_data.copy(deep=True)
+
+    if statuses_to_drop is not None:
+        # Remove taxa with poor status
+        wcvp_data = all_wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
 
     if genera is not None:
         wcvp_data = wcvp_data.loc[wcvp_data['genus'].isin(genera)]
@@ -144,6 +147,10 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     wcvp_data = add_accepted_info_to_rows(wcvp_data,
                                           get_parent_names_and_ipni_ids(all_accepted, all_wcvp_data))
     wcvp_data = get_species_names_and_ipni_ids(wcvp_data)
+
+    if families_of_interest is not None:
+        wcvp_data = wcvp_data.loc[(wcvp_data[wcvp_columns['family']].isin(families_of_interest)) | (
+            wcvp_data[wcvp_accepted_columns['family']].isin(families_of_interest))]
 
     if output_csv is not None:
         wcvp_data.to_csv(output_csv)

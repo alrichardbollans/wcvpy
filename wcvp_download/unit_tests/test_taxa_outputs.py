@@ -8,6 +8,16 @@ wcvp_data = get_all_taxa()
 
 
 class MyTestCase(unittest.TestCase):
+    def test_families(self):
+        loganiaceae = get_all_taxa(families_of_interest=['Loganiaceae'])
+        print(loganiaceae.drop_duplicates(subset=['family'], keep='first')[
+                  ['taxon_name', 'family', wcvp_accepted_columns['family']]])
+        print(loganiaceae['family'].unique())
+
+        self.assertEqual(list(loganiaceae['family'].unique()),
+                         ['Loganiaceae', 'Vitaceae', 'Gentianaceae', 'Acanthaceae', 'Rhamnaceae',
+                          'Fabaceae', 'Sabiaceae', 'Boraginaceae', 'Plantaginaceae', 'Caprifoliaceae',
+                          'Rutaceae', 'Primulaceae', ])
 
     def test_acc_cases(self):
         all_taxa_acc = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']
@@ -21,13 +31,12 @@ class MyTestCase(unittest.TestCase):
                                        all_taxa_acc['accepted_name'],
                                        check_names=False)
         pd.testing.assert_series_equal(all_taxa_acc[wcvp_columns['family']],
-                                       all_taxa_acc['accepted_family'],
+                                       all_taxa_acc[wcvp_accepted_columns['family']],
                                        check_names=False)
 
         pd.testing.assert_series_equal(all_taxa_acc[wcvp_columns['rank']],
                                        all_taxa_acc['accepted_rank'],
                                        check_names=False)
-
 
         acc_species = all_taxa_acc[all_taxa_acc['taxon_rank'] == 'Species']
         pd.testing.assert_series_equal(acc_species['accepted_species'],

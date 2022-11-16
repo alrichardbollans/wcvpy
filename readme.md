@@ -112,6 +112,8 @@ The program does some automatic formatting (not affecting output)
 Some formatting issues are hard to deal with and are subject of improvements. If cases are unmatched:
 
 * Spelling errors
+* Infraspecific ranks (var., subsp.) should in general end with '.' e.g. (**Psychotria guadalupensis subsp.
+  grosourdieana** not **Psychotria guadalupensis subsp grosourdieana**)
 * Authors and publication info end with '.'
 
 ## Notes on KNMS

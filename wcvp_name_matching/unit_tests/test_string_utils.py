@@ -35,6 +35,7 @@ class MyTestCase(unittest.TestCase):
                      'Xa': 'Xa', 'Xan and': 'Xan and',
                      'XAn XAn': 'Xan xan', "× genus": '× Genus',
                      "× genus species": '× Genus species',
+                     "areaceae": 'Areaceae',
                      "× genus SPecies": '× Genus species',
                      'genus Species auth.': 'Genus species Auth.',
                      'genus auth1. Species auth2.': 'Genus Auth1. species Auth2.',

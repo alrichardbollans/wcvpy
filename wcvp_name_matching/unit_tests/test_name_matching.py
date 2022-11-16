@@ -62,7 +62,8 @@ class MyTestCase(unittest.TestCase):
         if fams is None:
             s = get_accepted_info_from_names_in_column(test_list, name_col, **kwargs)
         else:
-            s = get_accepted_info_from_names_in_column(test_list, name_col, families_of_interest=fams, **kwargs)
+            s = get_accepted_info_from_names_in_column(test_list, name_col, families_of_interest=fams,
+                                                       **kwargs)
         s.to_csv(os.path.join(unittest_outputs, input_csv_name))
         self.compare_series(s['accepted_name'], test_list[known_acc_name_col])
         self.compare_series(s[known_acc_name_col], s['accepted_name'])
@@ -272,9 +273,16 @@ class MyTestCase(unittest.TestCase):
         self._test_get_acc_info_names_on_csv('examples_to_fix.csv',
                                              'Name',
                                              'acc_name')
+
     @unittest.skip
     def test_fam_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('fam_examples_to_fix.csv',
+                                             'Name',
+                                             'acc_name', family_column='Family')
+
+
+    def test_spacelike(self):
+        self._test_get_acc_info_names_on_csv('spacelike_cases.csv',
                                              'Name',
                                              'acc_name', family_column='Family')
 
@@ -352,6 +360,12 @@ class MyTestCase(unittest.TestCase):
 
     def test_knms_synonyms(self):
         self.all_info_test('knms_synonyms.csv', 'Name')
+
+    def test_ecbot(self):
+
+        test_df = pd.read_excel(os.path.join(unittest_inputs, 'Adam-ex-data-ZI.xlsx'))
+        response = get_accepted_info_from_names_in_column(test_df, 'Taxon ', family_column='Family')
+        response.to_csv(os.path.join(unittest_outputs, 'ecbot.csv'))
 
 
 if __name__ == '__main__':

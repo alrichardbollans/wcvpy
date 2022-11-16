@@ -94,8 +94,8 @@ def _capitalize_first_letter_of_taxon(g: str):
 
 def remove_spacelike_chars(given_name: str):
     try:
-        new_name = given_name.replace('\xa0', '')
-        new_name = new_name.replace('\t', '')
+        new_name = given_name.replace('\xa0', ' ')
+        new_name = new_name.replace('\t', ' ')
 
         return new_name
     except AttributeError:

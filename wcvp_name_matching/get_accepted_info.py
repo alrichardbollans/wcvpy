@@ -337,7 +337,14 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
             f'Following column names are reserved: {reserved_column_names}')
 
     if len(in_df.index) > 0:
+        df = in_df.copy(deep=True)
+        # Standardise inputs
+        df = df.dropna(subset=[name_col])
+        tidy_names_in_column(df, name_col)
+        if family_column is not None:
+            tidy_families_in_column(df, family_column)
 
+        # Check families of interest aligns with names in family column
         if family_column is not None:
             if families_of_interest is not None:
                 fams_in_family_column = in_df[family_column].unique().dropna()
@@ -346,21 +353,35 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                         raise ValueError(
                             f'Family {f} given in family column but not in families of interest')
 
-            if in_df[family_column].isnull().values.any():
-                na_families = in_df[in_df[family_column].isna()]
+            if df[family_column].isnull().values.any():
+                na_families = df[df[family_column].isna()]
                 print(f'Warning: Missing values in specified family column')
                 print(na_families)
             elif families_of_interest is None:
-                families_of_interest = in_df[family_column].unique()
+                families_of_interest = df[family_column].unique()
 
-        all_taxa = get_all_taxa(families_of_interest=families_of_interest)
-
-        df = in_df.copy(deep=True)
-        # Standardise inputs
-        df = df.dropna(subset=[name_col])
-        tidy_names_in_column(df, name_col)
-        if family_column is not None:
-            tidy_families_in_column(df, family_column)
+        # Check families of interest and in family column are in wcvp, and remove if not
+        if families_of_interest is not None or family_column is not None:
+            wcvp_families_df = get_all_taxa()
+            wcvp_families = list(wcvp_families_df[wcvp_columns['family']].unique())
+            wcvp_acc_families = list(wcvp_families_df[wcvp_accepted_columns['family']].unique())
+            wcvp_all_families = wcvp_families + wcvp_acc_families
+            if families_of_interest is not None:
+                problem_fams = [f for f in families_of_interest if f not in wcvp_all_families]
+                if len(problem_fams) > 0:
+                    print(f'WARNING: Given families: {problem_fams}, not in wcvp')
+                    families_of_interest = None
+            if family_column is not None:
+                problem_fams = []
+                for f in df[family_column].unique():
+                    if pd.notna(f):
+                        if f not in wcvp_all_families:
+                            problem_fams.append(f)
+                if len(problem_fams) > 0:
+                    print(f'WARNING: Given families in family column: {problem_fams}, not in wcvp')
+                    print('Setting these families to Nan')
+                    for f in problem_fams:
+                        df[family_column].replace(f, np.nan, inplace=True)
 
         # Create a unique identifier for submissions
         if family_column is None:
@@ -377,6 +398,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         in_df[unique_submission_index_col] = in_df[unique_submission_index_col].astype(str)
         df = df.drop_duplicates(subset=[unique_submission_index_col])
 
+        all_taxa = get_all_taxa(families_of_interest=families_of_interest)
         # First get manual matches
         if manual_resolution_csv is not None:
             manual_match_df = pd.read_csv(manual_resolution_csv)
@@ -409,6 +431,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
 
         if match_level in ['full', 'knms']:
             # If exact matches aren't found in wcvp, use knms
+
             matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(unmatched_name_df,
                                                                                          recapitalised_name_col,
                                                                                          unique_submission_index_col,

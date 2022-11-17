@@ -109,8 +109,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                         record[submission_id_col] = submitted_id
                         match_df = pd.concat([match_df, record])
         match_df = match_df.dropna(subset=['accepted_name'])
-        # Remove genera matches where submitted name has more than one word.
-        # This to avoid matching mispelt species to genera
+        # Remove genera matches where genus appears in different families
         if len(match_df.index) > 0:
             if family_column is None:
                 unique_family_genera_pairs = all_taxa[
@@ -118,10 +117,10 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                 genera_unique_to_family = unique_family_genera_pairs[wcvp_columns['genus']].unique()
 
                 match_df = match_df[
-                    (~((match_df['accepted_rank'] == 'Genus') & match_df[matching_name_col].str.contains(
-                        " "))) | (match_df[wcvp_columns['name']].isin(genera_unique_to_family))]
+                    (~(match_df['accepted_rank'] == 'Genus')) | (
+                        match_df[wcvp_columns['name']].isin(genera_unique_to_family))]
 
-        # Remove duplicate matches with worse priority
+        # Remove duplicate matches with worse status
 
         for r in match_df["taxon_status"].unique():
             if r not in status_priority:

@@ -1,9 +1,9 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='automatchnames',
     version='0.0.2',
-    packages=['wcvp_name_matching', 'wcvp_download'],
+    packages=find_packages(),
     install_requires=[
         'pandas==1.4.1',
         'numpy~=1.22.1',

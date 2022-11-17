@@ -65,18 +65,14 @@ over. In these cases we first try to do some automated resolution. In this step 
 taxa where the taxon name is contained in the submitted name. This is similar to the previous step but is much
 slower as many more names must be checked (specifying families of interest really helps here). For each
 submitted name, we then have a list (possibly empty) of taxa where the taxon name is contained in the
-submitted name. We want to prioritise accepted taxa over synonyms etc.. so a given submitted name is resolved
-to the best taxonomic status i.e. "Accepted" > "Artificial Hybrid" > "Synonym" > ...
-
-As before, generic names may be contained in more specific names, so we must account for this somehow. This is
-achieved for a given submitted name by resolving it to the most precise matched taxa i.e. "Subspecies" > "
-Variety" > "Species"> "Genus". In some cases, a species may be submitted where the species part of the name
-has been misspelled e.g. "Neonauclea observifolia"; these cases resolve to the genus which may or may not be
-desriable depending on the specific application. Some genera names are shared across family names (
+submitted name. This list is initially reduced by removing taxa of the same rank but worse taxonomic status
+than other taxa in the list. Next, we resolve by taking the most specific match from this list i.e. "
+Subspecies" > "Variety" > "Species"> "Genus". In some cases, a species may be submitted where the species part
+of the name has been misspelled e.g. **Neonauclea observifolia**; these cases resolve to the genus which may or
+may not be desriable depending on the specific application. Some genera names are shared across family names (
 e.g. **Condylocarpus**). Therefore when families have not been specified, we don't match submissions to genera
-where the submitted name contains a space and the genera are known to be contained in multiple families. Note
-that this is conservative and will cause some good matches to not be matched, in particular genera that are
-unmatched by KNMS. Tag= 'autoresolution'
+where the genera are known to be contained in multiple families. Note that this is conservative and will cause
+some good matches to not be matched. Tag= 'autoresolution'
 
 Finally, the resolutions are recompiled and an updated dataframe is returned. Submitted names which haven't
 been matched at any point are output to a csv file for you to check. Note that unmatched submissions are

@@ -4,7 +4,7 @@ import pandas as pd
 
 from wcvp_download import wcvp_accepted_columns
 
-acc_info_col_names = ['accepted_ipni_id',
+acc_info_col_names = [wcvp_accepted_columns['id'],
                       'accepted_name',
                       wcvp_accepted_columns['family'],
                       'accepted_rank',
@@ -23,8 +23,11 @@ infraspecific_chars = ['agamosp.', 'convar.', 'ecas.', 'f.', 'grex', 'group', 'l
 
 submitted_name_col_id = 'submitted_name_col_id'
 recapitalised_name_col = 'recap_name_col'
+lowercase_name_col = 'lower_case_name_col'
+tidied_taxon_authors_col = 'tidied_taxon_authors'
 submitted_family_name_col_id = 'submitted_family_name_col_id'
 unique_submission_index_col = 'unique_submission_index_col'
+
 
 def get_genus_from_full_name(full_name_beginning_with_genus: str) -> str:
     try:
@@ -101,17 +104,20 @@ def remove_spacelike_chars(given_name: str):
     except AttributeError:
         return given_name
 
+
 def tidy_families_in_column(df: pd.DataFrame, fam_column: str):
     df[submitted_family_name_col_id] = df[fam_column]
     df[fam_column] = df[fam_column].apply(remove_spacelike_chars)
     df[fam_column] = df[fam_column].apply(remove_whitespace_at_beginning_and_end)
     df[fam_column] = df[fam_column].apply(_capitalize_first_letter_of_taxon)
 
+
 def tidy_names_in_column(df: pd.DataFrame, name_col: str):
     df[submitted_name_col_id] = df[name_col]
     df[name_col] = df[name_col].apply(remove_spacelike_chars)
     df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
     df[recapitalised_name_col] = df[name_col].apply(_capitalize_first_letter_of_taxon)
+    df[lowercase_name_col] = df[name_col].str.lower()
 
 
 def clean_urn_ids(given_value: str) -> str:
@@ -127,3 +133,15 @@ def clean_urn_ids(given_value: str) -> str:
             return given_value
     except TypeError:
         return given_value
+
+def tidy_authors(given_string: str):
+    # Remove spaces in front of full stops if full stop isn't part of infraspecific epithet
+    # and after the space is a letter
+    my_regex = "\.\s(?=[a-z]|[A-Z])"
+    for ch in infraspecific_chars:
+        ch_reg_form = re.escape(ch)
+        my_regex += "(?<!" + ch_reg_form + "\s)"
+    try:
+        return re.sub(my_regex, ".", given_string)
+    except TypeError:
+        return given_string

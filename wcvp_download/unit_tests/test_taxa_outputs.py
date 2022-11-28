@@ -2,7 +2,7 @@ import unittest
 
 import pandas as pd
 
-from wcvp_download import get_all_taxa, wcvp_columns
+from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 wcvp_data = get_all_taxa()
 
@@ -22,7 +22,7 @@ class MyTestCase(unittest.TestCase):
     def test_acc_cases(self):
         all_taxa_acc = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']
         pd.testing.assert_series_equal(all_taxa_acc[wcvp_columns['id']],
-                                       all_taxa_acc['accepted_ipni_id'],
+                                       all_taxa_acc[wcvp_accepted_columns['id']],
                                        check_names=False)
         pd.testing.assert_series_equal(all_taxa_acc['plant_name_id'],
                                        all_taxa_acc['accepted_plant_name_id'],
@@ -43,7 +43,7 @@ class MyTestCase(unittest.TestCase):
                                        acc_species['accepted_name'],
                                        check_names=False)
         pd.testing.assert_series_equal(acc_species['accepted_species_ipni_id'],
-                                       acc_species['accepted_ipni_id'],
+                                       acc_species[wcvp_accepted_columns['id']],
                                        check_names=False)
 
         # Currently breaks as accepted parents for some are hybrids, where genus is not given as hybrid
@@ -65,7 +65,7 @@ class MyTestCase(unittest.TestCase):
                                        species_accepted_rank['accepted_name'],
                                        check_names=False)
         pd.testing.assert_series_equal(species_accepted_rank['accepted_species_ipni_id'],
-                                       species_accepted_rank['accepted_ipni_id'],
+                                       species_accepted_rank[wcvp_accepted_columns['id']],
                                        check_names=False)
 
     def test_subspecies_cases(self):
@@ -140,10 +140,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_some_cases(self):
         bry_df = wcvp_data[wcvp_data[wcvp_columns['id']] == '545603-1']
-        self.assertListEqual(bry_df['accepted_ipni_id'].values.tolist(), ['745133-1'])
+        self.assertListEqual(bry_df[wcvp_accepted_columns['id']].values.tolist(), ['745133-1'])
 
         genus_df = wcvp_data[wcvp_data[wcvp_columns['id']] == '34250-1']
-        self.assertListEqual(genus_df['accepted_ipni_id'].values.tolist(), ['34250-1'])
+        self.assertListEqual(genus_df[wcvp_accepted_columns['id']].values.tolist(), ['34250-1'])
 
 
 if __name__ == '__main__':

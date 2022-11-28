@@ -21,7 +21,7 @@ unittest_inputs = resource_filename(__name__, 'test_inputs')
 unittest_outputs = resource_filename(__name__, 'test_outputs')
 
 # columns used in testing csvs
-test_columns = {'acc_id': 'accepted_ipni_id',
+test_columns = {'acc_id': wcvp_accepted_columns['id'],
                 'acc_name': 'accepted_name',
                 'acc_fam': wcvp_accepted_columns['family'],
                 'acc_rank': 'accepted_rank',
@@ -131,35 +131,35 @@ class MyTestCase(unittest.TestCase):
     def test_id_lookup_wcvp(self):
         cap_record = id_lookup_wcvp(wcvp_taxa, '44583-2')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Capirona macrophylla')
-        self.assertEqual(cap_record['accepted_ipni_id'].iloc[0], '77210192-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '77210192-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Species')
         self.assertEqual(cap_record['accepted_species'].iloc[0], 'Capirona macrophylla')
         self.assertEqual(cap_record['accepted_species_ipni_id'].iloc[0], '77210192-1')
 
         cap_record = id_lookup_wcvp(wcvp_taxa, '77210192-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Capirona macrophylla')
-        self.assertEqual(cap_record['accepted_ipni_id'].iloc[0], '77210192-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '77210192-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Species')
         self.assertEqual(cap_record['accepted_species'].iloc[0], 'Capirona macrophylla')
         self.assertEqual(cap_record['accepted_species_ipni_id'].iloc[0], '77210192-1')
 
         cap_record = id_lookup_wcvp(wcvp_taxa, '2217-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Aspidosperma')
-        self.assertEqual(cap_record['accepted_ipni_id'].iloc[0], '2217-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '2217-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
 
         cap_record = id_lookup_wcvp(wcvp_taxa, '41511-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Aspidosperma')
-        self.assertEqual(cap_record['accepted_ipni_id'].iloc[0], '2217-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '2217-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
 
         cap_record = id_lookup_wcvp(wcvp_taxa, '35260-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Richardia')
-        self.assertEqual(cap_record['accepted_ipni_id'].iloc[0], '35260-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '35260-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
@@ -226,12 +226,12 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(
             multiple_match_records.loc[
-                multiple_match_records['submitted'] == 'Condylocarpon', 'accepted_ipni_id'].iloc[
+                multiple_match_records['submitted'] == 'Condylocarpon', wcvp_accepted_columns['id']].iloc[
                 0],
             '328988-2')
         self.assertEqual(
             multiple_match_records.loc[
-                multiple_match_records['submitted'] == 'Asclepias curassavica', 'accepted_ipni_id'].iloc[0],
+                multiple_match_records['submitted'] == 'Asclepias curassavica', wcvp_accepted_columns['id']].iloc[0],
             '94213-1')
 
         self.assertEqual(
@@ -268,7 +268,7 @@ class MyTestCase(unittest.TestCase):
         self._test_get_acc_info_names_on_csv('synonym_list.csv', 'syn',
                                              'Know_acc_name')
 
-    @unittest.skip
+
     def test_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('examples_to_fix.csv',
                                              'Name',
@@ -331,8 +331,8 @@ class MyTestCase(unittest.TestCase):
         acc_df = get_accepted_info_from_names_in_column(test_df, name_col='Name')
         self.assertListEqual(acc_df[wcvp_accepted_columns['family']].values.tolist(), ['Rubiaceae'])
 
-    def test_match_levels(self):
-        self.all_info_test('wcvp_level.csv', 'Name', match_level='weak')
+    def test_direct_match(self):
+        self.all_info_test('wcvp_level.csv', 'Name', match_level='direct')
         try:
             get_accepted_info_from_names_in_column(pd.DataFrame(), 'Name', match_level='garbage')
         except ValueError:

@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 
 from wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
-from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon
+from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors
 
 
 class MyTestCase(unittest.TestCase):
@@ -71,6 +71,19 @@ class MyTestCase(unittest.TestCase):
         self.assertIs(clean_urn_ids(''), '')
         self.assertIsInstance(clean_urn_ids('urn:lsid:ipni.org:names:30479151-2'), str)
         self.assertIsInstance(clean_urn_ids(np.NAN), type(np.NAN))
+
+    def test_tidying_authors(self):
+        test_dict = {'Strychnos axillaris': 'Strychnos axillaris', np.nan: np.nan, None: None,
+                     'Strychnos axillaris Dalzell. & A.Gibson.': 'Strychnos axillaris Dalzell. & A.Gibson.',
+                     'Amsonia tabernaemontana Walter var. gattingeri Woodson': 'Amsonia tabernaemontana Walter var. gattingeri Woodson',
+                     'Palicourea gracilenta (Müll. Arg.) Delprete & J. H. Kirkbr.': 'Palicourea gracilenta (Müll.Arg.) Delprete & J.H.Kirkbr.',
+                     'ROTHMANNIA ENGLERIANA (K. SCHUM.) KEAV': 'ROTHMANNIA ENGLERIANA (K.SCHUM.) KEAV'}
+
+        for d in test_dict:
+            if test_dict[d] == test_dict[d]:
+                self.assertEqual(test_dict[d], tidy_authors(d))
+            else:
+                self.assertTrue(np.isnan(tidy_authors(d)))
 
 
 if __name__ == '__main__':

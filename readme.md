@@ -3,7 +3,7 @@
 ## Installation
 
 Run:
-`pip install git+https://github.com/alrichardbollans/automatchnames.git#egg=automatchnames`
+`pip install git+https://github.com/alrichardbollans/automatchnames.git@1.0`
 
 ## Usage
 
@@ -22,8 +22,8 @@ families_in_occurrences = ['Apocynaceae', 'Rubiaceae']
 # the `manual_match_template.csv` file.
 manual_resolution_csv = 'manual_match_template.csv'
 
-# Match level specifies how conservative to be. One of ['full', 'weak', 'knms']
-# weak: only include direct matches to wcvp
+# Match level specifies how conservative to be. One of ['full', 'direct', 'knms']
+# direct: only include direct matches to wcvp
 # knms: Include direct matches to wcvp and matches from KNMS
 # full: include both of the above, and autoresolution step
 match_level = 'full'
@@ -40,8 +40,15 @@ some manual matching. Manual resolutions are optional and included by specifying
 format as the `manual_match_template.csv` file. Tag= 'manual'
 
 Once manual matches have been found, we try to match names directly to taxa in WCVP. This finds taxa in WCVP
-which match our submitted names exactly. In cases where multiple taxa are returned for a given submission,
-taxa labelled as 'Accepted' are prioritised. Tag= 'direct_wcvp'
+which match our submitted names exactly. This tries combinations of just taxon name (tag= 'direct_wcvp'),
+taxon name + taxon authors and taxon name + paranthetical authors + primary author (tags= '
+direct_wcvp_w_author'). To better match submitted names containing author information, we also clean the
+submitted names by removing spaces in front of full stops if the full stop isn't part of an infraspecific
+epithet and after the space is a letter (see `tidy_authors` method in `string_utils`)
+
+When matching to WCVP, in cases where the there is a single unique match '_unique' is appended to the
+tags. In cases where multiple taxa are returned for a given submission, taxa are prioritised based on their
+status (i.e. Accepted > Artificial Hybrid > Synonym> Illegitimate>...).
 
 Submitted names which aren't found in these first steps are then matched to names using KNMS, which contains
 multiple steps. Firstly, in simple cases where KNMS returns a single match for a submitted name we use the
@@ -66,9 +73,11 @@ taxa where the taxon name is contained in the submitted name. This is similar to
 slower as many more names must be checked (specifying families of interest really helps here). For each
 submitted name, we then have a list (possibly empty) of taxa where the taxon name is contained in the
 submitted name. This list is initially reduced by removing taxa of the same rank but worse taxonomic status
-than other taxa in the list. Next, we resolve by taking the most specific match from this list i.e. "
+than other taxa in the list (i.e. Accepted > Artificial Hybrid > Synonym> Illegitimate>...). Next, we resolve
+by taking the most specific match from this list i.e. "
 Subspecies" > "Variety" > "Species"> "Genus". In some cases, a species may be submitted where the species part
-of the name has been misspelled e.g. **Neonauclea observifolia**; these cases resolve to the genus which may or
+of the name has been misspelled e.g. **Neonauclea observifolia**; these cases resolve to the genus which may
+or
 may not be desriable depending on the specific application. Some genera names are shared across family names (
 e.g. **Condylocarpus**). Therefore when families have not been specified, we don't match submissions to genera
 where the genera are known to be contained in multiple families. Note that this is conservative and will cause
@@ -87,7 +96,11 @@ A rough diagram is given below.
 * Output dataframe is the same as the input, with additional columns providing resolved accepted name
   information. Where names are unresolved, values in these columns are empty.
 * `matched_by` column specifies how the name has been resolved. One of:
-    * 'direct_wcvp': name resolved directly matching to WCVP
+    * 'direct_wcvp(_unique)': name resolved directly matching to WCVP, including _unique if the match to
+      WCVP was unique
+    * 'direct_wcvp_w_author(_unique)': name resolved directly matching to WCVP including author names,
+      including _unique if the
+      match to WCVP was unique
     * 'knms_single': where KNMS provides a single matching name
     * 'knms_multiple_1': where KNMS provides multiple matches for the submitted name, but the submitted name
       is exactly the same as the accepted name for one of the matches

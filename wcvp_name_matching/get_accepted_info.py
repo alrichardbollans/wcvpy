@@ -15,7 +15,8 @@ from wcvp_name_matching import get_wcvp_info_for_names_in_column, \
     get_knms_name_matches, clean_urn_ids, acc_info_col_names, temp_outputs_dir, \
     tidy_names_in_column, \
     recapitalised_name_col, submitted_name_col_id, \
-    tidy_families_in_column, status_priority, submitted_family_name_col_id, unique_submission_index_col
+    tidy_families_in_column, status_priority, submitted_family_name_col_id, unique_submission_index_col, \
+    lowercase_name_col, tidied_taxon_authors_col
 from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 matching_data_path = resource_filename(__name__, 'matching data')
@@ -61,7 +62,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
         # Create a dict of submissions with possible matches
         match_df = pd.DataFrame(
             {submission_id_col: [], matching_name_col: [], wcvp_columns['name']: [], 'accepted_name': [],
-             'accepted_ipni_id': [],
+             wcvp_accepted_columns['id']: [],
              'accepted_rank': [],
              'accepted_parent': [], 'accepted_parent_ipni_id': [],
              'accepted_species': [], 'accepted_species_ipni_id': [],
@@ -168,21 +169,22 @@ def _get_knms_matches_and_accepted_info_from_names_in_column(df: pd.DataFrame, m
         match_records = pd.merge(match_records, df, left_on='submitted', right_on=matching_name_col)
         match_records['ipni_id'] = match_records['ipni_id'].apply(clean_urn_ids)
         match_records = get_accepted_wcvp_info_from_ids_in_column(match_records, 'ipni_id', all_taxa)
-
+        match_records = match_records[match_records['match_state'] != 'false']
         if family_column is not None:
+
             # Begin by removing incorrectly matched families
             match_records = match_records.loc[
                 (match_records[wcvp_columns['family']] == match_records[family_column]) | (
                         match_records[wcvp_accepted_columns['family']] == match_records[family_column]) |
                 (match_records[family_column].isna())]
+            if len(match_records.index) > 0:
+                new_uniques = match_records[
+                    ~match_records.duplicated(subset=[unique_submission_id_col], keep=False)]
 
-            new_uniques = match_records[
-                ~match_records.duplicated(subset=[unique_submission_id_col], keep=False)]
-
-            match_records['match_state'] = match_records.apply(
-                lambda row: 'true' if row[unique_submission_id_col] in new_uniques[
-                    unique_submission_id_col].values else row[
-                    'match_state'], axis=1)
+                match_records['match_state'] = match_records.apply(
+                    lambda row: 'true' if row[unique_submission_id_col] in new_uniques[
+                        unique_submission_id_col].values else row[
+                        'match_state'], axis=1)
 
         single_matches = match_records[match_records['match_state'] == 'true'].copy()
         single_matches['matched_by'] = 'knms_single'
@@ -226,7 +228,7 @@ def _find_best_matches_from_multiples(multiple_match_records: pd.DataFrame,
 
     # reduce list to remove essentially repeated matches
     unique_accepted_matches = unmatched_containment_df.drop_duplicates(
-        subset=[unique_submission_id_col, 'accepted_ipni_id'], keep='first')
+        subset=[unique_submission_id_col, wcvp_accepted_columns['id']], keep='first')
 
     #  Next use matches where the submitted name has a unique match
     submitted_names_with_single_accepted_match = unique_accepted_matches.drop_duplicates(
@@ -321,12 +323,14 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     :return:
     """
     # Check for bad inputs
-    match_levels = ['full', 'weak', 'knms']
+    match_levels = ['full', 'direct', 'knms']
     if match_level not in match_levels:
         raise ValueError(f'match_level should be one of {match_levels}')
 
     reserved_column_names = [submitted_name_col_id, submitted_family_name_col_id, recapitalised_name_col,
-                             unique_submission_index_col, 'submitted', 'matched_by', 'resolution_id'
+                             lowercase_name_col,
+                             unique_submission_index_col, 'submitted', 'matched_by', 'resolution_id',
+                             'taxon_name_with_taxon_authors', tidied_taxon_authors_col
                              ] + list(wcvp_columns.keys()) + acc_info_col_names
     problem_columns = [x for x in in_df.columns if
                        x in reserved_column_names]

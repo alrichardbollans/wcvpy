@@ -23,12 +23,16 @@ wcvp_columns = {'family': 'family',
                 'authors': 'taxon_authors',
                 'paranthet_author': 'parenthetical_author',
                 'primary_author': 'primary_author',
-                'plant_name_id':'plant_name_id'
+                'plant_name_id': 'plant_name_id',
+                'acc_plant_name_id': 'accepted_plant_name_id'
                 }
 
 wcvp_accepted_columns = {'family': 'accepted_family',
                          'id': 'accepted_ipni_id',
-                         'name': 'accepted_name'
+                         'name': 'accepted_name',
+                         'species': 'accepted_species',
+                         'species_id': 'accepted_species_ipni_id',
+                         'rank': 'accepted_rank',
 
                          }
 
@@ -47,7 +51,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
         ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_family', 'accepted_rank',
          'accepted_parent', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
     taxa_df_with_accepted_id = pd.merge(all_accepted, taxa_df, left_on='plant_name_id_acc',
-                                        right_on='accepted_plant_name_id', how='right')
+                                        right_on=wcvp_columns['acc_plant_name_id'], how='right')
     taxa_df_with_accepted_id = taxa_df_with_accepted_id.drop(columns=['plant_name_id_acc'])
 
     return taxa_df_with_accepted_id
@@ -131,15 +135,16 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|', dtype={'homotypic_synonym': object})
 
     csv_file.close()
-    all_wcvp_data['accepted_plant_name_id'] = all_wcvp_data['accepted_plant_name_id'].astype(float)
+    all_wcvp_data[wcvp_columns['acc_plant_name_id']] = all_wcvp_data[
+        wcvp_columns['acc_plant_name_id']].astype(float)
     all_wcvp_data[wcvp_columns['plant_name_id']] = all_wcvp_data[wcvp_columns['plant_name_id']].astype(float)
     all_accepted = all_wcvp_data[all_wcvp_data[wcvp_columns['status']] == 'Accepted']
 
     wcvp_data = all_wcvp_data.copy(deep=True)
+    if statuses_to_drop is None:
+        statuses_to_drop = ['Local Biotype']
 
-    if statuses_to_drop is not None:
-        # Remove taxa with poor status
-        wcvp_data = all_wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
+    wcvp_data = wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
 
     if genera is not None:
         wcvp_data = wcvp_data.loc[wcvp_data['genus'].isin(genera)]

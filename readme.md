@@ -52,7 +52,7 @@ status (i.e. Accepted > Artificial Hybrid > Synonym> Illegitimate>...).
 
 Submitted names which aren't found in these first steps are then matched to names using KNMS, which contains
 multiple steps. Firstly, in simple cases where KNMS returns a single match for a submitted name we use the
-match IPNI ID to find accepted information from WCVP. Tag = 'knms_single'
+match IPNI ID to find accepted information from WCVP. Tag = 'knms_unique'
 
 Frequently however, submissions will be matched to multiple names in KNMS. In these cases we attempt to find
 the 'best' match. To do this, first we find accepted info for each of the matches using the match IPNI ID and
@@ -81,7 +81,7 @@ or
 may not be desriable depending on the specific application. Some genera names are shared across family names (
 e.g. **Condylocarpus**). Therefore when families have not been specified, we don't match submissions to genera
 where the genera are known to be contained in multiple families. Note that this is conservative and will cause
-some good matches to not be matched. Tag= 'autoresolution'
+some good matches to not be matched. Tag= 'autoresolution', including _unique if the match to WCVP was unique
 
 Finally, the resolutions are recompiled and an updated dataframe is returned. Submitted names which haven't
 been matched at any point are output to a csv file for you to check. Note that unmatched submissions are
@@ -99,9 +99,8 @@ A rough diagram is given below.
     * 'direct_wcvp(_unique)': name resolved directly matching to WCVP, including _unique if the match to
       WCVP was unique
     * 'direct_wcvp_w_author(_unique)': name resolved directly matching to WCVP including author names,
-      including _unique if the
-      match to WCVP was unique
-    * 'knms_single': where KNMS provides a single matching name
+      including _unique if the match to WCVP was unique
+    * 'knms_unique': where KNMS provides a single matching name
     * 'knms_multiple_1': where KNMS provides multiple matches for the submitted name, but the submitted name
       is exactly the same as the accepted name for one of the matches
     * 'knms_multiple_2': where KNMS provides multiple matches for the submitted name, but matches are all
@@ -109,7 +108,8 @@ A rough diagram is given below.
     * 'knms_multiple_3': where KNMS provides multiple matches for the submitted name, picks matches where the
       accepted name is contained in the submitted name. Where there are multiple such cases, the most specific
       resolutions are picked.
-    * 'autoresolution': Resolutions found in autoresolution step
+    * 'autoresolution(_unique)': Resolutions found in autoresolution step, including _unique if the match to
+      WCVP was unique
 
 ## Name Formatting
 
@@ -147,6 +147,8 @@ may lead to unresolved names, in which case it may be worth checking the input d
   Urtica angustifolia'
 * Some times POWO and WCVP don't agree (mostly due to short lag in POWO updates?) as of writing **Gunnessia**
   , **Oistonema** and **Gentingia** are accepted in POWO but are synonyms in WCVP
+* Accepted names are not always unique (without author information) e.g. **Helichrysum oligocephalum**
+* Some taxa are not given ipni ids, including some accepted taxa
 
 ## Notes on Kew Reconciliation Service
 

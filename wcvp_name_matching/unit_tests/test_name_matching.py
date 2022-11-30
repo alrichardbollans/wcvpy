@@ -11,7 +11,7 @@ from pkg_resources import resource_filename
 from wcvp_name_matching import id_lookup_wcvp, get_accepted_wcvp_info_from_ids_in_column, \
     get_accepted_info_from_names_in_column, acc_info_col_names, clean_urn_ids
 from wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
-    _find_best_matches_from_multiples
+    _find_best_matches_from_multiple_knms_matches
 
 from wcvp_download import get_all_taxa, wcvp_accepted_columns
 
@@ -216,7 +216,7 @@ class MyTestCase(unittest.TestCase):
         multiple_names_df = pd.DataFrame(multiple_names)
         multiple_names_df['ipni_id'] = multiple_names_df['ipni_id'].apply(clean_urn_ids)
         multiple_names_df = get_accepted_wcvp_info_from_ids_in_column(multiple_names_df, 'ipni_id', wcvp_taxa)
-        multiple_match_records = _find_best_matches_from_multiples(multiple_names_df, 'submitted')
+        multiple_match_records = _find_best_matches_from_multiple_knms_matches(multiple_names_df, 'submitted')
 
         self.assertEqual(
             len(multiple_match_records[multiple_match_records['submitted'] == 'Asclepias curassavica'].index),
@@ -366,6 +366,11 @@ class MyTestCase(unittest.TestCase):
         test_df = pd.read_excel(os.path.join(unittest_inputs, 'Adam-ex-data-ZI.xlsx'))
         response = get_accepted_info_from_names_in_column(test_df, 'Taxon ', family_column='Family')
         response.to_csv(os.path.join(unittest_outputs, 'ecbot.csv'))
+
+    def test_autoresolutions(self):
+        self.all_info_test('autoresolutions.csv', 'Name')
+
+        self.all_info_test('autoresoltuions_with_fams.csv', 'Name', family_column='Family')
 
 
 if __name__ == '__main__':

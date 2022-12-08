@@ -24,7 +24,8 @@ wcvp_columns = {'family': 'family',
                 'paranthet_author': 'parenthetical_author',
                 'primary_author': 'primary_author',
                 'plant_name_id': 'plant_name_id',
-                'acc_plant_name_id': 'accepted_plant_name_id'
+                'acc_plant_name_id': 'accepted_plant_name_id',
+                'lifeform': 'lifeform_description'
                 }
 
 wcvp_accepted_columns = {'family': 'accepted_family',
@@ -33,6 +34,8 @@ wcvp_accepted_columns = {'family': 'accepted_family',
                          'species': 'accepted_species',
                          'species_id': 'accepted_species_ipni_id',
                          'rank': 'accepted_rank',
+                         'parent_name': 'accepted_parent',
+                         'parent_rank': 'accepted_parent_rank'
 
                          }
 
@@ -165,6 +168,9 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     wcvp_data = get_species_names_and_ipni_ids(wcvp_data)
 
     if families_of_interest is not None:
+        for f in families_of_interest:
+            if f not in all_wcvp_data[wcvp_columns['family']].values:
+                raise ValueError(f'Given family: {f} not in WCVP')
         wcvp_data = wcvp_data.loc[(wcvp_data[wcvp_columns['family']].isin(families_of_interest)) | (
             wcvp_data[wcvp_accepted_columns['family']].isin(families_of_interest))]
 

@@ -1,3 +1,4 @@
+import time
 from typing import List
 
 import numpy as np
@@ -9,32 +10,24 @@ native_code_column = 'native_tdwg3_codes'
 introduced_code_column = 'intro_tdwg3_codes'
 
 
-def get_distributions_for_ipni_ids(ipni_ids: List[str], include_doubtful: bool = False,
-                                   include_extinct: bool = False):
-    wcvp_data = get_all_taxa()
-    relevant_data = wcvp_data[wcvp_data[wcvp_columns['id'].isin(ipni_ids)]]
+def get_distributions_for_taxa(df: pd.DataFrame, ipni_id_col: str, include_doubtful: bool = False,
+                               include_extinct: bool = False):
+    start = time.time()
+    wcvp_with_dists = add_distribution_list_to_wcvp(include_doubtful, include_extinct)
+    wcvp_with_dists = wcvp_with_dists.dropna(subset=wcvp_columns['id'])
+    wcvp_with_dists = wcvp_with_dists[[wcvp_columns['id'], native_code_column, introduced_code_column]]
+    # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['id'].isin(df[ipni_id_col].values)]]
+    output = pd.merge(df, wcvp_with_dists, how='left', left_on=ipni_id_col, right_on=wcvp_columns['id'])
+    if wcvp_columns['id'] not in df.columns:
+        output = output.drop(columns=[wcvp_columns['id']])
 
-    return add_distribution_list_to_wcvp(relevant_data,
-                                         include_doubtful=include_doubtful,
-                                         include_extinct=include_extinct)
+    end = time.time()
+    print(f'Time elapsed for getting taxa distributions: {end - start}s')
+    return output
 
 
 def _sorted_tuple(iterable):
     return tuple(sorted(iterable))
-
-
-def add_accepted_dist_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame) -> pd.DataFrame:
-    all_accepted = all_accepted.assign(accepted_native_code_column=all_accepted[wcvp_columns['id']])
-
-    all_accepted = all_accepted.rename(columns={wcvp_columns['plant_name_id']: 'plant_name_id_acc'})
-    all_accepted = all_accepted[
-        ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_family', 'accepted_rank',
-         'accepted_parent', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
-    taxa_df_with_accepted_id = pd.merge(all_accepted, taxa_df, left_on='plant_name_id_acc',
-                                        right_on='accepted_plant_name_id', how='right')
-    taxa_df_with_accepted_id = taxa_df_with_accepted_id.drop(columns=['plant_name_id_acc'])
-
-    return taxa_df_with_accepted_id
 
 
 def add_distribution_list_to_wcvp(include_doubtful: bool = False,
@@ -45,7 +38,8 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     :param include_extinct:
     :return:
     """
-    all_wcvp_data = get_all_taxa()
+    # Only use accepted taxa for distributions as everything else is unreliable
+    accepted_wcvp_data = get_all_taxa(accepted=True)
     wcvp_zip = get_up_to_date_wcvp_zip()
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')
@@ -53,9 +47,7 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     all_dist_data = all_dist_data.dropna(subset=['area_code_l3'])
     csv_file.close()
 
-    all_dist_data.head(100).to_csv('dist_example.csv')
-
-    merged = pd.merge(all_wcvp_data, all_dist_data, on='plant_name_id', how='left')
+    merged = pd.merge(accepted_wcvp_data, all_dist_data, on='plant_name_id', how='left')
     if include_doubtful and include_extinct:
         natives = merged[merged['introduced'] == 0]
         intros = merged[merged['introduced'] == 1]
@@ -80,84 +72,19 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     grouped_intros = intros.groupby('plant_name_id')['area_code_l3'].apply(_sorted_tuple).reset_index(
         name=introduced_code_column)
 
-    taxa_with_natives = pd.merge(all_wcvp_data, grouped_natives, how='left', on='plant_name_id')
-    taxa_with_natives_intros = pd.merge(taxa_with_natives, grouped_intros, how='left', on='plant_name_id')
+    accepted_taxa_with_natives = pd.merge(accepted_wcvp_data, grouped_natives, how='left', on='plant_name_id')
+    accepted_taxa_with_natives_intros = pd.merge(accepted_taxa_with_natives, grouped_intros, how='left',
+                                                 on='plant_name_id')
+    accepted_taxa_with_natives_intros = accepted_taxa_with_natives_intros[
+        [introduced_code_column, native_code_column, wcvp_columns['acc_plant_name_id']]]
+    accepted_taxa_with_natives_intros = accepted_taxa_with_natives_intros.dropna(
+        subset=[wcvp_columns['acc_plant_name_id']])
+    # Update taxa list with distributions from accepted taxa
+    all_wcvp = get_all_taxa()
+    wcvp_data_with_distributions = pd.merge(all_wcvp, accepted_taxa_with_natives_intros,
+                                            on=wcvp_columns['acc_plant_name_id'], how='left')
+    wcvp_data_with_distributions = wcvp_data_with_distributions.dropna(
+        subset=[introduced_code_column, native_code_column], how='all')
 
-    # Update taxa distributions with distributions from accepted taxa
-    ### Native
-    accepted_native_dists = taxa_with_natives_intros.dropna(
-        subset=[native_code_column, wcvp_columns['acc_plant_name_id']], how='any')
-    accepted_native_dists = accepted_native_dists[[native_code_column, wcvp_columns['acc_plant_name_id']]]
-
-    wcvp_data_with_distributions = pd.merge(taxa_with_natives_intros, accepted_native_dists, how='left',
-                                            on=wcvp_columns['acc_plant_name_id'])
-
-    if native_code_column + '_x' in wcvp_data_with_distributions.columns:
-        wcvp_data_with_distributions[native_code_column] = np.where(
-            wcvp_data_with_distributions[native_code_column + '_x'].isna(),
-            wcvp_data_with_distributions[native_code_column + '_y'],
-            wcvp_data_with_distributions[native_code_column + '_x'])
-
-        check_df = wcvp_data_with_distributions[
-            wcvp_data_with_distributions[wcvp_columns['status']] == 'Accepted']
-        problem_df = check_df.loc[
-            ~(check_df[native_code_column + '_x'] == check_df[native_code_column + '_y'])].dropna(
-            subset=[native_code_column + '_x', native_code_column + '_y'], how='all')
-        assert len(problem_df.index) == 0
-
-        check_df = wcvp_data_with_distributions[
-            (wcvp_data_with_distributions[wcvp_columns['status']] != 'Accepted') & (
-                wcvp_data_with_distributions[wcvp_columns['acc_plant_name_id']].isna())].dropna(
-            subset=[native_code_column + '_x', native_code_column + '_y'], how='all')
-        pd.testing.assert_series_equal(check_df[native_code_column + '_x'], check_df[native_code_column],
-                                       check_names=False)
-        assert check_df[native_code_column + '_y'].isnull().all()
-
-        check_df = wcvp_data_with_distributions[
-            (wcvp_data_with_distributions[wcvp_columns['status']] != 'Accepted') & (
-                ~wcvp_data_with_distributions[wcvp_columns['acc_plant_name_id']].isna())].dropna(
-            subset=[native_code_column + '_x', native_code_column + '_y'], how='all')
-        pd.testing.assert_series_equal(check_df[native_code_column + '_y'], check_df[native_code_column],
-                                       check_names=False)
-        assert check_df[native_code_column + '_x'].isnull().all()
-
-    ### Introduced
-    accepted_intro_dists = taxa_with_natives_intros.dropna(
-        subset=[introduced_code_column, wcvp_columns['acc_plant_name_id']], how='any')
-    accepted_intro_dists = accepted_intro_dists[[introduced_code_column, wcvp_columns['acc_plant_name_id']]]
-
-    wcvp_data_with_distributions = pd.merge(wcvp_data_with_distributions, accepted_intro_dists, how='left',
-                                            on=wcvp_columns['acc_plant_name_id'])
-
-    if introduced_code_column + '_x' in wcvp_data_with_distributions.columns:
-        wcvp_data_with_distributions[introduced_code_column] = np.where(
-            wcvp_data_with_distributions[introduced_code_column + '_x'].isna(),
-            wcvp_data_with_distributions[introduced_code_column + '_y'],
-            wcvp_data_with_distributions[introduced_code_column + '_x'])
-
-        check_df = wcvp_data_with_distributions[
-            wcvp_data_with_distributions[wcvp_columns['status']] == 'Accepted']
-        problem_df = check_df.loc[
-            ~(check_df[introduced_code_column + '_x'] == check_df[introduced_code_column + '_y'])].dropna(
-            subset=[introduced_code_column + '_x', introduced_code_column + '_y'], how='all')
-        assert len(problem_df.index) == 0
-
-        check_df = wcvp_data_with_distributions[
-            (wcvp_data_with_distributions[wcvp_columns['status']] != 'Accepted') & (
-                wcvp_data_with_distributions[wcvp_columns['acc_plant_name_id']].isna())].dropna(
-            subset=[introduced_code_column + '_x', introduced_code_column + '_y'], how='all')
-        pd.testing.assert_series_equal(check_df[introduced_code_column + '_x'],
-                                       check_df[introduced_code_column],
-                                       check_names=False)
-        assert check_df[introduced_code_column + '_y'].isnull().all()
-
-        check_df = wcvp_data_with_distributions[
-            (wcvp_data_with_distributions[wcvp_columns['status']] != 'Accepted') & (
-                ~wcvp_data_with_distributions[wcvp_columns['acc_plant_name_id']].isna())].dropna(
-            subset=[introduced_code_column + '_x', introduced_code_column + '_y'], how='all')
-        pd.testing.assert_series_equal(check_df[introduced_code_column + '_y'],
-                                       check_df[introduced_code_column],
-                                       check_names=False)
-        assert check_df[introduced_code_column + '_x'].isnull().all()
 
     return wcvp_data_with_distributions

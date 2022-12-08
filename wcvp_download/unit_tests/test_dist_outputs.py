@@ -1,18 +1,54 @@
-import os.path
 import unittest
 
 import numpy as np
 import pandas as pd
-from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns, native_code_column, \
+
+from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_taxa, get_all_taxa
+from wcvp_download import wcvp_columns, wcvp_accepted_columns, native_code_column, \
     introduced_code_column
-from wcvp_download import add_distribution_list_to_wcvp
 
 with_dist = add_distribution_list_to_wcvp()
 
 _output_path = 'test_outputs'
 
+native_test_dict = {'582307-1': np.nan, '491231-1': ('MDG',), '482884-1': ('MDG',),
+                    '802077-1': (
+                        'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
+                        'SAR', 'SPA', 'SWE'), '77229223-1': (
+        'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
+        'SAR', 'SPA', 'SWE'), '801970-1': (
+        'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
+        'SAR', 'SPA', 'SWE'), '22751-1': ('CPP',), '480932-1': ('BOR', 'PHI')}
+intro_test_dict = {'472162-1': ('JAM', 'MAU', 'TAN'),
+                   '884567-1': ('JAM', 'MAU', 'TAN'),
+                   '472169-1': ('JAM', 'MAU', 'TAN'),
+                   '77100755-1': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
+
 
 class MyTestCase(unittest.TestCase):
+
+    def test_getting_data_from_ids(self):
+
+        native_test_df = pd.DataFrame({wcvp_columns['id']: list(native_test_dict.keys())})
+        out = get_distributions_for_taxa(native_test_df, wcvp_columns['id'])
+
+        for id in native_test_dict:
+            row = out[out[wcvp_columns['id']] == id]
+            if native_test_dict[id] == native_test_dict[id]:
+                self.assertEqual(row[native_code_column].iloc[0], native_test_dict[id])
+            else:
+                self.assertTrue(np.isnan(row[native_code_column].iloc[0]))
+
+        intro_test_df = pd.DataFrame({'ids': list(intro_test_dict.keys())})
+        out = get_distributions_for_taxa(intro_test_df, 'ids')
+
+        for id in intro_test_dict:
+            row = out[out['ids'] == id]
+            if intro_test_dict[id] == intro_test_dict[id]:
+                self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[id])
+            else:
+                self.assertTrue(np.isnan(row[introduced_code_column].iloc[0]))
+
     def test_check_nonaccepted_have_dist(self):
         # Early check to verify wcvp distributions
         # This will break when dist fixed
@@ -42,38 +78,29 @@ class MyTestCase(unittest.TestCase):
 
         with_doubtful = add_distribution_list_to_wcvp(include_doubtful=True)
 
-        pd.testing.assert_index_equal(with_dist.index, with_doubtful.index)
+
         self.assertEqual(with_dist.columns.tolist(), with_doubtful.columns.tolist())
         df_diff = pd.concat([with_dist, with_doubtful]).drop_duplicates(keep=False)
 
         self.assertNotEqual(len(df_diff.index), 0)
 
     def test_instances(self):
-        native_test_dict = {'582307-1': np.nan, '491231-1': ('MDG',), '482884-1': ('MDG',),
-                            '802077-1': (
-                                'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
-                                'SAR', 'SPA', 'SWE'), '77229223-1': (
-                'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
-                'SAR', 'SPA', 'SWE'), '801970-1': (
-                'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
-                'SAR', 'SPA', 'SWE'), '22751-1': ('CPP',), '480932-1': ('BOR', 'PHI')}
+
         for t in native_test_dict:
-            row = with_dist[with_dist[wcvp_columns['id']] == t]
+
             if native_test_dict[t] == native_test_dict[t]:
+                row = with_dist[with_dist[wcvp_columns['id']] == t]
                 self.assertEqual(row[native_code_column].iloc[0], native_test_dict[t])
             else:
-                self.assertTrue(np.isnan(row[native_code_column].iloc[0]))
+                self.assertNotIn(t, with_dist[wcvp_columns['id']].values)
 
-        intro_test_dict = {'472162-1': ('JAM', 'MAU', 'TAN'),
-                           '884567-1': ('JAM', 'MAU', 'TAN'),
-                           '472169-1': ('JAM', 'MAU', 'TAN'),
-                           '77100755-1': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
         for t in intro_test_dict:
-            row = with_dist[with_dist[wcvp_columns['id']] == t]
+
             if intro_test_dict[t] == intro_test_dict[t]:
+                row = with_dist[with_dist[wcvp_columns['id']] == t]
                 self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[t])
             else:
-                self.assertTrue(np.isnan(row[introduced_code_column].iloc[0]))
+                self.assertNotIn(t, with_dist[wcvp_columns['id']].values)
 
 
 if __name__ == '__main__':

@@ -274,7 +274,7 @@ class MyTestCase(unittest.TestCase):
                                              'Name',
                                              'acc_name')
 
-    @unittest.skip
+
     def test_fam_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('fam_examples_to_fix.csv',
                                              'Name',

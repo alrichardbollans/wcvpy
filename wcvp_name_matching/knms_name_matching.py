@@ -71,6 +71,9 @@ def get_knms_name_matches(names: List[str]):
         elif res.status_code == 429:
             raise ConnectionRefusedError('KNMS Rate limiting')
 
+        elif res.status_code == 504:
+            raise TimeoutError('Network Timedout (possibly due to lots of names)')
+
         else:
             content = json.loads(res.content.decode('utf-8'))
             try:

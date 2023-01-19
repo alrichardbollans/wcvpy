@@ -14,15 +14,14 @@ from pkg_resources import resource_filename
 
 from wcvp_name_matching import get_wcvp_info_for_names_in_column, \
     get_knms_name_matches, clean_urn_ids, acc_info_col_names, temp_outputs_dir, \
-    tidy_names_in_column, \
-    recapitalised_name_col, submitted_name_col_id, \
+    tidy_names_in_column, recapitalised_name_col, submitted_name_col_id, \
     tidy_families_in_column, status_priority, submitted_family_name_col_id, unique_submission_index_col, \
     lowercase_name_col, tidied_taxon_authors_col
 from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 matching_data_path = resource_filename(__name__, 'matching data')
 
-rank_priority = ["Subspecies", "Subvariety", "Variety", "Species", "Genus"]
+rank_priority = ["Form", "Subspecies", "Subvariety", "Variety", "Species", "Genus"]
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):

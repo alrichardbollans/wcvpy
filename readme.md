@@ -39,11 +39,13 @@ In the first step, to avoid the program spending time trying to find names we kn
 some manual matching. Manual resolutions are optional and included by specifying a csv file, in the same
 format as the `manual_match_template.csv` file. Tag= 'manual'
 
-Once manual matches have been found, we try to match names directly to taxa in WCVP. This finds taxa in WCVP
-which match our submitted names exactly. This tries combinations of just taxon name (tag= 'direct_wcvp'),
+Once manual matches have been found, we do some very basic cleaning of submitted names (
+see `tidy_names_in_column`method in `string_utils`). We first try to match names directly to taxa in WCVP.
+This finds taxa in WCVP which match our submitted names exactly. This tries combinations of just taxon name (
+tag= 'direct_wcvp'),
 taxon name + taxon authors and taxon name + paranthetical authors + primary author (tags= '
 direct_wcvp_w_author'). To better match submitted names containing author information, we also clean the
-submitted names by removing spaces in front of full stops if the full stop isn't part of an infraspecific
+submitted names by removing spaces after full stops if the full stop isn't part of an infraspecific
 epithet and after the space is a letter (see `tidy_authors` method in `string_utils`)
 
 When matching to WCVP, in cases where the there is a single unique match '_unique' is appended to the
@@ -149,6 +151,7 @@ may lead to unresolved names, in which case it may be worth checking the input d
   , **Oistonema** and **Gentingia** are accepted in POWO but are synonyms in WCVP
 * Accepted names are not always unique (without author information) e.g. **Helichrysum oligocephalum**
 * Some taxa are not given ipni ids, including some accepted taxa
+* Artificial Hybrids are treated as accepted
 
 ## Notes on Kew Reconciliation Service
 

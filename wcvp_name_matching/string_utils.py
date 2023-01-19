@@ -70,6 +70,15 @@ def remove_whitespace_at_beginning_and_end(value):
     except AttributeError:
         return value
 
+def add_space_after_hybrid_char(value:str):
+    try:
+        out = value
+        for h_char in hybrid_characters:
+            if h_char in value:
+                out = re.sub(r'(?<=[{}])(?=[^\s])'.format(h_char), r' ', out)
+        return out
+    except AttributeError:
+        return value
 
 def _capitalize_first_letter_of_taxon(g: str):
     '''
@@ -115,6 +124,7 @@ def tidy_families_in_column(df: pd.DataFrame, fam_column: str):
 def tidy_names_in_column(df: pd.DataFrame, name_col: str):
     df[submitted_name_col_id] = df[name_col]
     df[name_col] = df[name_col].apply(remove_spacelike_chars)
+    df[name_col] = df[name_col].apply(add_space_after_hybrid_char)
     df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
     df[recapitalised_name_col] = df[name_col].apply(_capitalize_first_letter_of_taxon)
     df[lowercase_name_col] = df[name_col].str.lower()
@@ -135,7 +145,7 @@ def clean_urn_ids(given_value: str) -> str:
         return given_value
 
 def tidy_authors(given_string: str):
-    # Remove spaces in front of full stops if full stop isn't part of infraspecific epithet
+    # Remove spaces after full stops if full stop isn't part of infraspecific epithet
     # and after the space is a letter
     my_regex = "\.\s(?=[a-z]|[A-Z])"
     for ch in infraspecific_chars:

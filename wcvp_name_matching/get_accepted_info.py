@@ -21,7 +21,7 @@ from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 matching_data_path = resource_filename(__name__, 'matching data')
 
-rank_priority = ["Form", "Subspecies", "Subvariety", "Variety", "Species", "Genus"]
+rank_priority = ["nothof.", "Form", "Subspecies", "Subvariety", "Variety", "Species", "Genus"]
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):
@@ -154,6 +154,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
         # Remove duplicate matches with worse specificity
         for r in match_df[wcvp_accepted_columns['rank']].unique():
             if r not in rank_priority:
+                print(match_df[match_df[wcvp_accepted_columns['rank']] == r][wcvp_columns['name']].values)
                 raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
         match_df[wcvp_accepted_columns['rank']] = pd.Categorical(match_df[wcvp_accepted_columns['rank']],
                                                                  rank_priority)

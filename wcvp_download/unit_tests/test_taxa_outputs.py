@@ -160,6 +160,11 @@ class MyTestCase(unittest.TestCase):
         without_acc_id.to_csv(os.path.join(_output_path, 'without_acc_id.csv'))
         self.assertEqual(len(without_acc_id.index), 0)
 
+    def test_ranks(self):
+        weird_df = wcvp_data[wcvp_data[wcvp_accepted_columns['rank']] == 'nothof.']
+        weird_df.to_csv(os.path.join(_output_path, 'nothofs.csv'))
+        self.assertEqual(len(weird_df.index), 0)
+
 
 if __name__ == '__main__':
     unittest.main()

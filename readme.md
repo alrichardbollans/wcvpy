@@ -152,6 +152,7 @@ may lead to unresolved names, in which case it may be worth checking the input d
 * Accepted names are not always unique (without author information) e.g. **Helichrysum oligocephalum**
 * Some taxa are not given ipni ids, including some accepted taxa
 * Artificial Hybrids are treated as accepted
+* Some taxa are given "nothof." as a rank
 
 ## Notes on Kew Reconciliation Service
 
@@ -174,16 +175,19 @@ cases in `examples_to_fix.csv`.
 
 ## Sources
 
-WCVP (2022). World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. Published on
+WCVP (2023). World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. Published on
 the Internet
 http://wcvp.science.kew.org/
 Retrieved XX/XX/XX.
 
-KNMS (2022). Kew Names Matching Service.
+KNMS (2023). Kew Names Matching Service.
 http://namematch.science.kew.org/
 
-Kew Reconciliation Service
+[//]: # (Kew Reconciliation Service)
 
-gnparser Mozzherin, D.Y., Myltsev, A.A. & Patterson, D.J. “gnparser”: a powerful parser for scientific names
-based on Parsing Expression Grammar. BMC Bioinformatics 18, 279 (2017)
-.https://doi.org/10.1186/s12859-017-1663-3
+[//]: # ()
+[//]: # (gnparser Mozzherin, D.Y., Myltsev, A.A. & Patterson, D.J. “gnparser”: a powerful parser for scientific names)
+
+[//]: # (based on Parsing Expression Grammar. BMC Bioinformatics 18, 279 &#40;2017&#41;)
+
+[//]: # (.https://doi.org/10.1186/s12859-017-1663-3)

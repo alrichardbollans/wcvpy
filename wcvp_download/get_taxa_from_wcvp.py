@@ -141,7 +141,8 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     all_wcvp_data[wcvp_columns['acc_plant_name_id']] = all_wcvp_data[
         wcvp_columns['acc_plant_name_id']].astype(float)
     all_wcvp_data[wcvp_columns['plant_name_id']] = all_wcvp_data[wcvp_columns['plant_name_id']].astype(float)
-    all_accepted = all_wcvp_data[all_wcvp_data[wcvp_columns['status']] == 'Accepted']
+    all_accepted = all_wcvp_data[
+        all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
 
     wcvp_data = all_wcvp_data.copy(deep=True)
     if statuses_to_drop is None:

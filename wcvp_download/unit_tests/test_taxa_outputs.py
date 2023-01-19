@@ -148,13 +148,13 @@ class MyTestCase(unittest.TestCase):
         self.assertListEqual(genus_df[wcvp_accepted_columns['id']].values.tolist(), ['34250-1'])
 
     def test_everything_has_ipni_id(self):
-        #May fail: Not all plants have an ipni id
+        # May fail: Not all plants have an ipni id
         without_ipni_id = wcvp_data[wcvp_data[wcvp_columns['id']].isna()]
         # without_ipni_id.to_csv(os.path.join(_output_path, 'without_id.csv'))
         self.assertEqual(len(without_ipni_id.index), 0)
 
     def test_everything_with_accepted_name_has_accepted_id(self):
-        #May fail: Not all accepted plants have an ipni id
+        # May fail: Not all accepted plants have an ipni id
         with_accepted_name = wcvp_data[~wcvp_data[wcvp_accepted_columns['name']].isna()]
         without_acc_id = with_accepted_name[with_accepted_name[wcvp_accepted_columns['id']].isna()]
         without_acc_id.to_csv(os.path.join(_output_path, 'without_acc_id.csv'))

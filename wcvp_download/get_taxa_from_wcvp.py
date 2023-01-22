@@ -96,6 +96,8 @@ def get_up_to_date_wcvp_zip(force_use_existing: bool = False):
     wcvp_link = '/'.join([wcvp_path, 'wcvp.zip'])
 
     input_zip_file = os.path.join(_inputs_path, 'wcvp.zip')
+    if not os.path.exists(_inputs_path):
+        os.mkdir(_inputs_path)
     if not force_use_existing:
         # Download if doesn't exist
         if not os.path.exists(input_zip_file):

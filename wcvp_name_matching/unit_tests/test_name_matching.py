@@ -372,6 +372,15 @@ class MyTestCase(unittest.TestCase):
 
         self.all_info_test('autoresoltuions_with_fams.csv', 'Name', family_column='Family')
 
+    def test_wcvp_families(self):
+        # Currently fails
+        # One must be careful with usage of families_of_interest --- there are some genera that are often considered to be in
+        # different families. For example, 'Anthocleista' is an accepted genus in Gentianaceae but is often considered
+        # to be in Loganiaceae. If you try to match e.g. 'Anthocleista procera' within Loganiaceae it will be unresolved.
+        # Note however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family
+        # is rubiaceae and in this case the program will find the match
+        self.all_info_test('outside_family_test.csv', 'Name', families_of_interest=['Loganiaceae'])
+
 
 if __name__ == '__main__':
     unittest.main()

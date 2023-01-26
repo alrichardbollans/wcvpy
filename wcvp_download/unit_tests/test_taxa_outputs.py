@@ -165,6 +165,9 @@ class MyTestCase(unittest.TestCase):
         weird_df.to_csv(os.path.join(_output_path, 'nothofs.csv'))
         self.assertEqual(len(weird_df.index), 0)
 
-
+    def test_unusual_genera(self):
+        logan_df = get_all_taxa(families_of_interest=['Loganiaceae'])
+        logan_df[logan_df[wcvp_columns['genus']]=='Anthocleista'].to_csv(os.path.join(_output_path,'Anthocleista_in_logania.csv'))
+        self.assertIn('Anthocleista', logan_df[wcvp_columns['genus']].values)
 if __name__ == '__main__':
     unittest.main()

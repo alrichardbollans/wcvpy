@@ -59,7 +59,7 @@ i.e. Accepted > Artificial Hybrid > Synonym> Illegitimate>...).
 
 Submitted names which aren't found in these first steps are then matched to names using KNMS, which contains
 multiple steps. Firstly, in simple cases where KNMS returns a single match for a submitted name we use the
-match IPNI ID to find accepted information from WCVP. Tag = 'knms_unique'
+match IPNI ID to find accepted information from WCVP. Tag = 'knms_single'
 
 Frequently however, submissions will be matched to multiple names in KNMS. In these cases we attempt to find
 the 'best' match. To do this, first we find accepted info for each of the matches using the match IPNI ID and
@@ -107,7 +107,7 @@ A rough diagram is given below.
       was unique
     * 'direct_wcvp_w_author(_unique)': name resolved directly matching to WCVP including author names,
       including _unique if the match to WCVP was unique
-    * 'knms_unique': where KNMS provides a single matching name
+    * 'knms_single': where KNMS provides a single matching name
     * 'knms_multiple_1': where KNMS provides multiple matches for the submitted name, but the submitted name
       is exactly the same as the accepted name for one of the matches
     * 'knms_multiple_2': where KNMS provides multiple matches for the submitted name, but matches are all

@@ -374,6 +374,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_wcvp_families(self):
         # Currently fails
+        # See readme on this issue
         # One must be careful with usage of families_of_interest --- there are some genera that are often considered to be in
         # different families. For example, 'Anthocleista' is an accepted genus in Gentianaceae but is often considered
         # to be in Loganiaceae. If you try to match e.g. 'Anthocleista procera' within Loganiaceae it will be unresolved.

@@ -167,7 +167,12 @@ class MyTestCase(unittest.TestCase):
 
     def test_unusual_genera(self):
         logan_df = get_all_taxa(families_of_interest=['Loganiaceae'])
-        logan_df[logan_df[wcvp_columns['genus']]=='Anthocleista'].to_csv(os.path.join(_output_path,'Anthocleista_in_logania.csv'))
-        self.assertIn('Anthocleista', logan_df[wcvp_columns['genus']].values)
+        funny_genera = ['Anthocleista', 'Cissus', 'Ziziphus', 'Rhamnus']
+        logan_df[logan_df[wcvp_columns['genus']].isin(['Anthocleista', 'Narcissus', 'Cissus'])].to_csv(
+            os.path.join(_output_path, 'Ant_in_logania.csv'))
+        for g in funny_genera:
+            self.assertIn(g, logan_df[wcvp_columns['genus']].values)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -158,6 +158,12 @@ may lead to unresolved names, in which case it may be worth checking the input d
 * Some taxa are not given ipni ids, including some accepted taxa
 * Artificial Hybrids are treated as accepted
 * Some taxa are given "nothof." as a rank
+* There are some genera that are often considered to be in different families. For example, 'Anthocleista' is
+  an accepted genus in Gentianaceae but is often considered to be in Loganiaceae. If you try to match e.g. '
+  Anthocleista procera' within Loganiaceae (using `families_of_interest` argument) it will be unresolved. Note
+  however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family is
+  rubiaceae and in this case the program will find the match. This is particularly relevant for families like
+  Loganiaceae that have been used as a catch-all
 
 ## Notes on Kew Reconciliation Service
 

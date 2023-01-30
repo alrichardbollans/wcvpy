@@ -70,7 +70,8 @@ def remove_whitespace_at_beginning_and_end(value):
     except AttributeError:
         return value
 
-def add_space_after_hybrid_char(value:str):
+
+def add_space_after_hybrid_char(value: str):
     try:
         out = value
         for h_char in hybrid_characters:
@@ -79,6 +80,7 @@ def add_space_after_hybrid_char(value:str):
         return out
     except AttributeError:
         return value
+
 
 def _capitalize_first_letter_of_taxon(g: str):
     '''
@@ -144,6 +146,7 @@ def clean_urn_ids(given_value: str) -> str:
     except TypeError:
         return given_value
 
+
 def tidy_authors(given_string: str):
     # Remove spaces after full stops if full stop isn't part of infraspecific epithet
     # and after the space is a letter
@@ -155,3 +158,14 @@ def tidy_authors(given_string: str):
         return re.sub(my_regex, ".", given_string)
     except TypeError:
         return given_string
+
+
+def get_word_combinations(given_string: str):
+    splitted = given_string.split()
+    combinations = []
+    for i in range(1, len(splitted) + 1):
+        to_append = splitted[0]
+        for j in range(1, i):
+            to_append = ' '.join([to_append, splitted[j]])
+        combinations.append(to_append)
+    return combinations

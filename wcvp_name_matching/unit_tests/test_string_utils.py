@@ -3,7 +3,8 @@ import unittest
 import numpy as np
 
 from wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
-from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors
+from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors, \
+    get_word_combinations
 
 
 class MyTestCase(unittest.TestCase):
@@ -84,6 +85,12 @@ class MyTestCase(unittest.TestCase):
                 self.assertEqual(test_dict[d], tidy_authors(d))
             else:
                 self.assertTrue(np.isnan(tidy_authors(d)))
+
+    def test_get_word_combintations(self):
+        test_dict = {'first second third': ['first', 'first second', 'first second third'],
+                     'A   B B  C': ['A', 'A B', 'A B B', 'A B B C']}
+        for t in test_dict:
+            self.assertEqual(get_word_combinations(t), test_dict[t])
 
 
 if __name__ == '__main__':

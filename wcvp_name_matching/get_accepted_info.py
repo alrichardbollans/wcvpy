@@ -70,7 +70,8 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
              'accepted_parent': [], 'accepted_parent_ipni_id': [],
              wcvp_accepted_columns['species']: [], wcvp_accepted_columns['species_id']: [],
              wcvp_accepted_columns['family']: [],
-             wcvp_columns['status']: []})
+             wcvp_columns['status']: [],
+             'matched_name': []})
 
         if family_column is not None:
             match_df[family_column] = []
@@ -96,6 +97,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                       ascii=False, ncols=72):
             submitted_name = unmatched_submissions_worth_checking[matching_name_col].values[i]
             submitted_id = unmatched_submissions_worth_checking[submission_id_col].values[i]
+            word_combinations_to_check = get_word_combinations(submitted_name)
             if family_column is not None:
                 submitted_family = unmatched_submissions_worth_checking[family_column].values[i]
 
@@ -106,9 +108,11 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                     if submitted_family == row[wcvp_columns['family']] or submitted_family == row[
                         wcvp_accepted_columns['family']]:
                         taxa = row[wcvp_columns['name']]
-                        if taxa in get_word_combinations(submitted_name):
+
+                        if taxa in word_combinations_to_check:
                             record[matching_name_col] = [submitted_name]
                             record[family_column] = [submitted_family]
+                            record['matched_name'] = taxa
                             record[submission_id_col] = submitted_id
                             match_df = pd.concat([match_df, record])
             else:
@@ -117,9 +121,11 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                         acc_info_col_names + [wcvp_columns['family'], wcvp_columns['name']]]
 
                     taxa = row[wcvp_columns['name']]
-                    if taxa in get_word_combinations(submitted_name):
+
+                    if taxa in word_combinations_to_check:
                         record[matching_name_col] = [submitted_name]
                         record[submission_id_col] = submitted_id
+                        record['matched_name'] = taxa
                         match_df = pd.concat([match_df, record])
         match_df = match_df.dropna(subset=[wcvp_accepted_columns['name']])
         # Remove genera matches where genus appears in different families
@@ -219,7 +225,8 @@ def _get_knms_matches_and_accepted_info_from_names_in_column(df: pd.DataFrame, m
         else:
             resolved_df = single_matches
 
-        resolved_df = resolved_df[[unique_submission_id_col] + acc_info_col_names + ['matched_by']]
+        resolved_df = resolved_df[
+            [unique_submission_id_col] + acc_info_col_names + ['matched_by', 'matched_name']]
         resolved_df = resolved_df.dropna(subset=[wcvp_accepted_columns['name']])
         resolved_df = resolved_df.drop_duplicates(subset=[unique_submission_id_col], keep='first')
 
@@ -351,7 +358,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
 
     reserved_column_names = [submitted_name_col_id, submitted_family_name_col_id, recapitalised_name_col,
                              lowercase_name_col,
-                             unique_submission_index_col, 'submitted', 'matched_by', 'resolution_id',
+                             unique_submission_index_col, 'submitted', 'matched_by', 'matched_name',
+                             'resolution_id',
                              'taxon_name_with_taxon_authors', tidied_taxon_authors_col
                              ] + list(wcvp_columns.values()) + acc_info_col_names
     problem_columns = [x for x in in_df.columns if
@@ -438,6 +446,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                                       right_on='submitted',
                                       sort=False)
             manual_matches['matched_by'] = 'manual'
+            manual_matches['matched_name'] = np.nan
             unmatched_manual_df = df[
                 ~df[unique_submission_index_col].isin(manual_matches[unique_submission_index_col].values)]
         else:
@@ -493,16 +502,16 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         _temp_output(final_resolved_df, 'final_resolutions')
 
         final_resolved_df = final_resolved_df[
-            [unique_submission_index_col] + acc_info_col_names + ['matched_by']]
+            [unique_submission_index_col] + acc_info_col_names + ['matched_by', 'matched_name']]
         out_df = pd.merge(in_df, final_resolved_df, on=unique_submission_index_col,
                           how='left')
         in_df.drop(columns=[unique_submission_index_col], inplace=True)
         out_df = out_df.drop(columns=[unique_submission_index_col])
         # reorder
-        out_df = out_df[in_df.columns.tolist() + acc_info_col_names + ['matched_by']]
+        out_df = out_df[in_df.columns.tolist() + acc_info_col_names + ['matched_by', 'matched_name']]
         return out_df
     else:
         out_copy = in_df.copy()
-        for a in acc_info_col_names + ['matched_by']:
+        for a in acc_info_col_names + ['matched_by', 'matched_name']:
             out_copy[a] = np.nan
         return out_copy

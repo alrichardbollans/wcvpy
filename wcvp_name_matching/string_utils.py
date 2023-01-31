@@ -2,17 +2,17 @@ import re
 
 import pandas as pd
 
-from wcvp_download import wcvp_accepted_columns
+from wcvp_download import wcvp_accepted_columns, wcvp_columns
 
 acc_info_col_names = [wcvp_accepted_columns['id'],
-                      'accepted_name',
+                      wcvp_accepted_columns['name'],
                       wcvp_accepted_columns['family'],
-                      'accepted_rank',
-                      'accepted_species',
-                      'accepted_species_ipni_id',
-                      'accepted_parent',
+                      wcvp_accepted_columns['rank'],
+                      wcvp_accepted_columns['species'],
+                      wcvp_accepted_columns['species_id'],
+                      wcvp_accepted_columns['parent_name'],
                       'accepted_parent_ipni_id',
-                      'taxon_status']
+                      wcvp_columns['status']]
 
 hybrid_characters = ["×", "+"]
 

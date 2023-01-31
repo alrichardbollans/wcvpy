@@ -231,7 +231,8 @@ class MyTestCase(unittest.TestCase):
             '328988-2')
         self.assertEqual(
             multiple_match_records.loc[
-                multiple_match_records['submitted'] == 'Asclepias curassavica', wcvp_accepted_columns['id']].iloc[0],
+                multiple_match_records['submitted'] == 'Asclepias curassavica', wcvp_accepted_columns[
+                    'id']].iloc[0],
             '94213-1')
 
         self.assertEqual(
@@ -268,18 +269,15 @@ class MyTestCase(unittest.TestCase):
         self._test_get_acc_info_names_on_csv('synonym_list.csv', 'syn',
                                              'Know_acc_name')
 
-
     def test_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('examples_to_fix.csv',
                                              'Name',
                                              'acc_name')
 
-
     def test_fam_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('fam_examples_to_fix.csv',
                                              'Name',
                                              'acc_name', family_column='Family')
-
 
     def test_spacelike(self):
         self._test_get_acc_info_names_on_csv('spacelike_cases.csv',
@@ -381,6 +379,14 @@ class MyTestCase(unittest.TestCase):
         # Note however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family
         # is rubiaceae and in this case the program will find the match
         self.all_info_test('outside_family_test.csv', 'Name', families_of_interest=['Loganiaceae'])
+
+    def test_matched_to_example(self):
+        test_df = pd.read_csv(os.path.join(unittest_inputs, 'matched_name_example.csv'))
+        response = get_accepted_info_from_names_in_column(test_df, 'Name')
+        response.to_csv(os.path.join(unittest_outputs, 'matched_name_example.csv'))
+
+
+        self.compare_series(test_df['m_name'], response['matched_name'])
 
 
 if __name__ == '__main__':

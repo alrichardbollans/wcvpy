@@ -65,13 +65,15 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
     unmatched_with_authors_df[tidied_taxon_authors_col] = unmatched_with_authors_df[lowercase_name_col].apply(
         tidy_authors)
 
-    # Match with taxon authors
     tidy_author_merged = pd.merge(unmatched_with_authors_df, all_taxa, how='left',
                                   left_on=tidied_taxon_authors_col,
                                   right_on='taxon_name_with_extra_columns')
     tidy_author_merged = tidy_author_merged.dropna(subset=[wcvp_columns['plant_name_id']])
 
-    matched = pd.concat([author_merged, tidy_author_merged])
+    matched = pd.concat([author_merged, tidy_author_merged], ignore_index=True)
+
+    matched['matched_name'] = matched[wcvp_columns['name']].str.cat([matched[c] for c in columns],
+                                                                    sep=' ')
 
     unmatched = unmatched_with_authors_df[
         ~unmatched_with_authors_df[tidied_taxon_authors_col].isin(
@@ -98,22 +100,25 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
                                                                                   all_taxa,
                                                                                   [wcvp_columns['authors']])
 
+    author_merged['matched_by'] = 'direct_wcvp_w_author'
+
     paranthet_author_merged, unmatched_with_paranthet_authors_df = match_name_to_concatenated_columns(
         unmatched_with_authors_df, matching_name_col,
         all_taxa,
         [wcvp_columns['paranthet_author'], wcvp_columns['primary_author']])
 
+    paranthet_author_merged['matched_by'] = 'direct_wcvp_w_author'
+
     just_name_merged = pd.merge(unmatched_with_paranthet_authors_df, all_taxa, how='left',
                                 left_on=matching_name_col,
                                 right_on=wcvp_columns['name'])
     just_name_merged = just_name_merged.dropna(subset=[wcvp_columns['plant_name_id']])
-    author_merged['matched_by'] = 'direct_wcvp_w_author'
-    paranthet_author_merged['matched_by'] = 'direct_wcvp_w_author'
     just_name_merged['matched_by'] = 'direct_wcvp'
+    just_name_merged['matched_name'] = just_name_merged[wcvp_columns['name']]
 
     merged_with_wcvp = pd.concat([author_merged, paranthet_author_merged, just_name_merged])
     match_df = get_family_specific_resolutions(merged_with_wcvp, family_column=family_column)
-    match_df = match_df[[unique_submission_id_col] + acc_info_col_names + ['matched_by']]
+    match_df = match_df[[unique_submission_id_col] + acc_info_col_names + ['matched_by', 'matched_name']]
 
     # Remove duplicates in match_df based on priority
 

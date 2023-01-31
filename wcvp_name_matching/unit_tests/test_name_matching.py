@@ -353,7 +353,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_other_column_values_stay_the_same(self):
         test_df, result = self.all_info_test('powo_medicinal_cleaned.csv', 'Name')
-        result = result.drop(columns=acc_info_col_names + ['matched_by'])
+        result = result.drop(columns=acc_info_col_names + ['matched_by', 'matched_name'])
         pandas.testing.assert_frame_equal(test_df, result)
 
     def test_knms_synonyms(self):

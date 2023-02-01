@@ -48,7 +48,7 @@ def get_family_specific_resolutions(resolution_df: pd.DataFrame, family_column: 
 
 def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str, all_taxa: pd.DataFrame,
                                        columns: List[str]):
-    column_series = [all_taxa[c] for c in columns]
+    column_series = [all_taxa[c].fillna('') for c in columns]
     all_taxa['taxon_name_with_extra_columns'] = all_taxa[wcvp_columns['name']].str.cat(column_series,
                                                                                        sep=' ').str.lower()
     df[lowercase_name_col] = df[matching_name_col].str.lower()
@@ -72,7 +72,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
 
     matched = pd.concat([author_merged, tidy_author_merged], ignore_index=True)
 
-    matched['matched_name'] = matched[wcvp_columns['name']].str.cat([matched[c] for c in columns],
+    matched['matched_name'] = matched[wcvp_columns['name']].str.cat([matched[c].fillna('') for c in columns],
                                                                     sep=' ')
 
     unmatched = unmatched_with_authors_df[

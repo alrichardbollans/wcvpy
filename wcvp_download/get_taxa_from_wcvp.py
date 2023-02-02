@@ -96,9 +96,12 @@ def get_up_to_date_wcvp_zip(force_use_existing: bool = False):
     wcvp_link = '/'.join([wcvp_path, 'wcvp.zip'])
 
     input_zip_file = os.path.join(_inputs_path, 'wcvp.zip')
+
     if not os.path.exists(_inputs_path):
         os.mkdir(_inputs_path)
     if not force_use_existing:
+        print(f'Loading WCVP...')
+        print(f'The latest version will be downloaded if not already available at {input_zip_file}')
         # Download if doesn't exist
         if not os.path.exists(input_zip_file):
             print('Downloading latest WCVP version...')
@@ -120,6 +123,8 @@ def get_up_to_date_wcvp_zip(force_use_existing: bool = False):
                     for chunk in r.iter_content(chunk_size=128):
                         fd.write(chunk)
 
+    if force_use_existing:
+        print('Loading WCVP Using your existing version of WCVP, note this may not be up to date')
     return zipfile.ZipFile(input_zip_file)
 
 

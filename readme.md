@@ -17,7 +17,9 @@ your_data_df = pd.read_csv(data_csv)  # Data to use
 name_col = 'taxa'  # Name of column in data with names to check
 # Names of families in your data 
 # This is optional, but the program is much faster if specified
-# One must be careful with usage of this --- there are some genera that are often considered to be in 
+# One must be careful with usage of this. If the restriction of families is not broad enough some species may 
+# erroneously be matched to a genus in the incorrect family (during autoresolution step). 
+# There are some genera that are often considered to be in 
 # different families. For example, 'Anthocleista' is an accepted genus in Gentianaceae but is often considered
 # to be in Loganiaceae. If you try to match e.g. 'Anthocleista procera' within Loganiaceae it will be unresolved.
 # Note however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family 
@@ -147,23 +149,15 @@ may lead to unresolved names, in which case it may be worth checking the input d
 
 ## Notes on WCVP
 
-* Using most up to date version of WCVP
-* Some records in WCVP are not given accepted information e.g. 'Psychotria guadalupensis subsp.
-  grosourdieana', '
-  Asperula nitida' or '
-  Urtica angustifolia'
-* Some times POWO and WCVP don't agree (mostly due to short lag in POWO updates?) as of writing **Gunnessia**
-  , **Oistonema** and **Gentingia** are accepted in POWO but are synonyms in WCVP
-* Accepted names are not always unique (without author information) e.g. **Helichrysum oligocephalum**
-* Some taxa are not given ipni ids, including some accepted taxa
+* Using most up-to-date version of WCVP
 * Artificial Hybrids are treated as accepted
-* Some taxa are given "nothof." as a rank
-* There are some genera that are often considered to be in different families. For example, 'Anthocleista' is
+* A note on using families in matching: There are some genera that are often considered to be in different families. For example, 'Anthocleista' is
   an accepted genus in Gentianaceae but is often considered to be in Loganiaceae. If you try to match e.g. '
   Anthocleista procera' within Loganiaceae (using `families_of_interest` argument) it will be unresolved. Note
   however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family is
   rubiaceae and in this case the program will find the match. This is particularly relevant for families like
   Loganiaceae that have been used as a catch-all
+* For issues with WCVP, see https://github.com/alrichardbollans/automatchnames/issues/25
 
 ## Notes on Kew Reconciliation Service
 

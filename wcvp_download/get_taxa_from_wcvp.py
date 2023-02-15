@@ -36,8 +36,19 @@ wcvp_accepted_columns = {'family': 'accepted_family',
                          'rank': 'accepted_rank',
                          'parent_name': 'accepted_parent',
                          'parent_rank': 'accepted_parent_rank'
-
                          }
+
+wcvp_columns_used_in_direct_matching = [wcvp_columns['genus'],
+                                        wcvp_columns['family'],
+                                        wcvp_columns['name'], wcvp_columns['authors'],
+                                        wcvp_columns['paranthet_author'], wcvp_columns['primary_author']]
+
+hybrid_characters = ["×", "+"]
+
+infraspecific_chars = ['agamosp.', 'convar.', 'ecas.', 'f.', 'grex', 'group', 'lusus', 'microf.', 'microgene',
+                       'micromorphe', 'modif.', 'monstr.', 'mut.', 'nid', 'nothof.', 'nothosubsp.',
+                       'nothovar.', 'positio', 'proles', 'provar.', 'psp.', 'stirps', 'subf.', 'sublusus',
+                       'subproles', 'subsp.', 'subspecioid', 'subvar.', 'unterrasse', 'var.']
 
 
 def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame) -> pd.DataFrame:
@@ -132,7 +143,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                  species: List[str] = None,
                  specific_taxa: List[str] = None,
                  accepted: bool = False, statuses_to_drop=None, output_csv: str = None,
-                 force_use_existing: bool = False) -> pd.DataFrame:
+                 force_use_existing: bool = False, clean_strings: bool = True) -> pd.DataFrame:
     start = time.time()
 
     if output_csv is not None:
@@ -152,6 +163,18 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
 
     wcvp_data = all_wcvp_data.copy(deep=True)
+
+    if clean_strings:
+        def clean_double_spaces(given_str: str):
+            if pd.isnull(given_str):
+                return given_str
+            else:
+                return " ".join(given_str.split())
+
+        # Clean strings
+        for col in wcvp_columns_used_in_direct_matching:
+            wcvp_data[col] = wcvp_data[col].apply(clean_double_spaces)
+
     if statuses_to_drop is None:
         statuses_to_drop = ['Local Biotype']
 

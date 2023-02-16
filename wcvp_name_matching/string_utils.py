@@ -1,8 +1,9 @@
 import re
+import string
 
 import pandas as pd
 
-from wcvp_download import wcvp_accepted_columns, wcvp_columns
+from wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters, infraspecific_chars
 
 acc_info_col_names = [wcvp_accepted_columns['id'],
                       wcvp_accepted_columns['name'],
@@ -11,15 +12,8 @@ acc_info_col_names = [wcvp_accepted_columns['id'],
                       wcvp_accepted_columns['species'],
                       wcvp_accepted_columns['species_id'],
                       wcvp_accepted_columns['parent_name'],
-                      'accepted_parent_ipni_id',
-                      wcvp_columns['status']]
-
-hybrid_characters = ["×", "+"]
-
-infraspecific_chars = ['agamosp.', 'convar.', 'ecas.', 'f.', 'grex', 'group', 'lusus', 'microf.', 'microgene',
-                       'micromorphe', 'modif.', 'monstr.', 'mut.', 'nid', 'nothof.', 'nothosubsp.',
-                       'nothovar.', 'positio', 'proles', 'provar.', 'psp.', 'stirps', 'subf.', 'sublusus',
-                       'subproles', 'subsp.', 'subspecioid', 'subvar.', 'unterrasse', 'var.']
+                      'accepted_parent_ipni_id']
+output_record_col_names = acc_info_col_names + [wcvp_columns['status']]
 
 submitted_name_col_id = 'submitted_name_col_id'
 recapitalised_name_col = 'recap_name_col'
@@ -62,27 +56,35 @@ def get_species_from_full_name(full_name_beginning_with_genus: str) -> str:
         return full_name_beginning_with_genus
 
 
-def remove_whitespace_at_beginning_and_end(value):
+def remove_whitespace_at_beginning_and_end(value: str) -> str:
     try:
-        v = value.rstrip()
-        out = v.lstrip()
-        return out
+        return value.strip()
     except AttributeError:
         return value
 
 
-def add_space_after_hybrid_char(value: str):
+def remove_double_spaces(given_str: str) -> str:
+    if pd.isnull(given_str):
+        return given_str
+    else:
+        return " ".join(given_str.split())
+
+
+def add_space_around_hybrid_chars_and_infraspecific_epithets(value: str):
     try:
         out = value
-        for h_char in hybrid_characters:
+        for h_char in [c for c in infraspecific_chars if '.' in c and c != 'f.'] + hybrid_characters:
+            # These things should be preceded and followed by space
             if h_char in value:
-                out = re.sub(r'(?<=[{}])(?=[^\s])'.format(h_char), r' ', out)
+                out = re.sub(r'(?<={})(?=[^\s])'.format(re.escape(h_char)), r' ', out)
+                out = re.sub(r'(?={})(?<=[^\s])'.format(re.escape(h_char)), r' ', out)
+
         return out
     except AttributeError:
         return value
 
 
-def _capitalize_first_letter_of_taxon(g: str):
+def _capitalize_first_letter_of_taxon(g: str) -> str:
     '''
     Aims to captilise first letter of genus and lower case everything else
     :param g:
@@ -97,21 +99,38 @@ def _capitalize_first_letter_of_taxon(g: str):
             g = g[2:]
         l = g.lower()
 
-        words = l.split(' ')
-        capitalised_words = [w.capitalize() if (w.endswith('.') and w not in infraspecific_chars) else w for w
+        words = l.split()
+        capitalised_words = [w.capitalize() if w.endswith('.') and w not in infraspecific_chars else w for w
                              in words]
+        for i in range(len(capitalised_words)):
+            c = capitalised_words[i]
+            if any(c.startswith(p) for p in string.punctuation):
+                try:
+                    c_list = list(c)
+                    c_list[1] = c_list[1].capitalize()
+                    capitalised_words[i] = ''.join(c_list)
+                except IndexError:
+                    pass
         capitalised_words[0] = capitalised_words[0].capitalize()
         return append_to_beginning + ' '.join(capitalised_words)
     except AttributeError:
         return g
 
 
-def remove_spacelike_chars(given_name: str):
+def remove_spacelike_chars(given_name: str) -> str:
     try:
-        new_name = given_name.replace('\xa0', ' ')
-        new_name = new_name.replace('\t', ' ')
 
+        # new_name = given_name.replace('\xa0', ' ')
+        # new_name = new_name.replace('\t', ' ')
+        new_name = ' '.join(given_name.split())
         return new_name
+    except AttributeError:
+        return given_name
+
+
+def remove_fullstop(given_name: str) -> str:
+    try:
+        return given_name.replace('.', '')
     except AttributeError:
         return given_name
 
@@ -126,10 +145,10 @@ def tidy_families_in_column(df: pd.DataFrame, fam_column: str):
 def tidy_names_in_column(df: pd.DataFrame, name_col: str):
     df[submitted_name_col_id] = df[name_col]
     df[name_col] = df[name_col].apply(remove_spacelike_chars)
-    df[name_col] = df[name_col].apply(add_space_after_hybrid_char)
+    df[name_col] = df[name_col].apply(add_space_around_hybrid_chars_and_infraspecific_epithets)
+    df[name_col] = df[name_col].apply(remove_double_spaces)
     df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
     df[recapitalised_name_col] = df[name_col].apply(_capitalize_first_letter_of_taxon)
-    df[lowercase_name_col] = df[name_col].str.lower()
 
 
 def clean_urn_ids(given_value: str) -> str:
@@ -150,10 +169,10 @@ def clean_urn_ids(given_value: str) -> str:
 def tidy_authors(given_string: str):
     # Remove spaces after full stops if full stop isn't part of infraspecific epithet
     # and after the space is a letter
-    my_regex = "\.\s(?=[a-z]|[A-Z])"
+    my_regex = ""
     for ch in infraspecific_chars:
-        ch_reg_form = re.escape(ch)
-        my_regex += "(?<!" + ch_reg_form + "\s)"
+        my_regex += "(?<!" + re.escape(ch.replace('.', '')) + ")"
+    my_regex += "\.\s(?=[a-z]|[A-Z]|[)])"
     try:
         return re.sub(my_regex, ".", given_string)
     except TypeError:

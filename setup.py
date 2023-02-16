@@ -15,6 +15,6 @@ setup(
     url='https://github.com/alrichardbollans/automatchnames',
     license='GNU v.3',
     author='Adam Richard-Bollans',
-    description='A package for automating name matching of scientific names',
+    description='A package for downloading WCVP and matching names to it',
     long_description=open('readme.md', encoding="utf8").read()
 )

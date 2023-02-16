@@ -9,7 +9,7 @@ import pandas.testing
 from pkg_resources import resource_filename
 
 from wcvp_name_matching import id_lookup_wcvp, get_accepted_wcvp_info_from_ids_in_column, \
-    get_accepted_info_from_names_in_column, acc_info_col_names, clean_urn_ids
+    get_accepted_info_from_names_in_column, output_record_col_names, clean_urn_ids
 from wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
     _find_best_matches_from_multiple_knms_matches
 
@@ -108,7 +108,27 @@ class MyTestCase(unittest.TestCase):
 
         return test_df, response
 
-    def all_info_id_test(self, input_csv_name: str, id_col: str, taxa_df: pd.DataFrame):
+    def gets_correct_id_test(self, input_csv_name: str, name_col: str, **kwargs):
+        '''
+        Test all info is correct where input csv has appropriate column names
+        :param input_csv_name:
+        :param name_col:
+        :return:
+        '''
+        start = time.time()
+
+        test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
+        response = get_accepted_info_from_names_in_column(test_df, name_col, **kwargs)
+        response.to_csv(os.path.join(unittest_outputs, input_csv_name))
+
+        self.compare_series(test_df['acc_id'], response[test_columns['acc_id']])
+
+        end = time.time()
+        print(f'Time elapsed for all info test: {end - start}s')
+
+        return test_df, response
+
+    def all_info_id_lookup_test(self, input_csv_name: str, id_col: str, taxa_df: pd.DataFrame):
         '''
         Test all info is correct where input csv has appropriate column names
         :param taxa_df:
@@ -184,7 +204,7 @@ class MyTestCase(unittest.TestCase):
 
     # @unittest.skip
     def test_get_accepted_info_from_ids_in_column(self):
-        self.all_info_id_test('powo_medicinal_cleaned.csv', 'fqId', wcvp_taxa)
+        self.all_info_id_lookup_test('powo_medicinal_cleaned.csv', 'fqId', wcvp_taxa)
 
         standardised = pd.read_csv(os.path.join(unittest_inputs, 'powo_medicinal_cleaned.csv'),
                                    index_col=False)
@@ -330,7 +350,8 @@ class MyTestCase(unittest.TestCase):
         self.assertListEqual(acc_df[wcvp_accepted_columns['family']].values.tolist(), ['Rubiaceae'])
 
     def test_direct_match(self):
-        self.all_info_test('wcvp_level.csv', 'Name', match_level='direct')
+        self.gets_correct_id_test('more_direct_matches.csv', 'Name', match_level='direct')
+        self.all_info_test('direct_matches.csv', 'Name', match_level='direct')
         try:
             get_accepted_info_from_names_in_column(pd.DataFrame(), 'Name', match_level='garbage')
         except ValueError:
@@ -353,7 +374,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_other_column_values_stay_the_same(self):
         test_df, result = self.all_info_test('powo_medicinal_cleaned.csv', 'Name')
-        result = result.drop(columns=acc_info_col_names + ['matched_by', 'matched_name'])
+        result = result.drop(columns=output_record_col_names + ['matched_by', 'matched_name'])
         pandas.testing.assert_frame_equal(test_df, result)
 
     def test_knms_synonyms(self):
@@ -385,8 +406,7 @@ class MyTestCase(unittest.TestCase):
         response = get_accepted_info_from_names_in_column(test_df, 'Name')
         response.to_csv(os.path.join(unittest_outputs, 'matched_name_example.csv'))
 
-
-        self.compare_series(test_df['m_name'], response['matched_name'])
+        self.compare_series(test_df['m_name'].fillna(''), response['matched_name'].fillna(''))
 
 
 if __name__ == '__main__':

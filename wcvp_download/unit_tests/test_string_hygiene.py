@@ -13,10 +13,10 @@ _output_path = 'test_outputs'
 
 class MyTestCase(unittest.TestCase):
     def dataset_tests(self, df, output_dir):
-        things_not_in_checklist_taxon_names = ['  ', ' .']
+        things_not_in_checklist = ['  ', ' .', '. )']
         notin_problem_dfs = []
         for col in wcvp_columns_used_in_direct_matching:
-            for unused_string in things_not_in_checklist_taxon_names:
+            for unused_string in things_not_in_checklist:
                 problem_df = df[df[col].str.contains(unused_string, na=False, regex=False)]
 
                 if len(problem_df.index) > 0:
@@ -27,6 +27,8 @@ class MyTestCase(unittest.TestCase):
 
         things_that_should_be_followed_by_spaces_in_names = [c for c in infraspecific_chars if
                                                              '.' in c] + hybrid_characters + ['.']
+        things_that_should_be_preceded_by_spaces_in_names = [c for c in infraspecific_chars if
+                                                             '.' in c] + hybrid_characters
         problem_dfs = []
         for col in wcvp_columns_used_in_direct_matching:
             if col not in [wcvp_columns['authors'], wcvp_columns['paranthet_author'],
@@ -38,6 +40,13 @@ class MyTestCase(unittest.TestCase):
                         problem_df[['accepted_ipni_id', 'accepted_name', col]].to_csv(
                             os.path.join(output_dir, test_string + col + 'wcvp_problems.csv'))
                         problem_dfs.append(problem_df)
+                for test_string in things_that_should_be_preceded_by_spaces_in_names:
+                    problem_df2 = df[
+                        df[col].str.contains(r'(?<!\s)(?<!^)\.' + re.escape(test_string), na=False)]
+                    if len(problem_df2.index) > 0:
+                        problem_df2[['accepted_ipni_id', 'accepted_name', col]].to_csv(
+                            os.path.join(output_dir, test_string + col + '_prec_wcvp_problems.csv'))
+                        problem_dfs.append(problem_df2)
         self.assertEqual(len(problem_dfs), 0)
         self.assertEqual(len(notin_problem_dfs), 0)
 

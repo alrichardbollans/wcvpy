@@ -1,10 +1,15 @@
+import os
 import unittest
 
 import numpy as np
+import pandas as pd
+from pkg_resources import resource_filename
 
 from wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
 from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors, \
-    get_word_combinations
+    get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets
+
+unittest_inputs = resource_filename(__name__, 'test_inputs')
 
 
 class MyTestCase(unittest.TestCase):
@@ -32,7 +37,9 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(correct_dict[k], get_species_from_full_name(k))
 
     def test_capitalising(self):
-        test_dict = {'X': 'X', '3': '3', np.nan: np.nan,
+        test_dict = {'Abies .abies. (L. ) Druce': 'Abies .Abies. (L. ) druce',
+                     'Abies abies (L. ) Druce': 'Abies abies (L. ) druce',
+                     'X': 'X', '3': '3', np.nan: np.nan,
                      'Xa': 'Xa', 'Xan and': 'Xan and',
                      'XAn XAn': 'Xan xan', "× genus": '× Genus',
                      "× genus species": '× Genus species',
@@ -44,7 +51,7 @@ class MyTestCase(unittest.TestCase):
                      'Pub. Genus auth1. Genus auth2. Pub.': 'Pub. genus Auth1. genus Auth2. Pub.',
                      'Pub. Genus auth1. var. Genus auth2. Pub.': 'Pub. genus Auth1. var. genus Auth2. Pub.',
                      'Genus sp1 subsp. sp2': 'Genus sp1 subsp. sp2',
-                     'Genus sp1 subs. sp2': 'Genus sp1 Subs. sp2',
+                     'Genus sp1 subs. sp2': 'Genus sp1 Subs. sp2'
                      }
         for t in test_dict:
             out = _capitalize_first_letter_of_taxon(t)
@@ -74,7 +81,8 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(clean_urn_ids(np.NAN), type(np.NAN))
 
     def test_tidying_authors(self):
-        test_dict = {'Strychnos axillaris': 'Strychnos axillaris', np.nan: np.nan, None: None,
+        test_dict = {'Abies abies (L. ) druce': 'Abies abies (L.) druce',
+                     'Strychnos axillaris': 'Strychnos axillaris', np.nan: np.nan, None: None,
                      'Strychnos axillaris Dalzell. & A.Gibson.': 'Strychnos axillaris Dalzell. & A.Gibson.',
                      'Amsonia tabernaemontana Walter var. gattingeri Woodson': 'Amsonia tabernaemontana Walter var. gattingeri Woodson',
                      'Palicourea gracilenta (Müll. Arg.) Delprete & J. H. Kirkbr.': 'Palicourea gracilenta (Müll.Arg.) Delprete & J.H.Kirkbr.',
@@ -91,6 +99,18 @@ class MyTestCase(unittest.TestCase):
                      'A   B B  C': ['A', 'A B', 'A B B', 'A B B C']}
         for t in test_dict:
             self.assertEqual(get_word_combinations(t), test_dict[t])
+
+    def test_spacelike(self):
+        df = pd.read_csv(os.path.join(unittest_inputs, 'spacelike_cases.csv'))
+        for x in df['Name'].values:
+            clean = remove_spacelike_chars(x)
+            pass
+
+    def test_adding_space(self):
+        examples = {'Acokanthera deflersii Schweinf. ex Lewin': 'Acokanthera deflersii Schweinf. ex Lewin',
+                    'Asubsp.B': 'A subsp. B'}
+        for t in examples:
+            self.assertEqual(add_space_around_hybrid_chars_and_infraspecific_epithets(t), examples[t])
 
 
 if __name__ == '__main__':

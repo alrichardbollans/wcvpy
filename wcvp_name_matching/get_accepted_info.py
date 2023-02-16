@@ -13,10 +13,11 @@ from typing import List
 from pkg_resources import resource_filename
 
 from wcvp_name_matching import get_wcvp_info_for_names_in_column, \
-    get_knms_name_matches, clean_urn_ids, acc_info_col_names, temp_outputs_dir, \
+    get_knms_name_matches, clean_urn_ids, output_record_col_names, temp_outputs_dir, \
     tidy_names_in_column, recapitalised_name_col, submitted_name_col_id, \
     tidy_families_in_column, status_priority, submitted_family_name_col_id, unique_submission_index_col, \
-    lowercase_name_col, tidied_taxon_authors_col, get_word_combinations
+    lowercase_name_col, tidied_taxon_authors_col, get_word_combinations, \
+    remove_whitespace_at_beginning_and_end
 from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 matching_data_path = resource_filename(__name__, 'matching data')
@@ -103,7 +104,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
 
                 for index, row in wcvp_name_containment_df.iterrows():
                     record = row.to_frame().transpose()[
-                        acc_info_col_names + [wcvp_columns['family'], wcvp_columns['name']]]
+                        output_record_col_names + [wcvp_columns['family'], wcvp_columns['name']]]
 
                     if submitted_family == row[wcvp_columns['family']] or submitted_family == row[
                         wcvp_accepted_columns['family']]:
@@ -118,7 +119,7 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
             else:
                 for index, row in wcvp_name_containment_df.iterrows():
                     record = row.to_frame().transpose()[
-                        acc_info_col_names + [wcvp_columns['family'], wcvp_columns['name']]]
+                        output_record_col_names + [wcvp_columns['family'], wcvp_columns['name']]]
 
                     taxa = row[wcvp_columns['name']]
 
@@ -226,7 +227,7 @@ def _get_knms_matches_and_accepted_info_from_names_in_column(df: pd.DataFrame, m
             resolved_df = single_matches
 
         resolved_df = resolved_df[
-            [unique_submission_id_col] + acc_info_col_names + ['matched_by', 'matched_name']]
+            [unique_submission_id_col] + output_record_col_names + ['matched_by', 'matched_name']]
         resolved_df = resolved_df.dropna(subset=[wcvp_accepted_columns['name']])
         resolved_df = resolved_df.drop_duplicates(subset=[unique_submission_id_col], keep='first')
 
@@ -320,7 +321,8 @@ def get_accepted_wcvp_info_from_ids_in_column(df: pd.DataFrame, id_col_name: str
 
     in_df = df.copy(deep=True)
     in_df[id_col_name] = in_df[id_col_name].fillna('no_id_placeholder')
-    match_df = pd.merge(in_df, all_taxa[[wcvp_columns['id'], wcvp_columns['family']] + acc_info_col_names],
+    match_df = pd.merge(in_df,
+                        all_taxa[[wcvp_columns['id'], wcvp_columns['family']] + output_record_col_names],
                         how='left',
                         left_on=id_col_name,
                         right_on=wcvp_columns['id'])
@@ -361,7 +363,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                              unique_submission_index_col, 'submitted', 'matched_by', 'matched_name',
                              'resolution_id',
                              'taxon_name_with_taxon_authors', tidied_taxon_authors_col
-                             ] + list(wcvp_columns.values()) + acc_info_col_names
+                             ] + list(wcvp_columns.values()) + output_record_col_names
     problem_columns = [x for x in in_df.columns if
                        x in reserved_column_names]
     if len(problem_columns) > 0:
@@ -502,16 +504,17 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         _temp_output(final_resolved_df, 'final_resolutions')
 
         final_resolved_df = final_resolved_df[
-            [unique_submission_index_col] + acc_info_col_names + ['matched_by', 'matched_name']]
+            [unique_submission_index_col] + output_record_col_names + ['matched_by', 'matched_name']]
         out_df = pd.merge(in_df, final_resolved_df, on=unique_submission_index_col,
                           how='left')
         in_df.drop(columns=[unique_submission_index_col], inplace=True)
         out_df = out_df.drop(columns=[unique_submission_index_col])
         # reorder
-        out_df = out_df[in_df.columns.tolist() + acc_info_col_names + ['matched_by', 'matched_name']]
+        out_df = out_df[in_df.columns.tolist() + output_record_col_names + ['matched_by', 'matched_name']]
+        out_df['matched_name'] = out_df['matched_name'].apply(remove_whitespace_at_beginning_and_end)
         return out_df
     else:
         out_copy = in_df.copy()
-        for a in acc_info_col_names + ['matched_by', 'matched_name']:
+        for a in output_record_col_names + ['matched_by', 'matched_name']:
             out_copy[a] = np.nan
         return out_copy

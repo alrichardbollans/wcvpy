@@ -1,10 +1,8 @@
 import time
-from typing import List
 
-import numpy as np
 import pandas as pd
 
-from wcvp_download import get_up_to_date_wcvp_zip, get_all_taxa, wcvp_columns, wcvp_accepted_columns
+from wcvp_download import get_up_to_date_wcvp_zip, get_all_taxa, wcvp_columns
 
 native_code_column = 'native_tdwg3_codes'
 introduced_code_column = 'intro_tdwg3_codes'

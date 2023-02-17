@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='automatchnames',
-    version='1.0',
+    version='DEVX',
     packages=find_packages(),
     install_requires=[
         'pandas==1.4.1',

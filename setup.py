@@ -5,11 +5,11 @@ setup(
     version='DEVX',
     packages=find_packages(),
     install_requires=[
-        'pandas==1.4.1',
-        'numpy~=1.22.1',
-        'requests~=2.27.1',
-        'tqdm~=4.62.3',
-        'typing~=3.7.4.3'
+        'pandas==1.5.3',
+        'numpy==1.24.2',
+        'requests==2.28.2',
+        'tqdm==4.64.1',
+        'typing'
 
     ],
     url='https://github.com/alrichardbollans/automatchnames',

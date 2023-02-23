@@ -1,4 +1,4 @@
-# Standardising Names In Datasets
+# Matching Names In Datasets to the WCVP
 
 ## Installation
 
@@ -157,6 +157,12 @@ may lead to unresolved names, in which case it may be worth checking the input d
   however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family is
   rubiaceae and in this case the program will find the match. This is particularly relevant for families like
   Loganiaceae that have been used as a catch-all
+
+* Some records in WCVP are not given accepted information
+* Sometimes POWO and WCVP don't agree (mostly due to short lag in POWO updates?)
+* Accepted names are not always unique (without author information) e.g. Helichrysum oligocephalum
+* Some taxa are not given ipni ids, including some accepted taxa
+* Some taxa are not given author information
 * For issues with WCVP, see https://github.com/alrichardbollans/automatchnames/issues/25
 
 ## Notes on Kew Reconciliation Service

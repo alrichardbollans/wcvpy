@@ -24,26 +24,31 @@ intro_test_dict = {'472162-1': ('JAM', 'MAU', 'TAN'),
                    '472169-1': ('JAM', 'MAU', 'TAN'),
                    '77100755-1': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
 
+def get_wcvp_id_from_ipni_id(all_taxa, ipni_id):
+    return all_taxa[all_taxa['ipni_id'] == ipni_id]['plant_name_id'].values[0]
+
 
 class MyTestCase(unittest.TestCase):
 
     def test_getting_data_from_ids(self):
-
-        native_test_df = pd.DataFrame({wcvp_columns['id']: list(native_test_dict.keys())})
-        out = get_distributions_for_taxa(native_test_df, wcvp_columns['id'])
+        wcvp_data = get_all_taxa()
+        native_wcvp_ids = [get_wcvp_id_from_ipni_id(wcvp_data, i) for i in list(native_test_dict.keys())]
+        native_test_df = pd.DataFrame({'wcvp_id': native_wcvp_ids})
+        out = get_distributions_for_taxa(native_test_df, 'wcvp_id')
 
         for id in native_test_dict:
-            row = out[out[wcvp_columns['id']] == id]
+            row = out[out['wcvp_id'] == get_wcvp_id_from_ipni_id(wcvp_data, id)]
             if native_test_dict[id] == native_test_dict[id]:
                 self.assertEqual(row[native_code_column].iloc[0], native_test_dict[id])
             else:
                 self.assertTrue(np.isnan(row[native_code_column].iloc[0]))
 
-        intro_test_df = pd.DataFrame({'ids': list(intro_test_dict.keys())})
+        intro_wcvp_ids = [get_wcvp_id_from_ipni_id(wcvp_data, i) for i in list(intro_test_dict.keys())]
+        intro_test_df = pd.DataFrame({'ids': intro_wcvp_ids})
         out = get_distributions_for_taxa(intro_test_df, 'ids')
 
         for id in intro_test_dict:
-            row = out[out['ids'] == id]
+            row = out[out['ids'] == get_wcvp_id_from_ipni_id(wcvp_data, id)]
             if intro_test_dict[id] == intro_test_dict[id]:
                 self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[id])
             else:
@@ -67,8 +72,8 @@ class MyTestCase(unittest.TestCase):
     def test_check_accepted_and_synonyms_have_same_dist(self):
         # check distributions are the same for ids and associated accepted ids
 
-        subset_with_dist = with_dist.dropna(subset=[wcvp_accepted_columns['id']])
-        should_be_unique = subset_with_dist.groupby(wcvp_accepted_columns['id'])[native_code_column].apply(
+        subset_with_dist = with_dist.dropna(subset=[wcvp_accepted_columns['ipni_id']])
+        should_be_unique = subset_with_dist.groupby(wcvp_accepted_columns['ipni_id'])[native_code_column].apply(
             set).reset_index(
             name='dists')
         problem_df = should_be_unique[should_be_unique['dists'].map(len) > 1]
@@ -89,18 +94,18 @@ class MyTestCase(unittest.TestCase):
         for t in native_test_dict:
 
             if native_test_dict[t] == native_test_dict[t]:
-                row = with_dist[with_dist[wcvp_columns['id']] == t]
+                row = with_dist[with_dist[wcvp_columns['ipni_id']] == t]
                 self.assertEqual(row[native_code_column].iloc[0], native_test_dict[t])
             else:
-                self.assertNotIn(t, with_dist[wcvp_columns['id']].values)
+                self.assertNotIn(t, with_dist[wcvp_columns['ipni_id']].values)
 
         for t in intro_test_dict:
 
             if intro_test_dict[t] == intro_test_dict[t]:
-                row = with_dist[with_dist[wcvp_columns['id']] == t]
+                row = with_dist[with_dist[wcvp_columns['ipni_id']] == t]
                 self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[t])
             else:
-                self.assertNotIn(t, with_dist[wcvp_columns['id']].values)
+                self.assertNotIn(t, with_dist[wcvp_columns['ipni_id']].values)
 
 
 if __name__ == '__main__':

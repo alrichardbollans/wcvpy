@@ -8,7 +8,7 @@ import pandas as pd
 import pandas.testing
 from pkg_resources import resource_filename
 
-from wcvp_name_matching import id_lookup_wcvp, get_accepted_wcvp_info_from_ids_in_column, \
+from wcvp_name_matching import lookup_ipni_id_in_wcvp, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     get_accepted_info_from_names_in_column, output_record_col_names, clean_urn_ids
 from wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
     _find_best_matches_from_multiple_knms_matches
@@ -21,7 +21,7 @@ unittest_inputs = resource_filename(__name__, 'test_inputs')
 unittest_outputs = resource_filename(__name__, 'test_outputs')
 
 # columns used in testing csvs
-test_columns = {'acc_id': wcvp_accepted_columns['id'],
+test_columns = {'acc_id': wcvp_accepted_columns['ipni_id'],
                 'acc_name': 'accepted_name',
                 'acc_fam': wcvp_accepted_columns['family'],
                 'acc_rank': 'accepted_rank',
@@ -139,7 +139,7 @@ class MyTestCase(unittest.TestCase):
         start = time.time()
 
         test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
-        response = get_accepted_wcvp_info_from_ids_in_column(test_df, id_col, taxa_df)
+        response = get_accepted_wcvp_info_from_ipni_ids_in_column(test_df, id_col, taxa_df)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
 
         for k in test_columns:
@@ -149,57 +149,57 @@ class MyTestCase(unittest.TestCase):
         print(f'Time elapsed for all info test: {end - start}s')
 
     def test_id_lookup_wcvp(self):
-        cap_record = id_lookup_wcvp(wcvp_taxa, '44583-2')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '44583-2')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Capirona macrophylla')
-        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '77210192-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '77210192-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Species')
         self.assertEqual(cap_record['accepted_species'].iloc[0], 'Capirona macrophylla')
         self.assertEqual(cap_record['accepted_species_ipni_id'].iloc[0], '77210192-1')
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '77210192-1')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '77210192-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Capirona macrophylla')
-        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '77210192-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '77210192-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Species')
         self.assertEqual(cap_record['accepted_species'].iloc[0], 'Capirona macrophylla')
         self.assertEqual(cap_record['accepted_species_ipni_id'].iloc[0], '77210192-1')
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '2217-1')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '2217-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Aspidosperma')
-        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '2217-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '2217-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '41511-1')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '41511-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Aspidosperma')
-        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '2217-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '2217-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '35260-1')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '35260-1')
         self.assertEqual(cap_record['accepted_name'].iloc[0], 'Richardia')
-        self.assertEqual(cap_record[wcvp_accepted_columns['id']].iloc[0], '35260-1')
+        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '35260-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '30000008-2')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '30000008-2')
         self.assertEqual(len(cap_record.index), 0)
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '30000422-2')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '30000422-2')
         self.assertEqual(len(cap_record.index), 0)
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, 'abc')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, 'abc')
         self.assertEqual(len(cap_record.index), 0)
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, '')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '')
         self.assertEqual(len(cap_record.index), 0)
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, ' ')
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, ' ')
         self.assertEqual(len(cap_record.index), 0)
 
-        cap_record = id_lookup_wcvp(wcvp_taxa, np.nan)
+        cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, np.nan)
         self.assertEqual(len(cap_record.index), 0)
 
     # @unittest.skip
@@ -210,7 +210,7 @@ class MyTestCase(unittest.TestCase):
                                    index_col=False)
 
         start = time.time()
-        garbage = get_accepted_wcvp_info_from_ids_in_column(standardised, 'powo_Snippet', wcvp_taxa)
+        garbage = get_accepted_wcvp_info_from_ipni_ids_in_column(standardised, 'powo_Snippet', wcvp_taxa)
         end = time.time()
         print(f'Time elapsed for test: {end - start}s')
 
@@ -235,7 +235,7 @@ class MyTestCase(unittest.TestCase):
 
         multiple_names_df = pd.DataFrame(multiple_names)
         multiple_names_df['ipni_id'] = multiple_names_df['ipni_id'].apply(clean_urn_ids)
-        multiple_names_df = get_accepted_wcvp_info_from_ids_in_column(multiple_names_df, 'ipni_id', wcvp_taxa)
+        multiple_names_df = get_accepted_wcvp_info_from_ipni_ids_in_column(multiple_names_df, 'ipni_id', wcvp_taxa)
         multiple_match_records = _find_best_matches_from_multiple_knms_matches(multiple_names_df, 'submitted')
 
         self.assertEqual(
@@ -246,13 +246,13 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(
             multiple_match_records.loc[
-                multiple_match_records['submitted'] == 'Condylocarpon', wcvp_accepted_columns['id']].iloc[
+                multiple_match_records['submitted'] == 'Condylocarpon', wcvp_accepted_columns['ipni_id']].iloc[
                 0],
             '328988-2')
         self.assertEqual(
             multiple_match_records.loc[
                 multiple_match_records['submitted'] == 'Asclepias curassavica', wcvp_accepted_columns[
-                    'id']].iloc[0],
+                    'ipni_id']].iloc[0],
             '94213-1')
 
         self.assertEqual(

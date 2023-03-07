@@ -16,7 +16,7 @@ wcvp_columns = {'family': 'family',
                 'rank': 'taxon_rank',
                 'genus': 'genus',
                 'name': 'taxon_name',
-                'id': 'ipni_id',
+                'ipni_id': 'ipni_id',
                 'status': 'taxon_status',
                 'parent_name': 'parent_name',
                 'parent_ipni_id': 'parent_ipni_id',
@@ -24,15 +24,18 @@ wcvp_columns = {'family': 'family',
                 'paranthet_author': 'parenthetical_author',
                 'primary_author': 'primary_author',
                 'plant_name_id': 'plant_name_id',
+                'parent_plant_name_id': 'parent_plant_name_id',
                 'acc_plant_name_id': 'accepted_plant_name_id',
                 'lifeform': 'lifeform_description'
                 }
 
 wcvp_accepted_columns = {'family': 'accepted_family',
-                         'id': 'accepted_ipni_id',
+                         'ipni_id': 'accepted_ipni_id',
+                         'plant_name_id': 'accepted_plant_name_id',
                          'name': 'accepted_name',
                          'species': 'accepted_species',
-                         'species_id': 'accepted_species_ipni_id',
+                         'species_ipni_id': 'accepted_species_ipni_id',
+                         'species_plant_name_id': 'accepted_species_id',
                          'rank': 'accepted_rank',
                          'parent_name': 'accepted_parent',
                          'parent_rank': 'accepted_parent_rank'
@@ -52,18 +55,19 @@ infraspecific_chars = ['agamosp.', 'convar.', 'ecas.', 'f.', 'grex', 'group', 'l
 
 
 def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame) -> pd.DataFrame:
-    all_accepted = all_accepted.assign(accepted_ipni_id=all_accepted[wcvp_columns['id']])
+    all_accepted = all_accepted.assign(accepted_ipni_id=all_accepted[wcvp_columns['ipni_id']])
     all_accepted = all_accepted.assign(accepted_name=all_accepted[wcvp_columns['name']])
     all_accepted = all_accepted.assign(accepted_family=all_accepted[wcvp_columns['family']])
     all_accepted = all_accepted.assign(accepted_rank=all_accepted[wcvp_columns['rank']])
     all_accepted = all_accepted.assign(accepted_parent=all_accepted[wcvp_columns['parent_name']])
     all_accepted = all_accepted.assign(accepted_parent_ipni_id=all_accepted[wcvp_columns['parent_ipni_id']])
+    all_accepted = all_accepted.assign(accepted_parent_id=all_accepted[wcvp_columns['parent_plant_name_id']])
     all_accepted = all_accepted.assign(accepted_parent_rank=all_accepted['parent_rank'])
 
     all_accepted = all_accepted.rename(columns={wcvp_columns['plant_name_id']: 'plant_name_id_acc'})
     all_accepted = all_accepted[
         ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_family', 'accepted_rank',
-         'accepted_parent', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
+         'accepted_parent','accepted_parent_id', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
     taxa_df_with_accepted_id = pd.merge(all_accepted, taxa_df, left_on='plant_name_id_acc',
                                         right_on=wcvp_columns['acc_plant_name_id'], how='right')
     taxa_df_with_accepted_id = taxa_df_with_accepted_id.drop(columns=['plant_name_id_acc'])
@@ -75,7 +79,7 @@ def get_parent_names_and_ipni_ids(taxa_df: pd.DataFrame, all_data: pd.DataFrame)
     parent_data = all_data.drop(columns=['parent_plant_name_id'])
     parent_data = parent_data.rename(columns={wcvp_columns['plant_name_id']: 'parent_plant_name_id',
                                               wcvp_columns['name']: wcvp_columns['parent_name'],
-                                              wcvp_columns['id']: wcvp_columns['parent_ipni_id'],
+                                              wcvp_columns['ipni_id']: wcvp_columns['parent_ipni_id'],
                                               wcvp_columns['rank']: 'parent_rank'})
     parent_data = parent_data[
         ['parent_plant_name_id', wcvp_columns['parent_name'], wcvp_columns['parent_ipni_id'], 'parent_rank']]
@@ -92,12 +96,21 @@ def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
                                            taxa_df['accepted_parent'],
                                            taxa_df['accepted_species'])
 
+    #IPNI ids
     taxa_df['accepted_species_ipni_id'] = np.where(taxa_df['accepted_rank'] == 'Species',
-                                                   taxa_df[wcvp_accepted_columns['id']],
+                                                   taxa_df[wcvp_accepted_columns['ipni_id']],
                                                    np.nan)
     taxa_df['accepted_species_ipni_id'] = np.where(taxa_df['accepted_parent_rank'] == 'Species',
                                                    taxa_df['accepted_parent_ipni_id'],
                                                    taxa_df['accepted_species_ipni_id'])
+
+    #WCVP ids
+    taxa_df['accepted_species_id'] = np.where(taxa_df['accepted_rank'] == 'Species',
+                                                   taxa_df[wcvp_accepted_columns['plant_name_id']],
+                                                   np.nan)
+    taxa_df['accepted_species_id'] = np.where(taxa_df['accepted_parent_rank'] == 'Species',
+                                                   taxa_df['accepted_parent_id'],
+                                                   taxa_df['accepted_species_id'])
 
     return taxa_df
 
@@ -153,12 +166,13 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
     zf = get_up_to_date_wcvp_zip(force_use_existing=force_use_existing)
     csv_file = zf.open('wcvp_names.csv')
-    all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|', dtype={'homotypic_synonym': object})
+    all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
+                                dtype={'homotypic_synonym': object, wcvp_columns['plant_name_id']: object,
+                                       wcvp_columns['acc_plant_name_id']: object,
+                                       'parent_plant_name_id': object,
+                                       'basionym_plant_name_id': object})
 
     csv_file.close()
-    all_wcvp_data[wcvp_columns['acc_plant_name_id']] = all_wcvp_data[
-        wcvp_columns['acc_plant_name_id']].astype(float)
-    all_wcvp_data[wcvp_columns['plant_name_id']] = all_wcvp_data[wcvp_columns['plant_name_id']].astype(float)
     all_accepted = all_wcvp_data[
         all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
 
@@ -189,7 +203,16 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     if accepted:
         wcvp_data = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']
 
+    known_ranks_in_wcvp = ['Species', 'nothosubsp.', 'Subspecies', 'Form', 'Variety', 'microgene', 'Genus',
+                           'proles', 'nothof.', 'Subvariety', 'nothovar.', 'Subform', 'lusus', 'monstr.',
+                           '[**]', '[*]', 'sublusus', 'Convariety', 'psp.', 'subspecioid', 'group', 'grex',
+                           'stirps', 'mut.', 'subproles', 'nid', 'provar.', 'positio', 'micromorphe',
+                           'modif.',
+                           'ecas.', 'microf.', 'agamosp.']
     if ranks is not None:
+        for r in ranks:
+            if r not in known_ranks_in_wcvp:
+                raise ValueError(f'Given rank: {r} not in wcvp ranks: {known_ranks_in_wcvp}')
         wcvp_data = wcvp_data[wcvp_data[wcvp_columns['rank']].isin(ranks)]
 
     if specific_taxa is not None:

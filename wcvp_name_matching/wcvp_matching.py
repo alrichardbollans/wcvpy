@@ -11,7 +11,7 @@ status_priority = ['Accepted', 'Artificial Hybrid', 'Synonym', 'Illegitimate', '
                    'Misapplied', 'Orthographic', 'Unplaced']
 
 
-def id_lookup_wcvp(all_taxa: pd.DataFrame, given_id: str) -> pd.DataFrame:
+def lookup_ipni_id_in_wcvp(all_taxa: pd.DataFrame, given_id: str) -> pd.DataFrame:
     """
     Looks for id in list of taxa, returns a dictionary of accepted information
     :param all_taxa:
@@ -22,7 +22,7 @@ def id_lookup_wcvp(all_taxa: pd.DataFrame, given_id: str) -> pd.DataFrame:
     clean_id = str(given_id)
     if "urn:lsid:ipni.org:names:" in clean_id:
         clean_id = clean_urn_ids(clean_id)
-    record = all_taxa[all_taxa[wcvp_columns['id']] == clean_id]
+    record = all_taxa[all_taxa[wcvp_columns['ipni_id']] == clean_id]
     if len(record.index) == 0:
         print(f"Can't find id: {clean_id} in given wcvp taxa data")
 

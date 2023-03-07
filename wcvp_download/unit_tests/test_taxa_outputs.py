@@ -10,6 +10,16 @@ _output_path = 'test_outputs'
 
 
 class MyTestCase(unittest.TestCase):
+
+    def test_check_all_have_unique_plant_name_ids(self):
+        without_id = wcvp_data[wcvp_data[wcvp_columns['plant_name_id']].isna()]
+
+        self.assertEqual(len(without_id.index), 0)
+
+        duplicates = wcvp_data[wcvp_data.duplicated(subset=[wcvp_columns['plant_name_id']], keep=False)]
+        duplicates.to_csv('dups.csv')
+        self.assertEqual(len(duplicates.index), 0)
+
     def test_families(self):
         loganiaceae = get_all_taxa(families_of_interest=['Loganiaceae'])
         print(loganiaceae.drop_duplicates(subset=['family'], keep='first')[
@@ -23,8 +33,8 @@ class MyTestCase(unittest.TestCase):
 
     def test_acc_cases(self):
         all_taxa_acc = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']
-        pd.testing.assert_series_equal(all_taxa_acc[wcvp_columns['id']],
-                                       all_taxa_acc[wcvp_accepted_columns['id']],
+        pd.testing.assert_series_equal(all_taxa_acc[wcvp_columns['ipni_id']],
+                                       all_taxa_acc[wcvp_accepted_columns['ipni_id']],
                                        check_names=False)
         pd.testing.assert_series_equal(all_taxa_acc['plant_name_id'],
                                        all_taxa_acc['accepted_plant_name_id'],
@@ -45,7 +55,11 @@ class MyTestCase(unittest.TestCase):
                                        acc_species['accepted_name'],
                                        check_names=False)
         pd.testing.assert_series_equal(acc_species['accepted_species_ipni_id'],
-                                       acc_species[wcvp_accepted_columns['id']],
+                                       acc_species[wcvp_accepted_columns['ipni_id']],
+                                       check_names=False)
+
+        pd.testing.assert_series_equal(acc_species['accepted_species_id'],
+                                       acc_species[wcvp_accepted_columns['plant_name_id']],
                                        check_names=False)
 
         # Currently breaks as accepted parents for some are hybrids, where genus is not given as hybrid
@@ -67,7 +81,11 @@ class MyTestCase(unittest.TestCase):
                                        species_accepted_rank['accepted_name'],
                                        check_names=False)
         pd.testing.assert_series_equal(species_accepted_rank['accepted_species_ipni_id'],
-                                       species_accepted_rank[wcvp_accepted_columns['id']],
+                                       species_accepted_rank[wcvp_accepted_columns['ipni_id']],
+                                       check_names=False)
+
+        pd.testing.assert_series_equal(species_accepted_rank['accepted_species_id'],
+                                       species_accepted_rank[wcvp_accepted_columns['plant_name_id']],
                                        check_names=False)
 
     def test_subspecies_cases(self):
@@ -80,6 +98,10 @@ class MyTestCase(unittest.TestCase):
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
                                        check_names=False)
 
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
+                                       check_names=False)
+
     def test_Convariety_cases(self):
         subsp_accepted_rank = wcvp_data[wcvp_data['accepted_rank'] == 'Convariety']
 
@@ -88,6 +110,10 @@ class MyTestCase(unittest.TestCase):
                                        check_names=False)
         pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_ipni_id'],
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
+                                       check_names=False)
+
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
                                        check_names=False)
 
     def test_Form_cases(self):
@@ -100,6 +126,10 @@ class MyTestCase(unittest.TestCase):
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
                                        check_names=False)
 
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
+                                       check_names=False)
+
     def test_proles_cases(self):
         subsp_accepted_rank = wcvp_data[wcvp_data['accepted_rank'] == 'proles']
 
@@ -108,6 +138,10 @@ class MyTestCase(unittest.TestCase):
                                        check_names=False)
         pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_ipni_id'],
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
+                                       check_names=False)
+
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
                                        check_names=False)
 
     def test_Subform_cases(self):
@@ -120,6 +154,10 @@ class MyTestCase(unittest.TestCase):
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
                                        check_names=False)
 
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
+                                       check_names=False)
+
     def test_Variety_cases(self):
         subsp_accepted_rank = wcvp_data[wcvp_data['accepted_rank'] == 'Variety']
 
@@ -128,6 +166,10 @@ class MyTestCase(unittest.TestCase):
                                        check_names=False)
         pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_ipni_id'],
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
+                                       check_names=False)
+
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
                                        check_names=False)
 
     def test_Subvariety_cases(self):
@@ -140,14 +182,16 @@ class MyTestCase(unittest.TestCase):
                                        subsp_accepted_rank['accepted_parent_ipni_id'],
                                        check_names=False)
 
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species_id'],
+                                       subsp_accepted_rank['accepted_parent_id'],
+                                       check_names=False)
+
     def test_some_cases(self):
-        bry_df = wcvp_data[wcvp_data[wcvp_columns['id']] == '545603-1']
-        self.assertListEqual(bry_df[wcvp_accepted_columns['id']].values.tolist(), ['745133-1'])
+        bry_df = wcvp_data[wcvp_data[wcvp_columns['ipni_id']] == '545603-1']
+        self.assertListEqual(bry_df[wcvp_accepted_columns['ipni_id']].values.tolist(), ['745133-1'])
 
-        genus_df = wcvp_data[wcvp_data[wcvp_columns['id']] == '34250-1']
-        self.assertListEqual(genus_df[wcvp_accepted_columns['id']].values.tolist(), ['34250-1'])
-
-
+        genus_df = wcvp_data[wcvp_data[wcvp_columns['ipni_id']] == '34250-1']
+        self.assertListEqual(genus_df[wcvp_accepted_columns['ipni_id']].values.tolist(), ['34250-1'])
 
     def test_unusual_genera(self):
         logan_df = get_all_taxa(families_of_interest=['Loganiaceae'])

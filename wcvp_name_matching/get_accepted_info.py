@@ -66,10 +66,10 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
         match_df = pd.DataFrame(
             {submission_id_col: [], matching_name_col: [], wcvp_columns['name']: [],
              wcvp_accepted_columns['name']: [],
-             wcvp_accepted_columns['id']: [],
+             wcvp_accepted_columns['ipni_id']: [],
              wcvp_accepted_columns['rank']: [],
              'accepted_parent': [], 'accepted_parent_ipni_id': [],
-             wcvp_accepted_columns['species']: [], wcvp_accepted_columns['species_id']: [],
+             wcvp_accepted_columns['species']: [], wcvp_accepted_columns['species_ipni_id']: [],
              wcvp_accepted_columns['family']: [],
              wcvp_columns['status']: [],
              'matched_name': []})
@@ -196,7 +196,7 @@ def _get_knms_matches_and_accepted_info_from_names_in_column(df: pd.DataFrame, m
         match_records = get_knms_name_matches(df[matching_name_col].unique())
         match_records = pd.merge(match_records, df, left_on='submitted', right_on=matching_name_col)
         match_records['ipni_id'] = match_records['ipni_id'].apply(clean_urn_ids)
-        match_records = get_accepted_wcvp_info_from_ids_in_column(match_records, 'ipni_id', all_taxa)
+        match_records = get_accepted_wcvp_info_from_ipni_ids_in_column(match_records, 'ipni_id', all_taxa)
         match_records = match_records[match_records['match_state'] != 'false']
         if family_column is not None:
 
@@ -258,7 +258,7 @@ def _find_best_matches_from_multiple_knms_matches(multiple_match_records: pd.Dat
 
     # reduce list to remove essentially repeated matches
     unique_accepted_matches = unmatched_containment_df.drop_duplicates(
-        subset=[unique_submission_id_col, wcvp_accepted_columns['id']], keep='first')
+        subset=[unique_submission_id_col, wcvp_accepted_columns['ipni_id']], keep='first')
 
     #  Next use matches where the submitted name has a unique match
     submitted_names_with_single_accepted_match = unique_accepted_matches.drop_duplicates(
@@ -309,7 +309,7 @@ def _find_best_matches_from_multiple_knms_matches(multiple_match_records: pd.Dat
     return matches_to_use
 
 
-def get_accepted_wcvp_info_from_ids_in_column(df: pd.DataFrame, id_col_name: str, all_taxa: pd.DataFrame) -> \
+def get_accepted_wcvp_info_from_ipni_ids_in_column(df: pd.DataFrame, id_col_name: str, all_taxa: pd.DataFrame) -> \
         pd.DataFrame:
     """
     Appends accepted info columns to df from list of taxa, based on ids in id_col_name
@@ -322,12 +322,12 @@ def get_accepted_wcvp_info_from_ids_in_column(df: pd.DataFrame, id_col_name: str
     in_df = df.copy(deep=True)
     in_df[id_col_name] = in_df[id_col_name].fillna('no_id_placeholder')
     match_df = pd.merge(in_df,
-                        all_taxa[[wcvp_columns['id'], wcvp_columns['family']] + output_record_col_names],
+                        all_taxa[[wcvp_columns['ipni_id'], wcvp_columns['family']] + output_record_col_names],
                         how='left',
                         left_on=id_col_name,
-                        right_on=wcvp_columns['id'])
-    if wcvp_columns['id'] not in in_df.columns:
-        match_df = match_df.drop(columns=[wcvp_columns['id']])
+                        right_on=wcvp_columns['ipni_id'])
+    if wcvp_columns['ipni_id'] not in in_df.columns:
+        match_df = match_df.drop(columns=[wcvp_columns['ipni_id']])
 
     if len(match_df.index) != len(in_df.index):
         raise ValueError('Generating accepted info is mismatched')
@@ -434,14 +434,14 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         df = df.drop_duplicates(subset=[unique_submission_index_col])
 
         all_taxa = get_all_taxa(families_of_interest=families_of_interest)
-        # First get manual matches
+        # First get manual matches using given ipni ids
         if manual_resolution_csv is not None:
             manual_match_df = pd.read_csv(manual_resolution_csv)
             manual_match_df = manual_match_df[
                 manual_match_df['submitted'].isin(df[submitted_name_col_id].values.tolist())]
-            man_matches_with_accepted_info = get_accepted_wcvp_info_from_ids_in_column(manual_match_df,
+            man_matches_with_accepted_info = get_accepted_wcvp_info_from_ipni_ids_in_column(manual_match_df,
                                                                                        'resolution_id',
-                                                                                       all_taxa)
+                                                                                            all_taxa)
             man_matches_with_accepted_info = man_matches_with_accepted_info.dropna(
                 subset=[wcvp_accepted_columns['name']])
             manual_matches = pd.merge(df, man_matches_with_accepted_info, left_on=submitted_name_col_id,

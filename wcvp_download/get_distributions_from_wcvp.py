@@ -8,16 +8,16 @@ native_code_column = 'native_tdwg3_codes'
 introduced_code_column = 'intro_tdwg3_codes'
 
 
-def get_distributions_for_taxa(df: pd.DataFrame, ipni_id_col: str, include_doubtful: bool = False,
+def get_distributions_for_taxa(df: pd.DataFrame, wcvp_id_col: str, include_doubtful: bool = False,
                                include_extinct: bool = False):
     start = time.time()
     wcvp_with_dists = add_distribution_list_to_wcvp(include_doubtful, include_extinct)
-    wcvp_with_dists = wcvp_with_dists.dropna(subset=wcvp_columns['id'])
-    wcvp_with_dists = wcvp_with_dists[[wcvp_columns['id'], native_code_column, introduced_code_column]]
-    # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['id'].isin(df[ipni_id_col].values)]]
-    output = pd.merge(df, wcvp_with_dists, how='left', left_on=ipni_id_col, right_on=wcvp_columns['id'])
-    if wcvp_columns['id'] not in df.columns:
-        output = output.drop(columns=[wcvp_columns['id']])
+    wcvp_with_dists = wcvp_with_dists.dropna(subset=wcvp_columns['plant_name_id'])
+    wcvp_with_dists = wcvp_with_dists[[wcvp_columns['plant_name_id'], native_code_column, introduced_code_column]]
+    # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['plant_name_id'].isin(df[wcvp_id_col].values)]]
+    output = pd.merge(df, wcvp_with_dists, how='left', left_on=wcvp_id_col, right_on=wcvp_columns['plant_name_id'])
+    if wcvp_columns['plant_name_id'] not in df.columns:
+        output = output.drop(columns=[wcvp_columns['plant_name_id']])
 
     end = time.time()
     print(f'Time elapsed for getting taxa distributions: {end - start}s')
@@ -41,7 +41,9 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     wcvp_zip = get_up_to_date_wcvp_zip()
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')
-    all_dist_data = pd.read_csv(csv_file, encoding='utf-8', sep='|')
+    all_dist_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
+                                dtype={wcvp_columns['plant_name_id']: object,
+                                       'plant_locality_id': object})
     all_dist_data = all_dist_data.dropna(subset=['area_code_l3'])
     csv_file.close()
 
@@ -83,6 +85,5 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
                                             on=wcvp_columns['acc_plant_name_id'], how='left')
     wcvp_data_with_distributions = wcvp_data_with_distributions.dropna(
         subset=[introduced_code_column, native_code_column], how='all')
-
 
     return wcvp_data_with_distributions

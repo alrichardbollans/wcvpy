@@ -5,12 +5,12 @@ import pandas as pd
 
 from wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters, infraspecific_chars
 
-acc_info_col_names = [wcvp_accepted_columns['id'],
+acc_info_col_names = [wcvp_accepted_columns['ipni_id'],
                       wcvp_accepted_columns['name'],
                       wcvp_accepted_columns['family'],
                       wcvp_accepted_columns['rank'],
                       wcvp_accepted_columns['species'],
-                      wcvp_accepted_columns['species_id'],
+                      wcvp_accepted_columns['species_ipni_id'],
                       wcvp_accepted_columns['parent_name'],
                       'accepted_parent_ipni_id']
 output_record_col_names = acc_info_col_names + [wcvp_columns['status']]

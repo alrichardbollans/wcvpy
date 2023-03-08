@@ -1,2 +1,2 @@
-Name,acc_rank,acc_name,acc_id,acc_species,acc_parent,acc_parent_id,acc_species_id,acc_fam,tax_stat
-Anthocleista procera,Species,Anthocleista procera,545640-1,Anthocleista procera,Anthocleista,25028-1,545640-1,Gentianaceae,Accepted
+"Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_parent_id","acc_species_id","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id"
+"Anthocleista procera","Species","Anthocleista procera","545640-1","Anthocleista procera","Anthocleista","25028-1","545640-1","Gentianaceae","Accepted",2641650,2641650

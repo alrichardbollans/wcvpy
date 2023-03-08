@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_taxa, get_all_taxa
+from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_accepted_taxa
 from wcvp_download import wcvp_columns, wcvp_accepted_columns, native_code_column, \
     introduced_code_column
 
@@ -11,46 +11,43 @@ with_dist = add_distribution_list_to_wcvp()
 
 _output_path = 'test_outputs'
 
-native_test_dict = {'582307-1': np.nan, '491231-1': ('MDG',), '482884-1': ('MDG',),
-                    '802077-1': (
+native_test_dict = {'Campomanesia thea': ('BZS',), 'Delonix regia': ('MDG',),
+                    'Digitalis purpurea': (
                         'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
-                        'SAR', 'SPA', 'SWE'), '77229223-1': (
+                        'SAR', 'SPA', 'SWE'), 'Digitalis purpurea var. purpurea': (
         'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
-        'SAR', 'SPA', 'SWE'), '801970-1': (
-        'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
-        'SAR', 'SPA', 'SWE'), '22751-1': ('CPP',), '480932-1': ('BOR', 'PHI')}
-intro_test_dict = {'472162-1': ('JAM', 'MAU', 'TAN'),
-                   '884567-1': ('JAM', 'MAU', 'TAN'),
-                   '472169-1': ('JAM', 'MAU', 'TAN'),
-                   '77100755-1': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
+        'SAR', 'SPA', 'SWE'), 'Lebeckia': ('CPP',), 'Airyantha borneensis': ('BOR', 'PHI')}
+intro_test_dict = {'Campomanesia thea': np.nan,'Adenanthera microsperma': ('JAM', 'MAU', 'TAN'),
+                   'Libidibia ferrea': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
 
 def get_wcvp_id_from_ipni_id(all_taxa, ipni_id):
     return all_taxa[all_taxa['ipni_id'] == ipni_id]['plant_name_id'].values[0]
-
+def get_acc_name_from_ipni_id(all_taxa, ipni_id):
+    return all_taxa[all_taxa['ipni_id'] == ipni_id][wcvp_accepted_columns['name']].values[0]
 
 class MyTestCase(unittest.TestCase):
 
-    def test_getting_data_from_ids(self):
-        wcvp_data = get_all_taxa()
-        native_wcvp_ids = [get_wcvp_id_from_ipni_id(wcvp_data, i) for i in list(native_test_dict.keys())]
-        native_test_df = pd.DataFrame({'wcvp_id': native_wcvp_ids})
-        out = get_distributions_for_taxa(native_test_df, 'wcvp_id')
+    def test_getting_data_from_names(self):
 
-        for id in native_test_dict:
-            row = out[out['wcvp_id'] == get_wcvp_id_from_ipni_id(wcvp_data, id)]
-            if native_test_dict[id] == native_test_dict[id]:
-                self.assertEqual(row[native_code_column].iloc[0], native_test_dict[id])
+        native_test_df = pd.DataFrame({'names': list(native_test_dict.keys())})
+        out = get_distributions_for_accepted_taxa(native_test_df, 'names')
+
+        for name in native_test_dict:
+            row = out[out['names'] == name]
+            print(row)
+            print(name)
+            if native_test_dict[name] == native_test_dict[name]:
+                self.assertEqual(row[native_code_column].iloc[0], native_test_dict[name])
             else:
                 self.assertTrue(np.isnan(row[native_code_column].iloc[0]))
 
-        intro_wcvp_ids = [get_wcvp_id_from_ipni_id(wcvp_data, i) for i in list(intro_test_dict.keys())]
-        intro_test_df = pd.DataFrame({'ids': intro_wcvp_ids})
-        out = get_distributions_for_taxa(intro_test_df, 'ids')
+        intro_test_df = pd.DataFrame({'names': list(intro_test_dict.keys())})
+        out = get_distributions_for_accepted_taxa(intro_test_df, 'names')
 
-        for id in intro_test_dict:
-            row = out[out['ids'] == get_wcvp_id_from_ipni_id(wcvp_data, id)]
-            if intro_test_dict[id] == intro_test_dict[id]:
-                self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[id])
+        for name in intro_test_dict:
+            row = out[out['names'] == name]
+            if intro_test_dict[name] == intro_test_dict[name]:
+                self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[name])
             else:
                 self.assertTrue(np.isnan(row[introduced_code_column].iloc[0]))
 
@@ -94,18 +91,17 @@ class MyTestCase(unittest.TestCase):
         for t in native_test_dict:
 
             if native_test_dict[t] == native_test_dict[t]:
-                row = with_dist[with_dist[wcvp_columns['ipni_id']] == t]
+                row = with_dist[with_dist[wcvp_accepted_columns['name']] == t]
                 self.assertEqual(row[native_code_column].iloc[0], native_test_dict[t])
             else:
-                self.assertNotIn(t, with_dist[wcvp_columns['ipni_id']].values)
+                self.assertNotIn(t, with_dist[wcvp_accepted_columns['name']].values)
 
         for t in intro_test_dict:
 
             if intro_test_dict[t] == intro_test_dict[t]:
-                row = with_dist[with_dist[wcvp_columns['ipni_id']] == t]
+                row = with_dist[with_dist[wcvp_accepted_columns['name']] == t]
                 self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[t])
-            else:
-                self.assertNotIn(t, with_dist[wcvp_columns['ipni_id']].values)
+
 
 
 if __name__ == '__main__':

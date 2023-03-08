@@ -64,7 +64,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
     # Match with taxon authors
     author_merged = pd.merge(df, all_taxa, how='left', left_on=lowercase_name_col,
                              right_on='taxon_name_with_extra_columns')
-    author_merged = author_merged.dropna(subset=[wcvp_columns['plant_name_id']])
+    author_merged = author_merged.dropna(subset=[wcvp_columns['wcvp_id']])
 
     unmatched_with_authors_df = df[~df[lowercase_name_col].isin(author_merged[lowercase_name_col].values)]
 
@@ -77,7 +77,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
     tidy_author_merged = pd.merge(unmatched_with_authors_df, all_taxa, how='left',
                                   left_on=tidied_taxon_authors_col,
                                   right_on='taxon_name_with_extra_columns')
-    tidy_author_merged = tidy_author_merged.dropna(subset=[wcvp_columns['plant_name_id']])
+    tidy_author_merged = tidy_author_merged.dropna(subset=[wcvp_columns['wcvp_id']])
 
     matched = pd.concat([author_merged, tidy_author_merged], ignore_index=True)
 
@@ -126,7 +126,7 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
     just_name_merged = pd.merge(unmatched_with_paranthet_authors_df, all_taxa, how='left',
                                 left_on=lowercase_name_col,
                                 right_on='tidied_taxon_name')
-    just_name_merged = just_name_merged.dropna(subset=[wcvp_columns['plant_name_id']])
+    just_name_merged = just_name_merged.dropna(subset=[wcvp_columns['wcvp_id']])
     just_name_merged['matched_by'] = 'direct_wcvp'
     just_name_merged['matched_name'] = just_name_merged[wcvp_columns['name']]
 

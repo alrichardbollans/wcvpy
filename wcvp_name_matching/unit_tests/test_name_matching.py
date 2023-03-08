@@ -8,6 +8,7 @@ import pandas as pd
 import pandas.testing
 from pkg_resources import resource_filename
 
+from wcvp_download import wcvp_columns
 from wcvp_name_matching import lookup_ipni_id_in_wcvp, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     get_accepted_info_from_names_in_column, output_record_col_names, clean_urn_ids
 from wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
@@ -22,13 +23,22 @@ unittest_outputs = resource_filename(__name__, 'test_outputs')
 
 # columns used in testing csvs
 test_columns = {'acc_id': wcvp_accepted_columns['ipni_id'],
+                # 'acc_wcvp_id': wcvp_accepted_columns['wcvp_id'],
                 'acc_name': 'accepted_name',
                 'acc_fam': wcvp_accepted_columns['family'],
                 'acc_rank': 'accepted_rank',
                 'acc_parent': 'accepted_parent',
                 'acc_species': 'accepted_species',
                 'acc_species_id': 'accepted_species_ipni_id',
+                # 'acc_wcvp_species_id': wcvp_accepted_columns['species_wcvp_id'],
                 'tax_stat': 'taxon_status'}
+
+
+def _get_wcvp_id_from_ipni_id(ipni_id, all_taxa):
+    if ipni_id == ipni_id:
+        return all_taxa[all_taxa['ipni_id'] == ipni_id]['plant_name_id'].values[0]
+    else:
+        return np.nan
 
 
 # # Check adding familiy doesn't ruin resolutions outside family
@@ -96,10 +106,13 @@ class MyTestCase(unittest.TestCase):
         '''
         start = time.time()
 
-        test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
+        test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name),
+                              dtype={'acc_wcvp_id': object, 'acc_wcvp_species_id': object})
+
         response = get_accepted_info_from_names_in_column(test_df, name_col, **kwargs)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
 
+        self.basic_response_test(response)
         for k in test_columns:
             self.compare_series(test_df[k], response[test_columns[k]])
 
@@ -123,6 +136,8 @@ class MyTestCase(unittest.TestCase):
 
         self.compare_series(test_df['acc_id'], response[test_columns['acc_id']])
 
+        self.basic_response_test(response)
+
         end = time.time()
         print(f'Time elapsed for all info test: {end - start}s')
 
@@ -138,15 +153,43 @@ class MyTestCase(unittest.TestCase):
         '''
         start = time.time()
 
-        test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
+        test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name),
+                              dtype={'acc_wcvp_id': object, 'acc_wcvp_species_id': object})
+
         response = get_accepted_wcvp_info_from_ipni_ids_in_column(test_df, id_col, taxa_df)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
+
+        self.basic_response_test(response)
 
         for k in test_columns:
             self.compare_series(test_df[k], response[test_columns[k]])
 
         end = time.time()
         print(f'Time elapsed for all info test: {end - start}s')
+
+    def basic_response_test(self, response):
+        species_accepted_rank = response[response['accepted_rank'] == 'Species']
+        pd.testing.assert_series_equal(species_accepted_rank['accepted_species'],
+                                       species_accepted_rank['accepted_name'],
+                                       check_names=False)
+        pd.testing.assert_series_equal(species_accepted_rank['accepted_species_ipni_id'],
+                                       species_accepted_rank[wcvp_accepted_columns['ipni_id']],
+                                       check_names=False)
+
+        # pd.testing.assert_series_equal(species_accepted_rank['accepted_species_id'],
+        #                                species_accepted_rank[wcvp_accepted_columns['wcvp_id']],
+        #                                check_names=False)
+
+        subsp_accepted_rank = response[response['accepted_rank'] == 'Subspecies']
+
+        pd.testing.assert_series_equal(subsp_accepted_rank['accepted_species'],
+                                       subsp_accepted_rank['accepted_parent'],
+                                       check_names=False)
+
+        # for ipni_id in response[wcvp_accepted_columns['ipni_id']].unique():
+        #     if ipni_id == ipni_id:
+        #         self.assertEqual(len(response[response[wcvp_accepted_columns['ipni_id']] == ipni_id][
+        #                                  wcvp_accepted_columns['wcvp_id']].unique()), 1)
 
     def test_id_lookup_wcvp(self):
         cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '44583-2')
@@ -235,7 +278,8 @@ class MyTestCase(unittest.TestCase):
 
         multiple_names_df = pd.DataFrame(multiple_names)
         multiple_names_df['ipni_id'] = multiple_names_df['ipni_id'].apply(clean_urn_ids)
-        multiple_names_df = get_accepted_wcvp_info_from_ipni_ids_in_column(multiple_names_df, 'ipni_id', wcvp_taxa)
+        multiple_names_df = get_accepted_wcvp_info_from_ipni_ids_in_column(multiple_names_df, 'ipni_id',
+                                                                           wcvp_taxa)
         multiple_match_records = _find_best_matches_from_multiple_knms_matches(multiple_names_df, 'submitted')
 
         self.assertEqual(
@@ -246,7 +290,8 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(
             multiple_match_records.loc[
-                multiple_match_records['submitted'] == 'Condylocarpon', wcvp_accepted_columns['ipni_id']].iloc[
+                multiple_match_records['submitted'] == 'Condylocarpon', wcvp_accepted_columns[
+                    'ipni_id']].iloc[
                 0],
             '328988-2')
         self.assertEqual(

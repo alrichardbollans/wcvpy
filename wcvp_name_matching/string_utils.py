@@ -11,8 +11,7 @@ acc_info_col_names = [wcvp_accepted_columns['ipni_id'],
                       wcvp_accepted_columns['rank'],
                       wcvp_accepted_columns['species'],
                       wcvp_accepted_columns['species_ipni_id'],
-                      wcvp_accepted_columns['parent_name'],
-                      'accepted_parent_ipni_id']
+                      wcvp_accepted_columns['parent_name']]
 output_record_col_names = acc_info_col_names + [wcvp_columns['status']]
 
 submitted_name_col_id = 'submitted_name_col_id'

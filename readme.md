@@ -3,7 +3,7 @@
 ## Installation
 
 Run:
-`pip install git+https://github.com/alrichardbollans/automatchnames.git@1.0`
+`pip install git+https://github.com/alrichardbollans/automatchnames.git@VERSION_NUM`
 
 ## Usage
 

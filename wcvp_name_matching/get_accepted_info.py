@@ -62,17 +62,8 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
 
         # For each submission, check if any name is contained in the name, then take the lowest rank of
         # matches
-        # Create a dict of submissions with possible matches
-        match_df = pd.DataFrame(
-            {submission_id_col: [], matching_name_col: [], wcvp_columns['name']: [],
-             wcvp_accepted_columns['name']: [],
-             wcvp_accepted_columns['ipni_id']: [],
-             wcvp_accepted_columns['rank']: [],
-             'accepted_parent': [], 'accepted_parent_ipni_id': [],
-             wcvp_accepted_columns['species']: [], wcvp_accepted_columns['species_ipni_id']: [],
-             wcvp_accepted_columns['family']: [],
-             wcvp_columns['status']: [],
-             'matched_name': []})
+        # Create a df of submissions with possible matches
+        match_df = pd.DataFrame()
 
         if family_column is not None:
             match_df[family_column] = []

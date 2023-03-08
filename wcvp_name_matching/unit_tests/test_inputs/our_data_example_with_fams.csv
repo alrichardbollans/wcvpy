@@ -1,374 +1,374 @@
-,"Name","Family","acc_name","acc_parent","acc_species","acc_species_id","acc_id","acc_rank","acc_fam","tax_stat"
-0,"Acokanthera schimperi (A. DC.) Schweinf.","Apocynaceae","Acokanthera schimperi","Acokanthera","Acokanthera schimperi","60447729-2","60447729-2","Species","Apocynaceae","Accepted"
-1,"Adenium multiflorum Klotzsch","Apocynaceae","Adenium multiflorum","Adenium","Adenium multiflorum","76366-1","76366-1","Species","Apocynaceae","Accepted"
-2,"Adenium obesum (Forssk.) Roem. & Schult.","Apocynaceae","Adenium obesum","Adenium","Adenium obesum","76369-1","76369-1","Species","Apocynaceae","Accepted"
-3,"Aganosma heynei (Spreng.) I. M. Turner","Apocynaceae","Aganosma heynei","Aganosma","Aganosma heynei","77125846-1","77125846-1","Species","Apocynaceae","Accepted"
-4,"Alafia multiflora (Stapf) Stapf","Apocynaceae","Alafia multiflora","Alafia","Alafia multiflora","76446-1","76446-1","Species","Apocynaceae","Accepted"
-5,"Alafia caudata Stapf","Apocynaceae","Alafia caudata","Alafia","Alafia caudata","76422-1","76422-1","Species","Apocynaceae","Accepted"
-6,"Alafia barteri Oliv.","Apocynaceae","Alafia barteri","Alafia","Alafia barteri","76417-1","76417-1","Species","Apocynaceae","Accepted"
-7,"Allamanda cathartica L.","Apocynaceae","Allamanda cathartica","Allamanda","Allamanda cathartica","319065-2","319065-2","Species","Apocynaceae","Accepted"
-8,"Allamanda schottii Pohl","Apocynaceae","Allamanda schottii","Allamanda","Allamanda schottii","76487-1","76487-1","Species","Apocynaceae","Accepted"
-9,"Alstonia venenata R. Br.","Apocynaceae","Alstonia venenata","Alstonia","Alstonia venenata","76602-1","76602-1","Species","Apocynaceae","Accepted"
-10,"Alstonia angustifolia Wall. ex A. DC.","Apocynaceae","Alstonia angustifolia","Alstonia","Alstonia angustifolia","105718-3","105718-3","Species","Apocynaceae","Accepted"
-11,"Alstonia yunnanensis Diels","Apocynaceae","Alstonia yunnanensis","Alstonia","Alstonia yunnanensis","76608-1","76608-1","Species","Apocynaceae","Accepted"
-12,"Alstonia boonei De Wild.","Apocynaceae","Alstonia boonei","Alstonia","Alstonia boonei","76511-1","76511-1","Species","Apocynaceae","Accepted"
-13,"Alstonia congensis Engl.","Apocynaceae","Alstonia congensis","Alstonia","Alstonia congensis","76517-1","76517-1","Species","Apocynaceae","Accepted"
-14,"Alstonia rostrata C. E. C. Fisch.","Apocynaceae","Alstonia rostrata","Alstonia","Alstonia rostrata","76584-1","76584-1","Species","Apocynaceae","Accepted"
-15,"Alstonia macrophylla Wall. ex G. Don","Apocynaceae","Alstonia macrophylla","Alstonia","Alstonia macrophylla","76556-1","76556-1","Species","Apocynaceae","Accepted"
-16,"Alstonia mairei H. Lév.","Apocynaceae","Alstonia mairei","Alstonia","Alstonia mairei","76557-1","76557-1","Species","Apocynaceae","Accepted"
-17,"Alstonia rupestris Kerr","Apocynaceae","Alstonia rupestris","Alstonia","Alstonia rupestris","76585-1","76585-1","Species","Apocynaceae","Accepted"
-18,"Alstonia longifolia (A. DC.) Pichon","Apocynaceae","Alstonia longifolia","Alstonia","Alstonia longifolia","10153-2","10153-2","Species","Apocynaceae","Accepted"
-19,"Alstonia scholaris (L.) R. Br.","Apocynaceae","Alstonia scholaris","Alstonia","Alstonia scholaris","60445977-2","60445977-2","Species","Apocynaceae","Accepted"
-20,"Alstonia angustiloba Miq.","Apocynaceae","Alstonia angustiloba","Alstonia","Alstonia angustiloba","76507-1","76507-1","Species","Apocynaceae","Accepted"
-21,"Alstonia pneumatophora Backer ex Den berger","Apocynaceae","Alstonia pneumatophora","Alstonia","Alstonia pneumatophora","76578-1","76578-1","Species","Apocynaceae","Accepted"
-22,"Alstonia spectabilis R. Br.","Apocynaceae","Alstonia spectabilis","Alstonia","Alstonia spectabilis","76597-1","76597-1","Species","Apocynaceae","Accepted"
-23,"Alyxia stellata (J. R. Forst. & G. Forst.) Roem. & Schult.","Apocynaceae","Alyxia stellata","Alyxia","Alyxia stellata","76804-1","76804-1","Species","Apocynaceae","Accepted"
-24,"Ambelania acida Aubl.","Apocynaceae","Ambelania acida","Ambelania","Ambelania acida","76829-1","76829-1","Species","Apocynaceae","Accepted"
-25,"Amphineurion marginatum (Roxb.) D. J. Middleton","Apocynaceae","Amphineurion marginatum","Amphineurion","Amphineurion marginatum","77074602-1","77074602-1","Species","Apocynaceae","Accepted"
-26,"Amsonia tomentosa var. tomentosa","Apocynaceae","Amsonia tomentosa var. tomentosa","Amsonia tomentosa","Amsonia tomentosa","76934-1","77167486-1","Variety","Apocynaceae","Accepted"
-27,"Amsonia elliptica (Thunb.) Roem. & Schult.","Apocynaceae","Amsonia elliptica","Amsonia","Amsonia elliptica","76906-1","76906-1","Species","Apocynaceae","Accepted"
-28,"Amsonia tabernaemontana Walter","Apocynaceae","Amsonia tabernaemontana","Amsonia","Amsonia tabernaemontana","76931-1","76931-1","Species","Apocynaceae","Accepted"
-29,"Anisopus mannii N. E. Br.","Apocynaceae","Anisopus mannii","Anisopus","Anisopus mannii","93986-1","93986-1","Species","Apocynaceae","Accepted"
-30,"Anodendron affine (Hook. & Arn.) Druve","Apocynaceae","Anodendron affine","Anodendron","Anodendron affine","77061-1","77061-1","Species","Apocynaceae","Accepted"
-31,"Apteranthes europaea (Guss.) Murb.","Apocynaceae","Apteranthes europaea","Apteranthes","Apteranthes europaea","94041-1","94041-1","Species","Apocynaceae","Accepted"
-32,"Apteranthes tuberculata (N. E. Br.) Meve & Liede","Apocynaceae","Apteranthes tuberculata","Apteranthes","Apteranthes tuberculata","20009957-1","20009957-1","Species","Apocynaceae","Accepted"
-33,"Asclepias curassavica L.","Apocynaceae","Asclepias curassavica","Asclepias","Asclepias curassavica","94213-1","94213-1","Species","Apocynaceae","Accepted"
-34,"Aspidosperma auriculatum Markgr.","Apocynaceae","Aspidosperma auriculatum","Aspidosperma","Aspidosperma auriculatum","21933-2","21933-2","Species","Apocynaceae","Accepted"
-35,"Aspidosperma oblongum A. DC.","Apocynaceae","Aspidosperma oblongum","Aspidosperma","Aspidosperma oblongum","77418-1","77418-1","Species","Apocynaceae","Accepted"
-36,"Aspidosperma carapanauba Pichon","Apocynaceae","Aspidosperma carapanauba","Aspidosperma","Aspidosperma carapanauba","290346-2","290346-2","Species","Apocynaceae","Accepted"
-37,"Aspidosperma polyneuron Müll Arg.","Apocynaceae","Aspidosperma polyneuron","Aspidosperma","Aspidosperma polyneuron","77433-1","77433-1","Species","Apocynaceae","Accepted"
-38,"Aspidosperma pyrifolium Mart.","Apocynaceae","Aspidosperma pyrifolium","Aspidosperma","Aspidosperma pyrifolium","77437-1","77437-1","Species","Apocynaceae","Accepted"
-39,"Aspidosperma subincanum Mart","Apocynaceae","Aspidosperma subincanum","Aspidosperma","Aspidosperma subincanum","77465-1","77465-1","Species","Apocynaceae","Accepted"
-40,"Aspidosperma nigricans Handro","Apocynaceae","Aspidosperma nigricans","Aspidosperma","Aspidosperma nigricans","22012-2","22012-2","Species","Apocynaceae","Accepted"
-41,"Aspidosperma olivaceum Müll. Arg.","Apocynaceae","Aspidosperma olivaceum","Aspidosperma","Aspidosperma olivaceum","22020-2","22020-2","Species","Apocynaceae","Accepted"
-42,"Aspidosperma parvifolium A. DC.","Apocynaceae","Aspidosperma parvifolium","Aspidosperma","Aspidosperma parvifolium","315552-2","315552-2","Species","Apocynaceae","Accepted"
-43,"Aspidosperma spruceanum Benth. Ex Müll. Arg.","Apocynaceae","Aspidosperma spruceanum","Aspidosperma","Aspidosperma spruceanum","22069-2","22069-2","Species","Apocynaceae","Accepted"
-44,"Aspidosperma album (Vahl) Benoist ex Pichon","Apocynaceae","Aspidosperma album","Aspidosperma","Aspidosperma album","77325-1","77325-1","Species","Apocynaceae","Accepted"
-45,"Aspidosperma discolor A. DC.","Apocynaceae","Aspidosperma discolor","Aspidosperma","Aspidosperma discolor","77354-1","77354-1","Species","Apocynaceae","Accepted"
-46,"Aspidosperma illustre (Vell.) Kuhim. & Piraja","Apocynaceae","Aspidosperma illustre","Aspidosperma","Aspidosperma illustre","21984-2","21984-2","Species","Apocynaceae","Accepted"
-47,"Aspidosperma sandwithianum Markgr.","Apocynaceae","Aspidosperma sandwithianum","Aspidosperma","Aspidosperma sandwithianum","22061-2","22061-2","Species","Apocynaceae","Accepted"
-48,"Aspidosperma ulei Markg.","Apocynaceae","Aspidosperma ulei","Aspidosperma","Aspidosperma ulei","22079-2","22079-2","Species","Apocynaceae","Accepted"
-49,"Aspidosperma megalocarpon Müll. Arg.","Apocynaceae","Aspidosperma megalocarpon","Aspidosperma","Aspidosperma megalocarpon","77405-1","77405-1","Species","Apocynaceae","Accepted"
-50,"Aspidosperma desmanthum Benth. Ex Müll. Arg.","Apocynaceae","Aspidosperma desmanthum","Aspidosperma","Aspidosperma desmanthum","77353-1","77353-1","Species","Apocynaceae","Accepted"
-51,"Aspidosperma rigidum Rusby","Apocynaceae","Aspidosperma rigidum","Aspidosperma","Aspidosperma rigidum","22058-2","22058-2","Species","Apocynaceae","Accepted"
-52,"Aspidosperma macrocarpon Mart.","Apocynaceae","Aspidosperma macrocarpon","Aspidosperma","Aspidosperma macrocarpon","77400-1","77400-1","Species","Apocynaceae","Accepted"
-53,"Aspidosperma cuspa (Kunth) S. F. Blake ex Pittier","Apocynaceae","Aspidosperma cuspa","Aspidosperma","Aspidosperma cuspa","77347-1","77347-1","Species","Apocynaceae","Accepted"
-54,"Aspidosperma cylindrocarpon Müll. Arg.","Apocynaceae","Aspidosperma cylindrocarpon","Aspidosperma","Aspidosperma cylindrocarpon","21952-2","21952-2","Species","Apocynaceae","Accepted"
-55,"Aspidosperma excelsum Benth. ex Müll. Arg.","Apocynaceae","Aspidosperma excelsum","Aspidosperma","Aspidosperma excelsum","77367-1","77367-1","Species","Apocynaceae","Accepted"
-56,"Aspidosperma obscurinervium Azambuja","Apocynaceae","Aspidosperma obscurinervium","Aspidosperma","Aspidosperma obscurinervium","22015-2","22015-2","Species","Apocynaceae","Accepted"
-57,"Aspidosperma quebracho-blanco Schltdl","Apocynaceae","Aspidosperma quebracho-blanco","Aspidosperma","Aspidosperma quebracho-blanco","77440-1","77440-1","Species","Apocynaceae","Accepted"
-58,"Aspidosperma schultesii Woodson","Apocynaceae","Aspidosperma schultesii","Aspidosperma","Aspidosperma schultesii","22062-2","22062-2","Species","Apocynaceae","Accepted"
-59,"Aspidosperma tomentosum Mart","Apocynaceae","Aspidosperma tomentosum","Aspidosperma","Aspidosperma tomentosum","77467-1","77467-1","Species","Apocynaceae","Accepted"
-60,"Aspidosperma ramiflorum Müll. Arg.","Apocynaceae","Aspidosperma ramiflorum","Aspidosperma","Aspidosperma ramiflorum","77443-1","77443-1","Species","Apocynaceae","Accepted"
-61,"Aspidosperma pachypterum Müll. Arg.","Apocynaceae","Aspidosperma pachypterum","Aspidosperma","Aspidosperma pachypterum","77425-1","77425-1","Species","Apocynaceae","Accepted"
-62,"Aspidosperma megaphyllum Woodson","Apocynaceae","Aspidosperma megaphyllum","Aspidosperma","Aspidosperma megaphyllum","22004-2","22004-2","Species","Apocynaceae","Accepted"
-63,"Aspidosperma multiflorum A. DC.","Apocynaceae","Aspidosperma multiflorum","Aspidosperma","Aspidosperma multiflorum","77410-1","77410-1","Species","Apocynaceae","Accepted"
-64,"Aspidosperma eburneum allemão ex Saldanha","Apocynaceae","Aspidosperma eburneum","Aspidosperma","Aspidosperma eburneum","77361-1","77361-1","Species","Apocynaceae","Accepted"
-65,"Aspidosperma pichonianum Woodson","Apocynaceae","Aspidosperma pichonianum","Aspidosperma","Aspidosperma pichonianum","22024-2","22024-2","Species","Apocynaceae","Accepted"
-66,"Bahiella infundibuliflora J. F. Morales","Apocynaceae","Bahiella infundibuliflora","Bahiella","Bahiella infundibuliflora","60444372-2","60444372-2","Species","Apocynaceae","Accepted"
-67,"Baissea axillaris (Benth.) Hua","Apocynaceae","Baissea axillaris","Baissea","Baissea axillaris","77483-1","77483-1","Species","Apocynaceae","Accepted"
-68,"Beaumontia grandiflora Wall.","Apocynaceae","Beaumontia grandiflora","Beaumontia","Beaumontia grandiflora","77539-1","77539-1","Species","Apocynaceae","Accepted"
-69,"Boucerosia diffusa (wight)","Apocynaceae","Boucerosia diffusa","Boucerosia","Boucerosia diffusa","94966-1","94966-1","Species","Apocynaceae","Accepted"
-70,"Bousigonia angustifolia Pierre ex Spire","Apocynaceae","Bousigonia angustifolia","Bousigonia","Bousigonia angustifolia","77610-1","77610-1","Species","Apocynaceae","Accepted"
-71,"Bousigonia mekongensis Pierre","Apocynaceae","Bousigonia mekongensis","Bousigonia","Bousigonia mekongensis","77611-1","77611-1","Species","Apocynaceae","Accepted"
-72,"Buckollia volubilis (Schltr.) Venter & R. L. Verh.","Apocynaceae","Buckollia volubilis","Buckollia","Buckollia volubilis","978337-1","978337-1","Species","Apocynaceae","Accepted"
-73,"Callichilia barteri (Hook. f.) Stapf","Apocynaceae","Callichilia barteri","Callichilia","Callichilia barteri","77635-1","77635-1","Species","Apocynaceae","Accepted"
-74,"Callichilia subsessilis (Benth.) Stapf","Apocynaceae","Callichilia subsessilis","Callichilia","Callichilia subsessilis","77645-1","77645-1","Species","Apocynaceae","Accepted"
-75,"Calotropis procera (Aiton) W. T. Aiton","Apocynaceae","Calotropis procera","Calotropis","Calotropis procera","1004515-2","1004515-2","Species","Apocynaceae","Accepted"
-76,"Calotropis gigantea (L.) W. T. Aiton","Apocynaceae","Calotropis gigantea","Calotropis","Calotropis gigantea","95173-1","95173-1","Species","Apocynaceae","Accepted"
-77,"Caralluma fimbriata Wall.","Apocynaceae","Caralluma fimbriata","Caralluma","Caralluma fimbriata","95260-1","95260-1","Species","Apocynaceae","Accepted"
-78,"Caralluma adscendens var. adscendens","Apocynaceae","Caralluma adscendens var. adscendens","Caralluma adscendens","Caralluma adscendens","95198-1","77172739-1","Variety","Apocynaceae","Accepted"
-79,"Caralluma dalzielii N. E. Br.","Apocynaceae","Caralluma dalzielii","Caralluma","Caralluma dalzielii","95238-1","95238-1","Species","Apocynaceae","Accepted"
-80,"Carissa macrocarpa (Eckl.) A. DC.","Apocynaceae","Carissa macrocarpa","Carissa","Carissa macrocarpa","77727-1","77727-1","Species","Apocynaceae","Accepted"
-81,"Carissa spinarum L.","Apocynaceae","Carissa spinarum","Carissa","Carissa spinarum","77756-1","77756-1","Species","Apocynaceae","Accepted"
-82,"Carissa carandas L.","Apocynaceae","Carissa carandas","Carissa","Carissa carandas","77691-1","77691-1","Species","Apocynaceae","Accepted"
-83,"Cascabela thevetia (L.) Lippold","Apocynaceae","Cascabela thevetia","Cascabela","Cascabela thevetia","47927-2","47927-2","Species","Apocynaceae","Accepted"
-84,"Catharanthus pusillus (Murray) G. Don","Apocynaceae","Catharanthus pusillus","Catharanthus","Catharanthus pusillus","77879-1","77879-1","Species","Apocynaceae","Accepted"
-85,"Catharanthus roseus (L.) G. Don","Apocynaceae","Catharanthus roseus","Catharanthus","Catharanthus roseus","77880-1","77880-1","Species","Apocynaceae","Accepted"
-86,"Caudanthera edulis (Edgew.) Meve & Liede","Apocynaceae","Caudanthera edulis","Caudanthera","Caudanthera edulis","20009959-1","20009959-1","Species","Apocynaceae","Accepted"
-87,"Caudanthera sinaica (Decne.) Plowes","Apocynaceae","Caudanthera sinaica","Caudanthera","Caudanthera sinaica","986775-1","986775-1","Species","Apocynaceae","Accepted"
-88,"Cerbera manghas L.","Apocynaceae","Cerbera manghas","Cerbera","Cerbera manghas","77906-1","77906-1","Species","Apocynaceae","Accepted"
-89,"Cerbera odollam Gaertn.","Apocynaceae","Cerbera odollam","Cerbera","Cerbera odollam","77913-1","77913-1","Species","Apocynaceae","Accepted"
-90,"Ceropegia juncea Roxb.","Apocynaceae","Ceropegia juncea","Ceropegia","Ceropegia juncea","95629-1","95629-1","Species","Apocynaceae","Accepted"
-91,"Ceropegia bulbosa Roxb.","Apocynaceae","Ceropegia bulbosa","Ceropegia","Ceropegia bulbosa","95492-1","95492-1","Species","Apocynaceae","Accepted"
-92,"Ceropegia media (H. Huber) Ansari","Apocynaceae","Ceropegia media","Ceropegia","Ceropegia media","95667-1","95667-1","Species","Apocynaceae","Accepted"
-93,"Ceropegia sahyadrica var. karulensis (Punekar, Tamhankar, Lakshmin., Kumaran, Raut, S. K. Srivast. & Kavade) Kambale & S. R. Yadav","Apocynaceae","Ceropegia sahyadrica var. karulensis","Ceropegia sahyadrica","Ceropegia sahyadrica","95755-1","77202358-1","Variety","Apocynaceae","Accepted"
-94,"Chilocarpus costatus Miq.","Apocynaceae","Chilocarpus costatus","Chilocarpus","Chilocarpus costatus","77967-1","77967-1","Species","Apocynaceae","Accepted"
-95,"Chloropetalum denticulatum (Vahl) Morillo","Apocynaceae","Chloropetalum denticulatum","Chloropetalum","Chloropetalum denticulatum","77206440-1","77206440-1","Species","Apocynaceae","Accepted"
-96,"Chonemorpha fragrans (Moon) Alston","Apocynaceae","Chonemorpha fragrans","Chonemorpha","Chonemorpha fragrans","78008-1","78008-1","Species","Apocynaceae","Accepted"
-97,"Condylocarpon isthmicum (Vell.) A. DC.","Apocynaceae","Condylocarpon isthmicum","Condylocarpon","Condylocarpon isthmicum","1190728-2","1190728-2","Species","Apocynaceae","Accepted"
-98,"Cosmostigma cordatum (Poir.) M. R. Almeida","Apocynaceae","Cosmostigma cordatum","Cosmostigma","Cosmostigma cordatum","20008971-1","20008971-1","Species","Apocynaceae","Accepted"
-99,"Craspidospermum verticillatum Bojer ex Decne.","Apocynaceae","Craspidospermum verticillatum","Craspidospermum","Craspidospermum verticillatum","78180-1","78180-1","Species","Apocynaceae","Accepted"
-100,"Crioceras dipladeniiflorus (Stapf) K. Schum.","Apocynaceae","Crioceras dipladeniiflorus","Crioceras","Crioceras dipladeniiflorus","78181-1","78181-1","Species","Apocynaceae","Accepted"
-101,"Cryptolepis apiculata K. Schum.","Apocynaceae","Cryptolepis apiculata","Cryptolepis","Cryptolepis apiculata","95909-1","95909-1","Species","Apocynaceae","Accepted"
-102,"Cryptolepis capensis Schltr.","Apocynaceae","Cryptolepis capensis","Cryptolepis","Cryptolepis capensis","95917-1","95917-1","Species","Apocynaceae","Accepted"
-103,"Cryptolepis cryptolepioides (SChltr.) Bullock","Apocynaceae","Cryptolepis cryptolepioides","Cryptolepis","Cryptolepis cryptolepioides","95918-1","95918-1","Species","Apocynaceae","Accepted"
-104,"Cryptolepis obtusa N. E. Br.","Apocynaceae","Cryptolepis obtusa","Cryptolepis","Cryptolepis obtusa","95945-1","95945-1","Species","Apocynaceae","Accepted"
-105,"Cryptolepis sanguinolenta (Lindl.) Schltr.","Apocynaceae","Cryptolepis sanguinolenta","Cryptolepis","Cryptolepis sanguinolenta","95951-1","95951-1","Species","Apocynaceae","Accepted"
-106,"Cryptolepis buchananii R. Br. ex Roem. & Schult.","Apocynaceae","Cryptolepis buchananii","Cryptolepis","Cryptolepis buchananii","95915-1","95915-1","Species","Apocynaceae","Accepted"
-107,"Cryptolepis decidua (Planch. ex Benth.) N. E. Br.","Apocynaceae","Cryptolepis decidua","Cryptolepis","Cryptolepis decidua","95920-1","95920-1","Species","Apocynaceae","Accepted"
-108,"Cryptolepis hypoglauca K. Schum.","Apocynaceae","Cryptolepis hypoglauca","Cryptolepis","Cryptolepis hypoglauca","95931-1","95931-1","Species","Apocynaceae","Accepted"
-109,"Cryptolepis nigrescens (Wennberg) L. Joubert & Bruyns","Apocynaceae","Cryptolepis nigrescens","Cryptolepis","Cryptolepis nigrescens","77158572-1","77158572-1","Species","Apocynaceae","Accepted"
-110,"Cynanchum maximoviczii Pobed.","Apocynaceae","Cynanchum maximoviczii","Cynanchum","Cynanchum maximoviczii","96387-1","96387-1","Species","Apocynaceae","Accepted"
-111,"Cynanchum wilfordii (Maxim.) Hook. f.","Apocynaceae","Cynanchum wilfordii","Cynanchum","Cynanchum wilfordii","96697-1","96697-1","Species","Apocynaceae","Accepted"
-112,"Decalepis arayalpathra (J. Joseph & V. Chandras.) Venter","Apocynaceae","Decalepis arayalpathra","Decalepis","Decalepis arayalpathra","998076-1","998076-1","Species","Apocynaceae","Accepted"
-113,"Decalepis nervosa (Wight & Arn.) Venter","Apocynaceae","Decalepis nervosa","Decalepis","Decalepis nervosa","998075-1","998075-1","Species","Apocynaceae","Accepted"
-114,"Decalepis hamiltonii Wight & Arn.","Apocynaceae","Decalepis hamiltonii","Decalepis","Decalepis hamiltonii","96807-1","96807-1","Species","Apocynaceae","Accepted"
-115,"Desmidorchis penicillata (Deflers) Plowes","Apocynaceae","Desmidorchis penicillata","Desmidorchis","Desmidorchis penicillata","986779-1","986779-1","Species","Apocynaceae","Accepted"
-116,"Desmidorchis retrospiciens Ehrenb.","Apocynaceae","Desmidorchis retrospiciens","Desmidorchis","Desmidorchis retrospiciens","96827-1","96827-1","Species","Apocynaceae","Accepted"
-117,"Dictyophleba lucida (K. Schum) Pierre","Apocynaceae","Dictyophleba lucida","Dictyophleba","Dictyophleba lucida","78221-1","78221-1","Species","Apocynaceae","Accepted"
-118,"Diplorhynchus condylocarpon (Müll. Arg.) Pichon","Apocynaceae","Diplorhynchus condylocarpon","Diplorhynchus","Diplorhynchus condylocarpon","78310-1","78310-1","Species","Apocynaceae","Accepted"
-119,"Dischidia formosana Maxim.","Apocynaceae","Dischidia formosana","Dischidia","Dischidia formosana","96939-1","96939-1","Species","Apocynaceae","Accepted"
-120,"Ditassa eximia Decne.","Apocynaceae","Ditassa eximia","Ditassa","Ditassa eximia","97123-1","97123-1","Species","Apocynaceae","Accepted"
-121,"Ditassa lenheirensis Silveira","Apocynaceae","Ditassa lenheirensis","Ditassa","Ditassa lenheirensis","82462-2","82462-2","Species","Apocynaceae","Accepted"
-122,"Dyera costulata (Miq.) Hook. F.","Apocynaceae","Dyera costulata","Dyera","Dyera costulata","78323-1","78323-1","Species","Apocynaceae","Accepted"
-123,"Echites panduratus","Apocynaceae","Echites panduratus","Echites","Echites panduratus","88698-2","88698-2","Species","Apocynaceae","Accepted"
-124,"Echites umbellatus Jacq.","Apocynaceae","Echites umbellatus","Echites","Echites umbellatus","78821-1","78821-1","Species","Apocynaceae","Accepted"
-125,"Eucorymbia alba Stapf","Apocynaceae","Eucorymbia alba","Eucorymbia","Eucorymbia alba","78988-1","78988-1","Species","Apocynaceae","Accepted"
-126,"Fischeria stellata (Vell.) E. Fourn.","Apocynaceae","Fischeria stellata","Fischeria","Fischeria stellata","97427-1","97427-1","Species","Apocynaceae","Accepted"
-127,"Funtumia elastica (Preuss) Stapf","Apocynaceae","Funtumia elastica","Funtumia","Funtumia elastica","79099-1","79099-1","Species","Apocynaceae","Accepted"
-128,"Funtumia africana (Benth.) Stapf","Apocynaceae","Funtumia africana","Funtumia","Funtumia africana","79098-1","79098-1","Species","Apocynaceae","Accepted"
-129,"Galactophora schomburgkiana","Apocynaceae","Galactophora schomburgkiana","Galactophora","Galactophora schomburgkiana","106756-2","106756-2","Species","Apocynaceae","Accepted"
-130,"Geissospermum laeve (Vell.) Miers","Apocynaceae","Geissospermum laeve","Geissospermum","Geissospermum laeve","79123-1","79123-1","Species","Apocynaceae","Accepted"
-131,"Geissospermum sericeum Miers","Apocynaceae","Geissospermum sericeum","Geissospermum","Geissospermum sericeum","1006780-1","1006780-1","Species","Apocynaceae","Accepted"
-132,"Geissospermum urceolatum A. H. Gentry","Apocynaceae","Geissospermum urceolatum","Geissospermum","Geissospermum urceolatum","277357-2","277357-2","Species","Apocynaceae","Accepted"
-133,"Geissospermum argenteum Woodson","Apocynaceae","Geissospermum argenteum","Geissospermum","Geissospermum argenteum","108063-2","108063-2","Species","Apocynaceae","Accepted"
-134,"Geissospermum reticulatum A. H. Gentry","Apocynaceae","Geissospermum reticulatum","Geissospermum","Geissospermum reticulatum","277356-2","277356-2","Species","Apocynaceae","Accepted"
-135,"Gomphocarpus fruticosus (l.) W. T. Aiton","Apocynaceae","Gomphocarpus fruticosus","Gomphocarpus","Gomphocarpus fruticosus","97610-1","97610-1","Species","Apocynaceae","Accepted"
-136,"Gomphocarpus semilunatus A. Rich.","Apocynaceae","Gomphocarpus semilunatus","Gomphocarpus","Gomphocarpus semilunatus","97692-1","97692-1","Species","Apocynaceae","Accepted"
-137,"Gongronema napalense (Wall.) Decne.","Apocynaceae","Gongronema napalense","Gongronema","Gongronema napalense","97744-1","97744-1","Species","Apocynaceae","Accepted"
-138,"Gonioma malagasy Markgr. & Boiteau","Apocynaceae","Gonioma malagasy","Gonioma","Gonioma malagasy","79134-1","79134-1","Species","Apocynaceae","Accepted"
-139,"Gonioma kamassi E. Mey.","Apocynaceae","Gonioma kamassi","Gonioma","Gonioma kamassi","79133-1","79133-1","Species","Apocynaceae","Accepted"
-140,"Gymnema sylvestre (Retz.) R. Br. ex Sm.","Apocynaceae","Gymnema sylvestre","Gymnema","Gymnema sylvestre","60454719-2","60454719-2","Species","Apocynaceae","Accepted"
-141,"Gymnema decaisneanum Wight","Apocynaceae","Gymnema decaisneanum","Gymnema","Gymnema decaisneanum","98158-1","98158-1","Species","Apocynaceae","Accepted"
-142,"Gymnema elegans Wight & Arn.","Apocynaceae","Gymnema elegans","Gymnema","Gymnema elegans","98160-1","98160-1","Species","Apocynaceae","Accepted"
-143,"Gymnema latifolium Wall. ex Wight","Apocynaceae","Gymnema latifolium","Gymnema","Gymnema latifolium","98182-1","98182-1","Species","Apocynaceae","Accepted"
-144,"Gymnema inodorum (Lour.) Decne.","Apocynaceae","Gymnema inodorum","Gymnema","Gymnema inodorum","98176-1","98176-1","Species","Apocynaceae","Accepted"
-145,"Hancornia speciosa Gomes","Apocynaceae","Hancornia speciosa","Hancornia","Hancornia speciosa","328991-2","328991-2","Species","Apocynaceae","Accepted"
-146,"Haplophyton cimicidum A. DC.","Apocynaceae","Haplophyton cimicidum","Haplophyton","Haplophyton cimicidum","79244-1","79244-1","Species","Apocynaceae","Accepted"
-147,"Haplophyton crooksi (L. D. Benson) L. D. Benson","Apocynaceae","Haplophyton crooksii","Haplophyton","Haplophyton crooksii","117868-2","117868-2","Species","Apocynaceae","Accepted"
-148,"Hemidesmus indicus (L.) R. Br.","Apocynaceae","Hemidesmus indicus","Hemidesmus","Hemidesmus indicus","60443873-2","60443873-2","Species","Apocynaceae","Accepted"
-149,"Himatanthus articulatus (Vahl) Woodson","Apocynaceae","Himatanthus articulatus","Himatanthus","Himatanthus articulatus","122688-2","122688-2","Species","Apocynaceae","Accepted"
-150,"Himatanthus bracteatus (A. DC.) Woodson","Apocynaceae","Himatanthus bracteatus","Himatanthus","Himatanthus bracteatus","122690-2","122690-2","Species","Apocynaceae","Accepted"
-151,"Himatanthus attenuatus (Benth.) Woodson","Apocynaceae","Himatanthus attenuatus","Himatanthus","Himatanthus attenuatus","122689-2","122689-2","Species","Apocynaceae","Accepted"
-152,"Himatanthus tarapotensis (K. Schum. Ex Markgr.) Plumel","Apocynaceae","Himatanthus tarapotensis","Himatanthus","Himatanthus tarapotensis","962262-1","962262-1","Species","Apocynaceae","Accepted"
-153,"Himatanthus obovatus (Müll. Arg.) Woodson","Apocynaceae","Himatanthus obovatus","Himatanthus","Himatanthus obovatus","122692-2","122692-2","Species","Apocynaceae","Accepted"
-154,"Himatanthus revolutus (Huber) Spina & Kin.-Gouv.","Apocynaceae","Himatanthus revolutus","Himatanthus","Himatanthus revolutus","77136056-1","77136056-1","Species","Apocynaceae","Accepted"
-155,"Himatanthus drasticus (Mart.) Plumel","Apocynaceae","Himatanthus drasticus","Himatanthus","Himatanthus drasticus","962260-1","962260-1","Species","Apocynaceae","Accepted"
-156,"Holarrhena congolensis Stapf","Apocynaceae","Holarrhena congolensis","Holarrhena","Holarrhena congolensis","79294-1","79294-1","Species","Apocynaceae","Accepted"
-157,"Holarrhena curtisii King & Gamble","Apocynaceae","Holarrhena curtisii","Holarrhena","Holarrhena curtisii","79297-1","79297-1","Species","Apocynaceae","Accepted"
-158,"Holarrhena floribunda (G. Don) T. Durand & Schinz","Apocynaceae","Holarrhena floribunda","Holarrhena","Holarrhena floribunda","79302-1","79302-1","Species","Apocynaceae","Accepted"
-159,"Holarrhena pubescens Wal. ex G. Don","Apocynaceae","Holarrhena pubescens","Holarrhena","Holarrhena pubescens","79318-1","79318-1","Species","Apocynaceae","Accepted"
-160,"Holarrhena mitis (Vahl) R. Br. Ex Roem. & Schult.","Apocynaceae","Holarrhena mitis","Holarrhena","Holarrhena mitis","79311-1","79311-1","Species","Apocynaceae","Accepted"
-161,"Hoodia gordonii (Masson) Sweet ex Decne.","Apocynaceae","Hoodia gordonii","Hoodia","Hoodia gordonii","98342-1","98342-1","Species","Apocynaceae","Accepted"
-162,"Hoya verticillata var. verticillata","Apocynaceae","Hoya verticillata var. verticillata","Hoya verticillata","Hoya verticillata","98729-1","77173117-1","Variety","Apocynaceae","Accepted"
-163,"Hunteria zeylanica (Retz.) Gardner ex Thwaites","Apocynaceae","Hunteria zeylanica","Hunteria","Hunteria zeylanica","79369-1","79369-1","Species","Apocynaceae","Accepted"
-164,"Hunteria umbellata (K. Schum.) Hallier f.","Apocynaceae","Hunteria umbellata","Hunteria","Hunteria umbellata","79368-1","79368-1","Species","Apocynaceae","Accepted"
-165,"Ichnocarpus frutescens","Apocynaceae","Ichnocarpus frutescens","Ichnocarpus","Ichnocarpus frutescens","79384-1","79384-1","Species","Apocynaceae","Accepted"
-166,"Ischnolepis natalensis (Schltr.) Venter","Apocynaceae","Ischnolepis natalensis","Ischnolepis","Ischnolepis natalensis","20003295-1","20003295-1","Species","Apocynaceae","Accepted"
-167,"Kanahia laniflora (Forssk.) R. Br.","Apocynaceae","Kanahia laniflora","Kanahia","Kanahia laniflora","98887-1","98887-1","Species","Apocynaceae","Accepted"
-168,"Kibatalia laurifolia (Ridl.) Woodson","Apocynaceae","Kibatalia laurifolia","Kibatalia","Kibatalia laurifolia","79456-1","79456-1","Species","Apocynaceae","Accepted"
-169,"Kibatalia macrophylla (Pierre ex Hua) Woodson","Apocynaceae","Kibatalia macrophylla","Kibatalia","Kibatalia macrophylla","79460-1","79460-1","Species","Apocynaceae","Accepted"
-170,"Kopsia fruticosa (Roxb.) A. DC.","Apocynaceae","Kopsia fruticosa","Kopsia","Kopsia fruticosa","79497-1","79497-1","Species","Apocynaceae","Accepted"
-171,"Kopsia arborea Blume","Apocynaceae","Kopsia arborea","Kopsia","Kopsia arborea","79490-1","79490-1","Species","Apocynaceae","Accepted"
-172,"Kopsia macrophylla Hook. f.","Apocynaceae","Kopsia macrophylla","Kopsia","Kopsia macrophylla","79511-1","79511-1","Species","Apocynaceae","Accepted"
-173,"Kopsia singapurensis Ridl.","Apocynaceae","Kopsia singapurensis","Kopsia","Kopsia singapurensis","79524-1","79524-1","Species","Apocynaceae","Accepted"
-174,"Kopsia deverrei L. Allorge","Apocynaceae","Kopsia deverrei","Kopsia","Kopsia deverrei","929492-1","929492-1","Species","Apocynaceae","Accepted"
-175,"Kopsia hainanensis Tsiang","Apocynaceae","Kopsia hainanensis","Kopsia","Kopsia hainanensis","79500-1","79500-1","Species","Apocynaceae","Accepted"
-176,"Kopsia profunda Markgr.","Apocynaceae","Kopsia profunda","Kopsia","Kopsia profunda","79519-1","79519-1","Species","Apocynaceae","Accepted"
-177,"Kopsia teoi L. Allorge","Apocynaceae","Kopsia teoi","Kopsia","Kopsia teoi","972022-1","972022-1","Species","Apocynaceae","Accepted"
-178,"Kopsia grandifolia D. J. Middleton","Apocynaceae","Kopsia grandifolia","Kopsia","Kopsia grandifolia","60436655-2","60436655-2","Species","Apocynaceae","Accepted"
-179,"Kopsia dasyrachis Ridl.","Apocynaceae","Kopsia dasyrachis","Kopsia","Kopsia dasyrachis","79494-1","79494-1","Species","Apocynaceae","Accepted"
-180,"Kopsia flavida Blume","Apocynaceae","Kopsia flavida","Kopsia","Kopsia flavida","79496-1","79496-1","Species","Apocynaceae","Accepted"
-181,"Kopsia griffithii King & Gamble","Apocynaceae","Kopsia griffithii","Kopsia","Kopsia griffithii","79499-1","79499-1","Species","Apocynaceae","Accepted"
-182,"Kopsia larutensis King & Gamble","Apocynaceae","Kopsia larutensis","Kopsia","Kopsia larutensis","60436658-2","60436658-2","Species","Apocynaceae","Accepted"
-183,"Kopsia pauciflora Hook. f.","Apocynaceae","Kopsia pauciflora","Kopsia","Kopsia pauciflora","79516-1","79516-1","Species","Apocynaceae","Accepted"
-184,"Kopsia tenuis Leenh. & Steems","Apocynaceae","Kopsia tenuis","Kopsia","Kopsia tenuis","79526-1","79526-1","Species","Apocynaceae","Accepted"
-185,"Kopsia lapidilecta Sleesen","Apocynaceae","Kopsia lapidilecta","Kopsia","Kopsia lapidilecta","79507-1","79507-1","Species","Apocynaceae","Accepted"
-186,"Lacmellea panamensis (Woodson) Markgr.","Apocynaceae","Lacmellea panamensis","Lacmellea","Lacmellea panamensis","134499-2","134499-2","Species","Apocynaceae","Accepted"
-187,"Landolphia owariensis P. Beauv.","Apocynaceae","Landolphia owariensis","Landolphia","Landolphia owariensis","79672-1","79672-1","Species","Apocynaceae","Accepted"
-188,"Landolphia uniflora (Stapf) Pichon","Apocynaceae","Landolphia uniflora","Landolphia","Landolphia uniflora","79721-1","79721-1","Species","Apocynaceae","Accepted"
-189,"Landolphia buchananii (Hallier f.) Stapf","Apocynaceae","Landolphia buchananii","Landolphia","Landolphia buchananii","79582-1","79582-1","Species","Apocynaceae","Accepted"
-190,"Landolphia dulcis (Sabine ex G. Don) Pichon","Apocynaceae","Landolphia dulcis","Landolphia","Landolphia dulcis","79607-1","79607-1","Species","Apocynaceae","Accepted"
-191,"Landolphia heudelotii A. DC.","Apocynaceae","Landolphia heudelotii","Landolphia","Landolphia heudelotii","79629-1","79629-1","Species","Apocynaceae","Accepted"
-192,"Landolphia lanceolata (K. Schum.) Pichon","Apocynaceae","Landolphia lanceolata","Landolphia","Landolphia lanceolata","79639-1","79639-1","Species","Apocynaceae","Accepted"
-193,"Laubertia boissieri A. DC.","Apocynaceae","Laubertia boissieri","Laubertia","Laubertia boissieri","324863-2","324863-2","Species","Apocynaceae","Accepted"
-194,"Leptadenia pyrotechnica (Forssk.) Decne.","Apocynaceae","Leptadenia pyrotechnica","Leptadenia","Leptadenia pyrotechnica","98980-1","98980-1","Species","Apocynaceae","Accepted"
-195,"Leptadenia lanceolata (Poir.) Goyder","Apocynaceae","Leptadenia lanceolata","Leptadenia","Leptadenia lanceolata","77143808-1","77143808-1","Species","Apocynaceae","Accepted"
-196,"Leptadenia reticulata (Retz.) Wight & Arn.","Apocynaceae","Leptadenia reticulata","Leptadenia","Leptadenia reticulata","20009712-1","20009712-1","Species","Apocynaceae","Accepted"
-197,"Leptadenia lanceolata var. lanceolata","Apocynaceae","Leptadenia lanceolata subsp. lanceolata","Leptadenia lanceolata","Leptadenia lanceolata","77143808-1","77173519-1","Subspecies","Apocynaceae","Accepted"
-198,"Leptadenia madagascariensis Decne.","Apocynaceae","Leptadenia madagascariensis","Leptadenia","Leptadenia madagascariensis","98978-1","98978-1","Species","Apocynaceae","Accepted"
-199,"Leuconotis eugeniifolia (Wall. ex G. Don) A. DC.","Apocynaceae","Leuconotis eugeniifolia","Leuconotis","Leuconotis eugeniifolia","77177343-1","77177343-1","Species","Apocynaceae","Accepted"
-200,"Leuconotis griffithii Hook. f.","Apocynaceae","Leuconotis griffithii","Leuconotis","Leuconotis griffithii","79773-1","79773-1","Species","Apocynaceae","Accepted"
-201,"Macoubea guianensis Aubl.","Apocynaceae","Macoubea guianensis","Macoubea","Macoubea guianensis","79852-1","79852-1","Species","Apocynaceae","Accepted"
-202,"Macropharynx isthmica (Woodson) J. F. Morales, M. E. Endress & Liede","Apocynaceae","Macropharynx isthmica","Macropharynx","Macropharynx isthmica","77165026-1","77165026-1","Species","Apocynaceae","Accepted"
-203,"Macropharynx peltata (Vell.) J. F. Morales, M. E. Endress & Liede","Apocynaceae","Macropharynx peltata","Macropharynx","Macropharynx peltata","77165028-1","77165028-1","Species","Apocynaceae","Accepted"
-204,"Malouetia arborea (Vell.) Miers","Apocynaceae","Malouetia arborea","Malouetia","Malouetia arborea","79888-1","79888-1","Species","Apocynaceae","Accepted"
-205,"Malouetia bequaertiana Woodson","Apocynaceae","Malouetia bequaertiana","Malouetia","Malouetia bequaertiana","79890-1","79890-1","Species","Apocynaceae","Accepted"
-206,"Malouetia tamaquarina (Aubl.) A. DC.","Apocynaceae","Malouetia tamaquarina","Malouetia","Malouetia tamaquarina","79926-1","79926-1","Species","Apocynaceae","Accepted"
-207,"Malouetia glandulifera Miers","Apocynaceae","Malouetia glandulifera","Malouetia","Malouetia glandulifera","79898-1","79898-1","Species","Apocynaceae","Accepted"
-208,"Mandevilla boliviensis (J. J. Veitch)","Apocynaceae","Mandevilla boliviensis","Mandevilla","Mandevilla boliviensis","151935-2","151935-2","Species","Apocynaceae","Accepted"
-209,"Marsdenia rostrata R. Br.","Apocynaceae","Leichhardtia rostrata","Leichhardtia","Leichhardtia rostrata","77221204-1","77221204-1","Species","Apocynaceae","Synonym"
-210,"Marsdenia cundurango Rchb. f.","Apocynaceae","Ruehssia cundurango","Ruehssia","Ruehssia cundurango","77214383-1","77214383-1","Species","Apocynaceae","Synonym"
-211,"Marsdenia tinctoria R. Br.","Apocynaceae","Marsdenia tinctoria","Marsdenia","Marsdenia tinctoria","99325-1","99325-1","Species","Apocynaceae","Accepted"
-212,"Marsdenia tenacissima (Roxb.) Moon","Apocynaceae","Marsdenia tenacissima","Marsdenia","Marsdenia tenacissima","99319-1","99319-1","Species","Apocynaceae","Accepted"
-213,"Marsdenia glabra Constantin","Apocynaceae","Marsdenia glabra","Marsdenia","Marsdenia glabra","99160-1","99160-1","Species","Apocynaceae","Accepted"
-214,"Marsdenia edulis S. Watson","Apocynaceae","Marsdenia edulis","Marsdenia","Marsdenia edulis","153556-2","153556-2","Species","Apocynaceae","Accepted"
-215,"Marsdenia latifolia (Benth.) K. Schum","Apocynaceae","Marsdenia latifolia","Marsdenia","Marsdenia latifolia","99198-1","99198-1","Species","Apocynaceae","Accepted"
-216,"Melodinus aeneus Baill.","Apocynaceae","Melodinus aeneus","Melodinus","Melodinus aeneus","80160-1","80160-1","Species","Apocynaceae","Accepted"
-217,"Melodinus australis (F. Muell.) Pierre","Apocynaceae","Melodinus australis","Melodinus","Melodinus australis","80164-1","80164-1","Species","Apocynaceae","Accepted"
-218,"Melodinus axillaris W. T. Wang","Apocynaceae","Melodinus axillaris","Melodinus","Melodinus axillaris","80166-1","80166-1","Species","Apocynaceae","Accepted"
-219,"Melodinus cochinchinensis (Lour.) Merr.","Apocynaceae","Melodinus cochinchinensis","Melodinus","Melodinus cochinchinensis","80183-1","80183-1","Species","Apocynaceae","Accepted"
-220,"Melodinus fusiformis Champ. ex Benth.","Apocynaceae","Melodinus fusiformis","Melodinus","Melodinus fusiformis","80201-1","80201-1","Species","Apocynaceae","Accepted"
-221,"Melodinus reticulatus Boiteau","Apocynaceae","Melodinus reticulatus","Melodinus","Melodinus reticulatus","80249-1","80249-1","Species","Apocynaceae","Accepted"
-222,"Melodinus tenuicaudatus Tsiang & P. T. Li","Apocynaceae","Melodinus tenuicaudatus","Melodinus","Melodinus tenuicaudatus","80259-1","80259-1","Species","Apocynaceae","Accepted"
-223,"Melodinus balansae Baill.","Apocynaceae","Melodinus balansae","Melodinus","Melodinus balansae","80169-1","80169-1","Species","Apocynaceae","Accepted"
-224,"Melodinus scandens J.R.Forst & G.Forst","Apocynaceae","Melodinus scandens","Melodinus","Melodinus scandens","80253-1","80253-1","Species","Apocynaceae","Accepted"
-225,"Melodinus acutiflorus F. Muell.","Apocynaceae","Melodinus acutiflorus","Melodinus","Melodinus acutiflorus","80158-1","80158-1","Species","Apocynaceae","Accepted"
-226,"Melodinus philliraeoides Labill.","Apocynaceae","Melodinus philliraeoides","Melodinus","Melodinus philliraeoides","80246-1","80246-1","Species","Apocynaceae","Accepted"
-227,"Metastelma harleyi Fontella","Apocynaceae","Metastelma harleyi","Metastelma","Metastelma harleyi","280817-2","280817-2","Species","Apocynaceae","Accepted"
-228,"Microplumeria anomala (Müll. Arg.) Markgr.","Apocynaceae","Microplumeria anomala","Microplumeria","Microplumeria anomala","80344-1","80344-1","Species","Apocynaceae","Accepted"
-229,"Minaria magisteriana (Rapini) T. U. P. Konno & Rapini","Apocynaceae","Minaria magisteriana","Minaria","Minaria magisteriana","77074595-1","77074595-1","Species","Apocynaceae","Accepted"
-230,"Mondia whitei (Hook. f.) Skeels","Apocynaceae","Mondia whitei","Mondia","Mondia whitei","99812-1","99812-1","Species","Apocynaceae","Accepted"
-231,"Monolluma quadrangula (Forssk.) Plowes","Apocynaceae","Monolluma quadrangula","Monolluma","Monolluma quadrangula","986817-1","986817-1","Species","Apocynaceae","Accepted"
-232,"Motandra paniculata (Poir.) I. M. Turner","Apocynaceae","Motandra paniculata","Motandra","Motandra paniculata","77158413-1","77158413-1","Species","Apocynaceae","Accepted"
-233,"Nerium oleander L.","Apocynaceae","Nerium oleander","Nerium","Nerium oleander","80460-1","80460-1","Species","Apocynaceae","Accepted"
-234,"Ochrosia compta K. Schum.","Apocynaceae","Ochrosia compta","Ochrosia","Ochrosia compta","80497-1","80497-1","Species","Apocynaceae","Accepted"
-235,"Ochrosia moorei (F. Muell.) Benth.","Apocynaceae","Ochrosia moorei","Ochrosia","Ochrosia moorei","80527-1","80527-1","Species","Apocynaceae","Accepted"
-236,"Ochrosia alyxioides Guillaumin","Apocynaceae","Ochrosia alyxioides","Ochrosia","Ochrosia alyxioides","80488-1","80488-1","Species","Apocynaceae","Accepted"
-237,"Ochrosia poweri F. M. Bailey","Apocynaceae","Ochrosia poweri","Ochrosia","Ochrosia poweri","80538-1","80538-1","Species","Apocynaceae","Accepted"
-238,"Ochrosia miana Baill. ex Guillaumin","Apocynaceae","Ochrosia miana","Ochrosia","Ochrosia miana","80524-1","80524-1","Species","Apocynaceae","Accepted"
-239,"Ochrosia nakaiana (Koidz.) Koidz. ex H. Hara","Apocynaceae","Ochrosia nakaiana","Ochrosia","Ochrosia nakaiana","80530-1","80530-1","Species","Apocynaceae","Accepted"
-240,"Ochrosia silvatica Däniker","Apocynaceae","Ochrosia silvatica","Ochrosia","Ochrosia silvatica","80545-1","80545-1","Species","Apocynaceae","Accepted"
-241,"Ochrosia borbonica J. F. Gmel.","Apocynaceae","Ochrosia borbonica","Ochrosia","Ochrosia borbonica","80491-1","80491-1","Species","Apocynaceae","Accepted"
-242,"Ochrosia acuminata Trimen ex Valeton","Apocynaceae","Ochrosia acuminata","Ochrosia","Ochrosia acuminata","80487-1","80487-1","Species","Apocynaceae","Accepted"
-243,"Ochrosia mulsantii Montrouz.","Apocynaceae","Ochrosia mulsantii","Ochrosia","Ochrosia mulsantii","80528-1","80528-1","Species","Apocynaceae","Accepted"
-244,"Ochrosia elliptica Labill.","Apocynaceae","Ochrosia elliptica","Ochrosia","Ochrosia elliptica","80500-1","80500-1","Species","Apocynaceae","Accepted"
-245,"Ochrosia oppositifolia (Lam.) K. Schum.","Apocynaceae","Ochrosia oppositifolia","Ochrosia","Ochrosia oppositifolia","80534-1","80534-1","Species","Apocynaceae","Accepted"
-246,"Ochrosia glomerata (Blume) F. Muell","Apocynaceae","Ochrosia glomerata","Ochrosia","Ochrosia glomerata","77177054-1","77177054-1","Species","Apocynaceae","Accepted"
-247,"Oncinotis nitida Benth.","Apocynaceae","Oncinotis nitida","Oncinotis","Oncinotis nitida","80635-1","80635-1","Species","Apocynaceae","Accepted"
-248,"Oncinotis tenuiloba Stapf","Apocynaceae","Oncinotis tenuiloba","Oncinotis","Oncinotis tenuiloba","80641-1","80641-1","Species","Apocynaceae","Accepted"
-249,"Oxypetalum banksii R. Br. ex Schult.","Apocynaceae","Oxypetalum banksii","Oxypetalum","Oxypetalum banksii","179274-2","179274-2","Species","Apocynaceae","Accepted"
-250,"Pachypodium lamerei Drake","Apocynaceae","Pachypodium lamerei","Pachypodium","Pachypodium lamerei","80705-1","80705-1","Species","Apocynaceae","Accepted"
-251,"Parahancornia fasciculata (Poir.) Benoist","Apocynaceae","Parahancornia fasciculata","Parahancornia","Parahancornia fasciculata","182946-2","182946-2","Species","Apocynaceae","Accepted"
-252,"Parsonsia eucalyptophylla F. Muell.","Apocynaceae","Parsonsia eucalyptophylla","Parsonsia","Parsonsia eucalyptophylla","80910-1","80910-1","Species","Apocynaceae","Accepted"
-253,"Parsonsia heterophylla A. Cunn.","Apocynaceae","Parsonsia heterophylla","Parsonsia","Parsonsia heterophylla","80926-1","80926-1","Species","Apocynaceae","Accepted"
-254,"Parsonsia alboflavescens (Denst.) Mabb.","Apocynaceae","Parsonsia alboflavescens","Parsonsia","Parsonsia alboflavescens","80868-1","80868-1","Species","Apocynaceae","Accepted"
-255,"Parsonsia straminea (R. Br.) F. Muell","Apocynaceae","Parsonsia straminea","Parsonsia","Parsonsia straminea","50061-3","50061-3","Species","Apocynaceae","Accepted"
-256,"Parsonsia oligantha (K. Schum.) D. J. Middleton","Apocynaceae","Parsonsia oligantha","Parsonsia","Parsonsia oligantha","995742-1","995742-1","Species","Apocynaceae","Accepted"
-257,"Pattalias palustris (Pursh) Fishbein","Apocynaceae","Pattalias palustris","Pattalias","Pattalias palustris","77174448-1","77174448-1","Species","Apocynaceae","Accepted"
-258,"Pentalinon andrieuxii (Müll. Arg.) B. F. Hansen & Wunderlin","Apocynaceae","Pentalinon andrieuxii","Pentalinon","Pentalinon andrieuxii","942488-1","942488-1","Species","Apocynaceae","Accepted"
-259,"Pentatropis capensis (L. f.) Bullock","Apocynaceae","Pentatropis capensis","Pentatropis","Pentatropis capensis","100315-1","100315-1","Species","Apocynaceae","Accepted"
-260,"Pentopetia albicans (Jum. & H. Perrier) Klack.","Apocynaceae","Pentopetia albicans","Pentopetia","Pentopetia albicans","1011612-1","1011612-1","Species","Apocynaceae","Accepted"
-261,"Peplonia adnata (E. Fourn.) U. C. S. Silva & Rapini","Apocynaceae","Peplonia adnata","Peplonia","Peplonia adnata","77130384-1","77130384-1","Species","Apocynaceae","Accepted"
-262,"Peplonia axillaris (Vell.) Fontella & Rapini","Apocynaceae","Peplonia axillaris","Peplonia","Peplonia axillaris","77064982-1","77064982-1","Species","Apocynaceae","Accepted"
-263,"Pergularia daemia (Forssk.) Chiov.","Apocynaceae","Pergularia daemia","Pergularia","Pergularia daemia","100371-1","100371-1","Species","Apocynaceae","Accepted"
-264,"Pergularia daemia subsp. daemia","Apocynaceae","Pergularia daemia subsp. daemia","Pergularia daemia","Pergularia daemia","100371-1","77172919-1","Subspecies","Apocynaceae","Accepted"
-265,"Pergularia tomentosa L.","Apocynaceae","Pergularia tomentosa","Pergularia","Pergularia tomentosa","100411-1","100411-1","Species","Apocynaceae","Accepted"
-266,"Periploca hydaspidis Falc.","Apocynaceae","Periploca hydaspidis","Periploca","Periploca hydaspidis","100463-1","100463-1","Species","Apocynaceae","Accepted"
-267,"Periploca linearifolia Quart.-Dill. & A. Rich","Apocynaceae","Periploca linearifolia","Periploca","Periploca linearifolia","100470-1","100470-1","Species","Apocynaceae","Accepted"
-268,"Periploca somaliensis Browicz","Apocynaceae","Periploca somaliensis","Periploca","Periploca somaliensis","100504-1","100504-1","Species","Apocynaceae","Accepted"
-269,"Petchia cryptophlebia (Baker) Leeuwenb.","Apocynaceae","Petchia cryptophlebia","Petchia","Petchia cryptophlebia","997251-1","997251-1","Species","Apocynaceae","Accepted"
-270,"Petchia ceylanica (Wight) Livera","Apocynaceae","Petchia ceylanica","Petchia","Petchia ceylanica","81104-1","81104-1","Species","Apocynaceae","Accepted"
-271,"Petchia erythrocarpa (Vatke) Leeuwenb.","Apocynaceae","Petchia erythrocarpa","Petchia","Petchia erythrocarpa","997252-1","997252-1","Species","Apocynaceae","Accepted"
-272,"Picralima nitida (Stapf) T. Durand & H. Durand","Apocynaceae","Picralima nitida","Picralima","Picralima nitida","81115-1","81115-1","Species","Apocynaceae","Accepted"
-273,"Pleiocarpa mutica Benth.","Apocynaceae","Pleiocarpa mutica","Pleiocarpa","Pleiocarpa mutica","81143-1","81143-1","Species","Apocynaceae","Accepted"
-274,"Pleiocarpa pycnantha (K. Schum.) Stapf","Apocynaceae","Pleiocarpa pycnantha","Pleiocarpa","Pleiocarpa pycnantha","81144-1","81144-1","Species","Apocynaceae","Accepted"
-275,"Pleiocarpa rostrata Benth.","Apocynaceae","Pleiocarpa rostrata","Pleiocarpa","Pleiocarpa rostrata","81145-1","81145-1","Species","Apocynaceae","Accepted"
-276,"Pleioceras barteri Baill.","Apocynaceae","Pleioceras barteri","Pleioceras","Pleioceras barteri","81155-1","81155-1","Species","Apocynaceae","Accepted"
-277,"Plumeria rubra L.","Apocynaceae","Plumeria rubra","Plumeria","Plumeria rubra","81275-1","81275-1","Species","Apocynaceae","Accepted"
-278,"Plumeria sericifolia C. Wright ex Griseb.","Apocynaceae","Plumeria sericifolia","Plumeria","Plumeria sericifolia","204004-2","204004-2","Species","Apocynaceae","Accepted"
-279,"Plumeria pudica Jacq.","Apocynaceae","Plumeria pudica","Plumeria","Plumeria pudica","81268-1","81268-1","Species","Apocynaceae","Accepted"
-280,"Plumeria obtusa L.","Apocynaceae","Plumeria obtusa","Plumeria","Plumeria obtusa","81256-1","81256-1","Species","Apocynaceae","Accepted"
-281,"Plumeria alba L.","Apocynaceae","Plumeria alba","Plumeria","Plumeria alba","81171-1","81171-1","Species","Apocynaceae","Accepted"
-282,"Prestonia portobellensis (Beurl.) Woodson","Apocynaceae","Prestonia portobellensis","Prestonia","Prestonia portobellensis","210135-2","210135-2","Species","Apocynaceae","Accepted"
-283,"Prestonia amabilis J. F. Morales","Apocynaceae","Prestonia amabilis","Prestonia","Prestonia amabilis","60436267-2","60436267-2","Species","Apocynaceae","Accepted"
-284,"Prestonia amazonica (Benth. ex Müll. Arg.) J. F. Macbr.","Apocynaceae","Prestonia amazonica","Prestonia","Prestonia amazonica","81326-1","81326-1","Species","Apocynaceae","Accepted"
-285,"Prestonia quinquangularis (Jacq.) Spreng.","Apocynaceae","Prestonia quinquangularis","Prestonia","Prestonia quinquangularis","81405-1","81405-1","Species","Apocynaceae","Accepted"
-286,"Prestonia erecta J. F. Morales","Apocynaceae","Prestonia erecta","Prestonia","Prestonia erecta","1006675-1","1006675-1","Species","Apocynaceae","Accepted"
-287,"Prestonia Megagros (Vell.) Woodson","Apocynaceae","Prestonia megagros","Prestonia","Prestonia megagros","210124-2","210124-2","Species","Apocynaceae","Accepted"
-288,"Pteralyxia laurifolia (G. Don) Leeuwenb.","Apocynaceae","Pteralyxia laurifolia","Pteralyxia","Pteralyxia laurifolia","1007058-1","1007058-1","Species","Apocynaceae","Accepted"
-289,"Rauvolfia pentaphylla Huber ex Ducke","Apocynaceae","Rauvolfia pentaphylla","Rauvolfia","Rauvolfia pentaphylla","217935-2","217935-2","Species","Apocynaceae","Accepted"
-290,"Rauvolfia mombasiana Stapf","Apocynaceae","Rauvolfia mombasiana","Rauvolfia","Rauvolfia mombasiana","81591-1","81591-1","Species","Apocynaceae","Accepted"
-291,"Rauvolfia verticillata (Lour.) Baill.","Apocynaceae","Rauvolfia verticillata","Rauvolfia","Rauvolfia verticillata","81667-1","81667-1","Species","Apocynaceae","Accepted"
-292,"Rauvolfia sumatrana Jack","Apocynaceae","Rauvolfia sumatrana","Rauvolfia","Rauvolfia sumatrana","81660-1","81660-1","Species","Apocynaceae","Accepted"
-293,"Rauvolfia tetraphylla L.","Apocynaceae","Rauvolfia tetraphylla","Rauvolfia","Rauvolfia tetraphylla","81663-1","81663-1","Species","Apocynaceae","Accepted"
-294,"Rauvolfia sandwicensis A. DC.","Apocynaceae","Rauvolfia sandwicensis","Rauvolfia","Rauvolfia sandwicensis","81642-1","81642-1","Species","Apocynaceae","Accepted"
-295,"Rauvolfia vomitoria Wennberg","Apocynaceae","Rauvolfia vomitoria","Rauvolfia","Rauvolfia vomitoria","81673-1","81673-1","Species","Apocynaceae","Accepted"
-296,"Rauvolfia sprucei Müll. Arg.","Apocynaceae","Rauvolfia sprucei","Rauvolfia","Rauvolfia sprucei","81652-1","81652-1","Species","Apocynaceae","Accepted"
-297,"Rauvolfia caffra Sond.","Apocynaceae","Rauvolfia caffra","Rauvolfia","Rauvolfia caffra","81519-1","81519-1","Species","Apocynaceae","Accepted"
-298,"Rhazya stricta Decne.","Apocynaceae","Rhazya stricta","Rhazya","Rhazya stricta","81712-1","81712-1","Species","Apocynaceae","Accepted"
-299,"Saba comorensis (Bojer ex A. DC.) Pichon","Apocynaceae","Saba comorensis","Saba","Saba comorensis","81757-1","81757-1","Species","Apocynaceae","Accepted"
-300,"Schizozygia coffeoides Baill.","Apocynaceae","Schizozygia coffeoides","Schizozygia","Schizozygia coffeoides","81764-1","81764-1","Species","Apocynaceae","Accepted"
-301,"Secamone alpini Schult.","Apocynaceae","Secamone alpini","Secamone","Secamone alpini","101298-1","101298-1","Species","Apocynaceae","Accepted"
-302,"Secamone afzelii (Reom. & Schult.) K. Schum.","Apocynaceae","Secamone afzelii","Secamone","Secamone afzelii","77079518-1","77079518-1","Species","Apocynaceae","Accepted"
-303,"Skytanthus acutus Meyen","Apocynaceae","Skytanthus acutus","Skytanthus","Skytanthus acutus","81785-1","81785-1","Species","Apocynaceae","Accepted"
-304,"Solenostemma oleifolium (Nectoux) Bullock & E. A. Bruce ex Maire","Apocynaceae","Solenostemma oleifolium","Solenostemma","Solenostemma oleifolium","101435-1","101435-1","Species","Apocynaceae","Accepted"
-305,"Stapelia hirsuta L.","Apocynaceae","Stapelia hirsuta","Stapelia","Stapelia hirsuta","101613-1","101613-1","Species","Apocynaceae","Accepted"
-306,"Strempeliopsis strempelioides Benth.","Apocynaceae","Strempeliopsis strempelioides","Strempeliopsis","Strempeliopsis strempelioides","81849-1","81849-1","Species","Apocynaceae","Accepted"
-307,"Streptocaulon juventas (Lour.) Merr.","Apocynaceae","Streptocaulon juventas","Streptocaulon","Streptocaulon juventas","102040-1","102040-1","Species","Apocynaceae","Accepted"
-308,"Strophanthus hispidus DC.","Apocynaceae","Strophanthus hispidus","Strophanthus","Strophanthus hispidus","81900-1","81900-1","Species","Apocynaceae","Accepted"
-309,"Strophanthus wallichii A. DC.","Apocynaceae","Strophanthus wallichii","Strophanthus","Strophanthus wallichii","81964-1","81964-1","Species","Apocynaceae","Accepted"
-310,"Strophanthus eminii Asch. ex Pax","Apocynaceae","Strophanthus eminii","Strophanthus","Strophanthus eminii","81881-1","81881-1","Species","Apocynaceae","Accepted"
-311,"Tabernaemontana bovina Lour.","Apocynaceae","Tabernaemontana bovina","Tabernaemontana","Tabernaemontana bovina","82026-1","82026-1","Species","Apocynaceae","Accepted"
-312,"Tabernaemontana hystrix Steud.","Apocynaceae","Tabernaemontana hystrix","Tabernaemontana","Tabernaemontana hystrix","82157-1","82157-1","Species","Apocynaceae","Accepted"
-313,"Tabernaemontana solanifolia A. DC.","Apocynaceae","Tabernaemontana solanifolia","Tabernaemontana","Tabernaemontana solanifolia","82334-1","82334-1","Species","Apocynaceae","Accepted"
-314,"Tabernaemontana alternifolia L.","Apocynaceae","Tabernaemontana alternifolia","Tabernaemontana","Tabernaemontana alternifolia","81992-1","81992-1","Species","Apocynaceae","Accepted"
-315,"Tabernaemontana catharinensis A. DC.","Apocynaceae","Tabernaemontana catharinensis","Tabernaemontana","Tabernaemontana catharinensis","82043-1","82043-1","Species","Apocynaceae","Accepted"
-316,"Tabernaemontana coriacea Link ex Reom. & Schult.","Apocynaceae","Tabernaemontana coriacea","Tabernaemontana","Tabernaemontana coriacea","248849-2","248849-2","Species","Apocynaceae","Accepted"
-317,"Tabernaemontana elegans Stapf","Apocynaceae","Tabernaemontana elegans","Tabernaemontana","Tabernaemontana elegans","82109-1","82109-1","Species","Apocynaceae","Accepted"
-318,"Tabernaemontana laeta Mart.","Apocynaceae","Tabernaemontana laeta","Tabernaemontana","Tabernaemontana laeta","82175-1","82175-1","Species","Apocynaceae","Accepted"
-319,"Tabernaemontana siphilitica (L.f.) Leeuwenb.","Apocynaceae","Tabernaemontana siphilitica","Tabernaemontana","Tabernaemontana siphilitica","20001045-1","20001045-1","Species","Apocynaceae","Accepted"
-320,"Tabernaemontana cymosa (Jacquin) Dug&","Apocynaceae","Tabernaemontana cymosa","Tabernaemontana","Tabernaemontana cymosa","82084-1","82084-1","Species","Apocynaceae","Accepted"
-321,"Tabernaemontana corymbosa Roxb. ex Wall.","Apocynaceae","Tabernaemontana corymbosa","Tabernaemontana","Tabernaemontana corymbosa","60466167-2","60466167-2","Species","Apocynaceae","Accepted"
-322,"Tabernaemontana divaricata (L.) R. Br. ex Roem. & Schult.","Apocynaceae","Tabernaemontana divaricata","Tabernaemontana","Tabernaemontana divaricata","82097-1","82097-1","Species","Apocynaceae","Accepted"
-323,"Tabernaemontana sessilifolia Baker","Apocynaceae","Tabernaemontana sessilifolia","Tabernaemontana","Tabernaemontana sessilifolia","82330-1","82330-1","Species","Apocynaceae","Accepted"
-324,"Tabernaemontana bufalina Lour.","Apocynaceae","Tabernaemontana bufalina","Tabernaemontana","Tabernaemontana bufalina","82034-1","82034-1","Species","Apocynaceae","Accepted"
-325,"Tabernaemontana heterophylla Vahl","Apocynaceae","Tabernaemontana heterophylla","Tabernaemontana","Tabernaemontana heterophylla","82146-1","82146-1","Species","Apocynaceae","Accepted"
-326,"Tabernaemontana pachysiphon Stapf","Apocynaceae","Tabernaemontana pachysiphon","Tabernaemontana","Tabernaemontana pachysiphon","82263-1","82263-1","Species","Apocynaceae","Accepted"
-327,"Tabernaemontana sananho Ruiz & Pav.","Apocynaceae","Tabernaemontana sananho","Tabernaemontana","Tabernaemontana sananho","82327-1","82327-1","Species","Apocynaceae","Accepted"
-328,"Tabernaemontana markgrafiana J. F. Macbr.","Apocynaceae","Tabernaemontana markgrafiana","Tabernaemontana","Tabernaemontana markgrafiana","288916-2","288916-2","Species","Apocynaceae","Accepted"
-329,"Tabernaemontana pandacaqui Poir.","Apocynaceae","Tabernaemontana pandacaqui","Tabernaemontana","Tabernaemontana pandacaqui","82269-1","82269-1","Species","Apocynaceae","Accepted"
-330,"Tabernaemontana stapfiana Britten","Apocynaceae","Tabernaemontana stapfiana","Tabernaemontana","Tabernaemontana stapfiana","82342-1","82342-1","Species","Apocynaceae","Accepted"
-331,"Tabernaemontana arborea Rose","Apocynaceae","Tabernaemontana arborea","Tabernaemontana","Tabernaemontana arborea","248839-2","248839-2","Species","Apocynaceae","Accepted"
-332,"Tabernaemontana donnell-smithii Rose","Apocynaceae","Tabernaemontana donnell-smithii","Tabernaemontana","Tabernaemontana donnell-smithii","248857-2","248857-2","Species","Apocynaceae","Accepted"
-333,"Tabernaemontana linkii A. DC.","Apocynaceae","Tabernaemontana linkii","Tabernaemontana","Tabernaemontana linkii","82189-1","82189-1","Species","Apocynaceae","Accepted"
-334,"Tabernaemontana litoralis Kunth.","Apocynaceae","Tabernaemontana litoralis","Tabernaemontana","Tabernaemontana litoralis","285810-2","285810-2","Species","Apocynaceae","Accepted"
-335,"Tabernaemontana panamensis (Markgr., Boiteua & L. Allorge) Leeuwenb.","Apocynaceae","Tabernaemontana panamensis","Tabernaemontana","Tabernaemontana panamensis","248892-2","248892-2","Species","Apocynaceae","Accepted"
-336,"Tabernaemontana peduncularis Wall.","Apocynaceae","Tabernaemontana peduncularis","Tabernaemontana","Tabernaemontana peduncularis","82280-1","82280-1","Species","Apocynaceae","Accepted"
-337,"Tabernaemontana angulata Mart. ex Müll. Arg.","Apocynaceae","Tabernaemontana angulata","Tabernaemontana","Tabernaemontana angulata","82002-1","82002-1","Species","Apocynaceae","Accepted"
-338,"Tabernaemontana citrifolia L.","Apocynaceae","Tabernaemontana citrifolia","Tabernaemontana","Tabernaemontana citrifolia","82055-1","82055-1","Species","Apocynaceae","Accepted"
-339,"Tabernaemontana rupicola Benth.","Apocynaceae","Tabernaemontana rupicola","Tabernaemontana","Tabernaemontana rupicola","82322-1","82322-1","Species","Apocynaceae","Accepted"
-340,"Tabernaemontana salzmannii A. DC.","Apocynaceae","Tabernaemontana salzmannii","Tabernaemontana","Tabernaemontana salzmannii","82325-1","82325-1","Species","Apocynaceae","Accepted"
-341,"Tabernaemontana amygdalifolia Jacq.","Apocynaceae","Tabernaemontana amygdalifolia","Tabernaemontana","Tabernaemontana amygdalifolia","81996-1","81996-1","Species","Apocynaceae","Accepted"
-342,"Tabernaemontana alba Mill.","Apocynaceae","Tabernaemontana alba","Tabernaemontana","Tabernaemontana alba","81985-1","81985-1","Species","Apocynaceae","Accepted"
-343,"Tabernaemontana undulata Vahl","Apocynaceae","Tabernaemontana undulata","Tabernaemontana","Tabernaemontana undulata","82371-1","82371-1","Species","Apocynaceae","Accepted"
-344,"Tabernanthe iboga Baill.","Apocynaceae","Tabernanthe iboga","Tabernanthe","Tabernanthe iboga","56090-1","56090-1","Species","Apocynaceae","Accepted"
-345,"Telosma pallida (Roxb.) Craib","Apocynaceae","Telosma pallida","Telosma","Telosma pallida","102161-1","102161-1","Species","Apocynaceae","Accepted"
-346,"Temnadenia odorifera (vell.) J. F. Morales","Apocynaceae","Temnadenia odorifera","Temnadenia","Temnadenia odorifera","1007869-1","1007869-1","Species","Apocynaceae","Accepted"
-347,"Temnadenia violacea (Vell.) Miers","Apocynaceae","Temnadenia violacea","Temnadenia","Temnadenia violacea","1039841-2","1039841-2","Species","Apocynaceae","Accepted"
-348,"Trachelospermum jasminoides (Lindl.) Lem.","Apocynaceae","Trachelospermum jasminoides","Trachelospermum","Trachelospermum jasminoides","82553-1","82553-1","Species","Apocynaceae","Accepted"
-349,"Urceola polymorpha (Pierre ex Spire) D. J. Middleton & Livsh.","Apocynaceae","Urceola polymorpha","Urceola","Urceola polymorpha","77186121-1","77186121-1","Species","Apocynaceae","Accepted"
-350,"Vallaris solanacea (Roth) Kuntze","Apocynaceae","Vallaris solanacea","Vallaris","Vallaris solanacea","82660-1","82660-1","Species","Apocynaceae","Accepted"
-351,"Vallaris glabra (L.) Kuntze","Apocynaceae","Vallaris glabra","Vallaris","Vallaris glabra","82646-1","82646-1","Species","Apocynaceae","Accepted"
-352,"Vallesia glabra (Cav.) Link","Apocynaceae","Vallesia glabra","Vallesia","Vallesia glabra","82668-1","82668-1","Species","Apocynaceae","Accepted"
-353,"Vinca erecta Regel & Schmalh.","Apocynaceae","Vinca erecta","Vinca","Vinca erecta","82686-1","82686-1","Species","Apocynaceae","Accepted"
-354,"Vinca major L.","Apocynaceae","Vinca major","Vinca","Vinca major","82697-1","82697-1","Species","Apocynaceae","Accepted"
-355,"Vinca minor L.","Apocynaceae","Vinca minor","Vinca","Vinca minor","82701-1","82701-1","Species","Apocynaceae","Accepted"
-356,"Vinca herbacea Waldst. & Kit.","Apocynaceae","Vinca herbacea","Vinca","Vinca herbacea","82691-1","82691-1","Species","Apocynaceae","Accepted"
-357,"Vincetoxicum pumilum Decne.","Apocynaceae","Vincetoxicum pumilum","Vincetoxicum","Vincetoxicum pumilum","102946-1","102946-1","Species","Apocynaceae","Accepted"
-358,"Vincetoxicum auriculatum (Royle ex Wight) Kuntze","Apocynaceae","Vincetoxicum auriculatum","Vincetoxicum","Vincetoxicum auriculatum","102680-1","102680-1","Species","Apocynaceae","Accepted"
-359,"Vincetoxicum mongolicum Maxim.","Apocynaceae","Vincetoxicum mongolicum","Vincetoxicum","Vincetoxicum mongolicum","102881-1","102881-1","Species","Apocynaceae","Accepted"
-360,"Vincetoxicum tanakae (Maxim.) Franch. & Sav.","Apocynaceae","Vincetoxicum tanakae","Vincetoxicum","Vincetoxicum tanakae","103006-1","103006-1","Species","Apocynaceae","Accepted"
-361,"Vincetoxicum nigrum (L.) Moench","Apocynaceae","Vincetoxicum nigrum","Vincetoxicum","Vincetoxicum nigrum","1088174-2","1088174-2","Species","Apocynaceae","Accepted"
-362,"Vincetoxicum rossicum (Kleopow) Barbar.","Apocynaceae","Vincetoxicum rossicum","Vincetoxicum","Vincetoxicum rossicum","60456000-2","60456000-2","Species","Apocynaceae","Accepted"
-363,"Vincetoxicum hirundinaria Medik.","Apocynaceae","Vincetoxicum hirundinaria","Vincetoxicum","Vincetoxicum hirundinaria","102810-1","102810-1","Species","Apocynaceae","Accepted"
-364,"Vincetoxicum forrestii (Schltr.) C. Y. Wu & D. Z. Li","Apocynaceae","Vincetoxicum forrestii","Vincetoxicum","Vincetoxicum forrestii","946558-1","946558-1","Species","Apocynaceae","Accepted"
-365,"Vincetoxicum mukdenense Kitag.","Apocynaceae","Vincetoxicum mukdenense","Vincetoxicum","Vincetoxicum mukdenense","102886-1","102886-1","Species","Apocynaceae","Accepted"
-366,"Vincetoxicum dalzellii (Hook. f.) Kuntze","Apocynaceae","Vincetoxicum dalzellii","Vincetoxicum","Vincetoxicum dalzellii","102744-1","102744-1","Species","Apocynaceae","Accepted"
-367,"Vincetoxicum spirale (Forssk.) D. Z. Li","Apocynaceae","Vincetoxicum spirale","Vincetoxicum","Vincetoxicum spirale","946571-1","946571-1","Species","Apocynaceae","Accepted"
-368,"Vincetoxicum atratum (Bung) C. Morren","Apocynaceae","Vincetoxicum atratum","Vincetoxicum","Vincetoxicum atratum","60457664-2","60457664-2","Species","Apocynaceae","Accepted"
-369,"Vincetoxicum stocksii Ali & Khatoon","Apocynaceae","Vincetoxicum stocksii","Vincetoxicum","Vincetoxicum stocksii","901235-1","901235-1","Species","Apocynaceae","Accepted"
-404,"Simira alba (Mart.) Delprete, Margalho & Groppo","Rubiaceae","Simira alba","Simira","Simira alba","77209436-1","77209436-1","Species","Rubiaceae","Accepted"
-405,"Simira williamsii (Standl.) Steyerm.","Rubiaceae","Simira williamsii","Simira","Simira williamsii","236598-2","236598-2","Species","Rubiaceae","Accepted"
-406,"Simira maxonii (Standl.) Steyerm.","Rubiaceae","Simira maxonii","Simira","Simira maxonii","236581-2","236581-2","Species","Rubiaceae","Accepted"
+,"Name","Family","acc_name","acc_parent","acc_species","acc_species_id","acc_id","acc_rank","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id"
+0,"Acokanthera schimperi (A. DC.) Schweinf.","Apocynaceae","Acokanthera schimperi","Acokanthera","Acokanthera schimperi","60447729-2","60447729-2","Species","Apocynaceae","Accepted",2171,2171
+1,"Adenium multiflorum Klotzsch","Apocynaceae","Adenium multiflorum","Adenium","Adenium multiflorum","76366-1","76366-1","Species","Apocynaceae","Accepted",3027,3027
+2,"Adenium obesum (Forssk.) Roem. & Schult.","Apocynaceae","Adenium obesum","Adenium","Adenium obesum","76369-1","76369-1","Species","Apocynaceae","Accepted",3030,3030
+3,"Aganosma heynei (Spreng.) I. M. Turner","Apocynaceae","Aganosma heynei","Aganosma","Aganosma heynei","77125846-1","77125846-1","Species","Apocynaceae","Accepted",316895,316895
+4,"Alafia multiflora (Stapf) Stapf","Apocynaceae","Alafia multiflora","Alafia","Alafia multiflora","76446-1","76446-1","Species","Apocynaceae","Accepted",5496,5496
+5,"Alafia caudata Stapf","Apocynaceae","Alafia caudata","Alafia","Alafia caudata","76422-1","76422-1","Species","Apocynaceae","Accepted",5470,5470
+6,"Alafia barteri Oliv.","Apocynaceae","Alafia barteri","Alafia","Alafia barteri","76417-1","76417-1","Species","Apocynaceae","Accepted",5464,5464
+7,"Allamanda cathartica L.","Apocynaceae","Allamanda cathartica","Allamanda","Allamanda cathartica","319065-2","319065-2","Species","Apocynaceae","Accepted",6157,6157
+8,"Allamanda schottii Pohl","Apocynaceae","Allamanda schottii","Allamanda","Allamanda schottii","76487-1","76487-1","Species","Apocynaceae","Accepted",6176,6176
+9,"Alstonia venenata R. Br.","Apocynaceae","Alstonia venenata","Alstonia","Alstonia venenata","76602-1","76602-1","Species","Apocynaceae","Accepted",7123,7123
+10,"Alstonia angustifolia Wall. ex A. DC.","Apocynaceae","Alstonia angustifolia","Alstonia","Alstonia angustifolia","105718-3","105718-3","Species","Apocynaceae","Accepted",6997,6997
+11,"Alstonia yunnanensis Diels","Apocynaceae","Alstonia yunnanensis","Alstonia","Alstonia yunnanensis","76608-1","76608-1","Species","Apocynaceae","Accepted",7134,7134
+12,"Alstonia boonei De Wild.","Apocynaceae","Alstonia boonei","Alstonia","Alstonia boonei","76511-1","76511-1","Species","Apocynaceae","Accepted",7007,7007
+13,"Alstonia congensis Engl.","Apocynaceae","Alstonia congensis","Alstonia","Alstonia congensis","76517-1","76517-1","Species","Apocynaceae","Accepted",7014,7014
+14,"Alstonia rostrata C. E. C. Fisch.","Apocynaceae","Alstonia rostrata","Alstonia","Alstonia rostrata","76584-1","76584-1","Species","Apocynaceae","Accepted",7099,7099
+15,"Alstonia macrophylla Wall. ex G. Don","Apocynaceae","Alstonia macrophylla","Alstonia","Alstonia macrophylla","76556-1","76556-1","Species","Apocynaceae","Accepted",7064,7064
+16,"Alstonia mairei H. Lév.","Apocynaceae","Alstonia mairei","Alstonia","Alstonia mairei","76557-1","76557-1","Species","Apocynaceae","Accepted",7066,7066
+17,"Alstonia rupestris Kerr","Apocynaceae","Alstonia rupestris","Alstonia","Alstonia rupestris","76585-1","76585-1","Species","Apocynaceae","Accepted",7101,7101
+18,"Alstonia longifolia (A. DC.) Pichon","Apocynaceae","Alstonia longifolia","Alstonia","Alstonia longifolia","10153-2","10153-2","Species","Apocynaceae","Accepted",7060,7060
+19,"Alstonia scholaris (L.) R. Br.","Apocynaceae","Alstonia scholaris","Alstonia","Alstonia scholaris","60445977-2","60445977-2","Species","Apocynaceae","Accepted",7103,7103
+20,"Alstonia angustiloba Miq.","Apocynaceae","Alstonia angustiloba","Alstonia","Alstonia angustiloba","76507-1","76507-1","Species","Apocynaceae","Accepted",7001,7001
+21,"Alstonia pneumatophora Backer ex Den berger","Apocynaceae","Alstonia pneumatophora","Alstonia","Alstonia pneumatophora","76578-1","76578-1","Species","Apocynaceae","Accepted",7092,7092
+22,"Alstonia spectabilis R. Br.","Apocynaceae","Alstonia spectabilis","Alstonia","Alstonia spectabilis","76597-1","76597-1","Species","Apocynaceae","Accepted",7115,7115
+23,"Alyxia stellata (J. R. Forst. & G. Forst.) Roem. & Schult.","Apocynaceae","Alyxia stellata","Alyxia","Alyxia stellata","76804-1","76804-1","Species","Apocynaceae","Accepted",7450,7450
+24,"Ambelania acida Aubl.","Apocynaceae","Ambelania acida","Ambelania","Ambelania acida","76829-1","76829-1","Species","Apocynaceae","Accepted",7749,7749
+25,"Amphineurion marginatum (Roxb.) D. J. Middleton","Apocynaceae","Amphineurion marginatum","Amphineurion","Amphineurion marginatum","77074602-1","77074602-1","Species","Apocynaceae","Accepted",343529,343529
+26,"Amsonia tomentosa var. tomentosa","Apocynaceae","Amsonia tomentosa var. tomentosa","Amsonia tomentosa","Amsonia tomentosa","76934-1","77167486-1","Variety","Apocynaceae","Accepted",8483,8481
+27,"Amsonia elliptica (Thunb.) Roem. & Schult.","Apocynaceae","Amsonia elliptica","Amsonia","Amsonia elliptica","76906-1","76906-1","Species","Apocynaceae","Accepted",8447,8447
+28,"Amsonia tabernaemontana Walter","Apocynaceae","Amsonia tabernaemontana","Amsonia","Amsonia tabernaemontana","76931-1","76931-1","Species","Apocynaceae","Accepted",8474,8474
+29,"Anisopus mannii N. E. Br.","Apocynaceae","Anisopus mannii","Anisopus","Anisopus mannii","93986-1","93986-1","Species","Apocynaceae","Accepted",500614,500614
+30,"Anodendron affine (Hook. & Arn.) Druve","Apocynaceae","Anodendron affine","Anodendron","Anodendron affine","77061-1","77061-1","Species","Apocynaceae","Accepted",10106,10106
+31,"Apteranthes europaea (Guss.) Murb.","Apocynaceae","Apteranthes europaea","Apteranthes","Apteranthes europaea","94041-1","94041-1","Species","Apocynaceae","Accepted",220654,220654
+32,"Apteranthes tuberculata (N. E. Br.) Meve & Liede","Apocynaceae","Apteranthes tuberculata","Apteranthes","Apteranthes tuberculata","20009957-1","20009957-1","Species","Apocynaceae","Accepted",500640,500640
+33,"Asclepias curassavica L.","Apocynaceae","Asclepias curassavica","Asclepias","Asclepias curassavica","94213-1","94213-1","Species","Apocynaceae","Accepted",500848,500848
+34,"Aspidosperma auriculatum Markgr.","Apocynaceae","Aspidosperma auriculatum","Aspidosperma","Aspidosperma auriculatum","21933-2","21933-2","Species","Apocynaceae","Accepted",17231,17231
+35,"Aspidosperma oblongum A. DC.","Apocynaceae","Aspidosperma oblongum","Aspidosperma","Aspidosperma oblongum","77418-1","77418-1","Species","Apocynaceae","Accepted",17324,17324
+36,"Aspidosperma carapanauba Pichon","Apocynaceae","Aspidosperma carapanauba","Aspidosperma","Aspidosperma carapanauba","290346-2","290346-2","Species","Apocynaceae","Accepted",17238,17238
+37,"Aspidosperma polyneuron Müll Arg.","Apocynaceae","Aspidosperma polyneuron","Aspidosperma","Aspidosperma polyneuron","77433-1","77433-1","Species","Apocynaceae","Accepted",17339,17339
+38,"Aspidosperma pyrifolium Mart.","Apocynaceae","Aspidosperma pyrifolium","Aspidosperma","Aspidosperma pyrifolium","77437-1","77437-1","Species","Apocynaceae","Accepted",17343,17343
+39,"Aspidosperma subincanum Mart","Apocynaceae","Aspidosperma subincanum","Aspidosperma","Aspidosperma subincanum","77465-1","77465-1","Species","Apocynaceae","Accepted",17374,17374
+40,"Aspidosperma nigricans Handro","Apocynaceae","Aspidosperma nigricans","Aspidosperma","Aspidosperma nigricans","22012-2","22012-2","Species","Apocynaceae","Accepted",17321,17321
+41,"Aspidosperma olivaceum Müll. Arg.","Apocynaceae","Aspidosperma olivaceum","Aspidosperma","Aspidosperma olivaceum","22020-2","22020-2","Species","Apocynaceae","Accepted",17330,17330
+42,"Aspidosperma parvifolium A. DC.","Apocynaceae","Aspidosperma parvifolium","Aspidosperma","Aspidosperma parvifolium","315552-2","315552-2","Species","Apocynaceae","Accepted",17334,17334
+43,"Aspidosperma spruceanum Benth. Ex Müll. Arg.","Apocynaceae","Aspidosperma spruceanum","Aspidosperma","Aspidosperma spruceanum","22069-2","22069-2","Species","Apocynaceae","Accepted",17370,17370
+44,"Aspidosperma album (Vahl) Benoist ex Pichon","Apocynaceae","Aspidosperma album","Aspidosperma","Aspidosperma album","77325-1","77325-1","Species","Apocynaceae","Accepted",17226,17226
+45,"Aspidosperma discolor A. DC.","Apocynaceae","Aspidosperma discolor","Aspidosperma","Aspidosperma discolor","77354-1","77354-1","Species","Apocynaceae","Accepted",17257,17257
+46,"Aspidosperma illustre (Vell.) Kuhim. & Piraja","Apocynaceae","Aspidosperma illustre","Aspidosperma","Aspidosperma illustre","21984-2","21984-2","Species","Apocynaceae","Accepted",17283,17283
+47,"Aspidosperma sandwithianum Markgr.","Apocynaceae","Aspidosperma sandwithianum","Aspidosperma","Aspidosperma sandwithianum","22061-2","22061-2","Species","Apocynaceae","Accepted",17362,17362
+48,"Aspidosperma ulei Markg.","Apocynaceae","Aspidosperma ulei","Aspidosperma","Aspidosperma ulei","22079-2","22079-2","Species","Apocynaceae","Accepted",17381,17381
+49,"Aspidosperma megalocarpon Müll. Arg.","Apocynaceae","Aspidosperma megalocarpon","Aspidosperma","Aspidosperma megalocarpon","77405-1","77405-1","Species","Apocynaceae","Accepted",17308,17308
+50,"Aspidosperma desmanthum Benth. Ex Müll. Arg.","Apocynaceae","Aspidosperma desmanthum","Aspidosperma","Aspidosperma desmanthum","77353-1","77353-1","Species","Apocynaceae","Accepted",17256,17256
+51,"Aspidosperma rigidum Rusby","Apocynaceae","Aspidosperma rigidum","Aspidosperma","Aspidosperma rigidum","22058-2","22058-2","Species","Apocynaceae","Accepted",17359,17359
+52,"Aspidosperma macrocarpon Mart.","Apocynaceae","Aspidosperma macrocarpon","Aspidosperma","Aspidosperma macrocarpon","77400-1","77400-1","Species","Apocynaceae","Accepted",17301,17301
+53,"Aspidosperma cuspa (Kunth) S. F. Blake ex Pittier","Apocynaceae","Aspidosperma cuspa","Aspidosperma","Aspidosperma cuspa","77347-1","77347-1","Species","Apocynaceae","Accepted",17249,17249
+54,"Aspidosperma cylindrocarpon Müll. Arg.","Apocynaceae","Aspidosperma cylindrocarpon","Aspidosperma","Aspidosperma cylindrocarpon","21952-2","21952-2","Species","Apocynaceae","Accepted",17250,17250
+55,"Aspidosperma excelsum Benth. ex Müll. Arg.","Apocynaceae","Aspidosperma excelsum","Aspidosperma","Aspidosperma excelsum","77367-1","77367-1","Species","Apocynaceae","Accepted",17269,17269
+56,"Aspidosperma obscurinervium Azambuja","Apocynaceae","Aspidosperma obscurinervium","Aspidosperma","Aspidosperma obscurinervium","22015-2","22015-2","Species","Apocynaceae","Accepted",17325,17325
+57,"Aspidosperma quebracho-blanco Schltdl","Apocynaceae","Aspidosperma quebracho-blanco","Aspidosperma","Aspidosperma quebracho-blanco","77440-1","77440-1","Species","Apocynaceae","Accepted",17346,17346
+58,"Aspidosperma schultesii Woodson","Apocynaceae","Aspidosperma schultesii","Aspidosperma","Aspidosperma schultesii","22062-2","22062-2","Species","Apocynaceae","Accepted",17364,17364
+59,"Aspidosperma tomentosum Mart","Apocynaceae","Aspidosperma tomentosum","Aspidosperma","Aspidosperma tomentosum","77467-1","77467-1","Species","Apocynaceae","Accepted",17378,17378
+60,"Aspidosperma ramiflorum Müll. Arg.","Apocynaceae","Aspidosperma ramiflorum","Aspidosperma","Aspidosperma ramiflorum","77443-1","77443-1","Species","Apocynaceae","Accepted",17350,17350
+61,"Aspidosperma pachypterum Müll. Arg.","Apocynaceae","Aspidosperma pachypterum","Aspidosperma","Aspidosperma pachypterum","77425-1","77425-1","Species","Apocynaceae","Accepted",17331,17331
+62,"Aspidosperma megaphyllum Woodson","Apocynaceae","Aspidosperma megaphyllum","Aspidosperma","Aspidosperma megaphyllum","22004-2","22004-2","Species","Apocynaceae","Accepted",17311,17311
+63,"Aspidosperma multiflorum A. DC.","Apocynaceae","Aspidosperma multiflorum","Aspidosperma","Aspidosperma multiflorum","77410-1","77410-1","Species","Apocynaceae","Accepted",17316,17316
+64,"Aspidosperma eburneum allemão ex Saldanha","Apocynaceae","Aspidosperma eburneum","Aspidosperma","Aspidosperma eburneum","77361-1","77361-1","Species","Apocynaceae","Accepted",17264,17264
+65,"Aspidosperma pichonianum Woodson","Apocynaceae","Aspidosperma pichonianum","Aspidosperma","Aspidosperma pichonianum","22024-2","22024-2","Species","Apocynaceae","Accepted",17336,17336
+66,"Bahiella infundibuliflora J. F. Morales","Apocynaceae","Bahiella infundibuliflora","Bahiella","Bahiella infundibuliflora","60444372-2","60444372-2","Species","Apocynaceae","Accepted",346078,346078
+67,"Baissea axillaris (Benth.) Hua","Apocynaceae","Baissea axillaris","Baissea","Baissea axillaris","77483-1","77483-1","Species","Apocynaceae","Accepted",19330,19330
+68,"Beaumontia grandiflora Wall.","Apocynaceae","Beaumontia grandiflora","Beaumontia","Beaumontia grandiflora","77539-1","77539-1","Species","Apocynaceae","Accepted",20251,20251
+69,"Boucerosia diffusa (wight)","Apocynaceae","Boucerosia diffusa","Boucerosia","Boucerosia diffusa","94966-1","94966-1","Species","Apocynaceae","Accepted",501797,501797
+70,"Bousigonia angustifolia Pierre ex Spire","Apocynaceae","Bousigonia angustifolia","Bousigonia","Bousigonia angustifolia","77610-1","77610-1","Species","Apocynaceae","Accepted",23565,23565
+71,"Bousigonia mekongensis Pierre","Apocynaceae","Bousigonia mekongensis","Bousigonia","Bousigonia mekongensis","77611-1","77611-1","Species","Apocynaceae","Accepted",23566,23566
+72,"Buckollia volubilis (Schltr.) Venter & R. L. Verh.","Apocynaceae","Buckollia volubilis","Buckollia","Buckollia volubilis","978337-1","978337-1","Species","Apocynaceae","Accepted",502053,502053
+73,"Callichilia barteri (Hook. f.) Stapf","Apocynaceae","Callichilia barteri","Callichilia","Callichilia barteri","77635-1","77635-1","Species","Apocynaceae","Accepted",31038,31038
+74,"Callichilia subsessilis (Benth.) Stapf","Apocynaceae","Callichilia subsessilis","Callichilia","Callichilia subsessilis","77645-1","77645-1","Species","Apocynaceae","Accepted",31048,31048
+75,"Calotropis procera (Aiton) W. T. Aiton","Apocynaceae","Calotropis procera","Calotropis","Calotropis procera","1004515-2","1004515-2","Species","Apocynaceae","Accepted",502091,502091
+76,"Calotropis gigantea (L.) W. T. Aiton","Apocynaceae","Calotropis gigantea","Calotropis","Calotropis gigantea","95173-1","95173-1","Species","Apocynaceae","Accepted",502084,502084
+77,"Caralluma fimbriata Wall.","Apocynaceae","Caralluma fimbriata","Caralluma","Caralluma fimbriata","95260-1","95260-1","Species","Apocynaceae","Accepted",502243,502243
+78,"Caralluma adscendens var. adscendens","Apocynaceae","Caralluma adscendens var. adscendens","Caralluma adscendens","Caralluma adscendens","95198-1","77172739-1","Variety","Apocynaceae","Accepted",502135,502134
+79,"Caralluma dalzielii N. E. Br.","Apocynaceae","Caralluma dalzielii","Caralluma","Caralluma dalzielii","95238-1","95238-1","Species","Apocynaceae","Accepted",502198,502198
+80,"Carissa macrocarpa (Eckl.) A. DC.","Apocynaceae","Carissa macrocarpa","Carissa","Carissa macrocarpa","77727-1","77727-1","Species","Apocynaceae","Accepted",34192,34192
+81,"Carissa spinarum L.","Apocynaceae","Carissa spinarum","Carissa","Carissa spinarum","77756-1","77756-1","Species","Apocynaceae","Accepted",34226,34226
+82,"Carissa carandas L.","Apocynaceae","Carissa carandas","Carissa","Carissa carandas","77691-1","77691-1","Species","Apocynaceae","Accepted",34145,34145
+83,"Cascabela thevetia (L.) Lippold","Apocynaceae","Cascabela thevetia","Cascabela","Cascabela thevetia","47927-2","47927-2","Species","Apocynaceae","Accepted",34836,34836
+84,"Catharanthus pusillus (Murray) G. Don","Apocynaceae","Catharanthus pusillus","Catharanthus","Catharanthus pusillus","77879-1","77879-1","Species","Apocynaceae","Accepted",35718,35718
+85,"Catharanthus roseus (L.) G. Don","Apocynaceae","Catharanthus roseus","Catharanthus","Catharanthus roseus","77880-1","77880-1","Species","Apocynaceae","Accepted",35719,35719
+86,"Caudanthera edulis (Edgew.) Meve & Liede","Apocynaceae","Caudanthera edulis","Caudanthera","Caudanthera edulis","20009959-1","20009959-1","Species","Apocynaceae","Accepted",502451,502451
+87,"Caudanthera sinaica (Decne.) Plowes","Apocynaceae","Caudanthera sinaica","Caudanthera","Caudanthera sinaica","986775-1","986775-1","Species","Apocynaceae","Accepted",502453,502453
+88,"Cerbera manghas L.","Apocynaceae","Cerbera manghas","Cerbera","Cerbera manghas","77906-1","77906-1","Species","Apocynaceae","Accepted",37166,37166
+89,"Cerbera odollam Gaertn.","Apocynaceae","Cerbera odollam","Cerbera","Cerbera odollam","77913-1","77913-1","Species","Apocynaceae","Accepted",37178,37178
+90,"Ceropegia juncea Roxb.","Apocynaceae","Ceropegia juncea","Ceropegia","Ceropegia juncea","95629-1","95629-1","Species","Apocynaceae","Accepted",502768,502768
+91,"Ceropegia bulbosa Roxb.","Apocynaceae","Ceropegia bulbosa","Ceropegia","Ceropegia bulbosa","95492-1","95492-1","Species","Apocynaceae","Accepted",502573,502573
+92,"Ceropegia media (H. Huber) Ansari","Apocynaceae","Ceropegia media","Ceropegia","Ceropegia media","95667-1","95667-1","Species","Apocynaceae","Accepted",502838,502838
+93,"Ceropegia sahyadrica var. karulensis (Punekar, Tamhankar, Lakshmin., Kumaran, Raut, S. K. Srivast. & Kavade) Kambale & S. R. Yadav","Apocynaceae","Ceropegia sahyadrica var. karulensis","Ceropegia sahyadrica","Ceropegia sahyadrica","95755-1","77202358-1","Variety","Apocynaceae","Accepted",533243,502968
+94,"Chilocarpus costatus Miq.","Apocynaceae","Chilocarpus costatus","Chilocarpus","Chilocarpus costatus","77967-1","77967-1","Species","Apocynaceae","Accepted",38927,38927
+95,"Chloropetalum denticulatum (Vahl) Morillo","Apocynaceae","Chloropetalum denticulatum","Chloropetalum","Chloropetalum denticulatum","77206440-1","77206440-1","Species","Apocynaceae","Accepted",537303,537303
+96,"Chonemorpha fragrans (Moon) Alston","Apocynaceae","Chonemorpha fragrans","Chonemorpha","Chonemorpha fragrans","78008-1","78008-1","Species","Apocynaceae","Accepted",39736,39736
+97,"Condylocarpon isthmicum (Vell.) A. DC.","Apocynaceae","Condylocarpon isthmicum","Condylocarpon","Condylocarpon isthmicum","1190728-2","1190728-2","Species","Apocynaceae","Accepted",46523,46523
+98,"Cosmostigma cordatum (Poir.) M. R. Almeida","Apocynaceae","Cosmostigma cordatum","Cosmostigma","Cosmostigma cordatum","20008971-1","20008971-1","Species","Apocynaceae","Accepted",503167,503167
+99,"Craspidospermum verticillatum Bojer ex Decne.","Apocynaceae","Craspidospermum verticillatum","Craspidospermum","Craspidospermum verticillatum","78180-1","78180-1","Species","Apocynaceae","Accepted",48715,48715
+100,"Crioceras dipladeniiflorus (Stapf) K. Schum.","Apocynaceae","Crioceras dipladeniiflorus","Crioceras","Crioceras dipladeniiflorus","78181-1","78181-1","Species","Apocynaceae","Accepted",49082,49082
+101,"Cryptolepis apiculata K. Schum.","Apocynaceae","Cryptolepis apiculata","Cryptolepis","Cryptolepis apiculata","95909-1","95909-1","Species","Apocynaceae","Accepted",503194,503194
+102,"Cryptolepis capensis Schltr.","Apocynaceae","Cryptolepis capensis","Cryptolepis","Cryptolepis capensis","95917-1","95917-1","Species","Apocynaceae","Accepted",503205,503205
+103,"Cryptolepis cryptolepioides (SChltr.) Bullock","Apocynaceae","Cryptolepis cryptolepioides","Cryptolepis","Cryptolepis cryptolepioides","95918-1","95918-1","Species","Apocynaceae","Accepted",503206,503206
+104,"Cryptolepis obtusa N. E. Br.","Apocynaceae","Cryptolepis obtusa","Cryptolepis","Cryptolepis obtusa","95945-1","95945-1","Species","Apocynaceae","Accepted",503244,503244
+105,"Cryptolepis sanguinolenta (Lindl.) Schltr.","Apocynaceae","Cryptolepis sanguinolenta","Cryptolepis","Cryptolepis sanguinolenta","95951-1","95951-1","Species","Apocynaceae","Accepted",503255,503255
+106,"Cryptolepis buchananii R. Br. ex Roem. & Schult.","Apocynaceae","Cryptolepis buchananii","Cryptolepis","Cryptolepis buchananii","95915-1","95915-1","Species","Apocynaceae","Accepted",503203,503203
+107,"Cryptolepis decidua (Planch. ex Benth.) N. E. Br.","Apocynaceae","Cryptolepis decidua","Cryptolepis","Cryptolepis decidua","95920-1","95920-1","Species","Apocynaceae","Accepted",503208,503208
+108,"Cryptolepis hypoglauca K. Schum.","Apocynaceae","Cryptolepis hypoglauca","Cryptolepis","Cryptolepis hypoglauca","95931-1","95931-1","Species","Apocynaceae","Accepted",503223,503223
+109,"Cryptolepis nigrescens (Wennberg) L. Joubert & Bruyns","Apocynaceae","Cryptolepis nigrescens","Cryptolepis","Cryptolepis nigrescens","77158572-1","77158572-1","Species","Apocynaceae","Accepted",520226,520226
+110,"Cynanchum maximoviczii Pobed.","Apocynaceae","Cynanchum maximoviczii","Cynanchum","Cynanchum maximoviczii","96387-1","96387-1","Species","Apocynaceae","Accepted",503890,503890
+111,"Cynanchum wilfordii (Maxim.) Hook. f.","Apocynaceae","Cynanchum wilfordii","Cynanchum","Cynanchum wilfordii","96697-1","96697-1","Species","Apocynaceae","Accepted",504317,504317
+112,"Decalepis arayalpathra (J. Joseph & V. Chandras.) Venter","Apocynaceae","Decalepis arayalpathra","Decalepis","Decalepis arayalpathra","998076-1","998076-1","Species","Apocynaceae","Accepted",504414,504414
+113,"Decalepis nervosa (Wight & Arn.) Venter","Apocynaceae","Decalepis nervosa","Decalepis","Decalepis nervosa","998075-1","998075-1","Species","Apocynaceae","Accepted",504416,504416
+114,"Decalepis hamiltonii Wight & Arn.","Apocynaceae","Decalepis hamiltonii","Decalepis","Decalepis hamiltonii","96807-1","96807-1","Species","Apocynaceae","Accepted",504415,504415
+115,"Desmidorchis penicillata (Deflers) Plowes","Apocynaceae","Desmidorchis penicillata","Desmidorchis","Desmidorchis penicillata","986779-1","986779-1","Species","Apocynaceae","Accepted",504449,504449
+116,"Desmidorchis retrospiciens Ehrenb.","Apocynaceae","Desmidorchis retrospiciens","Desmidorchis","Desmidorchis retrospiciens","96827-1","96827-1","Species","Apocynaceae","Accepted",504451,504451
+117,"Dictyophleba lucida (K. Schum) Pierre","Apocynaceae","Dictyophleba lucida","Dictyophleba","Dictyophleba lucida","78221-1","78221-1","Species","Apocynaceae","Accepted",61483,61483
+118,"Diplorhynchus condylocarpon (Müll. Arg.) Pichon","Apocynaceae","Diplorhynchus condylocarpon","Diplorhynchus","Diplorhynchus condylocarpon","78310-1","78310-1","Species","Apocynaceae","Accepted",62519,62519
+119,"Dischidia formosana Maxim.","Apocynaceae","Dischidia formosana","Dischidia","Dischidia formosana","96939-1","96939-1","Species","Apocynaceae","Accepted",504604,504604
+120,"Ditassa eximia Decne.","Apocynaceae","Ditassa eximia","Ditassa","Ditassa eximia","97123-1","97123-1","Species","Apocynaceae","Accepted",504811,504811
+121,"Ditassa lenheirensis Silveira","Apocynaceae","Ditassa lenheirensis","Ditassa","Ditassa lenheirensis","82462-2","82462-2","Species","Apocynaceae","Accepted",504847,504847
+122,"Dyera costulata (Miq.) Hook. F.","Apocynaceae","Dyera costulata","Dyera","Dyera costulata","78323-1","78323-1","Species","Apocynaceae","Accepted",65383,65383
+123,"Echites panduratus","Apocynaceae","Echites panduratus","Echites","Echites panduratus","88698-2","88698-2","Species","Apocynaceae","Accepted",66082,66082
+124,"Echites umbellatus Jacq.","Apocynaceae","Echites umbellatus","Echites","Echites umbellatus","78821-1","78821-1","Species","Apocynaceae","Accepted",66214,66214
+125,"Eucorymbia alba Stapf","Apocynaceae","Eucorymbia alba","Eucorymbia","Eucorymbia alba","78988-1","78988-1","Species","Apocynaceae","Accepted",74194,74194
+126,"Fischeria stellata (Vell.) E. Fourn.","Apocynaceae","Fischeria stellata","Fischeria","Fischeria stellata","97427-1","97427-1","Species","Apocynaceae","Accepted",505513,505513
+127,"Funtumia elastica (Preuss) Stapf","Apocynaceae","Funtumia elastica","Funtumia","Funtumia elastica","79099-1","79099-1","Species","Apocynaceae","Accepted",84896,84896
+128,"Funtumia africana (Benth.) Stapf","Apocynaceae","Funtumia africana","Funtumia","Funtumia africana","79098-1","79098-1","Species","Apocynaceae","Accepted",84894,84894
+129,"Galactophora schomburgkiana","Apocynaceae","Galactophora schomburgkiana","Galactophora","Galactophora schomburgkiana","106756-2","106756-2","Species","Apocynaceae","Accepted",85118,85118
+130,"Geissospermum laeve (Vell.) Miers","Apocynaceae","Geissospermum laeve","Geissospermum","Geissospermum laeve","79123-1","79123-1","Species","Apocynaceae","Accepted",88953,88953
+131,"Geissospermum sericeum Miers","Apocynaceae","Geissospermum sericeum","Geissospermum","Geissospermum sericeum","1006780-1","1006780-1","Species","Apocynaceae","Accepted",88958,88958
+132,"Geissospermum urceolatum A. H. Gentry","Apocynaceae","Geissospermum urceolatum","Geissospermum","Geissospermum urceolatum","277357-2","277357-2","Species","Apocynaceae","Accepted",88960,88960
+133,"Geissospermum argenteum Woodson","Apocynaceae","Geissospermum argenteum","Geissospermum","Geissospermum argenteum","108063-2","108063-2","Species","Apocynaceae","Accepted",88950,88950
+134,"Geissospermum reticulatum A. H. Gentry","Apocynaceae","Geissospermum reticulatum","Geissospermum","Geissospermum reticulatum","277356-2","277356-2","Species","Apocynaceae","Accepted",88957,88957
+135,"Gomphocarpus fruticosus (l.) W. T. Aiton","Apocynaceae","Gomphocarpus fruticosus","Gomphocarpus","Gomphocarpus fruticosus","97610-1","97610-1","Species","Apocynaceae","Accepted",505642,505642
+136,"Gomphocarpus semilunatus A. Rich.","Apocynaceae","Gomphocarpus semilunatus","Gomphocarpus","Gomphocarpus semilunatus","97692-1","97692-1","Species","Apocynaceae","Accepted",505733,505733
+137,"Gongronema napalense (Wall.) Decne.","Apocynaceae","Gongronema napalense","Gongronema","Gongronema napalense","97744-1","97744-1","Species","Apocynaceae","Accepted",505790,505790
+138,"Gonioma malagasy Markgr. & Boiteau","Apocynaceae","Gonioma malagasy","Gonioma","Gonioma malagasy","79134-1","79134-1","Species","Apocynaceae","Accepted",91639,91639
+139,"Gonioma kamassi E. Mey.","Apocynaceae","Gonioma kamassi","Gonioma","Gonioma kamassi","79133-1","79133-1","Species","Apocynaceae","Accepted",91637,91637
+140,"Gymnema sylvestre (Retz.) R. Br. ex Sm.","Apocynaceae","Gymnema sylvestre","Gymnema","Gymnema sylvestre","60454719-2","60454719-2","Species","Apocynaceae","Accepted",506350,506350
+141,"Gymnema decaisneanum Wight","Apocynaceae","Gymnema decaisneanum","Gymnema","Gymnema decaisneanum","98158-1","98158-1","Species","Apocynaceae","Accepted",506269,506269
+142,"Gymnema elegans Wight & Arn.","Apocynaceae","Gymnema elegans","Gymnema","Gymnema elegans","98160-1","98160-1","Species","Apocynaceae","Accepted",506272,506272
+143,"Gymnema latifolium Wall. ex Wight","Apocynaceae","Gymnema latifolium","Gymnema","Gymnema latifolium","98182-1","98182-1","Species","Apocynaceae","Accepted",506300,506300
+144,"Gymnema inodorum (Lour.) Decne.","Apocynaceae","Gymnema inodorum","Gymnema","Gymnema inodorum","98176-1","98176-1","Species","Apocynaceae","Accepted",506289,506289
+145,"Hancornia speciosa Gomes","Apocynaceae","Hancornia speciosa","Hancornia","Hancornia speciosa","328991-2","328991-2","Species","Apocynaceae","Accepted",96116,96116
+146,"Haplophyton cimicidum A. DC.","Apocynaceae","Haplophyton cimicidum","Haplophyton","Haplophyton cimicidum","79244-1","79244-1","Species","Apocynaceae","Accepted",96249,96249
+147,"Haplophyton crooksi (L. D. Benson) L. D. Benson","Apocynaceae","Haplophyton crooksii","Haplophyton","Haplophyton crooksii","117868-2","117868-2","Species","Apocynaceae","Accepted",96252,96252
+148,"Hemidesmus indicus (L.) R. Br.","Apocynaceae","Hemidesmus indicus","Hemidesmus","Hemidesmus indicus","60443873-2","60443873-2","Species","Apocynaceae","Accepted",506392,506392
+149,"Himatanthus articulatus (Vahl) Woodson","Apocynaceae","Himatanthus articulatus","Himatanthus","Himatanthus articulatus","122688-2","122688-2","Species","Apocynaceae","Accepted",99294,99294
+150,"Himatanthus bracteatus (A. DC.) Woodson","Apocynaceae","Himatanthus bracteatus","Himatanthus","Himatanthus bracteatus","122690-2","122690-2","Species","Apocynaceae","Accepted",99299,99299
+151,"Himatanthus attenuatus (Benth.) Woodson","Apocynaceae","Himatanthus attenuatus","Himatanthus","Himatanthus attenuatus","122689-2","122689-2","Species","Apocynaceae","Accepted",99295,99295
+152,"Himatanthus tarapotensis (K. Schum. Ex Markgr.) Plumel","Apocynaceae","Himatanthus tarapotensis","Himatanthus","Himatanthus tarapotensis","962262-1","962262-1","Species","Apocynaceae","Accepted",99314,99314
+153,"Himatanthus obovatus (Müll. Arg.) Woodson","Apocynaceae","Himatanthus obovatus","Himatanthus","Himatanthus obovatus","122692-2","122692-2","Species","Apocynaceae","Accepted",99305,99305
+154,"Himatanthus revolutus (Huber) Spina & Kin.-Gouv.","Apocynaceae","Himatanthus revolutus","Himatanthus","Himatanthus revolutus","77136056-1","77136056-1","Species","Apocynaceae","Accepted",490928,490928
+155,"Himatanthus drasticus (Mart.) Plumel","Apocynaceae","Himatanthus drasticus","Himatanthus","Himatanthus drasticus","962260-1","962260-1","Species","Apocynaceae","Accepted",99302,99302
+156,"Holarrhena congolensis Stapf","Apocynaceae","Holarrhena congolensis","Holarrhena","Holarrhena congolensis","79294-1","79294-1","Species","Apocynaceae","Accepted",99598,99598
+157,"Holarrhena curtisii King & Gamble","Apocynaceae","Holarrhena curtisii","Holarrhena","Holarrhena curtisii","79297-1","79297-1","Species","Apocynaceae","Accepted",99601,99601
+158,"Holarrhena floribunda (G. Don) T. Durand & Schinz","Apocynaceae","Holarrhena floribunda","Holarrhena","Holarrhena floribunda","79302-1","79302-1","Species","Apocynaceae","Accepted",99606,99606
+159,"Holarrhena pubescens Wal. ex G. Don","Apocynaceae","Holarrhena pubescens","Holarrhena","Holarrhena pubescens","79318-1","79318-1","Species","Apocynaceae","Accepted",99622,99622
+160,"Holarrhena mitis (Vahl) R. Br. Ex Roem. & Schult.","Apocynaceae","Holarrhena mitis","Holarrhena","Holarrhena mitis","79311-1","79311-1","Species","Apocynaceae","Accepted",99616,99616
+161,"Hoodia gordonii (Masson) Sweet ex Decne.","Apocynaceae","Hoodia gordonii","Hoodia","Hoodia gordonii","98342-1","98342-1","Species","Apocynaceae","Accepted",506521,506521
+162,"Hoya verticillata var. verticillata","Apocynaceae","Hoya verticillata var. verticillata","Hoya verticillata","Hoya verticillata","98729-1","77173117-1","Variety","Apocynaceae","Accepted",507245,507242
+163,"Hunteria zeylanica (Retz.) Gardner ex Thwaites","Apocynaceae","Hunteria zeylanica","Hunteria","Hunteria zeylanica","79369-1","79369-1","Species","Apocynaceae","Accepted",100820,100820
+164,"Hunteria umbellata (K. Schum.) Hallier f.","Apocynaceae","Hunteria umbellata","Hunteria","Hunteria umbellata","79368-1","79368-1","Species","Apocynaceae","Accepted",100819,100819
+165,"Ichnocarpus frutescens","Apocynaceae","Ichnocarpus frutescens","Ichnocarpus","Ichnocarpus frutescens","79384-1","79384-1","Species","Apocynaceae","Accepted",102359,102359
+166,"Ischnolepis natalensis (Schltr.) Venter","Apocynaceae","Ischnolepis natalensis","Ischnolepis","Ischnolepis natalensis","20003295-1","20003295-1","Species","Apocynaceae","Accepted",507540,507540
+167,"Kanahia laniflora (Forssk.) R. Br.","Apocynaceae","Kanahia laniflora","Kanahia","Kanahia laniflora","98887-1","98887-1","Species","Apocynaceae","Accepted",507595,507595
+168,"Kibatalia laurifolia (Ridl.) Woodson","Apocynaceae","Kibatalia laurifolia","Kibatalia","Kibatalia laurifolia","79456-1","79456-1","Species","Apocynaceae","Accepted",105932,105932
+169,"Kibatalia macrophylla (Pierre ex Hua) Woodson","Apocynaceae","Kibatalia macrophylla","Kibatalia","Kibatalia macrophylla","79460-1","79460-1","Species","Apocynaceae","Accepted",105936,105936
+170,"Kopsia fruticosa (Roxb.) A. DC.","Apocynaceae","Kopsia fruticosa","Kopsia","Kopsia fruticosa","79497-1","79497-1","Species","Apocynaceae","Accepted",106327,106327
+171,"Kopsia arborea Blume","Apocynaceae","Kopsia arborea","Kopsia","Kopsia arborea","79490-1","79490-1","Species","Apocynaceae","Accepted",106320,106320
+172,"Kopsia macrophylla Hook. f.","Apocynaceae","Kopsia macrophylla","Kopsia","Kopsia macrophylla","79511-1","79511-1","Species","Apocynaceae","Accepted",106340,106340
+173,"Kopsia singapurensis Ridl.","Apocynaceae","Kopsia singapurensis","Kopsia","Kopsia singapurensis","79524-1","79524-1","Species","Apocynaceae","Accepted",106355,106355
+174,"Kopsia deverrei L. Allorge","Apocynaceae","Kopsia deverrei","Kopsia","Kopsia deverrei","929492-1","929492-1","Species","Apocynaceae","Accepted",106325,106325
+175,"Kopsia hainanensis Tsiang","Apocynaceae","Kopsia hainanensis","Kopsia","Kopsia hainanensis","79500-1","79500-1","Species","Apocynaceae","Accepted",106330,106330
+176,"Kopsia profunda Markgr.","Apocynaceae","Kopsia profunda","Kopsia","Kopsia profunda","79519-1","79519-1","Species","Apocynaceae","Accepted",106350,106350
+177,"Kopsia teoi L. Allorge","Apocynaceae","Kopsia teoi","Kopsia","Kopsia teoi","972022-1","972022-1","Species","Apocynaceae","Accepted",106358,106358
+178,"Kopsia grandifolia D. J. Middleton","Apocynaceae","Kopsia grandifolia","Kopsia","Kopsia grandifolia","60436655-2","60436655-2","Species","Apocynaceae","Accepted",251130,251130
+179,"Kopsia dasyrachis Ridl.","Apocynaceae","Kopsia dasyrachis","Kopsia","Kopsia dasyrachis","79494-1","79494-1","Species","Apocynaceae","Accepted",106324,106324
+180,"Kopsia flavida Blume","Apocynaceae","Kopsia flavida","Kopsia","Kopsia flavida","79496-1","79496-1","Species","Apocynaceae","Accepted",106326,106326
+181,"Kopsia griffithii King & Gamble","Apocynaceae","Kopsia griffithii","Kopsia","Kopsia griffithii","79499-1","79499-1","Species","Apocynaceae","Accepted",106329,106329
+182,"Kopsia larutensis King & Gamble","Apocynaceae","Kopsia larutensis","Kopsia","Kopsia larutensis","60436658-2","60436658-2","Species","Apocynaceae","Accepted",106337,106337
+183,"Kopsia pauciflora Hook. f.","Apocynaceae","Kopsia pauciflora","Kopsia","Kopsia pauciflora","79516-1","79516-1","Species","Apocynaceae","Accepted",106346,106346
+184,"Kopsia tenuis Leenh. & Steems","Apocynaceae","Kopsia tenuis","Kopsia","Kopsia tenuis","79526-1","79526-1","Species","Apocynaceae","Accepted",106357,106357
+185,"Kopsia lapidilecta Sleesen","Apocynaceae","Kopsia lapidilecta","Kopsia","Kopsia lapidilecta","79507-1","79507-1","Species","Apocynaceae","Accepted",106336,106336
+186,"Lacmellea panamensis (Woodson) Markgr.","Apocynaceae","Lacmellea panamensis","Lacmellea","Lacmellea panamensis","134499-2","134499-2","Species","Apocynaceae","Accepted",106779,106779
+187,"Landolphia owariensis P. Beauv.","Apocynaceae","Landolphia owariensis","Landolphia","Landolphia owariensis","79672-1","79672-1","Species","Apocynaceae","Accepted",107760,107760
+188,"Landolphia uniflora (Stapf) Pichon","Apocynaceae","Landolphia uniflora","Landolphia","Landolphia uniflora","79721-1","79721-1","Species","Apocynaceae","Accepted",107824,107824
+189,"Landolphia buchananii (Hallier f.) Stapf","Apocynaceae","Landolphia buchananii","Landolphia","Landolphia buchananii","79582-1","79582-1","Species","Apocynaceae","Accepted",107659,107659
+190,"Landolphia dulcis (Sabine ex G. Don) Pichon","Apocynaceae","Landolphia dulcis","Landolphia","Landolphia dulcis","79607-1","79607-1","Species","Apocynaceae","Accepted",107687,107687
+191,"Landolphia heudelotii A. DC.","Apocynaceae","Landolphia heudelotii","Landolphia","Landolphia heudelotii","79629-1","79629-1","Species","Apocynaceae","Accepted",107713,107713
+192,"Landolphia lanceolata (K. Schum.) Pichon","Apocynaceae","Landolphia lanceolata","Landolphia","Landolphia lanceolata","79639-1","79639-1","Species","Apocynaceae","Accepted",107723,107723
+193,"Laubertia boissieri A. DC.","Apocynaceae","Laubertia boissieri","Laubertia","Laubertia boissieri","324863-2","324863-2","Species","Apocynaceae","Accepted",108940,108940
+194,"Leptadenia pyrotechnica (Forssk.) Decne.","Apocynaceae","Leptadenia pyrotechnica","Leptadenia","Leptadenia pyrotechnica","98980-1","98980-1","Species","Apocynaceae","Accepted",507765,507765
+195,"Leptadenia lanceolata (Poir.) Goyder","Apocynaceae","Leptadenia lanceolata","Leptadenia","Leptadenia lanceolata","77143808-1","77143808-1","Species","Apocynaceae","Accepted",507759,507759
+196,"Leptadenia reticulata (Retz.) Wight & Arn.","Apocynaceae","Leptadenia reticulata","Leptadenia","Leptadenia reticulata","20009712-1","20009712-1","Species","Apocynaceae","Accepted",507766,507766
+197,"Leptadenia lanceolata var. lanceolata","Apocynaceae","Leptadenia lanceolata subsp. lanceolata","Leptadenia lanceolata","Leptadenia lanceolata","77143808-1","77173519-1","Subspecies","Apocynaceae","Accepted",507754,507759
+198,"Leptadenia madagascariensis Decne.","Apocynaceae","Leptadenia madagascariensis","Leptadenia","Leptadenia madagascariensis","98978-1","98978-1","Species","Apocynaceae","Accepted",507763,507763
+199,"Leuconotis eugeniifolia (Wall. ex G. Don) A. DC.","Apocynaceae","Leuconotis eugeniifolia","Leuconotis","Leuconotis eugeniifolia","77177343-1","77177343-1","Species","Apocynaceae","Accepted",112009,112009
+200,"Leuconotis griffithii Hook. f.","Apocynaceae","Leuconotis griffithii","Leuconotis","Leuconotis griffithii","79773-1","79773-1","Species","Apocynaceae","Accepted",112013,112013
+201,"Macoubea guianensis Aubl.","Apocynaceae","Macoubea guianensis","Macoubea","Macoubea guianensis","79852-1","79852-1","Species","Apocynaceae","Accepted",116912,116912
+202,"Macropharynx isthmica (Woodson) J. F. Morales, M. E. Endress & Liede","Apocynaceae","Macropharynx isthmica","Macropharynx","Macropharynx isthmica","77165026-1","77165026-1","Species","Apocynaceae","Accepted",526061,526061
+203,"Macropharynx peltata (Vell.) J. F. Morales, M. E. Endress & Liede","Apocynaceae","Macropharynx peltata","Macropharynx","Macropharynx peltata","77165028-1","77165028-1","Species","Apocynaceae","Accepted",526059,526059
+204,"Malouetia arborea (Vell.) Miers","Apocynaceae","Malouetia arborea","Malouetia","Malouetia arborea","79888-1","79888-1","Species","Apocynaceae","Accepted",119142,119142
+205,"Malouetia bequaertiana Woodson","Apocynaceae","Malouetia bequaertiana","Malouetia","Malouetia bequaertiana","79890-1","79890-1","Species","Apocynaceae","Accepted",119145,119145
+206,"Malouetia tamaquarina (Aubl.) A. DC.","Apocynaceae","Malouetia tamaquarina","Malouetia","Malouetia tamaquarina","79926-1","79926-1","Species","Apocynaceae","Accepted",119187,119187
+207,"Malouetia glandulifera Miers","Apocynaceae","Malouetia glandulifera","Malouetia","Malouetia glandulifera","79898-1","79898-1","Species","Apocynaceae","Accepted",119155,119155
+208,"Mandevilla boliviensis (J. J. Veitch)","Apocynaceae","Mandevilla boliviensis","Mandevilla","Mandevilla boliviensis","151935-2","151935-2","Species","Apocynaceae","Accepted",119229,119229
+209,"Marsdenia rostrata R. Br.","Apocynaceae","Leichhardtia rostrata","Leichhardtia","Leichhardtia rostrata","77221204-1","77221204-1","Species","Apocynaceae","Synonym",548333,548333
+210,"Marsdenia cundurango Rchb. f.","Apocynaceae","Ruehssia cundurango","Ruehssia","Ruehssia cundurango","77214383-1","77214383-1","Species","Apocynaceae","Synonym",548951,548951
+211,"Marsdenia tinctoria R. Br.","Apocynaceae","Marsdenia tinctoria","Marsdenia","Marsdenia tinctoria","99325-1","99325-1","Species","Apocynaceae","Accepted",508308,508308
+212,"Marsdenia tenacissima (Roxb.) Moon","Apocynaceae","Marsdenia tenacissima","Marsdenia","Marsdenia tenacissima","99319-1","99319-1","Species","Apocynaceae","Accepted",508300,508300
+213,"Marsdenia glabra Constantin","Apocynaceae","Marsdenia glabra","Marsdenia","Marsdenia glabra","99160-1","99160-1","Species","Apocynaceae","Accepted",508066,508066
+214,"Marsdenia edulis S. Watson","Apocynaceae","Marsdenia edulis","Marsdenia","Marsdenia edulis","153556-2","153556-2","Species","Apocynaceae","Accepted",508034,508034
+215,"Marsdenia latifolia (Benth.) K. Schum","Apocynaceae","Marsdenia latifolia","Marsdenia","Marsdenia latifolia","99198-1","99198-1","Species","Apocynaceae","Accepted",508127,508127
+216,"Melodinus aeneus Baill.","Apocynaceae","Melodinus aeneus","Melodinus","Melodinus aeneus","80160-1","80160-1","Species","Apocynaceae","Accepted",124164,124164
+217,"Melodinus australis (F. Muell.) Pierre","Apocynaceae","Melodinus australis","Melodinus","Melodinus australis","80164-1","80164-1","Species","Apocynaceae","Accepted",124168,124168
+218,"Melodinus axillaris W. T. Wang","Apocynaceae","Melodinus axillaris","Melodinus","Melodinus axillaris","80166-1","80166-1","Species","Apocynaceae","Accepted",124170,124170
+219,"Melodinus cochinchinensis (Lour.) Merr.","Apocynaceae","Melodinus cochinchinensis","Melodinus","Melodinus cochinchinensis","80183-1","80183-1","Species","Apocynaceae","Accepted",124189,124189
+220,"Melodinus fusiformis Champ. ex Benth.","Apocynaceae","Melodinus fusiformis","Melodinus","Melodinus fusiformis","80201-1","80201-1","Species","Apocynaceae","Accepted",124209,124209
+221,"Melodinus reticulatus Boiteau","Apocynaceae","Melodinus reticulatus","Melodinus","Melodinus reticulatus","80249-1","80249-1","Species","Apocynaceae","Accepted",124259,124259
+222,"Melodinus tenuicaudatus Tsiang & P. T. Li","Apocynaceae","Melodinus tenuicaudatus","Melodinus","Melodinus tenuicaudatus","80259-1","80259-1","Species","Apocynaceae","Accepted",124268,124268
+223,"Melodinus balansae Baill.","Apocynaceae","Melodinus balansae","Melodinus","Melodinus balansae","80169-1","80169-1","Species","Apocynaceae","Accepted",124172,124172
+224,"Melodinus scandens J.R.Forst & G.Forst","Apocynaceae","Melodinus scandens","Melodinus","Melodinus scandens","80253-1","80253-1","Species","Apocynaceae","Accepted",124262,124262
+225,"Melodinus acutiflorus F. Muell.","Apocynaceae","Melodinus acutiflorus","Melodinus","Melodinus acutiflorus","80158-1","80158-1","Species","Apocynaceae","Accepted",124162,124162
+226,"Melodinus philliraeoides Labill.","Apocynaceae","Melodinus philliraeoides","Melodinus","Melodinus philliraeoides","80246-1","80246-1","Species","Apocynaceae","Accepted",124255,124255
+227,"Metastelma harleyi Fontella","Apocynaceae","Metastelma harleyi","Metastelma","Metastelma harleyi","280817-2","280817-2","Species","Apocynaceae","Accepted",508917,508917
+228,"Microplumeria anomala (Müll. Arg.) Markgr.","Apocynaceae","Microplumeria anomala","Microplumeria","Microplumeria anomala","80344-1","80344-1","Species","Apocynaceae","Accepted",127601,127601
+229,"Minaria magisteriana (Rapini) T. U. P. Konno & Rapini","Apocynaceae","Minaria magisteriana","Minaria","Minaria magisteriana","77074595-1","77074595-1","Species","Apocynaceae","Accepted",509116,509116
+230,"Mondia whitei (Hook. f.) Skeels","Apocynaceae","Mondia whitei","Mondia","Mondia whitei","99812-1","99812-1","Species","Apocynaceae","Accepted",509161,509161
+231,"Monolluma quadrangula (Forssk.) Plowes","Apocynaceae","Monolluma quadrangula","Monolluma","Monolluma quadrangula","986817-1","986817-1","Species","Apocynaceae","Accepted",509165,509165
+232,"Motandra paniculata (Poir.) I. M. Turner","Apocynaceae","Motandra paniculata","Motandra","Motandra paniculata","77158413-1","77158413-1","Species","Apocynaceae","Accepted",521333,521333
+233,"Nerium oleander L.","Apocynaceae","Nerium oleander","Nerium","Nerium oleander","80460-1","80460-1","Species","Apocynaceae","Accepted",135196,135196
+234,"Ochrosia compta K. Schum.","Apocynaceae","Ochrosia compta","Ochrosia","Ochrosia compta","80497-1","80497-1","Species","Apocynaceae","Accepted",136704,136704
+235,"Ochrosia moorei (F. Muell.) Benth.","Apocynaceae","Ochrosia moorei","Ochrosia","Ochrosia moorei","80527-1","80527-1","Species","Apocynaceae","Accepted",136736,136736
+236,"Ochrosia alyxioides Guillaumin","Apocynaceae","Ochrosia alyxioides","Ochrosia","Ochrosia alyxioides","80488-1","80488-1","Species","Apocynaceae","Accepted",136691,136691
+237,"Ochrosia poweri F. M. Bailey","Apocynaceae","Ochrosia poweri","Ochrosia","Ochrosia poweri","80538-1","80538-1","Species","Apocynaceae","Accepted",136747,136747
+238,"Ochrosia miana Baill. ex Guillaumin","Apocynaceae","Ochrosia miana","Ochrosia","Ochrosia miana","80524-1","80524-1","Species","Apocynaceae","Accepted",136733,136733
+239,"Ochrosia nakaiana (Koidz.) Koidz. ex H. Hara","Apocynaceae","Ochrosia nakaiana","Ochrosia","Ochrosia nakaiana","80530-1","80530-1","Species","Apocynaceae","Accepted",136738,136738
+240,"Ochrosia silvatica Däniker","Apocynaceae","Ochrosia silvatica","Ochrosia","Ochrosia silvatica","80545-1","80545-1","Species","Apocynaceae","Accepted",136754,136754
+241,"Ochrosia borbonica J. F. Gmel.","Apocynaceae","Ochrosia borbonica","Ochrosia","Ochrosia borbonica","80491-1","80491-1","Species","Apocynaceae","Accepted",136697,136697
+242,"Ochrosia acuminata Trimen ex Valeton","Apocynaceae","Ochrosia acuminata","Ochrosia","Ochrosia acuminata","80487-1","80487-1","Species","Apocynaceae","Accepted",136690,136690
+243,"Ochrosia mulsantii Montrouz.","Apocynaceae","Ochrosia mulsantii","Ochrosia","Ochrosia mulsantii","80528-1","80528-1","Species","Apocynaceae","Accepted",136737,136737
+244,"Ochrosia elliptica Labill.","Apocynaceae","Ochrosia elliptica","Ochrosia","Ochrosia elliptica","80500-1","80500-1","Species","Apocynaceae","Accepted",136707,136707
+245,"Ochrosia oppositifolia (Lam.) K. Schum.","Apocynaceae","Ochrosia oppositifolia","Ochrosia","Ochrosia oppositifolia","80534-1","80534-1","Species","Apocynaceae","Accepted",136743,136743
+246,"Ochrosia glomerata (Blume) F. Muell","Apocynaceae","Ochrosia glomerata","Ochrosia","Ochrosia glomerata","77177054-1","77177054-1","Species","Apocynaceae","Accepted",136712,136712
+247,"Oncinotis nitida Benth.","Apocynaceae","Oncinotis nitida","Oncinotis","Oncinotis nitida","80635-1","80635-1","Species","Apocynaceae","Accepted",140128,140128
+248,"Oncinotis tenuiloba Stapf","Apocynaceae","Oncinotis tenuiloba","Oncinotis","Oncinotis tenuiloba","80641-1","80641-1","Species","Apocynaceae","Accepted",140133,140133
+249,"Oxypetalum banksii R. Br. ex Schult.","Apocynaceae","Oxypetalum banksii","Oxypetalum","Oxypetalum banksii","179274-2","179274-2","Species","Apocynaceae","Accepted",509561,509561
+250,"Pachypodium lamerei Drake","Apocynaceae","Pachypodium lamerei","Pachypodium","Pachypodium lamerei","80705-1","80705-1","Species","Apocynaceae","Accepted",145237,145237
+251,"Parahancornia fasciculata (Poir.) Benoist","Apocynaceae","Parahancornia fasciculata","Parahancornia","Parahancornia fasciculata","182946-2","182946-2","Species","Apocynaceae","Accepted",147481,147481
+252,"Parsonsia eucalyptophylla F. Muell.","Apocynaceae","Parsonsia eucalyptophylla","Parsonsia","Parsonsia eucalyptophylla","80910-1","80910-1","Species","Apocynaceae","Accepted",147874,147874
+253,"Parsonsia heterophylla A. Cunn.","Apocynaceae","Parsonsia heterophylla","Parsonsia","Parsonsia heterophylla","80926-1","80926-1","Species","Apocynaceae","Accepted",147893,147893
+254,"Parsonsia alboflavescens (Denst.) Mabb.","Apocynaceae","Parsonsia alboflavescens","Parsonsia","Parsonsia alboflavescens","80868-1","80868-1","Species","Apocynaceae","Accepted",147819,147819
+255,"Parsonsia straminea (R. Br.) F. Muell","Apocynaceae","Parsonsia straminea","Parsonsia","Parsonsia straminea","50061-3","50061-3","Species","Apocynaceae","Accepted",147988,147988
+256,"Parsonsia oligantha (K. Schum.) D. J. Middleton","Apocynaceae","Parsonsia oligantha","Parsonsia","Parsonsia oligantha","995742-1","995742-1","Species","Apocynaceae","Accepted",147947,147947
+257,"Pattalias palustris (Pursh) Fishbein","Apocynaceae","Pattalias palustris","Pattalias","Pattalias palustris","77174448-1","77174448-1","Species","Apocynaceae","Accepted",526356,526356
+258,"Pentalinon andrieuxii (Müll. Arg.) B. F. Hansen & Wunderlin","Apocynaceae","Pentalinon andrieuxii","Pentalinon","Pentalinon andrieuxii","942488-1","942488-1","Species","Apocynaceae","Accepted",149823,149823
+259,"Pentatropis capensis (L. f.) Bullock","Apocynaceae","Pentatropis capensis","Pentatropis","Pentatropis capensis","100315-1","100315-1","Species","Apocynaceae","Accepted",510062,510062
+260,"Pentopetia albicans (Jum. & H. Perrier) Klack.","Apocynaceae","Pentopetia albicans","Pentopetia","Pentopetia albicans","1011612-1","1011612-1","Species","Apocynaceae","Accepted",510084,510084
+261,"Peplonia adnata (E. Fourn.) U. C. S. Silva & Rapini","Apocynaceae","Peplonia adnata","Peplonia","Peplonia adnata","77130384-1","77130384-1","Species","Apocynaceae","Accepted",510131,510131
+262,"Peplonia axillaris (Vell.) Fontella & Rapini","Apocynaceae","Peplonia axillaris","Peplonia","Peplonia axillaris","77064982-1","77064982-1","Species","Apocynaceae","Accepted",510134,510134
+263,"Pergularia daemia (Forssk.) Chiov.","Apocynaceae","Pergularia daemia","Pergularia","Pergularia daemia","100371-1","100371-1","Species","Apocynaceae","Accepted",510161,510161
+264,"Pergularia daemia subsp. daemia","Apocynaceae","Pergularia daemia subsp. daemia","Pergularia daemia","Pergularia daemia","100371-1","77172919-1","Subspecies","Apocynaceae","Accepted",510163,510161
+265,"Pergularia tomentosa L.","Apocynaceae","Pergularia tomentosa","Pergularia","Pergularia tomentosa","100411-1","100411-1","Species","Apocynaceae","Accepted",510202,510202
+266,"Periploca hydaspidis Falc.","Apocynaceae","Periploca hydaspidis","Periploca","Periploca hydaspidis","100463-1","100463-1","Species","Apocynaceae","Accepted",510267,510267
+267,"Periploca linearifolia Quart.-Dill. & A. Rich","Apocynaceae","Periploca linearifolia","Periploca","Periploca linearifolia","100470-1","100470-1","Species","Apocynaceae","Accepted",510278,510278
+268,"Periploca somaliensis Browicz","Apocynaceae","Periploca somaliensis","Periploca","Periploca somaliensis","100504-1","100504-1","Species","Apocynaceae","Accepted",510313,510313
+269,"Petchia cryptophlebia (Baker) Leeuwenb.","Apocynaceae","Petchia cryptophlebia","Petchia","Petchia cryptophlebia","997251-1","997251-1","Species","Apocynaceae","Accepted",150790,150790
+270,"Petchia ceylanica (Wight) Livera","Apocynaceae","Petchia ceylanica","Petchia","Petchia ceylanica","81104-1","81104-1","Species","Apocynaceae","Accepted",150789,150789
+271,"Petchia erythrocarpa (Vatke) Leeuwenb.","Apocynaceae","Petchia erythrocarpa","Petchia","Petchia erythrocarpa","997252-1","997252-1","Species","Apocynaceae","Accepted",150791,150791
+272,"Picralima nitida (Stapf) T. Durand & H. Durand","Apocynaceae","Picralima nitida","Picralima","Picralima nitida","81115-1","81115-1","Species","Apocynaceae","Accepted",156030,156030
+273,"Pleiocarpa mutica Benth.","Apocynaceae","Pleiocarpa mutica","Pleiocarpa","Pleiocarpa mutica","81143-1","81143-1","Species","Apocynaceae","Accepted",158935,158935
+274,"Pleiocarpa pycnantha (K. Schum.) Stapf","Apocynaceae","Pleiocarpa pycnantha","Pleiocarpa","Pleiocarpa pycnantha","81144-1","81144-1","Species","Apocynaceae","Accepted",158937,158937
+275,"Pleiocarpa rostrata Benth.","Apocynaceae","Pleiocarpa rostrata","Pleiocarpa","Pleiocarpa rostrata","81145-1","81145-1","Species","Apocynaceae","Accepted",158939,158939
+276,"Pleioceras barteri Baill.","Apocynaceae","Pleioceras barteri","Pleioceras","Pleioceras barteri","81155-1","81155-1","Species","Apocynaceae","Accepted",158978,158978
+277,"Plumeria rubra L.","Apocynaceae","Plumeria rubra","Plumeria","Plumeria rubra","81275-1","81275-1","Species","Apocynaceae","Accepted",161631,161631
+278,"Plumeria sericifolia C. Wright ex Griseb.","Apocynaceae","Plumeria sericifolia","Plumeria","Plumeria sericifolia","204004-2","204004-2","Species","Apocynaceae","Accepted",161637,161637
+279,"Plumeria pudica Jacq.","Apocynaceae","Plumeria pudica","Plumeria","Plumeria pudica","81268-1","81268-1","Species","Apocynaceae","Accepted",161626,161626
+280,"Plumeria obtusa L.","Apocynaceae","Plumeria obtusa","Plumeria","Plumeria obtusa","81256-1","81256-1","Species","Apocynaceae","Accepted",161613,161613
+281,"Plumeria alba L.","Apocynaceae","Plumeria alba","Plumeria","Plumeria alba","81171-1","81171-1","Species","Apocynaceae","Accepted",161520,161520
+282,"Prestonia portobellensis (Beurl.) Woodson","Apocynaceae","Prestonia portobellensis","Prestonia","Prestonia portobellensis","210135-2","210135-2","Species","Apocynaceae","Accepted",165394,165394
+283,"Prestonia amabilis J. F. Morales","Apocynaceae","Prestonia amabilis","Prestonia","Prestonia amabilis","60436267-2","60436267-2","Species","Apocynaceae","Accepted",259650,259650
+284,"Prestonia amazonica (Benth. ex Müll. Arg.) J. F. Macbr.","Apocynaceae","Prestonia amazonica","Prestonia","Prestonia amazonica","81326-1","81326-1","Species","Apocynaceae","Accepted",165312,165312
+285,"Prestonia quinquangularis (Jacq.) Spreng.","Apocynaceae","Prestonia quinquangularis","Prestonia","Prestonia quinquangularis","81405-1","81405-1","Species","Apocynaceae","Accepted",165396,165396
+286,"Prestonia erecta J. F. Morales","Apocynaceae","Prestonia erecta","Prestonia","Prestonia erecta","1006675-1","1006675-1","Species","Apocynaceae","Accepted",165336,165336
+287,"Prestonia Megagros (Vell.) Woodson","Apocynaceae","Prestonia megagros","Prestonia","Prestonia megagros","210124-2","210124-2","Species","Apocynaceae","Accepted",165376,165376
+288,"Pteralyxia laurifolia (G. Don) Leeuwenb.","Apocynaceae","Pteralyxia laurifolia","Pteralyxia","Pteralyxia laurifolia","1007058-1","1007058-1","Species","Apocynaceae","Accepted",170334,170334
+289,"Rauvolfia pentaphylla Huber ex Ducke","Apocynaceae","Rauvolfia pentaphylla","Rauvolfia","Rauvolfia pentaphylla","217935-2","217935-2","Species","Apocynaceae","Accepted",176933,176933
+290,"Rauvolfia mombasiana Stapf","Apocynaceae","Rauvolfia mombasiana","Rauvolfia","Rauvolfia mombasiana","81591-1","81591-1","Species","Apocynaceae","Accepted",176902,176902
+291,"Rauvolfia verticillata (Lour.) Baill.","Apocynaceae","Rauvolfia verticillata","Rauvolfia","Rauvolfia verticillata","81667-1","81667-1","Species","Apocynaceae","Accepted",176992,176992
+292,"Rauvolfia sumatrana Jack","Apocynaceae","Rauvolfia sumatrana","Rauvolfia","Rauvolfia sumatrana","81660-1","81660-1","Species","Apocynaceae","Accepted",176982,176982
+293,"Rauvolfia tetraphylla L.","Apocynaceae","Rauvolfia tetraphylla","Rauvolfia","Rauvolfia tetraphylla","81663-1","81663-1","Species","Apocynaceae","Accepted",176987,176987
+294,"Rauvolfia sandwicensis A. DC.","Apocynaceae","Rauvolfia sandwicensis","Rauvolfia","Rauvolfia sandwicensis","81642-1","81642-1","Species","Apocynaceae","Accepted",176956,176956
+295,"Rauvolfia vomitoria Wennberg","Apocynaceae","Rauvolfia vomitoria","Rauvolfia","Rauvolfia vomitoria","81673-1","81673-1","Species","Apocynaceae","Accepted",177001,177001
+296,"Rauvolfia sprucei Müll. Arg.","Apocynaceae","Rauvolfia sprucei","Rauvolfia","Rauvolfia sprucei","81652-1","81652-1","Species","Apocynaceae","Accepted",176974,176974
+297,"Rauvolfia caffra Sond.","Apocynaceae","Rauvolfia caffra","Rauvolfia","Rauvolfia caffra","81519-1","81519-1","Species","Apocynaceae","Accepted",176820,176820
+298,"Rhazya stricta Decne.","Apocynaceae","Rhazya stricta","Rhazya","Rhazya stricta","81712-1","81712-1","Species","Apocynaceae","Accepted",177985,177985
+299,"Saba comorensis (Bojer ex A. DC.) Pichon","Apocynaceae","Saba comorensis","Saba","Saba comorensis","81757-1","81757-1","Species","Apocynaceae","Accepted",181004,181004
+300,"Schizozygia coffeoides Baill.","Apocynaceae","Schizozygia coffeoides","Schizozygia","Schizozygia coffeoides","81764-1","81764-1","Species","Apocynaceae","Accepted",188193,188193
+301,"Secamone alpini Schult.","Apocynaceae","Secamone alpini","Secamone","Secamone alpini","101298-1","101298-1","Species","Apocynaceae","Accepted",511528,511528
+302,"Secamone afzelii (Reom. & Schult.) K. Schum.","Apocynaceae","Secamone afzelii","Secamone","Secamone afzelii","77079518-1","77079518-1","Species","Apocynaceae","Accepted",511526,511526
+303,"Skytanthus acutus Meyen","Apocynaceae","Skytanthus acutus","Skytanthus","Skytanthus acutus","81785-1","81785-1","Species","Apocynaceae","Accepted",192571,192571
+304,"Solenostemma oleifolium (Nectoux) Bullock & E. A. Bruce ex Maire","Apocynaceae","Solenostemma oleifolium","Solenostemma","Solenostemma oleifolium","101435-1","101435-1","Species","Apocynaceae","Accepted",511798,511798
+305,"Stapelia hirsuta L.","Apocynaceae","Stapelia hirsuta","Stapelia","Stapelia hirsuta","101613-1","101613-1","Species","Apocynaceae","Accepted",512033,512033
+306,"Strempeliopsis strempelioides Benth.","Apocynaceae","Strempeliopsis strempelioides","Strempeliopsis","Strempeliopsis strempelioides","81849-1","81849-1","Species","Apocynaceae","Accepted",198155,198155
+307,"Streptocaulon juventas (Lour.) Merr.","Apocynaceae","Streptocaulon juventas","Streptocaulon","Streptocaulon juventas","102040-1","102040-1","Species","Apocynaceae","Accepted",512573,512573
+308,"Strophanthus hispidus DC.","Apocynaceae","Strophanthus hispidus","Strophanthus","Strophanthus hispidus","81900-1","81900-1","Species","Apocynaceae","Accepted",198235,198235
+309,"Strophanthus wallichii A. DC.","Apocynaceae","Strophanthus wallichii","Strophanthus","Strophanthus wallichii","81964-1","81964-1","Species","Apocynaceae","Accepted",198299,198299
+310,"Strophanthus eminii Asch. ex Pax","Apocynaceae","Strophanthus eminii","Strophanthus","Strophanthus eminii","81881-1","81881-1","Species","Apocynaceae","Accepted",198216,198216
+311,"Tabernaemontana bovina Lour.","Apocynaceae","Tabernaemontana bovina","Tabernaemontana","Tabernaemontana bovina","82026-1","82026-1","Species","Apocynaceae","Accepted",200594,200594
+312,"Tabernaemontana hystrix Steud.","Apocynaceae","Tabernaemontana hystrix","Tabernaemontana","Tabernaemontana hystrix","82157-1","82157-1","Species","Apocynaceae","Accepted",200737,200737
+313,"Tabernaemontana solanifolia A. DC.","Apocynaceae","Tabernaemontana solanifolia","Tabernaemontana","Tabernaemontana solanifolia","82334-1","82334-1","Species","Apocynaceae","Accepted",200936,200936
+314,"Tabernaemontana alternifolia L.","Apocynaceae","Tabernaemontana alternifolia","Tabernaemontana","Tabernaemontana alternifolia","81992-1","81992-1","Species","Apocynaceae","Accepted",200557,200557
+315,"Tabernaemontana catharinensis A. DC.","Apocynaceae","Tabernaemontana catharinensis","Tabernaemontana","Tabernaemontana catharinensis","82043-1","82043-1","Species","Apocynaceae","Accepted",200611,200611
+316,"Tabernaemontana coriacea Link ex Reom. & Schult.","Apocynaceae","Tabernaemontana coriacea","Tabernaemontana","Tabernaemontana coriacea","248849-2","248849-2","Species","Apocynaceae","Accepted",200645,200645
+317,"Tabernaemontana elegans Stapf","Apocynaceae","Tabernaemontana elegans","Tabernaemontana","Tabernaemontana elegans","82109-1","82109-1","Species","Apocynaceae","Accepted",200686,200686
+318,"Tabernaemontana laeta Mart.","Apocynaceae","Tabernaemontana laeta","Tabernaemontana","Tabernaemontana laeta","82175-1","82175-1","Species","Apocynaceae","Accepted",200756,200756
+319,"Tabernaemontana siphilitica (L.f.) Leeuwenb.","Apocynaceae","Tabernaemontana siphilitica","Tabernaemontana","Tabernaemontana siphilitica","20001045-1","20001045-1","Species","Apocynaceae","Accepted",200934,200934
+320,"Tabernaemontana cymosa (Jacquin) Dug&","Apocynaceae","Tabernaemontana cymosa","Tabernaemontana","Tabernaemontana cymosa","82084-1","82084-1","Species","Apocynaceae","Accepted",200661,200661
+321,"Tabernaemontana corymbosa Roxb. ex Wall.","Apocynaceae","Tabernaemontana corymbosa","Tabernaemontana","Tabernaemontana corymbosa","60466167-2","60466167-2","Species","Apocynaceae","Accepted",200648,200648
+322,"Tabernaemontana divaricata (L.) R. Br. ex Roem. & Schult.","Apocynaceae","Tabernaemontana divaricata","Tabernaemontana","Tabernaemontana divaricata","82097-1","82097-1","Species","Apocynaceae","Accepted",200675,200675
+323,"Tabernaemontana sessilifolia Baker","Apocynaceae","Tabernaemontana sessilifolia","Tabernaemontana","Tabernaemontana sessilifolia","82330-1","82330-1","Species","Apocynaceae","Accepted",200930,200930
+324,"Tabernaemontana bufalina Lour.","Apocynaceae","Tabernaemontana bufalina","Tabernaemontana","Tabernaemontana bufalina","82034-1","82034-1","Species","Apocynaceae","Accepted",200602,200602
+325,"Tabernaemontana heterophylla Vahl","Apocynaceae","Tabernaemontana heterophylla","Tabernaemontana","Tabernaemontana heterophylla","82146-1","82146-1","Species","Apocynaceae","Accepted",200726,200726
+326,"Tabernaemontana pachysiphon Stapf","Apocynaceae","Tabernaemontana pachysiphon","Tabernaemontana","Tabernaemontana pachysiphon","82263-1","82263-1","Species","Apocynaceae","Accepted",200853,200853
+327,"Tabernaemontana sananho Ruiz & Pav.","Apocynaceae","Tabernaemontana sananho","Tabernaemontana","Tabernaemontana sananho","82327-1","82327-1","Species","Apocynaceae","Accepted",200927,200927
+328,"Tabernaemontana markgrafiana J. F. Macbr.","Apocynaceae","Tabernaemontana markgrafiana","Tabernaemontana","Tabernaemontana markgrafiana","288916-2","288916-2","Species","Apocynaceae","Accepted",200798,200798
+329,"Tabernaemontana pandacaqui Poir.","Apocynaceae","Tabernaemontana pandacaqui","Tabernaemontana","Tabernaemontana pandacaqui","82269-1","82269-1","Species","Apocynaceae","Accepted",200860,200860
+330,"Tabernaemontana stapfiana Britten","Apocynaceae","Tabernaemontana stapfiana","Tabernaemontana","Tabernaemontana stapfiana","82342-1","82342-1","Species","Apocynaceae","Accepted",200943,200943
+331,"Tabernaemontana arborea Rose","Apocynaceae","Tabernaemontana arborea","Tabernaemontana","Tabernaemontana arborea","248839-2","248839-2","Species","Apocynaceae","Accepted",200574,200574
+332,"Tabernaemontana donnell-smithii Rose","Apocynaceae","Tabernaemontana donnell-smithii","Tabernaemontana","Tabernaemontana donnell-smithii","248857-2","248857-2","Species","Apocynaceae","Accepted",200676,200676
+333,"Tabernaemontana linkii A. DC.","Apocynaceae","Tabernaemontana linkii","Tabernaemontana","Tabernaemontana linkii","82189-1","82189-1","Species","Apocynaceae","Accepted",200776,200776
+334,"Tabernaemontana litoralis Kunth.","Apocynaceae","Tabernaemontana litoralis","Tabernaemontana","Tabernaemontana litoralis","285810-2","285810-2","Species","Apocynaceae","Accepted",200777,200777
+335,"Tabernaemontana panamensis (Markgr., Boiteua & L. Allorge) Leeuwenb.","Apocynaceae","Tabernaemontana panamensis","Tabernaemontana","Tabernaemontana panamensis","248892-2","248892-2","Species","Apocynaceae","Accepted",200859,200859
+336,"Tabernaemontana peduncularis Wall.","Apocynaceae","Tabernaemontana peduncularis","Tabernaemontana","Tabernaemontana peduncularis","82280-1","82280-1","Species","Apocynaceae","Accepted",200870,200870
+337,"Tabernaemontana angulata Mart. ex Müll. Arg.","Apocynaceae","Tabernaemontana angulata","Tabernaemontana","Tabernaemontana angulata","82002-1","82002-1","Species","Apocynaceae","Accepted",200567,200567
+338,"Tabernaemontana citrifolia L.","Apocynaceae","Tabernaemontana citrifolia","Tabernaemontana","Tabernaemontana citrifolia","82055-1","82055-1","Species","Apocynaceae","Accepted",200629,200629
+339,"Tabernaemontana rupicola Benth.","Apocynaceae","Tabernaemontana rupicola","Tabernaemontana","Tabernaemontana rupicola","82322-1","82322-1","Species","Apocynaceae","Accepted",200916,200916
+340,"Tabernaemontana salzmannii A. DC.","Apocynaceae","Tabernaemontana salzmannii","Tabernaemontana","Tabernaemontana salzmannii","82325-1","82325-1","Species","Apocynaceae","Accepted",200923,200923
+341,"Tabernaemontana amygdalifolia Jacq.","Apocynaceae","Tabernaemontana amygdalifolia","Tabernaemontana","Tabernaemontana amygdalifolia","81996-1","81996-1","Species","Apocynaceae","Accepted",200562,200562
+342,"Tabernaemontana alba Mill.","Apocynaceae","Tabernaemontana alba","Tabernaemontana","Tabernaemontana alba","81985-1","81985-1","Species","Apocynaceae","Accepted",200552,200552
+343,"Tabernaemontana undulata Vahl","Apocynaceae","Tabernaemontana undulata","Tabernaemontana","Tabernaemontana undulata","82371-1","82371-1","Species","Apocynaceae","Accepted",200973,200973
+344,"Tabernanthe iboga Baill.","Apocynaceae","Tabernanthe iboga","Tabernanthe","Tabernanthe iboga","56090-1","56090-1","Species","Apocynaceae","Accepted",200996,200996
+345,"Telosma pallida (Roxb.) Craib","Apocynaceae","Telosma pallida","Telosma","Telosma pallida","102161-1","102161-1","Species","Apocynaceae","Accepted",512754,512754
+346,"Temnadenia odorifera (vell.) J. F. Morales","Apocynaceae","Temnadenia odorifera","Temnadenia","Temnadenia odorifera","1007869-1","1007869-1","Species","Apocynaceae","Accepted",202264,202264
+347,"Temnadenia violacea (Vell.) Miers","Apocynaceae","Temnadenia violacea","Temnadenia","Temnadenia violacea","1039841-2","1039841-2","Species","Apocynaceae","Accepted",202278,202278
+348,"Trachelospermum jasminoides (Lindl.) Lem.","Apocynaceae","Trachelospermum jasminoides","Trachelospermum","Trachelospermum jasminoides","82553-1","82553-1","Species","Apocynaceae","Accepted",207106,207106
+349,"Urceola polymorpha (Pierre ex Spire) D. J. Middleton & Livsh.","Apocynaceae","Urceola polymorpha","Urceola","Urceola polymorpha","77186121-1","77186121-1","Species","Apocynaceae","Accepted",531856,531856
+350,"Vallaris solanacea (Roth) Kuntze","Apocynaceae","Vallaris solanacea","Vallaris","Vallaris solanacea","82660-1","82660-1","Species","Apocynaceae","Accepted",211399,211399
+351,"Vallaris glabra (L.) Kuntze","Apocynaceae","Vallaris glabra","Vallaris","Vallaris glabra","82646-1","82646-1","Species","Apocynaceae","Accepted",211387,211387
+352,"Vallesia glabra (Cav.) Link","Apocynaceae","Vallesia glabra","Vallesia","Vallesia glabra","82668-1","82668-1","Species","Apocynaceae","Accepted",211409,211409
+353,"Vinca erecta Regel & Schmalh.","Apocynaceae","Vinca erecta","Vinca","Vinca erecta","82686-1","82686-1","Species","Apocynaceae","Accepted",213152,213152
+354,"Vinca major L.","Apocynaceae","Vinca major","Vinca","Vinca major","82697-1","82697-1","Species","Apocynaceae","Accepted",213165,213165
+355,"Vinca minor L.","Apocynaceae","Vinca minor","Vinca","Vinca minor","82701-1","82701-1","Species","Apocynaceae","Accepted",213172,213172
+356,"Vinca herbacea Waldst. & Kit.","Apocynaceae","Vinca herbacea","Vinca","Vinca herbacea","82691-1","82691-1","Species","Apocynaceae","Accepted",213157,213157
+357,"Vincetoxicum pumilum Decne.","Apocynaceae","Vincetoxicum pumilum","Vincetoxicum","Vincetoxicum pumilum","102946-1","102946-1","Species","Apocynaceae","Accepted",513760,513760
+358,"Vincetoxicum auriculatum (Royle ex Wight) Kuntze","Apocynaceae","Vincetoxicum auriculatum","Vincetoxicum","Vincetoxicum auriculatum","102680-1","102680-1","Species","Apocynaceae","Accepted",513427,513427
+359,"Vincetoxicum mongolicum Maxim.","Apocynaceae","Vincetoxicum mongolicum","Vincetoxicum","Vincetoxicum mongolicum","102881-1","102881-1","Species","Apocynaceae","Accepted",513678,513678
+360,"Vincetoxicum tanakae (Maxim.) Franch. & Sav.","Apocynaceae","Vincetoxicum tanakae","Vincetoxicum","Vincetoxicum tanakae","103006-1","103006-1","Species","Apocynaceae","Accepted",513836,513836
+361,"Vincetoxicum nigrum (L.) Moench","Apocynaceae","Vincetoxicum nigrum","Vincetoxicum","Vincetoxicum nigrum","1088174-2","1088174-2","Species","Apocynaceae","Accepted",513699,513699
+362,"Vincetoxicum rossicum (Kleopow) Barbar.","Apocynaceae","Vincetoxicum rossicum","Vincetoxicum","Vincetoxicum rossicum","60456000-2","60456000-2","Species","Apocynaceae","Accepted",513778,513778
+363,"Vincetoxicum hirundinaria Medik.","Apocynaceae","Vincetoxicum hirundinaria","Vincetoxicum","Vincetoxicum hirundinaria","102810-1","102810-1","Species","Apocynaceae","Accepted",513577,513577
+364,"Vincetoxicum forrestii (Schltr.) C. Y. Wu & D. Z. Li","Apocynaceae","Vincetoxicum forrestii","Vincetoxicum","Vincetoxicum forrestii","946558-1","946558-1","Species","Apocynaceae","Accepted",513537,513537
+365,"Vincetoxicum mukdenense Kitag.","Apocynaceae","Vincetoxicum mukdenense","Vincetoxicum","Vincetoxicum mukdenense","102886-1","102886-1","Species","Apocynaceae","Accepted",513685,513685
+366,"Vincetoxicum dalzellii (Hook. f.) Kuntze","Apocynaceae","Vincetoxicum dalzellii","Vincetoxicum","Vincetoxicum dalzellii","102744-1","102744-1","Species","Apocynaceae","Accepted",513498,513498
+367,"Vincetoxicum spirale (Forssk.) D. Z. Li","Apocynaceae","Vincetoxicum spirale","Vincetoxicum","Vincetoxicum spirale","946571-1","946571-1","Species","Apocynaceae","Accepted",513806,513806
+368,"Vincetoxicum atratum (Bung) C. Morren","Apocynaceae","Vincetoxicum atratum","Vincetoxicum","Vincetoxicum atratum","60457664-2","60457664-2","Species","Apocynaceae","Accepted",513423,513423
+369,"Vincetoxicum stocksii Ali & Khatoon","Apocynaceae","Vincetoxicum stocksii","Vincetoxicum","Vincetoxicum stocksii","901235-1","901235-1","Species","Apocynaceae","Accepted",513818,513818
+404,"Simira alba (Mart.) Delprete, Margalho & Groppo","Rubiaceae","Simira alba","Simira","Simira alba","77209436-1","77209436-1","Species","Rubiaceae","Accepted",538805,538805
+405,"Simira williamsii (Standl.) Steyerm.","Rubiaceae","Simira williamsii","Simira","Simira williamsii","236598-2","236598-2","Species","Rubiaceae","Accepted",192349,192349
+406,"Simira maxonii (Standl.) Steyerm.","Rubiaceae","Simira maxonii","Simira","Simira maxonii","236581-2","236581-2","Species","Rubiaceae","Accepted",192327,192327

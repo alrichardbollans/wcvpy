@@ -1,7 +1,7 @@
-"Symbol","Synonym Symbol","Name","Common Name","acc_rank","acc_name","acc_id","acc_species","acc_species_id","acc_parent","tax_stat","acc_fam"
-,,"PALICOUREA GRACILENTA",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","77161069-1","Palicourea","Accepted","Rubiaceae"
-,,"ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV",,"Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","765120-1","Rothmannia","Accepted","Rubiaceae"
-,,"ROTHMANIA ENGLERIANA (K. Schum) Keav",,"Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","765120-1","Rothmannia","Accepted","Rubiaceae"
-,,"VACCINIUM VITIS-IDAEA",,"Species","Vaccinium vitis-idaea","293975-2","Vaccinium vitis-idaea","293975-2","Vaccinium","Accepted","Ericaceae"
-,,"ROTHMANNIA ENGLERIANA (K. SCHUM.) KEAV",,"Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","765120-1","Rothmannia","Accepted","Rubiaceae"
-,,"Psychotria gracilenta",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","77161069-1","Palicourea","Synonym","Rubiaceae"
+"Symbol","Synonym Symbol","Name","Common Name","acc_rank","acc_name","acc_id","acc_species","acc_species_id","acc_parent","tax_stat","acc_fam","acc_wcvp_id","acc_wcvp_species_id"
+,,"PALICOUREA GRACILENTA",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","77161069-1","Palicourea","Accepted","Rubiaceae",526280,526280
+,,"ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV",,"Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","765120-1","Rothmannia","Accepted","Rubiaceae",180032,180032
+,,"ROTHMANIA ENGLERIANA (K. Schum) Keav",,"Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","765120-1","Rothmannia","Accepted","Rubiaceae",180032,180032
+,,"VACCINIUM VITIS-IDAEA",,"Species","Vaccinium vitis-idaea","293975-2","Vaccinium vitis-idaea","293975-2","Vaccinium","Accepted","Ericaceae",2457314,2457314
+,,"ROTHMANNIA ENGLERIANA (K. SCHUM.) KEAV",,"Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","765120-1","Rothmannia","Accepted","Rubiaceae",180032,180032
+,,"Psychotria gracilenta",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","77161069-1","Palicourea","Synonym","Rubiaceae",526280,526280

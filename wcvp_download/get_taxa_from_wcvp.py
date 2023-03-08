@@ -23,7 +23,7 @@ wcvp_columns = {'family': 'family',
                 'authors': 'taxon_authors',
                 'paranthet_author': 'parenthetical_author',
                 'primary_author': 'primary_author',
-                'plant_name_id': 'plant_name_id',
+                'wcvp_id': 'plant_name_id',
                 'parent_plant_name_id': 'parent_plant_name_id',
                 'acc_plant_name_id': 'accepted_plant_name_id',
                 'lifeform': 'lifeform_description'
@@ -31,11 +31,11 @@ wcvp_columns = {'family': 'family',
 
 wcvp_accepted_columns = {'family': 'accepted_family',
                          'ipni_id': 'accepted_ipni_id',
-                         'plant_name_id': 'accepted_plant_name_id',
+                         'wcvp_id': 'accepted_plant_name_id',
                          'name': 'accepted_name',
                          'species': 'accepted_species',
                          'species_ipni_id': 'accepted_species_ipni_id',
-                         'species_plant_name_id': 'accepted_species_id',
+                         'species_wcvp_id': 'accepted_species_id',
                          'rank': 'accepted_rank',
                          'parent_name': 'accepted_parent',
                          'parent_rank': 'accepted_parent_rank'
@@ -64,7 +64,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
     all_accepted = all_accepted.assign(accepted_parent_id=all_accepted[wcvp_columns['parent_plant_name_id']])
     all_accepted = all_accepted.assign(accepted_parent_rank=all_accepted['parent_rank'])
 
-    all_accepted = all_accepted.rename(columns={wcvp_columns['plant_name_id']: 'plant_name_id_acc'})
+    all_accepted = all_accepted.rename(columns={wcvp_columns['wcvp_id']: 'plant_name_id_acc'})
     all_accepted = all_accepted[
         ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_family', 'accepted_rank',
          'accepted_parent','accepted_parent_id', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
@@ -77,7 +77,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
 
 def get_parent_names_and_ipni_ids(taxa_df: pd.DataFrame, all_data: pd.DataFrame) -> pd.DataFrame:
     parent_data = all_data.drop(columns=['parent_plant_name_id'])
-    parent_data = parent_data.rename(columns={wcvp_columns['plant_name_id']: 'parent_plant_name_id',
+    parent_data = parent_data.rename(columns={wcvp_columns['wcvp_id']: 'parent_plant_name_id',
                                               wcvp_columns['name']: wcvp_columns['parent_name'],
                                               wcvp_columns['ipni_id']: wcvp_columns['parent_ipni_id'],
                                               wcvp_columns['rank']: 'parent_rank'})
@@ -106,7 +106,7 @@ def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
 
     #WCVP ids
     taxa_df['accepted_species_id'] = np.where(taxa_df['accepted_rank'] == 'Species',
-                                                   taxa_df[wcvp_accepted_columns['plant_name_id']],
+                                                   taxa_df[wcvp_accepted_columns['wcvp_id']],
                                                    np.nan)
     taxa_df['accepted_species_id'] = np.where(taxa_df['accepted_parent_rank'] == 'Species',
                                                    taxa_df['accepted_parent_id'],
@@ -167,7 +167,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     zf = get_up_to_date_wcvp_zip(force_use_existing=force_use_existing)
     csv_file = zf.open('wcvp_names.csv')
     all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
-                                dtype={'homotypic_synonym': object, wcvp_columns['plant_name_id']: object,
+                                dtype={'homotypic_synonym': object, wcvp_columns['wcvp_id']: object,
                                        wcvp_columns['acc_plant_name_id']: object,
                                        'parent_plant_name_id': object,
                                        'basionym_plant_name_id': object})

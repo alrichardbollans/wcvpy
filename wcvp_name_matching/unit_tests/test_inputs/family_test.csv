@@ -1,22 +1,22 @@
-"Family","Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_parent_id","acc_species_id","acc_fam","tax_stat"
-"Gentianaceae","Anthocleista djalonensis A.Chev.","Species","Anthocleista djalonensis","545605-1","Anthocleista djalonensis","Anthocleista","25028-1","545605-1","Gentianaceae","Accepted"
-"Gentianaceae","Anthocleista djalonensis","Species","Anthocleista djalonensis","545605-1","Anthocleista djalonensis","Anthocleista","25028-1","545605-1","Gentianaceae","Accepted"
-"Loganiaceae","Anthocleista brieyi","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym"
-"Loganiaceae","Anthocleista brieyi De Wild.","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym"
-"Rubiaceae","Anthocleista brieyi","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym"
-"Rubiaceae","Anthocleista brieyi De Wild.","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym"
-,"Anthocleista brieyi","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym"
-,"Anthocleista brieyi De Wild.","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym"
-,"Basella alba","Species","Basella alba","164286-1","Basella alba","Basella","30014453-2","164286-1","Basellaceae","Accepted"
-"Arecaceae","Atitara","Genus","Desmoncus","31206-1",,,,,"Arecaceae","Illegitimate"
-"Rutaceae","Atitara","Genus","Euodia","326346-2",,,,,"Rutaceae","Synonym"
-"Asteraceae","Welwitschiella","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted"
-"Menispermaceae","Welwitschiella","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate"
-"arecaceae","Atitara","Genus","Desmoncus","31206-1",,,,,"Arecaceae","Illegitimate"
-"rutaceae","Atitara","Genus","Euodia","326346-2",,,,,"Rutaceae","Synonym"
-"asteraceae","Welwitschiella","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted"
-"menispermaceae","Welwitschiella","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate"
-"asteraceae","Welwitschiella O.Hoffm.","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted"
-"menispermaceae","Welwitschiella Engl.","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate"
-"asteraceae","Welwitschiella XXX.","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted"
-"menispermaceae","Welwitschiella XXX.","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate"
+"Family","Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_parent_id","acc_species_id","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id"
+"Gentianaceae","Anthocleista djalonensis A.Chev.","Species","Anthocleista djalonensis","545605-1","Anthocleista djalonensis","Anthocleista","25028-1","545605-1","Gentianaceae","Accepted","2641618","2641618"
+"Gentianaceae","Anthocleista djalonensis","Species","Anthocleista djalonensis","545605-1","Anthocleista djalonensis","Anthocleista","25028-1","545605-1","Gentianaceae","Accepted","2641618","2641618"
+"Loganiaceae","Anthocleista brieyi","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym","24347","24347"
+"Loganiaceae","Anthocleista brieyi De Wild.","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym","24347","24347"
+"Rubiaceae","Anthocleista brieyi","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym","24347","24347"
+"Rubiaceae","Anthocleista brieyi De Wild.","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym","24347","24347"
+,"Anthocleista brieyi","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym","24347","24347"
+,"Anthocleista brieyi De Wild.","Species","Brenania brieyi","745133-1","Brenania brieyi","Brenania","34250-1","745133-1","Rubiaceae","Synonym","24347","24347"
+,"Basella alba","Species","Basella alba","164286-1","Basella alba","Basella","30014453-2","164286-1","Basellaceae","Accepted","360840","360840"
+"Arecaceae","Atitara","Genus","Desmoncus","31206-1",,,,,"Arecaceae","Illegitimate","60346",
+"Rutaceae","Atitara","Genus","Euodia","326346-2",,,,,"Rutaceae","Synonym","2805635",
+"Asteraceae","Welwitschiella","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted","3134703",
+"Menispermaceae","Welwitschiella","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate","2516886",
+"arecaceae","Atitara","Genus","Desmoncus","31206-1",,,,,"Arecaceae","Illegitimate","60346",
+"rutaceae","Atitara","Genus","Euodia","326346-2",,,,,"Rutaceae","Synonym","2805635",
+"asteraceae","Welwitschiella","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted","3134703",
+"menispermaceae","Welwitschiella","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate","2516886",
+"asteraceae","Welwitschiella O.Hoffm.","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted","3134703",
+"menispermaceae","Welwitschiella Engl.","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate","2516886",
+"asteraceae","Welwitschiella XXX.","Genus","Welwitschiella","11521-1",,,,,"Asteraceae","Accepted","3134703",
+"menispermaceae","Welwitschiella XXX.","Genus","Triclisia","27033-1",,,,,"Menispermaceae","Illegitimate","2516886",

@@ -12,11 +12,11 @@ _output_path = 'test_outputs'
 class MyTestCase(unittest.TestCase):
 
     def test_check_all_have_unique_plant_name_ids(self):
-        without_id = wcvp_data[wcvp_data[wcvp_columns['plant_name_id']].isna()]
+        without_id = wcvp_data[wcvp_data[wcvp_columns['wcvp_id']].isna()]
 
         self.assertEqual(len(without_id.index), 0)
 
-        duplicates = wcvp_data[wcvp_data.duplicated(subset=[wcvp_columns['plant_name_id']], keep=False)]
+        duplicates = wcvp_data[wcvp_data.duplicated(subset=[wcvp_columns['wcvp_id']], keep=False)]
         duplicates.to_csv('dups.csv')
         self.assertEqual(len(duplicates.index), 0)
 
@@ -59,7 +59,7 @@ class MyTestCase(unittest.TestCase):
                                        check_names=False)
 
         pd.testing.assert_series_equal(acc_species['accepted_species_id'],
-                                       acc_species[wcvp_accepted_columns['plant_name_id']],
+                                       acc_species[wcvp_accepted_columns['wcvp_id']],
                                        check_names=False)
 
         # Currently breaks as accepted parents for some are hybrids, where genus is not given as hybrid
@@ -85,7 +85,7 @@ class MyTestCase(unittest.TestCase):
                                        check_names=False)
 
         pd.testing.assert_series_equal(species_accepted_rank['accepted_species_id'],
-                                       species_accepted_rank[wcvp_accepted_columns['plant_name_id']],
+                                       species_accepted_rank[wcvp_accepted_columns['wcvp_id']],
                                        check_names=False)
 
     def test_subspecies_cases(self):

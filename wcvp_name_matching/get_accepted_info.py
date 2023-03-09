@@ -119,10 +119,12 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                         record[submission_id_col] = submitted_id
                         record['matched_name'] = taxa
                         match_df = pd.concat([match_df, record])
-        match_df = match_df.dropna(subset=[wcvp_accepted_columns['name']])
-        # Remove genera matches where genus appears in different families
+
+
         if len(match_df.index) > 0:
+            match_df = match_df.dropna(subset=[wcvp_accepted_columns['name']])
             if family_column is None:
+                # Remove genera matches where genus appears in different families
                 unique_family_genera_pairs = all_taxa[
                     [wcvp_columns['family'], wcvp_columns['genus']]].drop_duplicates(keep='first')
                 genera_unique_to_family = unique_family_genera_pairs[wcvp_columns['genus']].unique()
@@ -131,43 +133,45 @@ def _autoresolve_missing_matches(unmatched_submissions_df: pd.DataFrame, matchin
                     (~(match_df[wcvp_accepted_columns['rank']] == 'Genus')) | (
                         match_df[wcvp_columns['name']].isin(genera_unique_to_family))]
 
-        match_df['matched_by'] = 'autoresolution'
-        # Appropriately label unique matches
-        match_df['matched_by'] = np.where(
-            match_df.duplicated(keep=False, subset=[submission_id_col]),
-            match_df['matched_by'],
-            match_df['matched_by'] + '_unique')
+            match_df['matched_by'] = 'autoresolution'
+            # Appropriately label unique matches
+            match_df['matched_by'] = np.where(
+                match_df.duplicated(keep=False, subset=[submission_id_col]),
+                match_df['matched_by'],
+                match_df['matched_by'] + '_unique')
 
-        # Remove duplicate matches with worse status
-        for r in match_df["taxon_status"].unique():
-            if r not in status_priority:
-                raise ValueError(f'Status priority list does not contain {r} and needs updating.')
-        match_df[wcvp_columns['status']] = pd.Categorical(match_df[wcvp_columns['status']],
-                                                          status_priority)
-        match_df.sort_values(wcvp_columns['status'], inplace=True)
-        # Drop duplicated submissions of the same rank with worse taxonomic status
-        match_df.drop_duplicates(subset=[submission_id_col, wcvp_accepted_columns['rank']], inplace=True,
-                                 keep='first')
-        match_df[wcvp_columns['status']] = match_df[wcvp_columns['status']].astype(object)
-        # Remove duplicate matches with worse specificity
-        for r in match_df[wcvp_accepted_columns['rank']].unique():
-            if r not in rank_priority:
-                print(match_df[match_df[wcvp_accepted_columns['rank']] == r][wcvp_columns['name']].values)
-                raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
-        match_df[wcvp_accepted_columns['rank']] = pd.Categorical(match_df[wcvp_accepted_columns['rank']],
-                                                                 rank_priority)
-        match_df.sort_values(wcvp_accepted_columns['rank'], inplace=True)
+            # Remove duplicate matches with worse status
+            for r in match_df["taxon_status"].unique():
+                if r not in status_priority:
+                    raise ValueError(f'Status priority list does not contain {r} and needs updating.')
+            match_df[wcvp_columns['status']] = pd.Categorical(match_df[wcvp_columns['status']],
+                                                              status_priority)
+            match_df.sort_values(wcvp_columns['status'], inplace=True)
+            # Drop duplicated submissions of the same rank with worse taxonomic status
+            match_df.drop_duplicates(subset=[submission_id_col, wcvp_accepted_columns['rank']], inplace=True,
+                                     keep='first')
+            match_df[wcvp_columns['status']] = match_df[wcvp_columns['status']].astype(object)
+            # Remove duplicate matches with worse specificity
+            for r in match_df[wcvp_accepted_columns['rank']].unique():
+                if r not in rank_priority:
+                    print(match_df[match_df[wcvp_accepted_columns['rank']] == r][wcvp_columns['name']].values)
+                    raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
+            match_df[wcvp_accepted_columns['rank']] = pd.Categorical(match_df[wcvp_accepted_columns['rank']],
+                                                                     rank_priority)
+            match_df.sort_values(wcvp_accepted_columns['rank'], inplace=True)
 
-        # Get the most precise match by dropping duplicate submissions
-        match_df.drop_duplicates(subset=[submission_id_col], keep='first', inplace=True)
-        match_df[wcvp_accepted_columns['rank']] = match_df[wcvp_accepted_columns['rank']].astype(object)
-        # Merge with original data
-        matches = pd.merge(unmatched_submissions_df[[submission_id_col]], match_df,
-                           on=submission_id_col,
-                           sort=False)
-        matches = matches.dropna(subset=[wcvp_accepted_columns['name']])
+            # Get the most precise match by dropping duplicate submissions
+            match_df.drop_duplicates(subset=[submission_id_col], keep='first', inplace=True)
+            match_df[wcvp_accepted_columns['rank']] = match_df[wcvp_accepted_columns['rank']].astype(object)
+            # Merge with original data
+            matches = pd.merge(unmatched_submissions_df[[submission_id_col]], match_df,
+                               on=submission_id_col,
+                               sort=False)
+            matches = matches.dropna(subset=[wcvp_accepted_columns['name']])
 
-        return matches
+            return matches
+        else:
+            return match_df
     else:
         return unmatched_submissions_df
 

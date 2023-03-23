@@ -12,7 +12,7 @@ acc_info_col_names = [wcvp_accepted_columns['ipni_id'],
                       wcvp_accepted_columns['species'],
                       wcvp_accepted_columns['species_ipni_id'],
                       wcvp_accepted_columns['parent_name']]
-output_record_col_names = acc_info_col_names + [wcvp_columns['status']]
+output_record_col_names = acc_info_col_names + [wcvp_columns['wcvp_id'], wcvp_columns['status']]
 
 submitted_name_col_id = 'submitted_name_col_id'
 recapitalised_name_col = 'recap_name_col'
@@ -102,7 +102,7 @@ def _capitalize_first_letter_of_taxon(g: str) -> str:
         words = l.split()
         capitalised_words = [w.capitalize() if w.endswith('.') and w not in infraspecific_chars else w for w
                              in words]
-        if len(capitalised_words)>0:
+        if len(capitalised_words) > 0:
             for i in range(len(capitalised_words)):
                 c = capitalised_words[i]
                 if any(c.startswith(p) for p in string.punctuation):
@@ -115,7 +115,7 @@ def _capitalize_first_letter_of_taxon(g: str) -> str:
             capitalised_words[0] = capitalised_words[0].capitalize()
             return append_to_beginning + ' '.join(capitalised_words)
         else:
-            return append_to_beginning+g
+            return append_to_beginning + g
     except AttributeError:
         return g
 

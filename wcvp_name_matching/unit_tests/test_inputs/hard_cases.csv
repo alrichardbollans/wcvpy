@@ -1,17 +1,17 @@
-"Symbol","Synonym Symbol","Name","Common Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_species_id","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id"
-"AMTA2",,"Amsonia tabernaemontana Walter","eastern bluestar","Species","Amsonia tabernaemontana","76931-1","Amsonia tabernaemontana","Amsonia","76931-1","Apocynaceae","Accepted","8474","8474"
-"AMTAG",,"Amsonia tabernaemontana Walter var. gattingeri Woodson","eastern bluestar","Variety","Amsonia tabernaemontana var. salicifolia","12102-2","Amsonia tabernaemontana","Amsonia tabernaemontana","76931-1","Apocynaceae","Synonym","8476","8474"
-"AMTAS",,"Amsonia tabernaemontana Walter var. salicifolia (Pursh) Woodson","eastern bluestar","Variety","Amsonia tabernaemontana var. salicifolia","12102-2","Amsonia tabernaemontana","Amsonia tabernaemontana","76931-1","Apocynaceae","Accepted","8476","8474"
-,,"Amsonia tabernaemontana Walter","eastern bluestar","Species","Amsonia tabernaemontana","76931-1","Amsonia tabernaemontana","Amsonia","76931-1","Apocynaceae","Accepted","8474","8474"
-,,"Galium scioanum var. scioanum",,"Species","Galium scioanum","50884105-1","Galium scioanum","Galium","50884105-1","Rubiaceae","Accepted","87463","87463"
-,,"Galium × schmidelyi",,"Species","Galium × schmidelyi","750605-1","Galium × schmidelyi","Galium","750605-1","Rubiaceae","Accepted","87458","87458"
-,,"Oldenlandia",,"Genus","Oldenlandia","30014644-2",,,,"Rubiaceae","Accepted","138188",
-,,"Palicourea gracilenta (Müll. Arg.) Delprete & J. H. Kirkbr.",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","Palicourea","77161069-1","Rubiaceae","Accepted","526280","526280"
-,,"Palicourea gracilenta (Müll. Arg.) Delprete & J. H. Kirkbr.",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","Palicourea","77161069-1","Rubiaceae","Accepted","526280","526280"
-,,"Urtica angustifolia",,"Variety","Urtica dioica var. holosericea","77253028-1","Urtica dioica","Urtica dioica","260630-2","Urticaceae","Synonym","2936338","2448560"
-,,,,,,,,,,,,,
-,,"Asperula nitida",,"Species","Cynanchica nitida","77215364-1","Cynanchica nitida","Cynanchica","77215364-1","Rubiaceae","Synonym","546748","546748"
-,,"Musa cavendishii",,"Subspecies","Musa acuminata subsp. acuminata","77168778-1","Musa acuminata","Musa acuminata","797527-1","Musaceae","Synonym","254740","254739"
-,,"Strychnos axillaris Colebr.",,"Species","Strychnos axillaris","547050-1","Strychnos axillaris","Strychnos","547050-1","Loganiaceae","Accepted","2597995","2597995"
-,,"Strychnos axillaris",,"Species","Strychnos axillaris","547050-1","Strychnos axillaris","Strychnos","547050-1","Loganiaceae","Accepted","2597995","2597995"
-,"Nan case","Salvia ×superba Stapf  ",,"Species","Salvia × digenea","456105-1","Salvia × digenea","Salvia","456105-1","Lamiaceae","Synonym","182515","182515"
+"Symbol","Synonym Symbol","Name","Common Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_species_id","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id","wcvp_id"
+"AMTA2",,"Amsonia tabernaemontana Walter","eastern bluestar","Species","Amsonia tabernaemontana","76931-1","Amsonia tabernaemontana","Amsonia","76931-1","Apocynaceae","Accepted","8474","8474",8474
+"AMTAG",,"Amsonia tabernaemontana Walter var. gattingeri Woodson","eastern bluestar","Variety","Amsonia tabernaemontana var. salicifolia","12102-2","Amsonia tabernaemontana","Amsonia tabernaemontana","76931-1","Apocynaceae","Synonym","8476","8474",8475
+"AMTAS",,"Amsonia tabernaemontana Walter var. salicifolia (Pursh) Woodson","eastern bluestar","Variety","Amsonia tabernaemontana var. salicifolia","12102-2","Amsonia tabernaemontana","Amsonia tabernaemontana","76931-1","Apocynaceae","Accepted","8476","8474",8476
+,,"Amsonia tabernaemontana Walter","eastern bluestar","Species","Amsonia tabernaemontana","76931-1","Amsonia tabernaemontana","Amsonia","76931-1","Apocynaceae","Accepted","8474","8474",8474
+,,"Galium scioanum var. scioanum",,"Species","Galium scioanum","50884105-1","Galium scioanum","Galium","50884105-1","Rubiaceae","Accepted","87463","87463",87463
+,,"Galium × schmidelyi",,"Species","Galium × schmidelyi","750605-1","Galium × schmidelyi","Galium","750605-1","Rubiaceae","Accepted","87458","87458",87458
+,,"Oldenlandia",,"Genus","Oldenlandia","30014644-2",,,,"Rubiaceae","Accepted","138188",,138188
+,,"Palicourea gracilenta (Müll. Arg.) Delprete & J. H. Kirkbr.",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","Palicourea","77161069-1","Rubiaceae","Accepted","526280","526280",526280
+,,"Palicourea gracilenta (Müll. Arg.) Delprete & J. H. Kirkbr.",,"Species","Palicourea gracilenta","77161069-1","Palicourea gracilenta","Palicourea","77161069-1","Rubiaceae","Accepted","526280","526280",526280
+,,"Urtica angustifolia",,"Variety","Urtica dioica var. holosericea","77253028-1","Urtica dioica","Urtica dioica","260630-2","Urticaceae","Synonym","2936338","2448560",2448394
+,,,,,,,,,,,,,,
+,,"Asperula nitida",,"Species","Cynanchica nitida","77215364-1","Cynanchica nitida","Cynanchica","77215364-1","Rubiaceae","Synonym","546748","546748",16993
+,,"Musa cavendishii",,"Subspecies","Musa acuminata subsp. acuminata","77168778-1","Musa acuminata","Musa acuminata","797527-1","Musaceae","Synonym","254740","254739",254785
+,,"Strychnos axillaris Colebr.",,"Species","Strychnos axillaris","547050-1","Strychnos axillaris","Strychnos","547050-1","Loganiaceae","Accepted","2597995","2597995",2597995
+,,"Strychnos axillaris",,"Species","Strychnos axillaris","547050-1","Strychnos axillaris","Strychnos","547050-1","Loganiaceae","Accepted","2597995","2597995",2597995
+,"Nan case","Salvia ×superba Stapf  ",,"Species","Salvia × digenea","456105-1","Salvia × digenea","Salvia","456105-1","Lamiaceae","Synonym","182515","182515",183958

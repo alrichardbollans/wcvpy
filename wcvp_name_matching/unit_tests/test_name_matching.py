@@ -30,6 +30,7 @@ test_columns = {'acc_id': wcvp_accepted_columns['ipni_id'],
                 'acc_parent': 'accepted_parent',
                 'acc_species': 'accepted_species',
                 'acc_species_id': 'accepted_species_ipni_id',
+                'wcvp_id': 'plant_name_id',
                 # 'acc_wcvp_species_id': wcvp_accepted_columns['species_wcvp_id'],
                 'tax_stat': 'taxon_status'}
 
@@ -107,7 +108,7 @@ class MyTestCase(unittest.TestCase):
         start = time.time()
 
         test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name),
-                              dtype={'acc_wcvp_id': object, 'acc_wcvp_species_id': object})
+                              dtype={'acc_wcvp_id': object,'wcvp_id': object, 'acc_wcvp_species_id': object})
 
         response = get_accepted_info_from_names_in_column(test_df, name_col, **kwargs)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
@@ -154,7 +155,7 @@ class MyTestCase(unittest.TestCase):
         start = time.time()
 
         test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name),
-                              dtype={'acc_wcvp_id': object, 'acc_wcvp_species_id': object})
+                              dtype={'acc_wcvp_id': object,'wcvp_id': object, 'acc_wcvp_species_id': object})
 
         response = get_accepted_wcvp_info_from_ipni_ids_in_column(test_df, id_col, taxa_df)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))

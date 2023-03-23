@@ -1,3 +1,3 @@
-"Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_species_id","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id"
-"Catharanthus rosesus (L.) G. Don","Species","Catharanthus roseus","77880-1","Catharanthus roseus","Catharanthus","77880-1","Apocynaceae","Accepted","35719","35719"
-"ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV","Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","Rothmannia","765120-1","Rubiaceae","Accepted","180032","180032"
+"Name","acc_rank","acc_name","acc_id","acc_species","acc_parent","acc_species_id","acc_fam","tax_stat","acc_wcvp_id","acc_wcvp_species_id","wcvp_id"
+"Catharanthus rosesus (L.) G. Don","Species","Catharanthus roseus","77880-1","Catharanthus roseus","Catharanthus","77880-1","Apocynaceae","Accepted","35719","35719",35719
+"ROTHMANIA ENGLERIANA (K. SCHUM.) KEAV","Species","Rothmannia engleriana","765120-1","Rothmannia engleriana","Rothmannia","765120-1","Rubiaceae","Accepted","180032","180032",180032

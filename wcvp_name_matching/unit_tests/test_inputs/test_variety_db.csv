@@ -1,2 +1,2 @@
-"Symbol","Synonym Symbol","Name","Common Name","acc_fam","acc_rank","acc_name","acc_id","acc_parent","acc_parent_id","acc_species","acc_species_id","tax_stat","acc_wcvp_id","acc_wcvp_species_id"
-"AMTA2",,"Diodia teres var. hirsutior","eastern bluestar","Rubiaceae","Species","Hexasepalum teres","77148179-1","Hexasepalum","77148179-1","Hexasepalum teres","77148179-1","Synonym",496945,496945
+"Symbol","Synonym Symbol","Name","Common Name","acc_fam","acc_rank","acc_name","acc_id","acc_parent","acc_parent_id","acc_species","acc_species_id","tax_stat","acc_wcvp_id","acc_wcvp_species_id","wcvp_id"
+"AMTA2",,"Diodia teres var. hirsutior","eastern bluestar","Rubiaceae","Species","Hexasepalum teres","77148179-1","Hexasepalum","77148179-1","Hexasepalum teres","77148179-1","Synonym",496945,496945,62080

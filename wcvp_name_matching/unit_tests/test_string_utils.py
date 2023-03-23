@@ -37,7 +37,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(correct_dict[k], get_species_from_full_name(k))
 
     def test_capitalising(self):
-        test_dict = {'Abies .abies. (L. ) Druce': 'Abies .Abies. (L. ) druce',
+        test_dict = {'': '', ' ': ' ', 'Abies .abies. (L. ) Druce': 'Abies .Abies. (L. ) druce',
                      'Abies abies (L. ) Druce': 'Abies abies (L. ) druce',
                      'X': 'X', '3': '3', np.nan: np.nan,
                      'Xa': 'Xa', 'Xan and': 'Xan and',

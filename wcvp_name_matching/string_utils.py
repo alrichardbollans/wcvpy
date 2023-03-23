@@ -89,6 +89,7 @@ def _capitalize_first_letter_of_taxon(g: str) -> str:
     :param g:
     :return:
     '''
+
     try:
 
         append_to_beginning = ''
@@ -101,17 +102,20 @@ def _capitalize_first_letter_of_taxon(g: str) -> str:
         words = l.split()
         capitalised_words = [w.capitalize() if w.endswith('.') and w not in infraspecific_chars else w for w
                              in words]
-        for i in range(len(capitalised_words)):
-            c = capitalised_words[i]
-            if any(c.startswith(p) for p in string.punctuation):
-                try:
-                    c_list = list(c)
-                    c_list[1] = c_list[1].capitalize()
-                    capitalised_words[i] = ''.join(c_list)
-                except IndexError:
-                    pass
-        capitalised_words[0] = capitalised_words[0].capitalize()
-        return append_to_beginning + ' '.join(capitalised_words)
+        if len(capitalised_words)>0:
+            for i in range(len(capitalised_words)):
+                c = capitalised_words[i]
+                if any(c.startswith(p) for p in string.punctuation):
+                    try:
+                        c_list = list(c)
+                        c_list[1] = c_list[1].capitalize()
+                        capitalised_words[i] = ''.join(c_list)
+                    except IndexError:
+                        pass
+            capitalised_words[0] = capitalised_words[0].capitalize()
+            return append_to_beginning + ' '.join(capitalised_words)
+        else:
+            return append_to_beginning+g
     except AttributeError:
         return g
 

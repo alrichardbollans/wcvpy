@@ -344,6 +344,11 @@ class MyTestCase(unittest.TestCase):
                                              'Name',
                                              'acc_name', family_column='Family')
 
+    def test_input_data_examples(self):
+        self._test_get_acc_info_names_on_csv('input_data_examples.csv',
+                                             'Name',
+                                             'acc_name')
+
     def test_spacelike(self):
         self._test_get_acc_info_names_on_csv('spacelike_cases.csv',
                                              'Name',

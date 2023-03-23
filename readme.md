@@ -40,7 +40,18 @@ data_with_accepted_information = get_accepted_info_from_names_in_column(your_dat
                                                                         match_level=match_level)
 ```
 
-## Steps
+## Summary of Matching Steps
+- Clean and standardise input names. This step improves the likelihood of finding matches, without introducing
+  extra uncertainty in the match, e.g. by ensuring input names contain no double spaces.
+- Find potential matches and resolve in the following order. In each of the next steps if a given name results
+  in multiple potential responses, resolve these by finding the 'best' match.
+    - **Direct**: Attempt to match given names directly to WCVP using exact names (checks taxon names with
+      and without any author information).
+    - **KNMS**: Using the Kew Names Matching Service API, find potential matches.
+    - **Autoresolution**: Search the WCVP for taxa where the taxon name is contained in the given name (e.g. '
+      Palicourea gracilenta' is in 'Palicourea gracilenta(MüllArg)'.
+
+## Detailed Steps
 
 In the first step, to avoid the program spending time trying to find names we know to be problematic we do
 some manual matching. Manual resolutions are optional and included by specifying a csv file, in the same
@@ -49,7 +60,7 @@ format as the `manual_match_template.csv` file. Tag= 'manual'
 Once manual matches have been found, we do some very basic cleaning of submitted names (
 see `tidy_names_in_column`method in `string_utils`). We first try to match names directly to taxa in WCVP.
 This finds taxa in WCVP which match our submitted names exactly. This tries combinations of just taxon name (
-tag= 'direct_wcvp'), taxon name + taxon authors and taxon name + paranthetical authors + primary author (
+tag= 'direct_wcvp'), taxon name + taxon authors and taxon name + parenthetical authors + primary author (
 tags= '
 direct_wcvp_w_author'). To better match submitted names containing author information, we also clean the
 submitted names by removing spaces after full stops if the full stop isn't part of an infraspecific epithet
@@ -151,7 +162,8 @@ may lead to unresolved names, in which case it may be worth checking the input d
 
 * Using most up-to-date version of WCVP
 * Artificial Hybrids are treated as accepted
-* A note on using families in matching: There are some genera that are often considered to be in different families. For example, 'Anthocleista' is
+* A note on using families in matching: There are some genera that are often considered to be in different
+  families. For example, 'Anthocleista' is
   an accepted genus in Gentianaceae but is often considered to be in Loganiaceae. If you try to match e.g. '
   Anthocleista procera' within Loganiaceae (using `families_of_interest` argument) it will be unresolved. Note
   however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family is

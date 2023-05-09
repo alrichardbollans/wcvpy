@@ -5,7 +5,7 @@ setup(
     version='1.1.1',
     packages=find_packages(),
     install_requires=[
-        'pandas==1.5.3',
+        'pandas==2.0.1',
         'numpy==1.24.2',
         'requests==2.28.2',
         'tqdm==4.64.1',

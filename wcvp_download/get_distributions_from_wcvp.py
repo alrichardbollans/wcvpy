@@ -2,7 +2,7 @@ import time
 
 import pandas as pd
 
-from wcvp_download import get_up_to_date_wcvp_zip, get_all_taxa, wcvp_columns, wcvp_accepted_columns
+from wcvp_download import get_wcvp_zip, get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 native_code_column = 'native_tdwg3_codes'
 introduced_code_column = 'intro_tdwg3_codes'
@@ -41,7 +41,7 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     """
     # Only use accepted taxa for distributions as everything else is unreliable
     accepted_wcvp_data = get_all_taxa(accepted=True)
-    wcvp_zip = get_up_to_date_wcvp_zip()
+    wcvp_zip = get_wcvp_zip()
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')
     all_dist_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',

@@ -67,7 +67,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
     all_accepted = all_accepted.rename(columns={wcvp_columns['wcvp_id']: 'plant_name_id_acc'})
     all_accepted = all_accepted[
         ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_family', 'accepted_rank',
-         'accepted_parent','accepted_parent_id', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
+         'accepted_parent', 'accepted_parent_id', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
     taxa_df_with_accepted_id = pd.merge(all_accepted, taxa_df, left_on='plant_name_id_acc',
                                         right_on=wcvp_columns['acc_plant_name_id'], how='right')
     taxa_df_with_accepted_id = taxa_df_with_accepted_id.drop(columns=['plant_name_id_acc'])
@@ -96,7 +96,7 @@ def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
                                            taxa_df['accepted_parent'],
                                            taxa_df['accepted_species'])
 
-    #IPNI ids
+    # IPNI ids
     taxa_df['accepted_species_ipni_id'] = np.where(taxa_df['accepted_rank'] == 'Species',
                                                    taxa_df[wcvp_accepted_columns['ipni_id']],
                                                    np.nan)
@@ -104,18 +104,18 @@ def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
                                                    taxa_df['accepted_parent_ipni_id'],
                                                    taxa_df['accepted_species_ipni_id'])
 
-    #WCVP ids
+    # WCVP ids
     taxa_df['accepted_species_id'] = np.where(taxa_df['accepted_rank'] == 'Species',
-                                                   taxa_df[wcvp_accepted_columns['wcvp_id']],
-                                                   np.nan)
+                                              taxa_df[wcvp_accepted_columns['wcvp_id']],
+                                              np.nan)
     taxa_df['accepted_species_id'] = np.where(taxa_df['accepted_parent_rank'] == 'Species',
-                                                   taxa_df['accepted_parent_id'],
-                                                   taxa_df['accepted_species_id'])
+                                              taxa_df['accepted_parent_id'],
+                                              taxa_df['accepted_species_id'])
 
     return taxa_df
 
 
-def get_up_to_date_wcvp_zip(force_use_existing: bool = False):
+def get_wcvp_zip(get_new_version: bool = False):
     wcvp_path = 'http://sftp.kew.org/pub/data-repositories/WCVP'
     wcvp_link = '/'.join([wcvp_path, 'wcvp.zip'])
 
@@ -123,16 +123,20 @@ def get_up_to_date_wcvp_zip(force_use_existing: bool = False):
 
     if not os.path.exists(_inputs_path):
         os.mkdir(_inputs_path)
-    if not force_use_existing:
+
+    def download_newest():
+        print('Downloading latest WCVP version...')
+        r = requests.get(wcvp_link, stream=True)
+        with open(input_zip_file, 'wb') as fd:
+            for chunk in r.iter_content(chunk_size=128):
+                fd.write(chunk)
+
+    if get_new_version:
         print(f'Loading WCVP...')
         print(f'The latest version will be downloaded if not already available at {input_zip_file}')
         # Download if doesn't exist
         if not os.path.exists(input_zip_file):
-            print('Downloading latest WCVP version...')
-            r = requests.get(wcvp_link, stream=True)
-            with open(input_zip_file, 'wb') as fd:
-                for chunk in r.iter_content(chunk_size=128):
-                    fd.write(chunk)
+            download_newest()
 
         else:
             # Download if online version is newer
@@ -141,14 +145,13 @@ def get_up_to_date_wcvp_zip(force_use_existing: bool = False):
             url_date = parsedate(url_time).astimezone()
             file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
             if url_date > file_time:
-                print('Downloading latest WCVP version...')
-                r = requests.get(wcvp_link, stream=True)
-                with open(input_zip_file, 'wb') as fd:
-                    for chunk in r.iter_content(chunk_size=128):
-                        fd.write(chunk)
+                download_newest()
 
-    if force_use_existing:
-        print('Loading WCVP Using your existing version of WCVP, note this may not be up to date')
+    elif not os.path.exists(input_zip_file):
+        download_newest()
+    else:
+        print('WARNING: Loading your existing version of WCVP, note this may not be up to date.')
+        print('To up date the WCVP version, run get_all_taxa(get_new_version=True)')
     return zipfile.ZipFile(input_zip_file)
 
 
@@ -156,7 +159,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                  species: List[str] = None,
                  specific_taxa: List[str] = None,
                  accepted: bool = False, statuses_to_drop=None, output_csv: str = None,
-                 force_use_existing: bool = False, clean_strings: bool = True) -> pd.DataFrame:
+                 get_new_version: bool = False, clean_strings: bool = True) -> pd.DataFrame:
     start = time.time()
 
     if output_csv is not None:
@@ -164,7 +167,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         if not os.path.isdir(new_output_dir) and new_output_dir != '':
             os.mkdir(new_output_dir)
 
-    zf = get_up_to_date_wcvp_zip(force_use_existing=force_use_existing)
+    zf = get_wcvp_zip(get_new_version=get_new_version)
     csv_file = zf.open('wcvp_names.csv')
     all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
                                 dtype={'homotypic_synonym': object, wcvp_columns['wcvp_id']: object,

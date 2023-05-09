@@ -169,7 +169,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
     zf = get_wcvp_zip(get_new_version=get_new_version)
     csv_file = zf.open('wcvp_names.csv')
-    all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
+    all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|', quotechar='"', quoting=3,
                                 dtype={'homotypic_synonym': object, wcvp_columns['wcvp_id']: object,
                                        wcvp_columns['acc_plant_name_id']: object,
                                        'parent_plant_name_id': object,

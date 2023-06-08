@@ -5,10 +5,8 @@ import pandas as pd
 
 from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 from wcvp_name_matching import clean_urn_ids, output_record_col_names, lowercase_name_col, \
-    remove_fullstop, remove_whitespace_at_beginning_and_end, tidied_taxon_authors_col, tidy_authors
-
-status_priority = ['Accepted', 'Artificial Hybrid', 'Synonym', 'Illegitimate', 'Invalid', 'Local Biotype',
-                   'Misapplied', 'Orthographic', 'Unplaced']
+    remove_fullstop, remove_whitespace_at_beginning_and_end, tidied_taxon_authors_col, tidy_authors, \
+    status_priority
 
 
 def lookup_ipni_id_in_wcvp(all_taxa: pd.DataFrame, given_id: str) -> pd.DataFrame:

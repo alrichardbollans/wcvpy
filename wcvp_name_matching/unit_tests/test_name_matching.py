@@ -92,9 +92,11 @@ class MyTestCase(unittest.TestCase):
         else:
             s = _get_knms_matches_and_accepted_info_from_names_in_column(test_list, name_col, name_col,
                                                                          taxa_df)
-        s.to_csv(os.path.join(unittest_outputs, input_csv_name))
+
+        out = pd.merge(s, test_list, on=name_col, how='right')
+        out.to_csv(os.path.join(unittest_outputs, 'knms_' + input_csv_name))
         # Doesn't preserve order
-        self.assertEqual(sorted(list(s['accepted_name'])), sorted(list(test_list[known_acc_name_col])))
+        self.assertEqual(sorted(list(out['accepted_name'])), sorted(list(test_list[known_acc_name_col])))
         end = time.time()
         print(f'Time elapsed for method test: {end - start}s')
 

@@ -131,8 +131,9 @@ def get_wcvp_zip(get_new_version: bool = False):
             for chunk in r.iter_content(chunk_size=128):
                 fd.write(chunk)
 
+    print(f'Loading WCVP...')
     if get_new_version:
-        print(f'Loading WCVP...')
+
         print(f'The latest version will be downloaded if not already available at {input_zip_file}')
         # Download if doesn't exist
         if not os.path.exists(input_zip_file):
@@ -150,8 +151,18 @@ def get_wcvp_zip(get_new_version: bool = False):
     elif not os.path.exists(input_zip_file):
         download_newest()
     else:
-        print('WARNING: Loading your existing version of WCVP, note this may not be up to date.')
-        print('To up date the WCVP version, run get_all_taxa(get_new_version=True)')
+        r = requests.head(wcvp_link)
+        url_time = r.headers['last-modified']
+        url_date = parsedate(url_time).astimezone()
+        file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+        if url_date > file_time:
+            print(
+                f'WARNING: Loading your existing version of WCVP which was is out of date. Downloaded at: {file_time}')
+            print(f'A new checklist version was released at: {url_date}')
+            print('To up date the WCVP version, run get_all_taxa(get_new_version=True)')
+
+        else:
+            print('Using up to date WCVP.')
     return zipfile.ZipFile(input_zip_file)
 
 

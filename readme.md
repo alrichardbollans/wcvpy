@@ -29,7 +29,7 @@ families_in_occurrences = ['Apocynaceae', 'Rubiaceae']
 # the `manual_match_template.csv` file.
 manual_resolution_csv = 'manual_match_template.csv'
 
-# Match level specifies how conservative to be. One of ['full', 'direct', 'knms']
+# Match level specifies how conservative to be. One of ['full', 'direct', 'fuzzy']
 # direct: only include direct matches to wcvp
 # knms: Include direct matches to wcvp and matches from KNMS
 # full: include both of the above, and autoresolution step

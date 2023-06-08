@@ -7,6 +7,8 @@ import pandas as pd
 # Add progress bar to apply method
 from tqdm import tqdm
 
+from OpenRefineMatching import openrefine_match_full_names
+
 tqdm.pandas()
 
 from typing import List
@@ -18,7 +20,7 @@ from wcvp_name_matching import get_wcvp_info_for_names_in_column, \
     tidy_families_in_column, status_priority, submitted_family_name_col_id, unique_submission_index_col, \
     lowercase_name_col, tidied_taxon_authors_col, get_word_combinations, \
     remove_whitespace_at_beginning_and_end, get_accepted_wcvp_info_from_ipni_ids_in_column, \
-    resolve_matches_by_priorities, rank_priority
+    resolve_matches_by_priorities, rank_priority, resolve_openrefine_to_best_matches
 from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 matching_data_path = resource_filename(__name__, 'matching data')
@@ -298,7 +300,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     :return:
     """
     # Check for bad inputs
-    match_levels = ['full', 'direct', 'knms']
+    match_levels = ['full', 'direct', 'fuzzy']
     if match_level not in match_levels:
         raise ValueError(f'match_level should be one of {match_levels}')
 
@@ -410,17 +412,30 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         unmatched_name_df = df[
             ~df[unique_submission_index_col].isin(wcvp_resolved_df[unique_submission_index_col].values)]
 
-        if match_level in ['full', 'knms']:
-            # If exact matches aren't found in wcvp, use knms
+        if match_level in ['full', 'fuzzy']:
+            # If exact matches aren't found in wcvp, use openrefine
+            # Use given submitted name and let openrefine do any cleaning
+            all_open_refine_matches = openrefine_match_full_names(unmatched_name_df, recapitalised_name_col)
 
-            matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(unmatched_name_df,
-                                                                                         recapitalised_name_col,
-                                                                                         unique_submission_index_col,
-                                                                                         all_taxa,
-                                                                                         family_column=family_column)
-            knms_resolved_df = pd.concat([wcvp_resolved_df, matches_with_knms], axis=0)
+            resolved_open_refine_matches = resolve_openrefine_to_best_matches(all_open_refine_matches,
+                                                                              all_taxa,
+                                                                              families_of_interest=families_of_interest)
+            resolved_open_refine_matches['matched_name'] = resolved_open_refine_matches['reco_name']
+            unmatched_open_refine_df = unmatched_name_df[
+                ~unmatched_name_df[submitted_name_col_id].isin(
+                    resolved_open_refine_matches[submitted_name_col_id].values)]
+
+            # then knms
+            matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(
+                unmatched_open_refine_df,
+                recapitalised_name_col,
+                unique_submission_index_col,
+                all_taxa,
+                family_column=family_column)
+            fuzzy_resolved_df = pd.concat([wcvp_resolved_df, matches_with_knms, resolved_open_refine_matches],
+                                          axis=0)
             unmatched_df = df[
-                ~df[unique_submission_index_col].isin(knms_resolved_df[unique_submission_index_col].values)]
+                ~df[unique_submission_index_col].isin(fuzzy_resolved_df[unique_submission_index_col].values)]
 
             if match_level == 'full':
                 # Get autoresolved matches
@@ -429,10 +444,11 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                                                                      all_taxa,
                                                                      family_column=family_column)
 
-                final_resolved_df = pd.concat([unmatched_resolutions, knms_resolved_df], axis=0)
+                final_resolved_df = pd.concat(
+                    [unmatched_resolutions, fuzzy_resolved_df], axis=0)
 
             else:
-                final_resolved_df = knms_resolved_df
+                final_resolved_df = pd.concat([fuzzy_resolved_df])
         else:
             final_resolved_df = wcvp_resolved_df
 

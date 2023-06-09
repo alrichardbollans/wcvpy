@@ -209,9 +209,15 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     wcvp_data = wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
 
     if genera is not None:
+        for g in genera:
+            if g not in all_wcvp_data[wcvp_columns['genus']].values:
+                raise ValueError(f'Given genus: {g} not in WCVP. CASE SENSITIVE')
         wcvp_data = wcvp_data.loc[wcvp_data['genus'].isin(genera)]
 
     if species is not None:
+        for s in species:
+            if s not in all_wcvp_data['species'].values:
+                raise ValueError(f'Given species: {s} not in WCVP. CASE SENSITIVE')
         wcvp_data = wcvp_data.loc[wcvp_data['species'].isin(species)]
 
     if accepted:
@@ -226,10 +232,13 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     if ranks is not None:
         for r in ranks:
             if r not in known_ranks_in_wcvp:
-                raise ValueError(f'Given rank: {r} not in wcvp ranks: {known_ranks_in_wcvp}')
+                raise ValueError(f'Given rank: {r} not in wcvp ranks: {known_ranks_in_wcvp}. CASE SENSITIVE')
         wcvp_data = wcvp_data[wcvp_data[wcvp_columns['rank']].isin(ranks)]
 
     if specific_taxa is not None:
+        for f in specific_taxa:
+            if f not in all_wcvp_data[wcvp_columns['name']].values:
+                raise ValueError(f'Given specific taxa: {f} not in WCVP. CASE SENSITIVE')
         wcvp_data = wcvp_data[wcvp_data[wcvp_columns['name']].isin(specific_taxa)]
     wcvp_data = add_accepted_info_to_rows(wcvp_data,
                                           get_parent_names_and_ipni_ids(all_accepted, all_wcvp_data))
@@ -238,7 +247,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     if families_of_interest is not None:
         for f in families_of_interest:
             if f not in all_wcvp_data[wcvp_columns['family']].values:
-                raise ValueError(f'Given family: {f} not in WCVP')
+                raise ValueError(f'Given family: {f} not in WCVP. CASE SENSITIVE')
         wcvp_data = wcvp_data.loc[(wcvp_data[wcvp_columns['family']].isin(families_of_interest)) | (
             wcvp_data[wcvp_accepted_columns['family']].isin(families_of_interest))]
 

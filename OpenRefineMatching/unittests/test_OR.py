@@ -54,6 +54,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_gui_diffs(self):
         self._test_get_names_on_csv('gui_diffs', 'Name')
+        raise ValueError
 
     def test_fuzzy(self):
         self._test_get_names_on_csv('fuzzy_matches', 'Name')

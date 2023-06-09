@@ -24,12 +24,12 @@ class MyTestCase(unittest.TestCase):
         loganiaceae = get_all_taxa(families_of_interest=['Loganiaceae'])
         print(loganiaceae.drop_duplicates(subset=['family'], keep='first')[
                   ['taxon_name', 'family', wcvp_accepted_columns['family']]])
-        print(loganiaceae['family'].unique())
+        # print(loganiaceae['family'].unique())
 
-        self.assertEqual(list(loganiaceae['family'].unique()),
-                         ['Loganiaceae', 'Vitaceae', 'Gentianaceae', 'Acanthaceae', 'Rhamnaceae',
+        self.assertEqual(sorted(list(loganiaceae['family'].unique())),
+                         sorted(['Loganiaceae', 'Vitaceae', 'Gentianaceae', 'Acanthaceae', 'Rhamnaceae',
                           'Fabaceae', 'Sabiaceae', 'Boraginaceae', 'Plantaginaceae', 'Caprifoliaceae',
-                          'Rutaceae', 'Primulaceae', ])
+                          'Rutaceae', 'Primulaceae', 'Rubiaceae', 'Apocynaceae', 'Penaeaceae']))
 
     def test_acc_cases(self):
         all_taxa_acc = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']

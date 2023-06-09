@@ -41,15 +41,51 @@ data_with_accepted_information = get_accepted_info_from_names_in_column(your_dat
 ```
 
 ## Summary of Matching Steps
+
 - Clean and standardise input names. This step improves the likelihood of finding matches, without introducing
   extra uncertainty in the match, e.g. by ensuring input names contain no double spaces.
 - Find potential matches and resolve in the following order. In each of the next steps if a given name results
   in multiple potential responses, resolve these by finding the 'best' match.
     - **Direct**: Attempt to match given names directly to WCVP using exact names (checks taxon names with
       and without any author information).
+    - **OpenRefine**: Using the OpenRefine API, find potential matches to IPNI and resolve these to WCVP.
     - **KNMS**: Using the Kew Names Matching Service API, find potential matches.
     - **Autoresolution**: Search the WCVP for taxa where the taxon name is contained in the given name (e.g. '
       Palicourea gracilenta' is in 'Palicourea gracilenta(MüllArg)'.
+
+## Notes on outputs
+
+* Accepted names and information about these accepted names is provided in the output. We **STRONGLY RECOMMEND** using the
+  outputted 'accepted_name_w_author' column where possible to avoid ambiguity.
+* Output dataframe is the same as the input, with additional columns providing resolved accepted name
+  information. Where names are unresolved, values in these columns are empty.
+* `matched_by` column specifies how the name has been resolved. One of:
+    * 'direct_wcvp(_unique)': name resolved directly matching to WCVP, including _unique if the match to WCVP
+      was unique
+    * 'direct_wcvp_w_author(_unique)': name resolved directly matching to WCVP including author names,
+      including _unique if the match to WCVP was unique
+    * 'openrefine_unique': where openrefine provides a single matching name
+    * 'openrefine_unique_accepted_name': where openrefine provides a multiple matching names that all resolve
+      to the same accepted name
+    * 'openrefine_unique_top_score': where openrefine provides a multiple matching names and the highest
+      scoring match is selected
+    * 'openrefine_best_priority': where openrefine provides a multiple matching names and the match is
+      selected based on prioritising taxon status and then taxon rank
+    * 'knms_single': where KNMS provides a single matching name
+    * 'knms_multiple_1': where KNMS provides multiple matches for the submitted name, but the submitted name
+      is exactly the same as the accepted name for one of the matches
+    * 'knms_multiple_2': where KNMS provides multiple matches for the submitted name, but matches are all
+      synonyms of the same accepted name
+    * 'knms_multiple_3': where KNMS provides multiple matches for the submitted name, picks matches where the
+      accepted name is contained in the submitted name. Where there are multiple such cases, the most specific
+      resolutions are picked.
+    * 'autoresolution(_unique)': Resolutions found in autoresolution step, including _unique if the match to
+      WCVP was unique
+
+* You can filter your the resulting dataframe to specific types of matches e.g. 'unambiguous'
+  matches `df = df[df['matched_by].isin(['direct_wcvp_unique', 'direct_wcvp_w_author_unique', 'openrefine_unique','openrefine_unique_accepted_name',
+  knms_single', 'knms_multiple_2', 'autoresolution_unique'])]`
+
 
 ## Detailed Steps
 
@@ -69,6 +105,14 @@ and after the space is a letter (see `tidy_authors` method in `string_utils`)
 When matching to WCVP, in cases where the there is a single unique match '_unique' is appended to the tags. In
 cases where multiple taxa are returned for a given submission, taxa are prioritised based on their status (
 i.e. Accepted > Artificial Hybrid > Synonym> Illegitimate>...).
+
+Names that are still unresolved are then matched using OpenRefine. OpenRefine matches names to IPNI and the
+corresponding WCVP matches are then used. Where openrefine provides a single matching name, we use this name
+tagged: 'openrefine_unique'. Where openrefine finds multiple matches these are resolved by first finding names
+that all resolve to the same accepted name, tagged: 'openrefine_unique_accepted_name'. Then resolves to names
+that are given
+the highest matching score, tagged: 'openrefine_unique_top_score'. Then names are selected based on
+prioritising taxon status and then taxon rank, tagged: 'openrefine_best_priority'.
 
 Submitted names which aren't found in these first steps are then matched to names using KNMS, which contains
 multiple steps. Firstly, in simple cases where KNMS returns a single match for a submitted name we use the
@@ -107,29 +151,6 @@ Finally, the resolutions are recompiled and an updated dataframe is returned. Su
 been matched at any point are output to a csv file for you to check. Note that unmatched submissions are
 included in the output dataframe without any accepted information.
 
-A rough diagram is given below.
-
-![pipe](pipe.svg)
-
-### Notes on outputs
-
-* Output dataframe is the same as the input, with additional columns providing resolved accepted name
-  information. Where names are unresolved, values in these columns are empty.
-* `matched_by` column specifies how the name has been resolved. One of:
-    * 'direct_wcvp(_unique)': name resolved directly matching to WCVP, including _unique if the match to WCVP
-      was unique
-    * 'direct_wcvp_w_author(_unique)': name resolved directly matching to WCVP including author names,
-      including _unique if the match to WCVP was unique
-    * 'knms_single': where KNMS provides a single matching name
-    * 'knms_multiple_1': where KNMS provides multiple matches for the submitted name, but the submitted name
-      is exactly the same as the accepted name for one of the matches
-    * 'knms_multiple_2': where KNMS provides multiple matches for the submitted name, but matches are all
-      synonyms of the same accepted name
-    * 'knms_multiple_3': where KNMS provides multiple matches for the submitted name, picks matches where the
-      accepted name is contained in the submitted name. Where there are multiple such cases, the most specific
-      resolutions are picked.
-    * 'autoresolution(_unique)': Resolutions found in autoresolution step, including _unique if the match to
-      WCVP was unique
 
 ## Name Formatting
 
@@ -177,15 +198,27 @@ may lead to unresolved names, in which case it may be worth checking the input d
 * Some taxa are not given author information
 * For issues with WCVP, see https://github.com/alrichardbollans/automatchnames/issues/25
 
-## Notes on Kew Reconciliation Service
+## Notes on OpenRefine
 
-* KRS relies a little on manually matching unknown samples/multiple matches.
-* If we try to include KRS by only including records with single matches, we may still get some errors.
-* When doing automatic matching as in `open_reconciling.py` each epithet needs extracting and adding to the
-  query otherwise e.g. 'Vaccinium vitis-idaea L.' is matched to its genus '
-  Vaccinium L.'
-* I've created an implementation which includes KRS but so far it is very slow (possibly because extracting
-  epithets for lots of samples is slow).
+See readme in OpenRefine package in this library.
+
+[//]: # (## Notes on Kew Reconciliation Service)
+
+[//]: # ()
+
+[//]: # (* KRS relies a little on manually matching unknown samples/multiple matches.)
+
+[//]: # (* If we try to include KRS by only including records with single matches, we may still get some errors.)
+
+[//]: # (* When doing automatic matching as in `open_reconciling.py` each epithet needs extracting and adding to the)
+
+[//]: # (  query otherwise e.g. 'Vaccinium vitis-idaea L.' is matched to its genus ')
+
+[//]: # (  Vaccinium L.')
+
+[//]: # (* I've created an implementation which includes KRS but so far it is very slow &#40;possibly because extracting)
+
+[//]: # (  epithets for lots of samples is slow&#41;.)
 
 ## Possible Improvements
 
@@ -205,6 +238,13 @@ Retrieved XX/XX/XX.
 
 KNMS (2023). Kew Names Matching Service.
 http://namematch.science.kew.org/
+
+OpenRefine
+https://openrefine.org/
+
+IPNI (2023). International Plant Names Index. Published on the Internet
+http://www.ipni.org
+The Royal Botanic Gardens, Kew, Harvard University Herbaria & Libraries and Australian National Herbarium.
 
 [//]: # (Kew Reconciliation Service)
 

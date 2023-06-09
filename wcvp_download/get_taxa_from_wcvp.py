@@ -33,7 +33,9 @@ wcvp_accepted_columns = {'family': 'accepted_family',
                          'ipni_id': 'accepted_ipni_id',
                          'wcvp_id': 'accepted_plant_name_id',
                          'name': 'accepted_name',
+                         'name_w_author': 'accepted_name_w_author',
                          'species': 'accepted_species',
+                         'species_w_author': 'accepted_species_w_author',
                          'species_ipni_id': 'accepted_species_ipni_id',
                          'species_wcvp_id': 'accepted_species_id',
                          'rank': 'accepted_rank',
@@ -60,14 +62,21 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
     all_accepted = all_accepted.assign(accepted_family=all_accepted[wcvp_columns['family']])
     all_accepted = all_accepted.assign(accepted_rank=all_accepted[wcvp_columns['rank']])
     all_accepted = all_accepted.assign(accepted_parent=all_accepted[wcvp_columns['parent_name']])
+    all_accepted = all_accepted.assign(accepted_parent_w_author=all_accepted['parent_name_w_author'])
     all_accepted = all_accepted.assign(accepted_parent_ipni_id=all_accepted[wcvp_columns['parent_ipni_id']])
     all_accepted = all_accepted.assign(accepted_parent_id=all_accepted[wcvp_columns['parent_plant_name_id']])
     all_accepted = all_accepted.assign(accepted_parent_rank=all_accepted['parent_rank'])
 
+    all_accepted['accepted_name_w_author'] = all_accepted[wcvp_columns['name']].str.cat(
+        all_accepted[wcvp_columns['authors']].fillna(''),
+        sep=' ')
+
     all_accepted = all_accepted.rename(columns={wcvp_columns['wcvp_id']: 'plant_name_id_acc'})
     all_accepted = all_accepted[
-        ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_family', 'accepted_rank',
-         'accepted_parent', 'accepted_parent_id', 'accepted_parent_ipni_id', 'accepted_parent_rank']]
+        ['plant_name_id_acc', 'accepted_ipni_id', 'accepted_name', 'accepted_name_w_author',
+         'accepted_family', 'accepted_rank',
+         'accepted_parent', 'accepted_parent_w_author', 'accepted_parent_id', 'accepted_parent_ipni_id',
+         'accepted_parent_rank']]
     taxa_df_with_accepted_id = pd.merge(all_accepted, taxa_df, left_on='plant_name_id_acc',
                                         right_on=wcvp_columns['acc_plant_name_id'], how='right')
     taxa_df_with_accepted_id = taxa_df_with_accepted_id.drop(columns=['plant_name_id_acc'])
@@ -77,12 +86,18 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
 
 def get_parent_names_and_ipni_ids(taxa_df: pd.DataFrame, all_data: pd.DataFrame) -> pd.DataFrame:
     parent_data = all_data.drop(columns=['parent_plant_name_id'])
+    parent_data['parent_name_w_author'] = parent_data[wcvp_columns['name']].str.cat(
+        parent_data[wcvp_columns['authors']].fillna(''),
+        sep=' ')
+
     parent_data = parent_data.rename(columns={wcvp_columns['wcvp_id']: 'parent_plant_name_id',
                                               wcvp_columns['name']: wcvp_columns['parent_name'],
                                               wcvp_columns['ipni_id']: wcvp_columns['parent_ipni_id'],
                                               wcvp_columns['rank']: 'parent_rank'})
+
     parent_data = parent_data[
-        ['parent_plant_name_id', wcvp_columns['parent_name'], wcvp_columns['parent_ipni_id'], 'parent_rank']]
+        ['parent_plant_name_id', wcvp_columns['parent_name'], 'parent_name_w_author',
+         wcvp_columns['parent_ipni_id'], 'parent_rank']]
     taxa_df_with_parent_info = pd.merge(parent_data, taxa_df, left_on='parent_plant_name_id',
                                         right_on='parent_plant_name_id', how='right')
 
@@ -92,9 +107,18 @@ def get_parent_names_and_ipni_ids(taxa_df: pd.DataFrame, all_data: pd.DataFrame)
 def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
     taxa_df['accepted_species'] = np.where(taxa_df['accepted_rank'] == 'Species', taxa_df['accepted_name'],
                                            np.nan)
+
+    taxa_df['accepted_species_w_author'] = np.where(taxa_df['accepted_rank'] == 'Species',
+                                                    taxa_df['accepted_name_w_author'],
+                                                    np.nan)
+
     taxa_df['accepted_species'] = np.where(taxa_df['accepted_parent_rank'] == 'Species',
                                            taxa_df['accepted_parent'],
                                            taxa_df['accepted_species'])
+
+    taxa_df['accepted_species_w_author'] = np.where(taxa_df['accepted_parent_rank'] == 'Species',
+                                                    taxa_df['accepted_parent_w_author'],
+                                                    taxa_df['accepted_species_w_author'])
 
     # IPNI ids
     taxa_df['accepted_species_ipni_id'] = np.where(taxa_df['accepted_rank'] == 'Species',
@@ -187,13 +211,8 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                                        'basionym_plant_name_id': object})
 
     csv_file.close()
-    all_accepted = all_wcvp_data[
-        all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
-
-    wcvp_data = all_wcvp_data.copy(deep=True)
-
     if clean_strings:
-        def clean_double_spaces(given_str: str):
+        def clean_whitespaces(given_str: str):
             if pd.isnull(given_str):
                 return given_str
             else:
@@ -201,7 +220,12 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
         # Clean strings
         for col in wcvp_columns_used_in_direct_matching:
-            wcvp_data[col] = wcvp_data[col].apply(clean_double_spaces)
+            all_wcvp_data[col] = all_wcvp_data[col].apply(clean_whitespaces)
+
+    all_accepted = all_wcvp_data[
+        all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+
+    wcvp_data = all_wcvp_data.copy(deep=True)
 
     if statuses_to_drop is None:
         statuses_to_drop = ['Local Biotype']

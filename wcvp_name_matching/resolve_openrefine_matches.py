@@ -3,7 +3,7 @@ from typing import List
 import pandas as pd
 
 from OpenRefineMatching import reco_submitted_name_col_id
-from wcvp_download import wcvp_accepted_columns, wcvp_columns, get_all_taxa
+from wcvp_download import wcvp_accepted_columns, wcvp_columns
 from wcvp_name_matching import resolve_matches_by_priorities, get_accepted_wcvp_info_from_ipni_ids_in_column
 
 

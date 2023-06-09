@@ -28,8 +28,8 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(sorted(list(loganiaceae['family'].unique())),
                          sorted(['Loganiaceae', 'Vitaceae', 'Gentianaceae', 'Acanthaceae', 'Rhamnaceae',
-                          'Fabaceae', 'Sabiaceae', 'Boraginaceae', 'Plantaginaceae', 'Caprifoliaceae',
-                          'Rutaceae', 'Primulaceae', 'Rubiaceae', 'Apocynaceae', 'Penaeaceae']))
+                                 'Fabaceae', 'Sabiaceae', 'Boraginaceae', 'Plantaginaceae', 'Caprifoliaceae',
+                                 'Rutaceae', 'Primulaceae', 'Rubiaceae', 'Apocynaceae', 'Penaeaceae']))
 
     def test_acc_cases(self):
         all_taxa_acc = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']
@@ -200,6 +200,88 @@ class MyTestCase(unittest.TestCase):
             os.path.join(_output_path, 'Ant_in_logania.csv'))
         for g in funny_genera:
             self.assertIn(g, logan_df[wcvp_columns['genus']].values)
+
+    def test_author_information(self):
+        # accepted cases
+        # acc name with author = acc name + authors
+        accepted = wcvp_data[wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+        problems1 = accepted[
+            accepted[wcvp_accepted_columns['name_w_author']] != accepted[wcvp_columns['name']].str.cat(
+                [accepted[wcvp_columns['authors']].fillna('')],
+                sep=' ')]
+        if len(problems1.index) > 0:
+            problems1.to_csv('problems1.csv')
+            self.assertEqual(len(problems1.index), 0)
+
+        # acc species with author = acc name with author of accepted  species
+        sp_check = accepted[['plant_name_id', wcvp_accepted_columns['name_w_author']]]
+        sp_check = sp_check.rename(columns={'plant_name_id': 'sp_id',
+                                            wcvp_accepted_columns['name_w_author']: 'sp_name_w_author'})
+        merged_with_acc_species = pd.merge(accepted, sp_check, left_on=wcvp_accepted_columns['species'],
+                                           right_on='sp_id')
+
+        problems2 = merged_with_acc_species[
+            merged_with_acc_species[wcvp_accepted_columns['species_w_author']] != merged_with_acc_species[
+                'sp_name_w_author']]
+        if len(problems2.index) > 0:
+            problems2.to_csv('problems2.csv')
+            self.assertEqual(len(problems2.index), 0)
+
+        # synonyms
+        # acc name with author  = acc name with author of accepted  name
+        acc_check = accepted[['plant_name_id', wcvp_accepted_columns['name_w_author']]]
+        acc_check = acc_check.rename(columns={'plant_name_id': 'acc_id',
+                                              wcvp_accepted_columns['name_w_author']: 'acc_name_w_author'})
+        merged_with_acc = pd.merge(wcvp_data, acc_check, left_on=wcvp_accepted_columns['name'],
+                                   right_on='acc_id')
+
+        problems3 = merged_with_acc[
+            merged_with_acc[wcvp_accepted_columns['name_w_author']] != merged_with_acc[
+                'acc_name_w_author']]
+        if len(problems3.index) > 0:
+            problems3.to_csv('problems3.csv')
+            self.assertEqual(len(problems3.index), 0)
+
+        # subspecies and varieties
+        # acc parent w author = accepted species with author
+        subsp_vars = wcvp_data[
+            wcvp_data[wcvp_accepted_columns['rank']].isin(["Form", "Subspecies", "Subvariety", "Variety"])]
+
+        problems4 = subsp_vars[
+            subsp_vars[wcvp_accepted_columns['species_w_author']] != subsp_vars['accepted_parent_w_author']]
+
+        # will catch some cases with no accepted parent info
+        problems4 = problems4[~(problems4[wcvp_accepted_columns['species_w_author']].isna() & problems4[
+            'accepted_parent_w_author'].isna())]
+
+        if len(problems4.index) > 0:
+            problems4.to_csv('problems4.csv')
+            self.assertEqual(len(problems4.index), 0)
+        # species
+        # acc name with author  = accepted species with author
+        species = wcvp_data[
+            wcvp_data[wcvp_accepted_columns['rank']].isin(["Species"])]
+
+        problems5 = species[
+            species[wcvp_accepted_columns['species_w_author']] != species[
+                wcvp_accepted_columns['name_w_author']]]
+
+        if len(problems5.index) > 0:
+            problems5.to_csv('problems5.csv')
+            self.assertEqual(len(problems5.index), 0)
+
+    def test_consistency_of_author_info(self):
+        # Check that when some paranthet or prim author info is given this is reflected in taxon authors,
+        # this is important for given acc names with authors
+        without_authors = wcvp_data[
+            wcvp_data[wcvp_columns['authors']].isna() & ~(wcvp_data[
+                                                              wcvp_columns[
+                                                                  'paranthet_author']].isna() &
+                                                          wcvp_data[
+                                                              wcvp_columns[
+                                                                  'primary_author']].isna())]
+
+        self.assertEqual(len(without_authors.index), 0)
 
 
 if __name__ == '__main__':

@@ -7,9 +7,11 @@ from wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters
 
 acc_info_col_names = [wcvp_accepted_columns['ipni_id'],
                       wcvp_accepted_columns['name'],
+                      wcvp_accepted_columns['name_w_author'],
                       wcvp_accepted_columns['family'],
                       wcvp_accepted_columns['rank'],
                       wcvp_accepted_columns['species'],
+                      wcvp_accepted_columns['species_w_author'],
                       wcvp_accepted_columns['species_ipni_id'],
                       wcvp_accepted_columns['parent_name']]
 output_record_col_names = acc_info_col_names + [wcvp_columns['wcvp_id'], wcvp_columns['status']]

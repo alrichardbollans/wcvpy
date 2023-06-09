@@ -52,15 +52,17 @@ def tidy_value_for_matching(given_value: str) -> str:
 
 def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str, all_taxa: pd.DataFrame,
                                        columns: List[str]):
+    # Remove taxa without author information as these are matched later without authors
+    taxa_to_use = all_taxa.dropna(subset=columns)
     column_series = [all_taxa[c].fillna('') for c in columns]
-    all_taxa['taxon_name_with_extra_columns'] = all_taxa[wcvp_columns['name']].str.cat(column_series,
+    taxa_to_use['taxon_name_with_extra_columns'] = taxa_to_use[wcvp_columns['name']].str.cat(column_series,
                                                                                        sep=' ')
-    all_taxa['taxon_name_with_extra_columns'] = all_taxa['taxon_name_with_extra_columns'].apply(
+    taxa_to_use['taxon_name_with_extra_columns'] = taxa_to_use['taxon_name_with_extra_columns'].apply(
         tidy_value_for_matching)
 
     df[lowercase_name_col] = df[matching_name_col].apply(tidy_value_for_matching)
     # Match with taxon authors
-    author_merged = pd.merge(df, all_taxa, how='left', left_on=lowercase_name_col,
+    author_merged = pd.merge(df, taxa_to_use, how='left', left_on=lowercase_name_col,
                              right_on='taxon_name_with_extra_columns')
     author_merged = author_merged.dropna(subset=[wcvp_columns['wcvp_id']])
 
@@ -72,7 +74,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
     unmatched_with_authors_df[tidied_taxon_authors_col] = unmatched_with_authors_df[
         tidied_taxon_authors_col].apply(tidy_value_for_matching)
 
-    tidy_author_merged = pd.merge(unmatched_with_authors_df, all_taxa, how='left',
+    tidy_author_merged = pd.merge(unmatched_with_authors_df, taxa_to_use, how='left',
                                   left_on=tidied_taxon_authors_col,
                                   right_on='taxon_name_with_extra_columns')
     tidy_author_merged = tidy_author_merged.dropna(subset=[wcvp_columns['wcvp_id']])

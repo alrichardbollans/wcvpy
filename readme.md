@@ -2,10 +2,21 @@
 
 ## Installation
 
-Run:
+With pip, run:
+
 `pip install git+https://github.com/alrichardbollans/automatchnames.git@VERSION_NUM`
 
 ## Usage
+
+### Downloading the checklist
+
+When running the name matching commands below, the checklist will be automatically downloaded. If you would
+like to download the checklist separately, use the `get_all_taxa` function. When **first**
+downloaded, the most recent version of the checklist will be retrieved and the package will rely on this
+version until you force an update (with `get_all_taxa(get_new_version=True)`). This function parses the
+checklist into a format containing more information and returns a pandas.Dataframe.
+
+### Name matching
 
 ```python
 import pandas as pd
@@ -55,7 +66,8 @@ data_with_accepted_information = get_accepted_info_from_names_in_column(your_dat
 
 ## Notes on outputs
 
-* Accepted names and information about these accepted names is provided in the output. We **STRONGLY RECOMMEND** using the
+* Accepted names and information about these accepted names is provided in the output. We **STRONGLY RECOMMEND**
+  using the
   outputted 'accepted_name_w_author' column where possible to avoid ambiguity.
 * Output dataframe is the same as the input, with additional columns providing resolved accepted name
   information. Where names are unresolved, values in these columns are empty.
@@ -85,7 +97,6 @@ data_with_accepted_information = get_accepted_info_from_names_in_column(your_dat
 * You can filter your the resulting dataframe to specific types of matches e.g. 'unambiguous'
   matches `df = df[df['matched_by].isin(['direct_wcvp_unique', 'direct_wcvp_w_author_unique', 'openrefine_unique','openrefine_unique_accepted_name',
   knms_single', 'knms_multiple_2', 'autoresolution_unique'])]`
-
 
 ## Detailed Steps
 
@@ -150,7 +161,6 @@ some good matches to not be matched. Tag= 'autoresolution', including _unique if
 Finally, the resolutions are recompiled and an updated dataframe is returned. Submitted names which haven't
 been matched at any point are output to a csv file for you to check. Note that unmatched submissions are
 included in the output dataframe without any accepted information.
-
 
 ## Name Formatting
 

@@ -41,7 +41,7 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     """
     # Only use accepted taxa for distributions as everything else is unreliable
     accepted_wcvp_data = get_all_taxa(accepted=True)
-    wcvp_zip = get_wcvp_zip()
+    zip_filetime, wcvp_zip = get_wcvp_zip()
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')
     all_dist_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',

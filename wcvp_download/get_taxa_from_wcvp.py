@@ -1,4 +1,5 @@
 import datetime
+import hashlib
 import os
 import time
 import zipfile
@@ -60,8 +61,8 @@ def _clean_whitespaces(given_str: str):
     if pd.isnull(given_str):
         return given_str
     else:
-        s = given_str.strip()
-        out = " ".join(s.split())
+        stripped = given_str.strip()
+        out = " ".join(stripped.split())
         return out
 
 
@@ -196,7 +197,9 @@ def get_wcvp_zip(get_new_version: bool = False):
 
         else:
             print('Using up to date WCVP.')
-    return zipfile.ZipFile(input_zip_file)
+
+    file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+    return file_time, zipfile.ZipFile(input_zip_file)
 
 
 def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None, genera: List[str] = None,
@@ -211,44 +214,70 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         if not os.path.isdir(new_output_dir) and new_output_dir != '':
             os.mkdir(new_output_dir)
 
-    zf = get_wcvp_zip(get_new_version=get_new_version)
+    filetime, zf = get_wcvp_zip(get_new_version=get_new_version)
     csv_file = zf.open('wcvp_names.csv')
+
+    reading_dtypes = {'homotypic_synonym': object, wcvp_columns['wcvp_id']: object,
+                      wcvp_columns['acc_plant_name_id']: object,
+                      'parent_plant_name_id': object,
+                      'basionym_plant_name_id': object}
     all_wcvp_data = pd.read_csv(csv_file, encoding='utf-8', sep='|', quotechar='"', quoting=3,
-                                dtype={'homotypic_synonym': object, wcvp_columns['wcvp_id']: object,
-                                       wcvp_columns['acc_plant_name_id']: object,
-                                       'parent_plant_name_id': object,
-                                       'basionym_plant_name_id': object})
+                                dtype=reading_dtypes)
 
     csv_file.close()
-    if clean_strings:
-        # Clean strings
-        for col in wcvp_columns_used_in_direct_matching:
-            all_wcvp_data[col] = all_wcvp_data[col].apply(_clean_whitespaces)
 
-    all_accepted = all_wcvp_data[
-        all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+    str_to_hash = str([filetime]).encode()
+    filepath_for_zipped_parsed_version = os.path.join(_inputs_path, "parsed_wcvp" + str(
+        hashlib.md5(str_to_hash).hexdigest()) + ".csv.zip")
 
-    wcvp_data = all_wcvp_data.copy(deep=True)
+    if os.path.isfile(filepath_for_zipped_parsed_version):
+        print(f'Using preparsed file:{filepath_for_zipped_parsed_version}')
+        # need to correctly specify dtypes of extra columns
+        reading_dtypes[wcvp_accepted_columns['species_wcvp_id']] = object
+        reading_dtypes['accepted_parent_id'] = object
+
+        parsed_wcvp_data = pd.read_csv(filepath_for_zipped_parsed_version, encoding='utf-8', sep='|',
+                                       quotechar='"', quoting=3,
+                                       dtype=reading_dtypes)
+    else:
+        print(f'Parsing the checklist. Parsed file will be saved to:{filepath_for_zipped_parsed_version}')
+
+        if clean_strings:
+            # Clean strings
+            for col in wcvp_columns_used_in_direct_matching:
+                all_wcvp_data[col] = all_wcvp_data[col].apply(_clean_whitespaces)
+
+        all_accepted = all_wcvp_data[
+            all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+
+        parsed_wcvp_data = add_accepted_info_to_rows(all_wcvp_data,
+                                                     get_parent_names_and_ipni_ids(all_accepted,
+                                                                                   all_wcvp_data))
+        parsed_wcvp_data = get_species_names_and_ipni_ids(parsed_wcvp_data)
+        if clean_strings:
+            # only write if strings have been cleaned
+            parsed_wcvp_data.to_csv(filepath_for_zipped_parsed_version, index=False, compression='zip',
+                                    encoding='utf-8', sep='|', quotechar='"', quoting=3, )
 
     if statuses_to_drop is None:
         statuses_to_drop = ['Local Biotype']
 
-    wcvp_data = wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
+    parsed_wcvp_data = parsed_wcvp_data[~all_wcvp_data[wcvp_columns['status']].isin(statuses_to_drop)]
 
     if genera is not None:
         for g in genera:
             if g not in all_wcvp_data[wcvp_columns['genus']].values:
                 raise ValueError(f'Given genus: {g} not in WCVP. CASE SENSITIVE')
-        wcvp_data = wcvp_data.loc[wcvp_data['genus'].isin(genera)]
+        parsed_wcvp_data = parsed_wcvp_data.loc[parsed_wcvp_data['genus'].isin(genera)]
 
     if species is not None:
         for s in species:
             if s not in all_wcvp_data['species'].values:
                 raise ValueError(f'Given species: {s} not in WCVP. CASE SENSITIVE')
-        wcvp_data = wcvp_data.loc[wcvp_data['species'].isin(species)]
+        parsed_wcvp_data = parsed_wcvp_data.loc[parsed_wcvp_data['species'].isin(species)]
 
     if accepted:
-        wcvp_data = wcvp_data[wcvp_data[wcvp_columns['status']] == 'Accepted']
+        parsed_wcvp_data = parsed_wcvp_data[parsed_wcvp_data[wcvp_columns['status']] == 'Accepted']
 
     known_ranks_in_wcvp = ['Species', 'nothosubsp.', 'Subspecies', 'Form', 'Variety', 'microgene', 'Genus',
                            'proles', 'nothof.', 'Subvariety', 'nothovar.', 'Subform', 'lusus', 'monstr.',
@@ -260,27 +289,25 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         for r in ranks:
             if r not in known_ranks_in_wcvp:
                 raise ValueError(f'Given rank: {r} not in wcvp ranks: {known_ranks_in_wcvp}. CASE SENSITIVE')
-        wcvp_data = wcvp_data[wcvp_data[wcvp_columns['rank']].isin(ranks)]
+        parsed_wcvp_data = parsed_wcvp_data[parsed_wcvp_data[wcvp_columns['rank']].isin(ranks)]
 
     if specific_taxa is not None:
         for f in specific_taxa:
             if f not in all_wcvp_data[wcvp_columns['name']].values:
                 raise ValueError(f'Given specific taxa: {f} not in WCVP. CASE SENSITIVE')
-        wcvp_data = wcvp_data[wcvp_data[wcvp_columns['name']].isin(specific_taxa)]
-    wcvp_data = add_accepted_info_to_rows(wcvp_data,
-                                          get_parent_names_and_ipni_ids(all_accepted, all_wcvp_data))
-    wcvp_data = get_species_names_and_ipni_ids(wcvp_data)
+        parsed_wcvp_data = parsed_wcvp_data[parsed_wcvp_data[wcvp_columns['name']].isin(specific_taxa)]
 
     if families_of_interest is not None:
         for f in families_of_interest:
             if f not in all_wcvp_data[wcvp_columns['family']].values:
                 raise ValueError(f'Given family: {f} not in WCVP. CASE SENSITIVE')
-        wcvp_data = wcvp_data.loc[(wcvp_data[wcvp_columns['family']].isin(families_of_interest)) | (
-            wcvp_data[wcvp_accepted_columns['family']].isin(families_of_interest))]
+        parsed_wcvp_data = parsed_wcvp_data.loc[
+            (parsed_wcvp_data[wcvp_columns['family']].isin(families_of_interest)) | (
+                parsed_wcvp_data[wcvp_accepted_columns['family']].isin(families_of_interest))]
 
     if output_csv is not None:
-        wcvp_data.to_csv(output_csv)
+        parsed_wcvp_data.to_csv(output_csv)
 
     end = time.time()
     print(f'Time elapsed for (down)loading WCVP: {end - start}s')
-    return wcvp_data
+    return parsed_wcvp_data

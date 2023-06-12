@@ -10,7 +10,7 @@ _output_path = 'test_outputs'
 
 
 def string_hygeine_tests(df, output_dir):
-    things_not_in_checklist = ['  ', ' .']
+    things_not_in_checklist = ['  ', ' .',  '\t']
     notin_problem_dfs = []
     for col in wcvp_columns_used_in_direct_matching:
         for unused_string in things_not_in_checklist:

@@ -9,7 +9,8 @@ setup(
         'numpy==1.24.2',
         'requests==2.28.2',
         'tqdm==4.64.1',
-        'typing'
+        'typing',
+        'hashlib'
 
     ],
     url='https://github.com/alrichardbollans/automatchnames',

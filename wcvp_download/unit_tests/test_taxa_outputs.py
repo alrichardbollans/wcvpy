@@ -206,10 +206,11 @@ class MyTestCase(unittest.TestCase):
         # accepted cases
         # acc name with author = acc name + authors
         accepted = wcvp_data[wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
-        problems1 = accepted[
-            accepted[wcvp_accepted_columns['name_w_author']] != accepted[wcvp_columns['name']].str.cat(
+        accepted['auth_check'] = accepted[wcvp_columns['name']].str.cat(
                 [accepted[wcvp_columns['authors']].fillna('')],
-                sep=' ').str.strip()]
+                sep=' ').str.strip()
+        problems1 = accepted[
+            accepted[wcvp_accepted_columns['name_w_author']] != accepted['auth_check']]
         if len(problems1.index) > 0:
             problems1.to_csv('problems1.csv')
             self.assertEqual(len(problems1.index), 0)

@@ -56,6 +56,15 @@ infraspecific_chars = ['agamosp.', 'convar.', 'ecas.', 'f.', 'grex', 'group', 'l
                        'subproles', 'subsp.', 'subspecioid', 'subvar.', 'unterrasse', 'var.']
 
 
+def _clean_whitespaces(given_str: str):
+    if pd.isnull(given_str):
+        return given_str
+    else:
+        s = given_str.strip()
+        out = " ".join(s.split())
+        return out
+
+
 def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame) -> pd.DataFrame:
     all_accepted = all_accepted.assign(accepted_ipni_id=all_accepted[wcvp_columns['ipni_id']])
     all_accepted = all_accepted.assign(accepted_name=all_accepted[wcvp_columns['name']])
@@ -69,7 +78,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
 
     all_accepted['accepted_name_w_author'] = all_accepted[wcvp_columns['name']].str.cat(
         all_accepted[wcvp_columns['authors']].fillna(''),
-        sep=' ')
+        sep=' ').str.strip()
 
     all_accepted = all_accepted.rename(columns={wcvp_columns['wcvp_id']: 'plant_name_id_acc'})
     all_accepted = all_accepted[
@@ -88,7 +97,7 @@ def get_parent_names_and_ipni_ids(taxa_df: pd.DataFrame, all_data: pd.DataFrame)
     parent_data = all_data.drop(columns=['parent_plant_name_id'])
     parent_data['parent_name_w_author'] = parent_data[wcvp_columns['name']].str.cat(
         parent_data[wcvp_columns['authors']].fillna(''),
-        sep=' ')
+        sep=' ').str.strip()
 
     parent_data = parent_data.rename(columns={wcvp_columns['wcvp_id']: 'parent_plant_name_id',
                                               wcvp_columns['name']: wcvp_columns['parent_name'],
@@ -212,15 +221,9 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
     csv_file.close()
     if clean_strings:
-        def clean_whitespaces(given_str: str):
-            if pd.isnull(given_str):
-                return given_str
-            else:
-                return " ".join(given_str.split())
-
         # Clean strings
         for col in wcvp_columns_used_in_direct_matching:
-            all_wcvp_data[col] = all_wcvp_data[col].apply(clean_whitespaces)
+            all_wcvp_data[col] = all_wcvp_data[col].apply(_clean_whitespaces)
 
     all_accepted = all_wcvp_data[
         all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]

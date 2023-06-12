@@ -3,7 +3,8 @@ import unittest
 
 import pandas as pd
 
-from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
+from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns, \
+    wcvp_columns_used_in_direct_matching
 
 wcvp_data = get_all_taxa()
 _output_path = 'test_outputs'
@@ -208,7 +209,7 @@ class MyTestCase(unittest.TestCase):
         problems1 = accepted[
             accepted[wcvp_accepted_columns['name_w_author']] != accepted[wcvp_columns['name']].str.cat(
                 [accepted[wcvp_columns['authors']].fillna('')],
-                sep=' ')]
+                sep=' ').str.strip()]
         if len(problems1.index) > 0:
             problems1.to_csv('problems1.csv')
             self.assertEqual(len(problems1.index), 0)

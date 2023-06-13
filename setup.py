@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     name='automatchnames',
-    version='1.2.0',
+    version='1.2.1',
     packages=find_packages(),
     install_requires=[
         'pandas==2.0.1',
         'numpy==1.24.2',
         'requests==2.28.2',
         'tqdm==4.64.1',
-        'typing'
-
+        'typing',
+        'zstandard'
     ],
     url='https://github.com/alrichardbollans/automatchnames',
     license='GNU v.3',

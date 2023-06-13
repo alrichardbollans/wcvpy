@@ -228,13 +228,14 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
     str_to_hash = str([filetime]).encode()
     filepath_for_zipped_parsed_version = os.path.join(_inputs_path, "parsed_wcvp" + str(
-        hashlib.md5(str_to_hash).hexdigest()) + ".csv.zip")
+        hashlib.md5(str_to_hash).hexdigest()) + ".csv.zst")
 
     if os.path.isfile(filepath_for_zipped_parsed_version):
         print(f'Using preparsed file:{filepath_for_zipped_parsed_version}')
         # need to correctly specify dtypes of extra columns
         reading_dtypes[wcvp_accepted_columns['species_wcvp_id']] = object
         reading_dtypes['accepted_parent_id'] = object
+        reading_dtypes['genus_hybrid'] = object
 
         parsed_wcvp_data = pd.read_csv(filepath_for_zipped_parsed_version, encoding='utf-8', sep='|',
                                        quotechar='"', quoting=3,
@@ -256,8 +257,8 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         parsed_wcvp_data = get_species_names_and_ipni_ids(parsed_wcvp_data)
         if clean_strings:
             # only write if strings have been cleaned
-            parsed_wcvp_data.to_csv(filepath_for_zipped_parsed_version, index=False, compression='zip',
-                                    encoding='utf-8', sep='|', quotechar='"', quoting=3, )
+            parsed_wcvp_data.to_csv(filepath_for_zipped_parsed_version, index=False, compression='zstd',
+                                    encoding='utf-8', sep='|', quotechar='"', quoting=3)
 
     if statuses_to_drop is None:
         statuses_to_drop = ['Local Biotype']

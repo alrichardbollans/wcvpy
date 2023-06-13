@@ -4,6 +4,7 @@ setup(
     name='automatchnames',
     version='1.2.1',
     packages=find_packages(),
+    package_data={"wcvp_download": ["inputs/*"]},
     install_requires=[
         'pandas==2.0.1',
         'numpy==1.24.2',

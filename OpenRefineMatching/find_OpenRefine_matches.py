@@ -4,8 +4,6 @@ import pandas as pd
 import requests
 
 _openrefine_ipni_service_url = 'http://data1.kew.org/reconciliation/reconcile/IpniName'
-_openrefine_ipni_request = requests.get(_openrefine_ipni_service_url)
-_openrefine_ipni_service_metadata = _openrefine_ipni_request.json()
 
 reco_submitted_name_col_id = 'reco_submitted_name_col_id'
 

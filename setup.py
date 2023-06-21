@@ -8,7 +8,7 @@ setup(
     install_requires=[
         'pandas==2.0.1',
         'numpy==1.24.2',
-        'requests==2.28.2',
+        'requests==2.31.0',
         'tqdm==4.64.1',
         'typing',
         'zstandard'

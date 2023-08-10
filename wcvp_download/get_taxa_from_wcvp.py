@@ -160,12 +160,14 @@ def get_wcvp_zip(get_new_version: bool = False):
 
     def download_newest():
         print('Downloading latest WCVP version...')
+        print(f'to: {input_zip_file}')
         r = requests.get(wcvp_link, stream=True)
         with open(input_zip_file, 'wb') as fd:
             for chunk in r.iter_content(chunk_size=128):
                 fd.write(chunk)
 
     print(f'Loading WCVP...')
+    print(f'from: {input_zip_file}')
     if get_new_version:
 
         print(f'The latest version will be downloaded if not already available at {input_zip_file}')

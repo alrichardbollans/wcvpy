@@ -89,5 +89,6 @@ def get_accepted_wcvp_info_from_ipni_ids_in_column(df: pd.DataFrame, id_col_name
         raise ValueError('Generating accepted info is mismatched')
 
     match_df[id_col_name] = match_df[id_col_name].replace('no_id_placeholder', np.nan)
+    match_df['matched_by'] = 'ipni_id'
 
     return match_df

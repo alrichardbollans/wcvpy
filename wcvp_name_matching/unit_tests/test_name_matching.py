@@ -434,7 +434,7 @@ class MyTestCase(unittest.TestCase):
         self.all_info_test('knms_synonyms.csv', 'Name')
 
     def test_ecbot(self):
-
+        import openpyxl
         test_df = pd.read_excel(os.path.join(unittest_inputs, 'Adam-ex-data-ZI.xlsx'))
         response = get_accepted_info_from_names_in_column(test_df, 'Taxon ', family_column='Family')
         response.to_csv(os.path.join(unittest_outputs, 'ecbot.csv'))

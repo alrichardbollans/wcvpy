@@ -1,5 +1,13 @@
 # Matching Names In Datasets to the WCVP
 
+To cite WCVP:
+Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document] 
+URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
+
+For further information:
+Govaerts, R., Nic Lughadha, E. et al. The World Checklist of Vascular Plants, a continuously updated resource for exploring global plant diversity.
+Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
+
 ## Installation
 
 With pip, run:
@@ -241,9 +249,8 @@ cases in `examples_to_fix.csv`.
 
 ## Sources
 
-WCVP (2023). World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. Published on
-the Internet
-http://wcvp.science.kew.org/
+Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document] 
+URL http://sftp.kew.org/pub/data-repositories/WCVP/
 Retrieved XX/XX/XX.
 
 KNMS (2023). Kew Names Matching Service.

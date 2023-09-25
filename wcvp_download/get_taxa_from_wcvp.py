@@ -201,7 +201,11 @@ def get_wcvp_zip(get_new_version: bool = False):
             print('Using up to date WCVP.')
 
     file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
-    return file_time, zipfile.ZipFile(input_zip_file)
+    try:
+        return file_time, zipfile.ZipFile(input_zip_file)
+    except zipfile.BadZipfile as e:
+
+        raise zipfile.BadZipfile(f'Delete zipfile and rerun: {input_zip_file}')
 
 
 def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None, genera: List[str] = None,

@@ -287,7 +287,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                                            families_of_interest: List[str] = None,
                                            family_column: str = None,
                                            manual_resolution_csv: str = None,
-                                           match_level: str = 'full') -> pd.DataFrame:
+                                           match_level: str = 'full', wcvp_version: str = None) -> pd.DataFrame:
     """
     First tries to match names in df to wcvp directly to obtain accepted info and then
     matches names in df using knms and gets corresponding accepted info from wcvp
@@ -343,7 +343,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
 
         # Check families of interest and in family column are in wcvp, and remove if not
         if families_of_interest is not None or family_column is not None:
-            wcvp_families_df = get_all_taxa()
+            wcvp_families_df = get_all_taxa(version=wcvp_version)
             wcvp_families = list(wcvp_families_df[wcvp_columns['family']].unique())
             wcvp_acc_families = list(wcvp_families_df[wcvp_accepted_columns['family']].unique())
             wcvp_all_families = wcvp_families + wcvp_acc_families
@@ -379,7 +379,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         in_df[unique_submission_index_col] = in_df[unique_submission_index_col].astype(str)
         df = df.drop_duplicates(subset=[unique_submission_index_col])
 
-        all_taxa = get_all_taxa(families_of_interest=families_of_interest)
+        all_taxa = get_all_taxa(families_of_interest=families_of_interest, version=wcvp_version)
         # First get manual matches using given ipni ids
         if manual_resolution_csv is not None:
             manual_match_df = pd.read_csv(manual_resolution_csv)

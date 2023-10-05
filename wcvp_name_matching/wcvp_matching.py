@@ -92,7 +92,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
 
 
 def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, unique_submission_id_col: str,
-                                      all_taxa: pd.DataFrame = None, family_column: str = None):
+                                      all_taxa: pd.DataFrame = None, family_column: str = None, wcvp_version:str = None):
     """
     Appends accepted info columns to df from list of taxa, based on names in matching_name_col
     :param df:
@@ -101,7 +101,7 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
     :return:
     """
     if all_taxa is None:
-        all_taxa = get_all_taxa()
+        all_taxa = get_all_taxa(version=wcvp_version)
 
     # First try with author info i.e. taxon name + taxon_authors and then
     # taxon name + parenthetical_author + primary_author

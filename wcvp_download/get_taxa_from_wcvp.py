@@ -149,28 +149,40 @@ def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
     return taxa_df
 
 
-def get_wcvp_zip(get_new_version: bool = False):
-    wcvp_path = 'http://sftp.kew.org/pub/data-repositories/WCVP'
-    wcvp_link = '/'.join([wcvp_path, 'wcvp.zip'])
+def get_wcvp_zip(get_new_version: bool = False, version: str = None):
+    if get_new_version and version:
+        raise ValueError('Cannot specify both get_new_version and version')
+    base_wcvp_path = 'http://sftp.kew.org/pub/data-repositories/WCVP'
+    if version:
+        wcvp_file_name = 'wcvp_v' + version + '.zip'
+        wcvp_path = '/'.join([base_wcvp_path, 'Archive'])
 
-    input_zip_file = os.path.join(_inputs_path, 'wcvp.zip')
+    else:
+        wcvp_file_name = 'wcvp.zip'
+        wcvp_path = base_wcvp_path
+    wcvp_link = '/'.join([wcvp_path, wcvp_file_name])
+
+    input_zip_file = os.path.join(_inputs_path, wcvp_file_name)
 
     if not os.path.exists(_inputs_path):
         os.mkdir(_inputs_path)
 
     def download_newest():
-        print('Downloading latest WCVP version...')
+        if version is None:
+            print('Downloading latest WCVP version...')
+        else:
+            print('Downloading WCVP version:' + version)
         print(f'to: {input_zip_file}')
         r = requests.get(wcvp_link, stream=True)
         with open(input_zip_file, 'wb') as fd:
             for chunk in r.iter_content(chunk_size=128):
                 fd.write(chunk)
 
-    print(f'Loading WCVP...')
+    print(f'Loading WCVP locally if exists...')
     print(f'from: {input_zip_file}')
     if get_new_version:
 
-        print(f'The latest version will be downloaded if not already available at {input_zip_file}')
+        print(f'The latest file will be downloaded if not already available at {input_zip_file}')
         # Download if doesn't exist
         if not os.path.exists(input_zip_file):
             download_newest()
@@ -187,18 +199,21 @@ def get_wcvp_zip(get_new_version: bool = False):
     elif not os.path.exists(input_zip_file):
         download_newest()
     else:
-        r = requests.head(wcvp_link)
-        url_time = r.headers['last-modified']
-        url_date = parsedate(url_time).astimezone()
-        file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
-        if url_date > file_time:
-            print(
-                f'WARNING: Loading your existing version of WCVP which was is out of date. Downloaded at: {file_time}')
-            print(f'A new checklist version was released at: {url_date}')
-            print('To up date the WCVP version, run get_all_taxa(get_new_version=True)')
-
+        if version:
+            print('Using WCVP version:' + version)
         else:
-            print('Using up to date WCVP.')
+            r = requests.head(wcvp_link)
+            url_time = r.headers['last-modified']
+            url_date = parsedate(url_time).astimezone()
+            file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+            if url_date > file_time:
+                print(
+                    f'WARNING: Loading your existing version of WCVP which is out of date. Downloaded at: {file_time}')
+                print(f'A new checklist version was released at: {url_date}')
+                print('To up date the WCVP version, run get_all_taxa(get_new_version=True)')
+
+            else:
+                print('Using up to date WCVP.')
 
     file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
     try:
@@ -212,7 +227,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                  species: List[str] = None,
                  specific_taxa: List[str] = None,
                  accepted: bool = False, statuses_to_drop=None, output_csv: str = None,
-                 get_new_version: bool = False, clean_strings: bool = True) -> pd.DataFrame:
+                 get_new_version: bool = False, version: str = None, clean_strings: bool = True) -> pd.DataFrame:
     start = time.time()
 
     if output_csv is not None:
@@ -220,7 +235,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         if not os.path.isdir(new_output_dir) and new_output_dir != '':
             os.mkdir(new_output_dir)
 
-    filetime, zf = get_wcvp_zip(get_new_version=get_new_version)
+    filetime, zf = get_wcvp_zip(get_new_version=get_new_version, version=version)
     csv_file = zf.open('wcvp_names.csv')
 
     reading_dtypes = {'homotypic_synonym': object, wcvp_columns['wcvp_id']: object,
@@ -232,39 +247,20 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
 
     csv_file.close()
 
-    str_to_hash = str([filetime]).encode()
-    filepath_for_zipped_parsed_version = os.path.join(_inputs_path, "parsed_wcvp" + str(
-        hashlib.md5(str_to_hash).hexdigest()) + ".csv.zst")
+    print(f'Parsing the checklist')
 
-    if os.path.isfile(filepath_for_zipped_parsed_version):
-        print(f'Using preparsed file:{filepath_for_zipped_parsed_version}')
-        # need to correctly specify dtypes of extra columns
-        reading_dtypes[wcvp_accepted_columns['species_wcvp_id']] = object
-        reading_dtypes['accepted_parent_id'] = object
-        reading_dtypes['genus_hybrid'] = object
+    if clean_strings:
+        # Clean strings
+        for col in wcvp_columns_used_in_direct_matching:
+            all_wcvp_data[col] = all_wcvp_data[col].apply(_clean_whitespaces)
 
-        parsed_wcvp_data = pd.read_csv(filepath_for_zipped_parsed_version, encoding='utf-8', sep='|',
-                                       quotechar='"', quoting=3,
-                                       dtype=reading_dtypes)
-    else:
-        print(f'Parsing the checklist. Parsed file will be saved to:{filepath_for_zipped_parsed_version}')
+    all_accepted = all_wcvp_data[
+        all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
 
-        if clean_strings:
-            # Clean strings
-            for col in wcvp_columns_used_in_direct_matching:
-                all_wcvp_data[col] = all_wcvp_data[col].apply(_clean_whitespaces)
-
-        all_accepted = all_wcvp_data[
-            all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
-
-        parsed_wcvp_data = add_accepted_info_to_rows(all_wcvp_data,
-                                                     get_parent_names_and_ipni_ids(all_accepted,
-                                                                                   all_wcvp_data))
-        parsed_wcvp_data = get_species_names_and_ipni_ids(parsed_wcvp_data)
-        if clean_strings:
-            # only write if strings have been cleaned
-            parsed_wcvp_data.to_csv(filepath_for_zipped_parsed_version, index=False, compression='zstd',
-                                    encoding='utf-8', sep='|', quotechar='"', quoting=3)
+    parsed_wcvp_data = add_accepted_info_to_rows(all_wcvp_data,
+                                                 get_parent_names_and_ipni_ids(all_accepted,
+                                                                               all_wcvp_data))
+    parsed_wcvp_data = get_species_names_and_ipni_ids(parsed_wcvp_data)
 
     if statuses_to_drop is None:
         statuses_to_drop = ['Local Biotype']

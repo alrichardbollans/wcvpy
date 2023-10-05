@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='automatchnames',
-    version='1.2.1',
+    version='1.2.2',
     packages=find_packages(),
     package_data={"wcvp_download": ["inputs/*"]},
     install_requires=[

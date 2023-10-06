@@ -9,9 +9,9 @@ introduced_code_column = 'intro_tdwg3_codes'
 
 
 def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, include_doubtful: bool = False,
-                                        include_extinct: bool = False):
+                                        include_extinct: bool = False, wcvp_version: str = None):
     start = time.time()
-    wcvp_with_dists = add_distribution_list_to_wcvp(include_doubtful, include_extinct)
+    wcvp_with_dists = add_distribution_list_to_wcvp(include_doubtful, include_extinct, wcvp_version=wcvp_version)
     wcvp_with_dists = wcvp_with_dists[wcvp_with_dists[wcvp_columns['status']] == 'Accepted']
     wcvp_with_dists = wcvp_with_dists.dropna(subset=wcvp_accepted_columns['name'])
     wcvp_with_dists = wcvp_with_dists[
@@ -32,7 +32,7 @@ def _sorted_tuple(iterable):
 
 
 def add_distribution_list_to_wcvp(include_doubtful: bool = False,
-                                  include_extinct: bool = False):
+                                  include_extinct: bool = False, wcvp_version: str = None):
     """
     Gets a copy of WCVP with distribution data for all taxa
     :param include_doubtful:
@@ -40,8 +40,8 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     :return:
     """
     # Only use accepted taxa for distributions as everything else is unreliable
-    accepted_wcvp_data = get_all_taxa(accepted=True)
-    zip_filetime, wcvp_zip = get_wcvp_zip()
+    accepted_wcvp_data = get_all_taxa(accepted=True, version=wcvp_version)
+    zip_filetime, wcvp_zip = get_wcvp_zip(version=wcvp_version)
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')
     all_dist_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
@@ -83,7 +83,7 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     accepted_taxa_with_natives_intros = accepted_taxa_with_natives_intros.dropna(
         subset=[wcvp_columns['acc_plant_name_id']])
     # Update taxa list with distributions from accepted taxa
-    all_wcvp = get_all_taxa()
+    all_wcvp = get_all_taxa(version=wcvp_version)
     wcvp_data_with_distributions = pd.merge(all_wcvp, accepted_taxa_with_natives_intros,
                                             on=wcvp_columns['acc_plant_name_id'], how='left')
     wcvp_data_with_distributions = wcvp_data_with_distributions.dropna(

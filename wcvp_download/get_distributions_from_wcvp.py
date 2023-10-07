@@ -17,6 +17,11 @@ def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, inc
     wcvp_with_dists = wcvp_with_dists[
         [wcvp_accepted_columns['name'], native_code_column, introduced_code_column]]
     # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['wcvp_id'].isin(df[wcvp_id_col].values)]]
+    for name in df[acc_name_col].unique():
+        if name not in wcvp_with_dists[wcvp_accepted_columns['name']].values:
+            raise ValueError(
+                f'{name} not an accepted name in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version. Also check spelling')
+
     output = pd.merge(df, wcvp_with_dists, how='left', left_on=acc_name_col,
                       right_on=wcvp_accepted_columns['name'])
     if wcvp_accepted_columns['name'] not in df.columns:
@@ -40,7 +45,8 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     :return:
     """
     # Only use accepted taxa for distributions as everything else is unreliable
-    accepted_wcvp_data = get_all_taxa(accepted=True, version=wcvp_version)
+    all_wcvp = get_all_taxa(version=wcvp_version)
+    accepted_wcvp_data = all_wcvp[all_wcvp[wcvp_columns['status']] == 'Accepted']
     zip_filetime, wcvp_zip = get_wcvp_zip(version=wcvp_version)
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')
@@ -83,10 +89,9 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     accepted_taxa_with_natives_intros = accepted_taxa_with_natives_intros.dropna(
         subset=[wcvp_columns['acc_plant_name_id']])
     # Update taxa list with distributions from accepted taxa
-    all_wcvp = get_all_taxa(version=wcvp_version)
-    wcvp_data_with_distributions = pd.merge(all_wcvp, accepted_taxa_with_natives_intros,
+    wcvp_data_with_distributions = pd.merge(all_wcvp, accepted_taxa_with_natives_intros.dropna(subset=[wcvp_columns['acc_plant_name_id']]),
                                             on=wcvp_columns['acc_plant_name_id'], how='left')
-    wcvp_data_with_distributions = wcvp_data_with_distributions.dropna(
-        subset=[introduced_code_column, native_code_column], how='all')
+    # wcvp_data_with_distributions = wcvp_data_with_distributions.dropna(
+    #     subset=[introduced_code_column, native_code_column], how='all')
 
     return wcvp_data_with_distributions

@@ -17,13 +17,17 @@ native_test_dict = {'Campomanesia thea': ('BZS',), 'Delonix regia': ('MDG',),
                         'SAR', 'SPA', 'SWE'), 'Digitalis purpurea var. purpurea': (
         'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
         'SAR', 'SPA', 'SWE'), 'Lebeckia': ('CPP',), 'Airyantha borneensis': ('BOR', 'PHI')}
-intro_test_dict = {'Campomanesia thea': np.nan,'Adenanthera microsperma': ('JAM', 'MAU', 'TAN'),
+intro_test_dict = {'Campomanesia thea': np.nan, 'Adenanthera microsperma': ('JAM', 'MAU', 'TAN'),
                    'Libidibia ferrea': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
+
 
 def get_wcvp_id_from_ipni_id(all_taxa, ipni_id):
     return all_taxa[all_taxa['ipni_id'] == ipni_id]['plant_name_id'].values[0]
+
+
 def get_acc_name_from_ipni_id(all_taxa, ipni_id):
     return all_taxa[all_taxa['ipni_id'] == ipni_id][wcvp_accepted_columns['name']].values[0]
+
 
 class MyTestCase(unittest.TestCase):
 
@@ -80,7 +84,6 @@ class MyTestCase(unittest.TestCase):
 
         with_doubtful = add_distribution_list_to_wcvp(include_doubtful=True)
 
-
         self.assertEqual(with_dist.columns.tolist(), with_doubtful.columns.tolist())
         df_diff = pd.concat([with_dist, with_doubtful]).drop_duplicates(keep=False)
 
@@ -101,7 +104,6 @@ class MyTestCase(unittest.TestCase):
             if intro_test_dict[t] == intro_test_dict[t]:
                 row = with_dist[with_dist[wcvp_accepted_columns['name']] == t]
                 self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[t])
-
 
 
 if __name__ == '__main__':

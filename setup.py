@@ -2,9 +2,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='automatchnames',
-    version='1.2.2',
+    version='1.2.3',
     packages=find_packages(),
-    package_data={"wcvp_download": ["inputs/*"]},
+    package_data={"wcvp_download": ["inputs/*", "inputs/wgsrpd-master/level3/*"]},
     install_requires=[
         'pandas>=2.0.1',
         'numpy>=1.24.2',
@@ -13,6 +13,9 @@ setup(
         'typing',
         'zstandard'
     ],
+    extras_require={
+        'dist_plots': ["matplotlib", 'cartopy', 'fiona', 'pillow']
+    },
     url='https://github.com/alrichardbollans/automatchnames',
     license='GNU v.3',
     author='Adam Richard-Bollans',

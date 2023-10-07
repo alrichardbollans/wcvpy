@@ -6,3 +6,6 @@ Retrieved XX/XX/XXXX
 KNMS (XXXX). The Kew Name Matching Service.
 https://namematch.science.kew.org/
 Retrieved XX/XX/XXXX
+
+IPNI (XXXX). International Plant Names Index. Published on the Internet http://www.ipni.org,
+The Royal Botanic Gardens, Kew, Harvard University Herbaria & Libraries and Australian National Herbarium. [Retrieved XXXX].

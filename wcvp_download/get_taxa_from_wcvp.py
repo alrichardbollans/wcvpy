@@ -178,6 +178,17 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
             for chunk in r.iter_content(chunk_size=128):
                 fd.write(chunk)
 
+    def check_file_is_newer_than_online_version():
+        try:
+            r = requests.head(wcvp_link)
+            url_time = r.headers['last-modified']
+            url_date = parsedate(url_time).astimezone()
+            file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+            return url_date, file_time
+        except requests.exceptions.ConnectionError:
+            print('WARNING: No connection established to Kew SFTP server, will not download updated version')
+            return 0, 1
+
     print(f'Loading WCVP locally if exists...')
     print(f'from: {input_zip_file}')
     if get_new_version:
@@ -189,10 +200,7 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
 
         else:
             # Download if online version is newer
-            r = requests.head(wcvp_link)
-            url_time = r.headers['last-modified']
-            url_date = parsedate(url_time).astimezone()
-            file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+            url_date, file_time = check_file_is_newer_than_online_version()
             if url_date > file_time:
                 download_newest()
 
@@ -202,11 +210,9 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
         if version:
             print('Using WCVP version:' + version)
         else:
-            r = requests.head(wcvp_link)
-            url_time = r.headers['last-modified']
-            url_date = parsedate(url_time).astimezone()
-            file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+            url_date, file_time = check_file_is_newer_than_online_version()
             if url_date > file_time:
+
                 print(
                     f'WARNING: Loading your existing version of WCVP which is out of date. Downloaded at: {file_time}')
                 print(f'A new checklist version was released at: {url_date}')

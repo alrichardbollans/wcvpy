@@ -180,7 +180,7 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
 
     def check_file_is_newer_than_online_version():
         try:
-            r = requests.head(wcvp_link)
+            r = requests.head(wcvp_link, timeout=10)
             url_time = r.headers['last-modified']
             url_date = parsedate(url_time).astimezone()
             file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()

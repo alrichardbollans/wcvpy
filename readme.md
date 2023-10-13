@@ -12,7 +12,7 @@ Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
 With pip, run:
 
-`pip install git+https://github.com/alrichardbollans/automatchnames.git@1.2.3`
+`pip install git+https://github.com/alrichardbollans/automatchnames.git@1.2.4`
 
 ## Usage
 

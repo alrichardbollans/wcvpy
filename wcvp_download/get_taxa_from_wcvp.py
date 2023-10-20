@@ -57,13 +57,22 @@ infraspecific_chars = ['agamosp.', 'convar.', 'ecas.', 'f.', 'grex', 'group', 'l
                        'subproles', 'subsp.', 'subspecioid', 'subvar.', 'unterrasse', 'var.']
 
 
-def _clean_whitespaces(given_str: str):
-    if pd.isnull(given_str):
+def clean_whitespaces_in_names(given_str: str):
+    try:
+        if pd.isnull(given_str):
+            return given_str
+        else:
+            stripped = given_str.strip()
+            out = " ".join(stripped.split())
+            return out
+    except AttributeError:
         return given_str
-    else:
-        stripped = given_str.strip()
-        out = " ".join(stripped.split())
-        return out
+
+
+def add_authors_to_col(wcvp_df: pd.DataFrame, col: str):
+    return wcvp_df[col].str.cat(
+        wcvp_df[wcvp_columns['authors']].fillna(''),
+        sep=' ').str.strip()
 
 
 def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame) -> pd.DataFrame:
@@ -77,9 +86,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
     all_accepted = all_accepted.assign(accepted_parent_id=all_accepted[wcvp_columns['parent_plant_name_id']])
     all_accepted = all_accepted.assign(accepted_parent_rank=all_accepted['parent_rank'])
 
-    all_accepted['accepted_name_w_author'] = all_accepted[wcvp_columns['name']].str.cat(
-        all_accepted[wcvp_columns['authors']].fillna(''),
-        sep=' ').str.strip()
+    all_accepted['accepted_name_w_author'] = add_authors_to_col(all_accepted, wcvp_columns['name'])
 
     all_accepted = all_accepted.rename(columns={wcvp_columns['wcvp_id']: 'plant_name_id_acc'})
     all_accepted = all_accepted[
@@ -96,9 +103,7 @@ def add_accepted_info_to_rows(taxa_df: pd.DataFrame, all_accepted: pd.DataFrame)
 
 def get_parent_names_and_ipni_ids(taxa_df: pd.DataFrame, all_data: pd.DataFrame) -> pd.DataFrame:
     parent_data = all_data.drop(columns=['parent_plant_name_id'])
-    parent_data['parent_name_w_author'] = parent_data[wcvp_columns['name']].str.cat(
-        parent_data[wcvp_columns['authors']].fillna(''),
-        sep=' ').str.strip()
+    parent_data['parent_name_w_author'] = add_authors_to_col(parent_data, wcvp_columns['name'])
 
     parent_data = parent_data.rename(columns={wcvp_columns['wcvp_id']: 'parent_plant_name_id',
                                               wcvp_columns['name']: wcvp_columns['parent_name'],
@@ -184,6 +189,8 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
             url_time = r.headers['last-modified']
             url_date = parsedate(url_time).astimezone()
             file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
+            if url_date > file_time:
+                print('Using up to date WCVP.')
             return url_date, file_time
         except requests.exceptions.ConnectionError:
             print('WARNING: No connection established to Kew SFTP server, will not download updated version')
@@ -212,14 +219,10 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
         else:
             url_date, file_time = check_file_is_newer_than_online_version()
             if url_date > file_time:
-
                 print(
                     f'WARNING: Loading your existing version of WCVP which is out of date. Downloaded at: {file_time}')
                 print(f'A new checklist version was released at: {url_date}')
                 print('To up date the WCVP version, run get_all_taxa(get_new_version=True)')
-
-            else:
-                print('Using up to date WCVP.')
 
     file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
     try:
@@ -258,7 +261,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     if clean_strings:
         # Clean strings
         for col in wcvp_columns_used_in_direct_matching:
-            all_wcvp_data[col] = all_wcvp_data[col].apply(_clean_whitespaces)
+            all_wcvp_data[col] = all_wcvp_data[col].apply(clean_whitespaces_in_names)
 
     all_accepted = all_wcvp_data[
         all_wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]

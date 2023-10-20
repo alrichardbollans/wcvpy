@@ -3,7 +3,7 @@ import string
 
 import pandas as pd
 
-from wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters, infraspecific_chars
+from wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters, infraspecific_chars, clean_whitespaces_in_names
 
 acc_info_col_names = [wcvp_accepted_columns['ipni_id'],
                       wcvp_accepted_columns['name'],
@@ -143,7 +143,7 @@ def remove_fullstop(given_name: str) -> str:
 def tidy_families_in_column(df: pd.DataFrame, fam_column: str):
     df[submitted_family_name_col_id] = df[fam_column]
     df[fam_column] = df[fam_column].apply(remove_spacelike_chars)
-    df[fam_column] = df[fam_column].apply(remove_whitespace_at_beginning_and_end)
+    df[fam_column] = df[fam_column].apply(clean_whitespaces_in_names)
     df[fam_column] = df[fam_column].apply(_capitalize_first_letter_of_taxon)
 
 
@@ -151,8 +151,7 @@ def tidy_names_in_column(df: pd.DataFrame, name_col: str):
     df[submitted_name_col_id] = df[name_col]
     df[name_col] = df[name_col].apply(remove_spacelike_chars)
     df[name_col] = df[name_col].apply(add_space_around_hybrid_chars_and_infraspecific_epithets)
-    df[name_col] = df[name_col].apply(remove_double_spaces)
-    df[name_col] = df[name_col].apply(remove_whitespace_at_beginning_and_end)
+    df[name_col] = df[name_col].apply(clean_whitespaces_in_names)
     df[recapitalised_name_col] = df[name_col].apply(_capitalize_first_letter_of_taxon)
 
 

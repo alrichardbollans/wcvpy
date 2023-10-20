@@ -3,9 +3,9 @@ from typing import List
 import numpy as np
 import pandas as pd
 
-from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
+from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns, clean_whitespaces_in_names
 from wcvp_name_matching import clean_urn_ids, output_record_col_names, lowercase_name_col, \
-    remove_fullstop, remove_whitespace_at_beginning_and_end, tidied_taxon_authors_col, tidy_authors, \
+    remove_fullstop, tidied_taxon_authors_col, tidy_authors, \
     status_priority
 
 
@@ -46,7 +46,7 @@ def get_family_specific_resolutions(resolution_df: pd.DataFrame, family_column: 
 def tidy_value_for_matching(given_value: str) -> str:
     lower = given_value.lower()
     without_fullstop = remove_fullstop(lower)
-    rmved_whitespace = remove_whitespace_at_beginning_and_end(without_fullstop)
+    rmved_whitespace = clean_whitespaces_in_names(without_fullstop)
     return rmved_whitespace
 
 

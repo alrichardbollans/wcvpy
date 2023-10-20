@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from pkg_resources import resource_filename
 
+from wcvp_download import clean_whitespaces_in_names
 from wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
 from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors, \
     get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets
@@ -112,6 +113,10 @@ class MyTestCase(unittest.TestCase):
         for t in examples:
             self.assertEqual(add_space_around_hybrid_chars_and_infraspecific_epithets(t), examples[t])
 
-
+    def test_whitespace_removal(self):
+        test_dict = {'first second third': 'first second third',
+                     'A   B B  C ': 'A B B C', 2:2, '  ':''}
+        for t in test_dict:
+            self.assertEqual(clean_whitespaces_in_names(t), test_dict[t])
 if __name__ == '__main__':
     unittest.main()

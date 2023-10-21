@@ -2,6 +2,7 @@ import os
 import unittest
 
 import pandas as pd
+import pandas.testing
 
 from wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns, \
     wcvp_columns_used_in_direct_matching
@@ -207,8 +208,8 @@ class MyTestCase(unittest.TestCase):
         # acc name with author = acc name + authors
         accepted = wcvp_data[wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
         accepted['auth_check'] = accepted[wcvp_columns['name']].str.cat(
-                [accepted[wcvp_columns['authors']].fillna('')],
-                sep=' ').str.strip()
+            [accepted[wcvp_columns['authors']].fillna('')],
+            sep=' ').str.strip()
         problems1 = accepted[
             accepted[wcvp_accepted_columns['name_w_author']] != accepted['auth_check']]
         if len(problems1.index) > 0:
@@ -284,6 +285,13 @@ class MyTestCase(unittest.TestCase):
                                                                   'primary_author']].isna())]
 
         self.assertEqual(len(without_authors.index), 0)
+
+    def test_getting_ranks(self):
+        sp = get_all_taxa(ranks=['Species'])
+        all_sp = wcvp_data[(wcvp_data[wcvp_columns['rank']].isin(['Species'])) | (
+            wcvp_data[wcvp_accepted_columns['rank']].isin(['Species']))]
+
+        pandas.testing.assert_frame_equal(sp,all_sp)
 
 
 if __name__ == '__main__':

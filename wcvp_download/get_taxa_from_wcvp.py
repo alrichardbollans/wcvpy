@@ -236,7 +236,23 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                  species: List[str] = None,
                  specific_taxa: List[str] = None,
                  accepted: bool = False, statuses_to_drop=None, output_csv: str = None,
-                 get_new_version: bool = False, version: str = None, clean_strings: bool = True) -> pd.DataFrame:
+                 get_new_version: bool = False, version: str = None,
+                 clean_strings: bool = True) -> pd.DataFrame:
+    '''
+
+    :param families_of_interest: Restrict taxa to those in given families. Will also include synonyms whose accepted taxon is in given families
+    :param ranks: Restrict taxa to those in given ranks. Will also include synonyms whose accepted taxon is in given rank
+    :param genera: Return taxa with a particular species epithet.
+    :param species: Return taxa with a particular species epithet.
+    :param specific_taxa: Return taxa with a particular taxon name.
+    :param accepted: If TRUE, only return accepted taxa.
+    :param statuses_to_drop:
+    :param output_csv:
+    :param get_new_version:
+    :param version:
+    :param clean_strings:
+    :return:
+    '''
     start = time.time()
 
     if output_csv is not None:
@@ -301,7 +317,8 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
         for r in ranks:
             if r not in known_ranks_in_wcvp:
                 raise ValueError(f'Given rank: {r} not in wcvp ranks: {known_ranks_in_wcvp}. CASE SENSITIVE')
-        parsed_wcvp_data = parsed_wcvp_data[parsed_wcvp_data[wcvp_columns['rank']].isin(ranks)]
+        parsed_wcvp_data = parsed_wcvp_data[(parsed_wcvp_data[wcvp_columns['rank']].isin(ranks)) | (
+            parsed_wcvp_data[wcvp_accepted_columns['rank']].isin(ranks))]
 
     if specific_taxa is not None:
         for f in specific_taxa:

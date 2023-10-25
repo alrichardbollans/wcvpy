@@ -2,15 +2,18 @@ import os
 import re
 import unittest
 
+import pandas.testing
+
 from wcvp_download import get_all_taxa, wcvp_columns_used_in_direct_matching, infraspecific_chars, \
-    hybrid_characters, wcvp_columns, wcvp_accepted_columns
+    hybrid_characters, wcvp_columns, wcvp_accepted_columns, clean_whitespaces_in_names
 
 wcvp_data = get_all_taxa()
 _output_path = 'test_outputs'
 
+things_not_in_checklist = ['  ', ' .', '. )', ' )', '\t']
+
 
 def string_hygeine_tests(df, output_dir):
-    things_not_in_checklist = ['  ', ' .',  '\t']
     notin_problem_dfs = []
     for col in wcvp_columns_used_in_direct_matching:
         for unused_string in things_not_in_checklist:
@@ -61,6 +64,18 @@ class MyTestCase(unittest.TestCase):
             if len(problems.index) > 0:
                 problems.to_csv(os.path.join(_output_path, str(c) + '.csv'))
                 raise ValueError
+
+    def test_authors(self):
+        test_columns = [wcvp_columns['paranthet_author'], wcvp_columns['primary_author'], wcvp_columns['authors']]
+        taxa_to_test = wcvp_data.dropna(subset=test_columns, how='any')
+        taxa_to_test['()'] = '(' + taxa_to_test[wcvp_columns['paranthet_author']] + ')'
+
+        for c in test_columns:
+            taxa_to_test[c] = taxa_to_test[c].apply(clean_whitespaces_in_names)
+        taxa_to_test['test_col'] = taxa_to_test['()'].str.cat([taxa_to_test[wcvp_columns['primary_author']]],
+                                                              sep=' ')
+
+        pandas.testing.assert_series_equal(taxa_to_test['test_col'], taxa_to_test[wcvp_columns['authors']], check_names=False)
 
 
 if __name__ == '__main__':

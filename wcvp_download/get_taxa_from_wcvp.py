@@ -21,9 +21,11 @@ wcvp_columns = {'family': 'family',
                 'status': 'taxon_status',
                 'parent_name': 'parent_name',
                 'parent_ipni_id': 'parent_ipni_id',
-                'authors': 'taxon_authors',
-                'paranthet_author': 'parenthetical_author',
-                'primary_author': 'primary_author',
+                'authors': 'taxon_authors',  # Concatenation of parenthetical and primary authors.
+                # Missing values indicate instances where authorship is unknown or non-applicable (e.g. autonyms).
+                'paranthet_author': 'parenthetical_author',  # The author of the basionym. Empty when there is no basionym.
+                'primary_author': 'primary_author',  # The author or authors who published the scientific name.
+                # Missing values indicate instances where authorship is non-applicable (i.e. autonyms) or unknown.
                 'wcvp_id': 'plant_name_id',
                 'parent_plant_name_id': 'parent_plant_name_id',
                 'acc_plant_name_id': 'accepted_plant_name_id',
@@ -64,7 +66,10 @@ def clean_whitespaces_in_names(given_str: str):
         else:
             stripped = given_str.strip()
             out = " ".join(stripped.split())
-            return out
+            # fixing authors
+            fixed_authors = out.replace('. )', '.)')
+            fixed_authors2 = fixed_authors.replace(' )', ')')
+            return fixed_authors2
     except AttributeError:
         return given_str
 

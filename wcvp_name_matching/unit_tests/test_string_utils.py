@@ -115,8 +115,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_whitespace_removal(self):
         test_dict = {'first second third': 'first second third',
-                     'A   B B  C ': 'A B B C', 2:2, '  ':''}
+                     'A   B B  C ': 'A B B C', 2: 2, '  ': ''}
         for t in test_dict:
             self.assertEqual(clean_whitespaces_in_names(t), test_dict[t])
+
+
 if __name__ == '__main__':
     unittest.main()

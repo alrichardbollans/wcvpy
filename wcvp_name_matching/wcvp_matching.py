@@ -56,7 +56,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
     taxa_to_use = all_taxa.dropna(subset=columns)
     column_series = [all_taxa[c].fillna('') for c in columns]
     taxa_to_use['taxon_name_with_extra_columns'] = taxa_to_use[wcvp_columns['name']].str.cat(column_series,
-                                                                                       sep=' ')
+                                                                                             sep=' ')
     taxa_to_use['taxon_name_with_extra_columns'] = taxa_to_use['taxon_name_with_extra_columns'].apply(
         tidy_value_for_matching)
 
@@ -92,7 +92,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
 
 
 def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, unique_submission_id_col: str,
-                                      all_taxa: pd.DataFrame = None, family_column: str = None, wcvp_version:str = None):
+                                      all_taxa: pd.DataFrame = None, family_column: str = None, wcvp_version: str = None):
     """
     Appends accepted info columns to df from list of taxa, based on names in matching_name_col
     :param df:
@@ -104,14 +104,14 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
         all_taxa = get_all_taxa(version=wcvp_version)
 
     # First try with author info i.e. taxon name + taxon_authors and then
-    # taxon name + parenthetical_author + primary_author
+    # taxon name + parenthetical_author + primary_author then taxon name + primary author
     author_merged, unmatched_with_authors_df = match_name_to_concatenated_columns(df, matching_name_col,
                                                                                   all_taxa,
                                                                                   [wcvp_columns['authors']])
 
     author_merged['matched_by'] = 'direct_wcvp_w_author'
 
-    # Try with paranthetical and primary author columns
+    # Try with paranthetical and primary author columns - slight difference with taxon authors as no parantheses around paranthet author
     paranthet_author_merged, unmatched_with_paranthet_authors_df = match_name_to_concatenated_columns(
         unmatched_with_authors_df, matching_name_col,
         all_taxa,
@@ -119,18 +119,26 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
 
     paranthet_author_merged['matched_by'] = 'direct_wcvp_w_author'
 
+    # Try with primary author columns
+    primary_author_merged, unmatched_with_primary_author_df = match_name_to_concatenated_columns(
+        unmatched_with_paranthet_authors_df, matching_name_col,
+        all_taxa,
+        [wcvp_columns['primary_author']])
+
+    primary_author_merged['matched_by'] = 'direct_wcvp_w_author'
+
     # Match with just name
     all_taxa['tidied_taxon_name'] = all_taxa[wcvp_columns['name']].apply(tidy_value_for_matching)
-    unmatched_with_paranthet_authors_df[lowercase_name_col] = unmatched_with_paranthet_authors_df[
+    unmatched_with_primary_author_df[lowercase_name_col] = unmatched_with_primary_author_df[
         matching_name_col].apply(tidy_value_for_matching)
-    just_name_merged = pd.merge(unmatched_with_paranthet_authors_df, all_taxa, how='left',
+    just_name_merged = pd.merge(unmatched_with_primary_author_df, all_taxa, how='left',
                                 left_on=lowercase_name_col,
                                 right_on='tidied_taxon_name')
     just_name_merged = just_name_merged.dropna(subset=[wcvp_columns['wcvp_id']])
     just_name_merged['matched_by'] = 'direct_wcvp'
     just_name_merged['matched_name'] = just_name_merged[wcvp_columns['name']]
 
-    merged_with_wcvp = pd.concat([author_merged, paranthet_author_merged, just_name_merged])
+    merged_with_wcvp = pd.concat([author_merged, paranthet_author_merged, primary_author_merged, just_name_merged])
     match_df = get_family_specific_resolutions(merged_with_wcvp, family_column=family_column)
     match_df = match_df[[unique_submission_id_col] + output_record_col_names + ['matched_by', 'matched_name']]
 

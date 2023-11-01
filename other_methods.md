@@ -32,4 +32,4 @@ Note this is not exhaustive
 
 - R package to interface with Kew resources like KNMS Link: https://github.com/barnabywalker/kewr 
 
-![resolution_word_cloud.jpeg](resolution_word_cloud.jpeg)
+![resolution_word_cloud.jpeg](figs/resolution_word_cloud.jpeg)

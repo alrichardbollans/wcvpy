@@ -77,6 +77,42 @@ class MyTestCase(unittest.TestCase):
 
         pandas.testing.assert_series_equal(taxa_to_test['test_col'], taxa_to_test[wcvp_columns['authors']], check_names=False)
 
+    # @unittest.skip('Known to fail')
+    def test_publication_years(self):
+        # This currently fails
+        def parse_publication_year(given_string: str):
+            try:
+                if len(given_string) == 6:
+                    out = given_string[-5:-1]
+                    return out
+                else:
+                    out = given_string[-5:-1]
+                    return out
+            except TypeError:
+                return given_string
+
+        from datetime import datetime
+        wcvp_data['pyear'] = wcvp_data['first_published'].apply(parse_publication_year)
+        format = "%Y"
+
+        failed = []
+
+        def test_year_parsing(given_str):
+            if given_str == '' or given_str is None or given_str != given_str:
+                pass
+            else:
+                try:
+                    datetime.strptime(given_str, format)
+                except ValueError:
+                    failed.append(given_str)
+
+        wcvp_data['pyear'].apply(test_year_parsing)
+
+        failed_df = wcvp_data[wcvp_data['pyear'].isin(failed)]
+        if len(failed_df.index) > 0:
+            failed_df.to_csv(os.path.join(_output_path, 'publication_year_issues.csv'))
+            raise Exception
+
 
 if __name__ == '__main__':
     unittest.main()

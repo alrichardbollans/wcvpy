@@ -6,21 +6,23 @@ from wcvp_download import get_wcvp_zip, get_all_taxa, wcvp_columns, wcvp_accepte
 
 native_code_column = 'native_tdwg3_codes'
 introduced_code_column = 'intro_tdwg3_codes'
+# Both accepted taxa and artificial_hybirds (e.g. https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:17240180-1) have distribution information
+_statuses_that_have_dists = ['Accepted', 'Artificial Hybrid']
 
 
 def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, include_doubtful: bool = False,
                                         include_extinct: bool = False, wcvp_version: str = None):
     start = time.time()
     wcvp_with_dists = add_distribution_list_to_wcvp(include_doubtful, include_extinct, wcvp_version=wcvp_version)
-    wcvp_with_dists = wcvp_with_dists[wcvp_with_dists[wcvp_columns['status']] == 'Accepted']
+    wcvp_with_dists = wcvp_with_dists[wcvp_with_dists[wcvp_columns['status']].isin(_statuses_that_have_dists)]
     wcvp_with_dists = wcvp_with_dists.dropna(subset=wcvp_accepted_columns['name'])
     wcvp_with_dists = wcvp_with_dists[
         [wcvp_accepted_columns['name'], native_code_column, introduced_code_column]]
     # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['wcvp_id'].isin(df[wcvp_id_col].values)]]
     for name in df[acc_name_col].unique():
-        if name not in wcvp_with_dists[wcvp_accepted_columns['name']].values:
+        if name not in wcvp_with_dists[wcvp_accepted_columns['name']].unique().values:
             raise ValueError(
-                f'{name} not an accepted name in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version. Also check spelling')
+                f'{name} not an accepted name in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version.\n Or could be a result of inclusion of Artifical Hyrbids. Also check spelling')
 
     output = pd.merge(df, wcvp_with_dists, how='left', left_on=acc_name_col,
                       right_on=wcvp_accepted_columns['name'])
@@ -46,7 +48,7 @@ def add_distribution_list_to_wcvp(include_doubtful: bool = False,
     """
     # Only use accepted taxa for distributions as everything else is unreliable
     all_wcvp = get_all_taxa(version=wcvp_version)
-    accepted_wcvp_data = all_wcvp[all_wcvp[wcvp_columns['status']] == 'Accepted']
+    accepted_wcvp_data = all_wcvp[all_wcvp[wcvp_columns['status']].isin(_statuses_that_have_dists)]
     zip_filetime, wcvp_zip = get_wcvp_zip(version=wcvp_version)
 
     csv_file = wcvp_zip.open('wcvp_distribution.csv')

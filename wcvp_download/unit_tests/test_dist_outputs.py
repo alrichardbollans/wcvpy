@@ -1,11 +1,14 @@
+import os
 import unittest
 
 import numpy as np
 import pandas as pd
 
-from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_accepted_taxa
+from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_accepted_taxa, \
+    get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa
 from wcvp_download import wcvp_columns, wcvp_accepted_columns, native_code_column, \
     introduced_code_column
+from wcvp_download.plot_distributions import _OHE_native_dists
 
 with_dist = add_distribution_list_to_wcvp()
 
@@ -104,6 +107,15 @@ class MyTestCase(unittest.TestCase):
             if intro_test_dict[t] == intro_test_dict[t]:
                 row = with_dist[with_dist[wcvp_accepted_columns['name']] == t]
                 self.assertEqual(row[introduced_code_column].iloc[0], intro_test_dict[t])
+
+    def test_bad_examples(self):
+        iso_codes_not_plotted_on_map = [' ', 'frg']
+        ohe = _OHE_native_dists(with_dist)
+
+        problems = ohe[(ohe[' '] == 1) | (ohe['frg'] == 1)]
+        if len(problems) > 1:
+            problems.to_csv(os.path.join(_output_path, 'bad_distributions.csv'))
+            raise ValueError
 
 
 if __name__ == '__main__':

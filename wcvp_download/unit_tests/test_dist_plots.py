@@ -5,7 +5,8 @@ import numpy as np
 import pandas as pd
 import pandas.testing
 
-from wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa
+from wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa, \
+    wcvp_accepted_columns, wcvp_columns
 
 _output_path = 'test_outputs'
 
@@ -51,8 +52,9 @@ class MyTestCase(unittest.TestCase):
         # pandas.testing.assert_frame_equal(ct_region_df, cts_region_df)
 
     def test_region_example(self):
-        ct_region_df = get_native_region_distribution_dataframe_for_accepted_taxa(pd.DataFrame(['Campomanesia thea', 'Campomanesia thea'], columns=['name']), 'name',
-                                                                                  output_path=os.path.join('test_outputs', 'Campomanesia_regions.csv'))
+        ct_region_df = get_native_region_distribution_dataframe_for_accepted_taxa(
+            pd.DataFrame(['Campomanesia thea', 'Campomanesia thea'], columns=['name']), 'name',
+            output_path=os.path.join('test_outputs', 'Campomanesia_regions.csv'))
         pandas.testing.assert_frame_equal(ct_region_df, pd.DataFrame([['BZS', 1]], columns=['Region', 'Number of Native Species']))
 
         v11_region_df = get_native_region_distribution_dataframe_for_accepted_taxa(trait_df, 'accepted_name', wcvp_version='11',
@@ -72,6 +74,12 @@ class MyTestCase(unittest.TestCase):
         else:
             raise ValueError
 
+    def test_plot_all(self):
+        # to_plot = new_taxa[new_taxa[wcvp_columns['status']] == 'Accepted']
+        to_plot = new_taxa[~new_taxa[wcvp_accepted_columns['species']].isna()]
+        plot_native_number_accepted_taxa_in_regions(to_plot, wcvp_accepted_columns['species'],
+                                                    'test_outputs', 'all_species_native_distribution.jpg',
+                                                    include_extinct=True)
 
 
 if __name__ == '__main__':

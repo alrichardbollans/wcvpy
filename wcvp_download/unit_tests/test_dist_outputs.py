@@ -5,10 +5,9 @@ import numpy as np
 import pandas as pd
 
 from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_accepted_taxa, \
-    get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa
+    get_wcvp_zip
 from wcvp_download import wcvp_columns, wcvp_accepted_columns, native_code_column, \
     introduced_code_column
-from wcvp_download.plot_distributions import _OHE_native_dists
 
 with_dist = add_distribution_list_to_wcvp()
 
@@ -110,11 +109,16 @@ class MyTestCase(unittest.TestCase):
 
     def test_bad_examples(self):
         iso_codes_not_plotted_on_map = [' ', 'frg']
-        ohe = _OHE_native_dists(with_dist)
+        zip_filetime, wcvp_zip = get_wcvp_zip()
 
-        problems = ohe[(ohe[' '] == 1) | (ohe['frg'] == 1)]
+        csv_file = wcvp_zip.open('wcvp_distribution.csv')
+        all_dist_data = pd.read_csv(csv_file, encoding='utf-8', sep='|',
+                                    dtype={wcvp_columns['wcvp_id']: object,
+                                           'plant_locality_id': object})
+        all_dist_data = all_dist_data.dropna(subset=['area_code_l3'])
+        problems = all_dist_data[all_dist_data['area_code_l3'].isin(iso_codes_not_plotted_on_map)]
         if len(problems) > 1:
-            problems.to_csv(os.path.join(_output_path, 'bad_distributions.csv'))
+            problems.to_csv(os.path.join(_output_path, 'unparsed_distributions.csv'))
             raise ValueError
 
 

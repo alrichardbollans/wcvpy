@@ -81,13 +81,18 @@ class MyTestCase(unittest.TestCase):
     def test_publication_years(self):
         # This currently fails
         def parse_publication_year(given_string: str):
+            if given_string == '(1981 publ. 1082)':  # An exception that returns a valid date
+                return 'fails'
+            elif given_string in ['(19166)',
+                                  '(19543)',
+                                  '(19553)',
+                                  '(19667)',
+                                  '(19983)',
+                                  ]:  # Some obivous errors that return valid dates
+                return 'fails'
+
             try:
-                if len(given_string) == 6:
-                    out = given_string[-5:-1]
-                    return out
-                else:
-                    out = given_string[-5:-1]
-                    return out
+                return given_string[-5:-1]
             except TypeError:
                 return given_string
 

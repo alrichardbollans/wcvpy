@@ -194,7 +194,7 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
             url_time = r.headers['last-modified']
             url_date = parsedate(url_time).astimezone()
             file_time = datetime.datetime.fromtimestamp(os.path.getmtime(input_zip_file)).astimezone()
-            if url_date > file_time:
+            if url_date < file_time:
                 print('Using up to date WCVP.')
             return url_date, file_time
         except requests.exceptions.ConnectionError:

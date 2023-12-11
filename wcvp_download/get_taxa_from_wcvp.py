@@ -162,7 +162,7 @@ def get_species_names_and_ipni_ids(taxa_df: pd.DataFrame):
 def get_wcvp_zip(get_new_version: bool = False, version: str = None):
     if get_new_version and version:
         raise ValueError('Cannot specify both get_new_version and version')
-    base_wcvp_path = 'http://sftp.kew.org/pub/data-repositories/WCVP'
+    base_wcvp_path = 'https://sftp.kew.org/pub/data-repositories/WCVP'
     if version:
         wcvp_file_name = 'wcvp_v' + version + '.zip'
         wcvp_path = '/'.join([base_wcvp_path, 'Archive'])

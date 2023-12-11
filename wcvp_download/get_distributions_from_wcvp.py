@@ -20,7 +20,7 @@ def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, inc
         [wcvp_accepted_columns['name'], native_code_column, introduced_code_column]]
     # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['wcvp_id'].isin(df[wcvp_id_col].values)]]
     for name in df[acc_name_col].unique():
-        if name not in wcvp_with_dists[wcvp_accepted_columns['name']].unique().values:
+        if name not in wcvp_with_dists[wcvp_accepted_columns['name']].unique():
             raise ValueError(
                 f'{name} not an accepted name in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version.\n Or could be a result of inclusion of Artifical Hyrbids. Also check spelling')
 

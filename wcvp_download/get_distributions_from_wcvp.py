@@ -19,10 +19,12 @@ def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, inc
     wcvp_with_dists = wcvp_with_dists[
         [wcvp_accepted_columns['name'], native_code_column, introduced_code_column]]
     # relevant_data = wcvp_with_dists[wcvp_with_dists[wcvp_columns['wcvp_id'].isin(df[wcvp_id_col].values)]]
-    for name in df[acc_name_col].unique():
-        if name not in wcvp_with_dists[wcvp_accepted_columns['name']].unique():
-            raise ValueError(
-                f'{name} not an accepted name in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version.\n Or could be a result of inclusion of Artifical Hyrbids. Also check spelling')
+    interstn = set(df[acc_name_col].tolist()).intersection(wcvp_with_dists[wcvp_accepted_columns['name']].tolist())
+    df_names = df[acc_name_col].unique()
+    problems = [name for name in df_names if name not in interstn]
+    if len(problems) > 0:
+        raise ValueError(
+            f'{problems}: not accepted names in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version.\n Or could be a result of inclusion of Artifical Hyrbids. Also check spelling')
 
     output = pd.merge(df, wcvp_with_dists, how='left', left_on=acc_name_col,
                       right_on=wcvp_accepted_columns['name'])

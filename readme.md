@@ -14,6 +14,9 @@ With pip, run:
 
 `pip install git+https://github.com/alrichardbollans/automatchnames.git@1.3`
 
+or for plotting dependencies:
+`pip install 'automatchnames[dist_plots] @  git+https://github.com/alrichardbollans/automatchnames.git@1.3'`
+
 ## Usage
 
 ### Downloading the checklist

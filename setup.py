@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='automatchnames',
-    version='1.2.7',
+    version='1.3',
     packages=find_packages(),
     package_data={"wcvp_download": ["inputs/*", "inputs/wgsrpd-master/level3/*"]},
     install_requires=[

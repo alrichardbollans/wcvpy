@@ -28,7 +28,7 @@ Note this is not exhaustive
 - Developed in 2018 and not currently maintained. Some info and usage example can be found at: https://barnabywalker.github.io/kewr/articles/KNMS.html
 - Link: http://namematch.science.kew.org/ 
 
-### Kewr 
+### kewr 
 - Software/Platform: R
 - R package to interface with Kew resources like KNMS 
 - Link: https://github.com/barnabywalker/kewr 

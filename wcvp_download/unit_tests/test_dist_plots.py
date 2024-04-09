@@ -88,13 +88,14 @@ class MyTestCase(unittest.TestCase):
         # https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:30000055-2
         plot_native_number_accepted_taxa_in_regions(test_df, 'Genus',
                                                     'test_outputs', 'Campomanesia genus.jpg')
-    def test_small_example(self):
 
+    def test_small_example(self):
 
         # https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:44106-2
         plot_native_number_accepted_taxa_in_regions(
             pd.DataFrame(['Campomanesia thea', 'Campomanesia adamantium'], columns=['name']), 'name',
             'test_outputs', 'Campomanesia_pairs.jpg')
+
 
 if __name__ == '__main__':
     unittest.main()

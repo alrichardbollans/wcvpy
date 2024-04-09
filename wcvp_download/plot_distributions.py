@@ -64,7 +64,7 @@ def get_native_region_distribution_dataframe_for_accepted_taxa(df: pd.DataFrame,
 
 def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: str, output_dir: str, output_file_name: str,
                                                 include_doubtful: bool = False,
-                                                include_extinct: bool = False, wcvp_version: str = None):
+                                                include_extinct: bool = False, wcvp_version: str = None, colormap: str = 'viridis'):
     '''
     An example of how to do some basic plotting using the output of get_native_region_distribution_dataframe_for_accepted_taxa
     :param df:
@@ -75,6 +75,7 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     :param include_doubtful:
     :param include_extinct:
     :param wcvp_version:
+    :param colormap: matplotlib colormap name
     :return:
     '''
     import matplotlib.pyplot as plt
@@ -109,7 +110,7 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     ax.coastlines(resolution='10m')
     ax.add_feature(cfeature.BORDERS, linewidth=2)
 
-    cmap = mpl.colormaps['viridis']  # .cm.get_cmap('coolwarm')
+    cmap = mpl.colormaps[colormap]
     for country in tdwg3_shp.records():
 
         tdwg_code = country.attributes['LEVEL3_COD']

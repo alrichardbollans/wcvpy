@@ -227,20 +227,20 @@ def _find_best_matches_from_multiple_knms_matches(multiple_match_records: pd.Dat
     # First, use matches where accepted name is the same as the submitted name
     accepted_names_matching_submitted_names = multiple_match_records[
         multiple_match_records['submitted'] == multiple_match_records[
-            wcvp_accepted_columns['name']]]
+            wcvp_accepted_columns['name']]].copy()
 
     unmatched_containment_df = multiple_match_records[
         ~multiple_match_records[unique_submission_id_col].isin(
-            accepted_names_matching_submitted_names[unique_submission_id_col].values)]
+            accepted_names_matching_submitted_names[unique_submission_id_col].values)].copy()
 
     # reduce list to remove essentially repeated matches
     unique_accepted_matches = unmatched_containment_df.drop_duplicates(
-        subset=[unique_submission_id_col, wcvp_accepted_columns['ipni_id']], keep='first')
+        subset=[unique_submission_id_col, wcvp_accepted_columns['ipni_id']], keep='first').copy()
 
     #  Next use matches where the submitted name has a unique match
     submitted_names_with_single_accepted_match = unique_accepted_matches.drop_duplicates(
         subset=[unique_submission_id_col],
-        keep=False)
+        keep=False).copy()
 
     # Where neither of the above apply, sort by accepted rank
     unresolved_submissions = unique_accepted_matches[
@@ -249,21 +249,20 @@ def _find_best_matches_from_multiple_knms_matches(multiple_match_records: pd.Dat
 
     # matches where the accepted name is contained in the submitted name
     # In case of duplicates, these are sorted by specifity of rank
-    unresolved_submissions = unresolved_submissions.dropna(subset=[wcvp_accepted_columns['name']])
+    unresolved_submissions = unresolved_submissions.dropna(subset=[wcvp_accepted_columns['name']]).copy()
     accepted_names_in_submitted_names = unresolved_submissions[
         unresolved_submissions.apply(lambda x: x[wcvp_accepted_columns['name']] in x['submitted'],
-                                     axis=1)]
+                                     axis=1)].copy()
 
     for r in accepted_names_in_submitted_names[wcvp_accepted_columns['rank']].unique():
         if r not in rank_priority:
             raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
     accepted_names_in_submitted_names[wcvp_accepted_columns['rank']] = pd.Categorical(
         accepted_names_in_submitted_names[wcvp_accepted_columns['rank']], rank_priority)
-    accepted_names_in_submitted_names.sort_values(wcvp_accepted_columns['rank'], inplace=True)
+    accepted_names_in_submitted_names = accepted_names_in_submitted_names.sort_values(wcvp_accepted_columns['rank']).copy()
 
     # Get the most precise match by dropping duplicate submissions
-    accepted_names_in_submitted_names.drop_duplicates(subset=[unique_submission_id_col], keep='first',
-                                                      inplace=True)
+    accepted_names_in_submitted_names = accepted_names_in_submitted_names.drop_duplicates(subset=[unique_submission_id_col], keep='first').copy()
     accepted_names_in_submitted_names[wcvp_accepted_columns['rank']] = accepted_names_in_submitted_names[
         wcvp_accepted_columns['rank']].astype(object)
 
@@ -273,7 +272,7 @@ def _find_best_matches_from_multiple_knms_matches(multiple_match_records: pd.Dat
     matches_to_use = pd.concat([accepted_names_matching_submitted_names,
                                 submitted_names_with_single_accepted_match,
                                 accepted_names_in_submitted_names])
-    matches_to_use.drop_duplicates(subset=[unique_submission_id_col], keep='first', inplace=True)
+    matches_to_use = matches_to_use.drop_duplicates(subset=[unique_submission_id_col], keep='first').copy()
 
     unmatched_df = multiple_match_records[
         ~multiple_match_records[unique_submission_id_col].isin(
@@ -453,7 +452,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                                                                      unique_submission_index_col,
                                                                      all_taxa,
                                                                      family_column=family_column)
-
+                # This will raise a pandas warning
+                # https://github.com/pandas-dev/pandas/issues/55928
                 final_resolved_df = pd.concat(
                     [unmatched_resolutions, fuzzy_resolved_df], axis=0)
 

@@ -67,7 +67,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_authors(self):
         test_columns = [wcvp_columns['paranthet_author'], wcvp_columns['primary_author'], wcvp_columns['authors']]
-        taxa_to_test = wcvp_data.dropna(subset=test_columns, how='any')
+        taxa_to_test = wcvp_data.dropna(subset=test_columns, how='any').copy()
         taxa_to_test['()'] = '(' + taxa_to_test[wcvp_columns['paranthet_author']] + ')'
 
         for c in test_columns:

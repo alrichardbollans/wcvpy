@@ -53,7 +53,7 @@ def tidy_value_for_matching(given_value: str) -> str:
 def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str, all_taxa: pd.DataFrame,
                                        columns: List[str]):
     # Remove taxa without author information as these are matched later without authors
-    taxa_to_use = all_taxa.dropna(subset=columns)
+    taxa_to_use = all_taxa.dropna(subset=columns).copy()
     column_series = [all_taxa[c].fillna('') for c in columns]
     taxa_to_use['taxon_name_with_extra_columns'] = taxa_to_use[wcvp_columns['name']].str.cat(column_series,
                                                                                              sep=' ')
@@ -66,7 +66,7 @@ def match_name_to_concatenated_columns(df: pd.DataFrame, matching_name_col: str,
                              right_on='taxon_name_with_extra_columns')
     author_merged = author_merged.dropna(subset=[wcvp_columns['wcvp_id']])
 
-    unmatched_with_authors_df = df[~df[lowercase_name_col].isin(author_merged[lowercase_name_col].values)]
+    unmatched_with_authors_df = df[~df[lowercase_name_col].isin(author_merged[lowercase_name_col].values)].copy()
 
     # Repeat but with 'tidied' authors
     unmatched_with_authors_df[tidied_taxon_authors_col] = unmatched_with_authors_df[matching_name_col].apply(
@@ -97,7 +97,10 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
     Appends accepted info columns to df from list of taxa, based on names in matching_name_col
     :param df:
     :param matching_name_col:
+    :param unique_submission_id_col:
     :param all_taxa:
+    :param family_column:
+    :param wcvp_version:
     :return:
     """
     if all_taxa is None:
@@ -140,7 +143,7 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
 
     merged_with_wcvp = pd.concat([author_merged, paranthet_author_merged, primary_author_merged, just_name_merged])
     match_df = get_family_specific_resolutions(merged_with_wcvp, family_column=family_column)
-    match_df = match_df[[unique_submission_id_col] + output_record_col_names + ['matched_by', 'matched_name']]
+    match_df = match_df[[unique_submission_id_col] + output_record_col_names + ['matched_by', 'matched_name']].copy()
 
     # Remove duplicates in match_df based on priority
 
@@ -149,11 +152,11 @@ def get_wcvp_info_for_names_in_column(df: pd.DataFrame, matching_name_col: str, 
             raise ValueError(f'Status priority list does not contain {r} and needs updating.')
     match_df['taxon_status'] = pd.Categorical(match_df['taxon_status'],
                                               status_priority)
-    match_df.sort_values('taxon_status', inplace=True)
+    match_df = match_df.sort_values('taxon_status')
     # Appropriately label unique matches
     match_df['matched_by'] = np.where(match_df.duplicated(keep=False, subset=[unique_submission_id_col]),
                                       match_df['matched_by'],
                                       match_df['matched_by'] + '_unique')
-    match_df.drop_duplicates(subset=[unique_submission_id_col], inplace=True, keep='first')
+    match_df = match_df.drop_duplicates(subset=[unique_submission_id_col], keep='first')
     match_df['taxon_status'] = match_df['taxon_status'].astype(object)
     return match_df

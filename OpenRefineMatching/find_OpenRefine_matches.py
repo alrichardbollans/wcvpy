@@ -29,10 +29,10 @@ def _reconcile(row, full_name_col):
 
 def openrefine_match_full_names(df: pd.DataFrame, full_name_col: str,
                                 output_csv: str = None) -> pd.DataFrame:
-    out_df = df.copy(deep=True)
+    out_df = df.copy()
     out_df[reco_submitted_name_col_id] = df[full_name_col]
     out_df = out_df.drop_duplicates(subset=[reco_submitted_name_col_id])
-
+    print(f'Trying to resolve {len(out_df)} names with OpenRefine')
     # Reconcile
     out_df['reco_results'] = out_df.apply(
         lambda row: _reconcile(row, full_name_col=full_name_col),

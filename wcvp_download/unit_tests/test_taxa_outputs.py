@@ -206,7 +206,7 @@ class MyTestCase(unittest.TestCase):
     def test_author_information(self):
         # accepted cases
         # acc name with author = acc name + authors
-        accepted = wcvp_data[wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])]
+        accepted = wcvp_data[wcvp_data[wcvp_columns['status']].isin(['Accepted', 'Artificial Hybrid'])].copy()
         accepted['auth_check'] = accepted[wcvp_columns['name']].str.cat(
             [accepted[wcvp_columns['authors']].fillna('')],
             sep=' ').str.strip()

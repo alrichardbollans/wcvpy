@@ -29,7 +29,7 @@ def resolve_openrefine_to_best_matches(reco_df: pd.DataFrame, all_taxa: pd.DataF
                 out_df[wcvp_accepted_columns['family']].isin(families_of_interest))]
 
     # Unique matches
-    unique_matches = out_df[~out_df[reco_submitted_name_col_id].duplicated(keep=False)]
+    unique_matches = out_df.drop_duplicates(subset=[reco_submitted_name_col_id], keep=False).copy()
     unique_matches['matched_by'] = 'openrefine_unique'
 
     non_unique_reco_matches = out_df[out_df[reco_submitted_name_col_id].duplicated(keep=False)]
@@ -39,16 +39,16 @@ def resolve_openrefine_to_best_matches(reco_df: pd.DataFrame, all_taxa: pd.DataF
         subset=[reco_submitted_name_col_id, wcvp_accepted_columns['ipni_id']], keep='first')
     submitted_names_with_single_accepted_match = unique_acc_names.drop_duplicates(
         subset=[reco_submitted_name_col_id],
-        keep=False)
+        keep=False).copy()
     submitted_names_with_single_accepted_match['matched_by'] = 'openrefine_unique_accepted_name'
 
     non_unique_matches = non_unique_reco_matches[
         ~non_unique_reco_matches[reco_submitted_name_col_id].isin(
-            submitted_names_with_single_accepted_match[reco_submitted_name_col_id].values)]
+            submitted_names_with_single_accepted_match[reco_submitted_name_col_id].values)].copy()
 
     # Best scoring matches
     non_unique_matches['reco_score_max'] = non_unique_matches.groupby([reco_submitted_name_col_id])[
-        'reco_score'].transform(max)
+        'reco_score'].transform('max')
 
     top_scorers = non_unique_matches[non_unique_matches['reco_score'] == 'reco_score_max']
     top_unique_scorers = top_scorers[~top_scorers[reco_submitted_name_col_id].duplicated(keep=False)]

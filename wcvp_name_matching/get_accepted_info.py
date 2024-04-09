@@ -168,6 +168,9 @@ def _get_knms_matches_and_accepted_info_from_names_in_column(df: pd.DataFrame, m
     """
     if len(df.index) > 0:
         match_records = get_knms_name_matches(df[matching_name_col].unique())
+        if match_records is None:
+            none_data = pd.DataFrame(columns=[unique_submission_id_col])
+            return none_data
         match_records = pd.merge(match_records, df, left_on='submitted', right_on=matching_name_col)
         match_records['ipni_id'] = match_records['ipni_id'].apply(clean_urn_ids)
         match_records = get_accepted_wcvp_info_from_ipni_ids_in_column(match_records, 'ipni_id', all_taxa)

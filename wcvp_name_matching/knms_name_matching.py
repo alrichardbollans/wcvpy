@@ -32,19 +32,12 @@ def only_roman_chars(unistr):
                if uchr.isalpha())
 
 
-def get_knms_name_matches(names: List[str]):
+def get_knms_name_matches(names: List[str]) -> pd.DataFrame:
     """
     Searches knms for matching names
     :param names:
     :return:
     """
-    # Save previous searches using a hash of names to avoid repeating searches
-    names = list(names)
-    unique_name_list = list(np.unique(names))
-
-    str_to_hash = str(unique_name_list).encode()
-    temp_csv = "knmns_matches_" + str(hashlib.md5(str_to_hash).hexdigest()) + ".csv"
-
     try:
         os.mkdir(temp_outputs_dir)
     except FileExistsError as error:
@@ -55,11 +48,25 @@ def get_knms_name_matches(names: List[str]):
     except FileExistsError as error:
         pass
 
-    temp_output_knms_csv = os.path.join(knms_outputs_dir, temp_csv)
-    if os.path.isfile(temp_output_knms_csv):
-        # Pandas will read TRUE/true as bools and therefore as True rather than true
-        records = pd.read_csv(temp_output_knms_csv, dtype={'match_state': str}, index_col=0)
-    else:
+    unique_name_list = list(np.unique(names))
+
+    temp_file_tag = 'knms_matches_cache_'
+    existing_df = None
+    existing_info = []
+    for temp_cl_file in os.listdir(knms_outputs_dir):
+        if temp_cl_file.startswith(temp_file_tag):
+            # Pandas will read TRUE/true as bools and therefore as True rather than true
+            existing_info.append(pd.read_csv(os.path.join(knms_outputs_dir, temp_cl_file), dtype={'match_state': str}, index_col=0))
+    if len(existing_info) > 0:
+        existing_df = pd.concat(existing_info)
+
+        already_known_names = existing_df['submitted'].tolist()
+        # remove the item for all its occurrences
+        for alread_known in already_known_names:
+            c = unique_name_list.count(alread_known)
+            for i in range(c):
+                unique_name_list.remove(alread_known)
+    if len(unique_name_list) > 0:
         knms_url = "http://namematch.science.kew.org/api/v2/powo/match"
         res = requests.post(knms_url, json=unique_name_list)
         headings = ['submitted', 'match_state', 'ipni_id', 'matched_name']
@@ -91,11 +98,16 @@ def get_knms_name_matches(names: List[str]):
             records['match_state'].ffill(inplace=True)
 
             if (records['match_state'] == 'false').all():
-                print('All KNMS records return false. Not saving these records')
+                print('All KNMS records return false. Not saving these records as this sometimes indicates server issues.')
             else:
-
+                str_to_hash = str(unique_name_list).encode()
+                temp_output_knms_csv = os.path.join(knms_outputs_dir, temp_file_tag + str(hashlib.md5(str_to_hash).hexdigest()) + ".csv")
                 records.to_csv(temp_output_knms_csv)
-
+            if existing_df is not None:
+                records = pd.concat([records, existing_df])
+    else:
+        print(f'Already searched for these name in KNMS. Returning records from cache directory: {knms_outputs_dir}')
+        records = existing_df
     return records
 
 

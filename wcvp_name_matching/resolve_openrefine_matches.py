@@ -7,7 +7,7 @@ from wcvp_download import wcvp_accepted_columns, wcvp_columns
 from wcvp_name_matching import resolve_matches_by_priorities, get_accepted_wcvp_info_from_ipni_ids_in_column
 
 
-def resolve_openrefine_to_best_matches(reco_df: pd.DataFrame,all_taxa: pd.DataFrame, families_of_interest: List[str] = None):
+def resolve_openrefine_to_best_matches(reco_df: pd.DataFrame, all_taxa: pd.DataFrame, families_of_interest: List[str] = None):
     # There shouldn't be any repeated reco_ids for the same submitted names so check this first
     problems = reco_df[reco_df.duplicated(subset=['reco_id', reco_submitted_name_col_id], keep=False)]
 

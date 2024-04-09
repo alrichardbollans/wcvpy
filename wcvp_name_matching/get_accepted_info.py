@@ -287,16 +287,18 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                                            families_of_interest: List[str] = None,
                                            family_column: str = None,
                                            manual_resolution_csv: str = None,
-                                           match_level: str = 'full', wcvp_version: str = None) -> pd.DataFrame:
+                                           match_level: str = 'full', use_open_refine: bool = True, wcvp_version: str = None) -> pd.DataFrame:
     """
     First tries to match names in df to wcvp directly to obtain accepted info and then
-    matches names in df using knms and gets corresponding accepted info from wcvp
-    :param family_column:
+    matches names in df using knms/openrefine. Finally uses full automated matching.
     :param in_df:
+    :param name_col:
     :param families_of_interest:
+    :param family_column:
     :param manual_resolution_csv:
     :param match_level:
-    :param name_col:
+    :param wcvp_version:
+    :param use_open_refine: bool whether to use open refine in fuzzy matching
     :return:
     """
     # Check for bad inputs
@@ -413,27 +415,32 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
             ~df[unique_submission_index_col].isin(wcvp_resolved_df[unique_submission_index_col].values)]
 
         if match_level in ['full', 'fuzzy']:
-            # If exact matches aren't found in wcvp, use openrefine
-            # Use given submitted name and let openrefine do any cleaning
-            all_open_refine_matches = openrefine_match_full_names(unmatched_name_df, recapitalised_name_col)
-
-            resolved_open_refine_matches = resolve_openrefine_to_best_matches(all_open_refine_matches,
-                                                                              all_taxa,
-                                                                              families_of_interest=families_of_interest)
-            resolved_open_refine_matches['matched_name'] = resolved_open_refine_matches['reco_name']
-            unmatched_open_refine_df = unmatched_name_df[
-                ~unmatched_name_df[submitted_name_col_id].isin(
-                    resolved_open_refine_matches[submitted_name_col_id].values)]
-
+            # If exact matches aren't found in wcvp, use knms and openrefine
             # then knms
             matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(
-                unmatched_open_refine_df,
+                unmatched_name_df,
                 recapitalised_name_col,
                 unique_submission_index_col,
                 all_taxa,
                 family_column=family_column)
-            fuzzy_resolved_df = pd.concat([wcvp_resolved_df, matches_with_knms, resolved_open_refine_matches],
-                                          axis=0)
+
+            unmatched_knms_df = unmatched_name_df[
+                ~unmatched_name_df[unique_submission_index_col].isin(
+                    matches_with_knms[unique_submission_index_col].values)]
+            if use_open_refine:
+                # Use given submitted name and let openrefine do any cleaning
+                all_open_refine_matches = openrefine_match_full_names(unmatched_knms_df, recapitalised_name_col)
+
+                resolved_open_refine_matches = resolve_openrefine_to_best_matches(all_open_refine_matches,
+                                                                                  all_taxa,
+                                                                                  families_of_interest=families_of_interest)
+                resolved_open_refine_matches['matched_name'] = resolved_open_refine_matches['reco_name']
+
+                fuzzy_resolved_df = pd.concat([wcvp_resolved_df, matches_with_knms, resolved_open_refine_matches],
+                                              axis=0)
+            else:
+                fuzzy_resolved_df = pd.concat([wcvp_resolved_df, matches_with_knms],
+                                              axis=0)
             unmatched_df = df[
                 ~df[unique_submission_index_col].isin(fuzzy_resolved_df[unique_submission_index_col].values)]
 

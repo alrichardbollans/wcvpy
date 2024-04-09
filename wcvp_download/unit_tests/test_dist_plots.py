@@ -1,12 +1,11 @@
 import os
 import unittest
 
-import numpy as np
 import pandas as pd
 import pandas.testing
 
 from wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa, \
-    wcvp_accepted_columns, wcvp_columns
+    wcvp_accepted_columns
 
 _output_path = 'test_outputs'
 
@@ -28,11 +27,12 @@ new_trait_df = trait_df[trait_df['accepted_name'].isin(new_taxa['accepted_name']
 class MyTestCase(unittest.TestCase):
 
     def test_example(self):
+        plot_native_number_accepted_taxa_in_regions(trait_df, 'accepted_name', 'test_outputs', 'testv11.jpg', wcvp_version='11')
+
+        # https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:44106-2
         plot_native_number_accepted_taxa_in_regions(
             pd.DataFrame(['Campomanesia thea', 'Campomanesia thea', 'Campomanesia thea', 'Campomanesia thea'], columns=['name']), 'name',
             'test_outputs', 'Campomanesia.jpg')
-
-        plot_native_number_accepted_taxa_in_regions(trait_df, 'accepted_name', 'test_outputs', 'testv11.jpg', wcvp_version='11')
 
         plot_native_number_accepted_taxa_in_regions(new_trait_df, 'accepted_name', 'test_outputs', 'test.jpg')
 
@@ -81,6 +81,20 @@ class MyTestCase(unittest.TestCase):
                                                     'test_outputs', 'all_species_native_distribution.jpg',
                                                     include_extinct=True)
 
+    def test_genus_example(self):
+
+        test_df = pd.DataFrame(['Campomanesia thea', 'Campomanesia thea', 'Campomanesia thea', 'Campomanesia thea'], columns=['name'])
+        test_df['Genus'] = 'Campomanesia'
+        # https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:30000055-2
+        plot_native_number_accepted_taxa_in_regions(test_df, 'Genus',
+                                                    'test_outputs', 'Campomanesia genus.jpg')
+    def test_small_example(self):
+
+
+        # https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:44106-2
+        plot_native_number_accepted_taxa_in_regions(
+            pd.DataFrame(['Campomanesia thea', 'Campomanesia adamantium'], columns=['name']), 'name',
+            'test_outputs', 'Campomanesia_pairs.jpg')
 
 if __name__ == '__main__':
     unittest.main()

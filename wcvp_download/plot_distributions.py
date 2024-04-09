@@ -29,7 +29,8 @@ def _OHE_native_dists(df: pd.DataFrame) -> pd.DataFrame:
     return clean_df
 
 
-def get_native_region_distribution_dataframe_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, output_path: str = None, include_doubtful: bool = False,
+def get_native_region_distribution_dataframe_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, output_path: str = None,
+                                                               include_doubtful: bool = False,
                                                                include_extinct: bool = False, wcvp_version: str = None):
     '''
     Gets the number of native species in df found in each region.
@@ -84,7 +85,8 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     import fiona  # Need fiona to read shapefiles
 
     df_with_region_data = get_native_region_distribution_dataframe_for_accepted_taxa(df, acc_name_col,
-                                                                                     output_path=os.path.join(output_dir, output_file_name + '_regions.csv'),
+                                                                                     output_path=os.path.join(output_dir,
+                                                                                                              output_file_name + '_regions.csv'),
                                                                                      include_doubtful=include_doubtful,
                                                                                      include_extinct=include_extinct,
                                                                                      wcvp_version=wcvp_version)
@@ -92,8 +94,11 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     tdwg3_shp = shpreader.Reader(
         os.path.join(_inputs_path, 'wgsrpd-master', 'level3', 'level3.shp'))
     tdwg3_region_codes = df_with_region_data['Region'].values
-    min_val = df_with_region_data['Number of Native Species'].min()
+    # min_val = df_with_region_data['Number of Native Species'].min()
     max_val = df_with_region_data['Number of Native Species'].max()
+    min_val = 1
+    if max_val == 1:
+        min_val = 0
     norm = plt.Normalize(min_val, max_val)
     print('plotting countries')
 
@@ -104,7 +109,7 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     ax.coastlines(resolution='10m')
     ax.add_feature(cfeature.BORDERS, linewidth=2)
 
-    cmap = mpl.colormaps['coolwarm']  # .cm.get_cmap('coolwarm')
+    cmap = mpl.colormaps['viridis']  # .cm.get_cmap('coolwarm')
     for country in tdwg3_shp.records():
 
         tdwg_code = country.attributes['LEVEL3_COD']

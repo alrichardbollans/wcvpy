@@ -53,7 +53,7 @@ def get_native_region_distribution_dataframe_for_accepted_taxa(df: pd.DataFrame,
         if c not in df_with_dists.columns:
             region_sums[c] = ohe[c].sum()
 
-    dict_for_pandas = {'Region': region_sums.keys(), 'Number of Native Species': region_sums.values()}
+    dict_for_pandas = {'Region': region_sums.keys(), 'Number of Taxa': region_sums.values()}
     out_df = pd.DataFrame(dict_for_pandas)
 
     if output_path is not None:
@@ -95,8 +95,8 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     tdwg3_shp = shpreader.Reader(
         os.path.join(_inputs_path, 'wgsrpd-master', 'level3', 'level3.shp'))
     tdwg3_region_codes = df_with_region_data['Region'].values
-    # min_val = df_with_region_data['Number of Native Species'].min()
-    max_val = df_with_region_data['Number of Native Species'].max()
+    # min_val = df_with_region_data['Number of Taxa'].min()
+    max_val = df_with_region_data['Number of Taxa'].max()
     min_val = 1
     if max_val == 1:
         min_val = 0
@@ -119,7 +119,7 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
             # print(country.attributes['name_long'], next(earth_colors))
             ax.add_geometries([country.geometry], ccrs.PlateCarree(),
                               facecolor=cmap(
-                                  norm(df_with_region_data.loc[df_with_region_data['Region'] == tdwg_code, 'Number of Native Species'].iloc[
+                                  norm(df_with_region_data.loc[df_with_region_data['Region'] == tdwg_code, 'Number of Taxa'].iloc[
                                            0])),
                               label=tdwg_code)
 

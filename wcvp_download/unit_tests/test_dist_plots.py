@@ -55,13 +55,13 @@ class MyTestCase(unittest.TestCase):
         ct_region_df = get_native_region_distribution_dataframe_for_accepted_taxa(
             pd.DataFrame(['Campomanesia thea', 'Campomanesia thea'], columns=['name']), 'name',
             output_path=os.path.join('test_outputs', 'Campomanesia_regions.csv'))
-        pandas.testing.assert_frame_equal(ct_region_df, pd.DataFrame([['BZS', 1]], columns=['Region', 'Number of Native Species']))
+        pandas.testing.assert_frame_equal(ct_region_df, pd.DataFrame([['BZS', 1]], columns=['Region', 'Number of Taxa']))
 
         v11_region_df = get_native_region_distribution_dataframe_for_accepted_taxa(trait_df, 'accepted_name', wcvp_version='11',
                                                                                    output_path=os.path.join('test_outputs', 'v11_traits_regions.csv'))
         # Region examples
         for ex in _v11_test_dict:
-            self.assertEqual(v11_region_df[v11_region_df['Region'] == ex]['Number of Native Species'].iloc[0], _v11_test_dict[ex])
+            self.assertEqual(v11_region_df[v11_region_df['Region'] == ex]['Number of Taxa'].iloc[0], _v11_test_dict[ex])
 
         # Outputs differ between versions
         new_region_df = get_native_region_distribution_dataframe_for_accepted_taxa(new_trait_df, 'accepted_name',

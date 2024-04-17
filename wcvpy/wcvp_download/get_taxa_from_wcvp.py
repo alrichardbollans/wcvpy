@@ -1,5 +1,4 @@
 import datetime
-import hashlib
 import os
 import time
 import zipfile

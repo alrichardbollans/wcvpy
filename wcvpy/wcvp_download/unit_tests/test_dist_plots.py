@@ -4,7 +4,7 @@ import unittest
 import pandas as pd
 import pandas.testing
 
-from wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa, \
+from wcvpy.wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa, \
     wcvp_accepted_columns
 
 _output_path = 'test_outputs'

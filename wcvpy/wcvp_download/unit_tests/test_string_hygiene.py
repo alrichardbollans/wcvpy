@@ -4,7 +4,7 @@ import unittest
 
 import pandas.testing
 
-from wcvp_download import get_all_taxa, wcvp_columns_used_in_direct_matching, infraspecific_chars, \
+from wcvpy.wcvp_download import get_all_taxa, wcvp_columns_used_in_direct_matching, infraspecific_chars, \
     hybrid_characters, wcvp_columns, wcvp_accepted_columns, clean_whitespaces_in_names
 
 wcvp_data = get_all_taxa()

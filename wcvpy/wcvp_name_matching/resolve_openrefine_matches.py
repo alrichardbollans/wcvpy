@@ -2,9 +2,9 @@ from typing import List
 
 import pandas as pd
 
-from OpenRefineMatching import reco_submitted_name_col_id
-from wcvp_download import wcvp_accepted_columns, wcvp_columns
-from wcvp_name_matching import resolve_matches_by_priorities, get_accepted_wcvp_info_from_ipni_ids_in_column
+from wcvpy.OpenRefineMatching import reco_submitted_name_col_id
+from wcvpy.wcvp_download import wcvp_accepted_columns, wcvp_columns
+from wcvpy.wcvp_name_matching import resolve_matches_by_priorities, get_accepted_wcvp_info_from_ipni_ids_in_column
 
 
 def resolve_openrefine_to_best_matches(reco_df: pd.DataFrame, all_taxa: pd.DataFrame, families_of_interest: List[str] = None):

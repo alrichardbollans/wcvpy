@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pkg_resources import resource_filename
 
-from wcvp_download import get_distributions_for_accepted_taxa, native_code_column, wcvp_accepted_columns
+from wcvpy.wcvp_download import get_distributions_for_accepted_taxa, native_code_column, wcvp_accepted_columns
 
 _inputs_path = resource_filename(__name__, 'inputs')
 

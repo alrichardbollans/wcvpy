@@ -5,13 +5,13 @@ import unittest
 import pandas as pd
 from pkg_resources import resource_filename
 
-from OpenRefineMatching import openrefine_match_full_names
+from wcvpy.OpenRefineMatching import openrefine_match_full_names
 
-from wcvp_name_matching import resolve_openrefine_to_best_matches
+from wcvpy.wcvp_name_matching import resolve_openrefine_to_best_matches
 
 unittest_inputs = resource_filename(__name__, 'test_inputs')
 unittest_outputs = resource_filename(__name__, 'test_outputs')
-from wcvp_download import get_all_taxa
+from wcvpy.wcvp_download import get_all_taxa
 
 _all_taxa = get_all_taxa()
 

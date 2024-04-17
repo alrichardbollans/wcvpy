@@ -3,7 +3,7 @@ import string
 
 import pandas as pd
 
-from wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters, infraspecific_chars, clean_whitespaces_in_names
+from wcvpy.wcvp_download import wcvp_accepted_columns, wcvp_columns, hybrid_characters, infraspecific_chars, clean_whitespaces_in_names
 
 acc_info_col_names = [wcvp_accepted_columns['ipni_id'],
                       wcvp_accepted_columns['name'],

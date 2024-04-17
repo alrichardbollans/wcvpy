@@ -3,8 +3,8 @@ from typing import List
 import numpy as np
 import pandas as pd
 
-from wcvp_download import wcvp_columns, wcvp_accepted_columns
-from wcvp_name_matching import output_record_col_names
+from wcvpy.wcvp_download import wcvp_columns
+from wcvpy.wcvp_name_matching import output_record_col_names
 
 status_priority = ['Accepted', 'Artificial Hybrid', 'Synonym', 'Illegitimate', 'Invalid', 'Local Biotype',
                    'Misapplied', 'Orthographic', 'Unplaced']

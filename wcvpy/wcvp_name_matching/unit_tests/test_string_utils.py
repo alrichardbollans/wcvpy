@@ -5,9 +5,9 @@ import numpy as np
 import pandas as pd
 from pkg_resources import resource_filename
 
-from wcvp_download import clean_whitespaces_in_names
-from wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
-from wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors, \
+from wcvpy.wcvp_download import clean_whitespaces_in_names
+from wcvpy.wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
+from wcvpy.wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors, \
     get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets
 
 unittest_inputs = resource_filename(__name__, 'test_inputs')

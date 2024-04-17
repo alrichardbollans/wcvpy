@@ -2,7 +2,7 @@ import time
 
 import pandas as pd
 
-from wcvp_download import get_wcvp_zip, get_all_taxa, wcvp_columns, wcvp_accepted_columns
+from wcvpy.wcvp_download import get_wcvp_zip, get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
 native_code_column = 'native_tdwg3_codes'
 introduced_code_column = 'intro_tdwg3_codes'
@@ -12,6 +12,16 @@ _statuses_that_have_dists = ['Accepted', 'Artificial Hybrid']
 
 def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, include_doubtful: bool = False,
                                         include_extinct: bool = False, wcvp_version: str = None):
+    """
+    Get distributions for accepted taxa.
+
+    :param df: A pandas DataFrame containing taxonomic data.
+    :param acc_name_col: The column name in the DataFrame that contains the accepted names.
+    :param include_doubtful: A boolean value indicating whether to include doubtful taxa. Default is False.
+    :param include_extinct: A boolean value indicating whether to include extinct taxa. Default is False.
+    :param wcvp_version: The version of WCVP to use for getting distribution data. Default is None.
+    :return: A pandas DataFrame containing the merged data with distributions for accepted taxa.
+    """
     start = time.time()
     wcvp_with_dists = add_distribution_list_to_wcvp(include_doubtful, include_extinct, wcvp_version=wcvp_version)
     wcvp_with_dists = wcvp_with_dists[wcvp_with_dists[wcvp_columns['status']].isin(_statuses_that_have_dists)]

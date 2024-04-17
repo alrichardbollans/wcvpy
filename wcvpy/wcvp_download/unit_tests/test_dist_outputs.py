@@ -4,9 +4,8 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_accepted_taxa, \
-    get_wcvp_zip
-from wcvp_download import wcvp_columns, wcvp_accepted_columns, native_code_column, \
+from wcvpy.wcvp_download import add_distribution_list_to_wcvp, get_distributions_for_accepted_taxa, \
+    get_wcvp_zip, wcvp_columns, wcvp_accepted_columns, native_code_column, \
     introduced_code_column
 
 with_dist = add_distribution_list_to_wcvp()

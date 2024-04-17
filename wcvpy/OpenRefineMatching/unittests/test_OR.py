@@ -4,7 +4,7 @@ import unittest
 
 from pkg_resources import resource_filename
 
-from OpenRefineMatching import *
+from wcvpy.OpenRefineMatching import *
 
 unittest_inputs = resource_filename(__name__, 'test_inputs')
 unittest_outputs = resource_filename(__name__, 'test_outputs')

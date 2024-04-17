@@ -1,7 +1,7 @@
 # Matching Names In Datasets to the WCVP
 
-To cite WCVP:
-Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document] 
+To cite the WCVP:
+Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. 
 URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
 
 For further information:
@@ -12,11 +12,11 @@ Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
 With pip, run:
 
-`pip install git+https://github.com/alrichardbollans/automatchnames.git@1.3.1`
+`pip install git+https://github.com/alrichardbollans/wcvpy.git@1.3.2`
 
 or for plotting dependencies:
 
-`pip install 'automatchnames[dist_plots] @  git+https://github.com/alrichardbollans/automatchnames.git@1.3.1'`
+`pip install 'automatchnames[dist_plots] @  git+https://github.com/alrichardbollans/wcvpy.git@1.3.2'`
 
 ## Usage
 
@@ -32,7 +32,7 @@ checklist into a format containing more information and returns a pandas.Datafra
 
 ```python
 import pandas as pd
-from wcvp_name_matching import get_accepted_info_from_names_in_column
+from wcvpy.wcvp_name_matching import get_accepted_info_from_names_in_column
 
 data_csv = 'path_to_data.csv'
 

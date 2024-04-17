@@ -8,13 +8,13 @@ import pandas as pd
 import pandas.testing
 from pkg_resources import resource_filename
 
-from wcvp_download import wcvp_columns
-from wcvp_name_matching import lookup_ipni_id_in_wcvp, get_accepted_wcvp_info_from_ipni_ids_in_column, \
+
+from wcvpy.wcvp_name_matching import lookup_ipni_id_in_wcvp, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     get_accepted_info_from_names_in_column, output_record_col_names, clean_urn_ids
-from wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
+from wcvpy.wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
     _find_best_matches_from_multiple_knms_matches
 
-from wcvp_download import get_all_taxa, wcvp_accepted_columns
+from wcvpy.wcvp_download import get_all_taxa, wcvp_accepted_columns
 
 wcvp_taxa = get_all_taxa()
 

@@ -1,5 +1,7 @@
 # Matching Names In Datasets to the WCVP
 
+Note this package has been renamed from `automatchnames` to `wcvpy`.
+
 To cite the WCVP:
 Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. 
 URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
@@ -16,7 +18,7 @@ With pip, run:
 
 or for plotting dependencies:
 
-`pip install 'automatchnames[dist_plots] @  git+https://github.com/alrichardbollans/wcvpy.git@1.3.2'`
+`pip install 'wcvpy[dist_plots] @  git+https://github.com/alrichardbollans/wcvpy.git@1.3.2'`
 
 ## Usage
 

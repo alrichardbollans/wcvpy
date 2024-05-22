@@ -1,9 +1,17 @@
 # Matching Names In Datasets to the WCVP
 
+Python packages for downloading the WCVP, and resolving names to it.
+
+As a basic example, the synonym `Amsonia tabernaemontana Walter var. gattingeri Woodson`, is resolved to the accepted
+name (as of WCVP v12) `Amsonia tabernaemontana var. salicifolia (Pursh) Woodson` and a variety of information related to this accepted name is
+provided (e.g. family, IPNI id, parent, rank etc..).
+
+Methods for downloading and plotting distributions are also provided.
+
 Note this package has been renamed from `automatchnames` to `wcvpy`.
 
 To cite the WCVP:
-Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. 
+Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew.
 URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
 
 For further information:
@@ -18,17 +26,17 @@ With pip, run:
 
 or for plotting dependencies:
 
-`pip install 'wcvpy[dist_plots] @  git+https://github.com/alrichardbollans/wcvpy.git@1.3.2'`
+`pip install 'wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.2'`
 
 ## Usage
 
 ### Downloading the checklist
 
-When running the name matching commands below, the checklist will be automatically downloaded. If you would
+When running the name matching commands below, the checklist will be automatically downloaded into the package directory. If you would
 like to download the checklist separately, use the `get_all_taxa` function. When **first**
 downloaded, the most recent version of the checklist will be retrieved and the package will rely on this
 version until you force an update (with `get_all_taxa(get_new_version=True)`). This function parses the
-checklist into a format containing more information and returns a pandas.Dataframe.
+checklist into a format containing more information and returns a `pandas.Dataframe`.
 
 ### Name matching
 
@@ -40,23 +48,18 @@ data_csv = 'path_to_data.csv'
 
 your_data_df = pd.read_csv(data_csv)  # Data to use
 name_col = 'taxa'  # Name of column in data with names to check
-# Names of families in your data 
-# This is optional, but the program is much faster if specified
-# One must be careful with usage of this. If the restriction of families is not broad enough some species may 
-# erroneously be matched to a genus in the incorrect family (during autoresolution step). 
-# There are some genera that are often considered to be in 
-# different families. For example, 'Anthocleista' is an accepted genus in Gentianaceae but is often considered
-# to be in Loganiaceae. If you try to match e.g. 'Anthocleista procera' within Loganiaceae it will be unresolved.
-# Note however that examples like 'Anthocleista brieyi' are synonyms within Loganiaceae whose accepted family 
-# is rubiaceae and in this case the program will find the match
+
+# If you know the names in your data are only found in certain families, you can specify them here
+# This is optional and will speed up the program, but _may_ result in worse matches. See the notes below.
 families_in_occurrences = ['Apocynaceae', 'Rubiaceae']
+
 # Manual resolutions are optional and included by specifying a csv file, in the same format as
 # the `manual_match_template.csv` file.
 manual_resolution_csv = 'manual_match_template.csv'
 
 # Match level specifies how conservative to be. One of ['full', 'direct', 'fuzzy']
 # direct: only include direct matches to wcvp
-# knms: Include direct matches to wcvp and matches from KNMS
+# fuzzy: Include direct matches to wcvp, matches from KNMS and matches from OpenRefine
 # full: include both of the above, and autoresolution step
 match_level = 'full'
 data_with_accepted_information = get_accepted_info_from_names_in_column(your_data_df, name_col,
@@ -64,6 +67,17 @@ data_with_accepted_information = get_accepted_info_from_names_in_column(your_dat
                                                                         manual_resolution_csv=manual_resolution_csv,
                                                                         match_level=match_level)
 ```
+
+#### Specifying Families
+
+There are a few points to note when specifying families in the matching process. It is recommended to **avoid** using this unless you also set up some
+checks of the outputs.
+
+If the restriction of families is not broad enough some species may erroneously be matched to a genus in the incorrect family (during autoresolution
+step). There are some genera that are often considered to be in different families. For example, `Anthocleista` is an accepted genus in Gentianaceae
+but is often considered to be in Loganiaceae. If you try to match e.g. `Anthocleista procera` within Loganiaceae it will be unresolved. Note however
+that examples like `Anthocleista brieyi` are synonyms within Loganiaceae whose accepted family
+is Rubiaceae and in this case the program will find the correct resolution.
 
 ## Summary of Matching Steps
 
@@ -255,7 +269,7 @@ cases in `examples_to_fix.csv`.
 
 ## Sources
 
-Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document] 
+Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document]
 URL http://sftp.kew.org/pub/data-repositories/WCVP/
 Retrieved XX/XX/XX.
 

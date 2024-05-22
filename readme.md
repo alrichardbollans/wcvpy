@@ -2,7 +2,7 @@
 
 Python packages for downloading the WCVP, and resolving names to it.
 
-As a basic example, the synonym `Amsonia tabernaemontana Walter var. gattingeri Woodson`, is resolved to the accepted
+As a basic example, the synonym `Amsonia tabernaemontana Walter var. gattingeri Woodson` is resolved to the accepted
 name (as of WCVP v12) `Amsonia tabernaemontana var. salicifolia (Pursh) Woodson` and a variety of information related to this accepted name is
 provided (e.g. family, IPNI id, parent, rank etc..).
 

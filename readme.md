@@ -26,7 +26,7 @@ With pip, run:
 
 or for plotting dependencies:
 
-`pip install 'wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.2'`
+`pip install "wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.2"`
 
 ## Usage
 

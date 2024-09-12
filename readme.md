@@ -14,7 +14,6 @@ To cite the WCVP:
 Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew.
 URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
 
-For further information:
 Govaerts, R., Nic Lughadha, E. et al. The World Checklist of Vascular Plants, a continuously updated resource for exploring global plant diversity.
 Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
@@ -32,11 +31,42 @@ or for plotting dependencies:
 
 ### Downloading the checklist
 
-When running the name matching commands below, the checklist will be automatically downloaded into the package directory. If you would
-like to download the checklist separately, use the `get_all_taxa` function. When **first**
+This is as simple as:
+
+```python
+from wcvpy.wcvp_download import get_all_taxa
+
+checklist = get_all_taxa()
+```
+
+This will download the checklist into the package directory for repeated use, and the returned pandas Dataframe provides a parsed version of the
+checklist that I find a little more user-friendly. When **first**
 downloaded, the most recent version of the checklist will be retrieved and the package will rely on this
-version until you force an update (with `get_all_taxa(get_new_version=True)`). This function parses the
-checklist into a format containing more information and returns a `pandas.Dataframe`.
+version until you force an update (with `get_all_taxa(get_new_version=True)`).
+
+When running the name matching commands below, the checklist will be automatically downloaded with the `get_all_taxa` function.
+
+### Distribution Data
+
+For using distribution data there is one main function `get_distributions_for_accepted_taxa`:
+
+```python
+import pandas as pd
+from wcvpy.wcvp_download import get_distributions_for_accepted_taxa
+
+acc_taxa = pd.read_csv('some_data.csv')  # a dataframe with a column of accepted names
+accepted_name_column = 'accepted_Names'
+
+wcvp_dists = get_distributions_for_accepted_taxa(acc_taxa,
+                                                 accepted_name_column)
+```
+
+This is restricted to _accepted_ names.
+
+This will run `get_all_taxa` to access the checklist, so will use the version you have downloaded or download the newest version. You can also specify
+a specific version if required.
+
+Some other methods for plotting distribution information are provided in [plot_distributions.py](wcvpy/wcvp_download/plot_distributions.py)
 
 ### Name matching
 

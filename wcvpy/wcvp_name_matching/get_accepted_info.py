@@ -12,18 +12,16 @@ from wcvpy.OpenRefineMatching import openrefine_match_full_names
 tqdm.pandas()
 
 from typing import List
-from pkg_resources import resource_filename
 
 from wcvpy.wcvp_name_matching import get_wcvp_info_for_names_in_column, \
     get_knms_name_matches, clean_urn_ids, output_record_col_names, temp_outputs_dir, \
     tidy_names_in_column, recapitalised_name_col, submitted_name_col_id, \
-    tidy_families_in_column, status_priority, submitted_family_name_col_id, unique_submission_index_col, \
+    tidy_families_in_column, submitted_family_name_col_id, unique_submission_index_col, \
     lowercase_name_col, tidied_taxon_authors_col, get_word_combinations, \
     remove_whitespace_at_beginning_and_end, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     resolve_matches_by_priorities, rank_priority, resolve_openrefine_to_best_matches
 from wcvpy.wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
 
-matching_data_path = resource_filename(__name__, 'matching data')
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):

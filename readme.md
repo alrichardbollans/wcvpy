@@ -39,7 +39,7 @@ from wcvpy.wcvp_download import get_all_taxa
 checklist = get_all_taxa()
 ```
 
-This will download the checklist into the package directory for repeated use, and the returned pandas Dataframe provides a parsed version of the
+This will download the checklist into `$HOME`/.wcvp_downloads, and the returned pandas Dataframe provides a parsed version of the
 checklist that I find a little more user-friendly. When **first**
 downloaded, the most recent version of the checklist will be retrieved and the package will rely on this
 version until you force an update (with `get_all_taxa(get_new_version=True)`).

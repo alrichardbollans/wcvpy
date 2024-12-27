@@ -8,9 +8,10 @@ import numpy as np
 import pandas as pd
 import requests
 from dateutil.parser import parse as parsedate
-from pkg_resources import resource_filename
 
-_inputs_path = resource_filename(__name__, 'inputs')
+from pathlib import Path
+
+_wcvp_downloads_path = os.path.join(Path.home(), '.wcvp_downloads')
 
 wcvp_columns = {'family': 'family',
                 'rank': 'taxon_rank',
@@ -171,10 +172,10 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
         wcvp_path = base_wcvp_path
     wcvp_link = '/'.join([wcvp_path, wcvp_file_name])
 
-    input_zip_file = os.path.join(_inputs_path, wcvp_file_name)
+    input_zip_file = os.path.join(_wcvp_downloads_path, wcvp_file_name)
 
-    if not os.path.exists(_inputs_path):
-        os.mkdir(_inputs_path)
+    if not os.path.exists(_wcvp_downloads_path):
+        os.mkdir(_wcvp_downloads_path)
 
     def download_newest():
         if version is None:

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pkg_resources import resource_filename
 
-from wcvpy.wcvp_download import get_distributions_for_accepted_taxa, native_code_column, wcvp_accepted_columns
+from wcvpy.wcvp_download import get_distributions_for_accepted_taxa, native_code_column
 
 _inputs_path = resource_filename(__name__, 'inputs')
 
@@ -83,7 +83,6 @@ def plot_native_number_accepted_taxa_in_regions(df: pd.DataFrame, acc_name_col: 
     import cartopy.crs as ccrs
     import cartopy.feature as cfeature
     import cartopy.io.shapereader as shpreader
-    import fiona  # Need fiona to read shapefiles
 
     df_with_region_data = get_native_region_distribution_dataframe_for_accepted_taxa(df, acc_name_col,
                                                                                      output_path=os.path.join(output_dir,

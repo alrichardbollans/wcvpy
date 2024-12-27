@@ -2,15 +2,12 @@ import hashlib
 import json
 import os
 import unicodedata as ud
+from typing import List
 
 import numpy as np
 import pandas as pd
 import requests
-from typing import List
 
-from pkg_resources import resource_filename
-
-inputs_path = resource_filename(__name__, 'inputs')
 temp_outputs_dir = 'name matching temp outputs'
 knms_outputs_dir = os.path.join(temp_outputs_dir, 'knms matches')
 

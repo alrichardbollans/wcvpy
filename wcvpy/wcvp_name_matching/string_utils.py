@@ -176,7 +176,7 @@ def tidy_authors(given_string: str):
     my_regex = ""
     for ch in infraspecific_chars:
         my_regex += "(?<!" + re.escape(ch.replace('.', '')) + ")"
-    my_regex += "\.\s(?=[a-z]|[A-Z]|[)])"
+    my_regex += "\\.\s(?=[a-z]|[A-Z]|[)])"
     try:
         return re.sub(my_regex, ".", given_string)
     except TypeError:

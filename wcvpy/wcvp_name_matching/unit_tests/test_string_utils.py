@@ -82,7 +82,7 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(clean_urn_ids(np.NAN), type(np.NAN))
 
     def test_tidying_authors(self):
-        test_dict = {'Abies abies (L. ) druce': 'Abies abies (L.) druce',
+        test_dict = {'Abies abies (L. ) druce': 'Abies abies (L.) druce','Abies abies (L. A druce': 'Abies abies (L.A druce',
                      'Strychnos axillaris': 'Strychnos axillaris', np.nan: np.nan, None: None,
                      'Strychnos axillaris Dalzell. & A.Gibson.': 'Strychnos axillaris Dalzell. & A.Gibson.',
                      'Amsonia tabernaemontana Walter var. gattingeri Woodson': 'Amsonia tabernaemontana Walter var. gattingeri Woodson',

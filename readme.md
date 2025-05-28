@@ -1,6 +1,6 @@
-# Matching Names In Datasets to the WCVP
+# wcvpy
 
-Python packages for downloading the WCVP, and resolving names to it.
+This repository provides Python packages for downloading the WCVP and resolving names to it, along with utility functions for managing and plotting geographic distributions.
 
 As a basic example, the synonym `Amsonia tabernaemontana Walter var. gattingeri Woodson` is resolved to the accepted
 name (as of WCVP v12) `Amsonia tabernaemontana var. salicifolia (Pursh) Woodson` and a variety of information related to this accepted name is
@@ -10,7 +10,12 @@ Methods for downloading and plotting distributions are also provided.
 
 Note this package has been renamed from `automatchnames` to `wcvpy`.
 
-To cite the WCVP:
+## Citations
+
+You can currently cite this tool via the Zenodo repository: https://doi.org/10.5281/zenodo.14774384
+
+**To cite the WCVP:**
+
 Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew.
 URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
 
@@ -21,11 +26,11 @@ Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
 With pip, run:
 
-`pip install git+https://github.com/alrichardbollans/wcvpy.git@1.3.2`
+`pip install git+https://github.com/alrichardbollans/wcvpy.git@1.3.3`
 
 or for plotting dependencies:
 
-`pip install "wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.2"`
+`pip install "wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.3"`
 
 ## Usage
 

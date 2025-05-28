@@ -7,7 +7,7 @@ import pandas.testing
 from wcvpy.wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns, \
     wcvp_columns_used_in_direct_matching
 
-wcvp_data = get_all_taxa()
+wcvp_data = get_all_taxa(get_new_version=True)
 _output_path = 'test_outputs'
 
 
@@ -69,18 +69,17 @@ class MyTestCase(unittest.TestCase):
         pd.testing.assert_series_equal(acc_species['accepted_parent'], acc_species['genus'],
                                        check_names=False)
 
-    def test_accepted_parents_are_accepted(self):
-
-        ### Change this to cases where name is accepted but parent is not accepted (and remove artificial hybrids).
-        accepted_parents = wcvp_data['accepted_parent'].unique().tolist()
+    def test_parents_of_accepted_taxa_are_accepted(self):
+        accepted_df = wcvp_data[wcvp_data[wcvp_columns['status']]=='Accepted']
+        parents_of_accepted_taxa = accepted_df['accepted_parent'].dropna().unique().tolist()
         accepted_names = wcvp_data['accepted_name'].unique().tolist()
-        interstn = set(accepted_parents).intersection(accepted_names)
+        interstn = set(parents_of_accepted_taxa).intersection(accepted_names)
 
-        problems = [name for name in accepted_parents if name not in interstn]
+        problems = [name for name in parents_of_accepted_taxa if name not in interstn]
 
-        issues = wcvp_data[wcvp_data['accepted_parent'].isin(problems)]
+        issues = accepted_df[accepted_df['accepted_parent'].isin(problems)]
         if len(issues.index) > 0:
-            issues.to_csv(os.path.join('test_outputs','accepted_parents_without_accepted_name_records.csv'))
+            issues.to_csv(os.path.join('test_outputs','accepted_taxa_with_parents_that_arent_accepted.csv'))
             self.assertEqual(len(issues.index), 0)
 
     def test_generic_cases(self):

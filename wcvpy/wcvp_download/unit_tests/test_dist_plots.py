@@ -5,7 +5,7 @@ import pandas as pd
 import pandas.testing
 
 from wcvpy.wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa, \
-    wcvp_accepted_columns
+    wcvp_accepted_columns, wcvp_columns
 
 _output_path = 'test_outputs'
 
@@ -75,9 +75,9 @@ class MyTestCase(unittest.TestCase):
             raise ValueError
 
     def test_plot_all(self):
-        # to_plot = new_taxa[new_taxa[wcvp_columns['status']] == 'Accepted']
-        to_plot = new_taxa[~new_taxa[wcvp_accepted_columns['species']].isna()]
-        plot_native_number_accepted_taxa_in_regions(to_plot, wcvp_accepted_columns['species'],
+        to_plot = new_taxa[new_taxa[wcvp_columns['rank']] == 'Species']
+        to_plot = to_plot[~to_plot[wcvp_accepted_columns['name']].isna()]
+        plot_native_number_accepted_taxa_in_regions(to_plot, wcvp_accepted_columns['name'],
                                                     'test_outputs', 'all_species_native_distribution.jpg',
                                                     include_extinct=True)
 

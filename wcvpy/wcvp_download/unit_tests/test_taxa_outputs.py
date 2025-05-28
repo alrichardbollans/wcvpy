@@ -69,6 +69,20 @@ class MyTestCase(unittest.TestCase):
         pd.testing.assert_series_equal(acc_species['accepted_parent'], acc_species['genus'],
                                        check_names=False)
 
+    def test_accepted_parents_are_accepted(self):
+
+        ### Change this to cases where name is accepted but parent is not accepted (and remove artificial hybrids).
+        accepted_parents = wcvp_data['accepted_parent'].unique().tolist()
+        accepted_names = wcvp_data['accepted_name'].unique().tolist()
+        interstn = set(accepted_parents).intersection(accepted_names)
+
+        problems = [name for name in accepted_parents if name not in interstn]
+
+        issues = wcvp_data[wcvp_data['accepted_parent'].isin(problems)]
+        if len(issues.index) > 0:
+            issues.to_csv(os.path.join('test_outputs','accepted_parents_without_accepted_name_records.csv'))
+            self.assertEqual(len(issues.index), 0)
+
     def test_generic_cases(self):
         genus_accepted_rank = wcvp_data[wcvp_data['accepted_rank'] == 'Genus']
         self.assertTrue(genus_accepted_rank['accepted_parent'].isnull().all())

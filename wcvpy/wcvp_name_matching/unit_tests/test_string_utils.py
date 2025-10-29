@@ -8,7 +8,8 @@ from pkg_resources import resource_filename
 from wcvpy.wcvp_download import clean_whitespaces_in_names
 from wcvpy.wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_from_full_name
 from wcvpy.wcvp_name_matching.string_utils import _capitalize_first_letter_of_taxon, tidy_authors, \
-    get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets
+    get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets, \
+    get_species_binomial_from_full_name
 
 unittest_inputs = resource_filename(__name__, 'test_inputs')
 
@@ -36,6 +37,16 @@ class MyTestCase(unittest.TestCase):
         for k in correct_dict:
             print(k)
             self.assertEqual(correct_dict[k], get_species_from_full_name(k))
+    def test_species_binomial_name(self):
+        self.assertIsNone(get_species_binomial_from_full_name(None))
+        self.assertTrue(np.isnan(get_species_binomial_from_full_name(np.nan)))
+        correct_dict = {'': '', 'g': 'g', 'g ': 'g', ' g': 'g', ' g y': 'g y',
+                        'Hoodia Sweet ex Decne': 'Hoodia Sweet', '× Sarcorhiza Anon.': '× Sarcorhiza Anon.',
+                        'Medinilla sarcorhiza Cogn.': 'Medinilla sarcorhiza', 'Clematis × pinnata': 'Clematis × pinnata'}
+
+        for k in correct_dict:
+            print(k)
+            self.assertEqual(correct_dict[k], get_species_binomial_from_full_name(k))
 
     def test_capitalising(self):
         test_dict = {'': '', ' ': ' ', 'Abies .abies. (L. ) Druce': 'Abies .Abies. (L. ) druce',

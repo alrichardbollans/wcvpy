@@ -8,7 +8,6 @@ import pandas as pd
 import pandas.testing
 from pkg_resources import resource_filename
 
-
 from wcvpy.wcvp_name_matching import lookup_ipni_id_in_wcvp, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     get_accepted_info_from_names_in_column, output_record_col_names, clean_urn_ids
 from wcvpy.wcvp_name_matching.get_accepted_info import _get_knms_matches_and_accepted_info_from_names_in_column, \
@@ -71,9 +70,10 @@ class MyTestCase(unittest.TestCase):
         test_list = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
 
         if fams is None:
-            s = get_accepted_info_from_names_in_column(test_list, name_col, **kwargs)
+            s = get_accepted_info_from_names_in_column(test_list, name_col, all_taxa=wcvp_taxa, **kwargs)
         else:
-            s = get_accepted_info_from_names_in_column(test_list, name_col, families_of_interest=fams,
+            s = get_accepted_info_from_names_in_column(test_list, name_col, all_taxa=wcvp_taxa,
+                                                       families_of_interest=fams,
                                                        **kwargs)
         s.to_csv(os.path.join(unittest_outputs, input_csv_name))
         self.compare_series(s['accepted_name'], test_list[known_acc_name_col])
@@ -112,7 +112,7 @@ class MyTestCase(unittest.TestCase):
         test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name),
                               dtype={'acc_wcvp_id': object, 'wcvp_id': object, 'acc_wcvp_species_id': object})
 
-        response = get_accepted_info_from_names_in_column(test_df, name_col, **kwargs)
+        response = get_accepted_info_from_names_in_column(test_df, name_col, all_taxa=wcvp_taxa, **kwargs)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
 
         self.basic_response_test(response)
@@ -134,7 +134,7 @@ class MyTestCase(unittest.TestCase):
         start = time.time()
 
         test_df = pd.read_csv(os.path.join(unittest_inputs, input_csv_name))
-        response = get_accepted_info_from_names_in_column(test_df, name_col, **kwargs)
+        response = get_accepted_info_from_names_in_column(test_df, name_col, all_taxa=wcvp_taxa, **kwargs)
         response.to_csv(os.path.join(unittest_outputs, input_csv_name))
 
         self.compare_series(test_df['acc_id'], response[test_columns['acc_id']])
@@ -336,11 +336,13 @@ class MyTestCase(unittest.TestCase):
     def test_synonyms(self):
         self._test_get_acc_info_names_on_csv('synonym_list.csv', 'syn',
                                              'Know_acc_name')
+
     @unittest.skip('Known to fail')
     def test_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('examples_to_fix.csv',
                                              'Name',
                                              'acc_name')
+
     @unittest.skip('Known to fail')
     def test_fam_examples_to_fix(self):
         self._test_get_acc_info_names_on_csv('fam_examples_to_fix.csv',
@@ -399,14 +401,14 @@ class MyTestCase(unittest.TestCase):
 
     def test_some_cases(self):
         test_df = pd.DataFrame(['Anthocleista brieyi'], columns=['Name'])
-        acc_df = get_accepted_info_from_names_in_column(test_df, name_col='Name')
+        acc_df = get_accepted_info_from_names_in_column(test_df, all_taxa=wcvp_taxa, name_col='Name')
         self.assertListEqual(acc_df[wcvp_accepted_columns['family']].values.tolist(), ['Rubiaceae'])
 
     def test_direct_match(self):
         self.gets_correct_id_test('more_direct_matches.csv', 'Name', match_level='direct')
         self.all_info_test('direct_matches.csv', 'Name', match_level='direct')
         try:
-            get_accepted_info_from_names_in_column(pd.DataFrame(), 'Name', match_level='garbage')
+            get_accepted_info_from_names_in_column(pd.DataFrame(), 'Name', all_taxa=wcvp_taxa, match_level='garbage')
         except ValueError:
             pass
         else:
@@ -435,7 +437,7 @@ class MyTestCase(unittest.TestCase):
     def test_ecbot(self):
         import openpyxl
         test_df = pd.read_excel(os.path.join(unittest_inputs, 'Adam-ex-data-ZI.xlsx'))
-        response = get_accepted_info_from_names_in_column(test_df, 'Taxon ', family_column='Family')
+        response = get_accepted_info_from_names_in_column(test_df, 'Taxon ', all_taxa=wcvp_taxa, family_column='Family')
         response.to_csv(os.path.join(unittest_outputs, 'ecbot.csv'))
 
     def test_autoresolutions(self):
@@ -456,11 +458,12 @@ class MyTestCase(unittest.TestCase):
 
     def test_matched_to_example(self):
         test_df = pd.read_csv(os.path.join(unittest_inputs, 'matched_name_example.csv'))
-        response = get_accepted_info_from_names_in_column(test_df, 'Name')
+        response = get_accepted_info_from_names_in_column(test_df, 'Name', all_taxa=wcvp_taxa)
         response.to_csv(os.path.join(unittest_outputs, 'matched_name_example.csv'))
 
         self.compare_series(test_df['m_name'].fillna(''), response['matched_name'].fillna(''))
 
 
 if __name__ == '__main__':
+
     unittest.main()

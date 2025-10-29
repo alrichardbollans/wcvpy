@@ -20,8 +20,7 @@ from wcvpy.wcvp_name_matching import get_wcvp_info_for_names_in_column, \
     lowercase_name_col, tidied_taxon_authors_col, get_word_combinations, \
     remove_whitespace_at_beginning_and_end, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     resolve_matches_by_priorities, rank_priority, resolve_openrefine_to_best_matches
-from wcvpy.wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns
-
+from wcvpy.wcvp_download import get_all_taxa, wcvp_columns, wcvp_accepted_columns, filter_families_from_df
 
 
 def _temp_output(df: pd.DataFrame, tag: str, warning: str = None):
@@ -257,10 +256,12 @@ def _find_best_matches_from_multiple_knms_matches(multiple_match_records: pd.Dat
             raise ValueError(f'Rank priority list does not contain {r} and needs updating.')
     accepted_names_in_submitted_names[wcvp_accepted_columns['rank']] = pd.Categorical(
         accepted_names_in_submitted_names[wcvp_accepted_columns['rank']], rank_priority)
-    accepted_names_in_submitted_names = accepted_names_in_submitted_names.sort_values(wcvp_accepted_columns['rank']).copy()
+    accepted_names_in_submitted_names = accepted_names_in_submitted_names.sort_values(
+        wcvp_accepted_columns['rank']).copy()
 
     # Get the most precise match by dropping duplicate submissions
-    accepted_names_in_submitted_names = accepted_names_in_submitted_names.drop_duplicates(subset=[unique_submission_id_col], keep='first').copy()
+    accepted_names_in_submitted_names = accepted_names_in_submitted_names.drop_duplicates(
+        subset=[unique_submission_id_col], keep='first').copy()
     accepted_names_in_submitted_names[wcvp_accepted_columns['rank']] = accepted_names_in_submitted_names[
         wcvp_accepted_columns['rank']].astype(object)
 
@@ -287,7 +288,8 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
                                            families_of_interest: List[str] = None,
                                            family_column: str = None,
                                            manual_resolution_csv: str = None,
-                                           match_level: str = 'full', use_open_refine: bool = True, wcvp_version: str = None) -> pd.DataFrame:
+                                           match_level: str = 'full', use_open_refine: bool = True,
+                                           wcvp_version: str = None, all_taxa: pd.DataFrame = None) -> pd.DataFrame:
     """
     First tries to match names in df to wcvp directly to obtain accepted info and then
     matches names in df using knms/openrefine. Finally uses full automated matching.
@@ -299,12 +301,16 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
     :param match_level:
     :param wcvp_version:
     :param use_open_refine: bool whether to use open refine in fuzzy matching
+    :param all_taxa: output of get_all_taxa, if None will be calculated
     :return:
     """
     # Check for bad inputs
     match_levels = ['full', 'direct', 'fuzzy']
     if match_level not in match_levels:
         raise ValueError(f'match_level should be one of {match_levels}')
+
+    if all_taxa is not None and wcvp_version is not None:
+        raise ValueError('Cannot specify both wcvp_version and all_taxa')
 
     reserved_column_names = [submitted_name_col_id, submitted_family_name_col_id, recapitalised_name_col,
                              lowercase_name_col,
@@ -345,7 +351,10 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
 
         # Check families of interest and in family column are in wcvp, and remove if not
         if families_of_interest is not None or family_column is not None:
-            wcvp_families_df = get_all_taxa(version=wcvp_version)
+            if all_taxa is None:
+                wcvp_families_df = get_all_taxa(version=wcvp_version)
+            else:
+                wcvp_families_df = all_taxa.copy()
             wcvp_families = list(wcvp_families_df[wcvp_columns['family']].unique())
             wcvp_acc_families = list(wcvp_families_df[wcvp_accepted_columns['family']].unique())
             wcvp_all_families = wcvp_families + wcvp_acc_families
@@ -380,8 +389,10 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         df[unique_submission_index_col] = df[unique_submission_index_col].astype(str)
         in_df[unique_submission_index_col] = in_df[unique_submission_index_col].astype(str)
         df = df.drop_duplicates(subset=[unique_submission_index_col])
-
-        all_taxa = get_all_taxa(families_of_interest=families_of_interest, version=wcvp_version)
+        if all_taxa is None:
+            all_taxa = get_all_taxa(families_of_interest=families_of_interest, version=wcvp_version)
+        else:
+            all_taxa = filter_families_from_df(all_taxa, families_of_interest)
         # First get manual matches using given ipni ids
         if manual_resolution_csv is not None:
             manual_match_df = pd.read_csv(manual_resolution_csv)

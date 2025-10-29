@@ -236,6 +236,15 @@ def get_wcvp_zip(get_new_version: bool = False, version: str = None):
 
         raise zipfile.BadZipfile(f'Delete zipfile and rerun: {input_zip_file}')
 
+def filter_families_from_df(df: pd.DataFrame, families_of_interest: List[str] = None) -> pd.DataFrame:
+    if families_of_interest is not None:
+        for f in families_of_interest:
+            if f not in df[wcvp_columns['family']].values:
+                raise ValueError(f'Given family: {f} not in WCVP. CASE SENSITIVE')
+        df = df.loc[
+            (df[wcvp_columns['family']].isin(families_of_interest)) | (
+                df[wcvp_accepted_columns['family']].isin(families_of_interest))]
+    return df
 
 def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None, genera: List[str] = None,
                  species: List[str] = None,
@@ -331,14 +340,7 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
                 raise ValueError(f'Given specific taxa: {f} not in WCVP. CASE SENSITIVE')
         parsed_wcvp_data = parsed_wcvp_data[parsed_wcvp_data[wcvp_columns['name']].isin(specific_taxa)]
 
-    if families_of_interest is not None:
-        for f in families_of_interest:
-            if f not in all_wcvp_data[wcvp_columns['family']].values:
-                raise ValueError(f'Given family: {f} not in WCVP. CASE SENSITIVE')
-        parsed_wcvp_data = parsed_wcvp_data.loc[
-            (parsed_wcvp_data[wcvp_columns['family']].isin(families_of_interest)) | (
-                parsed_wcvp_data[wcvp_accepted_columns['family']].isin(families_of_interest))]
-
+    parsed_wcvp_data = filter_families_from_df(parsed_wcvp_data, families_of_interest)
     if output_csv is not None:
         parsed_wcvp_data.to_csv(output_csv)
 

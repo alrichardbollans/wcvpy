@@ -1,0 +1,4 @@
+,Name,acc_rank,acc_name,acc_id,acc_species,acc_parent,acc_parent_id,acc_species_id,acc_fam,tax_stat,acc_wcvp_id,acc_wcvp_species_id,wcvp_id,accepted_ipni_id,accepted_name,accepted_name_w_author,accepted_family,accepted_rank,accepted_species,accepted_species_w_author,accepted_species_ipni_id,accepted_parent,plant_name_id,taxon_status,matched_by,matched_name
+0,Condylocarpus Hoffm.,Genus,Tordylium,40614-1,,,,,Apiaceae,Synonym,2435751,,2734036,40614-1,Tordylium,Tordylium Tourn. ex L.,Apiaceae,Genus,,,,,2734036,Synonym,direct_wcvp_w_author_unique,Condylocarpus Hoffm.
+1,Condylocarpus,Genus,Tordylium,40614-1,,,,,Apiaceae,Synonym,2435751,,2734036,40614-1,Tordylium,Tordylium Tourn. ex L.,Apiaceae,Genus,,,,,2734036,Synonym,direct_wcvp,Condylocarpus
+2,Condylocarpus Hoffm,Genus,Tordylium,40614-1,,,,,Apiaceae,Synonym,2435751,,2734036,40614-1,Tordylium,Tordylium Tourn. ex L.,Apiaceae,Genus,,,,,2734036,Synonym,direct_wcvp_w_author_unique,Condylocarpus Hoffm.

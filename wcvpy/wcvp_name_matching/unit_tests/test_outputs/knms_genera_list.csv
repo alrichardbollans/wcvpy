@@ -1,0 +1,927 @@
+,Unlabelled,accepted_ipni_id,accepted_name,accepted_name_w_author,accepted_family,accepted_rank,accepted_species,accepted_species_w_author,accepted_species_ipni_id,accepted_parent,plant_name_id,taxon_status,matched_by,matched_name
+0,Adenium,2172-1,Adenium,Adenium Roem. & Schult.,Apocynaceae,Genus,,,,,3018,Accepted,knms_multiple_1,"Adenium Syst. Veg., ed. 15 bis 4: 35, 411 (1819) Roem. & Schult. 1819"
+1,Aganosma,2176-1,Aganosma,Aganosma (Blume) G.Don,Apocynaceae,Genus,,,,,4397,Accepted,knms_single,Aganosma Gen. Hist. 4: 77 (1837) (Blume) G.Don 1837
+2,Alafia,2180-1,Alafia,Alafia Thouars,Apocynaceae,Genus,,,,,5462,Accepted,knms_single,Alafia Gen. Nov. Madagasc.: 11 (1806) Thouars 1806
+3,Allamanda,2182-1,Allamanda,Allamanda L.,Apocynaceae,Genus,,,,,6151,Accepted,knms_single,Allamanda Mant. Pl. 2: 146 (1771) L. 1771
+4,Alstonia,331333-2,Alstonia,Alstonia R.Br.,Apocynaceae,Genus,,,,,6994,Accepted,knms_multiple_1,Alstonia Asclepiadeae: 64 (1810) R.Br. 1810
+5,Ambelania,30003984-2,Ambelania,Ambelania Aubl.,Apocynaceae,Genus,,,,,7748,Accepted,knms_single,Ambelania Hist. Pl. Guiane 1: 265 (1775) Aubl. 1775
+6,Amsonia,2194-1,Amsonia,Amsonia Walter,Apocynaceae,Genus,,,,,8432,Accepted,knms_single,Amsonia Fl. Carol.: 98 (1788) Walter 1788
+7,Anisopus,3194-1,Anisopus,Anisopus N.E.Br.,Apocynaceae,Genus,,,,,500610,Accepted,knms_single,Anisopus Bull. Misc. Inform. Kew 1895: 259 (1895) N.E.Br. 1895
+8,Anodendron,2205-1,Anodendron,Anodendron A.DC.,Apocynaceae,Genus,,,,,10104,Accepted,knms_single,"Anodendron A.P.de Candolle, Prodr. 8: 443 (1844) A.DC. 1844"
+9,Apteranthes,3206-1,Apteranthes,Apteranthes J.C.Mikan,Apocynaceae,Genus,,,,,220651,Accepted,knms_single,Apteranthes Nova Acta Phys.-Med. Acad. Caes. Leop.-Carol. Nat. Cur. 17: 593 (1835) J.C.Mikan 1835
+10,Asclepias,30005968-2,Asclepias,Asclepias L.,Apocynaceae,Genus,,,,,500668,Accepted,knms_single,Asclepias Sp. Pl.: 215 (1753) L. 1753
+11,Aspidosperma,2217-1,Aspidosperma,Aspidosperma Mart. & Zucc.,Apocynaceae,Genus,,,,,17223,Accepted,knms_single,Aspidosperma Nov. Gen. Sp. Pl. 1: 57 (1824) Mart. & Zucc. 1824
+12,Bahiella,60443102-2,Bahiella,Bahiella J.F.Morales,Apocynaceae,Genus,,,,,343685,Accepted,knms_single,Bahiella Sida 22: 342 (2006) J.F.Morales 2006
+13,Baissea,2218-1,Baissea,Baissea A.DC.,Apocynaceae,Genus,,,,,19324,Accepted,knms_single,"Baissea A.P.de Candolle, Prodr. 8: 424 (1844) A.DC. 1844"
+14,Beaumontia,2221-1,Beaumontia,Beaumontia Wall.,Apocynaceae,Genus,,,,,20245,Accepted,knms_single,"Beaumontia Tent. Fl. Napal.: 14, t. 7 (1824) Wall. 1824"
+15,Boucerosia,3239-1,Boucerosia,Boucerosia Wight & Arn.,Apocynaceae,Genus,,,,,501784,Accepted,knms_single,Boucerosia Contr. Bot. India: 34 (1834) Wight & Arn. 1834
+16,Bousigonia,2234-1,Bousigonia,Bousigonia Pierre,Apocynaceae,Genus,,,,,23564,Accepted,knms_single,"Bousigonia Bull. Mens. Soc. Linn. Paris, n.s., 1: 35 (1898) Pierre 1898"
+17,Buckollia,978336-1,Buckollia,Buckollia Venter & R.L.Verh.,Apocynaceae,Genus,,,,,502051,Accepted,knms_single,Buckollia S. African J. Bot. 60: 97 (1994) Venter & R.L.Verh. 1994
+18,Callichilia,2237-1,Callichilia,Callichilia Stapf,Apocynaceae,Genus,,,,,31037,Accepted,knms_single,"Callichilia D.Oliver & auct. suc. (eds.), Fl. Trop. Afr. 4(1): 130 (1902) Stapf 1902"
+19,Caralluma,30343894-2,Caralluma,Caralluma R.Br.,Apocynaceae,Genus,,,,,502128,Accepted,knms_single,Caralluma Asclepiadeae: 14 (1810) R.Br. 1810
+20,Carissa,2243-1,Carissa,Carissa L.,Apocynaceae,Genus,,,,,34128,Accepted,knms_single,Carissa Mant. Pl. 1: 7 (1767) L. 1767
+21,Catharanthus,2251-1,Catharanthus,Catharanthus G.Don,Apocynaceae,Genus,,,,,35711,Accepted,knms_single,Catharanthus Gen. Hist. 4: 95 (1837) G.Don 1837
+22,Caudanthera,986774-1,Caudanthera,Caudanthera Plowes,Apocynaceae,Genus,,,,,502449,Accepted,knms_single,Caudanthera Haseltonia 3: 58 (1995) Plowes 1995
+23,Cerbera,60436653-2,Cerbera,Cerbera L.,Apocynaceae,Genus,,,,,37142,Accepted,knms_multiple_1,Cerbera Sp. Pl.: 208 (1753) L. 1753
+24,Ceropegia,328162-2,Ceropegia,Ceropegia L.,Apocynaceae,Genus,,,,,502468,Accepted,knms_single,Ceropegia Sp. Pl.: 211 (1753) L. 1753
+25,Chonemorpha,331489-2,Chonemorpha,Chonemorpha G.Don,Apocynaceae,Genus,,,,,39722,Accepted,knms_single,Chonemorpha Gen. Hist. 4: 76 (1837) G.Don 1837
+26,Cosmostigma,3287-1,Cosmostigma,Cosmostigma Wight,Apocynaceae,Genus,,,,,503165,Accepted,knms_single,Cosmostigma Contr. Bot. India: 41 (1834) Wight 1834
+27,Craspidospermum,2280-1,Craspidospermum,Craspidospermum Bojer ex A.DC.,Apocynaceae,Genus,,,,,48714,Accepted,knms_single,"Craspidospermum A.P.de Candolle, Prodr. 8: 323 (1844) Bojer ex A.DC. 1844"
+28,Crioceras,2281-1,Crioceras,Crioceras Pierre,Apocynaceae,Genus,,,,,49081,Accepted,knms_single,Crioceras Bull. Mens. Soc. Linn. Paris 2: 1311 (1897) Pierre 1897
+29,Cryptolepis,3291-1,Cryptolepis,Cryptolepis R.Br.,Apocynaceae,Genus,,,,,503190,Accepted,knms_single,Cryptolepis Asclepiadeae: 58 (1810) R.Br. 1810
+30,Cynanchum,30401855-2,Cynanchum,Cynanchum L.,Apocynaceae,Genus,,,,,503314,Accepted,knms_single,Cynanchum Sp. Pl.: 212 (1753) L. 1753
+31,Decalepis,3313-1,Decalepis,Decalepis Wight & Arn.,Apocynaceae,Genus,,,,,504413,Accepted,knms_multiple_1,Decalepis Contr. Bot. India: 64 (1834) Wight & Arn. 1834
+32,Dictyophleba,2298-1,Dictyophleba,Dictyophleba Pierre,Apocynaceae,Genus,,,,,61481,Accepted,knms_single,"Dictyophleba Bull. Mens. Soc. Linn. Paris, n.s., 1: 92 (1898) Pierre 1898"
+33,Dischidia,3332-1,Dischidia,Dischidia R.Br.,Apocynaceae,Genus,,,,,504539,Accepted,knms_multiple_1,Dischidia Prodr. Fl. Nov. Holland.: 461 (1810) R.Br. 1810
+34,Ditassa,3334-1,Ditassa,Ditassa R.Br.,Apocynaceae,Genus,,,,,504750,Accepted,knms_single,Ditassa Mem. Wern. Nat. Hist. Soc. 1: 49 (1809) R.Br. 1809
+35,Echites,30002973-2,Echites,Echites P.Browne,Apocynaceae,Genus,,,,,65764,Accepted,knms_single,Echites Civ. Nat. Hist. Jamaica: 181 (1756) P.Browne 1756
+36,Eucorymbia,2325-1,Eucorymbia,Eucorymbia Stapf,Apocynaceae,Genus,,,,,74193,Accepted,knms_single,Eucorymbia Hooker's Icon. Pl. 28: t. 2764 (1905) Stapf 1905
+37,Fischeria,30025794-2,Fischeria,Fischeria DC.,Apocynaceae,Genus,,,,,505478,Accepted,knms_single,Fischeria Cat. Pl. Horti Monsp.: 112 (1813) DC. 1813
+38,Galactophora,295864-2,Galactophora,Galactophora Woodson,Apocynaceae,Genus,,,,,85110,Accepted,knms_single,Galactophora Ann. Missouri Bot. Gard. 19: 49 (1932) Woodson 1932
+39,Geissospermum,2340-1,Geissospermum,Geissospermum Allemão,Apocynaceae,Genus,,,,,88949,Accepted,knms_single,Geissospermum Pl. Novas Brasil: 707 (1846) Allemão 1846
+40,Gonioma,2342-1,Gonioma,Gonioma E.Mey.,Apocynaceae,Genus,,,,,91636,Accepted,knms_single,Gonioma Comm. Pl. Afr. Austr.: 188 (1838) E.Mey. 1838
+41,Gymnema,3398-1,Gymnema,Gymnema R.Br.,Apocynaceae,Genus,,,,,506251,Accepted,knms_single,Gymnema Prodr. Fl. Nov. Holland.: 461 (1810) R.Br. 1810
+42,Haplophyton,2356-1,Haplophyton,Haplophyton A.DC.,Apocynaceae,Genus,,,,,96248,Accepted,knms_single,"Haplophyton A.P.de Candolle, Prodr. 8: 412 (1844) A.DC. 1844"
+43,Himatanthus,30058664-2,Himatanthus,Himatanthus Willd. ex Schult.,Apocynaceae,Genus,,,,,99293,Accepted,knms_single,"Himatanthus J.J.Roemer & J.A.Schultes, Syst. Veg., ed. 15 bis 5: 221 (1819) Willd. ex Schult. 1819"
+44,Holarrhena,2371-1,Holarrhena,Holarrhena R.Br.,Apocynaceae,Genus,,,,,99592,Accepted,knms_single,Holarrhena Asclepiadeae: 51 (1810) R.Br. 1810
+45,Hoodia,3425-1,Hoodia,Hoodia Sweet ex Decne.,Apocynaceae,Genus,,,,,506500,Accepted,knms_single,"Hoodia A.P.de Candolle, Prodr. 8: 664 (1844) Sweet ex Decne. 1844"
+46,Hoya,60437256-2,Hoya,Hoya R.Br.,Apocynaceae,Genus,,,,,506572,Accepted,knms_single,Hoya Prodr. Fl. Nov. Holland.: 459 (1810) R.Br. 1810
+47,Ichnocarpus,331670-2,Ichnocarpus,Ichnocarpus R.Br.,Apocynaceae,Genus,,,,,102348,Accepted,knms_single,Ichnocarpus Asclepiadeae: 50 (1810) R.Br. 1810
+48,Ischnolepis,3445-1,Ischnolepis,Ischnolepis Jum. & H.Perrier,Apocynaceae,Genus,,,,,507538,Accepted,knms_single,Ischnolepis Rev. Gén. Bot. 21: 53 (1909) Jum. & H.Perrier 1909
+49,Kibatalia,2390-1,Kibatalia,Kibatalia G.Don,Apocynaceae,Genus,,,,,105920,Accepted,knms_single,Kibatalia Gen. Hist. 4: 86 (1837) G.Don 1837
+50,Kopsia,328837-2,Kopsia,Kopsia Blume,Apocynaceae,Genus,,,,,106316,Accepted,knms_multiple_1,Kopsia Catalogus: 12 (1823) Blume 1823
+51,Lacmellea,30059164-2,Lacmellea,Lacmellea H.Karst.,Apocynaceae,Genus,,,,,106762,Accepted,knms_single,Lacmellea Linnaea 28: 449 (1857) H.Karst. 1857
+52,Landolphia,331696-2,Landolphia,Landolphia P.Beauv.,Apocynaceae,Genus,,,,,107648,Accepted,knms_single,Landolphia Fl. Oware 1: 54 (1806) P.Beauv. 1806
+53,Laubertia,2403-1,Laubertia,Laubertia A.DC.,Apocynaceae,Genus,,,,,108939,Accepted,knms_single,"Laubertia A.P.de Candolle, Prodr. 8: 486 (1844) A.DC. 1844"
+54,Leptadenia,3469-1,Leptadenia,Leptadenia R.Br.,Apocynaceae,Genus,,,,,507739,Accepted,knms_single,Leptadenia Mem. Wern. Nat. Hist. Soc. 1: 34 (1809) R.Br. 1809
+55,Macoubea,2415-1,Macoubea,Macoubea Aubl.,Apocynaceae,Genus,,,,,116910,Accepted,knms_single,"Macoubea Hist. Pl. Guiane, Suppl.: 17 (1775) Aubl. 1775"
+56,Macropharynx,295631-2,Macropharynx,Macropharynx Rusby,Apocynaceae,Genus,,,,,117081,Accepted,knms_single,Macropharynx Mem. New York Bot. Gard. 7: 327 (1927) Rusby 1927
+57,Malouetia,2420-1,Malouetia,Malouetia A.DC.,Apocynaceae,Genus,,,,,119137,Accepted,knms_single,"Malouetia A.P.de Candolle, Prodr. 8: 378 (1844) A.DC. 1844"
+58,Mandevilla,328998-2,Mandevilla,Mandevilla Lindl.,Apocynaceae,Genus,,,,,119205,Accepted,knms_single,Mandevilla Edwards's Bot. Reg. 26: t. 7 (1840) Lindl. 1840
+59,Marsdenia,331758-2,Marsdenia,Marsdenia R.Br.,Apocynaceae,Genus,,,,,507912,Accepted,knms_single,Marsdenia Prodr. Fl. Nov. Holland.: 460 (1810) R.Br. 1810
+60,Melodinus,2428-1,Melodinus,Melodinus J.R.Forst. & G.Forst.,Apocynaceae,Genus,,,,,124161,Accepted,knms_single,Melodinus Char. Gen. Pl.: 37 (1776) J.R.Forst. & G.Forst. 1776
+61,Metastelma,30384004-2,Metastelma,Metastelma R.Br.,Apocynaceae,Genus,,,,,508827,Accepted,knms_single,Metastelma Asclepiadeae: 41 (1810) R.Br. 1810
+62,Microplumeria,297566-2,Microplumeria,Microplumeria Baill.,Apocynaceae,Genus,,,,,127600,Accepted,knms_single,Microplumeria Bull. Mens. Soc. Linn. Paris 1: 749 (1889) Baill. 1889
+63,Minaria,77074582-1,Minaria,Minaria T.U.P.Konno & Rapini,Apocynaceae,Genus,,,,,509102,Accepted,knms_single,Minaria Taxon 55: 424 (2006) T.U.P.Konno & Rapini 2006
+64,Nerium,30305280-2,Nerium,Nerium L.,Apocynaceae,Genus,,,,,135164,Accepted,knms_multiple_1,Nerium Sp. Pl.: 209 (1753) L. 1753
+65,Ochrosia,2461-1,Ochrosia,Ochrosia Juss.,Apocynaceae,Genus,,,,,136763,Orthographic,knms_multiple_1,Ochrosion Ann. Soc. Bot. Lyon 7: 131 (1880) St.-Lag. 1880
+66,Oncinotis,2469-1,Oncinotis,Oncinotis Benth.,Apocynaceae,Genus,,,,,140110,Accepted,knms_single,"Oncinotis W.J.Hooker, Niger Fl.: 451 (1849) Benth. 1849"
+67,Oxypetalum,331823-2,Oxypetalum,Oxypetalum R.Br.,Apocynaceae,Genus,,,,,509534,Accepted,knms_single,Oxypetalum Asclepiadeae: 30 (1810) R.Br. 1810
+68,Pachypodium,30028643-2,Pachypodium,Pachypodium Lindl.,Apocynaceae,Genus,,,,,145210,Accepted,knms_multiple_1,Pachypodium Edwards's Bot. Reg. 16: t. 1321 (1830) Lindl. 1830
+69,Parsonsia,331830-2,Parsonsia,Parsonsia R.Br.,Apocynaceae,Genus,,,,,147815,Accepted,knms_single,Parsonsia Asclepiadeae: 53 (1810) R.Br. 1810
+70,Pattalias,296829-2,Pattalias,Pattalias S.Watson,Apocynaceae,Genus,,,,,509980,Accepted,knms_single,Pattalias Proc. Amer. Acad. Arts 24: 60 (1889) S.Watson 1889
+71,Pentatropis,80546-3,Pentatropis,Pentatropis R.Br. ex Wight & Arn.,Apocynaceae,Genus,,,,,510059,Accepted,knms_single,"Pentatropis R.Wight, Contr. Bot. India: 52 (1834) R.Br. ex Wight & Arn. 1834"
+72,Pentopetia,3582-1,Pentopetia,Pentopetia Decne.,Apocynaceae,Genus,,,,,510082,Accepted,knms_single,"Pentopetia A.P.de Candolle, Prodr. 8: 500 (1844) Decne. 1844"
+73,Peplonia,3584-1,Peplonia,Peplonia Decne.,Apocynaceae,Genus,,,,,510130,Accepted,knms_single,"Peplonia A.P.de Candolle, Prodr. 8: 545 (1844) Decne. 1844"
+74,Pergularia,3585-1,Pergularia,Pergularia L.,Apocynaceae,Genus,,,,,510142,Accepted,knms_single,Pergularia Mant. Pl.: 8 (1767) L. 1767
+75,Periploca,3588-1,Periploca,Periploca Tourn. ex L.,Apocynaceae,Genus,,,,,510216,Accepted,knms_single,Periploca Sp. Pl.: 211 (1753) Tourn. ex L. 1753
+76,Petchia,2508-1,Petchia,Petchia Livera,Apocynaceae,Genus,,,,,150787,Accepted,knms_single,Petchia Ann. Roy. Bot. Gard. (Peradeniya) 10: 140 (1926) Livera 1926
+77,Pleiocarpa,2516-1,Pleiocarpa,Pleiocarpa Benth.,Apocynaceae,Genus,,,,,158924,Accepted,knms_single,"Pleiocarpa G.Bentham & J.D.Hooker, Gen. Pl. 2: 699 (1876) Benth. 1876"
+78,Pleioceras,2517-1,Pleioceras,Pleioceras Baill.,Apocynaceae,Genus,,,,,158976,Accepted,knms_single,Pleioceras Bull. Mens. Soc. Linn. Paris 1: 759 (1888) Baill. 1888
+79,Plumeria,30001863-2,Plumeria,Plumeria Tourn. ex L.,Apocynaceae,Genus,,,,,161516,Accepted,knms_single,Plumeria Sp. Pl.: 209 (1753) Tourn. ex L. 1753
+80,Prestonia,329000-2,Prestonia,Prestonia R.Br.,Apocynaceae,Genus,,,,,165307,Accepted,knms_single,Prestonia Asclepiadeae: 58 (1810) R.Br. 1810
+81,Pteralyxia,2534-1,Pteralyxia,Pteralyxia K.Schum.,Apocynaceae,Genus,,,,,170330,Accepted,knms_single,"Pteralyxia H.G.A.Engler & K.A.E.Prantl, Nat. Pflanzenfam. 4(2): 151 (1895) K.Schum. 1895"
+82,Rauvolfia,328992-2,Rauvolfia,Rauvolfia Plum. ex L.,Apocynaceae,Genus,,,,,176797,Accepted,knms_single,Rauvolfia Sp. Pl.: 208 (1753) Plum. ex L. 1753
+83,Rhazya,2547-1,Rhazya,Rhazya Decne.,Apocynaceae,Genus,,,,,177982,Accepted,knms_single,"Rhazya Ann. Sci. Nat., Bot., sér. 2, 4: 80 (1835) Decne. 1835"
+84,Saba,2560-1,Saba,Saba (Pichon) Pichon,Apocynaceae,Genus,,,,,181003,Accepted,knms_single,Saba Mém. Inst. Franç. Afrique Noire 35: 302 (1953) (Pichon) Pichon 1953
+85,Secamone,30167675-2,Secamone,Secamone R.Br.,Apocynaceae,Genus,,,,,511521,Accepted,knms_single,Secamone Prodr. Fl. Nov. Holland.: 464 (1810) R.Br. 1810
+86,Skytanthus,2570-1,Skytanthus,Skytanthus Meyen,Apocynaceae,Genus,,,,,192570,Accepted,knms_single,Skytanthus Observ. Bot. 1: 376 (1834) Meyen 1834
+87,Solenostemma,3701-1,Solenostemma,Solenostemma Hayne,Apocynaceae,Genus,,,,,511795,Accepted,knms_multiple_1,Solenostemma Getreue Darstell. Gew. 9: t. 38 (1825) Hayne 1825
+88,Stapelia,331981-2,Stapelia,Stapelia L.,Apocynaceae,Genus,,,,,511845,Accepted,knms_single,Stapelia Sp. Pl.: 217 (1753) L. 1753
+89,Strempeliopsis,2580-1,Strempeliopsis,Strempeliopsis Benth.,Apocynaceae,Genus,,,,,198151,Accepted,knms_single,"Strempeliopsis G.Bentham & J.D.Hooker, Gen. Pl. 2: 702 (1876) Benth. 1876"
+90,Strophanthus,2582-1,Strophanthus,Strophanthus DC.,Apocynaceae,Genus,,,,,198180,Accepted,knms_single,Strophanthus Bull. Sci. Soc. Philom. Paris 3: 122 (1802) DC. 1802
+91,Tabernaemontana,328993-2,Tabernaemontana,Tabernaemontana Plum. ex L.,Apocynaceae,Genus,,,,,200545,Accepted,knms_single,Tabernaemontana Sp. Pl.: 210 (1753) Plum. ex L. 1753
+92,Tabernanthe,983-1,Tabernanthe,Tabernanthe Baill.,Apocynaceae,Genus,,,,,200992,Accepted,knms_single,Tabernanthe Bull. Mens. Soc. Linn. Paris 1: 783 (1888) Baill. 1888
+93,Telosma,3755-1,Telosma,Telosma Coville ex N.E.Br.,Apocynaceae,Genus,,,,,512743,Accepted,knms_single,Telosma Contr. U.S. Natl. Herb. 9: 384 (1905) Coville 1905
+94,Temnadenia,329004-2,Temnadenia,Temnadenia Miers,Apocynaceae,Genus,,,,,202253,Accepted,knms_single,Temnadenia Apocyn. S. Amer.: 207 (1878) Miers 1878
+95,Trachelospermum,2604-1,Trachelospermum,Trachelospermum Lem.,Apocynaceae,Genus,,,,,207072,Accepted,knms_single,Trachelospermum Jard. Fleur. 1: t. 61 (1851) Lem. 1851
+96,Urceola,332043-2,Urceola,Urceola Roxb.,Apocynaceae,Genus,,,,,210936,Accepted,knms_multiple_1,Urceola Asiat. Res. 5: 169 (1798) Roxb. 1798
+97,Vallaris,2616-1,Vallaris,Vallaris Burm.f.,Apocynaceae,Genus,,,,,211376,Accepted,knms_multiple_1,Vallaris Fl. Indica: 51 (1768) Burm.f. 1768
+98,Vinca,2619-1,Vinca,Vinca L.,Apocynaceae,Genus,,,,,213142,Accepted,knms_single,Vinca Sp. Pl.: 209 (1753) L. 1753
+99,Voacanga,2620-1,Voacanga,Voacanga Thouars,Apocynaceae,Genus,,,,,213938,Accepted,knms_single,Voacanga Gen. Nov. Madagasc.: 10 (1806) Thouars 1806
+100,Wrightia,60443770-2,Wrightia,Wrightia R.Br.,Apocynaceae,Genus,,,,,214883,Accepted,knms_multiple_1,Wrightia Prodr. Fl. Nov. Holland.: 467 (1810) R.Br. 1810
+101,Adina,34103-1,Adina,Adina Salisb.,Rubiaceae,Genus,,,,,3234,Accepted,knms_single,Adina Parad. Lond. 2: t. 115 (1808) Salisb. 1808
+102,Agathisanthemum,34107-1,Agathisanthemum,Agathisanthemum Klotzsch,Rubiaceae,Genus,,,,,4548,Accepted,knms_single,"Agathisanthemum W.C.H.Peters, Naturw. Reise Mossambique 6(1): 294 (1861) Klotzsch 1861"
+103,Alibertia,30011980-2,Alibertia,Alibertia A.Rich. ex DC.,Rubiaceae,Genus,,,,,6004,Accepted,knms_multiple_1,Alibertia Prodr. 4: 443 (1830) A.Rich. ex DC. 1830
+104,Alseis,34120-1,Alseis,Alseis Schott,Rubiaceae,Genus,,,,,6967,Accepted,knms_single,"Alseis K.Sprengel, Syst. Veg. 4(2): 404 (1827) Schott 1827"
+105,Amaioua,34121-1,Amaioua,Amaioua Aubl.,Rubiaceae,Genus,,,,,7490,Accepted,knms_single,"Amaioua Hist. Pl. Guiane, Suppl.: 13 (1775) Aubl. 1775"
+106,Antirhea,327846-2,Antirhea,Antirhea Comm. ex A.Juss.,Rubiaceae,Genus,,,,,12385,Accepted,knms_single,Antirhea Gen. Pl.: 204 (1789) Comm. ex A.Juss. 1789
+107,Arachnothryx,328092-2,Arachnothryx,Arachnothryx Planch.,Rubiaceae,Genus,,,,,13832,Accepted,knms_single,Arachnothryx Fl. Serres Jard. Eur. 5: t. 442 (1849) Planch. 1849
+108,Arcytophyllum,34169-1,Arcytophyllum,Arcytophyllum Schult. & Schult.f.,Rubiaceae,Genus,,,,,14426,Accepted,knms_single,"Arcytophyllum J.A.Schultes & J.H.Schultes, Mant. 3: 5 (1827) Willd. 1827"
+109,Argostemma,34173-1,Argostemma,Argostemma Wall.,Rubiaceae,Genus,,,,,14774,Accepted,knms_single,"Argostemma W.Roxburgh, Fl. Ind. 2: 324 (1824) Wall. 1824"
+110,Bathysa,34203-1,Bathysa,Bathysa C.Presl,Rubiaceae,Genus,,,,,20097,Accepted,knms_single,"Bathysa Abh. Königl. Böhm. Ges. Wiss., ser. 5, 3: 514 (1845) C.Presl 1845"
+111,Bertiera,329744-2,Bertiera,Bertiera Aubl.,Rubiaceae,Genus,,,,,20809,Accepted,knms_single,Bertiera Hist. Pl. Guiane: 180 (1775) Aubl. 1775
+112,Breonadia,34251-1,Breonadia,Breonadia Ridsdale,Rubiaceae,Genus,,,,,24352,Accepted,knms_single,Breonadia Blumea 22: 549 (1975) Ridsdale 1975
+113,Breonia,34253-1,Breonia,Breonia A.Rich. ex DC.,Rubiaceae,Genus,,,,,24356,Accepted,knms_single,Breonia Prodr. 4: 620 (Sept. 1830) A.Rich. ex DC. 
+114,Calycophyllum,34281-1,Calycophyllum,Calycophyllum DC.,Rubiaceae,Genus,,,,,32053,Accepted,knms_single,Calycophyllum Prodr. 4: 367 (1830) DC. 1830
+115,Canthium,34290-1,Canthium,Canthium Lam.,Rubiaceae,Genus,,,,,33442,Accepted,knms_single,Canthium Encycl. 1: 602 (1783) Lam. 1783
+116,Carapichea,30206104-2,Carapichea,Carapichea Aubl.,Rubiaceae,Genus,,,,,34078,Accepted,knms_single,Carapichea Hist. Pl. Guiane: 167 (1775) Aubl. 1775
+117,Catunaregam,34310-1,Catunaregam,Catunaregam Wolf,Rubiaceae,Genus,,,,,36198,Accepted,knms_single,Catunaregam Gen. Pl.: 75 (1776) Wolf 1776
+118,Cephalanthus,34312-1,Cephalanthus,Cephalanthus L.,Rubiaceae,Genus,,,,,36697,Accepted,knms_single,Cephalanthus Sp. Pl.: 95 (1753) L. 1753
+119,Chassalia,34342-1,Chassalia,Chassalia Comm. ex Poir.,Rubiaceae,Genus,,,,,38444,Accepted,knms_single,"Chassalia J.B.A.M.de Lamarck, Encycl., Suppl. 2: 450 (1812) Comm. ex Poir. 1812"
+120,Chimarrhis,34349-1,Chimarrhis,Chimarrhis Jacq.,Rubiaceae,Genus,,,,,39027,Accepted,knms_single,Chimarrhis Select. Stirp. Amer. Hist.: 61 (1763) Jacq. 1763
+121,Chiococca,30010725-2,Chiococca,Chiococca P.Browne,Rubiaceae,Genus,,,,,39066,Accepted,knms_single,Chiococca Civ. Nat. Hist. Jamaica: 164 (1756) P.Browne 1756
+122,Cinchona,329816-2,Cinchona,Cinchona L.,Rubiaceae,Genus,,,,,40538,Accepted,knms_single,Cinchona Sp. Pl.: 172 (1753) L. 1753
+123,Coccocypselum,331499-2,Coccocypselum,Coccocypselum P.Browne,Rubiaceae,Genus,,,,,44284,Accepted,knms_single,Coccocypselum Civ. Nat. Hist. Jamaica: 144 (1756) P.Browne 1756
+124,Coffea,325985-2,Coffea,Coffea L.,Rubiaceae,Genus,,,,,45380,Accepted,knms_single,Coffea Sp. Pl.: 172 (1753) L. 1753
+125,Condaminea,34392-1,Condaminea,Condaminea DC.,Rubiaceae,Genus,,,,,46495,Accepted,knms_single,Condaminea Prodr. 4: 402 (1830) DC. 1830
+126,Cordiera,30011006-2,Cordiera,Cordiera A.Rich. ex DC.,Rubiaceae,Genus,,,,,47112,Accepted,knms_single,Cordiera Prodr. 4: 445 (1830) A.Rich. ex DC. 1830
+127,Corynanthe,34406-1,Corynanthe,Corynanthe Welw.,Rubiaceae,Genus,,,,,48177,Accepted,knms_single,Corynanthe Trans. Linn. Soc. London 27: 37 (1869) Welw. 1869
+128,Cosmibuena,331521-2,Cosmibuena,Cosmibuena Ruiz & Pav.,Rubiaceae,Genus,,,,,48335,Accepted,knms_single,"Cosmibuena Fl. Peruv. Prodr.: 10, t. 2 (1794) Ruiz & Pav. 1794"
+129,Coutarea,34414-1,Coutarea,Coutarea Aubl.,Rubiaceae,Genus,,,,,48562,Accepted,knms_single,Coutarea Hist. Pl. Guiane 1: 314 (1775) Aubl. 1775
+130,Craterispermum,34420-1,Craterispermum,Craterispermum Benth.,Rubiaceae,Genus,,,,,48720,Accepted,knms_single,"Craterispermum W.J.Hooker, Niger Fl.: 411 (1849) Benth. 1849"
+131,Danais,34457-1,Danais,Danais Comm. ex Vent.,Rubiaceae,Genus,,,,,56263,Accepted,knms_single,Danais Tabl. Règn. Vég. 2: 584 (1799) Comm. ex Vent. 1799
+132,Deppea,328103-2,Deppea,Deppea Schltdl. & Cham.,Rubiaceae,Genus,,,,,60284,Accepted,knms_single,Deppea Linnaea 5: 167 (1830) Schltdl. & Cham. 1830
+133,Dimetia,34487-1,Dimetia,Dimetia (Wight & Arn.) Meisn.,Rubiaceae,Genus,,,,,61882,Accepted,knms_single,Dimetia Pl. Vasc. Gen.: 160 (1839) (Wight & Arn.) Meisn. 1839
+134,Diplospora,327853-2,Diplospora,Diplospora DC.,Rubiaceae,Genus,,,,,62525,Accepted,knms_single,Diplospora Prodr. 4: 477 (1830) DC. 1830
+135,Duroia,327394-2,Duroia,Duroia L.f.,Rubiaceae,Genus,,,,,65301,Accepted,knms_single,"Duroia Suppl. Pl.: 30, 209 (1782) L.f. 1782"
+136,Elaeagia,30043270-2,Elaeagia,Elaeagia Wedd.,Rubiaceae,Genus,,,,,66302,Accepted,knms_single,Elaeagia Hist. Nat. Quinquinas: 94 (1849) Wedd. 1849
+137,Emmenopterys,34549-1,Emmenopterys,Emmenopterys Oliv.,Rubiaceae,Genus,,,,,66890,Accepted,knms_single,Emmenopterys Hooker's Icon. Pl. 19: t. 1823 (1889) Oliv. 1889
+138,Eumachia,34578-1,Eumachia,Eumachia DC.,Rubiaceae,Genus,,,,,78108,Accepted,knms_single,Eumachia Prodr. 4: 478 (1830) DC. 1830
+139,Exallage,34589-1,Exallage,Exallage Bremek.,Rubiaceae,Genus,,,,,83240,Accepted,knms_single,"Exallage Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 140 (1952) Bremek. 1952"
+140,Exostema,1057956-2,Exostema,Exostema (Pers.) Bonpl.,Rubiaceae,Genus,,,,,83523,Accepted,knms_single,"Exostema F.W.H.A.von Humboldt & A.J.A.Bonpland, Pl. Aequinoct. 1: 131 (1808) (Pers.) Bonpl. 1808"
+141,Fadogiella,34597-1,Fadogiella,Fadogiella Robyns,Rubiaceae,Genus,,,,,83747,Accepted,knms_single,Fadogiella Bull. Jard. Bot. État Bruxelles 11: 94 (1928) Robyns 1928
+142,Galianthe,34622-1,Galianthe,Galianthe Griseb.,Rubiaceae,Genus,,,,,85505,Accepted,knms_single,Galianthe Abh. Königl. Ges. Wiss. Göttingen 24: 156 (1879) Griseb. 1879
+143,Galiniera,34624-1,Galiniera,Galiniera Delile,Rubiaceae,Genus,,,,,85553,Accepted,knms_single,"Galiniera Ann. Sci. Nat., Bot., sér. 2, 20: 92 (1843) Delile 1843"
+144,Galium,325955-2,Galium,Galium L.,Rubiaceae,Genus,,,,,87976,Synonym,knms_multiple_1,Gallium Gard. Dict. Abr. ed. 4: s.p. (1754) Mill. 1754
+145,Gardenia,331627-2,Gardenia,Gardenia J.Ellis,Rubiaceae,Genus,,,,,88088,Accepted,knms_multiple_1,Gardenia Philos. Trans. 51(2): 935 (1761) J.Ellis 1761
+146,Genipa,34640-1,Genipa,Genipa L.,Rubiaceae,Genus,,,,,89083,Accepted,knms_single,Genipa Gen. Pl. ed. 5: 709 (1754) L. 1754
+147,Geophila,331623-2,Geophila,Geophila D.Don,Rubiaceae,Genus,,,,,89611,Accepted,knms_multiple_1,Geophila Prodr. Fl. Nepal.: 136 (1825) D.Don 1825
+148,Gonzalagunia,34659-1,Gonzalagunia,Gonzalagunia Ruiz & Pav.,Rubiaceae,Genus,,,,,91659,Accepted,knms_single,Gonzalagunia Fl. Peruv. Prodr.: 12 (1794) Ruiz & Pav. 1794
+149,Guettarda,34671-1,Guettarda,Guettarda L.,Rubiaceae,Genus,,,,,93100,Accepted,knms_single,Guettarda Sp. Pl.: 991 (1753) L. 1753
+150,Gyrostipula,34679-1,Gyrostipula,Gyrostipula J.-F.Leroy,Rubiaceae,Genus,,,,,94118,Accepted,knms_single,"Gyrostipula Adansonia, n.s., 14: 682 (1974 publ. 1975) J.-F.Leroy 1975"
+151,Hamelia,34686-1,Hamelia,Hamelia Jacq.,Rubiaceae,Genus,,,,,95987,Accepted,knms_single,Hamelia Enum. Syst. Pl.: 2 (1760) Jacq. 1760
+152,Hexasepalum,34707-1,Hexasepalum,Hexasepalum Bartl. ex DC.,Rubiaceae,Genus,,,,,99087,Accepted,knms_single,Hexasepalum Prodr. 4: 561 (1830) Bartl. ex DC. 1830
+153,Hillia,30000270-2,Hillia,Hillia Jacq.,Rubiaceae,Genus,,,,,99203,Accepted,knms_single,Hillia Enum. Syst. Pl.: 3 (1760) Jacq. 1760
+154,Himalrandia,34716-1,Himalrandia,Himalrandia T.Yamaz.,Rubiaceae,Genus,,,,,99257,Accepted,knms_single,Himalrandia J. Jap. Bot. 45: 340 (1970) T.Yamaz. 1970
+155,Hoffmannia,34722-1,Hoffmannia,Hoffmannia Sw.,Rubiaceae,Genus,,,,,99412,Accepted,knms_multiple_1,Hoffmannia Prodr. Veg. Ind. Occ.: 30 (1788) Sw. 1788
+156,Hydnophytum,34737-1,Hydnophytum,Hydnophytum Jack,Rubiaceae,Genus,,,,,100907,Accepted,knms_single,Hydnophytum Trans. Linn. Soc. London 14: 124 (1823) Jack 1823
+157,Hymenodictyon,327858-2,Hymenodictyon,Hymenodictyon Wall.,Rubiaceae,Genus,,,,,101219,Accepted,knms_single,"Hymenodictyon W.Roxburgh, Fl. Ind. 2: 148 (1824) Wall. 1824"
+158,Isertia,34762-1,Isertia,Isertia Schreb.,Rubiaceae,Genus,,,,,102777,Accepted,knms_single,"Isertia Gen. Pl., ed. 8[a], 1: 234 (1789) Schreb. 1789"
+159,Ixora,30043713-2,Ixora,Ixora L.,Rubiaceae,Genus,,,,,103177,Accepted,knms_single,Ixora Sp. Pl.: 110 (1753) L. 1753
+160,Joosia,34774-1,Joosia,Joosia H.Karst.,Rubiaceae,Genus,,,,,105101,Accepted,knms_single,Joosia Fl. Columb. 1: 9 (1859) H.Karst. 1859
+161,Keetia,326034-2,Keetia,Keetia E.Phillips,Rubiaceae,Genus,,,,,105671,Accepted,knms_single,Keetia Gen. S. Afr. Fl. Pl.: 587 (1926) E.Phillips 1926
+162,Khasiaclunea,34786-1,Khasiaclunea,Khasiaclunea Ridsdale,Rubiaceae,Genus,,,,,105918,Accepted,knms_single,Khasiaclunea Blumea 24: 347 (1978) Ridsdale 1978
+163,Kohautia,331685-2,Kohautia,Kohautia Cham. & Schltdl.,Rubiaceae,Genus,,,,,106201,Accepted,knms_single,Kohautia Linnaea 4: 156 (1829) Cham. & Schltdl. 1829
+164,Ladenbergia,34802-1,Ladenbergia,Ladenbergia Klotzsch,Rubiaceae,Genus,,,,,106819,Accepted,knms_single,"Ladenbergia F.G.Hayne, Getreue Darstell. Gew. 14: t. 15 (1846) Klotzsch 1846"
+165,Lerchea,331710-2,Lerchea,Lerchea L.,Rubiaceae,Genus,,,,,111577,Accepted,knms_single,Lerchea Mant. Pl. 2: 155 (1771) L. 1771
+166,Ludekia,327861-2,Ludekia,Ludekia Ridsdale,Rubiaceae,Genus,,,,,115483,Accepted,knms_single,Ludekia Blumea 24: 334 (1978) Ridsdale 1978
+167,Manettia,331752-2,Manettia,Manettia Mutis ex L.,Rubiaceae,Genus,,,,,119406,Accepted,knms_multiple_1,Manettia Mant. Pl. 2: 558 (1771) Mutis ex L. 1771
+168,Meyna,34918-1,Meyna,Meyna Roxb. ex Link,Rubiaceae,Genus,,,,,126640,Accepted,knms_single,Meyna Jahrb. Gewächsk. 1(3): 32 (1820) Roxb. ex Link 1820
+169,Mitragyna,327864-2,Mitragyna,Mitragyna Korth.,Rubiaceae,Genus,,,,,128787,Accepted,knms_single,Mitragyna Observ. Naucl. Indic.: 19 (1839) Korth. 1839
+170,Mussaenda,327866-2,Mussaenda,Mussaenda Burm. ex L.,Rubiaceae,Genus,,,,,130295,Accepted,knms_single,Mussaenda Sp. Pl.: 177 (1753) Burm. ex L. 1753
+171,Mycetia,34949-1,Mycetia,Mycetia Reinw.,Rubiaceae,Genus,,,,,130686,Accepted,knms_single,Mycetia Syll. Pl. Nov. 2: 9 (1825) Reinw. 1825
+172,Myrmeconauclea,327868-2,Myrmeconauclea,Myrmeconauclea Merr.,Rubiaceae,Genus,,,,,132033,Accepted,knms_single,Myrmeconauclea Philipp. J. Sci. 17: 375 (1920 publ. 1921) Merr. 1921
+173,Nauclea,327870-2,Nauclea,Nauclea L.,Rubiaceae,Genus,,,,,133119,Accepted,knms_single,Nauclea Sp. Pl. ed. 2: 243 (1762) L. 1762
+174,Neanotis,34968-1,Neanotis,Neanotis W.H.Lewis,Rubiaceae,Genus,,,,,133369,Accepted,knms_single,Neanotis Ann. Missouri Bot. Gard. 53: 34 (1966) W.H.Lewis 1966
+175,Neolamarckia,893396-1,Neolamarckia,Neolamarckia Bosser,Rubiaceae,Genus,,,,,133818,Accepted,knms_single,"Neolamarckia Bull. Mus. Natl. Hist. Nat., B, Adansonia 6: 247 (1984) Bosser 1984"
+176,Neonauclea,327872-2,Neonauclea,Neonauclea Merr.,Rubiaceae,Genus,,,,,133905,Accepted,knms_single,Neonauclea J. Washington Acad. Sci. 5: 538 (1915) Merr. 1915
+177,Ochreinauclea,35011-1,Ochreinauclea,Ochreinauclea Ridsdale & Bakh.f.,Rubiaceae,Genus,,,,,136683,Accepted,knms_single,Ochreinauclea Blumea 24: 331 (1978) Ridsdale & Bakh.f. 1978
+178,Oldenlandia,30014644-2,Oldenlandia,Oldenlandia L.,Rubiaceae,Genus,,,,,138188,Accepted,knms_multiple_1,Oldenlandia Sp. Pl.: 119 (1753) L. 1753
+179,Ophiorrhiza,30280723-2,Ophiorrhiza,Ophiorrhiza L.,Rubiaceae,Genus,,,,,140250,Accepted,knms_single,Ophiorrhiza Sp. Pl.: 150 (1753) L. 1753
+180,Otiophora,35032-1,Otiophora,Otiophora Zucc.,Rubiaceae,Genus,,,,,144663,Accepted,knms_single,Otiophora Abh. Math.-Phys. Cl. Königl. Bayer. Akad. Wiss. 1: 315 (1829-1830 publ. 1832) Zucc. 
+181,Palicourea,30000890-2,Palicourea,Palicourea Aubl.,Rubiaceae,Genus,,,,,145874,Accepted,knms_single,Palicourea Hist. Pl. Guiane 1: 172 (1775) Aubl. 1775
+182,Pavetta,327877-2,Pavetta,Pavetta L.,Rubiaceae,Genus,,,,,148207,Accepted,knms_single,Pavetta Sp. Pl.: 110 (1753) L. 1753
+183,Pentagonia,35086-1,Pentagonia,Pentagonia Benth.,Rubiaceae,Genus,,,,,149786,Accepted,knms_multiple_1,Pentagonia Bot. Voy. Sulphur: 105 (1845) Benth. 1845
+184,Pentanisia,35088-1,Pentanisia,Pentanisia Harv.,Rubiaceae,Genus,,,,,149833,Accepted,knms_single,Pentanisia London J. Bot. 1: 21 (1842) Harv. 1842
+185,Pogonopus,35155-1,Pogonopus,Pogonopus Klotzsch,Rubiaceae,Genus,,,,,162064,Accepted,knms_single,Pogonopus Flora 36: 718 (1853) Klotzsch 1853
+186,Posoqueria,35176-1,Posoqueria,Posoqueria Aubl.,Rubiaceae,Genus,,,,,163557,Accepted,knms_single,Posoqueria Hist. Pl. Guiane 1: 133 (1775) Aubl. 1775
+187,Psychotria,326020-2,Psychotria,Psychotria L.,Rubiaceae,Genus,,,,,170226,Synonym,knms_multiple_1,Psychotrion Ann. Soc. Bot. Lyon 7: 132 (1880) St.-Lag. 1880
+188,Psydrax,35218-1,Psydrax,Psydrax Gaertn.,Rubiaceae,Genus,,,,,170230,Accepted,knms_single,Psydrax Fruct. Sem. Pl. 1: 125 (1788) Gaertn. 1788
+189,Pyrostria,35231-1,Pyrostria,Pyrostria Comm. ex A.Juss.,Rubiaceae,Genus,,,,,171303,Accepted,knms_single,Pyrostria Gen. Pl.: 206 (1789) Comm. ex A.Juss. 1789
+190,Randia,30000647-2,Randia,Randia Houst. ex L.,Rubiaceae,Genus,,,,,176128,Accepted,knms_single,Randia Sp. Pl.: 1192 (1753) L. 1753
+191,Raritebe,295610-2,Raritebe,Raritebe Wernham,Rubiaceae,Genus,,,,,176764,Accepted,knms_single,Raritebe J. Bot. 55: 336 (1917) Wernham 1917
+192,Remijia,35243-1,Remijia,Remijia DC.,Rubiaceae,Genus,,,,,177221,Accepted,knms_single,Remijia Biblioth. Universelle Genève 2: 185 (1829) DC. 1829
+193,Rogiera,30058569-2,Rogiera,Rogiera Planch.,Rubiaceae,Genus,,,,,179337,Accepted,knms_single,Rogiera Fl. Serres Jard. Eur. 5: t. 442 (1849) Planch. 1849
+194,Rondeletia,329798-2,Rondeletia,Rondeletia L.,Rubiaceae,Genus,,,,,179397,Accepted,knms_single,Rondeletia Sp. Pl.: 172 (1753) L. 1753
+195,Rosenbergiodendron,296286-2,Rosenbergiodendron,Rosenbergiodendron Fagerl.,Rubiaceae,Genus,,,,,179848,Accepted,knms_single,Rosenbergiodendron Svensk Bot. Tidskr. 42: 150 (1948) Fagerl. 1948
+196,Rothmannia,327884-2,Rothmannia,Rothmannia Thunb.,Rubiaceae,Genus,,,,,180021,Accepted,knms_single,Rothmannia Kongl. Vetensk. Acad. Handl. 37: 63 (1776) Thunb. 1776
+197,Rudgea,330786-2,Rudgea,Rudgea Salisb.,Rubiaceae,Genus,,,,,180461,Accepted,knms_single,Rudgea Trans. Linn. Soc. London 8: 327 (1807) Salisb. 1807
+198,Rustia,35280-1,Rustia,Rustia Klotzsch,Rubiaceae,Genus,,,,,180749,Accepted,knms_single,"Rustia F.G.Hayne, Getreue Darstell. Gew. 14: t. 14, 15 (1846) Klotzsch 1846"
+199,Rytigynia,35283-1,Rytigynia,Rytigynia Blume,Rubiaceae,Genus,,,,,180865,Accepted,knms_single,Rytigynia Mus. Bot. 1: 178 (1850) Blume 1850
+200,Sabicea,30011202-2,Sabicea,Sabicea Aubl.,Rubiaceae,Genus,,,,,181081,Accepted,knms_single,Sabicea Hist. Pl. Guiane 1: 192 (1775) Aubl. 1775
+201,Saprosma,35295-1,Saprosma,Saprosma Blume,Rubiaceae,Genus,,,,,184578,Accepted,knms_single,Saprosma Bijdr. Fl. Ned. Ind.: 956 (1826) Blume 1826
+202,Schizocalyx,331938-2,Schizocalyx,Schizocalyx Wedd.,Rubiaceae,Genus,,,,,188092,Accepted,knms_multiple_1,"Schizocalyx Ann. Sci. Nat., Bot., sér. 4, 1: 73 (1854) Wedd. 1854"
+203,Schradera,327888-2,Schradera,Schradera Vahl,Rubiaceae,Genus,,,,,188375,Accepted,knms_multiple_1,Schradera Eclog. Amer. 1: 35 (1797) Vahl 1797
+204,Schumanniophyton,35323-1,Schumanniophyton,Schumanniophyton Harms,Rubiaceae,Genus,,,,,188458,Accepted,knms_single,"Schumanniophyton H.G.A.Engler & K.A.E.Prantl, Nat. Pflanzenfam., Nachtr. 1: 313 (1897) Harms 1897"
+205,Simira,30018402-2,Simira,Simira Aubl.,Rubiaceae,Genus,,,,,192299,Accepted,knms_multiple_1,Simira Hist. Pl. Guiane 1: 170 (1775) Aubl. 1775
+206,Solenandra,35363-1,Solenandra,Solenandra Hook.f.,Rubiaceae,Genus,,,,,192825,Accepted,knms_single,"Solenandra G.Bentham & J.D.Hooker, Gen. Pl. 2: 43 (1873) Hook.f. 1873"
+207,Sommera,35365-1,Sommera,Sommera Schltdl.,Rubiaceae,Genus,,,,,192903,Accepted,knms_multiple_1,Sommera Linnaea 9: 602 (1835) Schltdl. 1835
+208,Spermacoce,326325-2,Spermacoce,Spermacoce L.,Rubiaceae,Genus,,,,,193370,Accepted,knms_single,Spermacoce Sp. Pl.: 102 (1753) L. 1753
+209,Stenostomum,35392-1,Stenostomum,Stenostomum C.F.Gaertn.,Rubiaceae,Genus,,,,,197565,Accepted,knms_single,Stenostomum Suppl. Carp.: 69 (1806) C.F.Gaertn. 1806
+210,Tamilnadia,35428-1,Tamilnadia,Tamilnadia Tirveng. & Sastre,Rubiaceae,Genus,,,,,201522,Accepted,knms_single,Tamilnadia Mauritius Inst. Bull. 8(4): 84 (1979) Tirveng. & Sastre 1979
+211,Tarenna,327893-2,Tarenna,Tarenna Gaertn.,Rubiaceae,Genus,,,,,201680,Accepted,knms_single,Tarenna Fruct. Sem. Pl. 1: 139 (1788) Gaertn. 1788
+212,Timonius,332019-2,Timonius,Timonius Rumph. ex DC.,Rubiaceae,Genus,,,,,205808,Accepted,knms_single,Timonius Prodr. 4: 461 (1830) Rumph. ex DC. 1830
+213,Tinadendron,77075408-1,Tinadendron,Tinadendron Achille,Rubiaceae,Genus,,,,,348701,Accepted,knms_single,"Tinadendron Adansonia, sér. 3, 28: 169 (2006) Achille 2006"
+214,Tocoyena,35467-1,Tocoyena,Tocoyena Aubl.,Rubiaceae,Genus,,,,,206893,Accepted,knms_single,Tocoyena Hist. Pl. Guiane 1: 131 (1775) Aubl. 1775
+215,Uncaria,327895-2,Uncaria,Uncaria Schreb.,Rubiaceae,Genus,,,,,209736,Accepted,knms_multiple_1,"Uncaria Gen. Pl., ed. 8[a], 1: 125 (1789) Schreb. 1789"
+216,Urophyllum,327899-2,Urophyllum,Urophyllum Wall.,Rubiaceae,Genus,,,,,211021,Accepted,knms_multiple_1,"Urophyllum W.Roxburgh, Fl. Ind. 2: 184 (1824) Jack ex Wall. 1824"
+217,Wendlandia,327901-2,Wendlandia,Wendlandia Bartl. ex DC.,Rubiaceae,Genus,,,,,214390,Accepted,knms_multiple_1,Wendlandia Prodr. 4: 411 (1830) Bartl. ex DC. 1830
+218,Wittmackanthus,289055-2,Wittmackanthus,Wittmackanthus Kuntze,Rubiaceae,Genus,,,,,214811,Accepted,knms_single,Wittmackanthus Revis. Gen. Pl. 1: 302 (1891) Kuntze 1891
+219,Acokanthera,2171-1,Acokanthera,Acokanthera G.Don,Apocynaceae,Genus,,,,,2156,Accepted,knms_single,Acokanthera Gen. Hist. 4: 485 (1838) G.Don 1838
+220,Allomarkgrafia,2183-1,Allomarkgrafia,Allomarkgrafia Woodson,Apocynaceae,Genus,,,,,6205,Accepted,knms_single,Allomarkgrafia Ann. Missouri Bot. Gard. 19: 45 (1932) Woodson 1932
+221,Allowoodsonia,2184-1,Allowoodsonia,Allowoodsonia Markgr.,Apocynaceae,Genus,,,,,6228,Accepted,knms_single,Allowoodsonia Gard. Bull. Singapore 22: 23 (1967) Markgr. 1967
+222,Alyxia,331334-2,Alyxia,Alyxia R.Br.,Apocynaceae,Genus,,,,,7192,Accepted,knms_single,Alyxia Prodr. Fl. Nov. Holland.: 469 (1810) R.Br. 1810
+223,Amalocalyx,2188-1,Amalocalyx,Amalocalyx Pierre,Apocynaceae,Genus,,,,,7545,Accepted,knms_single,"Amalocalyx Bull. Mens. Soc. Linn. Paris, n.s., 1: 28 (1898) Pierre 1898"
+224,Ancylobothrys,2198-1,Ancylobothrys,Ancylobothrys Pierre,Apocynaceae,Genus,,,,,8825,Accepted,knms_single,"Ancylobothrys Bull. Mens. Soc. Linn. Paris, n.s., 1: 91 (1898) Pierre 1898"
+225,Anechites,2200-1,Anechites,Anechites Griseb.,Apocynaceae,Genus,,,,,8998,Accepted,knms_single,Anechites Fl. Brit. W. I.: 410 (1861) Griseb. 1861
+226,Anemotrochus,77159825-1,Anemotrochus,"Anemotrochus Mangelsdorff, Meve & Liede",Apocynaceae,Genus,,,,,524736,Accepted,knms_single,"Anemotrochus Willdenowia 46: 452 (2016) Mangelsdorff, Meve & Liede 2016"
+227,Angadenia,2201-1,Angadenia,Angadenia Miers,Apocynaceae,Genus,,,,,9014,Accepted,knms_single,Angadenia Apocyn. S. Amer.: 173 (1878) Miers 1878
+228,Anisotoma,3195-1,Anisotoma,Anisotoma Fenzl,Apocynaceae,Genus,,,,,500616,Accepted,knms_single,Anisotoma Linnaea 17: 330 (1843) Fenzl 1843
+229,Apocynum,2211-1,Apocynum,Apocynum L.,Apocynaceae,Genus,,,,,12795,Accepted,knms_single,Apocynum Sp. Pl.: 213 (1753) L. 1753
+230,Araujia,3207-1,Araujia,Araujia Brot.,Apocynaceae,Genus,,,,,500641,Accepted,knms_single,Araujia Trans. Linn. Soc. London 12: 62 (1818) Brot. 1818
+231,Artia,2215-1,Artia,Artia Guillaumin,Apocynaceae,Genus,,,,,16011,Accepted,knms_single,Artia Bull. Soc. Bot. France 88: 380 (1941) Guillaumin 1941
+232,Asketanthera,296561-2,Asketanthera,Asketanthera Woodson,Apocynaceae,Genus,,,,,16642,Accepted,knms_single,Asketanthera Ann. Missouri Bot. Gard. 19: 46 (1932) Woodson 1932
+233,Aspidoglossum,3212-1,Aspidoglossum,Aspidoglossum E.Mey.,Apocynaceae,Genus,,,,,501553,Accepted,knms_single,Aspidoglossum Comm. Pl. Afr. Austr.: 200 (1838) E.Mey. 1838
+234,Aspidonepsis,970653-1,Aspidonepsis,Aspidonepsis Nicholas & Goyder,Apocynaceae,Genus,,,,,501592,Accepted,knms_single,Aspidonepsis Bothalia 22: 24 (1992) Nicholas & Goyder 1992
+235,Astephanus,30037892-2,Astephanus,Astephanus R.Br.,Apocynaceae,Genus,,,,,501600,Accepted,knms_single,Astephanus Asclepiadeae: 43 (1810) R.Br. 1810
+236,Asterostemma,3215-1,Asterostemma,Asterostemma Decne.,Apocynaceae,Genus,,,,,501653,Accepted,knms_single,"Asterostemma Ann. Sci. Nat., Bot., sér. 2, 9: 271 (1838) Decne. 1838"
+237,Atherandra,3217-1,Atherandra,Atherandra Decne.,Apocynaceae,Genus,,,,,501657,Accepted,knms_single,"Atherandra A.P.de Candolle, Prodr. 8: 497 (1844) Decne. 1844"
+238,Australluma,986757-1,Australluma,Australluma Plowes,Apocynaceae,Genus,,,,,501672,Accepted,knms_single,Australluma Haseltonia 3: 54 (1995) Plowes 1995
+239,Baharuia,986035-1,Baharuia,Baharuia D.J.Middleton,Apocynaceae,Genus,,,,,19304,Accepted,knms_single,Baharuia Blumea 40: 445 (1995) D.J.Middleton 1995
+240,Ballyanthus,1019379-1,Ballyanthus,Ballyanthus Bruyns,Apocynaceae,Genus,,,,,501678,Accepted,knms_single,Ballyanthus Aloë 37: 76 (2000) Bruyns 2000
+241,Barjonia,3223-1,Barjonia,Barjonia Decne.,Apocynaceae,Genus,,,,,501137,Accepted,knms_single,"Barjonia A.P.de Candolle, Prodr. 8: 512 (1844) Decne. 1844"
+242,Baroniella,3224-1,Baroniella,Baroniella Costantin & Gallaud,Apocynaceae,Genus,,,,,501157,Accepted,knms_single,"Baroniella Ann. Sci. Nat., Bot., sér. 9, 6: 354 (1907) Costantin & Gallaud 1907"
+243,Baseonema,3226-1,Baseonema,Baseonema Schltr. & Rendle,Apocynaceae,Genus,,,,,501169,Accepted,knms_single,Baseonema J. Bot. 34: 97 (1896) Schltr. & Rendle 1896
+244,Batesanthus,3228-1,Batesanthus,Batesanthus N.E.Br.,Apocynaceae,Genus,,,,,501178,Accepted,knms_single,Batesanthus Hooker's Icon. Pl. 26: t. 2500 (1896) N.E.Br. 1896
+245,Baynesia,1018355-1,Baynesia,Baynesia Bruyns,Apocynaceae,Genus,,,,,501187,Accepted,knms_single,Baynesia Novon 10: 354 (2000) Bruyns 2000
+246,Blepharodon,3236-1,Blepharodon,Blepharodon Decne.,Apocynaceae,Genus,,,,,501705,Accepted,knms_single,"Blepharodon A.P.de Candolle, Prodr. 8: 603 (1844) Decne. 1844"
+247,Calciphila,60446024-2,Calciphila,Calciphila Liede & Meve,Apocynaceae,Genus,,,,,502060,Accepted,knms_single,Calciphila Novon 16: 369 (2006) Liede & Meve 2006
+248,Calocrater,2272-1,Calocrater,Calocrater K.Schum.,Apocynaceae,Genus,,,,,31774,Accepted,knms_single,"Calocrater H.G.A.Engler & K.A.E.Prantl, Nat. Pflanzenfam. 4(2): 175 (1895) K.Schum. 1895"
+249,Calotropis,30369062-2,Calotropis,Calotropis R.Br.,Apocynaceae,Genus,,,,,502081,Accepted,knms_multiple_1,Calotropis Asclepiadeae: 28 (1810) R.Br. 1810
+250,Calyptranthera,988402-1,Calyptranthera,Calyptranthera Klack.,Apocynaceae,Genus,,,,,502096,Accepted,knms_single,Calyptranthera Novon 6: 27 (1996) Klack. 1996
+251,Cameraria,2239-1,Cameraria,Cameraria L.,Apocynaceae,Genus,,,,,33072,Accepted,knms_multiple_1,Cameraria Sp. Pl.: 210 (1753) L. 1753
+252,Campestigma,3252-1,Campestigma,Campestigma Pierre ex Costantin,Apocynaceae,Genus,,,,,502110,Accepted,knms_single,"Campestigma H.Lecomte, Fl. Indo-Chine 4: 117 (1912) Pierre ex Costantin 1912"
+253,Camptocarpus,331455-2,Camptocarpus,Camptocarpus Decne.,Apocynaceae,Genus,,,,,502112,Accepted,knms_multiple_1,"Camptocarpus A.P.de Candolle, Prodr. 8: 493 (1844) Decne. 1844"
+254,Carruthersia,2248-1,Carruthersia,Carruthersia Seem.,Apocynaceae,Genus,,,,,34560,Accepted,knms_single,Carruthersia Fl. Vit.: 155 (1866) Seem. 1866
+255,Carvalhoa,2249-1,Carvalhoa,Carvalhoa K.Schum.,Apocynaceae,Genus,,,,,34617,Accepted,knms_single,"Carvalhoa H.G.A.Engler & K.A.E.Prantl, Nat. Pflanzenfam. 4(2): 189 (1895) K.Schum. 1895"
+256,Cascabela,2250-1,Cascabela,Cascabela Raf.,Apocynaceae,Genus,,,,,34830,Accepted,knms_single,Cascabela Sylva Tellur.: 162 (1838) Raf. 1838
+257,Cerberiopsis,2253-1,Cerberiopsis,Cerberiopsis Vieill. ex Pancher & Sebert,Apocynaceae,Genus,,,,,37193,Accepted,knms_single,Cerberiopsis Not. Bois Nouv. Caléd.: 187 (1873) Vieill. ex Pancher & Sebert 1873
+258,Chamaeclitandra,2257-1,Chamaeclitandra,Chamaeclitandra (Stapf) Pichon,Apocynaceae,Genus,,,,,37464,Accepted,knms_single,Chamaeclitandra Mém. Inst. Franç. Afrique Noire 35: 202 (1953) (Stapf) Pichon 1953
+259,Chilocarpus,2260-1,Chilocarpus,Chilocarpus Blume,Apocynaceae,Genus,,,,,38914,Accepted,knms_single,Chilocarpus Catalogus: 22 (1823) Blume 1823
+260,Chlorocyathus,3264-1,Chlorocyathus,Chlorocyathus Oliv.,Apocynaceae,Genus,,,,,503100,Accepted,knms_single,Chlorocyathus Hooker's Icon. Pl. 16: t. 1557 (1887) Oliv. 1887
+261,Cibirhiza,925113-1,Cibirhiza,Cibirhiza Bruyns,Apocynaceae,Genus,,,,,503117,Accepted,knms_single,Cibirhiza Notes Roy. Bot. Gard. Edinburgh 45: 51 (1988) Bruyns 1988
+262,Cionura,3270-1,Cionura,Cionura Griseb.,Apocynaceae,Genus,,,,,503123,Accepted,knms_single,Cionura Spic. Fl. Rumel. 2: 69 (1844) Griseb. 1844
+263,Cleghornia,2264-1,Cleghornia,Cleghornia Wight,Apocynaceae,Genus,,,,,41669,Accepted,knms_single,"Cleghornia Icon. Pl. Ind. Orient. 4: t. 1310, 1312 (1848) Wight 1848"
+264,Clitandra,2266-1,Clitandra,Clitandra Benth.,Apocynaceae,Genus,,,,,43756,Accepted,knms_single,"Clitandra W.J.Hooker, Niger Fl.: 445 (1849) Benth. 1849"
+265,Conomitra,3281-1,Conomitra,Conomitra Fenzl,Apocynaceae,Genus,,,,,503157,Accepted,knms_single,"Conomitra S.L.Endlicher & E.Fenzl., Nov. Stirp. Dec.: 65 (1839) Fenzl 1839"
+266,Cordylogyne,3284-1,Cordylogyne,Cordylogyne E.Mey.,Apocynaceae,Genus,,,,,503159,Accepted,knms_single,Cordylogyne Comm. Pl. Afr. Austr.: 218 (1838) E.Mey. 1838
+267,Couma,2277-1,Couma,Couma Aubl.,Apocynaceae,Genus,,,,,48373,Accepted,knms_single,Couma Hist. Pl. Guiane: 39 (1775) Aubl. 1775
+268,Cristobalia,60473391-2,Cristobalia,"Cristobalia Morillo, S.A.Cáceres & H.A.Keller",Apocynaceae,Genus,,,,,522651,Accepted,knms_single,"Cristobalia Pittieria 40: 132 (2016) Morillo, S.A.Cáceres & H.A.Keller 2016"
+269,Cryptostegia,3293-1,Cryptostegia,Cryptostegia R.Br.,Apocynaceae,Genus,,,,,503273,Accepted,knms_single,Cryptostegia Bot. Reg. 5: t. 435 (1820) R.Br. 1820
+270,Cycladenia,2285-1,Cycladenia,Cycladenia Benth.,Apocynaceae,Genus,,,,,52581,Accepted,knms_single,Cycladenia Pl. Hartw.: 322 (1849) Benth. 1849
+271,Cyclocotyla,2286-1,Cyclocotyla,Cyclocotyla Stapf,Apocynaceae,Genus,,,,,52684,Accepted,knms_single,Cyclocotyla Bull. Misc. Inform. Kew 1908: 259 (1908) Stapf 1908
+272,Cylindropsis,2289-1,Cylindropsis,Cylindropsis Pierre,Apocynaceae,Genus,,,,,53045,Accepted,knms_multiple_1,"Cylindropsis Bull. Mens. Soc. Linn. Paris, n.s., 1: 38 (1898) Pierre 1898"
+273,Decanema,3314-1,Decanema,Decanema Decne.,Apocynaceae,Genus,,,,,504418,Accepted,knms_single,"Decanema Ann. Sci. Nat., Bot., sér. 2, 9: 338 (1838) Decne. 1838"
+274,Desmidorchis,3319-1,Desmidorchis,Desmidorchis Ehrenb.,Apocynaceae,Genus,,,,,504430,Accepted,knms_single,Desmidorchis Linnaea 4: 94 (1829) Ehrenb. 1829
+275,Dewevrella,2296-1,Dewevrella,Dewevrella De Wild.,Apocynaceae,Genus,,,,,60512,Accepted,knms_single,Dewevrella Miss. Ém. Laurent 1: 548 (1907) De Wild. 1907
+276,Diplolepis,30132335-2,Diplolepis,Diplolepis R.Br.,Apocynaceae,Genus,,,,,504515,Accepted,knms_single,Diplolepis Asclepiadeae: 30 (1810) R.Br. 1810
+277,Dischidanthus,2303-1,Dischidanthus,Dischidanthus Tsiang,Apocynaceae,Genus,,,,,504537,Accepted,knms_single,Dischidanthus Sunyatsenia 3: 184 (1936) Tsiang 1936
+278,Dolichopetalum,3337-1,Dolichopetalum,Dolichopetalum Tsiang,Apocynaceae,Genus,,,,,504977,Accepted,knms_single,Dolichopetalum Acta Bot. Sin. 15: 137 (1973) Tsiang 1973
+279,Duvalia,3343-1,Duvalia,Duvalia Haw.,Apocynaceae,Genus,,,,,505086,Orthographic,knms_multiple_1,Duvallia Suppl. Pl. Succ.: 13 (1819) Haw. 1819
+280,Duvaliandra,3344-1,Duvaliandra,Duvaliandra M.G.Gilbert,Apocynaceae,Genus,,,,,505082,Accepted,knms_single,Duvaliandra Cact. Succ. J. Gr. Brit. 42: 101 (1980) M.G.Gilbert 1980
+281,× Duvaliaranthus,3345-1,× Duvaliaranthus,× Duvaliaranthus Bruyns,Apocynaceae,Genus,,,,,505084,Accepted,knms_single,× Duvaliaranthus J. S. African Bot. 42: 365 (1976) Bruyns 1976
+282,Dyera,2308-1,Dyera,Dyera Hook.f.,Apocynaceae,Genus,,,,,65381,Accepted,knms_single,"Dyera J. Linn. Soc., Bot. 19: 293 (1882) Hook.f. 1882"
+283,Echidnopsis,3347-1,Echidnopsis,Echidnopsis Hook.f.,Apocynaceae,Genus,,,,,505087,Accepted,knms_single,Echidnopsis Bot. Mag. 97: t. 5930 (1871) Hook.f. 1871
+284,Ectadium,3350-1,Ectadium,Ectadium E.Mey.,Apocynaceae,Genus,,,,,505178,Accepted,knms_single,Ectadium Comm. Pl. Afr. Austr.: 231 (1838) E.Mey. 1838
+285,Ecua,989505-1,Ecua,Ecua D.J.Middleton,Apocynaceae,Genus,,,,,66256,Accepted,knms_single,Ecua Blumea 41: 33 (1996) D.J.Middleton 1996
+286,Edithcolea,3352-1,Edithcolea,Edithcolea N.E.Br.,Apocynaceae,Genus,,,,,505187,Accepted,knms_single,Edithcolea Bull. Misc. Inform. Kew 1895: 220 (1895) N.E.Br. 1895
+287,Elytropus,2317-1,Elytropus,Elytropus Müll.Arg.,Apocynaceae,Genus,,,,,66846,Accepted,knms_single,Elytropus Bot. Zeitung (Berlin) 18: 21 (1860) Müll.Arg. 1860
+288,Emicocarpus,3356-1,Emicocarpus,Emicocarpus K.Schum. & Schltr.,Apocynaceae,Genus,,,,,505194,Accepted,knms_single,Emicocarpus Beibl. Bot. Jahrb. Syst. 66: 21 (1900) K.Schum. & Schltr. 1900
+289,Emplectanthus,3357-1,Emplectanthus,Emplectanthus N.E.Br.,Apocynaceae,Genus,,,,,505196,Accepted,knms_single,"Emplectanthus W.H.Harvey & auct. suc. (eds.), Fl. Cap. 4(1): 771 (1908) N.E.Br. 1908"
+290,Ephippiocarpa,2319-1,Ephippiocarpa,Ephippiocarpa Markgr.,Apocynaceae,Genus,,,,,67566,Accepted,knms_single,Ephippiocarpa Notizbl. Bot. Gart. Berlin-Dahlem 8: 303 (1923) Markgr. 1923
+291,Epigynum,2321-1,Epigynum,Epigynum Wight,Apocynaceae,Genus,,,,,70032,Accepted,knms_single,Epigynum Icon. Pl. Ind. Orient. 4: t. 1308 (1848) Wight 1848
+292,Epistemma,893162-1,Epistemma,Epistemma D.V.Field & J.B.Hall,Apocynaceae,Genus,,,,,505216,Accepted,knms_multiple_1,Epistemma Kew Bull. 37: 117 (1982) D.V.Field & J.B.Hall 1982
+293,Eustegia,3363-1,Eustegia,Eustegia R.Br.,Apocynaceae,Genus,,,,,505328,Accepted,knms_multiple_1,Eustegia Mem. Wern. Nat. Hist. Soc. 1: 51 (1809) R.Br. 1809
+294,Fanninia,3368-1,Fanninia,Fanninia Harv.,Apocynaceae,Genus,,,,,505461,Accepted,knms_single,"Fanninia Gen. S. Afr. Pl., ed. 2: 235 (1868) Harv. 1868"
+295,Farquharia,2329-1,Farquharia,Farquharia Stapf,Apocynaceae,Genus,,,,,84256,Accepted,knms_single,Farquharia Bull. Misc. Inform. Kew 1912: 278 (1912) Stapf 1912
+296,Finlaysonia,3370-1,Finlaysonia,Finlaysonia Wall.,Apocynaceae,Genus,,,,,505469,Accepted,knms_single,Finlaysonia Pl. Asiat. Rar. 2: 48 (1831) Wall. 1831
+297,Fockea,3373-1,Fockea,Fockea Endl.,Apocynaceae,Genus,,,,,505519,Accepted,knms_single,"Fockea S.L.Endlicher & E.Fenzl, Nov. Stirp. Dec.: 17 (1839) Endl. 1839"
+298,Forsteronia,328996-2,Forsteronia,Forsteronia G.Mey.,Apocynaceae,Genus,,,,,84671,Accepted,knms_single,Forsteronia Prim. Fl. Esseq.: 133 (1818) G.Mey. 1818
+299,Funastrum,3376-1,Funastrum,Funastrum E.Fourn.,Apocynaceae,Genus,,,,,505552,Accepted,knms_single,"Funastrum Ann. Sci. Nat., Bot., sér. 6, 14: 388 (1882) E.Fourn. 1882"
+300,Genianthus,30167675-2,Secamone,Secamone R.Br.,Apocynaceae,Genus,,,,,505294,Synonym,knms_single,Genianthus Fl. Brit. India 4: 15 (1883) Hook.f. 1883
+301,Glossostelma,3381-1,Glossostelma,Glossostelma Schltr.,Apocynaceae,Genus,,,,,505570,Accepted,knms_single,Glossostelma J. Bot. 33: 321 (1895) Schltr. 1895
+302,Gomphocarpus,30051534-2,Gomphocarpus,Gomphocarpus R.Br.,Apocynaceae,Genus,,,,,505585,Accepted,knms_single,Gomphocarpus Asclepiadeae: 26 (1810) R.Br. 1810
+303,Gongronema,3384-1,Gongronema,Gongronema (Endl.) Decne.,Apocynaceae,Genus,,,,,505774,Accepted,knms_single,"Gongronema A.P.de Candolle, Prodr. 8: 624 (1844) (Endl.) Decne. 1844"
+304,Goniostemma,3387-1,Goniostemma,Goniostemma Wight,Apocynaceae,Genus,,,,,505817,Accepted,knms_single,Goniostemma Contr. Bot. India: 62 (1834) Wight 1834
+305,Gonolobus,30002727-2,Gonolobus,Gonolobus Michx.,Apocynaceae,Genus,,,,,505338,Accepted,knms_single,Gonolobus Fl. Bor.-Amer. 1: 119 (1803) Michx. 1803
+306,Gymnanthera,3397-1,Gymnanthera,Gymnanthera R.Br.,Apocynaceae,Genus,,,,,506242,Accepted,knms_single,Gymnanthera Prodr. Fl. Nov. Holland.: 464 (1810) R.Br. 1810
+307,Gyrostelma,3401-1,Gyrostelma,Gyrostelma E.Fourn.,Apocynaceae,Genus,,,,,506374,Accepted,knms_single,"Gyrostelma C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(4): 302 (1885) E.Fourn. 1885"
+308,Hemipogon,3410-1,Hemipogon,Hemipogon Decne.,Apocynaceae,Genus,,,,,506396,Accepted,knms_single,"Hemipogon A.P.de Candolle, Prodr. 8: 509 (1844) Decne. 1844"
+309,Heterostemma,3412-1,Heterostemma,Heterostemma Wight & Arn.,Apocynaceae,Genus,,,,,506426,Accepted,knms_multiple_1,Heterostemma Contr. Bot. India: 42 (1834) Wight & Arn. 1834
+310,Heynella,3415-1,Heynella,Heynella Backer,Apocynaceae,Genus,,,,,506476,Accepted,knms_single,Heynella Blumea 6: 381 (1950) Backer 1950
+311,× Hoodiapelia,3427-1,× Hoodiapelia,× Hoodiapelia G.D.Rowley,Apocynaceae,Genus,,,,,506558,Accepted,knms_single,× Hoodiapelia Repert. Pl. Succ. 27: 4 (1976 publ. 1979) G.D.Rowley 1979
+312,× Hoodiorbea,60435757-2,× Hoodiorbea,× Hoodiorbea G.D.Rowley,Apocynaceae,Genus,,,,,506564,Accepted,knms_single,× Hoodiorbea Asklepios 89: 10 (2003) G.D.Rowley 2003
+313,× Hoodiotriche,60435759-2,× Hoodiotriche,× Hoodiotriche G.D.Rowley,Apocynaceae,Genus,,,,,506568,Accepted,knms_single,× Hoodiotriche Asklepios 89: 10 (2003) G.D.Rowley 2003
+314,Huernia,3432-1,Huernia,Huernia R.Br.,Apocynaceae,Genus,,,,,507279,Accepted,knms_single,Huernia Asclepiadeae: 11 (1810) R.Br. 1810
+315,Hunteria,2377-1,Hunteria,Hunteria Roxb.,Apocynaceae,Genus,,,,,100788,Accepted,knms_single,Hunteria Fl. Ind. 2: 531 (1824) Roxb. 1824
+316,Hylaea,1006671-1,Hylaea,Hylaea J.F.Morales,Apocynaceae,Genus,,,,,101125,Accepted,knms_single,Hylaea Novon 9: 83 (1999) J.F.Morales 1999
+317,Hypolobus,3440-1,Hypolobus,Hypolobus E.Fourn.,Apocynaceae,Genus,,,,,507489,Accepted,knms_single,"Hypolobus C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(4): 311 (1885) E.Fourn. 1885"
+318,Ibatia,3441-1,Ibatia,Ibatia Decne.,Apocynaceae,Genus,,,,,507491,Accepted,knms_single,"Ibatia A.P.de Candolle, Prodr. 8: 599 (1844) Decne. 1844"
+319,Isonema,2382-1,Isonema,Isonema R.Br.,Apocynaceae,Genus,,,,,103154,Accepted,knms_multiple_1,Isonema Asclepiadeae: 52 (1810) R.Br. 1810
+320,Ixodonerium,2383-1,Ixodonerium,Ixodonerium Pit.,Apocynaceae,Genus,,,,,103175,Accepted,knms_single,"Ixodonerium H.Lecomte, Fl. Indo-Chine 3: 1228 (1933) Pit. 1933"
+321,Jasminanthes,3449-1,Jasminanthes,Jasminanthes Blume,Apocynaceae,Genus,,,,,507551,Accepted,knms_single,Jasminanthes Mus. Bot. 1: 148 (1850) Blume 1850
+322,Jobinia,3451-1,Jobinia,Jobinia E.Fourn.,Apocynaceae,Genus,,,,,507559,Accepted,knms_single,"Jobinia C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(4): 327 (1885) E.Fourn. 1885"
+323,Kamettia,2387-1,Kamettia,Kamettia Kostel.,Apocynaceae,Genus,,,,,105550,Accepted,knms_single,Kamettia Allg. Med.-Pharm. Fl. 3: 1062 (1834) Kostel. 1834
+324,Kanahia,3453-1,Kanahia,Kanahia R.Br.,Apocynaceae,Genus,,,,,507588,Accepted,knms_single,Kanahia Asclepiadeae: 28 (1810) R.Br. 1810
+325,Kerbera,3455-1,Kerbera,Kerbera E.Fourn.,Apocynaceae,Genus,,,,,507603,Accepted,knms_single,"Kerbera C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(4): 290 (1885) E.Fourn. 1885"
+326,Lachnostoma,3460-1,Lachnostoma,Lachnostoma Kunth,Apocynaceae,Genus,,,,,507619,Accepted,knms_single,"Lachnostoma F.W.H.von Humboldt, A.J.A.Bonpland & C.S.Kunth, Nov. Gen. Sp. 3: 198 (1819) Kunth 1819"
+327,Larryleachia,995318-1,Larryleachia,Larryleachia Plowes,Apocynaceae,Genus,,,,,507678,Accepted,knms_single,Larryleachia Excelsa 17: 5 (1996) Plowes 1996
+328,Lavrania,924962-1,Lavrania,Lavrania Plowes,Apocynaceae,Genus,,,,,507701,Accepted,knms_single,Lavrania Cact. Succ. J. (Los Angeles) 58: 122 (1986) Plowes 1986
+329,Laxoplumeria,294718-2,Laxoplumeria,Laxoplumeria Markgr.,Apocynaceae,Genus,,,,,109123,Accepted,knms_single,Laxoplumeria Notizbl. Bot. Gart. Berlin-Dahlem 9: 981 (1926) Markgr. 1926
+330,Lepinia,2406-1,Lepinia,Lepinia Decne.,Apocynaceae,Genus,,,,,110868,Accepted,knms_single,"Lepinia Ann. Sci. Nat., Bot., sér. 3, 12: 194 (1849) Decne. 1849"
+331,Lepiniopsis,2407-1,Lepiniopsis,Lepiniopsis Valeton,Apocynaceae,Genus,,,,,110873,Accepted,knms_single,Lepiniopsis Ann. Jard. Bot. Buitenzorg 13(2): 252 (1895) Valeton 1895
+332,Leuconotis,2410-1,Leuconotis,Leuconotis Jack,Apocynaceae,Genus,,,,,112004,Accepted,knms_single,Leuconotis Trans. Linn. Soc. London 14: 121 (1823) Jack 1823
+333,Lygisma,3479-1,Lygisma,Lygisma Hook.f.,Apocynaceae,Genus,,,,,507803,Accepted,knms_single,Lygisma Hooker's Icon. Pl. 15: t. 1423 (1883) Hook.f. 1883
+334,Maclaudia,978016-1,Maclaudia,Maclaudia Venter & R.L.Verh.,Apocynaceae,Genus,,,,,507814,Accepted,knms_single,Maclaudia Bot. J. Linn. Soc. 115: 58 (1994) Venter & R.L.Verh. 1994
+335,Macroscepis,3485-1,Macroscepis,Macroscepis Kunth,Apocynaceae,Genus,,,,,507840,Accepted,knms_single,"Macroscepis F.W.H.von Humboldt, A.J.A.Bonpland & C.S.Kunth, Nov. Gen. Sp. 3: 200 (1819) Kunth 1819"
+336,Mahawoa,3490-1,Mahawoa,Mahawoa Schltr.,Apocynaceae,Genus,,,,,507883,Accepted,knms_single,Mahawoa Beih. Bot. Centralbl. 34(2): 2 (1916) Schltr. 1916
+337,Manothrix,2424-1,Manothrix,Manothrix Miers,Apocynaceae,Genus,,,,,120299,Accepted,knms_single,Manothrix Apocyn. S. Amer.: 28 (1878) Miers 1878
+338,Margaretta,3493-1,Margaretta,Margaretta Oliv.,Apocynaceae,Genus,,,,,507889,Accepted,knms_single,Margaretta Trans. Linn. Soc. London 29: 111 (1875) Oliv. 1875
+339,Mascarenhasia,2425-1,Mascarenhasia,Mascarenhasia A.DC.,Apocynaceae,Genus,,,,,121021,Accepted,knms_single,"Mascarenhasia A.P.de Candolle, Prodr. 8: 487 (1844) A.DC. 1844"
+340,Matelea,30001048-2,Matelea,Matelea Aubl.,Apocynaceae,Genus,,,,,508375,Accepted,knms_single,Matelea Hist. Pl. Guiane: 277 (1775) Aubl. 1775
+341,Mesechites,328983-2,Mesechites,Mesechites Müll.Arg.,Apocynaceae,Genus,,,,,125891,Accepted,knms_single,"Mesechites C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(1): 150 (1860) Müll.Arg. 1860"
+342,Micrechites,2435-1,Micrechites,Micrechites Miq.,Apocynaceae,Genus,,,,,126894,Accepted,knms_single,Micrechites Fl. Ned. Ind. 2: 456 (1857) Miq. 1857
+343,Microloma,3510-1,Microloma,Microloma R.Br.,Apocynaceae,Genus,,,,,509054,Accepted,knms_single,Microloma Asclepiadeae: 42 (1810) R.Br. 1810
+344,Miraglossum,893392-1,Miraglossum,Miraglossum Kupicha,Apocynaceae,Genus,,,,,509125,Accepted,knms_single,Miraglossum Kew Bull. 38: 625 (1984) Kupicha 1984
+345,Molongum,2439-1,Molongum,Molongum Pichon,Apocynaceae,Genus,,,,,128927,Accepted,knms_single,Molongum Mém. Mus. Natl. Hist. Nat. 24: 167 (1948) Pichon 1948
+346,Mondia,3516-1,Mondia,Mondia Skeels,Apocynaceae,Genus,,,,,509159,Accepted,knms_single,Mondia Bull. Bur. Pl. Industr. U.S.D.A. 223: 45 (1911) Skeels 1911
+347,Monolluma,986816-1,Monolluma,Monolluma Plowes,Apocynaceae,Genus,,,,,509162,Accepted,knms_single,Monolluma Haseltonia 3: 64 (1995) Plowes 1995
+348,Monsanima,77132633-1,Monsanima,Monsanima Liede & Meve,Apocynaceae,Genus,,,,,509173,Accepted,knms_single,Monsanima Ann. Missouri Bot. Gard. 99: 66 (2013) Liede & Meve 2013
+349,Morilloa,77147475-1,Morilloa,"Morilloa Fontella, Goes & S.A.Cáceres",Apocynaceae,Genus,,,,,497163,Accepted,knms_single,"Morilloa Bonplandia (Corrientes) 23: 28 (2014) Fontella, Goes & S.A.Cáceres 2014"
+350,Mortoniella,295062-2,Mortoniella,Mortoniella Woodson,Apocynaceae,Genus,,,,,130111,Accepted,knms_single,Mortoniella Ann. Missouri Bot. Gard. 26: 257 (1939) Woodson 1939
+351,Motandra,2442-1,Motandra,Motandra A.DC.,Apocynaceae,Genus,,,,,130211,Accepted,knms_single,"Motandra A.P.de Candolle, Prodr. 8: 423 (1844) A.DC. 1844"
+352,Mucoa,925109-1,Mucoa,Mucoa Zarucchi,Apocynaceae,Genus,,,,,130256,Accepted,knms_single,Mucoa Agric. Univ. Wageningen Pap. 87(1): 40 (1987 publ. 1988) Zarucchi 1988
+353,Myriopteron,3521-1,Myriopteron,Myriopteron Griff.,Apocynaceae,Genus,,,,,509193,Accepted,knms_single,Myriopteron Calcutta J. Nat. Hist. 4: 385 (1844) Griff. 1844
+354,Nautonia,3523-1,Nautonia,Nautonia Decne.,Apocynaceae,Genus,,,,,509199,Accepted,knms_single,"Nautonia A.P.de Candolle, Prodr. 8: 509 (1844) Decne. 1844"
+355,Neobracea,325408-2,Neobracea,Neobracea Britton,Apocynaceae,Genus,,,,,133656,Accepted,knms_single,"Neobracea N.L.Britton & C.F.Millspaugh, Bahama Fl.: 335 (1920) Britton 1920"
+356,Neocouma,295333-2,Neocouma,Neocouma Pierre,Apocynaceae,Genus,,,,,133677,Accepted,knms_single,"Neocouma Bull. Mens. Soc. Linn. Paris, n.s., 1: 33 (1898) Pierre 1898"
+357,Neoschumannia,3527-1,Neoschumannia,Neoschumannia Schltr.,Apocynaceae,Genus,,,,,509213,Accepted,knms_single,Neoschumannia Bot. Jahrb. Syst. 38: 38 (1905) Schltr. 1905
+358,Nephradenia,30056552-2,Nephradenia,Nephradenia Decne.,Apocynaceae,Genus,,,,,509217,Accepted,knms_single,"Nephradenia A.P.de Candolle, Prodr. 8: 604 (1844) Decne. 1844"
+359,Notechidnopsis,893471-1,Notechidnopsis,Notechidnopsis Lavranos & Bleck,Apocynaceae,Genus,,,,,509229,Accepted,knms_single,Notechidnopsis Cact. Succ. J. (Los Angeles) 57: 255 (1985) Lavranos & Bleck 1985
+360,Odontadenia,2465-1,Odontadenia,Odontadenia Benth.,Apocynaceae,Genus,,,,,137441,Accepted,knms_single,Odontadenia J. Bot. (Hooker) 3: 242 (1841) Benth. 1841
+361,Oncinema,3542-1,Oncinema,Oncinema Arn.,Apocynaceae,Genus,,,,,509275,Accepted,knms_single,Oncinema Edinburgh New Philos. J. 17: 261 (1834) Arn. 1834
+362,Ophionella,893082-1,Ophionella,Ophionella Bruyns,Apocynaceae,Genus,,,,,509282,Accepted,knms_single,Ophionella Cact. Succ. J. Gr. Brit. 43: 70 (1981) Bruyns 1981
+363,Orbea,3544-1,Orbea,Orbea Haw.,Apocynaceae,Genus,,,,,509289,Accepted,knms_single,Orbea Syn. Pl. Succ.: 37 (1812) Haw. 1812
+364,× Orbelia,893008-1,× Orbelia,× Orbelia G.D.Rowley,Apocynaceae,Genus,,,,,509420,Accepted,knms_single,× Orbelia Name that Succulent: 95 (1980) G.D.Rowley 1980
+365,Oreosparte,3547-1,Oreosparte,Oreosparte Schltr.,Apocynaceae,Genus,,,,,509456,Accepted,knms_single,Oreosparte Beih. Bot. Centralbl. 34(2): 16 (1916) Schltr. 1916
+366,Orthanthera,3469-1,Leptadenia,Leptadenia R.Br.,Apocynaceae,Genus,,,,,509458,Synonym,knms_single,Orthanthera Contr. Bot. India: 48 (1834) Wight 1834
+367,Orthopichonia,2476-1,Orthopichonia,Orthopichonia H.Huber,Apocynaceae,Genus,,,,,144271,Accepted,knms_single,Orthopichonia Kew Bull. 15: 437 (1962) H.Huber 1962
+368,Orthosia,30027037-2,Orthosia,Orthosia Decne.,Apocynaceae,Genus,,,,,509466,Accepted,knms_single,"Orthosia A.P.de Candolle, Prodr. 8: 526 (1844) Decne. 1844"
+369,Oxystelma,30086246-2,Oxystelma,Oxystelma R.Br.,Apocynaceae,Genus,,,,,509826,Accepted,knms_single,Oxystelma Prodr. Fl. Nov. Holland.: 462 (1810) R.Br. 1810
+370,Pachycarpus,3560-1,Pachycarpus,Pachycarpus E.Mey.,Apocynaceae,Genus,,,,,509850,Accepted,knms_single,Pachycarpus Comm. Pl. Afr. Austr.: 209 (1838) E.Mey. 1838
+371,Pacouria,2481-1,Pacouria,Pacouria Aubl.,Apocynaceae,Genus,,,,,145404,Accepted,knms_single,Pacouria Hist. Pl. Guiane 1: 268 (1775) Aubl. 1775
+372,Papuechites,2487-1,Papuechites,Papuechites Markgr.,Apocynaceae,Genus,,,,,147364,Accepted,knms_single,Papuechites Nova Guinea 14: 287 (1925) Markgr. 1925
+373,Parahancornia,2490-1,Parahancornia,Parahancornia Ducke,Apocynaceae,Genus,,,,,147478,Accepted,knms_single,Parahancornia Arch. Jard. Bot. Rio de Janeiro 3: 242 (1922) Ducke 1922
+374,Parapodium,3566-1,Parapodium,Parapodium E.Mey.,Apocynaceae,Genus,,,,,509972,Accepted,knms_single,Parapodium Comm. Pl. Afr. Austr.: 221 (1838) E.Mey. 1838
+375,Parepigynum,2498-1,Parepigynum,Parepigynum Tsiang & P.T.Li,Apocynaceae,Genus,,,,,147795,Accepted,knms_single,Parepigynum Acta Phytotax. Sin. 11: 394 (1973) Tsiang & P.T.Li 1973
+376,Pectinaria,331834-2,Pectinaria,Pectinaria Haw.,Apocynaceae,Genus,,,,,509985,Accepted,knms_multiple_1,Pectinaria Suppl. Pl. Succ.: 14 (1819) Haw. 1819
+377,Pentacyphus,295216-2,Pentacyphus,Pentacyphus Schltr.,Apocynaceae,Genus,,,,,510013,Accepted,knms_single,Pentacyphus Bot. Jahrb. Syst. 37: 605 (1906) Schltr. 1906
+378,Pentalinon,2502-1,Pentalinon,Pentalinon Voigt,Apocynaceae,Genus,,,,,149822,Accepted,knms_single,Pentalinon Hort. Suburb. Calcutt.: 523 (1845) Voigt 1845
+379,Periglossum,3587-1,Periglossum,Periglossum Decne.,Apocynaceae,Genus,,,,,510210,Accepted,knms_single,"Periglossum A.P.de Candolle, Prodr. 8: 520 (1844) Decne. 1844"
+380,Pervillaea,3590-1,Pervillaea,Pervillaea Decne.,Apocynaceae,Genus,,,,,510330,Accepted,knms_single,"Pervillaea A.P.de Candolle, Prodr. 8: 613 (1844) Decne. 1844"
+381,Petalostelma,3592-1,Petalostelma,Petalostelma E.Fourn.,Apocynaceae,Genus,,,,,510340,Accepted,knms_single,"Petalostelma C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(4): 328 (1885) E.Fourn. 1885"
+382,Phaeostemma,3595-1,Phaeostemma,Phaeostemma E.Fourn.,Apocynaceae,Genus,,,,,510352,Accepted,knms_single,"Phaeostemma C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(4): 311 (1885) E.Fourn. 1885"
+383,Pherotrichis,30242827-2,Pherotrichis,Pherotrichis Decne.,Apocynaceae,Genus,,,,,510363,Accepted,knms_single,"Pherotrichis Ann. Sci. Nat., Bot., sér. 2, 9: 322 (1838) Decne. 1838"
+384,Philibertia,3599-1,Philibertia,Philibertia Kunth,Apocynaceae,Genus,,,,,510389,Accepted,knms_single,"Philibertia F.W.H.von Humboldt, A.J.A.Bonpland & C.S.Kunth, Nov. Gen. Sp. 3: 195 (1819) Kunth 1819"
+385,Phyllanthera,3600-1,Phyllanthera,Phyllanthera Blume,Apocynaceae,Genus,,,,,510501,Accepted,knms_multiple_1,Phyllanthera Bijdr. Fl. Ned. Ind.: 1048 (1826) Blume 1826
+386,Piaranthus,3603-1,Piaranthus,Piaranthus R.Br.,Apocynaceae,Genus,,,,,510525,Accepted,knms_single,Piaranthus Asclepiadeae: 12 (1810) R.Br. 1810
+387,Pinochia,77084114-1,Pinochia,Pinochia M.E.Endress & B.F.Hansen,Apocynaceae,Genus,,,,,347871,Accepted,knms_single,Pinochia Edinburgh J. Bot. 64: 270 (2007) M.E.Endress & B.F.Hansen 2007
+388,Plectaneia,2515-1,Plectaneia,Plectaneia Thouars,Apocynaceae,Genus,,,,,157774,Accepted,knms_single,Plectaneia Gen. Nov. Madagasc.: 11 (1806) Thouars 1806
+389,Polystemma,30266778-2,Polystemma,Polystemma Decne.,Apocynaceae,Genus,,,,,510647,Accepted,knms_multiple_1,"Polystemma A.P.de Candolle, Prodr. 8: 602 (1844) Decne. 1844"
+390,Pottsia,2528-1,Pottsia,Pottsia Hook. & Arn.,Apocynaceae,Genus,,,,,163867,Accepted,knms_single,Pottsia Bot. Beechey Voy.: 198 (1837) Hook. & Arn. 1837
+391,Pruskortizia,60473388-2,Pruskortizia,Pruskortizia Morillo,Apocynaceae,Genus,,,,,522680,Accepted,knms_single,Pruskortizia Pittieria 40: 97 (2016) Morillo 2016
+392,Pseudolachnostoma,77129406-1,Pseudolachnostoma,Pseudolachnostoma Morillo,Apocynaceae,Genus,,,,,492625,Accepted,knms_single,Pseudolachnostoma Pittieria 36: 44 (2012) Morillo 2012
+393,Pseudolithos,326033-2,Pseudolithos,Pseudolithos P.R.O.Bally,Apocynaceae,Genus,,,,,510678,Accepted,knms_single,Pseudolithos Candollea 20: 41 (1965) P.R.O.Bally 1965
+394,Ptycanthera,3634-1,Ptycanthera,Ptycanthera Decne.,Apocynaceae,Genus,,,,,510709,Accepted,knms_single,"Ptycanthera A.P.de Candolle, Prodr. 8: 606 (1844) Decne. 1844"
+395,Pycnobotrya,2538-1,Pycnobotrya,Pycnobotrya Benth.,Apocynaceae,Genus,,,,,171093,Accepted,knms_single,"Pycnobotrya G.Bentham & J.D.Hooker, Gen. Pl. 2: 715 (1876) Benth. 1876"
+396,Pycnorhachis,3639-1,Pycnorhachis,Pycnorhachis Benth.,Apocynaceae,Genus,,,,,510724,Accepted,knms_single,"Pycnorhachis G.Bentham & J.D.Hooker, Gen. Pl. 2: 776 (1876) Benth. 1876"
+397,Quaqua,3641-1,Quaqua,Quaqua N.E.Br.,Apocynaceae,Genus,,,,,510735,Accepted,knms_single,"Quaqua Gard. Chron., n.s., 12: 8 (1879) N.E.Br. 1879"
+398,Raphionacme,3644-1,Raphionacme,Raphionacme Harv.,Apocynaceae,Genus,,,,,510788,Accepted,knms_single,Raphionacme London J. Bot. 1: 22 (1842) Harv. 1842
+399,Rhabdadenia,328984-2,Rhabdadenia,Rhabdadenia Müll.Arg.,Apocynaceae,Genus,,,,,177616,Accepted,knms_single,"Rhabdadenia C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(1): 173 (1860) Müll.Arg. 1860"
+400,Rhigospira,2548-1,Rhigospira,Rhigospira Miers,Apocynaceae,Genus,,,,,177991,Accepted,knms_single,Rhigospira Apocyn. S. Amer.: 67 (1878) Miers 1878
+401,Rhyssolobium,3656-1,Rhyssolobium,Rhyssolobium E.Mey.,Apocynaceae,Genus,,,,,510890,Accepted,knms_single,Rhyssolobium Comm. Pl. Afr. Austr.: 217 (1838) E.Mey. 1838
+402,Rhytidocaulon,331908-2,Rhytidocaulon,Rhytidocaulon P.R.O.Bally,Apocynaceae,Genus,,,,,510894,Accepted,knms_single,Rhytidocaulon Candollea 18: 335 (1963) P.R.O.Bally 1963
+403,Rhytidostemma,30025794-2,Fischeria,Fischeria DC.,Apocynaceae,Genus,,,,,510913,Synonym,knms_single,Rhytidostemma Pittieria 37: 141 (2013) Morillo 2013
+404,Richtersveldia,20009969-1,Richtersveldia,Richtersveldia Meve & Liede,Apocynaceae,Genus,,,,,510923,Accepted,knms_single,Richtersveldia Pl. Syst. Evol. 234: 204 (2002) Meve & Liede 2002
+405,Riocreuxia,3659-1,Riocreuxia,Riocreuxia Decne.,Apocynaceae,Genus,,,,,510925,Accepted,knms_single,"Riocreuxia A.P.de Candolle, Prodr. 8: 640 (1844) Decne. 1844"
+406,Rojasia,296324-2,Rojasia,Rojasia Malme,Apocynaceae,Genus,,,,,510948,Accepted,knms_single,Rojasia Ark. Bot. 4(14): 10 (1905) Malme 1905
+407,Ruehssia,3664-1,Ruehssia,Ruehssia H.Karst.,Apocynaceae,Genus,,,,,510998,Accepted,knms_single,Ruehssia Verh. Vereins Beförd. Gartenbaues Königl. Preuss. Staaten 19: 304 (1849) H.Karst. 1849
+408,Sacleuxia,3667-1,Sacleuxia,Sacleuxia Baill.,Apocynaceae,Genus,,,,,511007,Accepted,knms_single,Sacleuxia Hist. Pl. 10: 265 (1890) Baill. 1890
+409,Sarcolobus,3671-1,Sarcolobus,Sarcolobus R.Br.,Apocynaceae,Genus,,,,,511017,Accepted,knms_single,Sarcolobus Asclepiadeae: 23 (1809) R.Br. 1809
+410,Sarcorrhiza,3673-1,Sarcorrhiza,Sarcorrhiza Bullock,Apocynaceae,Genus,,,,,511059,Accepted,knms_multiple_1,Sarcorrhiza Hooker's Icon. Pl. 36: t. 3585 (1962) Bullock 1962
+411,Schistonema,295677-2,Schistonema,Schistonema Schltr.,Apocynaceae,Genus,,,,,511207,Accepted,knms_single,Schistonema Bot. Jahrb. Syst. 37: 604 (1906) Schltr. 1906
+412,Schizoglossum,3680-1,Schizoglossum,Schizoglossum E.Mey.,Apocynaceae,Genus,,,,,511211,Accepted,knms_single,Schizoglossum Comm. Pl. Afr. Austr.: 218 (1838) E.Mey. 1838
+413,Schizostephanus,3683-1,Schizostephanus,Schizostephanus Hochst. ex Benth. & Hook.f.,Apocynaceae,Genus,,,,,511456,Accepted,knms_single,Schizostephanus Gen. Pl. 2: 762 (1876) Hochst. ex Benth. & Hook.f. 1876
+414,Schlechterella,30105942-2,Schlechterella,Schlechterella K.Schum.,Apocynaceae,Genus,,,,,511460,Accepted,knms_multiple_1,"Schlechterella H.G.A.Engler & K.A.E.Prantl, Nat. Pflanzenfam., index: 462 (1899) K.Schum. 1899"
+415,Schubertia,331943-2,Schubertia,Schubertia Mart.,Apocynaceae,Genus,,,,,511472,Accepted,knms_multiple_1,Schubertia Nov. Gen. Sp. Pl. Bras. 1: 55 (1824) Mart. 1824
+416,Scyphostelma,295477-2,Scyphostelma,Scyphostelma Baill.,Apocynaceae,Genus,,,,,511487,Accepted,knms_single,Scyphostelma Hist. Pl. 10: 252 (1890) Baill. 1890
+417,Secamonopsis,3692-1,Secamonopsis,Secamonopsis Jum.,Apocynaceae,Genus,,,,,511743,Accepted,knms_single,Secamonopsis Compt. Rend. Hebd. Séances Acad. Sci. 147: 689 (1908) Jum. 1908
+418,Secondatia,329003-2,Secondatia,Secondatia A.DC.,Apocynaceae,Genus,,,,,190303,Accepted,knms_single,"Secondatia A.P.de Candolle, Prodr. 8: 445 (1844) A.DC. 1844"
+419,Sindechites,2568-1,Sindechites,Sindechites Oliv.,Apocynaceae,Genus,,,,,192360,Accepted,knms_single,Sindechites Hooker's Icon. Pl. 18: t. 1772 A (1888) Oliv. 1888
+420,Sisyranthus,3697-1,Sisyranthus,Sisyranthus E.Mey.,Apocynaceae,Genus,,,,,511764,Accepted,knms_single,Sisyranthus Comm. Pl. Afr. Austr.: 197 (1838) E.Mey. 1838
+421,Socotrella,20008733-1,Socotrella,Socotrella Bruyns & A.G.Mill.,Apocynaceae,Genus,,,,,511789,Accepted,knms_single,Socotrella Novon 12: 330 (2002) Bruyns & A.G.Mill. 2002
+422,Spirolobium,331979-2,Spirolobium,Spirolobium Baill.,Apocynaceae,Genus,,,,,194604,Accepted,knms_single,Spirolobium Bull. Mens. Soc. Linn. Paris 1: 773 (1889) Baill. 1889
+423,Spongiosperma,925320-1,Spongiosperma,Spongiosperma Zarucchi,Apocynaceae,Genus,,,,,194644,Accepted,knms_single,Spongiosperma Agric. Univ. Wageningen Pap. 87: 48 (1987 publ. 1988) Zarucchi 1988
+424,× Staparesia,893240-1,× Staparesia,× Staparesia G.D.Rowley,Apocynaceae,Genus,,,,,511842,Accepted,knms_single,× Staparesia Natl. Cact. Succ. J. 37: 79 (1982) G.D.Rowley 1982
+425,Stapelianthus,3713-1,Stapelianthus,Stapelianthus Choux ex A.C.White & B.Sloane,Apocynaceae,Genus,,,,,512337,Accepted,knms_single,Stapelianthus Stapelieae: 71 (1933) Choux ex A.C.White & B.Sloane 1933
+426,Stapeliopsis,3714-1,Stapeliopsis,Stapeliopsis Pillans,Apocynaceae,Genus,,,,,512350,Accepted,knms_multiple_1,Stapeliopsis S. African Gard. 18: 32 (1928) Pillans 1928
+427,× Stapvalia,77151926-1,× Stapvalia,× Stapvalia D.M.Cumming,Apocynaceae,Genus,,,,,522173,Accepted,knms_single,× Stapvalia CactusWorld 33: 245 (2015) D.M.Cumming 2015
+428,Stathmostelma,3717-1,Stathmostelma,Stathmostelma K.Schum.,Apocynaceae,Genus,,,,,512365,Accepted,knms_single,Stathmostelma Bot. Jahrb. Syst. 17: 129 (1893) K.Schum. 1893
+429,Stelmagonum,296618-2,Stelmagonum,Stelmagonum Baill.,Apocynaceae,Genus,,,,,512410,Accepted,knms_single,Stelmagonum Hist. Pl. 10: 287 (1890) Baill. 1890
+430,Stenostelma,3725-1,Stenostelma,Stenostelma Schltr.,Apocynaceae,Genus,,,,,512422,Accepted,knms_single,Stenostelma Beibl. Bot. Jahrb. Syst. 45: 6 (1894) Schltr. 1894
+431,Stephanostegia,2577-1,Stephanostegia,Stephanostegia Baill.,Apocynaceae,Genus,,,,,197645,Accepted,knms_single,Stephanostegia Bull. Mens. Soc. Linn. Paris 1: 748 (1888) Baill. 1888
+432,Stephanostema,2578-1,Stephanostema,Stephanostema K.Schum.,Apocynaceae,Genus,,,,,197653,Accepted,knms_single,Stephanostema Bot. Jahrb. Syst. 34: 325 (1904) K.Schum. 1904
+433,Stephanotis,30089192-2,Stephanotis,Stephanotis Thouars,Apocynaceae,Genus,,,,,512431,Accepted,knms_single,Stephanotis Gen. Nov. Madagasc.: 11 (1806) Thouars 1806
+434,Stigmatorhynchus,3729-1,Stigmatorhynchus,Stigmatorhynchus Schltr.,Apocynaceae,Genus,,,,,512453,Accepted,knms_single,Stigmatorhynchus Bot. Jahrb. Syst. 51: 141 (1913) Schltr. 1913
+435,Stipecoma,2579-1,Stipecoma,Stipecoma Müll.Arg.,Apocynaceae,Genus,,,,,198017,Accepted,knms_single,"Stipecoma C.F.P.von Martius & auct. suc. (eds.), Fl. Bras. 6(1): 175 (1860) Müll.Arg. 1860"
+436,Stomatostemma,3732-1,Stomatostemma,Stomatostemma N.E.Br.,Apocynaceae,Genus,,,,,512555,Accepted,knms_single,"Stomatostemma D.Oliver & auct. suc. (eds.), Fl. Trop. Afr. 4(1): 252 (1902) N.E.Br. 1902"
+437,Streptocaulon,3733-1,Streptocaulon,Streptocaulon Wight & Arn.,Apocynaceae,Genus,,,,,512558,Accepted,knms_single,"Streptocaulon R.Wight, Contr. Bot. India: 64 (1834) Wight & Arn. 1834"
+438,Streptoechites,77124831-1,Streptoechites,Streptoechites D.J.Middleton & Livsh.,Apocynaceae,Genus,,,,,492911,Accepted,knms_single,"Streptoechites Adansonia, sér. 3, 34: 370 (2012) D.J.Middleton & Livsh. 2012"
+439,Tacazzea,3745-1,Tacazzea,Tacazzea Decne.,Apocynaceae,Genus,,,,,512623,Accepted,knms_single,"Tacazzea A.P.de Candolle, Prodr. 8: 492 (1844) Decne. 1844"
+440,Tassadia,30040639-2,Tassadia,Tassadia Decne.,Apocynaceae,Genus,,,,,512666,Accepted,knms_single,"Tassadia A.P.de Candolle, Prodr. 8: 579 (1844) Decne. 1844"
+441,Tavaresia,3751-1,Tavaresia,Tavaresia Welw.,Apocynaceae,Genus,,,,,512721,Accepted,knms_single,Tavaresia Bol. Ann. Cons. Ultramar. (Portugal) 7: 79 (1854) Welw. 1854
+442,Telectadium,3752-1,Telectadium,Telectadium Baill.,Apocynaceae,Genus,,,,,512730,Accepted,knms_single,Telectadium Bull. Mens. Soc. Linn. Paris 2: 801 (1889) Baill. 1889
+443,Thenardia,2594-1,Thenardia,Thenardia Kunth,Apocynaceae,Genus,,,,,203838,Accepted,knms_multiple_1,"Thenardia F.W.H.von Humboldt, A.J.A.Bonpland & C.S.Kunth, Nov. Gen. Sp. 3: 209 (1819) Kunth 1819"
+444,Thevetia,332011-2,Thevetia,Thevetia L.,Apocynaceae,Genus,,,,,203877,Accepted,knms_multiple_1,Thevetia Opera Var.: 212 (1758) L. 1758
+445,Thoreauea,326443-2,Thoreauea,Thoreauea J.K.Williams,Apocynaceae,Genus,,,,,268420,Accepted,knms_single,Thoreauea Lundellia 5: 47 (2002) J.K.Williams 2002
+446,Thyrsanthella,2599-1,Thyrsanthella,Thyrsanthella (Baill.) Pichon,Apocynaceae,Genus,,,,,205700,Accepted,knms_single,"Thyrsanthella Bull. Mus. Natl. Hist. Nat., sér. 2, 20: 192 (1948) (Baill.) Pichon 1948"
+447,Tintinnabularia,289330-2,Tintinnabularia,Tintinnabularia Woodson,Apocynaceae,Genus,,,,,206120,Accepted,knms_single,Tintinnabularia Ann. Missouri Bot. Gard. 23: 387 (1936) Woodson 1936
+448,Toxocarpus,3761-1,Toxocarpus,Toxocarpus Wight & Arn.,Apocynaceae,Genus,,,,,512783,Accepted,knms_single,"Toxocarpus R.Wight, Contr. Bot. India: 61 (1834) Wight & Arn. 1834"
+449,Treutlera,3764-1,Treutlera,Treutlera Hook.f.,Apocynaceae,Genus,,,,,512882,Accepted,knms_single,Treutlera Hooker's Icon. Pl. 15: t. 1425 (1883) Hook.f. 1883
+450,Trichosandra,3768-1,Trichosandra,Trichosandra Decne.,Apocynaceae,Genus,,,,,512928,Accepted,knms_single,"Trichosandra A.P.de Candolle, Prodr. 8: 625 (1844) Decne. 1844"
+451,× Tridentapelia,60435744-2,× Tridentapelia,× Tridentapelia G.D.Rowley,Apocynaceae,Genus,,,,,512936,Accepted,knms_single,× Tridentapelia Asklepios 89: 11 (2003) G.D.Rowley 2003
+452,Tridentea,3770-1,Tridentea,Tridentea Haw.,Apocynaceae,Genus,,,,,512938,Accepted,knms_single,Tridentea Syn. Pl. Succ.: 34 (1812) Haw. 1812
+453,Tromotriche,3774-1,Tromotriche,Tromotriche Haw.,Apocynaceae,Genus,,,,,512997,Accepted,knms_single,Tromotriche Syn. Pl. Succ.: 36 (1812) Haw. 1812
+454,Tweedia,3777-1,Tweedia,Tweedia Hook. & Arn.,Apocynaceae,Genus,,,,,513023,Accepted,knms_single,Tweedia J. Bot. (Hooker) 1: 291 (1835) Hook. & Arn. 1835
+455,Tylodontia,3778-1,Tylodontia,Tylodontia Griseb.,Apocynaceae,Genus,,,,,513043,Accepted,knms_single,Tylodontia Cat. Pl. Cub.: 175 (1866) Griseb. 1866
+456,Vincetoxicum,30010004-2,Vincetoxicum,Vincetoxicum Wolf,Apocynaceae,Genus,,,,,513384,Accepted,knms_multiple_1,Vincetoxicum Gen. Pl.: 130 (1776) Wolf 1776
+457,Vahadenia,2613-1,Vahadenia,Vahadenia Stapf,Apocynaceae,Genus,,,,,211265,Accepted,knms_single,"Vahadenia D.Oliver & auct. suc. (eds.), Fl. Trop. Afr. 4(1): 29 (1902) Stapf 1902"
+458,Vailia,3785-1,Vailia,Vailia Rusby,Apocynaceae,Genus,,,,,513368,Accepted,knms_single,Vailia Bull. Torrey Bot. Club 25: 500 (1898) Rusby 1898
+459,Vallesia,2617-1,Vallesia,Vallesia Ruiz & Pav.,Apocynaceae,Genus,,,,,211400,Accepted,knms_single,Vallesia Fl. Peruv. Prodr.: 28 (1794) Ruiz & Pav. 1794
+460,White-sloanea,3797-1,White-sloanea,White-sloanea Chiov.,Apocynaceae,Genus,,,,,513911,Accepted,knms_single,White-Sloanea Malpighia 34: 541 (1937) Chiov. 1937
+461,Willughbeia,332064-2,Willughbeia,Willughbeia Roxb.,Apocynaceae,Genus,,,,,214717,Accepted,knms_multiple_1,Willughbeia Pl. Coromandel 3: 77 (1820) Roxb. 1820
+462,Woodia,3799-1,Woodia,Woodia Schltr.,Apocynaceae,Genus,,,,,513917,Accepted,knms_single,Woodia Beibl. Bot. Jahrb. Syst. 45: 30 (1894) Schltr. 1894
+463,Xysmalobium,3801-1,Xysmalobium,Xysmalobium R.Br.,Apocynaceae,Genus,,,,,513926,Accepted,knms_single,Xysmalobium Asclepiadeae: 27 (1810) R.Br. 1810
+464,Zygostelma,3808-1,Zygostelma,Zygostelma Benth.,Apocynaceae,Genus,,,,,514028,Accepted,knms_multiple_1,"Zygostelma G.Bentham & J.D.Hooker, Gen. Pl. 2: 740 (1876) Benth. 1876"
+465,Acranthera,331317-2,Acranthera,Acranthera Arn. ex Meisn.,Rubiaceae,Genus,,,,,2369,Accepted,knms_single,Acranthera Pl. Vasc. Gen.: 162 (1840) Arn. ex Meisn. 1840
+466,Acrobotrys,295729-2,Acrobotrys,Acrobotrys K.Schum. & K.Krause,Rubiaceae,Genus,,,,,2450,Accepted,knms_single,Acrobotrys Bot. Jahrb. Syst. 40: 316 (1908) K.Schum. & K.Krause 1908
+467,Acrosynanthus,295733-2,Acrosynanthus,Acrosynanthus Urb.,Rubiaceae,Genus,,,,,2655,Accepted,knms_single,Acrosynanthus Symb. Antill. 7: 514 (1913) Urb. 1913
+468,Acunaeanthus,298325-2,Acunaeanthus,"Acunaeanthus Borhidi, Komlódi & Moncada",Rubiaceae,Genus,,,,,2893,Accepted,knms_single,"Acunaeanthus Acta Bot. Acad. Sci. Hung. 26: 282 (1980 publ. 1981) Borhidi, Komlódi & Moncada 1981"
+469,Adenorandia,981077-1,Adenorandia,Adenorandia Vermoesen,Rubiaceae,Genus,,,,,3151,Accepted,knms_single,Adenorandia Natuurk. Tijdschr. Ned.-Indië 4: 5 (1922) Vermoesen 1922
+470,Afrocanthium,77062247-1,Afrocanthium,Afrocanthium (Bridson) Lantz & B.Bremer,Rubiaceae,Genus,,,,,216314,Accepted,knms_single,Afrocanthium Bot. J. Linn. Soc. 146: 278 (2004) (Bridson) Lantz & B.Bremer 2004
+471,Agouticarpa,327793-2,Agouticarpa,Agouticarpa C.H.Perss.,Rubiaceae,Genus,,,,,216332,Accepted,knms_single,Agouticarpa Brittonia 55: 180 (2003) C.H.Perss. 2003
+472,Aidia,327845-2,Aidia,Aidia Lour.,Rubiaceae,Genus,,,,,4993,Accepted,knms_single,Aidia Fl. Cochinch.: 143 (1790) Lour. 1790
+473,Aidiopsis,925011-1,Aidiopsis,Aidiopsis Tirveng.,Rubiaceae,Genus,,,,,5083,Accepted,knms_single,"Aidiopsis Bull. Mus. Natl. Hist. Nat., B, Adansonia 8: 287 (1986) Tirveng. 1986"
+474,Airosperma,34110-1,Airosperma,Airosperma K.Schum. & Lauterb.,Rubiaceae,Genus,,,,,5141,Accepted,knms_single,Airosperma Fl. Schutzgeb. Südsee: 565 (1900) K.Schum. & Lauterb. 1900
+475,Alberta,34112-1,Alberta,Alberta E.Mey.,Rubiaceae,Genus,,,,,5672,Accepted,knms_single,Alberta Linnaea 12: 258 (1838) E.Mey. 1838
+476,Aleisanthia,34113-1,Aleisanthia,Aleisanthia Ridl.,Rubiaceae,Genus,,,,,5911,Accepted,knms_single,Aleisanthia J. Fed. Malay States Mus. 10: 138 (1920) Ridl. 1920
+477,Aleisanthiopsis,995636-1,Aleisanthiopsis,Aleisanthiopsis Tange,Rubiaceae,Genus,,,,,5914,Accepted,knms_single,Aleisanthiopsis Nordic J. Bot. 16: 571 (1996 publ. 1997) Tange 1997
+478,Alleizettella,34118-1,Alleizettella,Alleizettella Pit.,Rubiaceae,Genus,,,,,6190,Accepted,knms_single,"Alleizettella H.Lecomte, Fl. Indo-Chine 3: 278 (1923) Pit. 1923"
+479,Amaracarpus,34123-1,Amaracarpus,Amaracarpus Blume,Rubiaceae,Genus,,,,,7602,Accepted,knms_single,Amaracarpus Bijdr. Fl. Ned. Ind.: 954 (1826) Blume 1826
+480,Amphiasma,34129-1,Amphiasma,Amphiasma Bremek.,Rubiaceae,Genus,,,,,8380,Accepted,knms_single,"Amphiasma Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 168 (1952) Bremek. 1952"
+481,Amphidasya,296620-2,Amphidasya,Amphidasya Standl.,Rubiaceae,Genus,,,,,8390,Accepted,knms_single,"Amphidasya Publ. Field Columb. Mus., Bot. Ser. 11: 180 (1936) Standl. 1936"
+482,Amphistemon,77107060-1,Amphistemon,Amphistemon Groeninckx,Rubiaceae,Genus,,,,,462140,Accepted,knms_single,Amphistemon Bot. J. Linn. Soc. 163: 450 (2010) Groeninckx 2010
+483,Antherostele,327847-2,Antherostele,Antherostele Bremek.,Rubiaceae,Genus,,,,,10395,Accepted,knms_single,Antherostele J. Arnold Arbor. 21: 26 (1940) Bremek. 1940
+484,Anthorrhiza,956788-1,Anthorrhiza,Anthorrhiza C.R.Huxley & Jebb,Rubiaceae,Genus,,,,,10435,Accepted,knms_single,Anthorrhiza Bull. Jard. Bot. Natl. Belg. 60: 420 (1990) C.R.Huxley & Jebb 1990
+485,Anthospermopsis,998208-1,Anthospermopsis,Anthospermopsis (K.Schum.) J.H.Kirkbr.,Rubiaceae,Genus,,,,,10448,Accepted,knms_single,Anthospermopsis Brittonia 49: 373 (1997) (K.Schum.) J.H.Kirkbr. 1997
+486,Anthospermum,34146-1,Anthospermum,Anthospermum L.,Rubiaceae,Genus,,,,,10450,Accepted,knms_single,Anthospermum Sp. Pl.: 1058 (1753) L. 1753
+487,Aoranthe,925123-1,Aoranthe,Aoranthe Somers,Rubiaceae,Genus,,,,,12594,Accepted,knms_single,Aoranthe Bull. Jard. Bot. Natl. Belg. 58: 64 (1988) Somers 1988
+488,Aphanocarpus,297000-2,Aphanocarpus,Aphanocarpus Steyerm.,Rubiaceae,Genus,,,,,12687,Accepted,knms_single,Aphanocarpus Mem. New York Bot. Gard. 12(3): 263 (1965) Steyerm. 1965
+489,Appunia,30087424-2,Appunia,Appunia Hook.f.,Rubiaceae,Genus,,,,,13621,Accepted,knms_single,"Appunia G.Bentham & J.D.Hooker, Gen. Pl. 2: 120 (1873) Hook.f. 1873"
+490,Argocoffeopsis,34171-1,Argocoffeopsis,Argocoffeopsis Lebrun,Rubiaceae,Genus,,,,,14745,Accepted,knms_single,"Argocoffeopsis Mém. Inst. Roy. Colon. Belge, Sect. Sci. Nat. (8vo) 11(3): 55 (1941) Lebrun 1941"
+491,Asperula,331373-2,Asperula,Asperula L.,Rubiaceae,Genus,,,,,16674,Accepted,knms_single,Asperula Sp. Pl.: 103 (1753) L. 1753
+492,Astiella,34184-1,Astiella,Astiella Jovet,Rubiaceae,Genus,,,,,17482,Accepted,knms_single,Astiella Notul. Syst. (Paris) 9: 147 (1941) Jovet 1941
+493,Atractocarpus,34185-1,Atractocarpus,Atractocarpus Schltr. & K.Krause,Rubiaceae,Genus,,,,,17716,Accepted,knms_multiple_1,Atractocarpus Beibl. Bot. Jahrb. Syst. 92: 43 (1908) Schltr. & K.Krause 1908
+494,Atractogyne,34186-1,Atractogyne,Atractogyne Pierre,Rubiaceae,Genus,,,,,17751,Accepted,knms_single,Atractogyne Bull. Mens. Soc. Linn. Paris 1: 1261 (1896) Pierre 1896
+495,Augusta,331377-2,Augusta,Augusta Pohl,Rubiaceae,Genus,,,,,17936,Accepted,knms_multiple_1,Augusta Pl. Bras. Icon. Descr. 2: 1 (1828) Pohl 1828
+496,Aulacocalyx,34189-1,Aulacocalyx,Aulacocalyx Hook.f.,Rubiaceae,Genus,,,,,17954,Accepted,knms_single,Aulacocalyx Hooker's Icon. Pl. 12: t. 1126 (1873) Hook.f. 1873
+497,Badusa,327848-2,Badusa,Badusa A.Gray,Rubiaceae,Genus,,,,,19133,Accepted,knms_single,Badusa Proc. Amer. Acad. Arts 4: 308 (1860) A.Gray 1860
+498,Balmea,298112-2,Balmea,Balmea Martínez,Rubiaceae,Genus,,,,,19697,Accepted,knms_single,Balmea Bull. Torrey Bot. Club 69: 438 (1942) Martínez 1942
+499,Batopedina,34205-1,Batopedina,Batopedina Verdc.,Rubiaceae,Genus,,,,,20129,Accepted,knms_single,Batopedina Bull. Jard. Bot. État Bruxelles 23: 29 (1953) Verdc. 1953
+500,Belonophora,34213-1,Belonophora,Belonophora Hook.f.,Rubiaceae,Genus,,,,,20449,Accepted,knms_single,Belonophora Hooker's Icon. Pl. 12: t. 1127 (1873) Hook.f. 1873
+501,Benkara,37458-1,Benkara,Benkara Adans.,Rubiaceae,Genus,,,,,20480,Accepted,knms_single,Benkara Fam. Pl. 2: 85 (1763) Adans. 1763
+502,Benzonia,34215-1,Benzonia,Benzonia Schumach.,Rubiaceae,Genus,,,,,20612,Accepted,knms_single,Benzonia Beskr. Guin. Pl.: 113 (1827) Schumach. 1827
+503,Berghesia,34216-1,Berghesia,Berghesia Nees,Rubiaceae,Genus,,,,,20619,Accepted,knms_single,Berghesia Linnaea 20: 701 (1847) Nees 1847
+504,Bikkia,34228-1,Bikkia,Bikkia Reinw. ex Blume,Rubiaceae,Genus,,,,,22151,Accepted,knms_single,Bikkia Syll. Pl. Nov. 2: 8 (1825) Reinw. ex Blume 1825
+505,Blepharidium,34234-1,Blepharidium,Blepharidium Standl.,Rubiaceae,Genus,,,,,22355,Accepted,knms_single,Blepharidium J. Washington Acad. Sci. 8: 59 (1918) Standl. 1918
+506,Bobea,34237-1,Bobea,Bobea Gaudich.,Rubiaceae,Genus,,,,,22697,Accepted,knms_single,Bobea Voy. Uranie: 473 (1830) Gaudich. 1830
+507,Boholia,34238-1,Boholia,Boholia Merr.,Rubiaceae,Genus,,,,,22811,Accepted,knms_single,Boholia Philipp. J. Sci. 29: 492 (1926) Merr. 1926
+508,Bothriospora,34245-1,Bothriospora,Bothriospora Hook.f.,Rubiaceae,Genus,,,,,23466,Accepted,knms_single,Bothriospora Hooker's Icon. Pl. 11: 55 (1870) Hook.f. 1870
+509,Botryarrhena,295957-2,Botryarrhena,Botryarrhena Ducke,Rubiaceae,Genus,,,,,23475,Accepted,knms_single,Botryarrhena Notizbl. Bot. Gart. Berlin-Dahlem 11: 476 (1932) Ducke 1932
+510,Bouvardia,30000353-2,Bouvardia,Bouvardia Salisb.,Rubiaceae,Genus,,,,,23573,Accepted,knms_single,Bouvardia Parad. Lond. 2: t. 88 (1808) Salisb. 1808
+511,Brachytome,34248-1,Brachytome,Brachytome Hook.f.,Rubiaceae,Genus,,,,,23937,Accepted,knms_single,Brachytome Hooker's Icon. Pl. 11: 70 (1871) Hook.f. 1871
+512,Bradea,296047-2,Bradea,Bradea Standl.,Rubiaceae,Genus,,,,,23951,Accepted,knms_single,Bradea Arq. Mus. Nac. Rio de Janeiro 34: 122 (1932) Standl. 1932
+513,Bremeria,77065878-1,Bremeria,Bremeria Razafim. & Alejandro,Rubiaceae,Genus,,,,,330434,Accepted,knms_single,Bremeria Amer. J. Bot. 92: 555 (2005) Razafim. & Alejandro 2005
+514,Brenania,34250-1,Brenania,Brenania Keay,Rubiaceae,Genus,,,,,24346,Accepted,knms_single,Brenania Bull. Jard. Bot. État Bruxelles 28: 26 (1958) Keay 1958
+515,Bullockia,77101424-1,Bullockia,"Bullockia (Bridson) Razafim., Lantz & B.Bremer",Rubiaceae,Genus,,,,,456753,Accepted,knms_single,"Bullockia Ann. Missouri Bot. Gard. 96: 175 (2009) (Bridson) Razafim., Lantz & B.Bremer 2009"
+516,Bungarimba,77063586-1,Bungarimba,Bungarimba K.M.Wong,Rubiaceae,Genus,,,,,330515,Accepted,knms_single,Bungarimba Sandakania 15: 41 (2004) K.M.Wong 2004
+517,Byrsophyllum,34270-1,Byrsophyllum,Byrsophyllum Hook.f.,Rubiaceae,Genus,,,,,28212,Accepted,knms_single,"Byrsophyllum G.Bentham & J.D.Hooker, Gen. Pl. 2: 83 (1873) Hook.f. 1873"
+518,Callipeltis,34278-1,Callipeltis,Callipeltis Steven,Rubiaceae,Genus,,,,,31057,Accepted,knms_single,Callipeltis Nouv. Mém. Soc. Imp. Naturalistes Moscou 1: 275 (1829) Steven 1829
+519,Calochone,34279-1,Calochone,Calochone Keay,Rubiaceae,Genus,,,,,31769,Accepted,knms_single,Calochone Bull. Jard. Bot. État Bruxelles 28: 28 (1958) Keay 1958
+520,Calycosia,34282-1,Calycosia,Calycosia A.Gray,Rubiaceae,Genus,,,,,32131,Accepted,knms_single,Calycosia Proc. Amer. Acad. Arts 4: 47 (1860) A.Gray 1860
+521,Calycosiphonia,893034-1,Calycosiphonia,Calycosiphonia Pierre ex Robbr.,Rubiaceae,Genus,,,,,32151,Accepted,knms_single,Calycosiphonia Bull. Jard. Bot. Natl. Belg. 51: 370 (1981) Pierre ex Robbr. 1981
+522,Canephora,34288-1,Canephora,Canephora Juss.,Rubiaceae,Genus,,,,,33415,Accepted,knms_single,Canephora Gen. Pl.: 208 (1789) Juss. 1789
+523,Carajasia,77146978-1,Carajasia,"Carajasia R.M.Salas, E.L.Cabral & Dessein",Rubiaceae,Genus,,,,,496403,Accepted,knms_single,"Carajasia Phytotaxa 206: 16 (2015) R.M.Salas, E.L.Cabral & Dessein 2015"
+524,Carpacoce,34299-1,Carpacoce,Carpacoce Sond.,Rubiaceae,Genus,,,,,34247,Accepted,knms_single,"Carpacoce W.H.Harvey & auct. suc. (eds.), Fl. Cap. 3: 32 (1865) Sond. 1865"
+525,Carphalea,34300-1,Carphalea,Carphalea Juss.,Rubiaceae,Genus,,,,,34263,Accepted,knms_single,Carphalea Gen. Pl.: 198 (1789) Juss. 1789
+526,Carterella,30219602-2,Carterella,Carterella Terrell,Rubiaceae,Genus,,,,,34575,Accepted,knms_single,Carterella Brittonia 39: 250 (1987) Terrell 1987
+527,Casasia,34304-1,Casasia,Casasia A.Rich.,Rubiaceae,Genus,,,,,34812,Accepted,knms_single,"Casasia R.de la Sagra, Hist. Fis. Cuba, Bot. 11: 9 (1850) A.Rich. 1850"
+528,Catesbaea,30059171-2,Catesbaea,Catesbaea L.,Rubiaceae,Genus,,,,,35678,Accepted,knms_single,Catesbaea Sp. Pl.: 109 (1753) L. 1753
+529,Ceratopyxis,34318-1,Ceratopyxis,Ceratopyxis Hook.f.,Rubiaceae,Genus,,,,,36971,Accepted,knms_single,Ceratopyxis Hooker's Icon. Pl. 12: 24 (1872) Hook.f. 1872
+530,Ceriscoides,1123761-2,Ceriscoides,Ceriscoides (Hook.f.) Tirveng.,Rubiaceae,Genus,,,,,37232,Accepted,knms_single,"Ceriscoides Bull. Mus. Natl. Hist. Nat., Sér. 3, Bot. 35: 13 (1978) (Hook.f.) Tirveng. 1978"
+531,Chaetostachydium,34324-1,Chaetostachydium,Chaetostachydium Airy Shaw,Rubiaceae,Genus,,,,,37371,Accepted,knms_single,Chaetostachydium Kew Bull. 18: 271 (1965) Airy Shaw 1965
+532,Chalepophyllum,34327-1,Chalepophyllum,Chalepophyllum Hook.f.,Rubiaceae,Genus,,,,,37387,Accepted,knms_single,Chalepophyllum Hooker's Icon. Pl. 12: t. 1148 (1873) Hook.f. 1873
+533,Chamaepentas,34330-1,Chamaepentas,Chamaepentas Bremek.,Rubiaceae,Genus,,,,,37728,Accepted,knms_single,"Chamaepentas Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 46 (1952) Bremek. 1952"
+534,Chapelieria,34335-1,Chapelieria,Chapelieria A.Rich. ex DC.,Rubiaceae,Genus,,,,,38361,Accepted,knms_single,Chapelieria Prodr. 4: 389 (1830) A.Rich. ex DC. 1830
+535,Chione,329733-2,Chione,Chione DC.,Rubiaceae,Genus,,,,,39144,Accepted,knms_multiple_1,Chione Prodr. 4: 461 (1830) DC. 1830
+536,Chomelia,328093-2,Chomelia,Chomelia Jacq.,Rubiaceae,Genus,,,,,39476,Accepted,knms_multiple_1,Chomelia Enum. Syst. Pl.: 12 (1760) Jacq. 1760
+537,Ciliosemina,77065716-1,Ciliosemina,Ciliosemina Antonelli,Rubiaceae,Genus,,,,,331516,Accepted,knms_single,Ciliosemina Taxon 54: 25 (2005) Antonelli 2005
+538,Cinchonopsis,983791-1,Cinchonopsis,Cinchonopsis L.Andersson,Rubiaceae,Genus,,,,,40835,Accepted,knms_single,Cinchonopsis Ann. Missouri Bot. Gard. 82: 424 (1995) L.Andersson 1995
+539,Cladoceras,34370-1,Cladoceras,Cladoceras Bremek.,Rubiaceae,Genus,,,,,41377,Accepted,knms_single,Cladoceras Hooker's Icon. Pl. 35: t. 3411 (1940) Bremek. 1940
+540,Clarkella,34371-1,Clarkella,Clarkella Hook.f.,Rubiaceae,Genus,,,,,41647,Accepted,knms_single,Clarkella Fl. Brit. India 3: 46 (1880) Hook.f. 1880
+541,Coccochondra,893533-1,Coccochondra,Coccochondra Rauschert,Rubiaceae,Genus,,,,,44280,Accepted,knms_single,Coccochondra Taxon 31: 561 (1982) Rauschert 1982
+542,Coddia,893039-1,Coddia,Coddia Verdc.,Rubiaceae,Genus,,,,,44692,Accepted,knms_multiple_1,Coddia Kew Bull. 36: 509 (1981) Verdc. 1981
+543,Coelopyrena,34381-1,Coelopyrena,Coelopyrena Valeton,Rubiaceae,Genus,,,,,45347,Accepted,knms_single,Coelopyrena Icon. Bogor.: t. 279 (1909) Valeton 1909
+544,Coelospermum,327850-2,Coelospermum,Coelospermum Blume,Rubiaceae,Genus,,,,,45349,Accepted,knms_single,Coelospermum Bijdr. Fl. Ned. Ind.: 994 (1826) Blume 1826
+545,Colletoecema,34388-1,Colletoecema,Colletoecema E.M.A.Petit,Rubiaceae,Genus,,,,,46200,Accepted,knms_single,Colletoecema Bull. Jard. Bot. État Bruxelles 33: 376 (1963) E.M.A.Petit 1963
+546,Conostomium,34395-1,Conostomium,Conostomium (Stapf) Cufod.,Rubiaceae,Genus,,,,,46629,Accepted,knms_single,"Conostomium Nuovo Giorn. Bot. Ital., n.s., 55: 85 (1948) (Stapf) Cufod. 1948"
+547,Coprosma,34398-1,Coprosma,Coprosma J.R.Forst. & G.Forst.,Rubiaceae,Genus,,,,,46739,Accepted,knms_single,Coprosma Char. Gen. Pl.: 137 (1776) J.R.Forst. & G.Forst. 1776
+548,Coptophyllum,331515-2,Coptophyllum,Coptophyllum Korth.,Rubiaceae,Genus,,,,,46984,Accepted,knms_multiple_1,Coptophyllum Ned. Kruidk. Arch. 2: 161 (1851) Korth. 1851
+549,Coptosapelta,34401-1,Coptosapelta,Coptosapelta Korth.,Rubiaceae,Genus,,,,,46992,Accepted,knms_single,Coptosapelta Ned. Kruidk. Arch. 2(2): 112 (1851) Korth. 1851
+550,Coptosperma,34402-1,Coptosperma,Coptosperma Hook.f.,Rubiaceae,Genus,,,,,47011,Accepted,knms_single,"Coptosperma G.Bentham & J.D.Hooker, Gen. Pl. 2: 86 (1873) Hook.f. 1873"
+551,Cordylostigma,77107951-1,Cordylostigma,Cordylostigma Groeninckx & Dessein,Rubiaceae,Genus,,,,,462526,Accepted,knms_single,Cordylostigma Taxon 59: 1466 (2010) Groeninckx & Dessein 2010
+552,Coryphothamnus,296910-2,Coryphothamnus,Coryphothamnus Steyerm.,Rubiaceae,Genus,,,,,48263,Accepted,knms_single,Coryphothamnus Mem. New York Bot. Gard. 12: 264 (1965) Steyerm. 1965
+553,Cosmocalyx,296914-2,Cosmocalyx,Cosmocalyx Standl.,Rubiaceae,Genus,,,,,48358,Accepted,knms_single,"Cosmocalyx Publ. Field Columb. Mus., Bot. Ser. 8: 56 (1930) Standl. 1930"
+554,Coussarea,34412-1,Coussarea,Coussarea Aubl.,Rubiaceae,Genus,,,,,48396,Accepted,knms_single,Coussarea Hist. Pl. Guiane 1: 98 (1775) Aubl. 1775
+555,Coutaportla,296973-2,Coutaportla,Coutaportla Urb.,Rubiaceae,Genus,,,,,48558,Accepted,knms_single,Coutaportla Symb. Antill. 9: 146 (1923) Urb. 1923
+556,Cowiea,34418-1,Cowiea,Cowiea Wernham,Rubiaceae,Genus,,,,,48598,Accepted,knms_single,"Cowiea J. Linn. Soc., Bot. 42: 96 (1914) Wernham 1914"
+557,Cremaspora,34423-1,Cremaspora,Cremaspora Benth.,Rubiaceae,Genus,,,,,48750,Accepted,knms_single,"Cremaspora W.J.Hooker, Niger Fl.: 412 (1849) Benth. 1849"
+558,Crobylanthe,34427-1,Crobylanthe,Crobylanthe Bremek.,Rubiaceae,Genus,,,,,49089,Accepted,knms_single,Crobylanthe Recueil Trav. Bot. Néerl. 37: 191 (1940) Bremek. 1940
+559,Crucianella,30040449-2,Crucianella,Crucianella L.,Rubiaceae,Genus,,,,,51594,Accepted,knms_single,Crucianella Sp. Pl.: 109 (1753) L. 1753
+560,Cruciata,34433-1,Cruciata,Cruciata Mill.,Rubiaceae,Genus,,,,,51715,Accepted,knms_multiple_1,Cruciata Gard. Dict. Abr. ed. 4: s.p. (1754) Mill. 1754
+561,Cruckshanksia,331524-2,Cruckshanksia,Cruckshanksia Hook. & Arn.,Rubiaceae,Genus,,,,,51772,Accepted,knms_multiple_1,Cruckshanksia Bot. Misc. 3: 361 (1833) Hook. & Arn. 1833
+562,Crusea,329735-2,Crusea,Crusea Schltdl. & Cham.,Rubiaceae,Genus,,,,,51796,Accepted,knms_multiple_1,Crusea Linnaea 5: 165 (1830) Schltdl. & Cham. 1830
+563,Cubanola,298249-2,Cubanola,Cubanola Aiello,Rubiaceae,Genus,,,,,52214,Accepted,knms_single,Cubanola J. Arnold Arbor. 60: 111 (1979) Aiello 1979
+564,Cuviera,331533-2,Cuviera,Cuviera DC.,Rubiaceae,Genus,,,,,52486,Accepted,knms_multiple_1,Cuviera Ann. Mus. Hist. Nat. 9: 222 (1807) DC. 1807
+565,Cyanoneuron,1001902-1,Cyanoneuron,Cyanoneuron Tange,Rubiaceae,Genus,,,,,52535,Accepted,knms_single,Cyanoneuron Nordic J. Bot. 18: 147 (1998) Tange 1998
+566,Cyclophyllum,34452-1,Cyclophyllum,Cyclophyllum Hook.f.,Rubiaceae,Genus,,,,,52698,Accepted,knms_single,"Cyclophyllum G.Bentham & J.D.Hooker, Gen. Pl. 2: 535 (1876) Hook.f. 1876"
+567,Damnacanthus,34456-1,Damnacanthus,Damnacanthus C.F.Gaertn.,Rubiaceae,Genus,,,,,56201,Accepted,knms_single,Damnacanthus Suppl. Carp.: 18 (1805) C.F.Gaertn. 1805
+568,Debia,77147270-1,Debia,Debia Neupane & N.Wikstr.,Rubiaceae,Genus,,,,,496568,Accepted,knms_single,Debia Taxon 64: 314 (2015) Neupane & N.Wikstr. 2015
+569,Deccania,893278-1,Deccania,Deccania Tirveng.,Rubiaceae,Genus,,,,,56713,Accepted,knms_single,Deccania Nordic J. Bot. 3: 456 (1983) Tirveng. 1983
+570,Declieuxia,34464-1,Declieuxia,Declieuxia Kunth,Rubiaceae,Genus,,,,,56728,Accepted,knms_single,"Declieuxia F.W.H.von Humboldt, A.J.A.Bonpland & C.S.Kunth, Nov. Gen. Sp. 3: 352 (1819) Kunth 1819"
+571,Dendrosipanea,296724-2,Dendrosipanea,Dendrosipanea Ducke,Rubiaceae,Genus,,,,,60223,Accepted,knms_single,Dendrosipanea Arq. Inst. Biol. Veg. 2: 69 (1935) Ducke 1935
+572,Denscantia,20005653-1,Denscantia,Denscantia E.L.Cabral & Bacigalupo,Rubiaceae,Genus,,,,,216490,Accepted,knms_single,Denscantia Darwiniana 39: 353 (2001) E.L.Cabral & Bacigalupo 2001
+573,Dentella,34469-1,Dentella,Dentella J.R.Forst. & G.Forst.,Rubiaceae,Genus,,,,,60244,Accepted,knms_single,Dentella Char. Gen. Pl.: 25 (1776) J.R.Forst. & G.Forst. 1776
+574,Diacrodon,296736-2,Diacrodon,Diacrodon Sprague,Rubiaceae,Genus,,,,,60530,Accepted,knms_single,Diacrodon Bull. Misc. Inform. Kew 1928: 33 (1928) Sprague 1928
+575,Dialypetalanthus,296738-2,Dialypetalanthus,Dialypetalanthus Kuhlm.,Rubiaceae,Genus,,,,,60552,Accepted,knms_single,Dialypetalanthus Arch. Jard. Bot. Rio de Janeiro 4: 363 (1925) Kuhlm. 1925
+576,Dibrachionostylus,34475-1,Dibrachionostylus,Dibrachionostylus Bremek.,Rubiaceae,Genus,,,,,61136,Accepted,knms_single,"Dibrachionostylus Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 163 (1952) Bremek. 1952"
+577,Dichilanthe,34476-1,Dichilanthe,Dichilanthe Thwaites,Rubiaceae,Genus,,,,,61316,Accepted,knms_single,Dichilanthe Hooker's J. Bot. Kew Gard. Misc. 8: 269 (1856) Thwaites 1856
+578,Didymaea,328101-2,Didymaea,Didymaea Hook.f.,Rubiaceae,Genus,,,,,61537,Accepted,knms_single,"Didymaea G.Bentham & J.D.Hooker, Gen. Pl. 2: 150 (1873) Hook.f. 1873"
+579,Didymochlamys,34482-1,Didymochlamys,Didymochlamys Hook.f.,Rubiaceae,Genus,,,,,61553,Accepted,knms_single,Didymochlamys Hooker's Icon. Pl. 12: t. 1122 (1872) Hook.f. 1872
+580,Didymopogon,34484-1,Didymopogon,Didymopogon Bremek.,Rubiaceae,Genus,,,,,61670,Accepted,knms_single,Didymopogon Recueil Trav. Bot. Néerl. 37: 180 (1940) Bremek. 1940
+581,Didymosalpinx,34485-1,Didymosalpinx,Didymosalpinx Keay,Rubiaceae,Genus,,,,,61672,Accepted,knms_single,Didymosalpinx Bull. Jard. Bot. État Bruxelles 28: 61 (1958) Keay 1958
+582,Diodia,60014714-3,Diodia,Diodia L.,Rubiaceae,Genus,,,,,61951,Accepted,knms_single,Diodia Sp. Pl.: 104 (1753) L. 1753
+583,Dioecrescis,893279-1,Dioecrescis,Dioecrescis Tirveng.,Rubiaceae,Genus,,,,,62102,Accepted,knms_single,Dioecrescis Nordic J. Bot. 3: 456 (1983) Tirveng. 1983
+584,Dioicodendron,296441-2,Dioicodendron,Dioicodendron Steyerm.,Rubiaceae,Genus,,,,,62104,Accepted,knms_single,Dioicodendron Bol. Soc. Venez. Ci. Nat. 25: 24 (1963) Steyerm. 1963
+585,Dirichletia,34501-1,Dirichletia,Dirichletia Klotzsch,Rubiaceae,Genus,,,,,62669,Accepted,knms_single,Dirichletia Flora 36: 715 (1853) Klotzsch 1853
+586,Discospermum,327854-2,Discospermum,Discospermum Dalzell,Rubiaceae,Genus,,,,,63069,Accepted,knms_single,Discospermum Hooker's J. Bot. Kew Gard. Misc. 2: 257 (1850) Dalzell 1850
+587,Ditrichanthus,77150862-1,Ditrichanthus,"Ditrichanthus Borhidi, E.Martínez & Ramos",Rubiaceae,Genus,,,,,496607,Accepted,knms_single,"Ditrichanthus Acta Bot. Hung. 57: 263 (2015) Borhidi, E.Martínez & Ramos 2015"
+588,Diyaminauclea,34507-1,Diyaminauclea,Diyaminauclea Ridsdale,Rubiaceae,Genus,,,,,63470,Accepted,knms_single,Diyaminauclea Blumea 24: 345 (1978) Ridsdale 1978
+589,Dolianthus,25053-1,Dolianthus,Dolianthus C.H.Wright,Rubiaceae,Genus,,,,,63544,Accepted,knms_single,Dolianthus Bull. Misc. Inform. Kew 1899: 106 (1899) C.H.Wright 1899
+590,Dolichodelphys,34510-1,Dolichodelphys,Dolichodelphys K.Schum. & K.Krause,Rubiaceae,Genus,,,,,63551,Accepted,knms_single,Dolichodelphys Verh. Bot. Vereins Prov. Brandenburg 50: 102 (1908 publ. 1909) K.Schum. & K.Krause 1909
+591,Dolicholobium,327855-2,Dolicholobium,Dolicholobium A.Gray,Rubiaceae,Genus,,,,,63555,Accepted,knms_single,Dolicholobium Proc. Amer. Acad. Arts 4: 308 (1860) A.Gray 1860
+592,Dolichometra,34512-1,Dolichometra,Dolichometra K.Schum.,Rubiaceae,Genus,,,,,63600,Accepted,knms_single,Dolichometra Bot. Jahrb. Syst. 34: 331 (1904) K.Schum. 1904
+593,Dolichopentas,77086219-1,Dolichopentas,Dolichopentas Kårehed & B.Bremer,Rubiaceae,Genus,,,,,372585,Accepted,knms_single,Dolichopentas Taxon 56: 1075 (2007) Kårehed & B.Bremer 2007
+594,Donnellyanthus,77115776-1,Donnellyanthus,Donnellyanthus Borhidi,Rubiaceae,Genus,,,,,465699,Accepted,knms_single,Donnellyanthus Acta Bot. Hung. 53: 275 (2011) Borhidi 2011
+595,Duidania,297173-2,Duidania,Duidania Standl.,Rubiaceae,Genus,,,,,65166,Accepted,knms_single,"Duidania Publ. Field Columb. Mus., Bot. Ser. 7: 408 (1931) Standl. 1931"
+596,Dunnia,34525-1,Dunnia,Dunnia Tutcher,Rubiaceae,Genus,,,,,65185,Accepted,knms_single,"Dunnia J. Linn. Soc., Bot. 37: 69 (1905) Tutcher 1905"
+597,Duperrea,34526-1,Duperrea,Duperrea Pierre ex Pit.,Rubiaceae,Genus,,,,,65191,Accepted,knms_single,"Duperrea H.Lecomte, Fl. Indo-Chine 3: 334 (1924) Pierre ex Pit. 1924"
+598,Durringtonia,893447-1,Durringtonia,Durringtonia R.J.F.Hend. & Guymer,Rubiaceae,Genus,,,,,65352,Accepted,knms_single,Durringtonia Kew Bull. 40: 99 (1985) R.J.F.Hend. & Guymer 1985
+599,Edrastima,60467433-2,Edrastima,Edrastima Raf.,Rubiaceae,Genus,,,,,498301,Accepted,knms_single,Edrastima Actes Soc. Linn. Bordeaux 6: 296 (1834) Raf. 1834
+600,Eizia,298263-2,Eizia,Eizia Standl.,Rubiaceae,Genus,,,,,66298,Accepted,knms_single,"Eizia Publ. Field Columb. Mus., Bot. Ser. 22: 50 (1940) Standl. 1940"
+601,Eleuthranthes,75132-3,Eleuthranthes,Eleuthranthes F.Muell. ex Benth.,Rubiaceae,Genus,,,,,66522,Accepted,knms_single,Eleuthranthes Fl. Austral. 3: 437 (1867) F.Muell. ex Benth. 1867
+602,Emmeorhiza,34550-1,Emmeorhiza,Emmeorhiza Pohl ex Endl.,Rubiaceae,Genus,,,,,66893,Accepted,knms_single,Emmeorhiza Gen. Pl. 1: 565 (1838) Pohl ex Endl. 1838
+603,Empogona,34552-1,Empogona,Empogona Hook.f.,Rubiaceae,Genus,,,,,66903,Accepted,knms_single,Empogona Hooker's Icon. Pl. 11: t. 1091 (1871) Hook.f. 1871
+604,Eosanthe,295451-2,Eosanthe,Eosanthe Urb.,Rubiaceae,Genus,,,,,67484,Accepted,knms_single,Eosanthe Symb. Antill. 9: 162 (1923) Urb. 1923
+605,Eriosemopsis,34565-1,Eriosemopsis,Eriosemopsis Robyns,Rubiaceae,Genus,,,,,71786,Accepted,knms_single,Eriosemopsis Bull. Jard. Bot. État Bruxelles 11: 38 (1928) Robyns 1928
+606,Erithalis,327126-2,Erithalis,Erithalis P.Browne,Rubiaceae,Genus,,,,,71809,Accepted,knms_multiple_1,Erithalis Civ. Nat. Hist. Jamaica: 165 (1756) P.Browne 1756
+607,Ernodea,327128-2,Ernodea,Ernodea Sw.,Rubiaceae,Genus,,,,,71839,Accepted,knms_single,Ernodea Prodr. Veg. Ind. Occ.: 29 (1788) Sw. 1788
+608,Etericius,34573-1,Etericius,Etericius Desv.,Rubiaceae,Genus,,,,,72336,Accepted,knms_single,Etericius Prodr. Pl. Ind. Occid.: 28 (1825) Desv. ex Ham. 1825
+609,Euclinia,34576-1,Euclinia,Euclinia Salisb.,Rubiaceae,Genus,,,,,74186,Accepted,knms_single,"Euclinia Parad. Lond. 2: t. 93, errata (1808) Salisb. 1808"
+610,Everistia,1007226-1,Everistia,Everistia S.T.Reynolds & R.J.F.Hend.,Rubiaceae,Genus,,,,,83199,Accepted,knms_single,Everistia Austrobaileya 5: 354 (1999) S.T.Reynolds & R.J.F.Hend. 1999
+611,Fadogia,34596-1,Fadogia,Fadogia Schweinf.,Rubiaceae,Genus,,,,,83642,Accepted,knms_single,Fadogia Reliq. Kotschy.: 47 (1868) Schweinf. 1868
+612,Faramea,34600-1,Faramea,Faramea Aubl.,Rubiaceae,Genus,,,,,83970,Accepted,knms_single,Faramea Hist. Pl. Guiane 1: 102 (1775) Aubl. 1775
+613,Ferdinandusa,34602-1,Ferdinandusa,Ferdinandusa Pohl,Rubiaceae,Genus,,,,,84331,Accepted,knms_single,Ferdinandusa Pl. Bras. Icon. Descr. 2: 8 (1829) Pohl 1829
+614,Feretia,34605-1,Feretia,Feretia Delile,Rubiaceae,Genus,,,,,84368,Accepted,knms_single,"Feretia Ann. Sci. Nat., Bot., sér. 2, 20: 92 (1843) Delile 1843"
+615,Fergusonia,34606-1,Fergusonia,Fergusonia Hook.f.,Rubiaceae,Genus,,,,,84379,Accepted,knms_single,Fergusonia Hooker's Icon. Pl. 12: t. 1124 (1872) Hook.f. 1872
+616,Fernelia,34607-1,Fernelia,Fernelia Comm. ex Lam.,Rubiaceae,Genus,,,,,84419,Accepted,knms_single,Fernelia Encycl. 2: 452 (1788) Comm. ex Lam. 1788
+617,Flagenium,34611-1,Flagenium,Flagenium Baill.,Rubiaceae,Genus,,,,,84480,Accepted,knms_single,Flagenium Hist. Pl. 7: 443 (1880) Baill. 1880
+618,Flexanthera,295370-2,Flexanthera,Flexanthera Rusby,Rubiaceae,Genus,,,,,84489,Accepted,knms_single,Flexanthera Mem. New York Bot. Gard. 7: 367 (1927) Rusby 1927
+619,Foonchewia,77161514-1,Foonchewia,Foonchewia R.J.Wang,Rubiaceae,Genus,,,,,525587,Accepted,knms_single,Foonchewia J. Syst. Evol. 50: 469 (2012) R.J.Wang 2012
+620,Fosbergia,996473-1,Fosbergia,Fosbergia Tirveng. & Sastre,Rubiaceae,Genus,,,,,84779,Accepted,knms_single,Fosbergia Biogeographica 73: 88 (1997) Tirveng. & Sastre 1997
+621,Gaertnera,331617-2,Gaertnera,Gaertnera Lam.,Rubiaceae,Genus,,,,,84930,Accepted,knms_multiple_1,Gaertnera Tabl. Encycl.: t. 167 (1792) Lam. 1792
+622,× Galiasperula,,,,,,,,,,,,,
+623,Gallienia,34628-1,Gallienia,Gallienia Dubard & Dop,Rubiaceae,Genus,,,,,87954,Accepted,knms_single,"Gallienia J. Bot. (Morot), sér. 2, 3: 18 (1925) Dubard & Dop 1925"
+624,Galopina,34632-1,Galopina,Galopina Thunb.,Rubiaceae,Genus,,,,,87977,Accepted,knms_single,Galopina Nov. Gen. Pl. 1: 3 (1781) Thunb. 1781
+625,Ganguelia,988633-1,Ganguelia,Ganguelia Robbr.,Rubiaceae,Genus,,,,,88040,Accepted,knms_single,Ganguelia S. African J. Bot. 62: 21 (1996) Robbr. 1996
+626,Gardeniopsis,34639-1,Gardeniopsis,Gardeniopsis Miq.,Rubiaceae,Genus,,,,,88542,Accepted,knms_single,Gardeniopsis Ann. Mus. Bot. Lugduno-Batavi 4: 250 (1869) Miq. 1869
+627,Gillespiea,34647-1,Gillespiea,Gillespiea A.C.Sm.,Rubiaceae,Genus,,,,,89881,Accepted,knms_single,Gillespiea Bull. Bernice P. Bishop Mus. 141: 158 (1936) A.C.Sm. 1936
+628,Gleasonia,297333-2,Gleasonia,Gleasonia Standl.,Rubiaceae,Genus,,,,,90026,Accepted,knms_single,"Gleasonia Publ. Field Columb. Mus., Bot. Ser. 7: 372 (1931) Standl. 1931"
+629,Glionnetia,893372-1,Glionnetia,Glionnetia Tirveng.,Rubiaceae,Genus,,,,,90261,Accepted,knms_single,"Glionnetia Bull. Mus. Natl. Hist. Nat., B, Adansonia 6: 198 (1984) Tirveng. 1984"
+630,Globulostylis,34649-1,Globulostylis,Globulostylis Wernham,Rubiaceae,Genus,,,,,90263,Accepted,knms_single,"Globulostylis A.B.Rendle & al., Cat. Pl. Oban: 49 (1913) Wernham 1913"
+631,Glossostipula,925008-1,Glossostipula,Glossostipula Lorence,Rubiaceae,Genus,,,,,91151,Accepted,knms_single,Glossostipula Candollea 41: 454 (1986) Lorence 1986
+632,Gomphocalyx,294735-2,Gomphocalyx,Gomphocalyx Baker,Rubiaceae,Genus,,,,,91415,Accepted,knms_single,"Gomphocalyx J. Linn. Soc., Bot. 22: 485 (1887) Baker 1887"
+633,Greenea,34662-1,Greenea,Greenea Wight & Arn.,Rubiaceae,Genus,,,,,92631,Accepted,knms_single,Greenea Prodr. Fl. Ind. Orient.: 403 (1834) Wight & Arn. 1834
+634,Greeniopsis,327857-2,Greeniopsis,Greeniopsis Merr.,Rubiaceae,Genus,,,,,92650,Accepted,knms_single,"Greeniopsis Philipp. J. Sci., C 4: 324 (1909) Merr. 1909"
+635,Guettardella,34672-1,Guettardella,Guettardella Champ. ex Benth.,Rubiaceae,Genus,,,,,93375,Accepted,knms_single,Guettardella Hooker's J. Bot. Kew Gard. Misc. 4: 197 (1852) Champ. ex Benth. 1852
+636,Guihaiothamnus,1007331-1,Guihaiothamnus,Guihaiothamnus H.S.Lo,Rubiaceae,Genus,,,,,93400,Accepted,knms_single,"Guihaiothamnus Bull. Bot. Res., Harbin 18: 279 (1998) H.S.Lo 1998"
+637,Gynochthodes,34676-1,Gynochthodes,Gynochthodes Blume,Rubiaceae,Genus,,,,,93908,Accepted,knms_single,Gynochthodes Bijdr. Fl. Ned. Ind.: 993 (1826) Blume 1826
+638,Habroneuron,298236-2,Habroneuron,Habroneuron Standl.,Rubiaceae,Genus,,,,,95895,Accepted,knms_single,Habroneuron J. Washington Acad. Sci. 17: 338 (1927) Standl. 1927
+639,Hedstromia,34692-1,Hedstromia,Hedstromia A.C.Sm.,Rubiaceae,Genus,,,,,96856,Accepted,knms_single,Hedstromia Bull. Bernice P. Bishop Mus. 141: 146 (1936) A.C.Sm. 1936
+640,Hedyotis,30001807-2,Hedyotis,Hedyotis L.,Rubiaceae,Genus,,,,,96879,Accepted,knms_single,Hedyotis Sp. Pl.: 101 (1753) L. 1753
+641,Hedythyrsus,34695-1,Hedythyrsus,Hedythyrsus Bremek.,Rubiaceae,Genus,,,,,97876,Accepted,knms_single,"Hedythyrsus Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 149 (1952) Bremek. 1952"
+642,Heinsenia,34696-1,Heinsenia,Heinsenia K.Schum.,Rubiaceae,Genus,,,,,97879,Accepted,knms_single,Heinsenia Bot. Jahrb. Syst. 23: 453 (1897) K.Schum. 1897
+643,Heinsia,34697-1,Heinsia,Heinsia DC.,Rubiaceae,Genus,,,,,97886,Accepted,knms_single,Heinsia Prodr. 4: 390 (1830) DC. 1830
+644,Hekistocarpa,34698-1,Hekistocarpa,Hekistocarpa Hook.f.,Rubiaceae,Genus,,,,,97906,Accepted,knms_single,Hekistocarpa Hooker's Icon. Pl. 12: t. 1151 (1873) Hook.f. 1873
+645,Henriquezia,34704-1,Henriquezia,Henriquezia Spruce ex Benth.,Rubiaceae,Genus,,,,,98327,Accepted,knms_single,Henriquezia Hooker's J. Bot. Kew Gard. Misc. 6: 338 (1854) Spruce ex Benth. 1854
+646,Heterophyllaea,34705-1,Heterophyllaea,Heterophyllaea Hook.f.,Rubiaceae,Genus,,,,,98807,Accepted,knms_single,Heterophyllaea Hooker's Icon. Pl. 12: 31 (1873) Hook.f. 1873
+647,Hindsia,34717-1,Hindsia,Hindsia Benth. ex Lindl.,Rubiaceae,Genus,,,,,99316,Accepted,knms_single,Hindsia Edwards's Bot. Reg. 30(Misc.): 40 (1844) Benth. ex Lindl. 1844
+648,Hintonia,297578-2,Hintonia,Hintonia Bullock,Rubiaceae,Genus,,,,,99335,Accepted,knms_single,Hintonia Hooker's Icon. Pl. 33: t. 3295 (1935) Bullock 1935
+649,Hippotis,34719-1,Hippotis,Hippotis Ruiz & Pav.,Rubiaceae,Genus,,,,,99374,Accepted,knms_single,Hippotis Fl. Peruv. Prodr.: 33 (1794) Ruiz & Pav. 1794
+650,Hodgkinsonia,34721-1,Hodgkinsonia,Hodgkinsonia F.Muell.,Rubiaceae,Genus,,,,,99399,Accepted,knms_single,Hodgkinsonia Fragm. 2: 132 (1861) F.Muell. 1861
+651,Holstianthus,924980-1,Holstianthus,Holstianthus Steyerm.,Rubiaceae,Genus,,,,,99788,Accepted,knms_single,Holstianthus Ann. Missouri Bot. Gard. 73: 495 (1986) Steyerm. 1986
+652,Homollea,34730-1,Homollea,Homollea Arènes,Rubiaceae,Genus,,,,,100120,Accepted,knms_single,Homollea Notul. Syst. (Paris) 16: 13 (1960) Arènes 1960
+653,Houstonia,30006515-2,Houstonia,Houstonia Gronov.,Rubiaceae,Genus,,,,,100305,Accepted,knms_single,Houstonia Sp. Pl.: 105 (1753) L. 1753
+654,Hutchinsonia,34736-1,Hutchinsonia,Hutchinsonia Robyns,Rubiaceae,Genus,,,,,100865,Accepted,knms_multiple_1,Hutchinsonia Bull. Jard. Bot. État Bruxelles 11: 24 (1928) Robyns 1928
+655,Hydrophylax,34738-1,Hydrophylax,Hydrophylax L.f.,Rubiaceae,Genus,,,,,101075,Accepted,knms_single,Hydrophylax Suppl. Pl.: 126 (1782) L.f. 1782
+656,Hymenocoleus,34745-1,Hymenocoleus,Hymenocoleus Robbr.,Rubiaceae,Genus,,,,,101177,Accepted,knms_single,Hymenocoleus Bull. Jard. Bot. Natl. Belg. 45: 274 (1975) Robbr. 1975
+657,Hyperacanthus,893455-1,Hyperacanthus,Hyperacanthus E.Mey. ex Bridson,Rubiaceae,Genus,,,,,101345,Accepted,knms_single,Hyperacanthus Kew Bull. 40: 275 (1985) E.Mey. ex Bridson 1985
+658,Hypobathrum,34753-1,Hypobathrum,Hypobathrum Blume,Rubiaceae,Genus,,,,,101451,Accepted,knms_single,Hypobathrum Bijdr. Fl. Ned. Ind.: 1007 (1826) Blume 1826
+659,Hyptianthera,34755-1,Hyptianthera,Hyptianthera Wight & Arn.,Rubiaceae,Genus,,,,,101538,Accepted,knms_single,Hyptianthera Prodr. Fl. Ind. Orient.: 399 (1834) Wight & Arn. 1834
+660,Involucrella,77147288-1,Involucrella,Involucrella (Benth. & Hook.f.) Neupane & N.Wikstr.,Rubiaceae,Genus,,,,,496977,Accepted,knms_single,Involucrella Taxon 64: 316 (2015) (Benth. & Hook.f.) Neupane & N.Wikstr. 2015
+661,Isidorea,34764-1,Isidorea,Isidorea A.Rich. ex DC.,Rubiaceae,Genus,,,,,102824,Accepted,knms_single,Isidorea Prodr. 4: 405 (Sept. 1830) A.Rich. ex DC. 
+662,Jackiopsis,34768-1,Jackiopsis,Jackiopsis Ridsdale,Rubiaceae,Genus,,,,,104146,Accepted,knms_single,Jackiopsis Blumea 25: 295 (1979) Ridsdale 1979
+663,Janotia,34770-1,Janotia,Janotia J.-F.Leroy,Rubiaceae,Genus,,,,,104418,Accepted,knms_single,"Janotia Adansonia, n.s., 14: 682 (1974 publ. 1975) J.-F.Leroy 1975"
+664,Jovetia,34775-1,Jovetia,Jovetia Guédès,Rubiaceae,Genus,,,,,105163,Accepted,knms_single,Jovetia Phyton (Horn) 17: 134 (1975) Guédès 1975
+665,Kadua,34778-1,Kadua,Kadua Cham. & Schltdl.,Rubiaceae,Genus,,,,,105440,Accepted,knms_single,Kadua Linnaea 4: 157 (1829) Cham. & Schltdl. 1829
+666,Kailarsenia,893299-1,Kailarsenia,Kailarsenia Tirveng.,Rubiaceae,Genus,,,,,105485,Accepted,knms_single,Kailarsenia Nordic J. Bot. 3: 462 (1983) Tirveng. 1983
+667,Kajewskiella,34779-1,Kajewskiella,Kajewskiella Merr. & L.M.Perry,Rubiaceae,Genus,,,,,105499,Accepted,knms_single,Kajewskiella J. Arnold Arbor. 28: 331 (1947) Merr. & L.M.Perry 1947
+668,Kanapia,77165499-1,Kanapia,Kanapia Arriola & Alejandro,Rubiaceae,Genus,,,,,525963,Accepted,knms_single,Kanapia Pl. Syst. Evol. 302: 917 (2016) Arriola & Alejandro 2016
+669,Kelloggia,34784-1,Kelloggia,Kelloggia Torr. ex Benth. & Hook.f.,Rubiaceae,Genus,,,,,105808,Accepted,knms_single,Kelloggia Gen. Pl. 2: 137 (1873) Torr. ex Benth. & Hook.f. 1873
+670,Kerianthera,893461-1,Kerianthera,Kerianthera J.H.Kirkbr.,Rubiaceae,Genus,,,,,105910,Accepted,knms_single,Kerianthera Brittonia 37: 109 (1985) J.H.Kirkbr. 1985
+671,Klossia,34788-1,Klossia,Klossia Ridl.,Rubiaceae,Genus,,,,,106072,Accepted,knms_single,Klossia J. Fed. Malay States Mus. 4: 27 (1909) Ridl. 1909
+672,Knoxia,327859-2,Knoxia,Knoxia L.,Rubiaceae,Genus,,,,,106079,Accepted,knms_single,Knoxia Sp. Pl.: 104 (1753) L. 1753
+673,Kochummenia,893380-1,Kochummenia,Kochummenia K.M.Wong,Rubiaceae,Genus,,,,,106140,Accepted,knms_single,Kochummenia Malayan Nat. J. 38: 31 (1984) K.M.Wong 1984
+674,Kraussia,34794-1,Kraussia,Kraussia Harv.,Rubiaceae,Genus,,,,,106431,Accepted,knms_multiple_1,Kraussia London J. Bot. 1: 21 (1842) Harv. 1842
+675,Kutchubaea,30043141-2,Kutchubaea,Kutchubaea Fisch. ex DC.,Rubiaceae,Genus,,,,,106611,Accepted,knms_single,Kutchubaea Prodr. 4: 373 (1830) Fisch. ex DC. 1830
+676,Lamprothamnus,34805-1,Lamprothamnus,Lamprothamnus Hiern,Rubiaceae,Genus,,,,,107638,Accepted,knms_single,"Lamprothamnus D.Oliver & auct. suc. (eds.), Fl. Trop. Afr. 3: 130 (1877) Hiern 1877"
+677,Landiopsis,1002198-1,Landiopsis,Landiopsis Capuron ex Bosser,Rubiaceae,Genus,,,,,107646,Accepted,knms_single,"Landiopsis Adansonia, sér. 3, 20: 132 (1998) Capuron ex Bosser 1998"
+678,Larsenaikia,972408-1,Larsenaikia,Larsenaikia Tirveng.,Rubiaceae,Genus,,,,,108383,Accepted,knms_single,Larsenaikia Nordic J. Bot. 13: 176 (1993) Tirveng. 1993
+679,Lasianthus,331701-2,Lasianthus,Lasianthus Jack,Rubiaceae,Genus,,,,,108426,Accepted,knms_multiple_1,Lasianthus Trans. Linn. Soc. London 14: 125 (1823) Jack 1823
+680,Lathraeocarpa,34811-1,Lathraeocarpa,Lathraeocarpa Bremek.,Rubiaceae,Genus,,,,,108917,Accepted,knms_single,Lathraeocarpa Bull. Jard. Bot. État Bruxelles 27: 160 (1957) Bremek. 1957
+681,Lecananthus,34818-1,Lecananthus,Lecananthus Jack,Rubiaceae,Genus,,,,,109141,Accepted,knms_single,Lecananthus Malayan Misc. 2(7): 83 (1822) Jack 1822
+682,Lecariocalyx,34820-1,Lecariocalyx,Lecariocalyx Bremek.,Rubiaceae,Genus,,,,,109185,Accepted,knms_single,Lecariocalyx Bull. Misc. Inform. Kew 1940: 192 (1940) Bremek. 1940
+683,Lelya,77126884-1,Lelya,Lelya Bremek.,Rubiaceae,Genus,,,,,109249,Accepted,knms_single,"Lelya Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 181 (1952) Bremek. 1952"
+684,Lemyrea,1156627-2,Lemyrea,Lemyrea (A.Chev.) A.Chev. & Beille,Rubiaceae,Genus,,,,,109363,Accepted,knms_single,Lemyrea Rev. Bot. Appl. Agric. Trop. 19: 250 (1939) (A.Chev.) A.Chev. & Beille 1939
+685,Lepidostoma,34825-1,Lepidostoma,Lepidostoma Bremek.,Rubiaceae,Genus,,,,,110862,Accepted,knms_single,Lepidostoma Recueil Trav. Bot. Néerl. 37: 190 (1940) Bremek. 1940
+686,Leptactina,34827-1,Leptactina,Leptactina Hook.f.,Rubiaceae,Genus,,,,,110881,Accepted,knms_single,Leptactina Hooker's Icon. Pl. 11: t. 1092 (1871) Hook.f. 1871
+687,Leptodermis,34830-1,Leptodermis,Leptodermis Wall.,Rubiaceae,Genus,,,,,110941,Accepted,knms_single,"Leptodermis W.Roxburgh, Fl. Ind. 2: 191 (1824) Wall. 1824"
+688,Leptomischus,34831-1,Leptomischus,Leptomischus Drake,Rubiaceae,Genus,,,,,111017,Accepted,knms_single,Leptomischus Bull. Mus. Hist. Nat. (Paris) 1: 177 (1895) Drake 1895
+689,Leptopetalum,34832-1,Leptopetalum,Leptopetalum Hook. & Arn.,Rubiaceae,Genus,,,,,111030,Accepted,knms_single,Leptopetalum Bot. Beechey Voy.: 295 (1838) Hook. & Arn. 1838
+690,Leptoscela,34834-1,Leptoscela,Leptoscela Hook.f.,Rubiaceae,Genus,,,,,111242,Accepted,knms_single,"Leptoscela G.Bentham & J.D.Hooker, Gen. Pl. 2: 59 (1873) Hook.f. 1873"
+691,Leptostigma,34836-1,Leptostigma,Leptostigma Arn.,Rubiaceae,Genus,,,,,111543,Accepted,knms_single,Leptostigma J. Bot. (Hooker) 3: 270 (1841) Arn. 1841
+692,Leucocodon,34841-1,Leucocodon,Leucocodon Gardner,Rubiaceae,Genus,,,,,111949,Accepted,knms_single,Leucocodon Calcutta J. Nat. Hist. 7: 4 (1847) Gardner 1847
+693,Leucolophus,34842-1,Leucolophus,Leucolophus Bremek.,Rubiaceae,Genus,,,,,112000,Accepted,knms_single,Leucolophus Recueil Trav. Bot. Néerl. 37: 187 (1940) Bremek. 1940
+694,Limnosipanea,34844-1,Limnosipanea,Limnosipanea Hook.f.,Rubiaceae,Genus,,,,,112361,Accepted,knms_single,Limnosipanea Hooker's Icon. Pl. 11: t. 1050 (1868) Hook.f. 1868
+695,Luculia,34855-1,Luculia,Luculia Sweet,Rubiaceae,Genus,,,,,115280,Accepted,knms_single,Luculia Brit. Fl. Gard. 2: t. 145 (1826) Sweet 1826
+696,Lucya,331734-2,Lucya,Lucya DC.,Rubiaceae,Genus,,,,,115480,Accepted,knms_single,Lucya Prodr. 4: 434 (1830) DC. 1830
+697,Macbrideina,295623-2,Macbrideina,Macbrideina Standl.,Rubiaceae,Genus,,,,,116787,Accepted,knms_single,Macbrideina Trop. Woods 20: 24 (1929) Standl. 1929
+698,Machaonia,34864-1,Machaonia,Machaonia Bonpl.,Rubiaceae,Genus,,,,,116809,Accepted,knms_single,"Machaonia F.W.H.A.von Humboldt & A.J.A.Bonpland, Pl. Aequinoct. 1: 101 (1808) Bonpl. 1808"
+699,Macrocnemum,34867-1,Macrocnemum,Macrocnemum P.Browne,Rubiaceae,Genus,,,,,117008,Accepted,knms_single,Macrocnemum Civ. Nat. Hist. Jamaica: 165 (1756) P.Browne 1756
+700,Macrosphyra,34870-1,Macrosphyra,Macrosphyra Hook.f.,Rubiaceae,Genus,,,,,117150,Accepted,knms_single,"Macrosphyra G.Bentham & J.D.Hooker, Gen. Pl. 2: 86 (1873) Hook.f. 1873"
+701,Maguireocharis,296784-2,Maguireocharis,Maguireocharis Steyerm.,Rubiaceae,Genus,,,,,117915,Accepted,knms_single,Maguireocharis Mem. New York Bot. Gard. 23: 230 (1972) Steyerm. 1972
+702,Maguireothamnus,296794-2,Maguireothamnus,Maguireothamnus Steyerm.,Rubiaceae,Genus,,,,,117917,Accepted,knms_single,Maguireothamnus Mem. New York Bot. Gard. 10(5): 220 (1964) Steyerm. 1964
+703,Malanea,34873-1,Malanea,Malanea Aubl.,Rubiaceae,Genus,,,,,118018,Accepted,knms_single,Malanea Hist. Pl. Guiane 1: 106 (1775) Aubl. 1775
+704,Manostachya,34878-1,Manostachya,Manostachya Bremek.,Rubiaceae,Genus,,,,,120295,Accepted,knms_single,"Manostachya Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 145 (1952) Bremek. 1952"
+705,Mantalania,34879-1,Mantalania,Mantalania Capuron ex J.-F.Leroy,Rubiaceae,Genus,,,,,120302,Accepted,knms_single,"Mantalania Compt. Rend. Hebd. Séances Acad. Sci., Sér. D 277: 1659 (1973) Capuron ex J.-F.Leroy 1973"
+706,Martensianthus,77111063-1,Martensianthus,Martensianthus Borhidi & Lozada-Pérez,Rubiaceae,Genus,,,,,467533,Accepted,knms_single,Martensianthus Acta Bot. Hung. 53: 25 (2011) Borhidi & Lozada-Pérez 2011
+707,Maschalodesme,34891-1,Maschalodesme,Maschalodesme K.Schum. & Lauterb.,Rubiaceae,Genus,,,,,121090,Accepted,knms_single,Maschalodesme Fl. Schutzgeb. Südsee: 561 (1900) K.Schum. & Lauterb. 1900
+708,Massularia,34892-1,Massularia,Massularia (K.Schum.) Hoyle,Rubiaceae,Genus,,,,,122016,Accepted,knms_single,"Massularia J.Burtt-Davy & A.C.Hoyle, Check-Lists For. Trees & Shrubs Brit. Emp. 3: 110 (1937) (K.Schum.) Hoyle 1937"
+709,Mastixiodendron,12091-1,Mastixiodendron,Mastixiodendron Melch.,Rubiaceae,Genus,,,,,122143,Accepted,knms_single,Mastixiodendron Bot. Jahrb. Syst. 60: 167 (1925) Melch. 1925
+710,Mazaea,34899-1,Mazaea,Mazaea Krug & Urb.,Rubiaceae,Genus,,,,,123173,Accepted,knms_single,Mazaea Ber. Deutsch. Bot. Ges. 15: 265 (1897) Krug & Urb. 1897
+711,Melanopsidium,34905-1,Melanopsidium,Melanopsidium Colla,Rubiaceae,Genus,,,,,123999,Accepted,knms_single,Melanopsidium Hortus Ripul.: 88 (1824) Colla 1824
+712,Melanoxerus,77142432-1,Melanoxerus,Melanoxerus Kainul. & B.Bremer,Rubiaceae,Genus,,,,,491440,Accepted,knms_single,Melanoxerus Taxon 63: 828 (2014) Kainul. & B.Bremer 2014
+713,Mericarpaea,34910-1,Mericarpaea,Mericarpaea Boiss.,Rubiaceae,Genus,,,,,125807,Accepted,knms_single,Mericarpaea Diagn. Pl. Orient. 3: 51 (1843) Boiss. 1843
+714,Merumea,297513-2,Merumea,Merumea Steyerm.,Rubiaceae,Genus,,,,,125827,Accepted,knms_single,Merumea Mem. New York Bot. Gard. 23: 232 (1972) Steyerm. 1972
+715,Mexotis,77103406-1,Mexotis,Mexotis Terrell & H.Rob.,Rubiaceae,Genus,,,,,459929,Accepted,knms_single,Mexotis J. Bot. Res. Inst. Texas 3: 60 (2009) Terrell & H.Rob. 2009
+716,Micrasepalum,297550-2,Micrasepalum,Micrasepalum Urb.,Rubiaceae,Genus,,,,,126891,Accepted,knms_single,Micrasepalum Symb. Antill. 7: 548 (1913) Urb. 1913
+717,Microphysa,34921-1,Microphysa,Microphysa Schrenk,Rubiaceae,Genus,,,,,127593,Accepted,knms_multiple_1,Microphysa Bull. Cl. Phys.-Math. Acad. Imp. Sci. Saint-Pétersbourg 2: 115 (1844) Schrenk 1844
+718,Mitchella,34924-1,Mitchella,Mitchella L.,Rubiaceae,Genus,,,,,128663,Accepted,knms_single,Mitchella Sp. Pl.: 111 (1753) L. 1753
+719,Mitracarpus,30004750-2,Mitracarpus,Mitracarpus Zucc.,Rubiaceae,Genus,,,,,128704,Accepted,knms_single,"Mitracarpus J.A.Schultes & J.H.Schultes, Mant. 3: 210 (1827) Zucc. 1827"
+720,Mitrasacmopsis,25094-1,Mitrasacmopsis,Mitrasacmopsis Jovet,Rubiaceae,Genus,,,,,128843,Accepted,knms_single,"Mitrasacmopsis Arch. Mus. Natl. Hist. Nat., sér. 6, 12: 589 (1935) Jovet 1935"
+721,Mitriostigma,34932-1,Mitriostigma,Mitriostigma Hochst.,Rubiaceae,Genus,,,,,128850,Accepted,knms_single,Mitriostigma Flora 25: 235 (1842) Hochst. 1842
+722,Molopanthera,34934-1,Molopanthera,Molopanthera Turcz.,Rubiaceae,Genus,,,,,128933,Accepted,knms_single,Molopanthera Bull. Soc. Imp. Naturalistes Moscou 21(1): 580 (1848) Turcz. 1848
+723,Monosalpinx,34936-1,Monosalpinx,Monosalpinx N.Hallé,Rubiaceae,Genus,,,,,129521,Accepted,knms_single,"Monosalpinx Adansonia, n.s., 8: 369 (1968) N.Hallé 1968"
+724,Morelia,34939-1,Morelia,Morelia A.Rich. ex DC.,Rubiaceae,Genus,,,,,129726,Accepted,knms_single,Morelia Prodr. 4: 617 (1830) A.Rich. ex DC. 1830
+725,Morinda,34941-1,Morinda,Morinda L.,Rubiaceae,Genus,,,,,129750,Accepted,knms_single,Morinda Sp. Pl.: 176 (1753) L. 1753
+726,Morindopsis,34942-1,Morindopsis,Morindopsis Hook.f.,Rubiaceae,Genus,,,,,129985,Accepted,knms_single,"Morindopsis G.Bentham & J.D.Hooker, Gen. Pl. 2: 93 (1873) Hook.f. 1873"
+727,Mouretia,34943-1,Mouretia,Mouretia Pit.,Rubiaceae,Genus,,,,,130231,Accepted,knms_single,"Mouretia H.Lecomte, Fl. Indo-Chine 3: 71 (1922) Pit. 1922"
+728,Multidentia,34944-1,Multidentia,Multidentia Gilli,Rubiaceae,Genus,,,,,130259,Accepted,knms_single,Multidentia Ann. Naturhist. Mus. Wien 77: 21 (1973) Gilli 1973
+729,Mussaendopsis,34947-1,Mussaendopsis,Mussaendopsis Baill.,Rubiaceae,Genus,,,,,130644,Accepted,knms_single,Mussaendopsis Adansonia 12: 282 (1879) Baill. 1879
+730,Myrmecodia,34952-1,Myrmecodia,Myrmecodia Jack,Rubiaceae,Genus,,,,,131956,Accepted,knms_single,Myrmecodia Trans. Linn. Soc. London 14: 122 (1823) Jack 1823
+731,Myrmephytum,327869-2,Myrmephytum,Myrmephytum Becc.,Rubiaceae,Genus,,,,,132057,Accepted,knms_single,Myrmephytum Malesia 2: 92 (1884) Becc. 1884
+732,Nargedia,34963-1,Nargedia,Nargedia Bedd.,Rubiaceae,Genus,,,,,133096,Accepted,knms_single,Nargedia Fl. Sylv. S. India: cxxxiv-1 (1874) Bedd. 1874
+733,Neblinathamnus,295039-2,Neblinathamnus,Neblinathamnus Steyerm.,Rubiaceae,Genus,,,,,133422,Accepted,knms_single,Neblinathamnus Mem. New York Bot. Gard. 10(5): 229 (1964) Steyerm. 1964
+734,Nematostylis,34972-1,Nematostylis,Nematostylis Hook.f.,Rubiaceae,Genus,,,,,133517,Accepted,knms_single,"Nematostylis G.Bentham & J.D.Hooker, Gen. Pl. 2: 110 (1873) Hook.f. 1873"
+735,Nenax,34974-1,Nenax,Nenax Gaertn.,Rubiaceae,Genus,,,,,133524,Accepted,knms_single,Nenax Fruct. Sem. Pl. 1: 165 (1788) Gaertn. 1788
+736,Neobertiera,295313-2,Neobertiera,Neobertiera Wernham,Rubiaceae,Genus,,,,,133620,Accepted,knms_single,Neobertiera J. Bot. 55: 169 (1917) Wernham 1917
+737,Neoblakea,295309-2,Neoblakea,Neoblakea Standl.,Rubiaceae,Genus,,,,,133622,Accepted,knms_single,"Neoblakea Publ. Field Columb. Mus., Bot. Ser. 8: 54 (1930) Standl. 1930"
+738,Neohymenopogon,893518-1,Neohymenopogon,Neohymenopogon Bennet,Rubiaceae,Genus,,,,,133780,Accepted,knms_single,Neohymenopogon Indian Forester 107: 436 (1981) Bennet 1981
+739,Neomussaenda,980452-1,Neomussaenda,Neomussaenda Tange,Rubiaceae,Genus,,,,,133899,Accepted,knms_single,Neomussaenda Nordic J. Bot. 14: 495 (1994) Tange 1994
+740,Nernstia,295302-2,Nernstia,Nernstia Urb.,Rubiaceae,Genus,,,,,135215,Accepted,knms_single,Nernstia Symb. Antill. 9: 145 (1923) Urb. 1923
+741,Nertera,331802-2,Nertera,Nertera Banks ex Gaertn.,Rubiaceae,Genus,,,,,135217,Accepted,knms_single,Nertera Fruct. Sem. Pl. 1: 124 (1788) Banks ex Gaertn. 1788
+742,Nesohedyotis,34994-1,Nesohedyotis,Nesohedyotis (Hook.f.) Bremek.,Rubiaceae,Genus,,,,,135378,Accepted,knms_single,"Nesohedyotis Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 152 (1952) (Hook.f.) Bremek. 1952"
+743,Neurocalyx,34996-1,Neurocalyx,Neurocalyx Hook.,Rubiaceae,Genus,,,,,135394,Accepted,knms_single,Neurocalyx Hooker's Icon. Pl. 4: t. 174 (1837) Hook. 1837
+744,Nichallea,34998-1,Nichallea,Nichallea Bridson,Rubiaceae,Genus,,,,,135467,Accepted,knms_single,Nichallea Kew Bull. 33: 288 (1978) Bridson 1978
+745,Nodocarpaea,35000-1,Nodocarpaea,Nodocarpaea A.Gray,Rubiaceae,Genus,,,,,135570,Accepted,knms_single,Nodocarpaea Proc. Amer. Acad. Arts 19: 79 (1883) A.Gray 1883
+746,Normandia,35003-1,Normandia,Normandia Hook.f.,Rubiaceae,Genus,,,,,135694,Accepted,knms_single,Normandia Hooker's Icon. Pl. 12: t. 1121 (1872) Hook.f. 1872
+747,Nostolachma,35004-1,Nostolachma,Nostolachma T.Durand,Rubiaceae,Genus,,,,,135722,Accepted,knms_single,Nostolachma Index Gen. Phan.: 182 (1888) T.Durand 1888
+748,Notopleura,35007-1,Notopleura,Notopleura (Hook.f.) Bremek.,Rubiaceae,Genus,,,,,135879,Accepted,knms_single,Notopleura Recueil Trav. Bot. Néerl. 31: 289 (1934) (Hook.f.) Bremek. 1934
+749,Octotropis,35015-1,Octotropis,Octotropis Bedd.,Rubiaceae,Genus,,,,,137429,Accepted,knms_single,Octotropis Fl. Sylv. S. India: cxxxiv-12 (1874) Bedd. 1874
+750,Oldenlandiopsis,925301-1,Oldenlandiopsis,Oldenlandiopsis Terrell & W.H.Lewis,Rubiaceae,Genus,,,,,138888,Accepted,knms_single,Oldenlandiopsis Brittonia 42: 185 (1990) Terrell & W.H.Lewis 1990
+751,Oligocodon,35019-1,Oligocodon,Oligocodon Keay,Rubiaceae,Genus,,,,,138950,Accepted,knms_single,Oligocodon Bull. Jard. Bot. État Bruxelles 28: 36 (1958) Keay 1958
+752,Omiltemia,35022-1,Omiltemia,Omiltemia Standl.,Rubiaceae,Genus,,,,,138982,Accepted,knms_single,Omiltemia J. Washington Acad. Sci. 8: 427 (1918) Standl. 1918
+753,Opercularia,35023-1,Opercularia,Opercularia Gaertn.,Rubiaceae,Genus,,,,,140195,Accepted,knms_single,Opercularia Fruct. Sem. Pl. 1: 112 (1788) Gaertn. 1788
+754,Oreopolus,35028-1,Oreopolus,Oreopolus Schltdl.,Rubiaceae,Genus,,,,,143660,Accepted,knms_single,Oreopolus Linnaea 28: 493 (1857) Schltdl. 1857
+755,Osa,35031-1,Osa,Osa Aiello,Rubiaceae,Genus,,,,,144497,Accepted,knms_single,Osa J. Arnold Arbor. 60: 115 (1979) Aiello 1979
+756,Otomeria,35035-1,Otomeria,Otomeria Benth.,Rubiaceae,Genus,,,,,144746,Accepted,knms_single,"Otomeria W.J.Hooker, Niger Fl.: 405 (1849) Benth. 1849"
+757,Ottoschmidtia,296872-2,Ottoschmidtia,Ottoschmidtia Urb.,Rubiaceae,Genus,,,,,144829,Accepted,knms_single,Ottoschmidtia Repert. Spec. Nov. Regni Veg. 20: 312 (1924) Urb. 1924
+758,Oxyanthus,35041-1,Oxyanthus,Oxyanthus DC.,Rubiaceae,Genus,,,,,144929,Accepted,knms_single,Oxyanthus Ann. Mus. Hist. Nat. 9: 218 (1807) DC. 1807
+759,Oxyceros,327874-2,Oxyceros,Oxyceros Lour.,Rubiaceae,Genus,,,,,145021,Accepted,knms_single,Oxyceros Fl. Cochinch.: 150 (1790) Lour. 1790
+760,Pachystylus,35046-1,Pachystylus,Pachystylus K.Schum.,Rubiaceae,Genus,,,,,145400,Accepted,knms_single,"Pachystylus K.M.Schumann & U.M.Hollrung, Fl. Kais. Wilh. Land: 133 (1889) K.Schum. 1889"
+761,Paederia,35047-1,Paederia,Paederia L.,Rubiaceae,Genus,,,,,145429,Accepted,knms_single,"Paederia Mant. Pl. 1: 7, 52 (1767) L. 1767"
+762,Pagamea,25107-1,Pagamea,Pagamea Aubl.,Rubiaceae,Genus,,,,,145545,Accepted,knms_single,Pagamea Hist. Pl. Guiane 1: 112 (1775) Aubl. 1775
+763,Pagameopsis,296881-2,Pagameopsis,Pagameopsis Steyerm.,Rubiaceae,Genus,,,,,145594,Accepted,knms_single,Pagameopsis Mem. New York Bot. Gard. 12(3): 267 (1965) Steyerm. 1965
+764,Paracarphalea,77155726-1,Paracarphalea,"Paracarphalea Razafim., Ferm, B.Bremer & Kårehed",Rubiaceae,Genus,,,,,521888,Accepted,knms_single,"Paracarphalea Phytotaxa 263: 107 (2016) Razafim., Ferm, B.Bremer & Kårehed 2016"
+765,Paracephaelis,35059-1,Paracephaelis,Paracephaelis Baill.,Rubiaceae,Genus,,,,,147411,Accepted,knms_single,Paracephaelis Adansonia 12: 316 (1879) Baill. 1879
+766,Parachimarrhis,296935-2,Parachimarrhis,Parachimarrhis Ducke,Rubiaceae,Genus,,,,,147414,Accepted,knms_single,Parachimarrhis Arch. Jard. Bot. Rio de Janeiro 3: 253 (1922) Ducke 1922
+767,Paracorynanthe,35062-1,Paracorynanthe,Paracorynanthe Capuron,Rubiaceae,Genus,,,,,147426,Accepted,knms_single,"Paracorynanthe Adansonia, n.s., 18: 160 (1978) Capuron 1978"
+768,Paragenipa,35064-1,Paragenipa,Paragenipa Baill.,Rubiaceae,Genus,,,,,147468,Accepted,knms_single,Paragenipa Bull. Mens. Soc. Linn. Paris 2: 207 (1879) Baill. 1879
+769,Paraknoxia,35066-1,Paraknoxia,Paraknoxia Bremek.,Rubiaceae,Genus,,,,,147502,Accepted,knms_single,Paraknoxia Bull. Jard. Bot. État Bruxelles 22: 77 (1952) Bremek. 1952
+770,Paralasianthus,77145947-1,Paralasianthus,Paralasianthus H.Zhu,Rubiaceae,Genus,,,,,497501,Accepted,knms_single,Paralasianthus Phytotaxa 202: 274 (2015) H.Zhu 2015
+771,Parapentas,35067-1,Parapentas,Parapentas Bremek.,Rubiaceae,Genus,,,,,147614,Accepted,knms_single,"Parapentas Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 50 (1952) Bremek. 1952"
+772,Patima,35071-1,Patima,Patima Aubl.,Rubiaceae,Genus,,,,,148108,Accepted,knms_single,Patima Hist. Pl. Guiane 1: 196 (1775) Aubl. 1775
+773,Pauridiantha,35073-1,Pauridiantha,Pauridiantha Hook.f.,Rubiaceae,Genus,,,,,148123,Accepted,knms_single,"Pauridiantha G.Bentham & J.D.Hooker, Gen. Pl. 2: 69 (1873) Hook.f. 1873"
+774,Payera,331833-2,Payera,Payera Baill.,Rubiaceae,Genus,,,,,149170,Accepted,knms_single,Payera Bull. Mens. Soc. Linn. Paris 1: 178 (1878) Baill. 1878
+775,Pentaloncha,35087-1,Pentaloncha,Pentaloncha Hook.f.,Rubiaceae,Genus,,,,,149827,Accepted,knms_single,"Pentaloncha G.Bentham & J.D.Hooker, Gen. Pl. 2: 73 (1873) Hook.f. 1873"
+776,Pentanopsis,35089-1,Pentanopsis,Pentanopsis Rendle,Rubiaceae,Genus,,,,,149877,Accepted,knms_single,Pentanopsis J. Bot. 36: 28 (1898) Rendle 1898
+777,Pentas,35090-1,Pentas,Pentas Benth.,Rubiaceae,Genus,,,,,149925,Accepted,knms_single,Pentas Bot. Mag. 70: t. 4086 (1844) Benth. 1844
+778,Pentodon,35091-1,Pentodon,Pentodon Hochst.,Rubiaceae,Genus,,,,,150084,Accepted,knms_single,Pentodon Flora 27: 552 (1844) Hochst. 1844
+779,Peponidium,35092-1,Peponidium,Peponidium (Baill.) Arènes,Rubiaceae,Genus,,,,,150096,Accepted,knms_single,Peponidium Notul. Syst. (Paris) 16: 25 (1960) (Baill.) Arènes 1960
+780,Perakanthus,35093-1,Perakanthus,Perakanthus Robyns ex Ridl.,Rubiaceae,Genus,,,,,150190,Accepted,knms_single,Perakanthus Fl. Malay Penins. 5: 317 (1925) Robyns ex Ridl. 1925
+781,Perama,35095-1,Perama,Perama Aubl.,Rubiaceae,Genus,,,,,150193,Accepted,knms_single,Perama Hist. Pl. Guiane 1: 54 (1775) Aubl. 1775
+782,Peripeplus,35099-1,Peripeplus,Peripeplus Pierre,Rubiaceae,Genus,,,,,150343,Accepted,knms_single,"Peripeplus Bull. Mens. Soc. Linn. Paris, n.s., 1: 66 (1898) Pierre 1898"
+783,Petitiocodon,925124-1,Petitiocodon,Petitiocodon Robbr.,Rubiaceae,Genus,,,,,150833,Accepted,knms_single,Petitiocodon Bull. Jard. Bot. Natl. Belg. 58: 116 (1988) Robbr. 1988
+784,Phellocalyx,35106-1,Phellocalyx,Phellocalyx Bridson,Rubiaceae,Genus,,,,,151344,Accepted,knms_single,Phellocalyx Kew Bull. 35: 315 (1980) Bridson 1980
+785,Phialanthus,35107-1,Phialanthus,Phialanthus Griseb.,Rubiaceae,Genus,,,,,151348,Accepted,knms_single,Phialanthus Fl. Brit. W. I.: 335 (1861) Griseb. 1861
+786,Phialiphora,77109496-1,Phialiphora,Phialiphora Groeninckx,Rubiaceae,Genus,,,,,467798,Accepted,knms_single,Phialiphora Taxon 59: 1821 (2010) Groeninckx 2010
+787,Phuopsis,35110-1,Phuopsis,Phuopsis (Griseb.) Hook.f.,Rubiaceae,Genus,,,,,153201,Accepted,knms_single,"Phuopsis G.Bentham & J.D.Hooker, Gen. Pl. 2: 151 (1873) (Griseb.) Hook.f. 1873"
+788,Phyllis,35113-1,Phyllis,Phyllis L.,Rubiaceae,Genus,,,,,155190,Accepted,knms_single,Phyllis Sp. Pl.: 232 (1753) L. 1753
+789,Phyllocrater,35114-1,Phyllocrater,Phyllocrater Wernham,Rubiaceae,Genus,,,,,155224,Accepted,knms_single,"Phyllocrater J. Linn. Soc., Bot. 42: 90 (1914) Wernham 1914"
+790,Phyllomelia,35115-1,Phyllomelia,Phyllomelia Griseb.,Rubiaceae,Genus,,,,,155226,Accepted,knms_single,Phyllomelia Cat. Pl. Cub.: 139 (1866) Griseb. 1866
+791,Phyllopentas,77086228-1,Phyllopentas,Phyllopentas (Verdc.) Kårehed & B.Bremer,Rubiaceae,Genus,,,,,373744,Accepted,knms_single,Phyllopentas Taxon 56: 1076 (2007) (Verdc.) Kårehed & B.Bremer 2007
+792,Phylohydrax,925007-1,Phylohydrax,Phylohydrax Puff,Rubiaceae,Genus,,,,,155683,Accepted,knms_single,Phylohydrax Pl. Syst. Evol. 154: 362 (1986) Puff 1986
+793,Picardaea,295229-2,Picardaea,Picardaea Urb.,Rubiaceae,Genus,,,,,156008,Accepted,knms_single,Picardaea Symb. Antill. 3: 376 (1903) Urb. 1903
+794,Pimentelia,35119-1,Pimentelia,Pimentelia Wedd.,Rubiaceae,Genus,,,,,156174,Accepted,knms_single,Pimentelia Hist. Nat. Quinquinas: 94 (1849) Wedd. 1849
+795,Pinarophyllon,289383-2,Pinarophyllon,Pinarophyllon Brandegee,Rubiaceae,Genus,,,,,156549,Accepted,knms_single,Pinarophyllon Univ. Calif. Publ. Bot. 6: 71 (1914) Brandegee 1914
+796,Pinckneya,35122-1,Pinckneya,Pinckneya Michx.,Rubiaceae,Genus,,,,,156552,Accepted,knms_single,Pinckneya Fl. Bor.-Amer. 1: 103 (1803) Michx. 1803
+797,Pitardella,20012643-1,Pitardella,Pitardella Tirveng.,Rubiaceae,Genus,,,,,216703,Accepted,knms_single,Pitardella Biogeographica (The Hague) 79: 32 (2003) Tirveng. 2003
+798,Pittoniotis,35127-1,Pittoniotis,Pittoniotis Griseb.,Rubiaceae,Genus,,,,,156692,Accepted,knms_single,Pittoniotis Bonplandia (Hannover) 6: 8 (1858) Griseb. 1858
+799,Placocarpa,35128-1,Placocarpa,Placocarpa Hook.f.,Rubiaceae,Genus,,,,,156758,Accepted,knms_single,"Placocarpa G.Bentham & J.D.Hooker, Gen. Pl. 2: 107 (1873) Hook.f. 1873"
+800,Planaltina,77113910-1,Planaltina,Planaltina R.M.Salas & E.L.Cabral,Rubiaceae,Genus,,,,,467895,Accepted,knms_single,Planaltina J. Bot. Res. Inst. Texas 4: 198 (2010) R.M.Salas & E.L.Cabral 2010
+801,Platycarpum,35136-1,Platycarpum,Platycarpum Bonpl.,Rubiaceae,Genus,,,,,157492,Accepted,knms_single,"Platycarpum F.W.H.A.von Humboldt & A.J.A.Bonpland, Pl. Aequinoct. 2: 81 (1809) Bonpl. 1809"
+802,Canthium,34290-1,Canthium,Canthium Lam.,Rubiaceae,Genus,,,,,33442,Accepted,knms_single,Canthium Encycl. 1: 602 (1783) Lam. 1783
+803,Pleiocoryne,893568-1,Pleiocoryne,Pleiocoryne Rauschert,Rubiaceae,Genus,,,,,158988,Accepted,knms_single,Pleiocoryne Taxon 31: 561 (1982) Rauschert 1982
+804,Plocama,35148-1,Plocama,Plocama Aiton,Rubiaceae,Genus,,,,,161419,Accepted,knms_single,Plocama Hort. Kew. 1: 292 (1789) Aiton 1789
+805,Plocaniophyllon,289414-2,Plocaniophyllon,Plocaniophyllon Brandegee,Rubiaceae,Genus,,,,,161421,Accepted,knms_single,Plocaniophyllon Univ. Calif. Publ. Bot. 6: 69 (1914) Brandegee 1914
+806,Polysphaeria,35164-1,Polysphaeria,Polysphaeria Hook.f.,Rubiaceae,Genus,,,,,162607,Accepted,knms_single,"Polysphaeria G.Bentham & J.D.Hooker, Gen. Pl. 2: 108 (1873) Hook.f. 1873"
+807,Polyura,35165-1,Polyura,Polyura Hook.f.,Rubiaceae,Genus,,,,,163114,Accepted,knms_single,Polyura Hooker's Icon. Pl. 11: t. 1049 (1868) Hook.f. 1868
+808,Pomax,35169-1,Pomax,Pomax Sol. ex DC.,Rubiaceae,Genus,,,,,163184,Accepted,knms_single,Pomax Prodr. 4: 615 (1830) Sol. ex DC. 1830
+809,Porterandia,35172-1,Porterandia,Porterandia Ridl.,Rubiaceae,Genus,,,,,163497,Accepted,knms_single,Porterandia Bull. Misc. Inform. Kew 1939: 593 (1940) Ridl. 1940
+810,Portlandia,329811-2,Portlandia,Portlandia P.Browne,Rubiaceae,Genus,,,,,163518,Accepted,knms_single,Portlandia Civ. Nat. Hist. Jamaica: 164 (1756) P.Browne 1756
+811,Pouchetia,35180-1,Pouchetia,Pouchetia A.Rich. ex DC.,Rubiaceae,Genus,,,,,163878,Accepted,knms_single,Pouchetia Prodr. 4: 393 (1830) A.Rich. ex DC. 1830
+812,Praravinia,35182-1,Praravinia,Praravinia Korth.,Rubiaceae,Genus,,,,,164580,Accepted,knms_single,"Praravinia Verh. Nat. Gesch. Ned. Bezitt., Bot.: t. 41 (1842) Korth. 1842"
+813,Preussiodora,35185-1,Preussiodora,Preussiodora Keay,Rubiaceae,Genus,,,,,165431,Accepted,knms_single,Preussiodora Bull. Jard. Bot. État Bruxelles 28: 31 (1958) Keay 1958
+814,Prismatomeris,327883-2,Prismatomeris,Prismatomeris Thwaites,Rubiaceae,Genus,,,,,165443,Accepted,knms_single,Prismatomeris Hooker's J. Bot. Kew Gard. Misc. 8: 268 (1856) Thwaites 1856
+815,Pseudaidia,925012-1,Pseudaidia,Pseudaidia Tirveng.,Rubiaceae,Genus,,,,,166087,Accepted,knms_single,"Pseudaidia Bull. Mus. Natl. Hist. Nat., B, Adansonia 8: 286 (1986) Tirveng. 1986"
+816,Pseudodiplospora,20011880-1,Pseudodiplospora,Pseudodiplospora Deb,Rubiaceae,Genus,,,,,216715,Accepted,knms_single,Pseudodiplospora Phytotaxonomy 1: 53 (2001) Deb 2001
+817,Pseudohamelia,290944-2,Pseudohamelia,Pseudohamelia Wernham,Rubiaceae,Genus,,,,,166302,Accepted,knms_single,Pseudohamelia J. Bot. 50: 242 (1912) Wernham 1912
+818,Pseudomantalania,35200-1,Pseudomantalania,Pseudomantalania J.-F.Leroy,Rubiaceae,Genus,,,,,166381,Accepted,knms_single,"Pseudomantalania Compt. Rend. Hebd. Séances Acad. Sci., Sér. D 277: 1659 (1973) J.-F.Leroy 1973"
+819,Pseudomiltemia,60435720-2,Pseudomiltemia,Pseudomiltemia Borhidi,Rubiaceae,Genus,,,,,216717,Accepted,knms_single,Pseudomiltemia Acta Bot. Hung. 46: 73 (2004) Borhidi 2004
+820,Pseudomussaenda,35201-1,Pseudomussaenda,Pseudomussaenda Wernham,Rubiaceae,Genus,,,,,166392,Accepted,knms_single,Pseudomussaenda J. Bot. 54: 298 (1916) Wernham 1916
+821,Pseudonesohedyotis,35202-1,Pseudonesohedyotis,Pseudonesohedyotis Tennant,Rubiaceae,Genus,,,,,166407,Accepted,knms_single,Pseudonesohedyotis Kew Bull. 19: 277 (1965) Tennant 1965
+822,Pseudopyxis,35204-1,Pseudopyxis,Pseudopyxis Miq.,Rubiaceae,Genus,,,,,166506,Accepted,knms_single,Pseudopyxis Ann. Mus. Bot. Lugduno-Batavi 3: 189 (1867) Miq. 1867
+823,Tapanhuacanga,35432-1,Tapanhuacanga,Tapanhuacanga Vell. ex Vand.,Rubiaceae,Genus,,,,,201585,Accepted,knms_single,Tapanhuacanga Fl. Lusit. Bras. Spec.: 9 (1788) Vell. ex Vand. 1788
+824,Pteridocalyx,295499-2,Pteridocalyx,Pteridocalyx Wernham,Rubiaceae,Genus,,,,,170365,Accepted,knms_single,Pteridocalyx J. Bot. 49: 317 (1911) Wernham 1911
+825,Pubistylus,35226-1,Pubistylus,Pubistylus Thoth.,Rubiaceae,Genus,,,,,170928,Accepted,knms_single,Pubistylus Reinwardtia 7: 283 (1966) Thoth. 1966
+826,Puffia,77159275-1,Puffia,Puffia Razafim. & B.Bremer,Rubiaceae,Genus,,,,,522029,Accepted,knms_single,Puffia Amer. J. Bot. 101: 1116 (2014) Razafim. & B.Bremer 2014
+827,Pygmaeothamnus,35228-1,Pygmaeothamnus,Pygmaeothamnus Robyns,Rubiaceae,Genus,,,,,171245,Accepted,knms_single,Pygmaeothamnus Bull. Jard. Bot. État Bruxelles 11: 29 (1928) Robyns 1928
+828,Rachicallis,35235-1,Rachicallis,Rachicallis DC.,Rubiaceae,Genus,,,,,177653,Accepted,knms_single,Rachicallis Prodr. 4: 433 (1830) DC. 1830
+829,Ramosmania,893224-1,Ramosmania,Ramosmania Tirveng. & Verdc.,Rubiaceae,Genus,,,,,176120,Accepted,knms_single,Ramosmania Nordic J. Bot. 2: 326 (1982) Tirveng. & Verdc. 1982
+830,Razafimandimbisonia,77101368-1,Razafimandimbisonia,Razafimandimbisonia Kainul. & B.Bremer,Rubiaceae,Genus,,,,,459332,Accepted,knms_single,Razafimandimbisonia Taxon 58: 765 (2009) Kainul. & B.Bremer 2009
+831,Rennellia,35244-1,Rennellia,Rennellia Korth.,Rubiaceae,Genus,,,,,177356,Accepted,knms_single,Rennellia Ned. Kruidk. Arch. 2(2): 255 (1851) Korth. 1851
+832,Retiniphyllum,35246-1,Retiniphyllum,Retiniphyllum Bonpl.,Rubiaceae,Genus,,,,,177543,Accepted,knms_single,"Retiniphyllum F.W.H.A.von Humboldt & A.J.A.Bonpland, Pl. Aequinoct. 1: 86 (1808) Bonpl. 1808"
+833,Rhadinopus,35250-1,Rhadinopus,Rhadinopus S.Moore,Rubiaceae,Genus,,,,,177660,Accepted,knms_single,Rhadinopus J. Arnold Arbor. 11: 129 (1930) S.Moore 1930
+834,Rhaphidura,35251-1,Rhaphidura,Rhaphidura Bremek.,Rubiaceae,Genus,,,,,177922,Accepted,knms_single,Rhaphidura Recueil Trav. Bot. Néerl. 37: 186 (1940) Bremek. 1940
+835,Rhodopentas,77086242-1,Rhodopentas,Rhodopentas Kårehed & B.Bremer,Rubiaceae,Genus,,,,,373942,Accepted,knms_single,Rhodopentas Taxon 56: 1076 (2007) Kårehed & B.Bremer 2007
+836,Richardia,35260-1,Richardia,Richardia L.,Rubiaceae,Genus,,,,,178449,Accepted,knms_multiple_1,Richardia Sp. Pl.: 330 (1753) L. 1753
+837,Ridsdalea,77160521-1,Ridsdalea,Ridsdalea J.T.Pereira & K.M.Wong,Rubiaceae,Genus,,,,,526635,Accepted,knms_single,Ridsdalea Sandakania 21: 42 (2016) J.T.Pereira & K.M.Wong 2016
+838,Riodocea,1007277-1,Riodocea,Riodocea Delprete,Rubiaceae,Genus,,,,,179110,Accepted,knms_single,Riodocea Brittonia 51: 17 (1999) Delprete 1999
+839,Riqueuria,35263-1,Riqueuria,Riqueuria Ruiz & Pav.,Rubiaceae,Genus,,,,,179112,Accepted,knms_single,Riqueuria Fl. Peruv. Prodr.: 18 (1794) Ruiz & Pav. 1794
+840,Robbrechtia,326326-2,Robbrechtia,Robbrechtia De Block,Rubiaceae,Genus,,,,,216753,Accepted,knms_single,Robbrechtia Syst. Bot. 28: 146 (2003) De Block 2003
+841,Robynsia,331914-2,Robynsia,Robynsia Hutch.,Rubiaceae,Genus,,,,,179190,Accepted,knms_multiple_1,"Robynsia J.Hutchinson & J.M.Dalziel, Fl. W. Trop. Afr. 2: 108 (1931) Hutch. 1931"
+842,Roigella,893095-1,Roigella,Roigella Borhidi & M.Fernández,Rubiaceae,Genus,,,,,179367,Accepted,knms_single,Roigella Acta Bot. Acad. Sci. Hung. 27: 310 (1981 publ. 1982) Borhidi & M.Fernández 1982
+843,Ronabea,35267-1,Ronabea,Ronabea Aubl.,Rubiaceae,Genus,,,,,179383,Accepted,knms_single,Ronabea Hist. Pl. Guiane 1: 154 (1775) Aubl. 1775
+844,Rovaeanthus,60435737-2,Rovaeanthus,Rovaeanthus Borhidi,Rubiaceae,Genus,,,,,216760,Accepted,knms_single,Rovaeanthus Acta Bot. Hung. 46: 130 (2004) Borhidi 2004
+845,Rubia,35277-1,Rubia,Rubia L.,Rubiaceae,Genus,,,,,180172,Accepted,knms_single,Rubia Sp. Pl.: 109 (1753) L. 1753
+846,Rubovietnamia,1004952-1,Rubovietnamia,Rubovietnamia Tirveng.,Rubiaceae,Genus,,,,,180459,Accepted,knms_single,Rubovietnamia Biogeographica (The Hague) 74: 166 (1998) Tirveng. 1998
+847,Rutidea,35281-1,Rutidea,Rutidea DC.,Rubiaceae,Genus,,,,,180776,Accepted,knms_single,Rutidea Ann. Mus. Hist. Nat. 9: 219 (1807) DC. 1807
+848,Sacosperma,35286-1,Sacosperma,Sacosperma G.Taylor,Rubiaceae,Genus,,,,,181695,Accepted,knms_single,"Sacosperma A.W.Exell, Cat. Vasc. Pl. S. Tomé: 218 (1944) G.Taylor 1944"
+849,Saldinia,35290-1,Saldinia,Saldinia A.Rich. ex DC.,Rubiaceae,Genus,,,,,181828,Accepted,knms_single,Saldinia Prodr. 4: 483 (Sept. 1830) A.Rich. ex DC. 
+850,Salzmannia,35292-1,Salzmannia,Salzmannia DC.,Rubiaceae,Genus,,,,,184186,Accepted,knms_single,Salzmannia Prodr. 4: 617 (1830) DC. 1830
+851,Schismatoclada,35309-1,Schismatoclada,Schismatoclada Baker,Rubiaceae,Genus,,,,,187846,Accepted,knms_single,"Schismatoclada J. Linn. Soc., Bot. 20: 159 (1883) Baker 1883"
+852,Schizenterospermum,35311-1,Schizenterospermum,Schizenterospermum Homolle ex Arènes,Rubiaceae,Genus,,,,,188082,Accepted,knms_single,Schizenterospermum Notul. Syst. (Paris) 16: 9 (1960) Homolle ex Arènes 1960
+853,Schizocolea,35313-1,Schizocolea,Schizocolea Bremek.,Rubiaceae,Genus,,,,,188144,Accepted,knms_single,Schizocolea Hooker's Icon. Pl. 35: t. 3482 (1951) Bremek. 1951
+854,Schizomussaenda,35314-1,Schizomussaenda,Schizomussaenda H.L.Li,Rubiaceae,Genus,,,,,188169,Accepted,knms_single,Schizomussaenda J. Arnold Arbor. 24: 99 (1943) H.L.Li 1943
+855,Schmidtottia,30002570-2,Schmidtottia,Schmidtottia Urb.,Rubiaceae,Genus,,,,,188212,Accepted,knms_single,Schmidtottia Symb. Antill. 9: 137 (1923) Urb. 1923
+856,Schwendenera,295686-2,Schwendenera,Schwendenera K.Schum.,Rubiaceae,Genus,,,,,188473,Accepted,knms_single,Schwendenera Sitzungsber. Ges. Naturf. Freunde Berlin 1886: 157 (1887) K.Schum. 1887
+857,Scleromitrion,60445140-2,Scleromitrion,Scleromitrion (Wight & Arn.) Meisn.,Rubiaceae,Genus,,,,,188730,Accepted,knms_single,Scleromitrion Pl. Vasc. Gen. 5(Tab. Diagn.): 160 (1838) (Wight & Arn.) Meisn. 1838
+858,Scolosanthus,35330-1,Scolosanthus,Scolosanthus Vahl,Rubiaceae,Genus,,,,,188766,Accepted,knms_single,Scolosanthus Eclog. Amer. 1: 11 (1797) Vahl 1797
+859,Scyphiphora,327890-2,Scyphiphora,Scyphiphora C.F.Gaertn.,Rubiaceae,Genus,,,,,189890,Accepted,knms_single,Scyphiphora Suppl. Carp.: 91 (1806) C.F.Gaertn. 1806
+860,Scyphostachys,35333-1,Scyphostachys,Scyphostachys Thwaites,Rubiaceae,Genus,,,,,189895,Accepted,knms_single,Scyphostachys Enum. Pl. Zeyl.: 157 (1859) Thwaites 1859
+861,Sericanthe,35336-1,Sericanthe,Sericanthe Robbr.,Rubiaceae,Genus,,,,,190789,Accepted,knms_single,Sericanthe Bull. Jard. Bot. Natl. Belg. 48: 27 (1978) Robbr. 1978
+862,Buchozia,35337-1,Serissa,Serissa Comm. ex A.Juss.,Rubiaceae,Genus,,,,,24969,Synonym,knms_single,"Buchozia G.-F.Cuvier, Dict. Sci. Nat. 5: 409 (1806) L'Hér. ex Juss. 1806"
+863,Shaferocharis,298108-2,Shaferocharis,Shaferocharis Urb.,Rubiaceae,Genus,,,,,190915,Accepted,knms_single,Shaferocharis Symb. Antill. 7: 412 (1912) Urb. 1912
+864,Sherardia,35341-1,Sherardia,Sherardia L.,Rubiaceae,Genus,,,,,190923,Accepted,knms_multiple_1,Sherardia Sp. Pl.: 102 (1753) L. 1753
+865,Sherbournia,35342-1,Sherbournia,Sherbournia G.Don,Rubiaceae,Genus,,,,,190941,Accepted,knms_single,"Sherbournia J.C.Loudon, Encycl. Pl., new ed., Suppl. 2: 1303 (1855) G.Don 1855"
+866,Siemensia,296660-2,Siemensia,Siemensia Urb.,Rubiaceae,Genus,,,,,192197,Accepted,knms_single,Siemensia Symb. Antill. 9: 143 (1923) Urb. 1923
+867,Singaporandia,77160553-1,Singaporandia,Singaporandia K.M.Wong,Rubiaceae,Genus,,,,,526813,Accepted,knms_single,Singaporandia Sandakania 21: 53 (2016) K.M.Wong 2016
+868,Sipanea,35355-1,Sipanea,Sipanea Aubl.,Rubiaceae,Genus,,,,,192388,Accepted,knms_single,Sipanea Hist. Pl. Guiane 1: 147 (1775) Aubl. 1775
+869,Sipaneopsis,296664-2,Sipaneopsis,Sipaneopsis Steyerm.,Rubiaceae,Genus,,,,,192440,Accepted,knms_single,Sipaneopsis Mem. New York Bot. Gard. 17(1): 284 (1967) Steyerm. 1967
+870,Siphonandrium,35360-1,Siphonandrium,Siphonandrium K.Schum.,Rubiaceae,Genus,,,,,192465,Accepted,knms_single,"Siphonandrium K.M.Schumann & C.A.G.Lauterbach, Fl. Schutzgeb. Südsee, Nachtr.: 394 (1905) K.Schum. 1905"
+871,Spermadictyon,35371-1,Spermadictyon,Spermadictyon Roxb.,Rubiaceae,Genus,,,,,193953,Accepted,knms_single,Spermadictyon Pl. Coromandel 3: 32 (1815) Roxb. 1815
+872,Sphinctanthus,35373-1,Sphinctanthus,Sphinctanthus Benth.,Rubiaceae,Genus,,,,,194089,Accepted,knms_single,Sphinctanthus J. Bot. (Hooker) 3: 212 (1841) Benth. 1841
+873,Squamellaria,35379-1,Squamellaria,Squamellaria Becc.,Rubiaceae,Genus,,,,,194659,Accepted,knms_single,Squamellaria Malesia 2: 228 (1886) Becc. 1886
+874,Stachyarrhena,35380-1,Stachyarrhena,Stachyarrhena Hook.f.,Rubiaceae,Genus,,,,,194674,Accepted,knms_single,Stachyarrhena Hooker's Icon. Pl. 11: t. 1068 (1870) Hook.f. 1870
+875,Staelia,30051118-2,Staelia,Staelia Cham. & Schltdl.,Rubiaceae,Genus,,,,,196031,Accepted,knms_single,Staelia Linnaea 3: 364 (1828) Cham. & Schltdl. 1828
+876,Standleya,295515-2,Standleya,Standleya Brade,Rubiaceae,Genus,,,,,196053,Accepted,knms_single,Standleya Arq. Mus. Nac. Rio de Janeiro 34: 119 (1932) Brade 1932
+877,Steenisia,35386-1,Steenisia,Steenisia Bakh.f.,Rubiaceae,Genus,,,,,196254,Accepted,knms_single,Steenisia Webbia 8: 381 (1952) Bakh.f. 1952
+878,Stenaria,20001881-1,Stenaria,Stenaria (Raf.) Terrell,Rubiaceae,Genus,,,,,197021,Accepted,knms_single,Stenaria Sida 19: 592 (2001) (Raf.) Terrell 2001
+879,Stenosepala,1018382-1,Stenosepala,Stenosepala C.H.Perss.,Rubiaceae,Genus,,,,,197497,Accepted,knms_single,Stenosepala Novon 10: 403 (2000) C.H.Perss. 2000
+880,Stenotis,30395888-2,Stenotis,Stenotis Terrell,Rubiaceae,Genus,,,,,216807,Accepted,knms_single,Stenotis Sida 19: 901 (2001) Terrell 2001
+881,Stephanococcus,35394-1,Stephanococcus,Stephanococcus Bremek.,Rubiaceae,Genus,,,,,197636,Accepted,knms_single,"Stephanococcus Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 143 (1952) Bremek. 1952"
+882,Stevensia,30139760-2,Stevensia,Stevensia Poit.,Rubiaceae,Genus,,,,,197716,Accepted,knms_single,Stevensia Bull. Sci. Soc. Philom. Paris 3: 137 (1802) Poit. 1802
+883,Steyermarkia,296546-2,Steyermarkia,Steyermarkia Standl.,Rubiaceae,Genus,,,,,197731,Accepted,knms_single,"Steyermarkia Publ. Field Columb. Mus., Bot. Ser. 22: 216 (1940) Standl. 1940"
+884,Stichianthus,35399-1,Stichianthus,Stichianthus Valeton,Rubiaceae,Genus,,,,,197733,Accepted,knms_single,"Stichianthus Bull. Jard. Bot. Buitenzorg, sér. 3, 2: 349 (1920) Valeton 1920"
+885,Stilpnophyllum,35403-1,Stilpnophyllum,Stilpnophyllum Hook.f.,Rubiaceae,Genus,,,,,198010,Accepted,knms_multiple_1,Stilpnophyllum Hooker's Icon. Pl. 12: t. 1147 (1873) Hook.f. 1873
+886,Stipularia,35404-1,Stipularia,Stipularia P.Beauv.,Rubiaceae,Genus,,,,,198036,Accepted,knms_single,Stipularia Fl. Oware 2: 26 (1807) P.Beauv. 1807
+887,Streblosa,327891-2,Streblosa,Streblosa Korth.,Rubiaceae,Genus,,,,,198105,Accepted,knms_single,Streblosa Ned. Kruidk. Arch. 2(2): 245 (1851) Korth. 1851
+888,Streblosiopsis,35408-1,Streblosiopsis,Streblosiopsis Valeton,Rubiaceae,Genus,,,,,198143,Accepted,knms_single,Streblosiopsis Bot. Jahrb. Syst. 44: 570 (1910) Valeton 1910
+889,Strumpfia,35412-1,Strumpfia,Strumpfia Jacq.,Rubiaceae,Genus,,,,,198313,Accepted,knms_single,Strumpfia Enum. Syst. Pl.: 28 (1760) Jacq. 1760
+890,Stylosiphonia,35416-1,Stylosiphonia,Stylosiphonia Brandegee,Rubiaceae,Genus,,,,,198490,Accepted,knms_single,Stylosiphonia Univ. Calif. Publ. Bot. 6: 70 (1914) Brandegee 1914
+891,Suberanthus,893242-1,Suberanthus,Suberanthus Borhidi & M.Fernández,Rubiaceae,Genus,,,,,198498,Accepted,knms_single,Suberanthus Acta Bot. Acad. Sci. Hung. 27: 314 (1981 publ. 1982) Borhidi & M.Fernández 1982
+892,Synaptantha,35422-1,Synaptantha,Synaptantha Hook.f.,Rubiaceae,Genus,,,,,198960,Accepted,knms_single,Synaptantha Hooker's Icon. Pl. 12: t. 1146 (1873) Hook.f. 1873
+893,Syringantha,297636-2,Syringantha,Syringantha Standl.,Rubiaceae,Genus,,,,,199141,Accepted,knms_single,"Syringantha Publ. Field Columb. Mus., Bot. Ser. 8: 153 (1930) Standl. 1930"
+894,Tammsia,331997-2,Tammsia,Tammsia H.Karst.,Rubiaceae,Genus,,,,,201524,Accepted,knms_single,Tammsia Fl. Columb. 1: 179 (1861) H.Karst. 1861
+895,Tamridaea,1001591-1,Tamridaea,Tamridaea Thulin & B.Bremer,Rubiaceae,Genus,,,,,201542,Accepted,knms_single,Tamridaea Pl. Syst. Evol. 211: 85 (1998) Thulin & B.Bremer 1998
+896,Tarennoidea,327894-2,Tarennoidea,Tarennoidea Tirveng. & Sastre,Rubiaceae,Genus,,,,,201986,Accepted,knms_single,Tarennoidea Mauritius Inst. Bull. 8(4): 90 (1979) Tirveng. & Sastre 1979
+897,Temnocalyx,35442-1,Temnocalyx,Temnocalyx Robyns,Rubiaceae,Genus,,,,,202280,Accepted,knms_single,Temnocalyx Bull. Jard. Bot. État Bruxelles 11: 317 (1928) Robyns 1928
+898,Temnopteryx,35443-1,Temnopteryx,Temnopteryx Hook.f.,Rubiaceae,Genus,,,,,202286,Accepted,knms_single,"Temnopteryx G.Bentham & J.D.Hooker, Gen. Pl. 2: 72 (1873) Hook.f. 1873"
+899,Tennantia,893109-1,Tennantia,Tennantia Verdc.,Rubiaceae,Genus,,,,,202293,Accepted,knms_single,Tennantia Kew Bull. 36: 511 (1981) Verdc. 1981
+900,Tessiera,35448-1,Tessiera,Tessiera DC.,Rubiaceae,Genus,,,,,202315,Accepted,knms_single,Tessiera Prodr. 4: 574 (1830) DC. 1830
+901,Thamnoldenlandia,77107063-1,Thamnoldenlandia,Thamnoldenlandia Groeninckx,Rubiaceae,Genus,,,,,461550,Accepted,knms_single,Thamnoldenlandia Bot. J. Linn. Soc. 163: 458 (2010) Groeninckx 2010
+902,Theligonum,41017-1,Theligonum,Theligonum L.,Rubiaceae,Genus,,,,,203652,Accepted,knms_single,Theligonum Sp. Pl.: 993 (1753) L. 1753
+903,Thiollierea,35459-1,Thiollierea,Thiollierea Montrouz.,Rubiaceae,Genus,,,,,203916,Accepted,knms_single,"Thiollierea Mém. Acad. Imp. Sci. Lyon, Sect. Sci., sér. 2, 10: 217 (1860) Montrouz. 1860"
+904,Thogsennia,298615-2,Thogsennia,Thogsennia Aiello,Rubiaceae,Genus,,,,,203922,Accepted,knms_single,Thogsennia J. Arnold Arbor. 60: 116 (1979) Aiello 1979
+905,Tobagoa,289333-2,Tobagoa,Tobagoa Urb.,Rubiaceae,Genus,,,,,206891,Accepted,knms_single,Tobagoa Repert. Spec. Nov. Regni Veg. 14: 341 (1916) Urb. 1916
+906,Tortuella,289340-2,Tortuella,Tortuella Urb.,Rubiaceae,Genus,,,,,207037,Accepted,knms_single,Tortuella Ark. Bot. 21A(5): 89 (1927) Urb. 1927
+907,Trailliaedoxa,35472-1,Trailliaedoxa,Trailliaedoxa W.W.Sm. & Forrest,Rubiaceae,Genus,,,,,207584,Accepted,knms_single,Trailliaedoxa Notes Roy. Bot. Gard. Edinburgh 10: 74 (1917) W.W.Sm. & Forrest 1917
+908,Triainolepis,35475-1,Triainolepis,Triainolepis Hook.f.,Rubiaceae,Genus,,,,,207677,Accepted,knms_single,"Triainolepis G.Bentham & J.D.Hooker, Gen. Pl. 2: 126 (1873) Hook.f. 1873"
+909,Tricalysia,325987-2,Tricalysia,Tricalysia A.Rich. ex DC.,Rubiaceae,Genus,,,,,207753,Accepted,knms_single,Tricalysia Prodr. 4: 445 (Sept. 1830) A.Rich. ex DC. 
+910,Trichostachys,332030-2,Trichostachys,Trichostachys Hook.f.,Rubiaceae,Genus,,,,,208453,Accepted,knms_multiple_1,"Trichostachys G.Bentham & J.D.Hooker, Gen. Pl. 2: 128 (1873) Hook.f. 1873"
+911,Triflorensia,60442357-2,Triflorensia,Triflorensia S.T.Reynolds,Rubiaceae,Genus,,,,,344971,Accepted,knms_single,Triflorensia Austrobaileya 7: 43 (2005) S.T.Reynolds 2005
+912,Tromlyca,77167393-1,Tromlyca,Tromlyca Borhidi,Rubiaceae,Genus,,,,,527011,Accepted,knms_single,Tromlyca Acta Bot. Hung. 59: 280 (2017) Borhidi 2017
+913,Valantia,30049225-2,Valantia,Valantia L.,Rubiaceae,Genus,,,,,211282,Accepted,knms_single,Valantia Sp. Pl.: 1051 (1753) L. 1753
+914,Vangueria,35502-1,Vangueria,Vangueria Juss.,Rubiaceae,Genus,,,,,211630,Accepted,knms_single,Vangueria Gen. Pl.: 206 (1789) Juss. 1789
+915,Vangueriella,925313-1,Vangueriella,Vangueriella Verdc.,Rubiaceae,Genus,,,,,211784,Accepted,knms_single,Vangueriella Kew Bull. 42: 189 (1987) Verdc. 1987
+916,Vangueriopsis,35503-1,Vangueriopsis,Vangueriopsis Robyns,Rubiaceae,Genus,,,,,211803,Accepted,knms_single,Vangueriopsis Bull. Jard. Bot. État Bruxelles 11: 248 (1928) Robyns 1928
+917,Vidalasia,1004946-1,Vidalasia,Vidalasia Tirveng.,Rubiaceae,Genus,,,,,213089,Accepted,knms_single,Vidalasia Biogeographica (The Hague) 74: 164 (1998) Tirveng. 1998
+918,Villaria,332050-2,Villaria,Villaria Rolfe,Rubiaceae,Genus,,,,,213128,Accepted,knms_multiple_1,"Villaria J. Linn. Soc., Bot. 21: 311 (1884) Rolfe 1884"
+919,Virectaria,35514-1,Virectaria,Virectaria Bremek.,Rubiaceae,Genus,,,,,213228,Accepted,knms_single,"Virectaria Verh. Kon. Ned. Akad. Wetensch., Afd. Natuurk., Sect. 2, 48(2): 21 (1952) Bremek. 1952"
+920,Wandersong,60426501-2,Colleteria,Colleteria David W.Taylor,Rubiaceae,Genus,,,,,497814,Illegitimate,knms_single,Wandersong J. Bot. Res. Inst. Texas 8: 530 (2014) David W.Taylor 2014
+921,Warszewiczia,35525-1,Warszewiczia,Warszewiczia Klotzsch,Rubiaceae,Genus,,,,,214229,Accepted,knms_single,Warszewiczia Flora 36: 716 (1853) Klotzsch 1853
+922,Xanthophytum,35539-1,Xanthophytum,Xanthophytum Reinw. ex Blume,Rubiaceae,Genus,,,,,215020,Accepted,knms_single,Xanthophytum Catalogus: 57 (1823) Reinw. ex Blume 1823
+923,Xantonneopsis,35541-1,Xantonneopsis,Xantonneopsis Pit.,Rubiaceae,Genus,,,,,215308,Accepted,knms_single,"Xantonneopsis H.Lecomte, Fl. Indo-Chine 3: 274 (1923) Pit. 1923"
+924,Zuccarinia,332077-2,Zuccarinia,Zuccarinia Blume,Rubiaceae,Genus,,,,,215966,Accepted,knms_multiple_1,Zuccarinia Bijdr. Fl. Ned. Ind.: 1006 (1826) Blume 1826
+925,Condylocarpon,328988-2,Condylocarpon,Condylocarpon Desf.,Apocynaceae,Genus,,,,,46511,Accepted,knms_multiple_1,Condylocarpon Mém. Mus. Hist. Nat. 8: 119 (1822) Desf. 1822

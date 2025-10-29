@@ -1,0 +1,148 @@
+,Family,Taxon ,Homo- and hetero-typic synonyms ,Currently accepted species name ,Plant part used for dyeing ,Colour produced ,GRIN,PROSEA,PROTA4U,Notes,accepted_ipni_id,accepted_name,accepted_name_w_author,accepted_family,accepted_rank,accepted_species,accepted_species_w_author,accepted_species_ipni_id,accepted_parent,plant_name_id,taxon_status,matched_by,matched_name
+0,Malvaceae,Alcaea rosea L.,,,Flowers,Purple,1.0,0.0,0.0,,,,,,,,,,,,,,
+1,Poaceae,Arthraxon hispidus (Thunb.) Makino,"Arthraxon ciliaris P. Beauv.
+Arthraxon ciliaris P. Beauv. var. ciliaris
+Arthraxon ciliaris P. Beauv. var. cryptatherus Hack.
+Arthraxon hispidus (Thunb.) Makino var. ciliaris (P. Beauv.) Koidz.
+Arthraxon hispidus (Thunb.) Makino var. cryptatherus (Hack.) Honda",,Ariel parts,Yellow,1.0,0.0,1.0,,390037-1,Arthraxon hispidus,Arthraxon hispidus (Thunb.) Makino,Poaceae,Species,Arthraxon hispidus,Arthraxon hispidus (Thunb.) Makino,390037-1,Arthraxon,395573,Accepted,direct_wcvp_w_author_unique,Arthraxon hispidus (Thunb.) Makino
+2,Moraceae,Artocarpus spp,,,Heartwood,Yellow to brown ,0.0,1.0,0.0,,331372-2,Artocarpus,Artocarpus J.R.Forst. & G.Forst.,Moraceae,Genus,,,,,2653915,Accepted,knms_single,Artocarpus Char. Gen. Pl.: 101 (1776) J.R.Forst. & G.Forst. 1776
+3,Rubiaceae,Asperula tinctoria L.,,,Roots,Red,1.0,0.0,0.0,,744208-1,Asperula tinctoria,Asperula tinctoria L.,Rubiaceae,Species,Asperula tinctoria,Asperula tinctoria L.,744208-1,Asperula,17159,Accepted,direct_wcvp_w_author_unique,Asperula tinctoria L.
+4,Asteraceae, Ayapana triplinervis (Vahl) R. M. King & H. Rob.,Eupatorium ayapana Vent.,,Leaves,Blue,1.0,1.0,1.0,,27457-2,Ayapana triplinervis,Ayapana triplinervis (Vahl) R.M.King & H.Rob.,Asteraceae,Species,Ayapana triplinervis,Ayapana triplinervis (Vahl) R.M.King & H.Rob.,27457-2,Ayapana,3131980,Accepted,direct_wcvp_w_author_unique,Ayapana triplinervis (Vahl) R.M.King & H.Rob.
+5, Asteraceae,Baccharis spp,,,Leaves and stem,Yellow,0.0,0.0,0.0,,331378-2,Baccharis,Baccharis L.,Asteraceae,Genus,,,,,3133612,Accepted,knms_single,Baccharis Sp. Pl. 2: 860 (1753) L. 1753
+6,Orchidaceae,Bletia spp,,,Leaves,Blue,0.0,0.0,0.0,,30019970-2,Bletia,Bletia Ruiz & Pav.,Orchidaceae,Genus,,,,,22456,Accepted,knms_single,Bletia Fl. Peruv. Prodr.: 119 (1794) Ruiz & Pav. 1794
+7,Fabaceae, Butea monosperma (Lam.) Taub.,Butea frondosa Roxb. ex Willd.,,Flowers,Yellow,1.0,1.0,1.0,,482566-1,Butea monosperma,Butea monosperma (Lam.) Kuntze,Fabaceae,Species,Butea monosperma,Butea monosperma (Lam.) Kuntze,482566-1,Butea,2687773,Accepted,autoresolution,Butea monosperma
+8,Fabaceae,Caesalpinia spp,,,Pods,Tannins,0.0,1.0,0.0,,30003203-2,Caesalpinia,Caesalpinia Plum. ex L.,Fabaceae,Genus,,,,,2689726,Accepted,knms_single,Caesalpinia Sp. Pl.: 380 (1753) Plum. ex L. 1753
+9,Orchidaceae,Calanthe vestita Lindl.,,,Leaves,Blue ,1.0,0.0,0.0,,621102-1,Calanthe vestita,Calanthe vestita Wall. ex Lindl.,Orchidaceae,Species,Calanthe vestita,Calanthe vestita Wall. ex Lindl.,621102-1,Calanthe,30492,Accepted,knms_single,Calanthe vestita Gen. Sp. Orchid. Pl.: 250 (1833) Wall. ex Lindl. 1833
+10,Fagaceae,Castanea spp,,,Bark,Tannins,0.0,1.0,0.0,,30004045-2,Castanea,Castanea Mill.,Fagaceae,Genus,,,,,34916,Accepted,knms_single,Castanea Gard. Dict. Abr. ed. 4: s.p. (1754) Mill. 1754
+11,RHIZOPHORACEAE,Ceriops tagal (Perr.) C.B.Rob.,,,Bark and roots,Brown,0.0,1.0,1.0,,719711-1,Ceriops tagal,Ceriops tagal (Perr.) C.B.Rob.,Rhizophoraceae,Species,Ceriops tagal,Ceriops tagal (Perr.) C.B.Rob.,719711-1,Ceriops,2712632,Accepted,direct_wcvp_w_author_unique,Ceriops tagal (Perr.) C.B.Rob.
+12,Asteraceae,Ericameria nauseosa (Pursh) G.L.Nesom & G.I.Baird,,,Flowers,Yellow  ,1.0,0.0,0.0,,973775-1,Ericameria nauseosa,Ericameria nauseosa (Pall. ex Pursh) G.L.Nesom & G.I.Baird,Asteraceae,Species,Ericameria nauseosa,Ericameria nauseosa (Pall. ex Pursh) G.L.Nesom & G.I.Baird,973775-1,Ericameria,3094181,Accepted,knms_single,Ericameria nauseosa Phytologia 75(1): 84 (1993): (1993) (Pursh) G.L.Nesom & G.I.Baird 1993
+13,Bixaceae,Cochlospermum spp,,,Roots,Yellow ,0.0,0.0,0.0,,331501-2,Cochlospermum,Cochlospermum Kunth,Bixaceae,Genus,,,,,44521,Accepted,knms_single,"Cochlospermum Malvac., Büttner., Tiliac.: 6 (1822) Kunth 1822"
+14,Malvaceae,Cola nitida (Vent.) Schott & Endl.,,,Seeds,Red,1.0,1.0,1.0,,822755-1,Cola nitida,Cola nitida (Vent.) Schott & Endl.,Malvaceae,Species,Cola nitida,Cola nitida (Vent.) Schott & Endl.,822755-1,Cola,2730669,Accepted,direct_wcvp_w_author_unique,Cola nitida (Vent.) Schott & Endl.
+15,Combretaceae, Combretum glutinosum Perr. ex DC.,,,Leaves and stem,Tannins ,0.0,0.0,1.0,,170119-1,Combretum glutinosum,Combretum glutinosum Perr. ex DC.,Combretaceae,Species,Combretum glutinosum,Combretum glutinosum Perr. ex DC.,170119-1,Combretum,2732629,Accepted,direct_wcvp_w_author_unique,Combretum glutinosum Perr. ex DC.
+16,Rubiaceae,Coprosma spp,,,Bark,Yellow ,0.0,0.0,0.0,,34398-1,Coprosma,Coprosma J.R.Forst. & G.Forst.,Rubiaceae,Genus,,,,,46739,Accepted,knms_single,Coprosma Char. Gen. Pl.: 137 (1776) J.R.Forst. & G.Forst. 1776
+17,Ranunculaceae, Coptis trifolia (L.) Salisb.,"Anemone groenlandica Oeder
+Coptis groenlandica (Oeder) Fernald
+Coptis trifolia (L.) Salisb. subsp. groenlandica (Oeder) Hultén
+Coptis trifolia (L.) Salisb. var. groenlandica (Oeder) Fassett",,Whole/Roots,Yellow,1.0,0.0,0.0,,710328-1,Coptis trifolia,Coptis trifolia (L.) Salisb.,Ranunculaceae,Species,Coptis trifolia,Coptis trifolia (L.) Salisb.,710328-1,Coptis,2736138,Accepted,direct_wcvp_w_author_unique,Coptis trifolia (L.) Salisb.
+18,Iridaceae,Crocus sativus L.,,,Flowers,Yellow/orange,1.0,1.0,1.0,,436688-1,Crocus sativus,Crocus sativus L.,Iridaceae,Species,Crocus sativus,Crocus sativus L.,436688-1,Crocus,327454,Accepted,direct_wcvp_w_author_unique,Crocus sativus L.
+19,Bignoniaceae,Cybistax antisyphilitica (Mart.) Mart.,"Bignonia quinquefolia Vell.
+Cybistax quinquefolia (Vell.) J. F. Macbr.",,Leaves,Blue,1.0,0.0,0.0,,109392-1,Cybistax antisyphilitica,Cybistax antisyphilitica (Mart.) Mart.,Bignoniaceae,Species,Cybistax antisyphilitica,Cybistax antisyphilitica (Mart.) Mart.,109392-1,Cybistax,320584,Accepted,direct_wcvp_w_author_unique,Cybistax antisyphilitica (Mart.) Mart.
+20,	Rubiaceae,Danais fragrans (Lam.) Pers.,,,Roots,Yellow/orange,0.0,0.0,1.0,,748144-1,Danais fragrans,Danais fragrans (Lam.) Pers.,Rubiaceae,Species,Danais fragrans,Danais fragrans (Lam.) Pers.,748144-1,Danais,56287,Accepted,direct_wcvp_w_author_unique,Danais fragrans (Lam.) Pers.
+21,Thymelaeaceae,Daphne gnidium L.,,,Flowering branches,Yellow,1.0,0.0,0.0,,831233-1,Daphne gnidium,Daphne gnidium L.,Thymelaeaceae,Species,Daphne gnidium,Daphne gnidium L.,831233-1,Daphne,2756985,Accepted,direct_wcvp_w_author_unique,Daphne gnidium L.
+22,Asteraceae,Aristeguietia lamiifolia (Kunth) R.M.King & H.Rob.,Dasycondilus resinosus R.M.King & H.Rob.,,Leaves,Blue,0.0,0.0,0.0,,19109-2,Aristeguietia lamiifolia,Aristeguietia lamiifolia (Kunth) R.M.King & H.Rob.,Asteraceae,Species,Aristeguietia lamiifolia,Aristeguietia lamiifolia (Kunth) R.M.King & H.Rob.,19109-2,Aristeguietia,3132997,Accepted,direct_wcvp_w_author_unique,Aristeguietia lamiifolia (Kunth) R.M.King & H.Rob.
+23,DIOSCOREACEAE,Dioscorea cirrhosa Lour.,,,Roots,Red/Black,0.0,1.0,0.0,,317807-1,Dioscorea cirrhosa,Dioscorea cirrhosa Lour.,Dioscoreaceae,Species,Dioscorea cirrhosa,Dioscorea cirrhosa Lour.,317807-1,Dioscorea,239972,Accepted,direct_wcvp_w_author_unique,Dioscorea cirrhosa Lour.
+24,Ebenaceae,Euclea divinorum Hiern,,,Roots,Brown,1.0,0.0,1.0,,323301-1,Euclea divinorum,Euclea divinorum Hiern,Ebenaceae,Species,Euclea divinorum,Euclea divinorum Hiern,323301-1,Euclea,385302,Accepted,direct_wcvp_w_author_unique,Euclea divinorum Hiern
+25,Rhamnaceae,Frangula alnus Mill.,,,Bark/Fruit,Brown - bark           Purple/yellow/green - fruit,1.0,0.0,0.0,,717344-1,Frangula alnus,Frangula alnus Mill.,Rhamnaceae,Species,Frangula alnus,Frangula alnus Mill.,717344-1,Frangula,2814031,Accepted,direct_wcvp_w_author_unique,Frangula alnus Mill.
+26,Rubiaceae,Gardenia jasminoides J.Ellis,"Gardenia florida L.
+Gardenia radicans Thunb.
+Varneria augusta L., nom. nud.",,Fruit,Yellow,1.0,1.0,0.0,,751073-1,Gardenia jasminoides,Gardenia jasminoides J.Ellis,Rubiaceae,Species,Gardenia jasminoides,Gardenia jasminoides J.Ellis,751073-1,Gardenia,88270,Accepted,direct_wcvp_w_author_unique,Gardenia jasminoides J.Ellis
+27,Malvaceae,Hibiscus sabdariffa L.,,,Flower,Red,1.0,1.0,1.0,,326388-2,Hibiscus sabdariffa,Hibiscus sabdariffa L.,Malvaceae,Species,Hibiscus sabdariffa,Hibiscus sabdariffa L.,326388-2,Hibiscus,2850461,Accepted,direct_wcvp_w_author_unique,Hibiscus sabdariffa L.
+28,Asteraceae, Koanophyllon tinctorium Arruda,,,Leaves,Blue,0.0,0.0,0.0,,77181556-1,Koanophyllon tinctorium,Koanophyllon tinctorium Arruda,Asteraceae,Species,Koanophyllon tinctorium,Koanophyllon tinctorium Arruda,77181556-1,Koanophyllon,3132832,Accepted,direct_wcvp_w_author_unique,Koanophyllon tinctorium Arruda
+29,Sapotaceae,Labramia bojeri A.DC.,,,Bark,Red,0.0,0.0,0.0,,787187-1,Labramia bojeri,Labramia bojeri A.DC.,Sapotaceae,Species,Labramia bojeri,Labramia bojeri A.DC.,787187-1,Labramia,106688,Accepted,direct_wcvp_w_author_unique,Labramia bojeri A.DC.
+30,Combretaceae,Laguncularia racemosa (L.) C.F.Gaertn.,,,Leaves,Tannins,0.0,0.0,1.0,,170672-1,Laguncularia racemosa,Laguncularia racemosa (L.) C.F.Gaertn.,Combretaceae,Species,Laguncularia racemosa,Laguncularia racemosa (L.) C.F.Gaertn.,170672-1,Laguncularia,2338852,Accepted,direct_wcvp_w_author_unique,Laguncularia racemosa (L.) C.F.Gaertn.
+31,Anacardiaceae,Lannea spp,,,Bark,Tannins,0.0,0.0,0.0,,331697-2,Lannea,Lannea A.Rich.,Anacardiaceae,Genus,,,,,2340825,Accepted,knms_single,"Lannea J.B.A.Guillemin & G.S.Perrottet, Fl. Seneg. Tent. 1: 153 (1831) A.Rich. 1831"
+32,Boraginaceae,Lithospermum erythrorhizon Siebold & Zucc.,,,Roots,Violet,0.0,0.0,0.0,,118039-1,Lithospermum erythrorhizon,Lithospermum erythrorhizon Siebold & Zucc.,Boraginaceae,Species,Lithospermum erythrorhizon,Lithospermum erythrorhizon Siebold & Zucc.,118039-1,Lithospermum,2343549,Accepted,direct_wcvp_w_author_unique,Lithospermum erythrorhizon Siebold & Zucc.
+33,Boraginaceae,Lithospermum caroliniense (J.F.Gmel.) MacMill.,,,Roots,Violet/red ,0.0,0.0,0.0,,141776-2,Lithospermum caroliniense,Lithospermum caroliniense (J.F.Gmel.) MacMill.,Boraginaceae,Species,Lithospermum caroliniense,Lithospermum caroliniense (J.F.Gmel.) MacMill.,141776-2,Lithospermum,2343704,Accepted,direct_wcvp_w_author_unique,Lithospermum caroliniense (J.F.Gmel.) MacMill.
+34,EUPHORBIACEAE,Mallotus philippensis (Lamk) Muell. Arg.,,,Red covering of the fruit capsuals ,Orange,0.0,1.0,0.0,,351650-1,Mallotus philippensis,Mallotus philippensis (Lam.) Müll.Arg.,Euphorbiaceae,Species,Mallotus philippensis,Mallotus philippensis (Lam.) Müll.Arg.,351650-1,Mallotus,119039,Accepted,autoresolution,Mallotus philippensis
+35,Rubiaceae,Morinda spp,,,Roots,Red ,0.0,1.0,0.0,,34941-1,Morinda,Morinda L.,Rubiaceae,Genus,,,,,129750,Accepted,knms_single,Morinda Sp. Pl.: 176 (1753) L. 1753
+36,Oleaceae,Nyctanthes arbor-tristis L.,,,Flower corollas,Yellow,0.0,0.0,1.0,,610599-1,Nyctanthes arbor-tristis,Nyctanthes arbor-tristis L.,Oleaceae,Species,Nyctanthes arbor-tristis,Nyctanthes arbor-tristis L.,610599-1,Nyctanthes,354899,Accepted,direct_wcvp_w_author_unique,Nyctanthes arbor-tristis L.
+37,RUBIACEAE,Oldenlandia umbellata L.,,,Roots,Red,0.0,1.0,0.0,,758254-1,Oldenlandia umbellata,Oldenlandia umbellata L.,Rubiaceae,Species,Oldenlandia umbellata,Oldenlandia umbellata L.,758254-1,Oldenlandia,138847,Accepted,direct_wcvp_w_author_unique,Oldenlandia umbellata L.
+38,Boraginaceae,Onosma echioides (L.) L.,,,Roots,Violet,1.0,0.0,0.0,,119634-1,Onosma echioides,Onosma echioides (L.) L.,Boraginaceae,Species,Onosma echioides,Onosma echioides (L.) L.,119634-1,Onosma,2392934,Accepted,direct_wcvp_w_author_unique,Onosma echioides (L.) L.
+39,Orchidaceae,Phajus spp,,,Leaves,Blue,1.0,0.0,0.0,,325891-2,Phaius,Phaius Lour.,Orchidaceae,Genus,,,,,150964,Accepted,knms_multiple_2,Phaius Fl. Cochinch.: 529 (1790) Lour. 1790
+40,Rutaceae,Phellodendron amurense Rupr.,Phellodendron japonicum Maxim.,,Bark,Yellow,1.0,0.0,0.0,,774774-1,Phellodendron amurense,Phellodendron amurense Rupr.,Rutaceae,Species,Phellodendron amurense,Phellodendron amurense Rupr.,774774-1,Phellodendron,2541602,Accepted,direct_wcvp_w_author_unique,Phellodendron amurense Rupr.
+41,Rosaceae,Prunus spp,,,Fruit,Purple/blue,0.0,1.0,0.0,,30003057-2,Prunus,Prunus L.,Rosaceae,Genus,,,,,2958711,Accepted,knms_single,Prunus Sp. Pl.: 473 (1753) L. 1753
+42,Acanthaceae,Pseuderanthemum graciliflorum (Nees) Ridl.,,,Leaves,Blue,0.0,1.0,0.0,,53251-1,Pseuderanthemum graciliflorum,Pseuderanthemum graciliflorum (Nees) Ridl.,Acanthaceae,Species,Pseuderanthemum graciliflorum,Pseuderanthemum graciliflorum (Nees) Ridl.,53251-1,Pseuderanthemum,2406717,Accepted,direct_wcvp_w_author_unique,Pseuderanthemum graciliflorum (Nees) Ridl.
+43,Lythraceae,Punica granatum L.,"Punica multiflora hort.
+Punica nana L.",,Fruit and bark ,Yellow - fruit                    Tannins - bark ,1.0,1.0,1.0,,554129-1,Punica granatum,Punica granatum L.,Lythraceae,Species,Punica granatum,Punica granatum L.,554129-1,Punica,2536844,Accepted,direct_wcvp_w_author_unique,Punica granatum L.
+44,Fagaceae,Quercus spp,,,Bark,Brown,0.0,1.0,0.0,,325819-2,Quercus,Quercus L.,Fagaceae,Genus,,,,,171386,Accepted,knms_single,Quercus Sp. Pl.: 994 (1753) L. 1753
+45,Rubiaceae,Galium hypocarpium (L.) Endl. ex Griseb.,,,Roots,Red,0.0,0.0,0.0,,750043-1,Galium hypocarpium,Galium hypocarpium (L.) Endl. ex Griseb.,Rubiaceae,Species,Galium hypocarpium,Galium hypocarpium (L.) Endl. ex Griseb.,750043-1,Galium,86544,Accepted,direct_wcvp_w_author_unique,Galium hypocarpium (L.) Endl. ex Griseb.
+46,Rhamnaceae,Rhamnus alaternus L.,,,Bark and unripe fruit,Red - bark                          Yellow - fruit,1.0,0.0,0.0,,718169-1,Rhamnus alaternus,Rhamnus alaternus L.,Rhamnaceae,Species,Rhamnus alaternus,Rhamnus alaternus L.,718169-1,Rhamnus,2525844,Accepted,direct_wcvp_w_author_unique,Rhamnus alaternus L.
+47,Rhamnaceae, Rhamnus saxatilis Jacq.,,,Unripe fruit,Yellow,0.0,0.0,0.0,,718640-1,Rhamnus saxatilis,Rhamnus saxatilis Jacq.,Rhamnaceae,Species,Rhamnus saxatilis,Rhamnus saxatilis Jacq.,718640-1,Rhamnus,2522671,Accepted,direct_wcvp_w_author_unique,Rhamnus saxatilis Jacq.
+48,Rhamnaceae,Rhamnus spp,,,Unripe fruit,Yellow ,0.0,0.0,0.0,,30006159-2,Rhamnus,Rhamnus L.,Rhamnaceae,Genus,,,,,2525833,Accepted,knms_single,Rhamnus Sp. Pl.: 193 (1753) L. 1753
+49,Polygonaceae,Rheum officinale Baill.,,,Roots,Orange,1.0,0.0,0.0,,696768-1,Rheum officinale,Rheum officinale Baill.,Polygonaceae,Species,Rheum officinale,Rheum officinale Baill.,696768-1,Rheum,2425521,Accepted,direct_wcvp_w_author_unique,Rheum officinale Baill.
+50,Anacardiaceae,Rhus coriaria L.,,,Leaves,Yellow,1.0,0.0,0.0,,70477-1,Rhus coriaria,Rhus coriaria L.,Anacardiaceae,Species,Rhus coriaria,Rhus coriaria L.,70477-1,Rhus,2422872,Accepted,direct_wcvp_w_author_unique,Rhus coriaria L.
+51,Anacardiaceae,Rhus typhina L.,"Datisca hirta L.
+Rhus hirta (L.) Sudw.",,Roots,Yellow,1.0,0.0,0.0,,70939-1,Rhus typhina,Rhus typhina L.,Anacardiaceae,Species,Rhus typhina,Rhus typhina L.,70939-1,Rhus,2423458,Accepted,direct_wcvp_w_author_unique,Rhus typhina L.
+52,Anacardiaceae,Rhus glabra L.,Rhus glabra L. var. cismontana (Greene) Cockerell,,Roots,Yellow,1.0,0.0,0.0,,70565-1,Rhus glabra,Rhus glabra L.,Anacardiaceae,Species,Rhus glabra,Rhus glabra L.,70565-1,Rhus,2423048,Accepted,direct_wcvp_w_author_unique,Rhus glabra L.
+53,Anacardiaceae,Rhus aromatica Aiton,"Rhus canadensis Marshall
+Rhus canadensis Marshall var. canadensis",,Leaves and stem,Black,1.0,0.0,0.0,,30016232-2,Rhus aromatica,Rhus aromatica Aiton,Anacardiaceae,Species,Rhus aromatica,Rhus aromatica Aiton,30016232-2,Rhus,2420828,Accepted,direct_wcvp_w_author_unique,Rhus aromatica Aiton
+54,Polygonaceae,Rumex spp,,,Roots and leaves,Red/Orange - Roots      Yellow - Leaves,0.0,1.0,0.0,,328551-2,Rumex,Rumex L.,Polygonaceae,Genus,,,,,2425606,Accepted,knms_single,Rumex Sp. Pl.: 333 (1753) L. 1753
+55,Viburnaceae,Sambucus ebulus L.,,,Fruits,Blue,1.0,0.0,1.0,,149315-1,Sambucus ebulus,Sambucus ebulus L.,Viburnaceae,Species,Sambucus ebulus,Sambucus ebulus L.,149315-1,Sambucus,2486632,Accepted,direct_wcvp_w_author_unique,Sambucus ebulus L.
+56,Viburnaceae, Sambucus nigra L.,"Sambucus nigra L. f. alba (Weston) Rehder
+Sambucus nigra L. f. aurea (Sweet) Schwer.
+Sambucus nigra L. f. laciniata (L.) Zabel
+Sambucus nigra L. f. pendula Dippel",,Fruits,Blue,1.0,0.0,1.0,,30122169-2,Sambucus nigra,Sambucus nigra L.,Viburnaceae,Species,Sambucus nigra,Sambucus nigra L.,30122169-2,Sambucus,2486519,Accepted,direct_wcvp_w_author_unique,Sambucus nigra L.
+57,Anacardiaceae,Schinus molle L.,Schinus huygan Molina,,Leaves and bark,Tannins,1.0,0.0,1.0,,71044-1,Schinus molle,Schinus molle L.,Anacardiaceae,Species,Schinus molle,Schinus molle L.,71044-1,Schinus,2480199,Accepted,direct_wcvp_w_author_unique,Schinus molle L.
+58,Asteraceae,Serratula tinctoria L.,Serratula tinctoria var. vulgaris Godr.,,Ariel parts,Yellow,0.0,0.0,0.0,,248861-1,Serratula tinctoria,Serratula tinctoria L.,Asteraceae,Species,Serratula tinctoria,Serratula tinctoria L.,248861-1,Serratula,3047110,Accepted,direct_wcvp_w_author_unique,Serratula tinctoria L.
+59,Asteraceae ,Solidago canadensis L.,Solidago longifolia Schrad. ex DC.,,Flowering tips,Yellow,1.0,0.0,0.0,,249454-1,Solidago canadensis,Solidago canadensis L.,Asteraceae,Species,Solidago canadensis,Solidago canadensis L.,249454-1,Solidago,2911023,Accepted,direct_wcvp_w_author_unique,Solidago canadensis L.
+60,Fabaceae, Styphnolobium japonicum (L.) Schott,"Sophora japonica L. f. japonica
+Sophora japonica L. var. japonica Sophora japonica L. f. pendula Zabel
+Sophora japonica L. var. oligophylla Franch.
+Sophora japonica L. var. pubescens (Tausch) Bosse
+Sophora japonica L. var. violacea Carrière",,Flowers,Yellow,1.0,1.0,0.0,,1119529-2,Styphnolobium japonicum,Styphnolobium japonicum (L.) Schott,Fabaceae,Species,Styphnolobium japonicum,Styphnolobium japonicum (L.) Schott,1119529-2,Styphnolobium,2598486,Accepted,direct_wcvp_w_author_unique,Styphnolobium japonicum (L.) Schott
+61,Poaceae,Sorghum bicolor (L.) Moench,,,Leaves,Red,0.0,0.0,1.0,,422090-1,Sorghum bicolor,Sorghum bicolor (L.) Moench,Poaceae,Species,Sorghum bicolor,Sorghum bicolor (L.) Moench,422090-1,Sorghum,443283,Accepted,direct_wcvp_w_author_unique,Sorghum bicolor (L.) Moench
+62,Asteraceae,Thelesperma subnudum A.Gray,,,Flowers,Yellow/orange,0.0,0.0,0.0,,255481-1,Thelesperma subnudum,Thelesperma subnudum A.Gray,Asteraceae,Species,Thelesperma subnudum,Thelesperma subnudum A.Gray,255481-1,Thelesperma,3117766,Accepted,direct_wcvp_w_author_unique,Thelesperma subnudum A.Gray
+63,Thymelaeaceae,Thymelaea spp,,,Stalks,Yellow,1.0,0.0,0.0,,332016-2,Thymelaea,Thymelaea Mill.,Thymelaeaceae,Genus,,,,,2521353,Accepted,knms_multiple_3,Thymelaea Gard. Dict. Abr. ed. 4: s.p. (1754) Mill. 1754
+64,Pinaceae,Tsuga canadensis (L.) Carrière,"Picea canadensis (L.) Link                          Abies canadensis (L.) Michx. var. gracilis Waterer ex Gordon
+Tsuga canadensis (L.) Carrière f. fastigiata (Beissn.) C. K. Schneid.
+Tsuga canadensis (L.) Carrière f. gracilis (Waterer ex Gordon) Beissn.
+Tsuga canadensis (L.) Carrière var. fastigiata Beissn.",,Bark,Black,1.0,0.0,0.0,,264005-1,Tsuga canadensis,Tsuga canadensis (L.) Carrière,Pinaceae,Species,Tsuga canadensis,Tsuga canadensis (L.) Carrière,264005-1,Tsuga,379363,Accepted,direct_wcvp_w_author_unique,Tsuga canadensis (L.) Carrière
+65,Pinaceae,Tsuga heterophylla (Raf.) Sarg.,"Abies albertiana A. Murray bis
+Tsuga jeffreyi (A. Henry) A. Henry",,Bark,Black,1.0,0.0,0.0,,260297-2,Tsuga heterophylla,Tsuga heterophylla (Raf.) Sarg.,Pinaceae,Species,Tsuga heterophylla,Tsuga heterophylla (Raf.) Sarg.,260297-2,Tsuga,379395,Accepted,direct_wcvp_w_author_unique,Tsuga heterophylla (Raf.) Sarg.
+66,Fabaceae,Ulex europaeus L.,,,Flowers,Yellow,1.0,0.0,1.0,,524298-1,Ulex europaeus,Ulex europaeus L.,Fabaceae,Species,Ulex europaeus,Ulex europaeus L.,524298-1,Ulex,2446722,Accepted,direct_wcvp_w_author_unique,Ulex europaeus L.
+67,Fabaceae,Ulex parviflorus Pourr.,,,Flowers,Yellow,0.0,0.0,0.0,,524339-1,Ulex parviflorus,Ulex parviflorus Pourr.,Fabaceae,Species,Ulex parviflorus,Ulex parviflorus Pourr.,524339-1,Ulex,2447246,Accepted,direct_wcvp_w_author_unique,Ulex parviflorus Pourr.
+68,Ericaceae,Vaccinium spp,,,Fruits,Blue,0.0,1.0,0.0,,30000401-2,Vaccinium,Vaccinium L.,Ericaceae,Genus,,,,,2459130,Accepted,knms_single,Vaccinium Sp. Pl.: 349 (1753) L. 1753
+69,Rhamnaceae,Ventilago spp,,,Roots,Pink,0.0,1.0,0.0,,33543-1,Ventilago,Ventilago Gaertn.,Rhamnaceae,Genus,,,,,2451796,Accepted,knms_single,Ventilago Fruct. Sem. Pl. 1: 223 (1788) Gaertn. 1788
+70,Lythraceae,Woodfordia fruticosa (L.) Kurz,"Grislea punctata Buch.-Ham. ex Sm.
+Woodfordia floribunda Salisb.
+Woodfordia fruticosa (L.) Kurz var. punctata (Buch.-Ham. ex Sm.) Koehne",,Flowers,Pink,1.0,1.0,1.0,,554290-1,Woodfordia fruticosa,Woodfordia fruticosa (L.) Kurz,Lythraceae,Species,Woodfordia fruticosa,Woodfordia fruticosa (L.) Kurz,554290-1,Woodfordia,2465124,Accepted,direct_wcvp_w_author_unique,Woodfordia fruticosa (L.) Kurz
+71,Apocynaceae,Wrightia religiosa (Teijsm. & Binn.) Benth. ex Hook. f.,,,Leaves,Blue,1.0,0.0,0.0,,82877-1,Wrightia religiosa,Wrightia religiosa (Teijsm. & Binn.) Benth. ex Kurz,Apocynaceae,Species,Wrightia religiosa,Wrightia religiosa (Teijsm. & Binn.) Benth. ex Kurz,82877-1,Wrightia,214942,Accepted,knms_single,"Wrightia religiosa J. Asiat. Soc. Bengal, Pt. 2, Nat. Hist. 46: 258 (1877) (Teijsm. & Binn.) Benth. ex Kurz 1877"
+72,Apocynaceae,Wrightia arborea (Dennst.) Mabb.,,,Leaves,Blue,0.0,1.0,1.0,,82831-1,Wrightia arborea,Wrightia arborea (Dennst.) Mabb.,Apocynaceae,Species,Wrightia arborea,Wrightia arborea (Dennst.) Mabb.,82831-1,Wrightia,214888,Accepted,direct_wcvp_w_author_unique,Wrightia arborea (Dennst.) Mabb.
+73,Apocynaceae,Wrightia dubia (Sims) Spreng.,,,Leaves,Blue,0.0,0.0,0.0,,82847-1,Wrightia dubia,Wrightia dubia (Sims) Spreng.,Apocynaceae,Species,Wrightia dubia,Wrightia dubia (Sims) Spreng.,82847-1,Wrightia,214902,Accepted,direct_wcvp_w_author_unique,Wrightia dubia (Sims) Spreng.
+74,,,,,,,,,,,,,,,,,,,,,,,
+75,,,,,,,,,,,,,,,,,,,,,,,
+76,Polyporaceae,Laricifomes officinalis ,, Fomitopsis officinalis,Fruiting body,Mordanting of red insect dyes,,,,,,,,,,,,,,,,,
+77,Polyporaceae,Fomes fomentarius,, Fomes fomentarius,Fruiting body,Mordanting of red insect dyes,,,,,,,,,,,,,,,,,
+78,Polyporaceae,Polyporus mori,, Neofavolus alveolaris,Fruiting body,Mordanting of red insect dyes,,,,,,,,,,,,,,,,,
+79,Hymenochaetaceae,Inonotus hispidus,, Inonotus hispidus,Fruiting body,Olive to yellow,,,,,,,,,,,,,,,,,
+80,Echinodontiaceae,Echinodontium tinctorium,, Echinodontium tinctorium,Fruiting body,Orange,,,,,,,,,,,,,,,,,
+81,Polyporaceae,Hapalopilus rutilans,, Hapalopilus rutilans,Fruiting body,Purple,,,,,,,,,,,,,,,,,
+82,Coriolaceae,Pycnoporus cinnabarinus,, Pycnoporus cinnabarinus,Fruiting body,Brown,,,,,,,,,,,,,,,,,
+83,Podaxaceae,Podaxis pistillaris,, Podaxis pistillaris,Fruiting body,Mordanting of red insect dyes  Yellow ,,,,,,,,,,,,,,,,,
+84,Sclerodermataceae,Pisolithus arhizus,, Pisolithus arhizus,Fruiting body,Purple to brown ,,,,,,,,,,,,,,,,,
+85,Cortinariaceae,Cortinarius sanguineus,, Cortinarius sanguineus,Fruiting body,Red,,,,,,,,,,,,,,,,,
+86,Paxillaceae,Paxillus atrotomentosus,,Tapinella atrotomentosa,Fruiting body,Olive  ,,,,,,,,,,,,,,,,,
+87,Gomphidiaceae,Gomphidius glutinosus,,Gomphidius glutinosus,Fruiting body,Brown,,,,,,,,,,,,,,,,,
+88,Boletaceae,Suillus variegatus,,Suillus variegatus,Fruiting body,Yellow,,,,,,,,,,,,,,,,,
+89,Boletaceae,Suillus bovinus,, Suillus bovinus,Fruiting body,Yellow ,,,,,,,,,,,,,,,,,
+90,Boletaceae,Suillus grevillei,, Suillus grevillei,Fruiting body,Beige ,,,,,,,,,,,,,,,,,
+91,Boletaceae,Xerocomus chrysenteron,, Xerocomellus chrysenteron,Fruiting body,Olives,,,,,,,,,,,,,,,,,
+92,Polyporaceae,Phaeolus schweitnizii,, Phaeolus schweinitzii,Fruiting body,Yellow,,,,,,,,,,,,,,,,,
+93,Russulaceae,Lactarius necator,, Lactarius turpis,Fruiting body,Blue,,,,,,,,,,,,,,,,,
+94,Hymenogastraceae,Gymnopilus junonius,,Gymnopilus junonius,Fruiting body,Orange,,,,,,,,,,,,,,,,,
+95,,,,,,,,,,,,,,,,,,,,,,,
+96,Ochrolechiaceae,Ochrolechia parella,,,Whole,Grey,,,,,,,,,,,,,,,,,
+97,Ochrolechiaceae,Ochrolechia tartarea,,,Whole,Purple,,,,,,,,,,,,,,,,,
+98,Graphidaceae,Diploschistes scruposus ,,,Whole,Purple,,,,,,,,,,,,,,,,,
+99,Umbilicariaceae,Lasallia pustulata,,,Whole,Purple,,,,,,,,,,,,,,,,,
+100,Roccellaceae,Roccella tinctoria DC,,,Whole,Purple,,,,,,,,,,,,,,,,,
+101,Roccellaceae,Roccella canariensis,,,Whole,Purple,,,,,,,,,,,,,,,,,
+102,Roccellaceae,Roccella fuciformis (L.) DC,,,Whole,Purple,,,,,,,,,,,,,,,,,
+103,Roccellaceae,Roccella phycopsis,,,Whole,Purple,,,,,,,,,,,,,,,,,
+104,Roccellaceae,Roccella montagnei Bel.,,,Whole,Purple,,,,,,,,,,,,,,,,,
+105,Roccellaceae,Roccella portentosa,,,Whole,Purple,,,,,,,,,,,,,,,,,
+106,Roccellaceae,Dendrographa leucophaea,,,Whole,Purple,,,,,,,,,,,,,,,,,
+107,Roccellaceae,Roccella babingtonii,,,Whole,Purple,,,,,,,,,,,,,,,,,
+108,Roccellaceae,Roccella fimbriata,,,Whole,Purple,,,,,,,,,,,,,,,,,
+109,Pertusariaceae ,Pertusaria dealbescens,,,Whole,Purple,,,,,,,,,,,,,,,,,
+110,Parmeliaceae,Melanelia fuliginosa,,,Whole,Purple,,,,,,,,,,,,,,,,,
+111,Parmeliaceae,Parmelia saxatilis,,,Whole,Brown,,,,,,,,,,,,,,,,,
+112,Parmeliaceae,Parmelia omphalodes,,,Whole,Brown,,,,,,,,,,,,,,,,,
+113,Parmeliaceae,Xanthoparmelia conspersa,,,Whole,Brown,,,,,,,,,,,,,,,,,
+114,Parmeliaceae,Parmelia caperata,,,Whole,Yellow,,,,,,,,,,,,,,,,,
+115,Teloschistaceae,Xanthoria parientina,,,Whole,Orange,,,,,,,,,,,,,,,,,
+116,Parmeliaceae,Letharia vulpina,,,Whole,Yellow to green,,,,,,,,,,,,,,,,,
+117,Parmeliaceae,Xanthoparmelia chlorochroa,,,Whole,Orange,,,,,,,,,,,,,,,,,
+118,Parmeliaceae,Usnea spp,,,Whole,Yellow,,,,,,,,,,,,,,,,,
+119,Teloschistaceae,Teloschistes flavicans,,,Whole,Olive,,,,,,,,,,,,,,,,,
+120,Ramalinaceae,Ramalina yemenis,,,Whole,Brown,,,,,,,,,,,,,,,,,

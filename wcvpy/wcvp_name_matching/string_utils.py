@@ -42,7 +42,7 @@ def get_genus_from_full_name(full_name_beginning_with_genus: str) -> str:
         return full_name_beginning_with_genus
 
 
-def get_species_from_full_name(full_name_beginning_with_genus: str) -> str:
+def get_species_epithet_from_full_name(full_name_beginning_with_genus: str) -> str:
     '''
     Experimental method. Will not account for the fact that second word might be taxonomic authority.
     :param full_name_beginning_with_genus:
@@ -71,7 +71,7 @@ def get_species_binomial_from_full_name(full_name_beginning_with_genus: str) -> 
 
     try:
         genus = get_genus_from_full_name(full_name_beginning_with_genus)
-        species = get_species_from_full_name(full_name_beginning_with_genus)
+        species = get_species_epithet_from_full_name(full_name_beginning_with_genus)
 
         if len(species) > 0:
             return genus + ' ' + species

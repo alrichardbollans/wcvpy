@@ -19,7 +19,7 @@ native_test_dict = {'Campomanesia thea': ('BZS',), 'Delonix regia': ('MDG',),
         'BGM', 'COR', 'CZE', 'FRA', 'GER', 'GRB', 'IRE', 'MOR', 'POR',
         'SAR', 'SPA', 'SWE'), 'Lebeckia': ('CPP',), 'Airyantha borneensis': ('BOR', 'PHI')}
 intro_test_dict = {'Campomanesia thea': np.nan, 'Adenanthera microsperma': ('JAM', 'MAU', 'TAN'),
-                   'Libidibia ferrea': ('IND', 'MLY', 'NWG', 'PAK', 'ZIM')}
+                   'Libidibia ferrea': ('IND', 'MLY', 'NWG', 'PAK')}
 
 
 def get_wcvp_id_from_ipni_id(all_taxa, ipni_id):

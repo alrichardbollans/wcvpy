@@ -5,7 +5,7 @@ import pandas as pd
 import pandas.testing
 
 from wcvpy.wcvp_download import plot_native_number_accepted_taxa_in_regions, get_native_region_distribution_dataframe_for_accepted_taxa, get_all_taxa, \
-    wcvp_accepted_columns, wcvp_columns
+    wcvp_accepted_columns, wcvp_columns, get_region_distribution_dataframe_for_accepted_taxa, plot_number_accepted_taxa_in_regions
 
 _output_path = 'test_outputs'
 
@@ -81,6 +81,22 @@ class MyTestCase(unittest.TestCase):
                                                     'test_outputs', 'all_species_native_distribution.jpg',
                                                     include_extinct=True)
 
+    def test_native_intro_example(self):
+
+        test_df = pd.DataFrame(['Cinchona officinalis'], columns=['name'])
+        # https://powo.science.kew.org/taxon/urn:lsid:ipni.org:names:58723-2
+        plot_native_number_accepted_taxa_in_regions(test_df, 'name',
+                                                    'test_outputs', 'Cinchona officinalis_native.jpg')
+        test_input = pd.read_csv(os.path.join('test_inputs', 'Cinchona officinalis_native.jpg_regions.csv'),index_col=0)
+        test_output = pd.read_csv(os.path.join('test_outputs', 'Cinchona officinalis_native.jpg_regions.csv'),index_col=0)
+        pd.testing.assert_frame_equal(test_input, test_output)
+
+        plot_number_accepted_taxa_in_regions(test_df, 'name',
+                                             'test_outputs', 'Cinchona officinalis_all.jpg', include_introduced=True)
+        test_input = pd.read_csv(os.path.join('test_inputs', 'Cinchona officinalis_all.jpg_regions.csv'), index_col=0)
+        test_output = pd.read_csv(os.path.join('test_outputs', 'Cinchona officinalis_all.jpg_regions.csv'), index_col=0)
+        pd.testing.assert_frame_equal(test_input, test_output)
+
     def test_genus_example(self):
 
         test_df = pd.DataFrame(['Campomanesia thea', 'Campomanesia thea', 'Campomanesia thea', 'Campomanesia thea'], columns=['name'])
@@ -95,6 +111,20 @@ class MyTestCase(unittest.TestCase):
         plot_native_number_accepted_taxa_in_regions(
             pd.DataFrame(['Campomanesia thea', 'Campomanesia adamantium'], columns=['name']), 'name',
             'test_outputs', 'Campomanesia_pairs.jpg')
+
+    def test_native_vs_introduced(self):
+        native1_df = get_native_region_distribution_dataframe_for_accepted_taxa(new_trait_df, 'accepted_name')
+
+        native2_df = get_region_distribution_dataframe_for_accepted_taxa(new_trait_df, 'accepted_name', include_introduced=False)
+        pd.testing.assert_frame_equal(native1_df, native2_df)
+        native1_df.rename(columns={'Number of Taxa': 'Number of Native Taxa'}, inplace=True)
+
+        introduced_df = get_region_distribution_dataframe_for_accepted_taxa(new_trait_df, 'accepted_name', include_introduced=True)
+
+        all_df = pd.merge(native1_df, introduced_df, on=['Region'])
+
+        self.assertTrue(all(all_df['Number of Taxa'] >= all_df['Number of Native Taxa']))
+        self.assertFalse(all(all_df['Number of Taxa'] == all_df['Number of Native Taxa']))
 
 
 if __name__ == '__main__':

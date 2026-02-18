@@ -26,11 +26,11 @@ Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
 With pip, run:
 
-`pip install git+https://github.com/alrichardbollans/wcvpy.git@1.3.5`
+`pip install git+https://github.com/alrichardbollans/wcvpy.git@1.3.6`
 
 or for plotting dependencies:
 
-`pip install "wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.5"`
+`pip install "wcvpy[dist_plots] @ git+https://github.com/alrichardbollans/wcvpy.git@1.3.6"`
 
 ## Usage
 

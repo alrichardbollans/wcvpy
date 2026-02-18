@@ -1,13 +1,18 @@
 import os
+import sys
 import time
 import unittest
 
-from pkg_resources import resource_filename
 
 from wcvpy.OpenRefineMatching import *
 
-unittest_inputs = resource_filename(__name__, 'test_inputs')
-unittest_outputs = resource_filename(__name__, 'test_outputs')
+
+if sys.version_info >= (3, 9):
+    from importlib.resources import files
+else:
+    from importlib_resources import files
+unittest_inputs = str(files(__name__).joinpath('test_inputs'))
+unittest_outputs = str(files(__name__).joinpath('test_outputs'))
 
 
 class MyTestCase(unittest.TestCase):

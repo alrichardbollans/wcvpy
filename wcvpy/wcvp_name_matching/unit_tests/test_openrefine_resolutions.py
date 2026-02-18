@@ -1,16 +1,20 @@
 import os
+import sys
 import time
 import unittest
 
 import pandas as pd
-from pkg_resources import resource_filename
 
 from wcvpy.OpenRefineMatching import openrefine_match_full_names
 
 from wcvpy.wcvp_name_matching import resolve_openrefine_to_best_matches
+if sys.version_info >= (3, 9):
+    from importlib.resources import files
+else:
+    from importlib_resources import files
 
-unittest_inputs = resource_filename(__name__, 'test_inputs')
-unittest_outputs = resource_filename(__name__, 'test_outputs')
+unittest_inputs = str(files(__name__).joinpath('test_inputs'))
+unittest_outputs = str(files(__name__).joinpath('test_outputs'))
 from wcvpy.wcvp_download import get_all_taxa
 
 _all_taxa = get_all_taxa()

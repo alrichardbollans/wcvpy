@@ -1,12 +1,17 @@
 import os
-
+import sys
 import numpy as np
 import pandas as pd
-from pkg_resources import resource_filename
 
 from wcvpy.wcvp_download import get_distributions_for_accepted_taxa, native_code_column, introduced_code_column
 
-_inputs_path = resource_filename(__name__, 'inputs')
+
+if sys.version_info >= (3, 9):
+    from importlib.resources import files
+else:
+    from importlib_resources import files
+
+_inputs_path = str(files(__name__).joinpath('inputs'))
 
 
 def _reformat_dist_col(given_val):

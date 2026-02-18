@@ -1,9 +1,9 @@
 import os
+import sys
 import unittest
 
 import numpy as np
 import pandas as pd
-from pkg_resources import resource_filename
 
 from wcvpy.wcvp_download import clean_whitespaces_in_names
 from wcvpy.wcvp_name_matching import get_genus_from_full_name, clean_urn_ids, get_species_epithet_from_full_name
@@ -11,7 +11,13 @@ from wcvpy.wcvp_name_matching.string_utils import _capitalize_first_letter_of_ta
     get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets, \
     get_species_binomial_from_full_name
 
-unittest_inputs = resource_filename(__name__, 'test_inputs')
+
+if sys.version_info >= (3, 9):
+    from importlib.resources import files
+else:
+    from importlib_resources import files
+unittest_inputs = str(files(__name__).joinpath('test_inputs'))
+unittest_outputs = str(files(__name__).joinpath('test_outputs'))
 
 
 class MyTestCase(unittest.TestCase):
@@ -90,7 +96,7 @@ class MyTestCase(unittest.TestCase):
         self.assertIs(clean_urn_ids('a'), 'a')
         self.assertIs(clean_urn_ids(''), '')
         self.assertIsInstance(clean_urn_ids('urn:lsid:ipni.org:names:30479151-2'), str)
-        self.assertIsInstance(clean_urn_ids(np.NAN), type(np.NAN))
+        self.assertIsInstance(clean_urn_ids(np.nan), type(np.nan))
 
     def test_tidying_authors(self):
         test_dict = {'Abies abies (L. ) druce': 'Abies abies (L.) druce','Abies abies (L. A druce': 'Abies abies (L.A druce',

@@ -1,4 +1,5 @@
 import os
+import sys
 import unittest
 import time
 from typing import List
@@ -6,7 +7,6 @@ from typing import List
 import numpy as np
 import pandas as pd
 import pandas.testing
-from pkg_resources import resource_filename
 
 from wcvpy.wcvp_name_matching import lookup_ipni_id_in_wcvp, get_accepted_wcvp_info_from_ipni_ids_in_column, \
     get_accepted_info_from_names_in_column, output_record_col_names, clean_urn_ids
@@ -17,8 +17,13 @@ from wcvpy.wcvp_download import get_all_taxa, wcvp_accepted_columns
 
 wcvp_taxa = get_all_taxa()
 
-unittest_inputs = resource_filename(__name__, 'test_inputs')
-unittest_outputs = resource_filename(__name__, 'test_outputs')
+
+if sys.version_info >= (3, 9):
+    from importlib.resources import files
+else:
+    from importlib_resources import files
+unittest_inputs = str(files(__name__).joinpath('test_inputs'))
+unittest_outputs = str(files(__name__).joinpath('test_outputs'))
 
 # columns used in testing csvs
 test_columns = {'acc_id': wcvp_accepted_columns['ipni_id'],

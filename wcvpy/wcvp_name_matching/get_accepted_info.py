@@ -425,7 +425,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
         unmatched_name_df = df[
             ~df[unique_submission_index_col].isin(wcvp_resolved_df[unique_submission_index_col].values)]
 
-        if match_level in ['full', 'fuzzy']:
+        if match_level in ['full', 'fuzzy'] and len(unmatched_name_df.index) > 0:
             # If exact matches aren't found in wcvp, use knms and openrefine
             # then knms
             matches_with_knms = _get_knms_matches_and_accepted_info_from_names_in_column(
@@ -438,7 +438,7 @@ def get_accepted_info_from_names_in_column(in_df: pd.DataFrame, name_col: str,
             unmatched_knms_df = unmatched_name_df[
                 ~unmatched_name_df[unique_submission_index_col].isin(
                     matches_with_knms[unique_submission_index_col].values)]
-            if use_open_refine:
+            if use_open_refine and len(unmatched_knms_df.index) > 0:
                 # Use given submitted name and let openrefine do any cleaning
                 all_open_refine_matches = openrefine_match_full_names(unmatched_knms_df, recapitalised_name_col)
 

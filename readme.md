@@ -1,6 +1,7 @@
 # wcvpy
 
-This repository provides Python packages for downloading the WCVP and resolving names to it, along with utility functions for managing and plotting geographic distributions.
+This repository provides Python packages for downloading the WCVP and resolving names to it, along with utility functions for managing and plotting
+geographic distributions.
 
 As a basic example, the synonym `Amsonia tabernaemontana Walter var. gattingeri Woodson` is resolved to the accepted
 name (as of WCVP v12) `Amsonia tabernaemontana var. salicifolia (Pursh) Woodson` and a variety of information related to this accepted name is
@@ -9,18 +10,6 @@ provided (e.g. family, IPNI id, parent, rank etc..).
 Methods for downloading and plotting distributions are also provided.
 
 Note this package has been renamed from `automatchnames` to `wcvpy`.
-
-## Citations
-
-You can currently cite this tool via the Zenodo repository: https://doi.org/10.5281/zenodo.14774384
-
-**To cite the WCVP:**
-
-Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew.
-URL http://sftp.kew.org/pub/data-repositories/WCVP/ [accessed XXXX].
-
-Govaerts, R., Nic Lughadha, E. et al. The World Checklist of Vascular Plants, a continuously updated resource for exploring global plant diversity.
-Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
 ## Installation
 
@@ -302,7 +291,16 @@ See readme in OpenRefine package in this library.
 We believe all examples file given in `unit_tests/test_inputs` resolve correctly, with the exception of known
 cases in `examples_to_fix.csv`.
 
-## Sources
+## To Cite
+
+You can currently cite this tool via the Zenodo repository:
+
+Richard-Bollans, Adam. ‘wcvpy’. Zenodo, 2026. https://doi.org/10.5281/zenodo.14774384.
+
+#### Sources
+
+Govaerts, R., Nic Lughadha, E. et al. The World Checklist of Vascular Plants, a continuously updated resource for exploring global plant diversity.
+Sci Data 8, 215 (2021). https://doi.org/10.1038/s41597-021-00997-6
 
 Govaerts R (ed.). 2023. WCVP: World Checklist of Vascular Plants. Facilitated by the Royal Botanic Gardens, Kew. [WWW document]
 URL http://sftp.kew.org/pub/data-repositories/WCVP/

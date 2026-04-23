@@ -13,8 +13,8 @@ if sys.version_info >= (3, 9):
 else:
     from importlib_resources import files
 
-unittest_inputs = str(files(__name__).joinpath('test_inputs'))
-unittest_outputs = str(files(__name__).joinpath('test_outputs'))
+unittest_inputs = str(files('wcvpy.wcvp_download').joinpath('test_inputs'))
+unittest_outputs = str(files('wcvpy.wcvp_download').joinpath('test_outputs'))
 from wcvpy.wcvp_download import get_all_taxa
 
 _all_taxa = get_all_taxa()

@@ -11,8 +11,8 @@ if sys.version_info >= (3, 9):
     from importlib.resources import files
 else:
     from importlib_resources import files
-unittest_inputs = str(files(__name__).joinpath('test_inputs'))
-unittest_outputs = str(files(__name__).joinpath('test_outputs'))
+unittest_inputs = str(files('wcvpy.wcvp_download').joinpath('test_inputs'))
+unittest_outputs = str(files('wcvpy.wcvp_download').joinpath('test_outputs'))
 
 
 class MyTestCase(unittest.TestCase):

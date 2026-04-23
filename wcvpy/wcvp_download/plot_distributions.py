@@ -11,7 +11,7 @@ if sys.version_info >= (3, 9):
 else:
     from importlib_resources import files
 
-_inputs_path = str(files(__name__).joinpath('inputs'))
+_inputs_path = str(files('wcvpy.wcvp_download').joinpath('inputs'))
 
 
 def _reformat_dist_col(given_val):

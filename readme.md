@@ -297,6 +297,9 @@ You can currently cite this tool via the Zenodo repository:
 
 Richard-Bollans, Adam. ‘wcvpy’. Zenodo, 2026. https://doi.org/10.5281/zenodo.14774384.
 
+This tool is also used extensively in: [Storing accepted scientific names alone can lead to misinterpretation of botanical data](https://doi.org/10.1038/s41598-026-47142-0).
+
+
 #### Sources
 
 Govaerts, R., Nic Lughadha, E. et al. The World Checklist of Vascular Plants, a continuously updated resource for exploring global plant diversity.

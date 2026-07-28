@@ -34,7 +34,11 @@ def get_distributions_for_accepted_taxa(df: pd.DataFrame, acc_name_col: str, inc
     problems = [name for name in df_names if name not in interstn]
     if len(problems) > 0:
         raise ValueError(
-            f'{problems}: not accepted names in your WCVP version when checking for distribution data. This could be an issue with incorrectly specified version.\n Or could be a result of inclusion of Artifical Hyrbids. Also check spelling')
+            f'{problems}: not accepted names in your WCVP version when checking for distribution data. '
+            f'This could be an issue with incorrectly specified version.\n '
+            f'Or could be a result of inclusion of Artifical Hyrbids which do not consistently have distribution data.\n'
+            f'This can also happen when you are deriving accepted species from accepted subspecies as this is a potential issue in the WCVP that e.g. Lachnagrostis adamsonii subsp. limosa is accepted but not the binomial species name is not.\n'
+            f'Also check spelling')
 
     output = pd.merge(df, wcvp_with_dists, how='left', left_on=acc_name_col,
                       right_on=wcvp_accepted_columns['name'])

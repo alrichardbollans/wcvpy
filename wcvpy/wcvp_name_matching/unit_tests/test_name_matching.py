@@ -15,15 +15,14 @@ from wcvpy.wcvp_name_matching.get_accepted_info import _get_knms_matches_and_acc
 
 from wcvpy.wcvp_download import get_all_taxa, wcvp_accepted_columns
 
-wcvp_taxa = get_all_taxa()
-
+wcvp_taxa = get_all_taxa(get_new_version=True)
 
 if sys.version_info >= (3, 9):
     from importlib.resources import files
 else:
     from importlib_resources import files
-unittest_inputs = str(files('wcvpy.wcvp_download').joinpath('test_inputs'))
-unittest_outputs = str(files('wcvpy.wcvp_download').joinpath('test_outputs'))
+unittest_inputs = str(files('wcvpy.wcvp_name_matching').joinpath('unit_tests').joinpath('test_inputs'))
+unittest_outputs = str(files('wcvpy.wcvp_name_matching').joinpath('unit_tests').joinpath('test_outputs'))
 
 # columns used in testing csvs
 test_columns = {'acc_id': wcvp_accepted_columns['ipni_id'],
@@ -222,8 +221,8 @@ class MyTestCase(unittest.TestCase):
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
 
         cap_record = lookup_ipni_id_in_wcvp(wcvp_taxa, '41511-1')
-        self.assertEqual(cap_record['accepted_name'].iloc[0], 'Aspidosperma')
-        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '2217-1')
+        self.assertEqual(cap_record['accepted_name'].iloc[0], 'Rinorea')
+        self.assertEqual(cap_record[wcvp_accepted_columns['ipni_id']].iloc[0], '41582-1')
         self.assertEqual(cap_record['accepted_rank'].iloc[0], 'Genus')
         self.assertTrue(np.isnan(cap_record['accepted_species'].iloc[0]))
         self.assertTrue(np.isnan(cap_record['accepted_species_ipni_id'].iloc[0]))
@@ -470,5 +469,4 @@ class MyTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-
     unittest.main()

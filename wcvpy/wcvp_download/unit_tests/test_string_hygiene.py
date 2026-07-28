@@ -56,7 +56,6 @@ class MyTestCase(unittest.TestCase):
         p1_df, p2_df = string_hygeine_tests(wcvp_data, _output_path)
         self.assertEqual(len(p1_df), 0)
         self.assertEqual(len(p2_df), 0)
-
     def test_whitespace(self):
         for c in (wcvp_columns_used_in_direct_matching + list(wcvp_accepted_columns.values())):
             to_check = wcvp_data[~wcvp_data[c].isna()]

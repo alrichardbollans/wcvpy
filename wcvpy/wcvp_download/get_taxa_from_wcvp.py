@@ -269,6 +269,9 @@ def get_all_taxa(families_of_interest: List[str] = None, ranks: List[str] = None
     '''
     start = time.time()
 
+    if version is not None:
+        assert isinstance(version, str), 'version must be None or a string'
+
     if output_csv is not None:
         new_output_dir = os.path.dirname(output_csv)
         if not os.path.isdir(new_output_dir) and new_output_dir != '':

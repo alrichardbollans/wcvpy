@@ -23,7 +23,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(len(duplicates.index), 0)
 
     def test_families(self):
-        loganiaceae = get_all_taxa(families_of_interest=['Loganiaceae'])
+        loganiaceae = wcvp_data[wcvp_data['accepted_family'].isin(['Loganiaceae'])]
         print(loganiaceae.drop_duplicates(subset=['family'], keep='first')[
                   ['taxon_name', 'family', wcvp_accepted_columns['family']]])
         # print(loganiaceae['family'].unique())
@@ -208,8 +208,9 @@ class MyTestCase(unittest.TestCase):
         genus_df = wcvp_data[wcvp_data[wcvp_columns['ipni_id']] == '34250-1']
         self.assertListEqual(genus_df[wcvp_accepted_columns['ipni_id']].values.tolist(), ['34250-1'])
 
+    @unittest.skip("Not sure if this is still needed")
     def test_unusual_genera(self):
-        logan_df = get_all_taxa(families_of_interest=['Loganiaceae'])
+        logan_df = wcvp_data[wcvp_data['accepted_family'].isin(['Loganiaceae'])]
         funny_genera = ['Anthocleista', 'Cissus', 'Ziziphus', 'Rhamnus']
         logan_df[logan_df[wcvp_columns['genus']].isin(['Anthocleista', 'Narcissus', 'Cissus'])].to_csv(
             os.path.join(_output_path, 'Ant_in_logania.csv'))

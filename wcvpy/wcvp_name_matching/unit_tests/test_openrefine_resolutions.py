@@ -8,13 +8,14 @@ import pandas as pd
 from wcvpy.OpenRefineMatching import openrefine_match_full_names
 
 from wcvpy.wcvp_name_matching import resolve_openrefine_to_best_matches
+
 if sys.version_info >= (3, 9):
     from importlib.resources import files
 else:
     from importlib_resources import files
 
-unittest_inputs = str(files('wcvpy.wcvp_download').joinpath('test_inputs'))
-unittest_outputs = str(files('wcvpy.wcvp_download').joinpath('test_outputs'))
+unittest_inputs = str(files('wcvpy.wcvp_name_matching').joinpath('unit_tests').joinpath('test_inputs'))
+unittest_outputs = str(files('wcvpy.wcvp_name_matching').joinpath('unit_tests').joinpath('test_outputs'))
 from wcvpy.wcvp_download import get_all_taxa
 
 _all_taxa = get_all_taxa()

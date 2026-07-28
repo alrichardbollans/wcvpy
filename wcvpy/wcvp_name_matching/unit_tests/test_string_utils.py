@@ -11,13 +11,12 @@ from wcvpy.wcvp_name_matching.string_utils import _capitalize_first_letter_of_ta
     get_word_combinations, remove_spacelike_chars, add_space_around_hybrid_chars_and_infraspecific_epithets, \
     get_species_binomial_from_full_name
 
-
 if sys.version_info >= (3, 9):
     from importlib.resources import files
 else:
     from importlib_resources import files
-unittest_inputs = str(files('wcvpy.wcvp_download').joinpath('test_inputs'))
-unittest_outputs = str(files('wcvpy.wcvp_download').joinpath('test_outputs'))
+unittest_inputs = str(files('wcvpy.wcvp_name_matching').joinpath('unit_tests').joinpath('test_inputs'))
+unittest_outputs = str(files('wcvpy.wcvp_name_matching').joinpath('unit_tests').joinpath('test_outputs'))
 
 
 class MyTestCase(unittest.TestCase):
@@ -43,6 +42,7 @@ class MyTestCase(unittest.TestCase):
         for k in correct_dict:
             print(k)
             self.assertEqual(correct_dict[k], get_species_epithet_from_full_name(k))
+
     def test_species_binomial_name(self):
         self.assertIsNone(get_species_binomial_from_full_name(None))
         self.assertTrue(np.isnan(get_species_binomial_from_full_name(np.nan)))
@@ -99,7 +99,7 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(clean_urn_ids(np.nan), type(np.nan))
 
     def test_tidying_authors(self):
-        test_dict = {'Abies abies (L. ) druce': 'Abies abies (L.) druce','Abies abies (L. A druce': 'Abies abies (L.A druce',
+        test_dict = {'Abies abies (L. ) druce': 'Abies abies (L.) druce', 'Abies abies (L. A druce': 'Abies abies (L.A druce',
                      'Strychnos axillaris': 'Strychnos axillaris', np.nan: np.nan, None: None,
                      'Strychnos axillaris Dalzell. & A.Gibson.': 'Strychnos axillaris Dalzell. & A.Gibson.',
                      'Amsonia tabernaemontana Walter var. gattingeri Woodson': 'Amsonia tabernaemontana Walter var. gattingeri Woodson',

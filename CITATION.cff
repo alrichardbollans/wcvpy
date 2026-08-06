@@ -1,0 +1,21 @@
+references:
+  - title: >-
+      wcvpy
+    type: journalArticle
+    url: https://github.com/alrichardbollans/wcvpy
+    authors: 
+      - family-names: Richard-Bollans
+        given-names: Adam
+    editors: 
+      - family-names: Richard-Bollans
+        given-names: Adam
+    recipients: 
+      - family-names: Richard-Bollans
+        given-names: Adam
+    translators: 
+      - family-names: Richard-Bollans
+        given-names: Adam
+    date-published: 2026
+    identifiers: 
+      - type: doi
+        value: 10.5281/zenodo.14774384
